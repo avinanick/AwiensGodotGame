@@ -34,7 +34,7 @@ func _process(delta):
 			directionVector.y = sin(polarCoords.x)
 			directionVector.z = (-1) * cos(polarCoords.y) * cos(polarCoords.x)
 			directionVector = directionVector.normalized()
-			newBullet.speed = fireSpeed
+			newBullet.speed = bulletSpeed
 			newBullet.rotation = polarCoords
 			newBullet.bulletDirection = directionVector
 

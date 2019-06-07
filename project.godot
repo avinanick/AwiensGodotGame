@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Structure",
 "language": "GDScript",
 "path": "res://Structure.gd"
+}, {
+"base": "Structure",
+"class": "Turret",
+"language": "GDScript",
+"path": "res://Turret.gd"
 } ]
 _global_script_class_icons={
 "Destructible": "",
-"Structure": ""
+"Structure": "",
+"Turret": ""
 }
 
 [application]

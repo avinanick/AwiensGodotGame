@@ -3,9 +3,9 @@
 [ext_resource path="res://MainScene.gd" type="Script" id=1]
 [ext_resource path="res://Ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TallBuilding.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ProtoGun.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Camera.gd" type="Script" id=5]
-[ext_resource path="res://Shooter.gd" type="Script" id=6]
+[ext_resource path="res://Structure.gd" type="Script" id=4]
+[ext_resource path="res://ProtoGun.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Camera.gd" type="Script" id=6]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -15,23 +15,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102748, 0.211128, -0.110438
 
 [node name="City" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.69905, 0 )
+script = ExtResource( 4 )
 
-[node name="EastGun" parent="." instance=ExtResource( 4 )]
+[node name="EastGun" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.137, 0 )
 
-[node name="WestGun" parent="." instance=ExtResource( 4 )]
+[node name="WestGun" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.137, 0 )
 
-[node name="NorthGun" parent="." instance=ExtResource( 4 )]
+[node name="NorthGun" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, -12 )
 
-[node name="SouthGun" parent="." instance=ExtResource( 4 )]
+[node name="SouthGun" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, 12 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 3.5, 0 )
-script = ExtResource( 5 )
-
-[node name="Shooter" type="Spatial" parent="Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.68434e-14, 0, -0.5 )
 script = ExtResource( 6 )
