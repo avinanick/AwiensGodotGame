@@ -7,6 +7,7 @@ extends KinematicBody
 var speed = 0
 var bulletDirection = Vector3()
 var timer = 10
+var bullet_damage = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +20,14 @@ func _process(delta):
 	if timer <= 0:
 		print("destroying bullet")
 		self.queue_free()
-	move_and_collide(bulletDirection * speed * delta)
+	# moves the bullet and returns a collision if there is one
+	var collision = move_and_collide(bulletDirection * speed * delta)
+	if collision:
+		print("collision detected, destroying bullet")
+		if collision.collider is Destructible:
+			print("damaging target")
+			collision.collider.take_damage(bullet_damage)
+		self.queue_free()
 	pass
 
 # Add code to self destruct after some amount of time or on collision
