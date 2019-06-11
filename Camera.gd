@@ -41,7 +41,7 @@ func _process(delta):
 		rotation_degrees = Vector3(0,90,0)
 		print("switch to turret four")
 	if Input.is_action_pressed("fire_one"):
-		selected_turret.fire()
+		selected_turret.fire() # crashes if the targetted turret was destroyed
 	pass
 	
 # This I think should be called whenever an input event happens

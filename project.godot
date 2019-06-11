@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Destructible",
+"class": "Alien",
+"language": "GDScript",
+"path": "res://Alien.gd"
+}, {
+"base": "Alien",
+"class": "AlienMissile",
+"language": "GDScript",
+"path": "res://AlienMissile.gd"
+}, {
 "base": "KinematicBody",
 "class": "Destructible",
 "language": "GDScript",
@@ -25,6 +35,8 @@ _global_script_classes=[ {
 "path": "res://Turret.gd"
 } ]
 _global_script_class_icons={
+"Alien": "",
+"AlienMissile": "",
 "Destructible": "",
 "Structure": "",
 "Turret": ""
