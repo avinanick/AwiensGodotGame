@@ -13,13 +13,11 @@ var timer = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	combatant = true
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if timer < fire_cooldown:
 		timer += delta
-	pass
 
 func fire():
 	if timer >= fire_cooldown:
@@ -29,6 +27,7 @@ func fire():
 		# so far I've only been able to find the bullet when I set it as a child of self, but then
 		# whenever I rotate the camera, the bullet goes with it
 		get_node("/root/MainScene").add_child(newBullet)
+		get_node("/root/MainScene").shots += 1
 		newBullet.translation = get_node("/root/MainScene/Camera").translation
 		# Get the camera's rotation (in radians) and use that to calculate the direction vector for the
 		# bullet
@@ -41,4 +40,3 @@ func fire():
 		newBullet.speed = projectile_speed
 		newBullet.rotation = polarCoords
 		newBullet.bulletDirection = directionVector
-	pass

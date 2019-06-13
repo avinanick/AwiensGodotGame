@@ -15,12 +15,10 @@ func take_damage(var amount):
 	health -= amount
 	if health <= 0:
 		destroy_self()
-	pass
 	
 func destroy_self():
 	# at some point I'll likely be modifying this to play destroy animations
 	queue_free()
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

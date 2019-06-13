@@ -10,6 +10,7 @@ export var spawn_period = 2
 
 var missile_scene = preload("res://AlienMissile(PH).tscn")
 var timer = 0
+var main_scene
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,12 +18,12 @@ var timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	main_scene = get_node("/root/MainScene")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timer += delta
-	if timer >= spawn_period:
+	if timer >= spawn_period and main_scene.game_state == main_scene.game_states.running:
 		timer = 0
 		# spawn a new missile at a random location, with a random target
 		var spawn_pos = Vector3(rand_range(-x_spawn_range, x_spawn_range), 
@@ -40,4 +41,3 @@ func _process(delta):
 		new_missile.translation = spawn_pos
 		new_missile.look_at(target_pos, Vector3(0,1,0))
 		new_missile.missile_direction = direction_vector
-	pass

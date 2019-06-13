@@ -38,4 +38,3 @@ func _process(delta):
 			newBullet.rotation = polarCoords
 			newBullet.bulletDirection = directionVector
 
-	pass

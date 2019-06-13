@@ -16,6 +16,9 @@ enum game_states{
 export var game_time = 100
 var timer = 0
 var game_state = game_states.running
+var points = 0
+var hits = 0
+var shots = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +28,9 @@ func _ready():
 func _process(delta):
 	match game_state:
 		game_states.defeat:
-			print("defeated")
+			print("you lost!")
 		game_states.victory:
 			print("we won!")
-	pass
+
+func score_points(amount):
+	points += amount
