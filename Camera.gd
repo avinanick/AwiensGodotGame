@@ -16,6 +16,8 @@ func _process(delta):
 	# This is going in the process so I can use the input map instead of the event
 	# would it work just as well in the input func?
 	# I think I need to add some logic for getting what turret is selected
+	# It would be nice if I could change this to get their positions at the beginning and 
+	# move based on that
 	if Input.is_action_just_pressed("select_one"):
 		# select the north gun (0,3.5,13) (0,0,0)
 		selected_turret = get_node("/root/MainScene/NorthGun")
