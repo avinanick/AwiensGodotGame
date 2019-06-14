@@ -13,6 +13,7 @@ enum game_states{
 
 # This script should handle failing on city destruction and victory after some amount of time, likely also handle
 # accuracy tracking and such
+# calculate points at the end using some mix of time and accuracy
 export var game_time = 100
 var timer = 0
 var game_state = game_states.running
@@ -31,6 +32,8 @@ func _process(delta):
 			print("you lost!")
 		game_states.victory:
 			print("we won!")
+		game_states.running:
+			timer += delta
 
 func score_points(amount):
 	points += amount
