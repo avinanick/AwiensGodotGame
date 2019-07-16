@@ -19,7 +19,7 @@ func _process(delta):
 	if timer < fire_cooldown:
 		timer += delta
 
-func fire():
+func fire(start_location : Vector3, start_rotation : Vector3):
 	if timer >= fire_cooldown:
 		timer = 0
 		var newBullet = projectile.instance()
@@ -28,15 +28,14 @@ func fire():
 		# whenever I rotate the camera, the bullet goes with it
 		get_node("/root/MainScene").add_child(newBullet)
 		get_node("/root/MainScene").shots += 1
-		newBullet.translation = get_node("/root/MainScene/Camera").translation
+		newBullet.translation = start_location
 		# Get the camera's rotation (in radians) and use that to calculate the direction vector for the
 		# bullet
-		var polarCoords = get_node("/root/MainScene/Camera").rotation
 		var directionVector = Vector3()
-		directionVector.x = (-1) * sin(polarCoords.y) * cos(polarCoords.x)
-		directionVector.y = sin(polarCoords.x)
-		directionVector.z = (-1) * cos(polarCoords.y) * cos(polarCoords.x)
+		directionVector.x = (-1) * sin(start_rotation.y) * cos(start_rotation.x)
+		directionVector.y = sin(start_rotation.x)
+		directionVector.z = (-1) * cos(start_rotation.y) * cos(start_rotation.x)
 		directionVector = directionVector.normalized()
 		newBullet.speed = projectile_speed
-		newBullet.rotation = polarCoords
+		newBullet.rotation = start_rotation
 		newBullet.bulletDirection = directionVector
