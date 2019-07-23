@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5 )
 
 [node name="Sprite" type="Sprite" parent="Camera"]
 modulate = Color( 1, 1, 1, 0.243137 )
