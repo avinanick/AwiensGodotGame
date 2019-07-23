@@ -17,6 +17,7 @@ func _process(delta):
 	# This is going in the process so I can use the input map instead of the event
 	# It would be nice if I could change this to get their positions at the beginning and 
 	# move based on that
+	# Add some logic to each of these to check if the node exists first
 	if main_scene.game_state == main_scene.game_states.running:
 		if Input.is_action_just_pressed("select_one"):
 			# select the north gun (0,3.5,13) (0,0,0)
