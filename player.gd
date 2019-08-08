@@ -46,7 +46,7 @@ func _process(delta):
 			print("switch to turret four")
 		if Input.is_action_pressed("fire_one"):
 			# I need to modify this to accurately spawn at the camera position instead of base player
-			selected_turret.fire(camera.get_global_transform().origin, rotation) # crashes if the targetted turret was destroyed
+			selected_turret.fire(camera.get_global_transform().origin, rotation) 
 	
 # This I think should be called whenever an input event happens
 func _input(event):

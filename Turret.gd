@@ -20,7 +20,7 @@ func _process(delta):
 		timer += delta
 
 func fire(start_location : Vector3, start_rotation : Vector3):
-	if timer >= fire_cooldown:
+	if is_alive and timer >= fire_cooldown:
 		timer = 0
 		var newBullet = projectile.instance()
 		newBullet.set_name("bullet")
@@ -39,3 +39,5 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 		newBullet.speed = projectile_speed
 		newBullet.rotation = start_rotation
 		newBullet.bulletDirection = directionVector
+	if not is_alive:
+		print("attempting to fire dead turret")
