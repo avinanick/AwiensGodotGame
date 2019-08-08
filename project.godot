@@ -12,27 +12,27 @@ _global_script_classes=[ {
 "base": "Destructible",
 "class": "Alien",
 "language": "GDScript",
-"path": "res://Alien.gd"
+"path": "res://Scripts/Alien.gd"
 }, {
 "base": "Alien",
 "class": "AlienMissile",
 "language": "GDScript",
-"path": "res://AlienMissile.gd"
+"path": "res://Scripts/AlienMissile.gd"
 }, {
 "base": "KinematicBody",
 "class": "Destructible",
 "language": "GDScript",
-"path": "res://Destructible.gd"
+"path": "res://Scripts/Destructible.gd"
 }, {
 "base": "Destructible",
 "class": "Structure",
 "language": "GDScript",
-"path": "res://Structure.gd"
+"path": "res://Scripts/Structure.gd"
 }, {
 "base": "Structure",
 "class": "Turret",
 "language": "GDScript",
-"path": "res://Turret.gd"
+"path": "res://Scripts/Turret.gd"
 } ]
 _global_script_class_icons={
 "Alien": "",
@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Awiens!"
-run/main_scene="res://MainScene.tscn"
+run/main_scene="res://Scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
 [input]

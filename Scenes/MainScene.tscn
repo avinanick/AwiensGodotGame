@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://GameManager.gd" type="Script" id=1]
-[ext_resource path="res://Ground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ProtoGun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://MissileSpawner.gd" type="Script" id=4]
-[ext_resource path="res://City.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Avatar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ProtoGun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/MissileSpawner.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/City.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Avatar.tscn" type="PackedScene" id=6]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
