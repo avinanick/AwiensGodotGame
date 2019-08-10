@@ -5,7 +5,8 @@ class_name Destructible
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var health = 10
+export var health: int = 10
+export var max_health: int = 10
 var is_alive: bool = true
 
 # Called when the node enters the scene tree for the first time.
