@@ -47,6 +47,9 @@ func _process(delta):
 		if Input.is_action_pressed("fire_one"):
 			# I need to modify this to accurately spawn at the camera position instead of base player
 			selected_turret.fire(camera.get_global_transform().origin, rotation) 
+		if Input.is_action_just_pressed("pause"):
+			var manager = get_node("/root/MainScene")
+			manager.game_state = manager.game_states.paused
 	
 # This I think should be called whenever an input event happens
 func _input(event):

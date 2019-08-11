@@ -13,10 +13,10 @@ var is_alive: bool = true
 func _ready():
 	pass # Replace with function body.
 	
-func take_damage(var amount):
+func take_damage(var amount: int):
 	health -= amount
 	if health <= 0:
-		self.queue_free()
+		destroy_self()
 	
 func destroy_self():
 	# at some point I'll likely be modifying this to play destroy animations

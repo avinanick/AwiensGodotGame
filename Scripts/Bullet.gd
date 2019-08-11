@@ -7,7 +7,7 @@ extends KinematicBody
 var speed = 0
 var bulletDirection = Vector3()
 var timer = 10
-var bullet_damage = 1
+var bullet_damage: int = 1
 onready var main_scene = get_node("/root/MainScene")
 
 # Called when the node enters the scene tree for the first time.

@@ -14,6 +14,7 @@ onready var main_scene = get_node("/root/MainScene")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	point_value = 1
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,7 +22,7 @@ func _process(delta):
 	if main_scene.game_state == main_scene.game_states.running:
 		timer -= delta
 		if timer <= 0:
-			print("destroying bullet")
+			print("destroying missile")
 			self.queue_free()
 		# Not sure why but the missile isn't moving for some reason
 		var collision = move_and_collide(missile_direction * speed * delta)
