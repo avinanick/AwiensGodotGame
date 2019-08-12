@@ -5,7 +5,7 @@ extends Spatial
 # var b = "text"
 var cooldown = 0.3 # .3 seconds between each shot
 var timer = 0
-onready var bullet = preload("res://Bullet.tscn") # placeholder until I start setting up the turret logic
+onready var bullet = preload("res://Scenes/Bullet.tscn") # placeholder until I start setting up the turret logic
 export var bulletSpeed = 1
 
 # Called when the node enters the scene tree for the first time.

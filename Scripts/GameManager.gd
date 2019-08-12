@@ -36,7 +36,7 @@ func _process(delta):
 			# This should actually make the defeat screen available if it isn't already
 			print("you lost!")
 		game_states.victory:
-			print("we won!")
+			print("we won! Points: " + str(points))
 		game_states.running:
 			timer += delta
 			
@@ -46,3 +46,7 @@ func enemy_destroyed(var point_value: int):
 
 func score_points(amount):
 	points += amount
+
+func _on_Timer_timeout():
+	if game_state == game_states.running:
+		game_state = game_states.victory

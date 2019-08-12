@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scripts/MissileSpawner.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/City.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Avatar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/MainOverlay.tscn" type="PackedScene" id=7]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -34,3 +35,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57173, 5.19992, 0 )
 
 [node name="Avatar" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -12 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+
+[node name="MainOverlay" parent="." instance=ExtResource( 7 )]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

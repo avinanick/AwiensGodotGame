@@ -6,7 +6,6 @@ export var speed = 5
 export var missile_damage = 3
 var missile_direction = Vector3()
 var timer = 60
-onready var main_scene = get_node("/root/MainScene")
 
 # Declare member variables here. Examples:
 # var a = 2

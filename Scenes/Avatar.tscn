@@ -11,5 +11,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5 )
 
 [node name="Sprite" type="Sprite" parent="Camera"]
 modulate = Color( 1, 1, 1, 0.243137 )
-position = Vector2( 515, 262 )
+position = Vector2( 515, 300 )
 texture = ExtResource( 2 )

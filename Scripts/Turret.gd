@@ -6,7 +6,7 @@ class_name Turret
 # var b = "text"
 export var turret_type = "chaingun"
 export var fire_cooldown = 0.3
-export var projectile = preload("res://Bullet.tscn")
+export var projectile = preload("res://Scenes/Bullet.tscn")
 export var projectile_speed = 100
 var timer = 0
 
