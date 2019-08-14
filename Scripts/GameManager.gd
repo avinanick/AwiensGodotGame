@@ -50,3 +50,6 @@ func score_points(amount):
 func _on_Timer_timeout():
 	if game_state == game_states.running:
 		game_state = game_states.victory
+		
+func next_level():
+	pass # STUB

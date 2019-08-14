@@ -18,7 +18,7 @@ func _on_Retry_button_button_up():
 
 
 func _on_Continue_button_button_up():
-	pass # Replace with function body. This will tell the game manager to move to the next scene, that will handle it
+	main_scene.next_level()
 
 
 func _on_Quit_button_button_up():
