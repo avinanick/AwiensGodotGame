@@ -22,11 +22,14 @@ var points: int = 0
 var hits: int = 0
 var shots: int = 0
 onready var victory_screen = get_node("Victory_interface")
+onready var defeat_screen = get_node("Deafeat_interface")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if victory_screen:
 		victory_screen.visible = false
+	if defeat_screen:
+		defeat_screen.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -36,7 +39,10 @@ func _process(delta):
 	match game_state:
 		game_states.defeat:
 			# This should actually make the defeat screen available if it isn't already
-			print("you lost!")
+			if defeat_screen and not defeat_screen.visible:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				print("you lost!")
+				defeat_screen.visible = true
 		game_states.victory:
 			if victory_screen and not victory_screen.visible:
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

@@ -22,13 +22,15 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label_container" type="MarginContainer" parent="VBoxContainer"]
-margin_right = 164.0
+editor/display_folded = true
+margin_left = 80.0
+margin_right = 80.0
 margin_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/Label_container"]
-margin_right = 164.0
+margin_right = 80.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 80, 20 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Avatar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/MainOverlay.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Victory_interface.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Deafeat_interface.tscn" type="PackedScene" id=9]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -44,4 +45,10 @@ one_shot = true
 [node name="MainOverlay" parent="." instance=ExtResource( 7 )]
 
 [node name="Victory_interface" parent="." instance=ExtResource( 8 )]
+
+[node name="Deafeat_interface" parent="." instance=ExtResource( 9 )]
+margin_left = -30.0
+margin_top = -58.0
+margin_right = 30.0
+margin_bottom = 58.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
