@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/City.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Avatar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/MainOverlay.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Victory_interface.tscn" type="PackedScene" id=8]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -41,4 +42,6 @@ wait_time = 90.0
 one_shot = true
 
 [node name="MainOverlay" parent="." instance=ExtResource( 7 )]
+
+[node name="Victory_interface" parent="." instance=ExtResource( 8 )]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
