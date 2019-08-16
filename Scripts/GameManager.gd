@@ -15,7 +15,7 @@ enum game_states{
 # This script should handle failing on city destruction and victory after some amount of time, likely also handle
 # accuracy tracking and such
 # calculate points at the end using some mix of time and accuracy
-export var game_time = 100
+export var game_time: int = 100
 var timer: float = 0
 var game_state = game_states.running
 var points: int = 0
@@ -42,11 +42,13 @@ func _process(delta):
 			if defeat_screen and not defeat_screen.visible:
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				print("you lost!")
+				defeat_screen.update_score(points)
 				defeat_screen.visible = true
 		game_states.victory:
 			if victory_screen and not victory_screen.visible:
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				print("we won! Points: " + str(points))
+				victory_screen.update_score(points)
 				victory_screen.visible = true
 		game_states.running:
 			timer += delta
@@ -55,7 +57,7 @@ func _process(delta):
 func enemy_destroyed(var point_value: int):
 	points += point_value
 
-func score_points(amount):
+func score_points(amount: int):
 	points += amount
 
 func _on_Timer_timeout():
