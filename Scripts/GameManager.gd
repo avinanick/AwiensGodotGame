@@ -23,6 +23,7 @@ var hits: int = 0
 var shots: int = 0
 onready var victory_screen = get_node("Victory_interface")
 onready var defeat_screen = get_node("Deafeat_interface")
+onready var main_overlay = get_node("MainOverlay")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,6 +35,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timer += delta
+	main_overlay.update_time(int(ceil(game_time - timer)))
 	if timer >= game_time and game_state == game_states.running:
 		game_state = game_states.victory
 	match game_state:
@@ -43,6 +45,7 @@ func _process(delta):
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				print("you lost!")
 				defeat_screen.update_score(points)
+				defeat_screen.update_time(int(ceil(game_time - timer)))
 				defeat_screen.visible = true
 		game_states.victory:
 			if victory_screen and not victory_screen.visible:
@@ -59,10 +62,6 @@ func enemy_destroyed(var point_value: int):
 
 func score_points(amount: int):
 	points += amount
-
-func _on_Timer_timeout():
-	if game_state == game_states.running:
-		game_state = game_states.victory
 		
 func next_level():
 	pass # STUB
