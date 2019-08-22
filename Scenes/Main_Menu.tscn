@@ -49,31 +49,31 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Backdrop/VBoxContainer/HBoxContainer"]
+[node name="Buttons" type="VBoxContainer" parent="Backdrop/VBoxContainer/HBoxContainer"]
 margin_left = 448.0
 margin_right = 532.0
 margin_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NewGameButton" type="Button" parent="Backdrop/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="Backdrop/VBoxContainer/HBoxContainer/Buttons"]
 margin_right = 84.0
 margin_bottom = 20.0
 text = "New Game"
 
-[node name="LoadGameButton" type="Button" parent="Backdrop/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="LoadGameButton" type="Button" parent="Backdrop/VBoxContainer/HBoxContainer/Buttons"]
 margin_top = 24.0
 margin_right = 84.0
 margin_bottom = 44.0
 text = "Load Game"
 
-[node name="OptionsButton" type="Button" parent="Backdrop/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Backdrop/VBoxContainer/HBoxContainer/Buttons"]
 margin_top = 48.0
 margin_right = 84.0
 margin_bottom = 68.0
 text = "Options"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Backdrop/VBoxContainer/HBoxContainer"]
+[node name="DynamicInterfaceBackdrop" type="NinePatchRect" parent="Backdrop/VBoxContainer/HBoxContainer"]
 margin_left = 536.0
 margin_right = 576.0
 margin_bottom = 68.0
