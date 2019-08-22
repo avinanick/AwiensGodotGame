@@ -5,8 +5,8 @@
 [ext_resource path="res://Materials/background.png" type="Texture" id=3]
 
 [node name="Main_Menu" type="MarginContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 0.0
@@ -27,10 +27,12 @@ margin_right = 512.0
 margin_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Backdrop/VBoxContainer"]
+margin_top = 254.0
 margin_right = 1024.0
-margin_bottom = 19.0
+margin_bottom = 273.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -40,14 +42,16 @@ margin_bottom = 19.0
 texture = ExtResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Backdrop/VBoxContainer"]
-margin_top = 23.0
+margin_top = 277.0
 margin_right = 1024.0
-margin_bottom = 91.0
+margin_bottom = 345.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Backdrop/VBoxContainer/HBoxContainer"]
-margin_right = 84.0
+margin_left = 448.0
+margin_right = 532.0
 margin_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -70,8 +74,8 @@ margin_bottom = 68.0
 text = "Options"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Backdrop/VBoxContainer/HBoxContainer"]
-margin_left = 88.0
-margin_right = 128.0
+margin_left = 536.0
+margin_right = 576.0
 margin_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
