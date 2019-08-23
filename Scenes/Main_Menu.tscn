@@ -30,31 +30,35 @@ grow_vertical = 2
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Backdrop/VBoxContainer"]
-margin_top = 254.0
+margin_top = 208.0
 margin_right = 1024.0
-margin_bottom = 273.0
+margin_bottom = 227.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameTitleLabel" type="TextureRect" parent="Backdrop/VBoxContainer/MarginContainer"]
+margin_top = -20.0
 margin_right = 1024.0
 margin_bottom = 19.0
 texture = ExtResource( 2 )
+stretch_mode = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Backdrop/VBoxContainer"]
-margin_top = 277.0
+margin_top = 231.0
 margin_right = 1024.0
-margin_bottom = 345.0
+margin_bottom = 391.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_constants/separation = 34
 alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="Backdrop/VBoxContainer/HBoxContainer"]
-margin_left = 448.0
-margin_right = 532.0
-margin_bottom = 68.0
+margin_left = 353.0
+margin_right = 437.0
+margin_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_constants/separation = 42
 
 [node name="NewGameButton" type="Button" parent="Backdrop/VBoxContainer/HBoxContainer/Buttons"]
 margin_right = 84.0
@@ -62,22 +66,22 @@ margin_bottom = 20.0
 text = "New Game"
 
 [node name="LoadGameButton" type="Button" parent="Backdrop/VBoxContainer/HBoxContainer/Buttons"]
-margin_top = 24.0
+margin_top = 62.0
 margin_right = 84.0
-margin_bottom = 44.0
+margin_bottom = 82.0
 text = "Load Game"
 
 [node name="OptionsButton" type="Button" parent="Backdrop/VBoxContainer/HBoxContainer/Buttons"]
-margin_top = 48.0
+margin_top = 124.0
 margin_right = 84.0
-margin_bottom = 68.0
+margin_bottom = 144.0
 text = "Options"
 
 [node name="DynamicInterfaceBackdrop" type="NinePatchRect" parent="Backdrop/VBoxContainer/HBoxContainer"]
-margin_left = 536.0
-margin_right = 576.0
-margin_bottom = 68.0
+margin_left = 471.0
+margin_right = 671.0
+margin_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 40, 40 )
+rect_min_size = Vector2( 200, 160 )
 texture = ExtResource( 3 )
