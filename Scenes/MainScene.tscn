@@ -10,8 +10,6 @@
 [ext_resource path="res://Scenes/Victory_interface.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Deafeat_interface.tscn" type="PackedScene" id=9]
 
-
-
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
 

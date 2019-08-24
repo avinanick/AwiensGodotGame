@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Materials/menu_backdrop.png" type="Texture" id=1]
 [ext_resource path="res://Materials/turret_label.png" type="Texture" id=2]
 [ext_resource path="res://Materials/background.png" type="Texture" id=3]
-
-
+[ext_resource path="res://Scenes/NewGameInterface.tscn" type="PackedScene" id=4]
 
 [node name="Main_Menu" type="MarginContainer"]
 margin_right = 1024.0
@@ -39,7 +38,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameTitleLabel" type="TextureRect" parent="Backdrop/VBoxContainer/MarginContainer"]
-margin_top = -20.0
 margin_right = 1024.0
 margin_bottom = 19.0
 texture = ExtResource( 2 )
@@ -87,3 +85,13 @@ grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 200, 160 )
 texture = ExtResource( 3 )
+
+[node name="NewGameInterface" parent="Backdrop/VBoxContainer/HBoxContainer/DynamicInterfaceBackdrop" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 20.0
+margin_right = 96.0
+margin_bottom = 180.0
