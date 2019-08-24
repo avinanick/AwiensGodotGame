@@ -4,6 +4,8 @@
 [ext_resource path="res://Materials/turret_label.png" type="Texture" id=2]
 [ext_resource path="res://Materials/background.png" type="Texture" id=3]
 
+
+
 [node name="Main_Menu" type="MarginContainer"]
 margin_right = 1024.0
 margin_bottom = 600.0

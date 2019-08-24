@@ -2,13 +2,15 @@
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/ProtoGun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Units/ProtoGun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/MissileSpawner.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/City.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Units/City.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Avatar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/MainOverlay.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Victory_interface.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Deafeat_interface.tscn" type="PackedScene" id=9]
+
+
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )

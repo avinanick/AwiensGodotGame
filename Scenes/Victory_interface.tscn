@@ -4,6 +4,8 @@
 [ext_resource path="res://Scripts/Buttons.gd" type="Script" id=2]
 [ext_resource path="res://Materials/background.png" type="Texture" id=3]
 
+
+
 [node name="Victory_interface" type="MarginContainer"]
 anchor_left = 0.5
 anchor_top = 0.5
