@@ -7,7 +7,7 @@ class_name Alien
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var point_value: int = 1
+export var point_value: int = 1
 onready var main_scene = get_node("/root/MainScene")
 
 # Called when the node enters the scene tree for the first time.

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/AlienShip.gd" type="Script" id=1]
+[ext_resource path="res://Models/Cube.mesh" type="ArrayMesh" id=2]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fly"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 45, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, 135, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 225, 0 ), Vector3( 0, 270, 0 ), Vector3( 0, 315, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="CylinderShape" id=3]
+radius = 1.1
+height = 1.8
+
+[node name="KinematicBody" type="KinematicBody"]
+transform = Transform( 1.91069e-015, -4.37114e-008, -1, -1, -4.37114e-008, 0, -4.37114e-008, 1, -4.37114e-008, 0, 0, 0 )
+script = ExtResource( 1 )
+health = 2
+max_health = 2
+point_value = 2
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.55068, 0, 0.834716, 0, 1, 0, -0.834716, 0, 0.55068, 0, 0, 0 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MeshInstance"]
+autoplay = "Fly"
+anims/Fly = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )
