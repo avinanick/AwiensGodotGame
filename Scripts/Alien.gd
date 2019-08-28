@@ -8,7 +8,9 @@ class_name Alien
 # var a = 2
 # var b = "text"
 export var point_value: int = 1
+export var speed: float = 5
 onready var main_scene = get_node("/root/MainScene")
+var alien_direction: Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

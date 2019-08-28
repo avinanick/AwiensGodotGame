@@ -8,7 +8,7 @@ export var x_target_range = 20
 export var z_target_range = 20
 export var spawn_period = 2
 
-var missile_scene = preload("res://Scenes/AlienMissile(PH).tscn")
+var missile_scene = preload("res://Scenes/Units/AlienMissile(PH).tscn")
 var timer = 0
 var main_scene
 

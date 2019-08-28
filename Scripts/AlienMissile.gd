@@ -2,7 +2,6 @@ extends Alien
 
 class_name AlienMissile
 
-export var speed = 5
 export var missile_damage = 3
 var missile_direction = Vector3()
 var timer = 60
@@ -14,6 +13,7 @@ var timer = 60
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	point_value = 1
+	speed = 5
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -5,6 +5,7 @@ extends Alien
 # var b = "text"
 var defense_destroyer: bool = false
 export var attack_range: float = 10
+export var turn_speed: float = 3
 onready var earthlings = get_tree().get_nodes_in_group("Earthlings")
 onready var city = get_node("/root/City")
 var current_target
@@ -14,8 +15,8 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	pass
 
 # Add a function that searches through the defender group for enemies in range
 # This function scans the earthlings group for valid targets, if this ship is a defense destroyer, all are valid,
@@ -36,7 +37,7 @@ func scan_for_targets():
 				return
 				
 # This function checks if the ship is currently headed toward the city, if not, then it will need to start turning
-func update_ship_direction():
+func update_ship_direction(delta):
 	if city:
 		# get the vector from the current position to the city, if we aren't pointed at the city, start turning
 		# the default rotation for the ship will be along the positive z-axis, which is a rotation of:
@@ -45,4 +46,13 @@ func update_ship_direction():
 		var direction_to_city: Vector3 = city.get_global_transform().origin - self.get_global_transform().origin
 		var facing_direction: Vector3 = Vector3(cos(self.rotation.y), 0, -1 * sin(self.rotation.y))
 		# Compare the direction to city with the facing direction to see if they are the same
-	pass
+		# This will use the dot product to get the angle, then the cross product to narrow down if it's to the left or
+		# right (if the angle isn't close to zero
+		var angle: float = acos(direction_to_city.normalized().dot(facing_direction.normalized()))
+		if angle > 0.001:
+			var direction: float = facing_direction.cross(direction_to_city).y
+			if direction > 0: # This case the turn should be to the right
+				self.rotation.y += turn_speed * delta
+			else:
+				self.rotation.y -= turn_speed * delta
+		alien_direction = Vector3(cos(self.rotation.y), 0, -1 * sin(self.rotation.y))
