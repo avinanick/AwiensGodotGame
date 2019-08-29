@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/MainOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Materials/background.png" type="Texture" id=2]
 [ext_resource path="res://Materials/turret_label.png" type="Texture" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
-
-
+[ext_resource path="res://Materials/radar_backdrop.png" type="Texture" id=5]
 
 [node name="MainOverlay" type="MarginContainer"]
 anchor_right = 1.0
@@ -92,3 +91,8 @@ anchor_bottom = 1.0
 margin_left = 14.0
 text = "10"
 valign = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 900, 500 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
