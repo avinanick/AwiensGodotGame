@@ -13,7 +13,6 @@ var timer = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	combatant = true
-	add_to_group("Earthlings")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

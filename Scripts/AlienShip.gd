@@ -6,16 +6,27 @@ extends Alien
 var defense_destroyer: bool = false
 export var attack_range: float = 10
 export var turn_speed: float = 3
+export var attack_damage: int = 1
+export var attack_interval: float = 2
+export var projectile = preload("res://Scenes/Bullet.tscn")
+export var projectile_speed = 100
 onready var earthlings = get_tree().get_nodes_in_group("Earthlings")
 onready var city = get_node("/root/City")
 var current_target
+var attack_cooldown = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	current_target = null
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if main_scene.game_state == main_scene.game_states.running:
+		scan_for_targets()
+		update_ship_direction(delta)
+		attack_target(delta)
+		move_and_slide(alien_direction * speed * delta)
 	pass
 
 # Add a function that searches through the defender group for enemies in range
@@ -35,6 +46,8 @@ func scan_for_targets():
 			if distance < attack_range:
 				current_target = earthling
 				return
+	# If we went through everything and non qualified, set current target to null
+	current_target = null
 				
 # This function checks if the ship is currently headed toward the city, if not, then it will need to start turning
 func update_ship_direction(delta):
@@ -56,3 +69,25 @@ func update_ship_direction(delta):
 			else:
 				self.rotation.y -= turn_speed * delta
 		alien_direction = Vector3(cos(self.rotation.y), 0, -1 * sin(self.rotation.y))
+		
+# Fires a projectile at the alien ship's target, if it has one and attack is not on cooldown
+func attack_target(delta):
+	attack_cooldown -= delta
+	if attack_cooldown <= 0:
+		if current_target != null:
+			attack_cooldown = attack_interval
+			var newBullet = projectile.instance()
+			newBullet.set_name("bullet")
+			main_scene.add_child(newBullet)
+			# Make sure the start location for the bullet is offset from the ship so it doesn't immediately collide with 
+			# it's own attack
+			var start_location: Vector3 = self.get_global_transform().origin
+			start_location.y -= 1
+			newBullet.translation = start_location
+			# Get the direction from the ship to the target and set that as the bullet direction, I don't really
+			# care about the bullet rotation for now
+			var directionVector: Vector3
+			directionVector = current_target.get_global_transform().origin - self.get_global_transform().origin
+			directionVector = directionVector.normalized()
+			newBullet.speed = projectile_speed
+			newBullet.bulletDirection = directionVector

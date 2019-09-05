@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/MainOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Materials/background.png" type="Texture" id=2]
 [ext_resource path="res://Materials/turret_label.png" type="Texture" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://Materials/radar_backdrop.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Radar.gd" type="Script" id=6]
 
 [node name="MainOverlay" type="MarginContainer"]
 anchor_right = 1.0
@@ -96,3 +97,4 @@ valign = 1
 position = Vector2( 900, 500 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 5 )
+script = ExtResource( 6 )

@@ -14,6 +14,7 @@ var alien_direction: Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("Aliens")
 	pass # Replace with function body.
 
 func take_damage(var amount: int):
