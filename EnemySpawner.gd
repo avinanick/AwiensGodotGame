@@ -25,4 +25,11 @@ func spawn_enemy(delta):
 	timer += delta
 	if timer >= spawn_period:
 		timer = 0
+		var spawn_angle_radians: float = rand_range(0,2 * PI)
+		var x_value_spawn: float = cos(spawn_angle_radians) * spawn_radius
+		var z_value_spawn: float = sin(spawn_angle_radians) * spawn_radius
+		var new_enemy = enemy_scene.instance()
+		main_scene.add_child(new_enemy)
+		new_enemy.translation = Vector3(x_value_spawn, self.transform.origin.y, z_value_spawn)
+		new_enemy.initialize_direction()
 	pass

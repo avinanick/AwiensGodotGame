@@ -25,3 +25,6 @@ func take_damage(var amount: int):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func initialize_direction():
+	pass

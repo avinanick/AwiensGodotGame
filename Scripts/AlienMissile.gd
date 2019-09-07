@@ -3,8 +3,10 @@ extends Alien
 class_name AlienMissile
 
 export var missile_damage = 3
-var missile_direction = Vector3()
+export var x_target_range = 20
+export var z_target_range = 20
 var timer = 60
+var possible_targets = []
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,6 +16,9 @@ var timer = 60
 func _ready():
 	point_value = 1
 	speed = 5
+	var earthlings = get_tree().get_nodes_in_group("Earthlings")
+	for earthling in earthlings:
+		possible_targets.append(earthling.get_global_transform().origin)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,11 +28,22 @@ func _process(delta):
 		if timer <= 0:
 			print("destroying missile")
 			self.queue_free()
-		# Not sure why but the missile isn't moving for some reason
-		var collision = move_and_collide(missile_direction * speed * delta)
+		var collision = move_and_collide(alien_direction * speed * delta)
 		if collision:
 			print("collision detected, destroying missile")
 			if collision.collider is Destructible:
 				print("damaging target")
 				collision.collider.take_damage(missile_damage)
 			self.queue_free()
+
+func initialize_direction():
+	# This will pick a random coordinate from the earthling positions and set that as the target direction
+	var spawn_pos = self.transform.origin
+	var target_pos = possible_targets[randi() % possible_targets.size()]
+	var direction_vector = Vector3(target_pos.x - spawn_pos.x, target_pos.y - spawn_pos.y,
+			target_pos.z - spawn_pos.z)
+	direction_vector = direction_vector.normalized()
+	var missile_rotation_radians = Vector3()
+	self.look_at(target_pos, Vector3(0,1,0))
+	self.alien_direction = direction_vector
+	pass

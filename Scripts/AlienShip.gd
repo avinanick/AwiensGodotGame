@@ -91,3 +91,11 @@ func attack_target(delta):
 			directionVector = directionVector.normalized()
 			newBullet.speed = projectile_speed
 			newBullet.bulletDirection = directionVector
+			
+func initialize_direction():
+	# This should find the direction to the city and start moving toward it
+	var spawn_pos: Vector3 = self.transform.origin
+	var direction_to_city: Vector3 = city.transform.origin - spawn_pos
+	self.look_at(city.transform.origin, Vector3(0,1,0))
+	self.alien_direction = Vector3(direction_to_city.x, 0, direction_to_city.z).normalized()
+	pass
