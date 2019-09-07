@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Units/ProtoGun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/MissileSpawner.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/EnemySpawner.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Units/City.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Avatar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/MainOverlay.tscn" type="PackedScene" id=7]
@@ -33,6 +33,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, 12 )
 [node name="MissileSpawner" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0 )
 script = ExtResource( 4 )
+spawn_period = 5.0
 
 [node name="City" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57173, 5.19992, 0 )

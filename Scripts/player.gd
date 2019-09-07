@@ -20,25 +20,25 @@ func _process(delta):
 	# move based on that
 	# Add some logic to each of these to check if the node exists first
 	if main_scene.game_state == main_scene.game_states.running:
-		if Input.is_action_just_pressed("select_one"):
+		if Input.is_action_just_pressed("select_north"):
 			# select the north gun (0,3.5,13) (0,0,0)
 			selected_turret = get_node("/root/MainScene/NorthGun")
 			translation = Vector3(0,2.2,13)
 			rotation_degrees = Vector3(0,180,0)
 			print("switch to turret one")
-		if Input.is_action_just_pressed("select_two"):
+		if Input.is_action_just_pressed("select_south"):
 			# select the south gun (0,3.5,-13)(0,180,0)
 			selected_turret = get_node("/root/MainScene/SouthGun")
 			translation = Vector3(0,2.2,-13)
 			rotation_degrees = Vector3(0,0,0)
 			print("switch to turret two")
-		if Input.is_action_just_pressed("select_three"):
+		if Input.is_action_just_pressed("select_east"):
 			# select the east gun (13,3.5,0)(0,-90,0)
 			selected_turret = get_node("/root/MainScene/EastGun")
 			translation = Vector3(13,2.2,0)
 			rotation_degrees = Vector3(0,-90,0)
 			print("switch to turret three")
-		if Input.is_action_just_pressed("select_four"):
+		if Input.is_action_just_pressed("select_west"):
 			# select the west gun (-13,3.5,0)(0,90,0)
 			selected_turret = get_node("/root/MainScene/WestGun")
 			translation = Vector3(-13,2.2,0)

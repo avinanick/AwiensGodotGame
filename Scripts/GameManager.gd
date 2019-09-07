@@ -16,6 +16,7 @@ enum game_states{
 # accuracy tracking and such
 # calculate points at the end using some mix of time and accuracy
 export var game_time: int = 100
+var level: int = 1
 var timer: float = 0
 var game_state = game_states.running
 var points: int = 0
@@ -34,7 +35,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	timer += delta
 	main_overlay.update_time(int(ceil(game_time - timer)))
 	if timer >= game_time and game_state == game_states.running:
 		game_state = game_states.victory
