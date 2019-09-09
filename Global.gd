@@ -1,6 +1,7 @@
 extends Node
 
-var current_level = 1
+var current_level: int = 1
+var total_points: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

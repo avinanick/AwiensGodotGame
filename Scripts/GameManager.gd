@@ -64,4 +64,6 @@ func score_points(amount: int):
 	points += amount
 		
 func next_level():
+	# This should update the global singleton with the number of points earned this round, increment the level, then bring
+	# up the menu for spending points. 
 	pass # STUB

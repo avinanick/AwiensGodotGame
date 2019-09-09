@@ -14,8 +14,8 @@ func _ready():
 
 
 func _on_Save_Quit_button_button_up():
-	# Modify this to save to a file and quit to the main menu
-	get_tree().reload_current_scene()
+	# Modify this to save to a file before I quit to the main menu
+	get_tree().change_scene("res://Scenes/Main_Menu.tscn")
 
 
 func _on_Continue_button_button_up():
