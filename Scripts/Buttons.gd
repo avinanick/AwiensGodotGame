@@ -13,7 +13,8 @@ func _ready():
 #	pass
 
 
-func _on_Retry_button_button_up():
+func _on_Save_Quit_button_button_up():
+	# Modify this to save to a file and quit to the main menu
 	get_tree().reload_current_scene()
 
 
@@ -22,4 +23,6 @@ func _on_Continue_button_button_up():
 
 
 func _on_Quit_button_button_up():
+	# Maybe do some work about deleting any save data related to this run
+	get_tree().change_scene("res://Scenes/Main_Menu.tscn")
 	pass # Replace with function body. This should load the main menu
