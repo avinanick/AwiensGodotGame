@@ -9,7 +9,7 @@ enum game_states{
 	paused,
 	victory,
 	defeat,
-	ended
+	transitioning
 }
 
 # This script should handle failing on city destruction and victory after some amount of time, likely also handle
@@ -23,8 +23,9 @@ var points: int = 0
 var hits: int = 0
 var shots: int = 0
 onready var victory_screen = get_node("Victory_interface")
-onready var defeat_screen = get_node("Deafeat_interface")
+onready var defeat_screen = get_node("Defeat_interface")
 onready var main_overlay = get_node("MainOverlay")
+onready var upgrade_interface = get_node("UpgradesInterface")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,6 +33,9 @@ func _ready():
 		victory_screen.visible = false
 	if defeat_screen:
 		defeat_screen.visible = false
+	if upgrade_interface:
+		upgrade_interface.visible = false
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -66,4 +70,12 @@ func score_points(amount: int):
 func next_level():
 	# This should update the global singleton with the number of points earned this round, increment the level, then bring
 	# up the menu for spending points. 
-	pass # STUB
+	victory_screen.visible = false
+	Global.total_points += points
+	Global.current_level += 1
+	self.level += 1
+	upgrade_interface.update_points(Global.total_points)
+	upgrade_interface.visible = true
+	
+func start_level():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
