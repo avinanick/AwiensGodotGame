@@ -4,8 +4,9 @@ class_name EnemySpawner
 
 # I'll likely modify these to spawn from the outer edges of a circle
 export var spawn_radius: float = 40
-export var spawn_period:float = 2
+export var base_spawn_period:float = 2
 export var level_difficulty: int = 1
+var spawn_period: float = 2
 
 var enemy_scene = preload("res://Scenes/Units/AlienMissile(PH).tscn")
 var timer = 0
@@ -35,4 +36,5 @@ func spawn_enemy(delta):
 		new_enemy.initialize_direction()
 
 func update_spawner_difficulty():
+	spawn_period = base_spawn_period / pow(1.2, level_difficulty - 1)
 	pass
