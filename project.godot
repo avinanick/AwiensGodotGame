@@ -20,6 +20,16 @@ _global_script_classes=[ {
 "path": "res://Scripts/AlienMissile.gd"
 }, {
 "base": "KinematicBody",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://Scripts/Bullet.gd"
+}, {
+"base": "MarginContainer",
+"class": "DefeatInterface",
+"language": "GDScript",
+"path": "res://Scripts/Deafeat_interface.gd"
+}, {
+"base": "KinematicBody",
 "class": "Destructible",
 "language": "GDScript",
 "path": "res://Scripts/Destructible.gd"
@@ -34,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GameManager.gd"
 }, {
+"base": "MarginContainer",
+"class": "MainOverlay",
+"language": "GDScript",
+"path": "res://Scripts/MainOverlay.gd"
+}, {
 "base": "Destructible",
 "class": "Structure",
 "language": "GDScript",
@@ -43,15 +58,30 @@ _global_script_classes=[ {
 "class": "Turret",
 "language": "GDScript",
 "path": "res://Scripts/Turret.gd"
+}, {
+"base": "MarginContainer",
+"class": "UpgradeInterface",
+"language": "GDScript",
+"path": "res://Scripts/UpgradesInterface.gd"
+}, {
+"base": "MarginContainer",
+"class": "VictoryInterface",
+"language": "GDScript",
+"path": "res://Scripts/Victory_interface.gd"
 } ]
 _global_script_class_icons={
 "Alien": "",
 "AlienMissile": "",
+"Bullet": "",
+"DefeatInterface": "",
 "Destructible": "",
 "EnemySpawner": "",
 "GameManager": "",
+"MainOverlay": "",
 "Structure": "",
-"Turret": ""
+"Turret": "",
+"UpgradeInterface": "",
+"VictoryInterface": ""
 }
 
 [application]

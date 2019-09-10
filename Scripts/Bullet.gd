@@ -1,14 +1,14 @@
 extends KinematicBody
-
+class_name Bullet
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 # rotation should be modified as well, by default this is alligned with the z-axis
-var speed = 0
-var bulletDirection = Vector3()
-var timer = 10
+var speed: float = 0
+var bulletDirection := Vector3()
+var timer: float = 10
 var bullet_damage: int = 1
-onready var main_scene = get_node("/root/MainScene")
+onready var main_scene = get_node("/root/MainScene") as GameManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,11 +22,9 @@ func _process(delta):
 			print("destroying bullet")
 			self.queue_free()
 		# moves the bullet and returns a collision if there is one
-		var collision = move_and_collide(bulletDirection * speed * delta)
+		var collision := move_and_collide(bulletDirection * speed * delta)
 		if collision:
 			print("collision detected, destroying bullet")
-			if collision.collider is Alien:
-				get_node("/root/MainScene").hits += 1
 			if collision.collider is Destructible:
 				print("damaging target")
 				collision.collider.take_damage(bullet_damage)

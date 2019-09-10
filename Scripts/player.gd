@@ -5,8 +5,8 @@ extends Spatial
 # var b = "text"
 var rotation_speed = 1
 onready var selected_turret = get_node("/root/MainScene/EastGun")
-onready var main_scene = get_node("/root/MainScene")
-onready var camera = get_node("Camera")
+onready var main_scene := get_node("/root/MainScene") as GameManager
+onready var camera := get_node("Camera") as Camera
 
 # Called when the node enters the scene tree for the first time.
 # This all seems to be working right now, I'd like to change up the way it looks to interact with turret objects better

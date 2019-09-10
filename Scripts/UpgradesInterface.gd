@@ -1,4 +1,5 @@
 extends MarginContainer
+class_name UpgradeInterface
 
 onready var points_label = get_node("OuterOutline/TotalPointsLabel")
 onready var main_scene = get_node("/root/MainScene")

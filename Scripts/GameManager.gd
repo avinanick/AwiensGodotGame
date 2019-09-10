@@ -20,10 +20,10 @@ var level: int = 1
 var timer: float = 0
 var game_state = game_states.running
 var points: int = 0
-onready var victory_screen = get_node("Victory_interface")
-onready var defeat_screen = get_node("Defeat_interface")
-onready var main_overlay = get_node("MainOverlay")
-onready var upgrade_interface = get_node("UpgradesInterface")
+onready var victory_screen := get_node("Victory_interface") as VictoryInterface
+onready var defeat_screen := get_node("Defeat_interface") as DefeatInterface
+onready var main_overlay := get_node("MainOverlay") as MainOverlay
+onready var upgrade_interface := get_node("UpgradesInterface") as UpgradeInterface
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -55,9 +55,14 @@ func _process(delta):
 				victory_screen.update_score(points)
 				victory_screen.visible = true
 		game_states.running:
+			# Sanity check
+			if victory_screen.visible:
+				victory_screen.visible = false
 			timer += delta
 			main_overlay.update_time(int(ceil(game_time - timer)))
 		game_states.transitioning:
+			if victory_screen.visible:
+				victory_screen.visible = false
 			timer += delta
 			# Stub for now until I plan out everything that will go into the transition
 			if timer >= 3:
@@ -81,8 +86,16 @@ func next_level():
 	upgrade_interface.visible = true
 	
 func start_level_preparation():
+	# This is called after the continue button in the upgrade interface is clicked. It should start a timed countdown
+	# until the enemy waves start spawning again (this is not currently shown to the player) and update the number
+	# and difficulty of the spawners. At some point I'd also like to bring up an interface that shows the new enemy
+	# types
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	upgrade_interface.visible = false
 	self.game_state = game_states.transitioning
 	self.points = 0
 	self.timer = 0
+	# At some point here I should add spawners on specific levels as well
+	var spawners = get_tree().get_nodes_in_group("Spawners")
+	for spawner in spawners:
+		spawner.update_spawner_difficulty()

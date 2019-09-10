@@ -5,10 +5,13 @@ class_name Turret
 # var a = 2
 # var b = "text"
 export var turret_type = "chaingun"
-export var fire_cooldown = 0.3
+export var fire_cooldown: float = 0.3
 export var projectile = preload("res://Scenes/Bullet.tscn")
-export var projectile_speed = 100
-var timer = 0
+export var projectile_speed: float = 100
+
+var timer: float = 0
+
+onready var main_scene := get_node("/root/MainScene") as GameManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,16 +25,15 @@ func _process(delta):
 func fire(start_location : Vector3, start_rotation : Vector3):
 	if is_alive and timer >= fire_cooldown:
 		timer = 0
-		var newBullet = projectile.instance()
+		var newBullet := projectile.instance() as Bullet
 		newBullet.set_name("bullet")
 		# so far I've only been able to find the bullet when I set it as a child of self, but then
 		# whenever I rotate the camera, the bullet goes with it
-		get_node("/root/MainScene").add_child(newBullet)
-		get_node("/root/MainScene").shots += 1
+		main_scene.add_child(newBullet)
 		newBullet.translation = start_location
 		# Get the camera's rotation (in radians) and use that to calculate the direction vector for the
 		# bullet
-		var directionVector = Vector3()
+		var directionVector := Vector3()
 		directionVector.x = (-1) * sin(start_rotation.y) * cos(start_rotation.x)
 		directionVector.y = sin(start_rotation.x)
 		directionVector.z = (-1) * cos(start_rotation.y) * cos(start_rotation.x)
