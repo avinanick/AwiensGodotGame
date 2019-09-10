@@ -15,4 +15,4 @@ func update_points(var amount: int):
 	points_label.text = str(amount)
 
 func _on_ContinueButton_button_up():
-	main_scene.start_level()
+	main_scene.start_level_preparation()

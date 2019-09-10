@@ -32,4 +32,6 @@ func spawn_enemy(delta):
 		main_scene.add_child(new_enemy)
 		new_enemy.translation = Vector3(x_value_spawn, self.transform.origin.y, z_value_spawn)
 		new_enemy.initialize_direction()
+
+func update_spawner_difficulty():
 	pass
