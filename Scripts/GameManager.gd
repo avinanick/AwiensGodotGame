@@ -20,10 +20,13 @@ var level: int = 1
 var timer: float = 0
 var game_state = game_states.running
 var points: int = 0
+
 onready var victory_screen := get_node("Victory_interface") as VictoryInterface
 onready var defeat_screen := get_node("Defeat_interface") as DefeatInterface
 onready var main_overlay := get_node("MainOverlay") as MainOverlay
 onready var upgrade_interface := get_node("UpgradesInterface") as UpgradeInterface
+
+var enemy_spawner = preload("res://Scenes/Units/EnemySpawner.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -95,7 +98,12 @@ func start_level_preparation():
 	self.game_state = game_states.transitioning
 	self.points = 0
 	self.timer = 0
-	# At some point here I should add spawners on specific levels as well
+	# Every 5 levels, add another spawner
+	if self.level % 5 == 0:
+		var new_spawner = enemy_spawner.instance() as EnemySpawner
+		new_spawner.translation = Vector3(0,30,0)
+		self.add_child(new_spawner)
 	var spawners = get_tree().get_nodes_in_group("Spawners")
 	for spawner in spawners:
+		spawner.randomize_spawn()
 		spawner.update_spawner_difficulty()
