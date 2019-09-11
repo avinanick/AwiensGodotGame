@@ -107,3 +107,20 @@ func start_level_preparation():
 	for spawner in spawners:
 		spawner.randomize_spawn()
 		spawner.update_spawner_difficulty()
+		
+func save_arcade_game():
+	var save_game := File.new()
+	save_game.open("user://arcadesave.save", File.WRITE)
+	var save_dict := {
+		"level" : Global.current_level,
+		"points" : Global.total_points
+	}
+	save_game.store_line(to_json(save_dict))
+	save_game.close()
+	
+func load_arcade_game():
+	var save_game := File.new()
+	if not save_game.file_exists("user://arcadesave.save"):
+		print("Error: save file not found")
+		return # Need some error handling here
+	pass
