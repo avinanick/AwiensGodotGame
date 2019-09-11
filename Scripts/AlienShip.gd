@@ -3,17 +3,17 @@ extends Alien
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var defense_destroyer: bool = false
+export var defense_destroyer: bool = false
 export var attack_range: float = 10
 export var turn_speed: float = 3
 export var attack_damage: int = 1
 export var attack_interval: float = 2
 export var projectile = preload("res://Scenes/Bullet.tscn")
-export var projectile_speed = 100
+export var projectile_speed: float = 100
 onready var earthlings = get_tree().get_nodes_in_group("Earthlings")
 onready var city = get_node("/root/City")
 var current_target
-var attack_cooldown = 0
+var attack_cooldown: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -76,7 +76,8 @@ func attack_target(delta):
 	if attack_cooldown <= 0:
 		if current_target != null:
 			attack_cooldown = attack_interval
-			var newBullet = projectile.instance()
+			var newBullet := projectile.instance() as Bullet
+			newBullet.bullet_damage = self.attack_damage
 			newBullet.set_name("bullet")
 			main_scene.add_child(newBullet)
 			# Make sure the start location for the bullet is offset from the ship so it doesn't immediately collide with 

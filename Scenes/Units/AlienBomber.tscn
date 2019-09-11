@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/AlienShip.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Units/AlienFighterBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Models/alien_bomber.glb" type="PackedScene" id=2]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Flight"
-
-[sub_resource type="Animation" id=2]
 resource_name = "Fly"
 length = 4.0
 loop = true
@@ -23,25 +20,26 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 45 ), Vector3( 0, 0, 90 ), Vector3( 0, 0, 135 ), Vector3( 0, 0, 180 ), Vector3( 0, 0, 225 ), Vector3( 0, 0, 270 ), Vector3( 0, 0, 315 ), Vector3( 0, 0, 360 ) ]
 }
 
-[sub_resource type="CylinderShape" id=3]
+[sub_resource type="SphereShape" id=2]
 
-[node name="AlienFighter" type="KinematicBody"]
+[node name="KinematicBody" type="KinematicBody"]
 script = ExtResource( 1 )
-health = 4
-max_health = 4
-point_value = 3
-speed = 7.0
-attack_range = 20.0
-turn_speed = 0.2
+health = 6
+max_health = 6
+point_value = 5
+speed = 2.5
+defense_destroyer = true
+turn_speed = 0.1
+attack_damage = 5
+attack_interval = 4.0
+projectile_speed = 50.0
 
 [node name="Scene Root" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.485208, -0.874399, 0, 0.874399, -0.485208, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -0.974889, 0.222691, 0, -0.222691, -0.974889, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Scene Root"]
 autoplay = "Fly"
-anims/Flight = SubResource( 1 )
-anims/Fly = SubResource( 2 )
+anims/Fly = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -6.11959e-008, -1, 0, 1.4, -4.37114e-008, 0, 0, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )

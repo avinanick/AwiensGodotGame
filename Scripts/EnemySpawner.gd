@@ -13,7 +13,8 @@ var timer = 0
 onready var main_scene = get_node("/root/MainScene")
 var enemy_scenes := [preload("res://Scenes/Units/AlienMissile(PH).tscn"),
 	preload("res://Scenes/Units/AlienDroneBody.tscn"),
-	preload("res://Scenes/Units/AlienFighter.tscn")]
+	preload("res://Scenes/Units/AlienFighter.tscn"),
+	preload("res://Scenes/Units/AlienBomber.tscn")]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

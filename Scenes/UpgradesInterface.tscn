@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/UpgradesInterface.gd" type="Script" id=1]
 [ext_resource path="res://Materials/menu_backdrop.png" type="Texture" id=2]
 [ext_resource path="res://Materials/background.png" type="Texture" id=3]
+[ext_resource path="res://Materials/TurretTypeLabel.png" type="Texture" id=4]
 
 [node name="UpgradesInterface" type="MarginContainer"]
 anchor_left = 0.5
@@ -48,29 +49,38 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer"]
-margin_bottom = 20.0
+margin_right = 100.0
+margin_bottom = 39.0
 
 [node name="TurretsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 19.0
+texture = ExtResource( 4 )
 
 [node name="TurretsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 4.0
-margin_bottom = 4.0
+margin_top = 23.0
+margin_right = 100.0
+margin_bottom = 23.0
 
 [node name="UpgradesLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 8.0
-margin_bottom = 8.0
+margin_top = 27.0
+margin_right = 100.0
+margin_bottom = 27.0
 
 [node name="UpgradesContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 12.0
-margin_bottom = 12.0
+margin_top = 31.0
+margin_right = 100.0
+margin_bottom = 31.0
 
 [node name="RepairsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 16.0
-margin_bottom = 16.0
+margin_top = 35.0
+margin_right = 100.0
+margin_bottom = 35.0
 
 [node name="RepairsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 20.0
-margin_bottom = 20.0
+margin_top = 39.0
+margin_right = 100.0
+margin_bottom = 39.0
 
 [node name="ContinueButton" type="Button" parent="OuterOutline"]
 anchor_left = 1.0
