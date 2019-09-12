@@ -15,4 +15,5 @@ func _ready():
 
 func _on_Arcade_Button_button_up():
 	Global.current_level = 1
+	Global.total_points = 0
 	get_tree().change_scene("res://Scenes/MainScene.tscn")

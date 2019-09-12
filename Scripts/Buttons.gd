@@ -2,7 +2,7 @@ extends VBoxContainer
 
 # This will be used to receive all the button signals and sent the appropriate info to the game manager
 # Using this intermediary instead of the game manager directly so this can be a self contained scene
-onready var main_scene = get_node("/root/MainScene")
+onready var main_scene := get_node("/root/MainScene") as GameManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +15,9 @@ func _ready():
 
 func _on_Save_Quit_button_button_up():
 	# Modify this to save to a file before I quit to the main menu
+	main_scene.save_arcade_game()
+	Global.current_level = 1
+	Global.total_points = 0
 	get_tree().change_scene("res://Scenes/Main_Menu.tscn")
 
 
@@ -24,5 +27,6 @@ func _on_Continue_button_button_up():
 
 func _on_Quit_button_button_up():
 	# Maybe do some work about deleting any save data related to this run
+	Global.current_level = 1
+	Global.total_points = 0
 	get_tree().change_scene("res://Scenes/Main_Menu.tscn")
-	pass # Replace with function body. This should load the main menu

@@ -29,6 +29,7 @@ onready var upgrade_interface := get_node("UpgradesInterface") as UpgradeInterfa
 var enemy_spawner = preload("res://Scenes/Units/EnemySpawner.tscn")
 
 # Called when the node enters the scene tree for the first time.
+# This should be modified to respond to load data
 func _ready():
 	if victory_screen:
 		victory_screen.visible = false
@@ -36,6 +37,8 @@ func _ready():
 		defeat_screen.visible = false
 	if upgrade_interface:
 		upgrade_interface.visible = false
+	if Global.current_level != 1:
+		print("Impliment level loading in game manager")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -109,6 +112,7 @@ func start_level_preparation():
 		spawner.update_spawner_difficulty()
 		
 func save_arcade_game():
+	# The corresponding load game is in the LoadGameInterface script
 	var save_game := File.new()
 	save_game.open("user://arcadesave.save", File.WRITE)
 	var save_dict := {
@@ -118,9 +122,4 @@ func save_arcade_game():
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
 	
-func load_arcade_game():
-	var save_game := File.new()
-	if not save_game.file_exists("user://arcadesave.save"):
-		print("Error: save file not found")
-		return # Need some error handling here
-	pass
+
