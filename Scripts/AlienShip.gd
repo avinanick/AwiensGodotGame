@@ -11,7 +11,7 @@ export var attack_interval: float = 2
 export var projectile = preload("res://Scenes/Bullet.tscn")
 export var projectile_speed: float = 100
 onready var earthlings = get_tree().get_nodes_in_group("Earthlings")
-onready var city = get_node("/root/City")
+onready var city = get_node("/root/MainScene/City")
 var current_target
 var attack_cooldown: float = 0
 
@@ -26,7 +26,7 @@ func _process(delta):
 		scan_for_targets()
 		update_ship_direction(delta)
 		attack_target(delta)
-		move_and_slide(alien_direction * speed * delta)
+		move_and_collide(alien_direction * speed * delta)
 	pass
 
 # Add a function that searches through the defender group for enemies in range
@@ -56,7 +56,7 @@ func update_ship_direction(delta):
 		# the default rotation for the ship will be along the positive z-axis, which is a rotation of:
 		#       x: 0, y: -90, z: 0
 		#       Only need to change the y rotation for direction, with + going toward +x-axis from here
-		var direction_to_city: Vector3 = city.get_global_transform().origin - self.get_global_transform().origin
+		var direction_to_city: Vector3 = get_city_location() - self.get_global_transform().origin
 		var facing_direction: Vector3 = Vector3(cos(self.rotation.y), 0, -1 * sin(self.rotation.y))
 		# Compare the direction to city with the facing direction to see if they are the same
 		# This will use the dot product to get the angle, then the cross product to narrow down if it's to the left or
@@ -68,7 +68,7 @@ func update_ship_direction(delta):
 				self.rotation.y += turn_speed * delta
 			else:
 				self.rotation.y -= turn_speed * delta
-		alien_direction = Vector3(cos(self.rotation.y), 0, -1 * sin(self.rotation.y))
+		alien_direction = Vector3(cos(self.rotation.y), 0, -1 * sin(self.rotation.y)).normalized()
 		
 # Fires a projectile at the alien ship's target, if it has one and attack is not on cooldown
 func attack_target(delta):
@@ -95,8 +95,13 @@ func attack_target(delta):
 			
 func initialize_direction():
 	# This should find the direction to the city and start moving toward it
+	# I don't like the magic number in alien direction, specifically the 30 in height, it's what I'm using
+	# as the standard alien height right now though
 	var spawn_pos: Vector3 = self.transform.origin
-	var direction_to_city: Vector3 = city.transform.origin - spawn_pos
-	self.look_at(city.transform.origin, Vector3(0,1,0))
+	var direction_to_city: Vector3 = get_city_location() - spawn_pos
+	self.look_at(get_city_location(), Vector3(0,1,0))
 	self.alien_direction = Vector3(direction_to_city.x, 0, direction_to_city.z).normalized()
-	pass
+	
+# This is just to make my life easier in above functions when getting direction to the city
+func get_city_location() -> Vector3:
+	return Vector3(city.transform.origin.x, self.transform.origin.y, city.transform.origin.z)

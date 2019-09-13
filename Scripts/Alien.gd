@@ -28,3 +28,7 @@ func take_damage(var amount: int):
 
 func initialize_direction():
 	pass
+	
+# Later this will be updated to do a sort of warp out
+func retreat():
+	self.queue_free()

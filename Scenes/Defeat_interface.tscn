@@ -82,7 +82,7 @@ script = ExtResource( 2 )
 margin_right = 60.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 60, 20 )
-text = "Retry"
+text = "Restart"
 
 [node name="Quit_Button" type="Button" parent="VBoxContainer/Defeat_Buttons"]
 margin_top = 24.0

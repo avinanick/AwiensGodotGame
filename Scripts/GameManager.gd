@@ -38,7 +38,15 @@ func _ready():
 	if upgrade_interface:
 		upgrade_interface.visible = false
 	if Global.current_level != 1:
-		print("Impliment level loading in game manager")
+		print("Loading level")
+		var spawners_to_create: int = Global.current_level / 5
+		for i in range(spawners_to_create):
+			var new_spawner = enemy_spawner.instance()
+			new_spawner.translation = Vector3(0,30,0)
+			self.add_child(new_spawner)
+			new_spawner.randomize_spawn()
+			new_spawner.update_spawner_difficulty()
+			# This should also start the unit warning and countdown till start
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -72,6 +80,7 @@ func _process(delta):
 			timer += delta
 			# Stub for now until I plan out everything that will go into the transition
 			if timer >= 3:
+				timer = 0
 				self.game_state = self.game_states.running
 			
 # Used to increment points when destroying an alien

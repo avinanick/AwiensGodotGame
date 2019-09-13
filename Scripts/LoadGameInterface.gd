@@ -23,8 +23,10 @@ func _on_Arcade_Button_button_up():
 	save_game.open("user://arcadesave.save", File.READ)
 	while not save_game.eof_reached():
 		var current_line = parse_json(save_game.get_line())
-		Global.current_level = current_line["level"]
-		Global.total_points = current_line["points"]
+		# sanity check, as for some reason this is reading an extra line at the end
+		if current_line:
+			Global.current_level = current_line["level"] as int
+			Global.total_points = current_line["points"] as int
 	# and finally, load the actual arcade scene
 	get_tree().change_scene("res://Scenes/MainScene.tscn")
 
