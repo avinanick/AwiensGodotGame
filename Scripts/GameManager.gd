@@ -68,6 +68,9 @@ func _process(delta):
 				print("we won! Points: " + str(points))
 				victory_screen.update_score(points)
 				victory_screen.visible = true
+				var aliens = get_tree().get_nodes_in_group("Aliens")
+				for alien in aliens:
+					alien.retreat()
 		game_states.running:
 			# Sanity check
 			if victory_screen.visible:

@@ -31,3 +31,5 @@ func _process(delta):
 			self.queue_free()
 
 # Add code to self destruct after some amount of time or on collision
+func handle_impact(var collision: KinematicCollision):
+	pass

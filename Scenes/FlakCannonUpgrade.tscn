@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://FlakCannonUpgrade.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="FlakCannonUpgrade" type="MarginContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="FlakCannonGroup" type="VBoxContainer" parent="."]
+margin_right = 76.0
+margin_bottom = 88.0
+
+[node name="FlakCannonButton" type="Button" parent="FlakCannonGroup"]
+margin_right = 76.0
+margin_bottom = 70.0
+icon = ExtResource( 2 )
+
+[node name="FlakCannonLabel" type="Label" parent="FlakCannonGroup"]
+margin_top = 74.0
+margin_right = 76.0
+margin_bottom = 88.0
+text = "Flak Cannon"
+align = 1
+valign = 1
+[connection signal="button_up" from="FlakCannonGroup/FlakCannonButton" to="." method="_on_FlakCannonButton_button_up"]

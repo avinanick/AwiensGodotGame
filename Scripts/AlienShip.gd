@@ -26,6 +26,7 @@ func _process(delta):
 		scan_for_targets()
 		update_ship_direction(delta)
 		attack_target(delta)
+		# For some reason move_and_slide isn't moving at all, that would be my preferred behavior though
 		move_and_collide(alien_direction * speed * delta)
 	pass
 
