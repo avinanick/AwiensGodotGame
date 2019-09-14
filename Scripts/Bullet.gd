@@ -20,5 +20,5 @@ func handle_impact(var collision: KinematicCollision):
 		if collision.collider is Destructible:
 			print("damaging target")
 			collision.collider.take_damage(bullet_damage)
-		self.queue_free()
+		destroy_self()
 	pass

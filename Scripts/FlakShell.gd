@@ -1,8 +1,6 @@
 extends Projectile
 
 export var burst_projectile = preload("res://Scenes/Bullet.tscn")
-export var burst_amount: int = 30
-export var burst_start_radius: float = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,8 +14,19 @@ func _ready():
 # that fire outward in a sphere shape
 # Using an algorithm from https://www.cmu.edu/biolphys/deserno/pdf/sphere_equi.pdf
 func handle_impact(var collision: KinematicCollision):
+	destroy_self()
+	pass
+	
+func destroy_self():
 	var burst_shrapnel_vectors = Global.burst_shrapnel_vectors
 	for shrapnel_vector in burst_shrapnel_vectors:
-		var new_shrapnel = burst_projectile.instance()
+		var new_shrapnel := burst_projectile.instance() as Projectile
+		var spawn_position: Vector3 = self.get_global_transform().origin + shrapnel_vector
+		new_shrapnel.translation = spawn_position
+		var direction_vector: Vector3 = spawn_position - self.get_global_transform().origin
+		new_shrapnel.bulletDirection = direction_vector.normalized()
+		new_shrapnel.bullet_damage = 1
+		new_shrapnel.speed = 80
+		new_shrapnel.timer = 0.1
+		main_scene.add_chile(new_shrapnel)
 	self.queue_free()
-	pass

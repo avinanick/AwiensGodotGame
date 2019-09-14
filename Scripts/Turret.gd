@@ -7,7 +7,6 @@ class_name Turret
 export var turret_type = "chaingun"
 export var fire_cooldown: float = 0.3
 export var projectile = preload("res://Scenes/Bullet.tscn")
-export var projectile_speed: float = 100
 
 var timer: float = 0
 
@@ -38,7 +37,6 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 		directionVector.y = sin(start_rotation.x)
 		directionVector.z = (-1) * cos(start_rotation.y) * cos(start_rotation.x)
 		directionVector = directionVector.normalized()
-		newBullet.speed = projectile_speed
 		newBullet.rotation = start_rotation
 		newBullet.bulletDirection = directionVector
 	if not is_alive:

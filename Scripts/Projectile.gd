@@ -2,10 +2,10 @@ extends KinematicBody
 class_name Projectile
 
 
-var speed: float = 0
+export var speed: float = 0
 var bulletDirection := Vector3()
-var timer: float = 10
-var bullet_damage: int = 1
+export var timer: float = 10
+export var bullet_damage: int = 1
 onready var main_scene = get_node("/root/MainScene")
 
 # Called when the node enters the scene tree for the first time.
@@ -18,11 +18,15 @@ func _process(delta):
 		timer -= delta
 		if timer <= 0:
 			print("destroying projectile")
-			self.queue_free()
+			destroy_self()
 		# moves the bullet and returns a collision if there is one
 		handle_impact(move_and_collide(bulletDirection * speed * delta))
 
 # This should be overwritten in anything inheriting from this class
 func handle_impact(var collision: KinematicCollision):
-	self.queue_free()
+	destroy_self()
 	pass
+	
+# This function can be overridden to play effects or 
+func destroy_self():
+	self.queue_free()
