@@ -28,5 +28,5 @@ func destroy_self():
 		new_shrapnel.bullet_damage = 1
 		new_shrapnel.speed = 80
 		new_shrapnel.timer = 0.1
-		main_scene.add_chile(new_shrapnel)
+		main_scene.add_child(new_shrapnel)
 	self.queue_free()

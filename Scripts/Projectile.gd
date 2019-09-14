@@ -6,7 +6,7 @@ export var speed: float = 0
 var bulletDirection := Vector3()
 export var timer: float = 10
 export var bullet_damage: int = 1
-onready var main_scene = get_node("/root/MainScene")
+onready var main_scene = get_node("/root/MainScene") as GameManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -4,6 +4,7 @@
 [ext_resource path="res://Scenes/Units/TallBuilding.tscn" type="PackedScene" id=2]
 
 [node name="City" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02867, 0, -2.08 )
 script = ExtResource( 1 )
 
 [node name="Building" parent="." instance=ExtResource( 2 )]
