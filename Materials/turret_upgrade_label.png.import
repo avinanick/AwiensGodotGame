@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TurretTypeLabel.png-260ba880d65678f2f5fe7acc5ea0f2df.stex"
+path="res://.import/turret_upgrade_label.png-b63da3ed68069842ca04a6e160dae09c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Materials/TurretTypeLabel.png"
-dest_files=[ "res://.import/TurretTypeLabel.png-260ba880d65678f2f5fe7acc5ea0f2df.stex" ]
+source_file="res://Materials/turret_upgrade_label.png"
+dest_files=[ "res://.import/turret_upgrade_label.png-b63da3ed68069842ca04a6e160dae09c.stex" ]
 
 [params]
 

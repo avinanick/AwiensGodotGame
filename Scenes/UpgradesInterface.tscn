@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/UpgradesInterface.gd" type="Script" id=1]
 [ext_resource path="res://Materials/menu_backdrop.png" type="Texture" id=2]
 [ext_resource path="res://Materials/background.png" type="Texture" id=3]
-[ext_resource path="res://Materials/TurretTypeLabel.png" type="Texture" id=4]
+[ext_resource path="res://Materials/turret_upgrade_label.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/FlakCannonUpgrade.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/ShapedBlastUpgrade.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/RepairUpgradeButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Materials/upgrades_upgrade_label.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/ShapedBlastUpgrade.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Materials/repair_upgrade_label.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/RepairUpgradeButton.tscn" type="PackedScene" id=9]
 
 [node name="UpgradesInterface" type="MarginContainer"]
 anchor_left = 0.5
@@ -54,48 +56,51 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer"]
-margin_right = 100.0
-margin_bottom = 303.0
+margin_right = 121.0
+margin_bottom = 389.0
+custom_constants/separation = 11
 
 [node name="TurretsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_right = 100.0
-margin_bottom = 19.0
+margin_right = 121.0
+margin_bottom = 20.0
 texture = ExtResource( 4 )
 
 [node name="TurretsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 23.0
-margin_right = 100.0
-margin_bottom = 111.0
+margin_top = 31.0
+margin_right = 121.0
+margin_bottom = 119.0
 
 [node name="FlakCannonUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer" instance=ExtResource( 5 )]
 margin_right = 76.0
 margin_bottom = 88.0
 
 [node name="UpgradesLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 115.0
-margin_right = 100.0
-margin_bottom = 115.0
+margin_top = 130.0
+margin_right = 121.0
+margin_bottom = 155.0
+texture = ExtResource( 6 )
 
 [node name="UpgradesContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 119.0
-margin_right = 100.0
-margin_bottom = 207.0
+margin_top = 166.0
+margin_right = 121.0
+margin_bottom = 254.0
 
-[node name="ShapedBlastUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 6 )]
+[node name="ShapedBlastUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 7 )]
 margin_right = 82.0
 margin_bottom = 88.0
 
 [node name="RepairsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 211.0
-margin_right = 100.0
-margin_bottom = 211.0
+margin_top = 265.0
+margin_right = 121.0
+margin_bottom = 290.0
+texture = ExtResource( 8 )
 
 [node name="RepairsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_top = 215.0
-margin_right = 100.0
-margin_bottom = 303.0
+margin_top = 301.0
+margin_right = 121.0
+margin_bottom = 389.0
 
-[node name="RepairUpgradeButton" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer" instance=ExtResource( 7 )]
+[node name="RepairUpgradeButton" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer" instance=ExtResource( 9 )]
 margin_right = 76.0
 margin_bottom = 88.0
 

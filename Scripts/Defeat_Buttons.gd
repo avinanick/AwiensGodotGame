@@ -14,14 +14,12 @@ func _ready():
 
 
 func _on_Retry_Button_button_up():
-	Global.current_level = 1
-	Global.total_points = 0
+	Global.reset_all()
 	get_tree().reload_current_scene()
 
 
 func _on_Quit_Button_button_up():
 	var dir = Directory.new()
 	dir.remove("user://arcadesave.save")
-	Global.current_level = 1
-	Global.total_points = 0
+	Global.reset_all()
 	get_tree().change_scene("res://Scenes/Main_Menu.tscn")
