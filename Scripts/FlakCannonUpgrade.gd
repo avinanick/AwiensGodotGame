@@ -1,8 +1,6 @@
 extends MarginContainer
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var cost: int = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,4 +12,6 @@ func _ready():
 
 
 func _on_FlakCannonButton_button_up():
-	pass # Replace with function body.
+	if Global.total_points >= cost:
+		Global.total_points -= cost
+		Global.unlocks["flak_cannon"] = true

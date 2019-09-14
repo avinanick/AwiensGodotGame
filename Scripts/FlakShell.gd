@@ -16,16 +16,8 @@ func _ready():
 # that fire outward in a sphere shape
 # Using an algorithm from https://www.cmu.edu/biolphys/deserno/pdf/sphere_equi.pdf
 func handle_impact(var collision: KinematicCollision):
-	var a: float = 4 * PI * burst_start_radius * burst_start_radius / burst_amount
-	var d: float = sqrt(a)
-	var m_theta: float = round(PI / d)
-	var d_theta: float = PI / m_theta
-	var d_phi: float = a / d_theta
-	for m in range(m_theta as int):
-		var theta: float = PI * (m + 0.5) / m_theta
-		var m_phi: float = round(2 * PI * sin(theta) / d_phi)
-		for n in range(m_phi as int):
-			var phi: float = 2 * PI * n / m_phi
-			# Create point using theta, phi, and radius values
+	var burst_shrapnel_vectors = Global.burst_shrapnel_vectors
+	for shrapnel_vector in burst_shrapnel_vectors:
+		var new_shrapnel = burst_projectile.instance()
 	self.queue_free()
 	pass
