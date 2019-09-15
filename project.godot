@@ -65,6 +65,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/Turret.gd"
 }, {
 "base": "MarginContainer",
+"class": "TurretChanger",
+"language": "GDScript",
+"path": "res://Scenes/TurretChangeInterface.gd"
+}, {
+"base": "MarginContainer",
 "class": "UpgradeInterface",
 "language": "GDScript",
 "path": "res://Scripts/UpgradesInterface.gd"
@@ -86,6 +91,7 @@ _global_script_class_icons={
 "Projectile": "",
 "Structure": "",
 "Turret": "",
+"TurretChanger": "",
 "UpgradeInterface": "",
 "VictoryInterface": ""
 }

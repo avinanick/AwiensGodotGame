@@ -20,11 +20,13 @@ var level: int = 1
 var timer: float = 0
 var game_state = game_states.running
 var points: int = 0
+var selected_turret: Turret
 
 onready var victory_screen := get_node("Victory_interface") as VictoryInterface
 onready var defeat_screen := get_node("Defeat_interface") as DefeatInterface
 onready var main_overlay := get_node("MainOverlay") as MainOverlay
 onready var upgrade_interface := get_node("UpgradesInterface") as UpgradeInterface
+onready var turret_change_interface := get_node("TurretChangeInterface") as TurretChanger
 
 var enemy_spawner = preload("res://Scenes/Units/EnemySpawner.tscn")
 
@@ -37,6 +39,8 @@ func _ready():
 		defeat_screen.visible = false
 	if upgrade_interface:
 		upgrade_interface.visible = false
+	if turret_change_interface:
+		turret_change_interface.visible = false
 	if Global.current_level != 1:
 		print("Loading level")
 		var spawners_to_create: int = Global.current_level / 5
@@ -80,6 +84,8 @@ func _process(delta):
 		game_states.transitioning:
 			if victory_screen.visible:
 				victory_screen.visible = false
+			if selected_turret and not turret_change_interface.visible:
+				turret_change_interface.visible = true
 			timer += delta
 			# Stub for now until I plan out everything that will go into the transition
 			if timer >= 3:
@@ -133,5 +139,19 @@ func save_arcade_game():
 	}
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
+	
+func replace_turret(var new_type):
+	if selected_turret:
+		var health: int = selected_turret.health
+		var position: Vector3 = selected_turret.get_global_transform().origin
+		var node_name: String = selected_turret.get_name()
+		selected_turret.queue_free()
+		var new_turret = new_type.instance() as Turret
+		new_turret.translation = position
+		new_turret.health = health
+		new_turret.set_name(node_name)
+		self.add_child(new_turret)
+		turret_change_interface.visible = false
+		selected_turret = null
 	
 

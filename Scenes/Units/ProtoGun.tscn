@@ -17,3 +17,4 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 2 )
+[connection signal="input_event" from="." to="." method="_on_ProtoGun_input_event"]
