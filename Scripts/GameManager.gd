@@ -87,8 +87,8 @@ func _process(delta):
 			if selected_turret and not turret_change_interface.visible:
 				turret_change_interface.visible = true
 			timer += delta
-			# Stub for now until I plan out everything that will go into the transition
-			if timer >= 3:
+			# For now I'll give the player 10 seconds to change up their turret layout
+			if timer >= 10:
 				timer = 0
 				self.game_state = self.game_states.running
 			
