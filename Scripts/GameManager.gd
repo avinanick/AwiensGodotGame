@@ -20,13 +20,15 @@ var level: int = 1
 var timer: float = 0
 var game_state = game_states.running
 var points: int = 0
-var selected_turret: Turret
+var selected_turret
 
 onready var victory_screen := get_node("Victory_interface") as VictoryInterface
 onready var defeat_screen := get_node("Defeat_interface") as DefeatInterface
 onready var main_overlay := get_node("MainOverlay") as MainOverlay
 onready var upgrade_interface := get_node("UpgradesInterface") as UpgradeInterface
-onready var turret_change_interface := get_node("TurretChangeInterface") as TurretChanger
+onready var turret_change_interface := get_node("TurretChangeInterface")
+onready var player_avatar := get_node("Avatar")
+onready var turret_placement_camera := get_node("TurretPlacementCamera") as Camera
 
 var enemy_spawner = preload("res://Scenes/Units/EnemySpawner.tscn")
 
@@ -90,6 +92,7 @@ func _process(delta):
 			# For now I'll give the player 10 seconds to change up their turret layout
 			if timer >= 10:
 				timer = 0
+				player_avatar.activate_camera()
 				self.game_state = self.game_states.running
 			
 # Used to increment points when destroying an alien
@@ -115,6 +118,7 @@ func start_level_preparation():
 	# and difficulty of the spawners. At some point I'd also like to bring up an interface that shows the new enemy
 	# types
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	turret_placement_camera.make_current()
 	upgrade_interface.visible = false
 	self.game_state = game_states.transitioning
 	self.points = 0
@@ -146,7 +150,7 @@ func replace_turret(var new_type):
 		var position: Vector3 = selected_turret.get_global_transform().origin
 		var node_name: String = selected_turret.get_name()
 		selected_turret.queue_free()
-		var new_turret = new_type.instance() as Turret
+		var new_turret = new_type.instance()
 		new_turret.translation = position
 		new_turret.health = health
 		new_turret.set_name(node_name)

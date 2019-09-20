@@ -1,11 +1,12 @@
 extends Spatial
+class_name Player
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 var rotation_speed = 1
 onready var selected_turret = get_node("/root/MainScene/EastGun")
-onready var main_scene := get_node("/root/MainScene") as GameManager
+onready var main_scene := get_node("/root/MainScene")
 onready var camera := get_node("Camera") as Camera
 
 # Called when the node enters the scene tree for the first time.
@@ -54,7 +55,7 @@ func _process(delta):
 	
 # This I think should be called whenever an input event happens
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and main_scene.game_state == main_scene.game_states.running:
 		# I'm using this method instead of the rotations so that I can keep the z rotation at 0
 		# plus gives inverted controls, minus gives regular
 		if rotation_degrees.x - (event.relative.y * rotation_speed) > 90:
@@ -64,3 +65,7 @@ func _input(event):
 		else:
 			rotation_degrees.x -= (event.relative.y * rotation_speed)
 		rotation_degrees.y -= (event.relative.x * rotation_speed)
+		
+func activate_camera():
+	camera.make_current()
+	

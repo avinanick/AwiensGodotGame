@@ -10,7 +10,7 @@ export var projectile = preload("res://Scenes/Bullet.tscn")
 
 var timer: float = 0
 
-onready var main_scene := get_node("/root/MainScene") as GameManager
+onready var main_scene := get_node("/root/MainScene")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,7 +24,7 @@ func _process(delta):
 func fire(start_location : Vector3, start_rotation : Vector3):
 	if is_alive and timer >= fire_cooldown:
 		timer = 0
-		var newBullet := projectile.instance() as Bullet
+		var newBullet = projectile.instance()
 		newBullet.set_name("bullet")
 		# so far I've only been able to find the bullet when I set it as a child of self, but then
 		# whenever I rotate the camera, the bullet goes with it
