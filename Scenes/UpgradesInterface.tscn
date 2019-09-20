@@ -128,4 +128,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "PH"
 align = 1
 valign = 1
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/FlakCannonUpgrade" to="." method="_on_FlakCannonUpgrade_upgrade_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/ShapedBlastUpgrade" to="." method="_on_ShapedBlastUpgrade_upgrade_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer/RepairUpgradeButton" to="." method="_on_RepairUpgradeButton_upgrade_purchased"]
 [connection signal="button_up" from="OuterOutline/ContinueButton" to="." method="_on_ContinueButton_button_up"]

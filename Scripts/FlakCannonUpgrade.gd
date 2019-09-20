@@ -1,6 +1,8 @@
 extends MarginContainer
 
 export var cost: int = 30
+onready var interface_handler
+signal upgrade_purchased
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,3 +17,6 @@ func _on_FlakCannonButton_button_up():
 	if Global.total_points >= cost:
 		Global.total_points -= cost
 		Global.unlocks["flak_cannon"] = true
+		emit_signal("upgrade_purchased", cost)
+	else:
+		print("Handle Error: Not enough points")

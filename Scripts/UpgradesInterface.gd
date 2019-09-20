@@ -17,3 +17,16 @@ func update_points(var amount: int):
 
 func _on_ContinueButton_button_up():
 	main_scene.start_level_preparation()
+
+
+# I have a different function for each node for the same signal, that doesn't seem efficient.
+func _on_FlakCannonUpgrade_upgrade_purchased(var cost: int):
+	update_points(Global.total_points)
+
+
+func _on_ShapedBlastUpgrade_upgrade_purchased(var cost: int):
+	update_points(Global.total_points)
+
+
+func _on_RepairUpgradeButton_upgrade_purchased(var cost: int):
+	update_points(Global.total_points)

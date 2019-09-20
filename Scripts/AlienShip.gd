@@ -1,10 +1,11 @@
 extends Alien
+class_name AlienShip
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 export var defense_destroyer: bool = false
-export var attack_range: float = 10
+export var attack_range: float = 40
 export var turn_speed: float = 3
 export var attack_damage: int = 1
 export var attack_interval: float = 2
@@ -77,7 +78,7 @@ func attack_target(delta):
 	if attack_cooldown <= 0:
 		if current_target != null:
 			attack_cooldown = attack_interval
-			var newBullet := projectile.instance() as Bullet
+			var newBullet = projectile.instance()
 			newBullet.bullet_damage = self.attack_damage
 			newBullet.set_name("bullet")
 			main_scene.add_child(newBullet)

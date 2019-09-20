@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Deafeat_interface.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Defeat_interface.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Defeat_Buttons.gd" type="Script" id=2]
+
 
 [node name="Defeat_interface" type="MarginContainer"]
 anchor_left = 0.5

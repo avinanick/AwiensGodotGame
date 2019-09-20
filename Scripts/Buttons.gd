@@ -2,7 +2,7 @@ extends VBoxContainer
 
 # This will be used to receive all the button signals and sent the appropriate info to the game manager
 # Using this intermediary instead of the game manager directly so this can be a self contained scene
-onready var main_scene := get_node("/root/MainScene") as GameManager
+onready var main_scene := get_node("/root/MainScene")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

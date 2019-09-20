@@ -23,7 +23,7 @@ var points: int = 0
 var selected_turret
 
 onready var victory_screen := get_node("Victory_interface") as VictoryInterface
-onready var defeat_screen := get_node("Defeat_interface") as DefeatInterface
+onready var defeat_screen := get_node("Defeat_interface")
 onready var main_overlay := get_node("MainOverlay") as MainOverlay
 onready var upgrade_interface := get_node("UpgradesInterface") as UpgradeInterface
 onready var turret_change_interface := get_node("TurretChangeInterface")
@@ -93,6 +93,7 @@ func _process(delta):
 			if timer >= 10:
 				timer = 0
 				player_avatar.activate_camera()
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 				self.game_state = self.game_states.running
 			
 # Used to increment points when destroying an alien
@@ -117,7 +118,6 @@ func start_level_preparation():
 	# until the enemy waves start spawning again (this is not currently shown to the player) and update the number
 	# and difficulty of the spawners. At some point I'd also like to bring up an interface that shows the new enemy
 	# types
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	turret_placement_camera.make_current()
 	upgrade_interface.visible = false
 	self.game_state = game_states.transitioning

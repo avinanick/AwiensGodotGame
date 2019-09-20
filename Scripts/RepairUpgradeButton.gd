@@ -1,8 +1,7 @@
 extends MarginContainer
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export var cost: int = 5
+signal upgrade_purchased
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +13,11 @@ func _ready():
 
 
 func _on_RepairButton_button_up():
-	var earthlings = get_tree().get_nodes_in_group("Earthlings")
-	for earthling in earthlings:
-		earthling.health = earthling.max_health
-	pass # Replace with function body.
+	if Global.total_points >= cost:
+		Global.total_points -= cost
+		emit_signal("upgrade_purchased", cost)
+		var earthlings = get_tree().get_nodes_in_group("Earthlings")
+		for earthling in earthlings:
+			earthling.health = earthling.max_health
+	else:
+		print("Handle Error: not enough points")
