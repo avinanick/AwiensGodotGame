@@ -52,6 +52,7 @@ func _ready():
 			self.add_child(new_spawner)
 			new_spawner.randomize_spawn()
 			new_spawner.update_spawner_difficulty()
+		get_node("MissileSpawner").randomize_spawn()
 			# This should also start the unit warning and countdown till start
 	
 

@@ -15,6 +15,7 @@ var enemy_scenes := [preload("res://Scenes/Units/AlienMissile(PH).tscn"),
 	preload("res://Scenes/Units/AlienDroneBody.tscn"),
 	preload("res://Scenes/Units/AlienFighter.tscn"),
 	preload("res://Scenes/Units/AlienBomber.tscn")]
+var base_spawn_periods := [2, 3, 4, 5]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,8 +43,10 @@ func spawn_enemy(delta):
 
 func update_spawner_difficulty():
 	spawn_period = base_spawn_period / pow(1.2, level_difficulty - 1)
-	pass
 
 func randomize_spawn():
-	enemy_scene = enemy_scenes[randi() % enemy_scenes.size()]
+	var index: int = randi() % enemy_scenes.size()
+	enemy_scene = enemy_scenes[index]
+	base_spawn_period = base_spawn_periods[index]
+	update_spawner_difficulty()
 	pass
