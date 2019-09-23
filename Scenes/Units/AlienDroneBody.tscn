@@ -30,7 +30,6 @@ script = ExtResource( 1 )
 health = 2
 max_health = 2
 point_value = 2
-attack_range = 20.0
 turn_speed = 0.2
 
 [node name="MeshInstance" type="MeshInstance" parent="."]

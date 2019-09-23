@@ -31,7 +31,6 @@ health = 4
 max_health = 4
 point_value = 3
 speed = 7.0
-attack_range = 20.0
 turn_speed = 0.2
 
 [node name="Scene Root" parent="." instance=ExtResource( 2 )]

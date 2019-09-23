@@ -18,5 +18,6 @@ func _on_FlakCannonButton_button_up():
 		Global.total_points -= cost
 		Global.unlocks["flak_cannon"] = true
 		emit_signal("upgrade_purchased", cost)
+		get_node("FlakCannonGroup/FlakCannonButton").disabled = true
 	else:
 		print("Handle Error: Not enough points")

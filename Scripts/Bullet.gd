@@ -18,7 +18,8 @@ func handle_impact(var collision: KinematicCollision):
 	if collision:
 		print("collision detected, destroying bullet")
 		if collision.collider is Destructible:
-			print("damaging target")
-			collision.collider.take_damage(bullet_damage)
+			if (collision.collider.is_in_group("Earthlings") and damages_earthlings) or (collision.collider.is_in_group("Aliens") and damages_aliens):
+				print("damaging target")
+				collision.collider.take_damage(bullet_damage)
 		destroy_self()
 	pass

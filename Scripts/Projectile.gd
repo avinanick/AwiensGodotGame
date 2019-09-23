@@ -7,6 +7,8 @@ var bulletDirection := Vector3()
 export var timer: float = 10
 export var bullet_damage: int = 1
 onready var main_scene = get_node("/root/MainScene")
+var damages_earthlings: bool = true
+var damages_aliens: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
