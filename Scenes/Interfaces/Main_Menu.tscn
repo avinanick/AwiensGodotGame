@@ -1,10 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Interfaces/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Materials/menu_backdrop.png" type="Texture" id=2]
 [ext_resource path="res://Materials/turret_label.png" type="Texture" id=3]
 [ext_resource path="res://Materials/background.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/SubMenuContainer.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Interfaces/SubMenuContainer.gd" type="Script" id=5]
+
+
 
 [node name="Main_Menu" type="MarginContainer"]
 margin_right = 1024.0

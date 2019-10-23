@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/AlienShip.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Units/AlienShip.gd" type="Script" id=1]
 [ext_resource path="res://Models/alien_bomber.glb" type="PackedScene" id=2]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fly"

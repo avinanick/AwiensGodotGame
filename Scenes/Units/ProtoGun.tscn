@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Turret.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Weapons/Turret.gd" type="Script" id=1]
+
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.886275, 0.815686, 0.0784314, 1 )

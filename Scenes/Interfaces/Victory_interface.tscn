@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/Victory_interface.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Buttons.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Interfaces/Victory_interface.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Interfaces/Buttons.gd" type="Script" id=2]
 [ext_resource path="res://Materials/background.png" type="Texture" id=3]
+
+
 
 [node name="Victory_interface" type="MarginContainer"]
 anchor_left = 0.5
