@@ -22,10 +22,10 @@ var game_state = game_states.running
 var points: int = 0
 var selected_turret
 
-onready var victory_screen := get_node("Victory_interface") as VictoryInterface
+onready var victory_screen := get_node("Victory_interface")
 onready var defeat_screen := get_node("Defeat_interface")
-onready var main_overlay := get_node("MainOverlay") as MainOverlay
-onready var upgrade_interface := get_node("UpgradesInterface") as UpgradeInterface
+onready var main_overlay := get_node("MainOverlay")
+onready var upgrade_interface := get_node("UpgradesInterface")
 onready var turret_change_interface := get_node("TurretChangeInterface")
 onready var player_avatar := get_node("Avatar")
 onready var turret_placement_camera := get_node("TurretPlacementCamera") as Camera
@@ -126,7 +126,7 @@ func start_level_preparation():
 	self.timer = 0
 	# Every 5 levels, add another spawner
 	if self.level % 5 == 0:
-		var new_spawner = enemy_spawner.instance() as EnemySpawner
+		var new_spawner = enemy_spawner.instance()
 		new_spawner.translation = Vector3(0,30,0)
 		self.add_child(new_spawner)
 	var spawners = get_tree().get_nodes_in_group("Spawners")
