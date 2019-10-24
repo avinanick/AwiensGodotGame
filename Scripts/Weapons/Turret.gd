@@ -12,7 +12,7 @@ onready var main_scene := get_node("/root/MainScene")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	combatant = true
+	self.combatant = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -41,5 +41,6 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 		print("attempting to fire dead turret")
 
 func _on_ProtoGun_input_event(camera, event, click_position, click_normal, shape_idx):
-	main_scene.selected_turret = self
+	if event.is_action_just_presed("fire_one") and main_scene.game_state == main_scene.game_states.transitioning:
+		main_scene.selected_turret = self
 	

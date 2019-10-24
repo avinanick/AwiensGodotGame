@@ -1,6 +1,6 @@
 extends MarginContainer
 
-export var cost: int = 20
+export var cost: int = 15
 signal upgrade_purchased
 
 # Called when the node enters the scene tree for the first time.

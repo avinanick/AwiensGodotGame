@@ -86,11 +86,13 @@ func _process(delta):
 			if victory_screen.visible:
 				victory_screen.visible = false
 			if selected_turret and not turret_change_interface.visible:
+				turret_change_interface.update_buttons()
 				turret_change_interface.visible = true
 			timer += delta
 			# For now I'll give the player 10 seconds to change up their turret layout
 			if timer >= 10:
 				timer = 0
+				turret_change_interface.visible = false
 				player_avatar.activate_camera()
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 				self.game_state = self.game_states.running
@@ -148,12 +150,14 @@ func replace_turret(var new_type):
 		var health: int = selected_turret.health
 		var position: Vector3 = selected_turret.get_global_transform().origin
 		var node_name: String = selected_turret.get_name()
+		var gun_position: String = selected_turret.position
 		selected_turret.queue_free()
 		var new_turret = new_type.instance()
 		new_turret.translation = position
 		new_turret.health = health
 		new_turret.set_name(node_name)
-		self.add_child(new_turret)
+		new_turret.position = gun_position
+		get_node("Guns").add_child(new_turret)
 		turret_change_interface.visible = false
 		selected_turret = null
 	

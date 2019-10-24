@@ -1,6 +1,6 @@
 extends MarginContainer
 
-export var cost: int = 30
+export var cost: int = 10
 onready var interface_handler
 signal upgrade_purchased
 
