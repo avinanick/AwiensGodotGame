@@ -3,19 +3,22 @@
 [ext_resource path="res://Scripts/Units/City.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Units/TallBuilding.tscn" type="PackedScene" id=2]
 
-
 [node name="City" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02867, 0, -2.08 )
 script = ExtResource( 1 )
 
 [node name="Building" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 0.711617, 0, 0, 0, 1, 0, -1.0936, 0 )
+position = "1"
 
 [node name="Building3" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 0.888742, 0, 0, 0, 1, 4.04415, -0.3878, 4.13268 )
+position = "3"
 
 [node name="Building4" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94215, 0, 0 )
+position = "4"
 
 [node name="Building2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, -0.488355, 0, 0, 0, 1, 0, -2.28039, 4.09722 )
+position = "2"

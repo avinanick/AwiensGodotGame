@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/MainOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Materials/background.png" type="Texture" id=2]
 [ext_resource path="res://Materials/turret_label.png" type="Texture" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
-[ext_resource path="res://Materials/radar_backdrop.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/Interfaces/Radar.gd" type="Script" id=6]
+[ext_resource path="res://Materials/health_background.png" type="Texture" id=4]
+[ext_resource path="res://Materials/health_filler.png" type="Texture" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://Materials/radar_backdrop.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Interfaces/Radar.gd" type="Script" id=8]
 
 [node name="MainOverlay" type="MarginContainer"]
 anchor_right = 1.0
@@ -19,29 +21,30 @@ script = ExtResource( 1 )
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 1004.0
-margin_bottom = 60.0
+margin_right = 1036.0
+margin_bottom = 104.0
 
 [node name="Bars" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 850.0
-margin_bottom = 40.0
+margin_right = 882.0
+margin_bottom = 84.0
 size_flags_horizontal = 3
 
-[node name="Bar" type="HBoxContainer" parent="HBoxContainer/Bars"]
-margin_right = 850.0
+[node name="TurretBar" type="HBoxContainer" parent="HBoxContainer/Bars"]
+margin_right = 882.0
 margin_bottom = 40.0
 
-[node name="Count" type="MarginContainer" parent="HBoxContainer/Bars/Bar"]
+[node name="Count" type="MarginContainer" parent="HBoxContainer/Bars/TurretBar"]
 margin_right = 130.0
 margin_bottom = 40.0
 
-[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/Bar/Count"]
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/TurretBar/Count"]
+editor/display_folded = true
 margin_right = 130.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 130, 40 )
 texture = ExtResource( 2 )
 
-[node name="TurretTitle" type="TextureRect" parent="HBoxContainer/Bars/Bar/Count/Background"]
+[node name="TurretTitle" type="TextureRect" parent="HBoxContainer/Bars/TurretBar/Count/Background"]
 margin_left = 15.0
 margin_right = 118.0
 margin_bottom = 40.0
@@ -49,7 +52,7 @@ rect_scale = Vector2( 0.7, 0.8 )
 texture = ExtResource( 3 )
 stretch_mode = 4
 
-[node name="TurretNumber" type="Label" parent="HBoxContainer/Bars/Bar/Count/Background"]
+[node name="TurretNumber" type="Label" parent="HBoxContainer/Bars/TurretBar/Count/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -20.0
@@ -57,23 +60,115 @@ text = "10"
 align = 2
 valign = 1
 
-[node name="TurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/Bar"]
+[node name="NorthTurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/TurretBar"]
 margin_left = 134.0
-margin_right = 135.0
+margin_right = 318.0
+margin_bottom = 40.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+
+[node name="EastTurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/TurretBar"]
+margin_left = 322.0
+margin_right = 506.0
+margin_bottom = 40.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+
+[node name="SouthTurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/TurretBar"]
+margin_left = 510.0
+margin_right = 694.0
+margin_bottom = 40.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+
+[node name="WestTurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/TurretBar"]
+margin_left = 698.0
+margin_right = 882.0
+margin_bottom = 40.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+
+[node name="CityBar" type="HBoxContainer" parent="HBoxContainer/Bars"]
+margin_top = 44.0
+margin_right = 882.0
+margin_bottom = 84.0
+
+[node name="Count" type="MarginContainer" parent="HBoxContainer/Bars/CityBar"]
+editor/display_folded = true
+margin_right = 130.0
 margin_bottom = 40.0
 
-[node name="Counters" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 854.0
-margin_right = 984.0
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/CityBar/Count"]
+editor/display_folded = true
+margin_right = 130.0
 margin_bottom = 40.0
+rect_min_size = Vector2( 130, 40 )
+texture = ExtResource( 2 )
+
+[node name="TurretTitle" type="TextureRect" parent="HBoxContainer/Bars/CityBar/Count/Background"]
+margin_left = 15.0
+margin_right = 118.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.7, 0.8 )
+texture = ExtResource( 3 )
+stretch_mode = 4
+
+[node name="TurretNumber" type="Label" parent="HBoxContainer/Bars/CityBar/Count/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -20.0
+text = "10"
+align = 2
+valign = 1
+
+[node name="BuildlingHealth1" type="TextureProgress" parent="HBoxContainer/Bars/CityBar"]
+margin_left = 134.0
+margin_right = 318.0
+margin_bottom = 40.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+
+[node name="BuildingHealth2" type="TextureProgress" parent="HBoxContainer/Bars/CityBar"]
+margin_left = 322.0
+margin_right = 506.0
+margin_bottom = 40.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+
+[node name="BuildingHealth3" type="TextureProgress" parent="HBoxContainer/Bars/CityBar"]
+margin_left = 510.0
+margin_right = 694.0
+margin_bottom = 40.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+
+[node name="BuildingHealth4" type="TextureProgress" parent="HBoxContainer/Bars/CityBar"]
+margin_left = 698.0
+margin_right = 882.0
+margin_bottom = 40.0
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
+
+[node name="Counters" type="HBoxContainer" parent="HBoxContainer"]
+margin_left = 886.0
+margin_right = 1016.0
+margin_bottom = 84.0
 
 [node name="Counter" type="MarginContainer" parent="HBoxContainer/Counters"]
 margin_right = 130.0
-margin_bottom = 40.0
+margin_bottom = 84.0
 
 [node name="Background" type="NinePatchRect" parent="HBoxContainer/Counters/Counter"]
 margin_right = 130.0
-margin_bottom = 40.0
+margin_bottom = 84.0
 rect_min_size = Vector2( 130, 40 )
 texture = ExtResource( 2 )
 
@@ -83,7 +178,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -64.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 stretch_mode = 4
 
 [node name="TimerLabel" type="Label" parent="HBoxContainer/Counters/Counter/Background"]
@@ -96,5 +191,5 @@ valign = 1
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 900, 500 )
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 7 )
+script = ExtResource( 8 )

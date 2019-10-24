@@ -5,7 +5,7 @@ class_name Player
 # var a = 2
 # var b = "text"
 var rotation_speed = 1
-onready var selected_turret = get_node("/root/MainScene/EastGun")
+onready var selected_turret = get_node("/root/MainScene/Guns/EastGun")
 onready var main_scene := get_node("/root/MainScene")
 onready var camera := get_node("Camera") as Camera
 
@@ -23,25 +23,25 @@ func _process(delta):
 	if main_scene.game_state == main_scene.game_states.running:
 		if Input.is_action_just_pressed("select_north"):
 			# select the north gun (0,3.5,13) (0,0,0)
-			selected_turret = get_node("/root/MainScene/NorthGun")
+			selected_turret = get_node("/root/MainScene/Guns/NorthGun")
 			translation = Vector3(0,2.2,13)
 			rotation_degrees = Vector3(0,180,0)
 			print("switch to turret one")
 		if Input.is_action_just_pressed("select_south"):
 			# select the south gun (0,3.5,-13)(0,180,0)
-			selected_turret = get_node("/root/MainScene/SouthGun")
+			selected_turret = get_node("/root/MainScene/Guns/SouthGun")
 			translation = Vector3(0,2.2,-13)
 			rotation_degrees = Vector3(0,0,0)
 			print("switch to turret two")
 		if Input.is_action_just_pressed("select_east"):
 			# select the east gun (13,3.5,0)(0,-90,0)
-			selected_turret = get_node("/root/MainScene/EastGun")
+			selected_turret = get_node("/root/MainScene/Guns/EastGun")
 			translation = Vector3(13,2.2,0)
 			rotation_degrees = Vector3(0,-90,0)
 			print("switch to turret three")
 		if Input.is_action_just_pressed("select_west"):
 			# select the west gun (-13,3.5,0)(0,90,0)
-			selected_turret = get_node("/root/MainScene/WestGun")
+			selected_turret = get_node("/root/MainScene/Guns/WestGun")
 			translation = Vector3(-13,2.2,0)
 			rotation_degrees = Vector3(0,90,0)
 			print("switch to turret four")
