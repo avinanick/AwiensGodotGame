@@ -1,9 +1,7 @@
 extends Structure
 
 class_name Turret
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 export var turret_type = "chaingun"
 export var fire_cooldown: float = 0.3
 export var projectile = preload("res://Scenes/Bullet.tscn")

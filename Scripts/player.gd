@@ -1,9 +1,6 @@
 extends Spatial
 class_name Player
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var rotation_speed = 1
 onready var selected_turret = get_node("/root/MainScene/Guns/EastGun")
 onready var main_scene := get_node("/root/MainScene")

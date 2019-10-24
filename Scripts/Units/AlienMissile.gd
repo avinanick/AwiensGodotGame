@@ -2,15 +2,11 @@ extends Alien
 
 class_name AlienMissile
 
-export var missile_damage = 3
-export var x_target_range = 20
-export var z_target_range = 20
-var timer = 60
+export var missile_damage: int = 2
+export var x_target_range: float = 20
+export var z_target_range: float = 20
+var timer: float = 60
 var possible_targets = []
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +15,6 @@ func _ready():
 	var earthlings = get_tree().get_nodes_in_group("Earthlings")
 	for earthling in earthlings:
 		possible_targets.append(earthling.get_global_transform().origin)
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -46,4 +41,3 @@ func initialize_direction():
 	var missile_rotation_radians = Vector3()
 	self.look_at(target_pos, Vector3(0,1,0))
 	self.alien_direction = direction_vector
-	pass

@@ -1,8 +1,6 @@
 extends Projectile
 class_name Bullet
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 # rotation should be modified as well, by default this is alligned with the z-axis
 
 # Called when the node enters the scene tree for the first time.
@@ -22,4 +20,3 @@ func handle_impact(var collision: KinematicCollision):
 				print("damaging target")
 				collision.collider.take_damage(bullet_damage)
 		destroy_self()
-	pass

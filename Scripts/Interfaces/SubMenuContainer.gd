@@ -1,8 +1,5 @@
 extends VBoxContainer
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var new_game_menu = preload("res://Scenes/Interfaces/NewGameInterface.tscn")
 var load_game_menu = preload("res://Scenes/Interfaces/LoadGameInterface.tscn")
 

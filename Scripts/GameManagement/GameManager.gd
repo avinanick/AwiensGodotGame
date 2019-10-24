@@ -1,9 +1,7 @@
 extends Node
 
 class_name GameManager
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text" 
+
 enum game_states{
 	running,
 	paused,
@@ -15,7 +13,7 @@ enum game_states{
 # This script should handle failing on city destruction and victory after some amount of time, likely also handle
 # accuracy tracking and such
 # calculate points at the end using some mix of time and accuracy
-export var game_time: int = 100
+export var game_time: int = 30
 var level: int = 1
 var timer: float = 0
 var game_state = game_states.running

@@ -15,7 +15,6 @@ func _ready():
 # Using an algorithm from https://www.cmu.edu/biolphys/deserno/pdf/sphere_equi.pdf
 func handle_impact(var collision: KinematicCollision):
 	destroy_self()
-	pass
 	
 func destroy_self():
 	var burst_shrapnel_vectors = Global.burst_shrapnel_vectors

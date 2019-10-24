@@ -12,10 +12,6 @@ var missile_scene = preload("res://Scenes/Units/AlienMissile(PH).tscn")
 var timer = 0
 var main_scene
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	main_scene = get_node("/root/MainScene")

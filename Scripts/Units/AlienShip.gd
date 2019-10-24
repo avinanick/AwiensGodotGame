@@ -1,9 +1,6 @@
 extends Alien
 class_name AlienShip
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 export var defense_destroyer: bool = false
 export var attack_range: float = 40
 export var turn_speed: float = 3
@@ -19,7 +16,6 @@ var attack_cooldown: float = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_target = null
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,7 +25,6 @@ func _process(delta):
 		attack_target(delta)
 		# For some reason move_and_slide isn't moving at all, that would be my preferred behavior though
 		move_and_collide(alien_direction * speed * delta)
-	pass
 
 # Add a function that searches through the defender group for enemies in range
 # This function scans the earthlings group for valid targets, if this ship is a defense destroyer, all are valid,

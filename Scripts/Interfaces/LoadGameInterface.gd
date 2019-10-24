@@ -1,4 +1,4 @@
-extends "res://Scripts/NewArcadeGame.gd"
+extends "res://Scripts/Interfaces/NewArcadeGame.gd"
 
 # Declare member variables here. Examples:
 # var a = 2

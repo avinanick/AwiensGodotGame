@@ -21,13 +21,11 @@ var base_spawn_periods := [2, 3, 4, 5]
 func _ready():
 	randomize()
 	add_to_group("Spawners")
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if main_scene.game_state == main_scene.game_states.running:
 		spawn_enemy(delta)
-	pass
 
 func spawn_enemy(delta):
 	timer += delta
@@ -49,4 +47,3 @@ func randomize_spawn():
 	enemy_scene = enemy_scenes[index]
 	base_spawn_period = base_spawn_periods[index]
 	update_spawner_difficulty()
-	pass

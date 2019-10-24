@@ -1,8 +1,6 @@
 extends MarginContainer
 class_name MainOverlay
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 onready var time_left_label = get_node("HBoxContainer/Counters/Counter/Background/TimerLabel")
 
 # Called when the node enters the scene tree for the first time.

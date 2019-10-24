@@ -1,8 +1,5 @@
 extends Sprite
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 onready var ally_indicator = preload("res://Scenes/Interfaces/AllyRadarIndicator.tscn")
 onready var enemy_indicator = preload("res://Scenes/Interfaces/EnemyRadarIndicator.tscn")
 # I need to get a better way to populate these with the map size, then turn it into a radius
@@ -14,12 +11,10 @@ var shrink_factor: float
 func _ready():
 	var self_size = self.texture.get_size()
 	shrink_factor = x_map_range / self_size.x
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	populate_indicators()
-	pass
 
 func clear_indicators():
 	var indicators = get_tree().get_nodes_in_group("Indicators")
@@ -47,4 +42,3 @@ func populate_indicators():
 		self.add_child(new_enemy)
 		new_enemy.add_to_group("Indicators")
 		new_enemy.position = indicator_position
-	pass #STUB
