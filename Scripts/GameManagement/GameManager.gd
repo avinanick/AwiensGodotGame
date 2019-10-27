@@ -158,6 +158,7 @@ func replace_turret(var new_type):
 		new_turret.set_name(node_name)
 		new_turret.position = gun_position
 		get_node("Guns").add_child(new_turret)
+		print(new_turret.get_path())
 		turret_change_interface.visible = false
 		selected_turret = null
 	

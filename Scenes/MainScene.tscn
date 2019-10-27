@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/GameManagement/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Environments/Ground.tscn" type="PackedScene" id=2]
@@ -11,13 +11,6 @@
 [ext_resource path="res://Scenes/Interfaces/UpgradesInterface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Interfaces/TurretChangeInterface.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Units/ProtoGun.tscn" type="PackedScene" id=11]
-
-[sub_resource type="ParticlesMaterial" id=1]
-angular_velocity = 0.0
-angle = 115.9
-color = Color( 0.905882, 0.0627451, 0.0627451, 1 )
-anim_speed = 19.13
-anim_speed_random = 0.15
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -72,13 +65,3 @@ position = "North"
 [node name="SouthGun" parent="Guns" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, 12 )
 position = "South"
-
-[node name="Particles" type="Particles" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1163, 9.57084, 0 )
-emitting = false
-amount = 11
-lifetime = 5.24
-explosiveness = 1.0
-randomness = 1.0
-visibility_aabb = AABB( -3.77328, -4, -4, 7.54656, 8, 8 )
-process_material = SubResource( 1 )
