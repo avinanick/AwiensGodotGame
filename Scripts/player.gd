@@ -44,6 +44,7 @@ func _process(delta):
 			print("switch to turret four")
 		if Input.is_action_pressed("fire_one"):
 			# I need to modify this to accurately spawn at the camera position instead of base player
+			# Getting an issue here when I replace the selected turret in the selection screen.
 			if selected_turret:
 				selected_turret.fire(camera.get_global_transform().origin, rotation) 
 		if Input.is_action_just_pressed("pause"):
