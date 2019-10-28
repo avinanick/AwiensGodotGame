@@ -46,7 +46,7 @@ func _process(delta):
 			# I need to modify this to accurately spawn at the camera position instead of base player
 			# Getting an issue here when I replace the selected turret in the selection screen.
 			# This is because selected turret is still true for a short while after a node is freed
-			if selected_turret:
+			if selected_turret and is_instance_valid(selected_turret):
 				selected_turret.fire(camera.get_global_transform().origin, rotation) 
 		if Input.is_action_just_pressed("pause"):
 			var manager = get_node("/root/MainScene")
