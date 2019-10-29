@@ -15,7 +15,7 @@ func _ready():
 func _on_ShapedBlastButton_button_up():
 	if Global.total_points >= cost:
 		Global.total_points -= cost
-		Global.unlocks["shaped_blast"] = true
+		Global.upgrade_unlocks["shaped_blast"] = true
 		emit_signal("upgrade_purchased", cost)
 		get_node("ShapedBlastGroup/ShapedBlastButton").disabled = true
 	else:

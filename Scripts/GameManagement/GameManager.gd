@@ -145,7 +145,8 @@ func save_arcade_game():
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
 	
-func replace_turret(var new_type):
+func replace_turret(var new_type, var turret_position: String):
+	var selected_turret = get_node(str("./Guns/", turret_position, "Gun"))
 	if selected_turret:
 		var health: int = selected_turret.health
 		var position: Vector3 = selected_turret.get_global_transform().origin

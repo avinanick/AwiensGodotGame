@@ -2,8 +2,10 @@ extends Node
 
 var current_level: int = 1
 var total_points: int = 0
-var unlocks := {
-	"flak_cannon": false,
+var turret_unlocks := {
+	"Flak Cannon": false
+}
+var upgrade_unlocks := {
 	"shaped_blast": false
 }
 
@@ -41,5 +43,8 @@ func reset_all():
 	reset_unlocks()
 
 func reset_unlocks():
-	for key in unlocks:
-		unlocks[key] = false
+	for key in turret_unlocks:
+		turret_unlocks[key] = false
+	for key in upgrade_unlocks:
+		upgrade_unlocks[key] = false
+	

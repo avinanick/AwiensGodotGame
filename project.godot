@@ -77,7 +77,7 @@ _global_script_classes=[ {
 "base": "MarginContainer",
 "class": "TurretChanger",
 "language": "GDScript",
-"path": "res://Scenes/Interfaces/TurretChangeInterface.gd"
+"path": "res://Scripts/Interfaces/TurretChangeInterface.gd"
 }, {
 "base": "MarginContainer",
 "class": "UpgradeInterface",
