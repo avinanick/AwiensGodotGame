@@ -19,3 +19,7 @@ func turret_selected(var turret_type: String, var turret_location: String):
 			main_scene.replace_turret(chaingun_scene, turret_location)
 		"Flak Cannon":
 			main_scene.replace_turret(flak_cannon_scene, turret_location)
+
+
+func _on_ContinueButton_button_up():
+	main_scene.start_level_preparation()

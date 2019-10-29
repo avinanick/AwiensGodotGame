@@ -30,3 +30,9 @@ func _on_ShapedBlastUpgrade_upgrade_purchased(var cost: int):
 
 func _on_RepairUpgradeButton_upgrade_purchased(var cost: int):
 	update_points(Global.total_points)
+
+
+func _on_EditTurretsButton_button_up():
+	var replace_interface = get_node("../TurretReplaceInterface")
+	replace_interface.visible = true
+	self.visible = false

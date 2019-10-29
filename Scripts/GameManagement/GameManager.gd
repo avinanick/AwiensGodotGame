@@ -18,13 +18,12 @@ var level: int = 1
 var timer: float = 0
 var game_state = game_states.running
 var points: int = 0
-var selected_turret
 
 onready var victory_screen := get_node("Victory_interface")
 onready var defeat_screen := get_node("Defeat_interface")
 onready var main_overlay := get_node("MainOverlay")
 onready var upgrade_interface := get_node("UpgradesInterface")
-onready var turret_change_interface := get_node("TurretChangeInterface")
+onready var turret_replace_interface := get_node("TurretReplaceInterface")
 onready var player_avatar := get_node("Avatar")
 onready var turret_placement_camera := get_node("TurretPlacementCamera") as Camera
 
@@ -39,8 +38,8 @@ func _ready():
 		defeat_screen.visible = false
 	if upgrade_interface:
 		upgrade_interface.visible = false
-	if turret_change_interface:
-		turret_change_interface.visible = false
+	if turret_replace_interface:
+		turret_replace_interface.visible = false
 	if Global.current_level != 1:
 		print("Loading level")
 		var spawners_to_create: int = Global.current_level / 5
@@ -85,15 +84,10 @@ func _process(delta):
 		game_states.transitioning:
 			if victory_screen.visible:
 				victory_screen.visible = false
-			if selected_turret and not turret_change_interface.visible:
-				turret_change_interface.update_buttons()
-				turret_change_interface.visible = true
 			timer += delta
 			# For now I'll give the player 10 seconds to change up their turret layout
-			if timer >= 10:
+			if timer >= 3:
 				timer = 0
-				turret_change_interface.visible = false
-				player_avatar.activate_camera()
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 				self.game_state = self.game_states.running
 			
@@ -119,7 +113,6 @@ func start_level_preparation():
 	# until the enemy waves start spawning again (this is not currently shown to the player) and update the number
 	# and difficulty of the spawners. At some point I'd also like to bring up an interface that shows the new enemy
 	# types
-	turret_placement_camera.make_current()
 	upgrade_interface.visible = false
 	self.game_state = game_states.transitioning
 	self.points = 0
@@ -152,7 +145,7 @@ func replace_turret(var new_type, var turret_position: String):
 		var position: Vector3 = selected_turret.get_global_transform().origin
 		var node_name: String = selected_turret.get_name()
 		var gun_position: String = selected_turret.position
-		selected_turret.queue_free()
+		selected_turret.queue_free() # Will this maybe cause issues? perhaps it should be free instead
 		var new_turret = new_type.instance()
 		new_turret.translation = position
 		new_turret.health = health
@@ -160,7 +153,5 @@ func replace_turret(var new_type, var turret_position: String):
 		new_turret.position = gun_position
 		get_node("Guns").add_child(new_turret)
 		print(new_turret.get_path())
-		turret_change_interface.visible = false
-		selected_turret = null
 	
 

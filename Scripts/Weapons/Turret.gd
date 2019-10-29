@@ -39,8 +39,4 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 		newBullet.bulletDirection = directionVector
 	if not is_alive:
 		print("attempting to fire dead turret")
-
-func _on_ProtoGun_input_event(camera, event, click_position, click_normal, shape_idx):
-	if event.is_action_pressed("fire_one") and main_scene.game_state == main_scene.game_states.transitioning:
-		main_scene.selected_turret = self
 	

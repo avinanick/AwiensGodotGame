@@ -115,3 +115,4 @@ margin_right = 864.0
 margin_bottom = 20.0
 text = "Continue"
 [connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
+[connection signal="button_up" from="Panel/TitleElementSeparator/ContinueButtonLayout/ContinueButton" to="." method="_on_ContinueButton_button_up"]

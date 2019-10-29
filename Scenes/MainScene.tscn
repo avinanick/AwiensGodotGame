@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Interfaces/Victory_interface.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Interfaces/Defeat_interface.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Interfaces/UpgradesInterface.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Interfaces/TurretChangeInterface.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Interfaces/TurretReplaceInterface.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Units/ProtoGun.tscn" type="PackedScene" id=11]
 
 [node name="MainScene" type="Spatial"]
@@ -41,10 +41,10 @@ margin_bottom = 58.0
 
 [node name="UpgradesInterface" parent="." instance=ExtResource( 9 )]
 
+[node name="TurretReplaceInterface" parent="." instance=ExtResource( 10 )]
+
 [node name="TurretPlacementCamera" type="Camera" parent="."]
 transform = Transform( -1, -8.74228e-008, -3.82137e-015, 0, -4.37114e-008, 1, -8.74228e-008, 1, 4.37114e-008, 0, 27.3397, 0 )
-
-[node name="TurretChangeInterface" parent="." instance=ExtResource( 10 )]
 
 [node name="Guns" type="Spatial" parent="."]
 

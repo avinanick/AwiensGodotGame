@@ -34,6 +34,7 @@ size_flags_vertical = 3
 texture = ExtResource( 2 )
 
 [node name="InnerBackground" type="NinePatchRect" parent="OuterOutline"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -104,17 +105,6 @@ margin_bottom = 389.0
 margin_right = 76.0
 margin_bottom = 88.0
 
-[node name="ContinueButton" type="Button" parent="OuterOutline"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -81.87
-margin_top = -30.4
-margin_right = -12.87
-margin_bottom = -10.4
-text = "Continue"
-
 [node name="TotalPointsLabel" type="Label" parent="OuterOutline"]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -128,7 +118,32 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "PH"
 align = 1
 valign = 1
+
+[node name="ExitInterfaceOptions" type="HBoxContainer" parent="OuterOutline"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+margin_right = -10.0
+margin_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="EditTurretsButton" type="Button" parent="OuterOutline/ExitInterfaceOptions"]
+margin_right = 85.0
+margin_bottom = 30.0
+text = "Edit Turrets"
+
+[node name="ContinueButton" type="Button" parent="OuterOutline/ExitInterfaceOptions"]
+margin_left = 89.0
+margin_right = 158.0
+margin_bottom = 30.0
+text = "Continue"
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/FlakCannonUpgrade" to="." method="_on_FlakCannonUpgrade_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/ShapedBlastUpgrade" to="." method="_on_ShapedBlastUpgrade_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer/RepairUpgradeButton" to="." method="_on_RepairUpgradeButton_upgrade_purchased"]
-[connection signal="button_up" from="OuterOutline/ContinueButton" to="." method="_on_ContinueButton_button_up"]
+[connection signal="button_up" from="OuterOutline/ExitInterfaceOptions/EditTurretsButton" to="." method="_on_EditTurretsButton_button_up"]
+[connection signal="button_up" from="OuterOutline/ExitInterfaceOptions/ContinueButton" to="." method="_on_ContinueButton_button_up"]
