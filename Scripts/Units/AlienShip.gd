@@ -31,18 +31,19 @@ func _process(delta):
 # otherwise only non-combatants are valid
 func scan_for_targets():
 	for earthling in earthlings:
-		var valid_target: bool = false
-		if defense_destroyer:
-			valid_target = true
-		elif not earthling.combatant:
-			valid_target = true
-		if valid_target:
-			# I'm not sure yet if this gives the global positions or local, could cause issues if local
-			var distance: float = self.get_global_transform().origin.distance_to(earthling.get_global_transform().origin) 
-			# If any target is in range, assign it as the current target and stop scanning
-			if distance < attack_range:
-				current_target = earthling
-				return
+		if is_instance_valid(self):
+			var valid_target: bool = false
+			if self.defense_destroyer:
+				valid_target = true
+			elif not earthling.combatant:
+				valid_target = true
+			if valid_target and is_instance_valid(earthling):
+				# I'm not sure yet if this gives the global positions or local, could cause issues if local
+				var distance: float = self.get_global_transform().origin.distance_to(earthling.get_global_transform().origin) 
+				# If any target is in range, assign it as the current target and stop scanning
+				if distance < attack_range:
+					current_target = earthling
+					return
 	# If we went through everything and non qualified, set current target to null
 	current_target = null
 				

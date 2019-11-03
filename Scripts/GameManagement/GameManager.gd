@@ -114,6 +114,7 @@ func start_level_preparation():
 	# and difficulty of the spawners. At some point I'd also like to bring up an interface that shows the new enemy
 	# types
 	upgrade_interface.visible = false
+	turret_replace_interface.visible = false
 	self.game_state = game_states.transitioning
 	self.points = 0
 	self.timer = 0
