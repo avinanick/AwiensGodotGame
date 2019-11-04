@@ -3,9 +3,7 @@
 [ext_resource path="res://Scripts/Units/AlienShip.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Units/AlienDroneBody.tscn" type="PackedScene" id=2]
 
-
 [node name="KinematicBody" type="KinematicBody"]
-transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 0, 0, 0 )
 script = ExtResource( 1 )
 health = 2
 max_health = 2
