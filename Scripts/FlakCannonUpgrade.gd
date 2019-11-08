@@ -16,7 +16,7 @@ func _ready():
 func _on_FlakCannonButton_button_up():
 	if Global.total_points >= cost:
 		Global.total_points -= cost
-		Global.turret_unlocks["flak_cannon"] = true
+		Global.turret_unlocks["Flak Cannon"] = true
 		emit_signal("upgrade_purchased", cost)
 		get_node("FlakCannonGroup/FlakCannonButton").disabled = true
 	else:
