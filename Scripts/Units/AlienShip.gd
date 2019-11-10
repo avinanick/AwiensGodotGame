@@ -31,7 +31,7 @@ func _process(delta):
 # otherwise only non-combatants are valid
 func scan_for_targets():
 	for earthling in earthlings:
-		if is_instance_valid(self):
+		if is_instance_valid(self) and is_instance_valid(earthling):
 			var valid_target: bool = false
 			if self.defense_destroyer:
 				valid_target = true
@@ -92,9 +92,8 @@ func attack_target(delta):
 			newBullet.bulletDirection = directionVector
 			
 func initialize_direction():
-	# This should find the direction to the city and start moving toward it
-	# I don't like the magic number in alien direction, specifically the 30 in height, it's what I'm using
-	# as the standard alien height right now though
+	# This should find the direction to the city and start moving toward it, for some reason it currently
+	# strafes in a circle around the city
 	var spawn_pos: Vector3 = self.transform.origin
 	var direction_to_city: Vector3 = get_city_location() - spawn_pos
 	self.look_at(get_city_location(), Vector3(0,1,0))

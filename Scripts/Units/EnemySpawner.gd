@@ -15,7 +15,7 @@ var enemy_scenes := [preload("res://Scenes/Units/AlienMissile(PH).tscn"),
 	preload("res://Scenes/Units/AlienDroneBody.tscn"),
 	preload("res://Scenes/Units/AlienFighter.tscn"),
 	preload("res://Scenes/Units/AlienBomber.tscn")]
-var base_spawn_periods := [2, 3, 4, 5]
+var base_spawn_periods := [5, 7, 11, 13]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

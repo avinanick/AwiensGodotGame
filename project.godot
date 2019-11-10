@@ -75,11 +75,6 @@ _global_script_classes=[ {
 "path": "res://Scripts/Weapons/Turret.gd"
 }, {
 "base": "MarginContainer",
-"class": "TurretChanger",
-"language": "GDScript",
-"path": "res://Scripts/Interfaces/TurretChangeInterface.gd"
-}, {
-"base": "MarginContainer",
 "class": "UpgradeInterface",
 "language": "GDScript",
 "path": "res://Scripts/Interfaces/UpgradesInterface.gd"
@@ -103,7 +98,6 @@ _global_script_class_icons={
 "Projectile": "",
 "Structure": "",
 "Turret": "",
-"TurretChanger": "",
 "UpgradeInterface": "",
 "VictoryInterface": ""
 }
@@ -116,7 +110,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://Scripts/Global.gd"
 
 [input]
 
