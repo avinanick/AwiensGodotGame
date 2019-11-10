@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/MainOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/background.png" type="Texture" id=2]
-[ext_resource path="res://Resources/Materials/turret_label.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Resources/Materials/health_background.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Materials/health_filler.png" type="Texture" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
@@ -12,6 +12,25 @@
 [ext_resource path="res://Resources/Materials/hotkey_label_3.png" type="Texture" id=10]
 [ext_resource path="res://Resources/Materials/hotkey_label_2.png" type="Texture" id=11]
 [ext_resource path="res://Resources/Materials/hotkey_label_1.png" type="Texture" id=12]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 2
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 2
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 1
+font_data = ExtResource( 3 )
 
 [node name="MainOverlay" type="MarginContainer"]
 anchor_right = 1.0
@@ -23,7 +42,6 @@ custom_constants/margin_bottom = 20
 script = ExtResource( 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-editor/display_folded = true
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1036.0
@@ -43,27 +61,18 @@ margin_right = 130.0
 margin_bottom = 40.0
 
 [node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/TurretBar/Count"]
-editor/display_folded = true
 margin_right = 130.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 130, 40 )
 texture = ExtResource( 2 )
 
-[node name="TurretTitle" type="TextureRect" parent="HBoxContainer/Bars/TurretBar/Count/Background"]
-margin_left = 15.0
-margin_right = 118.0
-margin_bottom = 40.0
-rect_scale = Vector2( 0.7, 0.8 )
-texture = ExtResource( 3 )
-stretch_mode = 4
-
-[node name="TurretNumber" type="Label" parent="HBoxContainer/Bars/TurretBar/Count/Background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -20.0
-text = "10"
-align = 2
-valign = 1
+[node name="TurretLabel" type="Label" parent="HBoxContainer/Bars/TurretBar/Count/Background"]
+material = SubResource( 1 )
+margin_left = 17.36
+margin_right = 91.36
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 2 )
+text = "Turrets"
 
 [node name="NorthTurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/TurretBar"]
 margin_left = 134.0
@@ -103,32 +112,22 @@ margin_right = 882.0
 margin_bottom = 84.0
 
 [node name="Count" type="MarginContainer" parent="HBoxContainer/Bars/CityBar"]
-editor/display_folded = true
 margin_right = 130.0
 margin_bottom = 40.0
 
 [node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/CityBar/Count"]
-editor/display_folded = true
 margin_right = 130.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 130, 40 )
 texture = ExtResource( 2 )
 
-[node name="TurretTitle" type="TextureRect" parent="HBoxContainer/Bars/CityBar/Count/Background"]
-margin_left = 15.0
-margin_right = 118.0
-margin_bottom = 40.0
-rect_scale = Vector2( 0.7, 0.8 )
-texture = ExtResource( 3 )
-stretch_mode = 4
-
-[node name="TurretNumber" type="Label" parent="HBoxContainer/Bars/CityBar/Count/Background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -20.0
-text = "10"
-align = 2
-valign = 1
+[node name="CityLabel" type="Label" parent="HBoxContainer/Bars/CityBar/Count/Background"]
+material = SubResource( 3 )
+margin_left = 23.69
+margin_right = 63.69
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 4 )
+text = "City"
 
 [node name="BuildlingHealth1" type="TextureProgress" parent="HBoxContainer/Bars/CityBar"]
 margin_left = 134.0
