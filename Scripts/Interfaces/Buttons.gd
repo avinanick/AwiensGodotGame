@@ -22,6 +22,7 @@ func _on_Save_Quit_button_button_up():
 
 func _on_Continue_button_button_up():
 	main_scene.next_level()
+	get_node("../../..").visible = false
 
 
 func _on_Quit_button_button_up():
