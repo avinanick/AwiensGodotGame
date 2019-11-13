@@ -126,6 +126,7 @@ func start_level_preparation():
 	turret_replace_interface.visible = false
 	self.game_state = game_states.transitioning
 	self.points = 0
+	self.timer = 0
 	emit_signal("start_transition")
 	# Every 5 levels, add another spawner
 	if self.level % 5 == 0:
