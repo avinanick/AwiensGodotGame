@@ -1,7 +1,7 @@
 extends MarginContainer
 
 var timer: float = 5.3 # seems like a decent starting point
-var displaying_number = null
+var displaying_number: TextureRect = null
 var next_number: int = 5
 
 signal level_countdown_finished
@@ -24,7 +24,7 @@ func _process(delta):
 			if displaying_number:
 				displaying_number.visible = false
 				displaying_number.modulate = Color(1, 1, 1)
-				displaying_number.scale = Vector2(1,1)
+				displaying_number.rect_scale = Vector2(1,1)
 			match next_number:
 				5:
 					displaying_number = get_node("FiveIcon")
@@ -46,7 +46,7 @@ func _process(delta):
 			displaying_number.modulate = Color(1,1,1, timer - next_number)
 			# for scale, I think I want it to start at 1,1 and end at 4,4
 			var scaling_addition: float = 3 * (1 - (timer - next_number))
-			displaying_number.scale = Vector2(1 + scaling_addition, 1 + scaling_addition)
+			displaying_number.rect_scale = Vector2(1 + scaling_addition, 1 + scaling_addition)
 		
 func on_transition_start():
 	self.visible = true

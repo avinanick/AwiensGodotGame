@@ -84,6 +84,10 @@ func _process(delta):
 				victory_screen.visible = false
 			timer += delta
 			main_overlay.update_time(int(ceil(game_time - timer)))
+		game_states.transitioning:
+			# Sanity check
+			if victory_screen.visible:
+				victory_screen.visible = false
 			
 # Used to increment points when destroying an alien
 func enemy_destroyed(var point_value: int):
@@ -92,12 +96,12 @@ func enemy_destroyed(var point_value: int):
 func next_level():
 	# This should update the global singleton with the number of points earned this round, increment the level, then bring
 	# up the menu for spending points. 
-	victory_screen.visible = false
 	Global.total_points += points
 	Global.current_level += 1
 	self.level += 1
 	upgrade_interface.update_points(Global.total_points)
 	upgrade_interface.visible = true
+	victory_screen.visible = false
 		
 func save_arcade_game():
 	# The corresponding load game is in the LoadGameInterface script
@@ -122,6 +126,7 @@ func start_level_preparation():
 	turret_replace_interface.visible = false
 	self.game_state = game_states.transitioning
 	self.points = 0
+	emit_signal("start_transition")
 	# Every 5 levels, add another spawner
 	if self.level % 5 == 0:
 		var new_spawner = enemy_spawner.instance()

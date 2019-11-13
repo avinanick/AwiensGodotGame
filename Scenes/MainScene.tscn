@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/GameManagement/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Environments/Ground.tscn" type="PackedScene" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://Scenes/Interfaces/Defeat_interface.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Interfaces/UpgradesInterface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Interfaces/TurretReplaceInterface.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Units/ProtoGun.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Interfaces/LevelCountdown.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Units/ProtoGun.tscn" type="PackedScene" id=12]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -32,34 +33,41 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -12 )
 [node name="MainOverlay" parent="." instance=ExtResource( 6 )]
 
 [node name="Victory_interface" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [node name="Defeat_interface" parent="." instance=ExtResource( 8 )]
+visible = false
 margin_left = -30.0
 margin_top = -58.0
 margin_right = 30.0
 margin_bottom = 58.0
 
 [node name="UpgradesInterface" parent="." instance=ExtResource( 9 )]
+visible = false
 
 [node name="TurretReplaceInterface" parent="." instance=ExtResource( 10 )]
+visible = false
+
+[node name="LevelCountdown" parent="." instance=ExtResource( 11 )]
+visible = false
 
 [node name="Guns" type="Spatial" parent="."]
 editor/display_folded = true
 
 [node name="EastGun" parent="Guns" groups=[
 "Earthlings",
-] instance=ExtResource( 11 )]
+] instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.137, 0 )
 position = "East"
 
-[node name="WestGun" parent="Guns" instance=ExtResource( 11 )]
+[node name="WestGun" parent="Guns" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.137, 0 )
 position = "West"
 
-[node name="NorthGun" parent="Guns" instance=ExtResource( 11 )]
+[node name="NorthGun" parent="Guns" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, -12 )
 position = "North"
 
-[node name="SouthGun" parent="Guns" instance=ExtResource( 11 )]
+[node name="SouthGun" parent="Guns" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, 12 )
 position = "South"

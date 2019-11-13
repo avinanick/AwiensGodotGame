@@ -10,7 +10,6 @@
 [ext_resource path="res://Resources/Materials/repair_upgrade_label.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Interfaces/RepairUpgradeButton.tscn" type="PackedScene" id=9]
 
-
 [node name="UpgradesInterface" type="MarginContainer"]
 anchor_left = 0.5
 anchor_top = 0.5

@@ -17,6 +17,7 @@ func update_points(var amount: int):
 
 func _on_ContinueButton_button_up():
 	main_scene.start_level_preparation()
+	self.visible = false
 
 
 # I have a different function for each node for the same signal, that doesn't seem efficient.

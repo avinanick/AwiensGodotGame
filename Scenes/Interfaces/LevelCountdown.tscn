@@ -36,6 +36,7 @@ margin_right = 64.0
 margin_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+rect_pivot_offset = Vector2( 32, 32 )
 texture = ExtResource( 3 )
 
 [node name="ThreeIcon" type="TextureRect" parent="."]
@@ -44,6 +45,7 @@ margin_right = 64.0
 margin_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+rect_pivot_offset = Vector2( 32, 32 )
 texture = ExtResource( 4 )
 
 [node name="TwoIcon" type="TextureRect" parent="."]
@@ -52,6 +54,7 @@ margin_right = 64.0
 margin_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+rect_pivot_offset = Vector2( 32, 32 )
 texture = ExtResource( 5 )
 
 [node name="OneIcon" type="TextureRect" parent="."]
@@ -60,4 +63,5 @@ margin_right = 64.0
 margin_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+rect_pivot_offset = Vector2( 32, 32 )
 texture = ExtResource( 6 )
