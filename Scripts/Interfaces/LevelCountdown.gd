@@ -51,3 +51,4 @@ func _process(delta):
 func on_transition_start():
 	self.visible = true
 	timer = 5.3
+	next_number = 5
