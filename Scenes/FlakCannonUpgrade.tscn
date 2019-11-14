@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Upgrades/FlakCannonUpgrade.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=3]
 
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 1
+font_data = ExtResource( 3 )
 
 [node name="FlakCannonUpgrade" type="MarginContainer"]
 margin_right = 40.0
@@ -17,6 +23,22 @@ margin_bottom = 88.0
 margin_right = 76.0
 margin_bottom = 70.0
 icon = ExtResource( 2 )
+
+[node name="CostLabel" type="Label" parent="FlakCannonGroup/FlakCannonButton"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -14.0
+margin_right = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.85098, 0.760784, 0.00784314, 1 )
+text = "10"
+align = 2
+valign = 1
 
 [node name="FlakCannonLabel" type="Label" parent="FlakCannonGroup"]
 margin_top = 74.0
