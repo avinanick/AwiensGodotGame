@@ -6,7 +6,7 @@ var turret_unlocks := {
 	"Flak Cannon": false
 }
 var upgrade_unlocks := {
-	"shaped_blast": false
+	"Shaped Blast": false
 }
 
 # variables for calculating the vector3 directions when bursting a flak shell

@@ -1,9 +1,10 @@
 extends MarginContainer
+tool
 
-export var cost: int = 10
+export var cost: int = 10 setget set_cost_text, get_cost_text
 export(String, "Turret", "Upgrade", "Repair") var upgrade_type := "Turret"
-export var upgrade_name: String = ""
-export var upgrade_icon: Texture = preload("res://icon.png")
+export var upgrade_name: String = ""  setget set_name_text, get_name_text
+export var upgrade_icon: Texture = preload("res://icon.png") setget set_icon_texture, get_icon_texture
 
 onready var interface_handler
 signal upgrade_purchased
@@ -36,3 +37,33 @@ func _on_UpgradeButton_button_up():
 		get_node("UpgradeList/UpgradeButton").disabled = true
 	else:
 		print("Handle Error: Not enough points")
+		
+func get_cost_text():
+	var cost_label = get_node("UpgradeList/UpgradeButton/CostLabel")
+	if cost_label:
+		return cost_label.text
+		
+func get_icon_texture():
+	var upgrade_button = get_node("UpgradeList/UpgradeButton")
+	if upgrade_button:
+		return upgrade_button.icon
+		
+func get_name_text():
+	var name_label = get_node("UpgradeList/UpgradeName")
+	if name_label:
+		return name_label.text
+		
+func set_icon_texture(var icon_value: Texture):
+	var upgrade_button = get_node("UpgradeList/UpgradeButton")
+	if upgrade_button:
+		upgrade_button.icon = icon_value
+		
+func set_cost_text(var cost_value: int):
+	var cost_label = get_node("UpgradeList/UpgradeButton/CostLabel")
+	if cost_label:
+		cost_label.text = str(cost_value)
+		
+func set_name_text(var name_value: String):
+	var name_label = get_node("UpgradeList/UpgradeName")
+	if name_label:
+		name_label.text = name_value

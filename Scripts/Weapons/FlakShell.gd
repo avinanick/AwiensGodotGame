@@ -27,7 +27,7 @@ func destroy_self():
 		new_shrapnel.bullet_damage = 1
 		new_shrapnel.speed = 80
 		new_shrapnel.timer = 0.1
-		if Global.upgrade_unlocks["shaped_blast"]:
+		if Global.upgrade_unlocks["Shaped Blast"]:
 			new_shrapnel.damages_earthlings = false
 		main_scene.add_child(new_shrapnel)
 	self.queue_free()
