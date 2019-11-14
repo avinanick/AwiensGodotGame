@@ -69,7 +69,7 @@ margin_right = 121.0
 margin_bottom = 129.0
 
 [node name="FlakCannonUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer" instance=ExtResource( 5 )]
-margin_right = 81.0
+margin_right = 76.0
 margin_bottom = 98.0
 upgrade_name = "Flak Cannon"
 
@@ -85,9 +85,9 @@ margin_right = 121.0
 margin_bottom = 274.0
 
 [node name="ShapedBlastUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 5 )]
-margin_right = 86.0
+margin_right = 76.0
 margin_bottom = 98.0
-cost = "15"
+cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Shaped Blast"
 
@@ -105,7 +105,7 @@ margin_bottom = 419.0
 [node name="RepairUpgradeButton" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer" instance=ExtResource( 5 )]
 margin_right = 76.0
 margin_bottom = 98.0
-cost = "5"
+cost = 5
 upgrade_type = "Repair"
 upgrade_name = "Repair"
 

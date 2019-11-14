@@ -1,10 +1,10 @@
 extends MarginContainer
-tool
+#tool
 
-export var cost: int = 10 setget set_cost_text, get_cost_text
+export var cost: int = 10 #setget set_cost_text, get_cost_text
 export(String, "Turret", "Upgrade", "Repair") var upgrade_type := "Turret"
-export var upgrade_name: String = ""  setget set_name_text, get_name_text
-export var upgrade_icon: Texture = preload("res://icon.png") setget set_icon_texture, get_icon_texture
+export var upgrade_name: String = ""  #setget set_name_text, get_name_text
+export var upgrade_icon: Texture = preload("res://icon.png") #setget set_icon_texture, get_icon_texture
 
 onready var interface_handler
 signal upgrade_purchased
@@ -14,6 +14,7 @@ func _ready():
 	get_node("UpgradeList/UpgradeButton/CostLabel").text = str(cost)
 	get_node("UpgradeList/UpgradeName").text = upgrade_name
 	get_node("UpgradeList/UpgradeButton").icon = upgrade_icon
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -23,7 +24,7 @@ func _on_UpgradeButton_button_up():
 	if Global.total_points >= cost:
 		Global.total_points -= cost
 		emit_signal("upgrade_purchased", cost)
-		get_node("FlakCannonGroup/FlakCannonButton").disabled = true
+		get_node("UpgradeList/UpgradeButton").disabled = true
 		match upgrade_type:
 			"Turret":
 				Global.turret_unlocks[upgrade_name] = true

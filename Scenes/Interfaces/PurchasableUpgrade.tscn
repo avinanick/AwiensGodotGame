@@ -21,7 +21,6 @@ font_data = ExtResource( 3 )
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 1 )
-cost = "10"
 upgrade_name = "Placeholder"
 
 [node name="UpgradeList" type="VBoxContainer" parent="."]
