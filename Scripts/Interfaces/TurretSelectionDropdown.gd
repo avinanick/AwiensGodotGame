@@ -39,4 +39,5 @@ func _on_TurretSelectionDropdown_item_selected(ID):
 			turret_position = "East"
 		"WestTurretList":
 			turret_position = "West"
-	replace_interface.turret_selected(self.get_item_text(self.get_item_index(ID)), turret_position)
+	print(self.get_item_text(ID))
+	replace_interface.turret_selected(self.get_item_text(ID), turret_position)

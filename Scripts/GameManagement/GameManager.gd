@@ -158,5 +158,8 @@ func replace_turret(var new_type, var turret_position: String):
 		new_turret.position = gun_position
 		get_node("Guns").add_child(new_turret)
 		print(new_turret.get_path())
+		print("Turret replaced")
+	else:
+		print("Selected turret not found")
 	
 

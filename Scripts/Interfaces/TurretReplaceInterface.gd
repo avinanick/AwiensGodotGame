@@ -18,6 +18,7 @@ func _on_ContinueButton_button_up():
 	
 
 func turret_selected(var turret_type: String, var turret_location: String):
+	print("Selected turret type is ", turret_type)
 	match turret_type:
 		"Chaingun":
 			main_scene.replace_turret(chaingun_scene, turret_location)
