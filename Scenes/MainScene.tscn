@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/Interfaces/UpgradesInterface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Interfaces/TurretReplaceInterface.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Interfaces/LevelCountdown.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Units/ProtoGun.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Units/GunMount.tscn" type="PackedScene" id=12]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -52,22 +52,15 @@ visible = false
 visible = false
 
 [node name="Guns" type="Spatial" parent="."]
-editor/display_folded = true
 
-[node name="EastGun" parent="Guns" groups=[
-"Earthlings",
-] instance=ExtResource( 12 )]
+[node name="NorthGun" parent="Guns" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, 12 )
+
+[node name="EastGun" parent="Guns" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.137, 0 )
-position = "East"
 
 [node name="WestGun" parent="Guns" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.137, 0 )
-position = "West"
-
-[node name="NorthGun" parent="Guns" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, -12 )
-position = "North"
 
 [node name="SouthGun" parent="Guns" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, 12 )
-position = "South"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, -12 )
