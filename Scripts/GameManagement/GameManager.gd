@@ -56,7 +56,7 @@ func _ready():
 			# This should also start the unit warning and countdown till start
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Process should probably be redone using signals
 func _process(delta):
 	if timer >= game_time and game_state == game_states.running:
 		game_state = game_states.victory
@@ -146,20 +146,8 @@ func start_next_level():
 func replace_turret(var new_type, var turret_position: String):
 	var selected_turret = get_node(str("./Guns/", turret_position, "Gun"))
 	if selected_turret:
-		var health: int = selected_turret.health
-		var position: Vector3 = selected_turret.get_global_transform().origin
-		var node_name: String = selected_turret.get_name()
-		var gun_position: String = selected_turret.position
-		selected_turret.queue_free() # Will this maybe cause issues? perhaps it should be free instead
-		var new_turret = new_type.instance()
-		new_turret.translation = position
-		new_turret.health = health
-		new_turret.set_name(node_name)
-		new_turret.position = gun_position
-		get_node("Guns").add_child(new_turret)
-		print(new_turret.get_path())
-		print("Turret replaced")
+		selected_turret.replace_turret(new_type)
 	else:
-		print("Selected turret not found")
+		print("Selected mount not found")
 	
 
