@@ -18,6 +18,6 @@ func _on_RepairButton_button_up():
 		emit_signal("upgrade_purchased", cost)
 		var earthlings = get_tree().get_nodes_in_group("Earthlings")
 		for earthling in earthlings:
-			earthling.health = earthling.max_health
+			earthling.repair_structure()
 	else:
 		print("Handle Error: not enough points")

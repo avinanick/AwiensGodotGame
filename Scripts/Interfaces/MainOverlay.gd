@@ -11,7 +11,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func structure_damaged(var structure):
+func structure_health_changed(var structure):
 	var health_bar: TextureProgress
 	if structure.position == "North":
 		health_bar = get_node("HBoxContainer/Bars/TurretBar/NorthTurretHealth")

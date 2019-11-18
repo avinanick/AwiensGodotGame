@@ -2,7 +2,6 @@ extends Structure
 
 class_name Turret
 
-export var turret_type = "chaingun"
 export var fire_cooldown: float = 0.3
 export var projectile = preload("res://Scenes/Bullet.tscn")
 
@@ -39,3 +38,5 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 	if not is_alive:
 		print("attempting to fire dead turret")
 	
+func make_connections():
+	self.connect("damaged", get_node("../../../MainOverlay"), "structure_damaged")

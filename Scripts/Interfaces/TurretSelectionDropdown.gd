@@ -15,6 +15,22 @@ func _ready():
 
 func update_turret_list():
 	# Check each turret in the global turrets, if it is unlocked and not already added, add it to the list
+	# I think this should also check if it's turret is available, and disable the option if so
+	# I don't like the way I'm going about this, there must be better options
+	var linked_turret
+	match get_parent().name:
+		"NorthTurretList":
+			linked_turret = get_node("../../../../../../../Guns/NorthGun")
+		"SouthTurretList":
+			linked_turret = get_node("../../../../../../../Guns/SouthGun")
+		"EastTurretList":
+			linked_turret = get_node("../../../../../../../Guns/EastGun")
+		"WestTurretList":
+			linked_turret = get_node("../../../../../../../Guns/WestGun")
+	if linked_turret.get_child_count() < 1:
+		# If there's no linked turret, disable the dropdown
+		get_node("../TextureRect").modulate = Color(1,1,1,0.5)
+		self.disabled = true
 	for turret_type in Global.turret_unlocks:
 		if Global.turret_unlocks[turret_type]:
 			var turret_already_added: bool = false
