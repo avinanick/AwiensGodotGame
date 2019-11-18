@@ -13,13 +13,15 @@ func _ready():
 #	pass
 
 func fire_weapon(start_location : Vector3, start_rotation : Vector3):
-	get_child(0).fire(start_location, start_rotation)
+	var child_turret = get_child(0)
+	if child_turret and is_instance_valid(child_turret):
+		child_turret.fire(start_location, start_rotation)
 
 func replace_turret(var new_type):
 	var selected_turret = get_child(0)
 	if selected_turret:
 		var health: int = selected_turret.health
-		var position: Vector3 = selected_turret.get_global_transform().origin
+		var position: Vector3 = Vector3(0,0,0) # Since the gun will be positioned at this nodes location
 		var node_name: String = selected_turret.get_name()
 		var gun_position: String = selected_turret.position
 		selected_turret.queue_free() # Will this maybe cause issues? perhaps it should be free instead
