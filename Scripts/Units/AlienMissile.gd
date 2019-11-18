@@ -38,6 +38,5 @@ func initialize_direction():
 	var direction_vector = Vector3(target_pos.x - spawn_pos.x, target_pos.y - spawn_pos.y,
 			target_pos.z - spawn_pos.z)
 	direction_vector = direction_vector.normalized()
-	var missile_rotation_radians = Vector3()
 	self.look_at(target_pos, Vector3(0,1,0))
 	self.alien_direction = direction_vector
