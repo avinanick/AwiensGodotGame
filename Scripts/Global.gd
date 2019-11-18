@@ -10,7 +10,7 @@ var upgrade_unlocks := {
 }
 
 # variables for calculating the vector3 directions when bursting a flak shell
-var burst_amount: int = 30
+var burst_amount: int = 10
 var burst_start_radius: float = 0.1
 var burst_shrapnel_vectors := []
 

@@ -23,12 +23,14 @@ func clear_indicators():
 
 func populate_indicators():
 	# start by getting all the living earthlings and populating their position
+	# I need to invert the y positions on the radar so it matches the intuition for north vs south
+	# Since in 2d, positive y is downward
 	clear_indicators()
 	var earthlings = get_tree().get_nodes_in_group("Earthlings")
 	for earthling in earthlings:
 		var earthling_position: Vector3 = earthling.get_global_transform().origin
 		# I'll need to use the x and z values to figure out where on the radar it goes
-		var indicator_position: Vector2 = Vector2(earthling_position.x * 3, earthling_position.z * 3)
+		var indicator_position: Vector2 = Vector2(earthling_position.x * 3, -1 * earthling_position.z * 3)
 		var new_ally = ally_indicator.instance()
 		self.add_child(new_ally)
 		new_ally.add_to_group("Indicators")
@@ -37,7 +39,7 @@ func populate_indicators():
 	for alien in aliens:
 		var alien_position: Vector3 = alien.get_global_transform().origin
 		# I'll need to use the x and z values to figure out where on the radar it goes
-		var indicator_position: Vector2 = Vector2(alien_position.x * 3, alien_position.z * 3)
+		var indicator_position: Vector2 = Vector2(alien_position.x * 3, -1 * alien_position.z * 3)
 		var new_enemy = enemy_indicator.instance()
 		self.add_child(new_enemy)
 		new_enemy.add_to_group("Indicators")
