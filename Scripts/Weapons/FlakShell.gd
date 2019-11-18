@@ -25,7 +25,7 @@ func destroy_self():
 		var direction_vector: Vector3 = spawn_position - self.get_global_transform().origin
 		new_shrapnel.bulletDirection = direction_vector.normalized()
 		new_shrapnel.bullet_damage = 1
-		new_shrapnel.speed = 80
+		new_shrapnel.speed = 50
 		new_shrapnel.timer = 0.1
 		if Global.upgrade_unlocks["Shaped Blast"]:
 			new_shrapnel.damages_earthlings = false
