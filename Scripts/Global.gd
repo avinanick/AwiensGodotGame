@@ -10,7 +10,7 @@ var upgrade_unlocks := {
 }
 
 # variables for calculating the vector3 directions when bursting a flak shell
-var burst_amount: int = 10
+var burst_amount: float = 0.2
 var burst_start_radius: float = 0.1
 var burst_shrapnel_vectors := []
 
@@ -32,6 +32,7 @@ func _ready():
 										Vector3(sin(theta) * cos(phi), 
 												sin(theta) * sin(phi), 
 												cos(theta)))
+	print(burst_shrapnel_vectors.size())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
