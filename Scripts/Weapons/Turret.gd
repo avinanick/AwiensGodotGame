@@ -39,4 +39,4 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 		print("attempting to fire dead turret")
 	
 func make_connections():
-	self.connect("damaged", get_node("../../../MainOverlay"), "structure_damaged")
+	self.connect("health_changed", get_node("../../../MainOverlay"), "structure_damaged")
