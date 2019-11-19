@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Weapons/Turret.gd" type="Script" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.886275, 0.815686, 0.0784314, 1 )
+albedo_color = Color( 0.803922, 0.886275, 0.0784314, 1 )
 
 [sub_resource type="CubeMesh" id=2]
 material = SubResource( 1 )
