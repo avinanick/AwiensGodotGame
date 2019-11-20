@@ -25,5 +25,5 @@ shape = SubResource( 3 )
 [node name="TargetingZone" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="TargetingZone"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-007, -1, 0, 10, -4.37114e-008, 0, 0, 10 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-007, -1, 0, 10, -4.37114e-008, 0, 0, -10 )
 shape = SubResource( 4 )
