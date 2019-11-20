@@ -25,7 +25,7 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 	
 func scan_for_targets():
 	# Checks if there are any valid targets in the targeting zone area, if so, returns the closest one
-	var possible_targets = targeting_zone.get_overlapping_areas()
+	var possible_targets = targeting_zone.get_overlapping_bodies()
 	var target = null
 	if possible_targets.size() > 0:
 		var smallest_distance: int
