@@ -3,7 +3,8 @@ extends Node
 var current_level: int = 1
 var total_points: int = 0
 var turret_unlocks := {
-	"Flak Cannon": false
+	"Flak Cannon": false,
+	"Thunder Cannon": false
 }
 var upgrade_unlocks := {
 	"Shaped Blast": false
