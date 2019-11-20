@@ -14,9 +14,8 @@ func _ready():
 # Damage the target and destroy self
 func handle_impact(var collision: KinematicCollision):
 	if collision:
-		print("collision detected, destroying bullet")
 		if collision.collider is Destructible:
-			if (collision.collider.is_in_group("Earthlings") and damages_earthlings) or (collision.collider.is_in_group("Aliens") and damages_aliens):
-				print("damaging target")
+			if (collision.collider.is_in_group("Earthlings") and damages_earthlings) \
+				or (collision.collider.is_in_group("Aliens") and damages_aliens):
 				collision.collider.take_damage(bullet_damage)
 		destroy_self()

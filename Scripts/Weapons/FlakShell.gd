@@ -14,6 +14,7 @@ func _ready():
 # that fire outward in a sphere shape
 # Using an algorithm from https://www.cmu.edu/biolphys/deserno/pdf/sphere_equi.pdf
 func handle_impact(var collision: KinematicCollision):
+	print("Flak shell impact with ", collision.collider.get_path())
 	destroy_self()
 	
 func destroy_self():
