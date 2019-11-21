@@ -12,6 +12,15 @@ onready var main_scene := get_node("/root/MainScene")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.combatant = true
+	var mount_name = self.get_parent().name
+	if "North" in mount_name:
+		self.position = "North"
+	if "South" in mount_name:
+		self.position = "South"
+	if "West" in mount_name:
+		self.position = "West"
+	if "East" in mount_name:
+		self.position = "East"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -39,4 +48,4 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 		print("attempting to fire dead turret")
 	
 func make_connections():
-	self.connect("health_changed", get_node("../../../MainOverlay"), "structure_damaged")
+	self.connect("health_changed", get_node("../../../MainOverlay"), "structure_health_changed")

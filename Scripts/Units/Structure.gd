@@ -21,7 +21,7 @@ func make_connections():
 	
 func repair_structure():
 	health = self.max_health
-	emit_signal("health_changed")
+	emit_signal("health_changed", self)
 
 func take_damage(var amount: int):
 	health -= amount
