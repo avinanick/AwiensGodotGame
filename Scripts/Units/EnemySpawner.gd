@@ -21,6 +21,7 @@ var base_spawn_periods := [5, 7, 11, 13]
 func _ready():
 	randomize()
 	add_to_group("Spawners")
+	update_spawner_difficulty()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
