@@ -97,6 +97,14 @@ cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Shaped Blast"
 
+[node name="IncendiaryRounds" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 5 )]
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 98.0
+cost = 15
+upgrade_type = "Upgrade"
+upgrade_name = "Incendiary Rounds"
+
 [node name="RepairsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 285.0
 margin_right = 156.0
@@ -155,6 +163,7 @@ text = "Continue"
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/FlakCannonUpgrade" to="." method="_on_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/ThunderCannonUpgrade" to="." method="_on_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/ShapedBlastUpgrade" to="." method="_on_upgrade_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/IncendiaryRounds" to="." method="_on_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer/RepairUpgradeButton" to="." method="_on_upgrade_purchased"]
 [connection signal="button_up" from="OuterOutline/ExitInterfaceOptions/EditTurretsButton" to="." method="_on_EditTurretsButton_button_up"]
 [connection signal="button_up" from="OuterOutline/ExitInterfaceOptions/ContinueButton" to="." method="_on_ContinueButton_button_up"]
