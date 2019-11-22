@@ -26,7 +26,8 @@ func _process(delta):
 
 # This should be overwritten in anything inheriting from this class
 func handle_impact(var collision: KinematicCollision):
-	destroy_self()
+	if collision:
+		destroy_self()
 	
 # This function can be overridden to play effects or 
 func destroy_self():
