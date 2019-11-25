@@ -25,6 +25,9 @@ func fire_weapon(start_location : Vector3, start_rotation : Vector3):
 		
 func get_shield():
 	return shield
+	
+func make_connections():
+	get_parent().get_parent().connect("start_transition", self, "validate_upgrades")
 
 func replace_turret(var new_type):
 	var selected_turret = get_child(0)
