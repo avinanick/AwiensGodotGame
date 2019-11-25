@@ -1,8 +1,6 @@
 extends Spatial
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var shield_scene = preload("res://Scenes/EnergyShield.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +9,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func activate_shield():
+	var new_shield = shield_scene.instance()
+	self.add_child(new_shield)
+	new_shield.translation = Vector3(0,0,0)
 
 func fire_weapon(start_location : Vector3, start_rotation : Vector3):
 	var child_turret = get_child(0)

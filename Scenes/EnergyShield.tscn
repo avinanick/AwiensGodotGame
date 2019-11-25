@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/EnergyShield.gd" type="Script" id=1]
 
@@ -6,13 +6,142 @@
 
 [sub_resource type="SphereMesh" id=2]
 
+[sub_resource type="VisualShaderNodeColorConstant" id=3]
+constant = Color( 0.0195313, 0.747223, 1, 1 )
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=4]
+function = 0
+
+[sub_resource type="VisualShaderNodeScalarOp" id=5]
+default_input_values = [ 0, 0.0, 1, 0.4 ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=6]
+function = 12
+
+[sub_resource type="VisualShaderNodeScalarOp" id=7]
+default_input_values = [ 0, 0.0, 1, 1.0 ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=8]
+uniform_name = "power"
+
+[sub_resource type="VisualShader" id=9]
+code = "shader_type spatial;
+uniform float power;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Color:2
+	vec3 n_out2p0;
+	float n_out2p1;
+	n_out2p0 = vec3(0.019531,0.747223,1.000000);
+	n_out2p1 = 1.000000;
+
+// ScalarUniform:9
+	float n_out9p0;
+	n_out9p0 = power;
+
+// ScalarOp:7
+	float n_in7p1 = 1.00000;
+	float n_out7p0;
+	n_out7p0 = n_out9p0 * n_in7p1;
+
+// ScalarFunc:3
+	float n_out3p0;
+	n_out3p0 = sin(n_out7p0);
+
+// ScalarOp:5
+	float n_in5p1 = 0.40000;
+	float n_out5p0;
+	n_out5p0 = n_out3p0 * n_in5p1;
+
+// ScalarFunc:6
+	float n_out6p0;
+	n_out6p0 = abs(n_out5p0);
+
+// Output:0
+	ALBEDO = n_out2p0;
+	ALPHA = n_out6p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -519.92, 139.6 )
+nodes/fragment/0/position = Vector2( 600, 140 )
+nodes/fragment/2/node = SubResource( 3 )
+nodes/fragment/2/position = Vector2( 60, 160 )
+nodes/fragment/3/node = SubResource( 4 )
+nodes/fragment/3/position = Vector2( -140, 260 )
+nodes/fragment/5/node = SubResource( 5 )
+nodes/fragment/5/position = Vector2( 180, 240 )
+nodes/fragment/6/node = SubResource( 6 )
+nodes/fragment/6/position = Vector2( 380, 240 )
+nodes/fragment/7/node = SubResource( 7 )
+nodes/fragment/7/position = Vector2( -300, 240 )
+nodes/fragment/9/node = SubResource( 8 )
+nodes/fragment/9/position = Vector2( -500, 320 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 5, 0, 6, 0, 7, 0, 3, 0, 6, 0, 0, 1, 3, 0, 5, 0, 9, 0, 7, 0 )
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
+shader_param/power = 0.0
+
+[sub_resource type="Animation" id=11]
+resource_name = "DamageImpact"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.57, 0.0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+
 [node name="EnergyShield" type="KinematicBody"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 script = ExtResource( 1 )
+health = 5
+max_health = 5
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = SubResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/DamageImpact = SubResource( 11 )
+anims/Idle = SubResource( 12 )

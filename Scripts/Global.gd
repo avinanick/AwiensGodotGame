@@ -8,7 +8,8 @@ var turret_unlocks := {
 }
 var upgrade_unlocks := {
 	"Shaped Blast": false,
-	"Incendiary Rounds": false
+	"Incendiary Rounds": false,
+	"Energy Shields": false
 }
 
 # variables for calculating the vector3 directions when bursting a flak shell

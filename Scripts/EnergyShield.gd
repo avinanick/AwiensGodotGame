@@ -25,7 +25,11 @@ func _process(delta):
 			emit_signal("health_changed", self)
 			
 func take_damage(var amount: int):
-	.take_damage(amount)
+	# For now, this will always play a flicker/fade animation for the shield, I'd like to modify this
+	# to play a shattering animation when the shield breaks
+	self.health -= amount
+	emit_signal("health_changed", self)
+	get_node("AnimationPlayer").play("DamageImpact")
 	if self.health <= 0:
 		overloaded = true
 		get_node("CollisionShape").disabled = true
