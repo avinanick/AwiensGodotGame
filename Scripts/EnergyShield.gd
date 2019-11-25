@@ -1,4 +1,5 @@
 extends Structure
+class_name EnergyShield
 
 export var recovery_per_second: float = 1
 var recovery_timer: float = 0

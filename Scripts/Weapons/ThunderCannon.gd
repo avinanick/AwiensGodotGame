@@ -1,4 +1,5 @@
 extends Turret
+class_name ThunderCannon
 
 onready var targeting_zone = get_node("TargetingZone")
 

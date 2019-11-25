@@ -38,7 +38,10 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 		directionVector.y = sin(start_rotation.x)
 		directionVector.z = (-1) * cos(start_rotation.y) * cos(start_rotation.x)
 		directionVector = directionVector.normalized()
-		
+		# If the turret has an active shield, set the bullet to ignore the shield
+		var shield = get_parent().get_shield()
+		if shield:
+			newBullet.add_collision_exception_with(shield)
 		newBullet.set_name("bullet")
 		newBullet.translation = start_location
 		newBullet.rotation = start_rotation

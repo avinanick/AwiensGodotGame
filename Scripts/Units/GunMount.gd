@@ -1,6 +1,7 @@
 extends Spatial
 
 onready var shield_scene = preload("res://Scenes/EnergyShield.tscn")
+var shield = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,11 +15,15 @@ func activate_shield():
 	var new_shield = shield_scene.instance()
 	self.add_child(new_shield)
 	new_shield.translation = Vector3(0,0,0)
+	shield = new_shield
 
 func fire_weapon(start_location : Vector3, start_rotation : Vector3):
 	var child_turret = get_child(0)
 	if child_turret and is_instance_valid(child_turret):
 		child_turret.fire(start_location, start_rotation)
+		
+func get_shield():
+	return shield
 
 func replace_turret(var new_type):
 	var selected_turret = get_child(0)
