@@ -1,9 +1,11 @@
 extends Spatial
 
 onready var shield_scene = preload("res://Scenes/CityShield.tscn")
+var shield = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_parent().connect("start_transition", self, "validate_upgrades")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,6 +19,12 @@ func _process(delta):
 		self.queue_free()
 	
 func activate_shield():
+	print("Activating city shield")
 	var new_shield = shield_scene.instance()
 	new_shield.translation = Vector3(0,0,0)
 	self.add_child(new_shield)
+	shield = new_shield
+	
+func validate_upgrades():
+	if Global.upgrade_unlocks["Energy Shields"] and not self.shield:
+		activate_shield()

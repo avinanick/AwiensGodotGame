@@ -12,6 +12,7 @@ func _ready():
 #	pass
 
 func activate_shield():
+	print("Activating turret shield")
 	var new_shield = shield_scene.instance()
 	self.add_child(new_shield)
 	new_shield.translation = Vector3(0,0,0)
@@ -43,3 +44,7 @@ func replace_turret(var new_type):
 		print("Turret replaced")
 	else:
 		print("Selected turret not found")
+		
+func validate_upgrades():
+	if Global.upgrade_unlocks["Energy Shields"] and not self.shield:
+		activate_shield()

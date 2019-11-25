@@ -9,6 +9,16 @@ var overloaded: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	time_per_recover = 1 / recovery_per_second
+	self.combatant = true
+	var mount_name = self.get_parent().name
+	if "North" in mount_name:
+		self.position = "NorthShield"
+	if "South" in mount_name:
+		self.position = "SouthShield"
+	if "West" in mount_name:
+		self.position = "WestShield"
+	if "East" in mount_name:
+		self.position = "EastShield"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,6 +34,9 @@ func _process(delta):
 		if health < max_health:
 			health += 1
 			emit_signal("health_changed", self)
+			
+func make_connections():
+	self.connect("health_changed", get_node("../../../MainOverlay"), "structure_health_changed")
 			
 func take_damage(var amount: int):
 	# For now, this will always play a flicker/fade animation for the shield, I'd like to modify this
