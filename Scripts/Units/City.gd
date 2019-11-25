@@ -21,8 +21,8 @@ func _process(delta):
 func activate_shield():
 	print("Activating city shield")
 	var new_shield = shield_scene.instance()
-	new_shield.translation = Vector3(0,0,0)
 	self.add_child(new_shield)
+	new_shield.get_global_tranform().origin = Vector3(0,0,0)
 	shield = new_shield
 	
 func validate_upgrades():
