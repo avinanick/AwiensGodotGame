@@ -19,10 +19,13 @@ func _ready():
 		self.position = "WestShield"
 	if "East" in mount_name:
 		self.position = "EastShield"
+	if self.position == "":
+		self.position = "CityShield"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	recovery_timer += delta
+	if health < max_health:
+		recovery_timer += delta
 	if overloaded:
 		if recovery_timer >= (self.max_health * time_per_recover):
 			recovery_timer = 0

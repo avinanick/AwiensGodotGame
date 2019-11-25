@@ -31,7 +31,9 @@ func structure_health_changed(var structure):
 		"4":
 			health_bar = get_node("HBoxContainer/Bars/CityBar/BuildingHealth4")
 	print(structure.position)
-	health_bar.value = int((float(structure.health) / float(structure.max_health)) * 100)
+	# In case there is a mistake and this didn't get assigned...
+	if health_bar:
+		health_bar.value = int((float(structure.health) / float(structure.max_health)) * 100)
 
 func update_time(var time_remaining: int):
 	time_left_label.text = str(time_remaining)

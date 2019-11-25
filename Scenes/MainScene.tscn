@@ -25,7 +25,7 @@ script = ExtResource( 3 )
 base_spawn_period = 5.0
 
 [node name="City" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91579, 5.19992, -1.99418 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2, 0 )
 
 [node name="Avatar" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -12 )
