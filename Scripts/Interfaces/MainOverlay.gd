@@ -23,13 +23,23 @@ func structure_health_changed(var structure):
 		"South":
 			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar")
 		"NorthWest":
-			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthCityBars/NorthWestCityBar")
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/NorthWestCityBar")
 		"NorthEast":
-			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthCityBars/NorthEastCityBar")
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/NorthEastCityBar")
 		"SouthWest":
-			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthCityBars/SouthWestCityBar")
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/SouthWestCityBar")
 		"SouthEast":
-			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthCityBars/SouthEastCityBar")
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/SouthEastCityBar")
+		"NorthShield":
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthTurretHealthBar/NorthShieldHealthBar")
+		"EastShield":
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/EastTurretHealthBar/EastShieldHealthBar")
+		"WestShield":
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/WestTurretHealthBar/WestShieldHealthBar")
+		"SouthShield":
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar/SouthShieldHealthBar")
+		"CityShield":
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar")
 	print(structure.position)
 	# In case there is a mistake and this didn't get assigned...
 	if health_bar:

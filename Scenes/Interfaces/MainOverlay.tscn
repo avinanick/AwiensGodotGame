@@ -1,22 +1,23 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/MainOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/background.png" type="Texture" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Materials/WestTurretHealth.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Materials/NorthTurretHealth.png" type="Texture" id=5]
-[ext_resource path="res://Resources/Materials/NorthWestBuildingHealth.png" type="Texture" id=6]
-[ext_resource path="res://Resources/Materials/NorthEastBuildingHealth.png" type="Texture" id=7]
-[ext_resource path="res://Resources/Materials/SouthWestBuildingHealth.png" type="Texture" id=8]
-[ext_resource path="res://Resources/Materials/SouthEastBuildingHealth.png" type="Texture" id=9]
-[ext_resource path="res://Resources/Materials/SouthTurretHealth.png" type="Texture" id=10]
-[ext_resource path="res://Resources/Materials/EastTurretHealth.png" type="Texture" id=11]
-[ext_resource path="res://Resources/Materials/radar_backdrop.png" type="Texture" id=12]
-[ext_resource path="res://Scripts/Interfaces/Radar.gd" type="Script" id=13]
-[ext_resource path="res://Resources/Materials/hotkey_label_4.png" type="Texture" id=14]
-[ext_resource path="res://Resources/Materials/hotkey_label_3.png" type="Texture" id=15]
-[ext_resource path="res://Resources/Materials/hotkey_label_2.png" type="Texture" id=16]
-[ext_resource path="res://Resources/Materials/hotkey_label_1.png" type="Texture" id=17]
+[ext_resource path="res://Resources/Materials/CityShield.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Materials/NorthWestBuildingHealth.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Materials/NorthEastBuildingHealth.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Materials/SouthWestBuildingHealth.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Materials/SouthEastBuildingHealth.png" type="Texture" id=10]
+[ext_resource path="res://Resources/Materials/SouthTurretHealth.png" type="Texture" id=11]
+[ext_resource path="res://Resources/Materials/EastTurretHealth.png" type="Texture" id=12]
+[ext_resource path="res://Resources/Materials/radar_backdrop.png" type="Texture" id=13]
+[ext_resource path="res://Scripts/Interfaces/Radar.gd" type="Script" id=14]
+[ext_resource path="res://Resources/Materials/hotkey_label_4.png" type="Texture" id=15]
+[ext_resource path="res://Resources/Materials/hotkey_label_3.png" type="Texture" id=16]
+[ext_resource path="res://Resources/Materials/hotkey_label_2.png" type="Texture" id=17]
+[ext_resource path="res://Resources/Materials/hotkey_label_1.png" type="Texture" id=18]
 
 [node name="MainOverlay" type="MarginContainer"]
 anchor_right = 1.0
@@ -74,15 +75,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HealthBars" type="HBoxContainer" parent="VBoxContainer/HealthSpacing"]
-margin_top = 287.0
+margin_top = 293.0
 margin_right = 984.0
 margin_bottom = 516.0
 size_flags_vertical = 8
 
 [node name="WestTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars"]
-margin_top = 42.0
+editor/display_folded = true
+margin_top = 39.0
 margin_right = 45.0
-margin_bottom = 187.0
+margin_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
@@ -93,10 +95,17 @@ fill_mode = 3
 tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 0, 1, 0.054902, 1 )
 
+[node name="WestShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/WestTurretHealthBar"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_progress = ExtResource( 4 )
+fill_mode = 3
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+
 [node name="CentralBars" type="VBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars"]
 margin_left = 49.0
 margin_right = 193.0
-margin_bottom = 229.0
+margin_bottom = 223.0
 
 [node name="NorthTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
 margin_right = 144.0
@@ -110,48 +119,42 @@ radial_initial_angle = 90.0
 radial_fill_degrees = 270.0
 radial_center_offset = Vector2( 0, 21.19 )
 
-[node name="NorthCityBars" type="HBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
-margin_left = 7.0
+[node name="NorthShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthTurretHealthBar"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_progress = ExtResource( 5 )
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+
+[node name="CityShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
+margin_left = 9.0
 margin_top = 48.0
-margin_right = 136.0
-margin_bottom = 112.0
+margin_right = 135.0
+margin_bottom = 174.0
 size_flags_horizontal = 4
-
-[node name="NorthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthCityBars"]
-margin_right = 64.0
-margin_bottom = 64.0
-value = 100.0
-texture_under = ExtResource( 6 )
+size_flags_vertical = 4
 texture_progress = ExtResource( 6 )
-fill_mode = 5
-tint_under = Color( 0, 0, 0, 1 )
-tint_progress = Color( 0, 1, 0.054902, 1 )
-radial_fill_degrees = 90.0
-radial_center_offset = Vector2( 31.12, 32.22 )
+fill_mode = 3
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
 
-[node name="NorthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthCityBars"]
-margin_left = 68.0
-margin_right = 129.0
-margin_bottom = 64.0
+[node name="NorthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
+show_behind_parent = true
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 63.0
+margin_bottom = 63.0
 value = 100.0
 texture_under = ExtResource( 7 )
 texture_progress = ExtResource( 7 )
 fill_mode = 5
 tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 0, 1, 0.054902, 1 )
-radial_initial_angle = 90.0
 radial_fill_degrees = 90.0
-radial_center_offset = Vector2( -30.2, 33.23 )
+radial_center_offset = Vector2( 31.36, 32.22 )
 
-[node name="SouthCityBars" type="HBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
-margin_left = 6.0
-margin_top = 116.0
-margin_right = 138.0
-margin_bottom = 180.0
-size_flags_horizontal = 4
-
-[node name="SouthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthCityBars"]
-margin_right = 64.0
+[node name="NorthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
+show_behind_parent = true
+margin_left = 67.17
+margin_right = 128.17
 margin_bottom = 64.0
 value = 100.0
 texture_under = ExtResource( 8 )
@@ -159,17 +162,35 @@ texture_progress = ExtResource( 8 )
 fill_mode = 5
 tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_initial_angle = 90.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2( -30.2, 33.23 )
+
+[node name="SouthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
+show_behind_parent = true
+margin_left = -1.0
+margin_top = 67.11
+margin_right = 63.0
+margin_bottom = 131.11
+value = 100.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 9 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
 radial_initial_angle = 270.0
 radial_fill_degrees = 90.0
 radial_center_offset = Vector2( 33.43, -31.03 )
 
-[node name="SouthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthCityBars"]
-margin_left = 68.0
-margin_right = 132.0
-margin_bottom = 64.0
+[node name="SouthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
+show_behind_parent = true
+margin_left = 67.22
+margin_top = 67.23
+margin_right = 131.22
+margin_bottom = 131.23
 value = 100.0
-texture_under = ExtResource( 9 )
-texture_progress = ExtResource( 9 )
+texture_under = ExtResource( 10 )
+texture_progress = ExtResource( 10 )
 fill_mode = 5
 tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 0, 1, 0.054902, 1 )
@@ -178,51 +199,65 @@ radial_fill_degrees = 90.0
 radial_center_offset = Vector2( -33.17, -31.46 )
 
 [node name="SouthTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
-margin_top = 184.0
+editor/display_folded = true
+margin_top = 178.0
 margin_right = 144.0
-margin_bottom = 229.0
-value = 100.0
-texture_under = ExtResource( 10 )
-texture_progress = ExtResource( 10 )
-tint_under = Color( 0, 0, 0, 1 )
-tint_progress = Color( 0, 1, 0.054902, 1 )
-
-[node name="EastTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars"]
-margin_left = 197.0
-margin_top = 44.0
-margin_right = 239.0
-margin_bottom = 184.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+margin_bottom = 223.0
 value = 100.0
 texture_under = ExtResource( 11 )
 texture_progress = ExtResource( 11 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+
+[node name="SouthShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_progress = ExtResource( 11 )
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+
+[node name="EastTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars"]
+margin_left = 197.0
+margin_top = 41.0
+margin_right = 239.0
+margin_bottom = 181.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 100.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 12 )
 fill_mode = 3
 tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 0, 1, 0.054902, 1 )
 
+[node name="EastShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/EastTurretHealthBar"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_progress = ExtResource( 12 )
+fill_mode = 3
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+
 [node name="RadarSprite" type="Sprite" parent="."]
 position = Vector2( 900, 500 )
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 12 )
-script = ExtResource( 13 )
+texture = ExtResource( 13 )
+script = ExtResource( 14 )
 
 [node name="hotkey_label_west" type="Sprite" parent="RadarSprite"]
 position = Vector2( -345.25, 0 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="hotkey_label_east" type="Sprite" parent="RadarSprite"]
 position = Vector2( 354.75, 0 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="hotkey_label_south" type="Sprite" parent="RadarSprite"]
 position = Vector2( 0, 350 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="hotkey_label_north" type="Sprite" parent="RadarSprite"]
 position = Vector2( 0, -350 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
