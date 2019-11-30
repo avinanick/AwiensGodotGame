@@ -71,12 +71,14 @@ margin_bottom = 129.0
 [node name="FlakCannonUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer" instance=ExtResource( 5 )]
 margin_right = 76.0
 margin_bottom = 98.0
+hint_tooltip = "A cannon that fire flak shells which explode on contact with a target."
 upgrade_name = "Flak Cannon"
 
 [node name="ThunderCannonUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer" instance=ExtResource( 5 )]
 margin_left = 80.0
 margin_right = 156.0
 margin_bottom = 98.0
+hint_tooltip = "A cannon that fires bolts of lightning toward the nearest enemy that deal massive damage."
 upgrade_name = "Thunder Cannon"
 
 [node name="UpgradesLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
@@ -93,6 +95,7 @@ margin_bottom = 274.0
 [node name="ShapedBlastUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 5 )]
 margin_right = 76.0
 margin_bottom = 98.0
+hint_tooltip = "Explosions from flak shells no longer damage friendly targets."
 cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Shaped Blast"
@@ -101,6 +104,7 @@ upgrade_name = "Shaped Blast"
 margin_left = 80.0
 margin_right = 156.0
 margin_bottom = 98.0
+hint_tooltip = "Chaingun rounds now cause the target to burn until death, stacking."
 cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Incendiary Rounds"
@@ -109,6 +113,7 @@ upgrade_name = "Incendiary Rounds"
 margin_left = 160.0
 margin_right = 236.0
 margin_bottom = 98.0
+hint_tooltip = "Engages shielding around all friendly targets that block enemy attacks while active."
 cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Energy Shields"
