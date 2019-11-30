@@ -10,7 +10,7 @@ var possible_targets = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	point_value = 1
+	point_value = 10
 	speed = 5
 	var earthlings = get_tree().get_nodes_in_group("Earthlings")
 	for earthling in earthlings:

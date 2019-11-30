@@ -1,11 +1,12 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/LevelCountdown.gd" type="Script" id=1]
-[ext_resource path="res://Resources/Materials/countdown_number_5.png" type="Texture" id=2]
-[ext_resource path="res://Resources/Materials/countdown_number_4.png" type="Texture" id=3]
-[ext_resource path="res://Resources/Materials/countdown_number_3.png" type="Texture" id=4]
-[ext_resource path="res://Resources/Materials/countdown_number_2.png" type="Texture" id=5]
-[ext_resource path="res://Resources/Materials/countdown_number_1.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Materials/LabelImages/countdown_number_5.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Materials/LabelImages/countdown_number_4.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Materials/LabelImages/countdown_number_3.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Materials/LabelImages/countdown_number_2.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Materials/LabelImages/countdown_number_1.png" type="Texture" id=6]
+
 
 [node name="LevelCountdown" type="MarginContainer"]
 anchor_left = 0.5

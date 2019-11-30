@@ -3,10 +3,10 @@
 [ext_resource path="res://Scripts/Interfaces/UpgradesInterface.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/menu_backdrop.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Materials/background.png" type="Texture" id=3]
-[ext_resource path="res://Resources/Materials/turret_upgrade_label.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Materials/LabelImages/turret_upgrade_label.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Interfaces/PurchasableUpgrade.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Resources/Materials/upgrades_upgrade_label.png" type="Texture" id=6]
-[ext_resource path="res://Resources/Materials/repair_upgrade_label.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Materials/LabelImages/upgrades_upgrade_label.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=7]
 
 [node name="UpgradesInterface" type="MarginContainer"]
 anchor_left = 0.5

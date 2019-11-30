@@ -53,7 +53,9 @@ func take_damage(var amount: int):
 	# to play a shattering animation when the shield breaks
 	self.health -= amount
 	emit_signal("health_changed", self)
-	get_node("AnimationPlayer").play("DamageImpact")
 	if self.health <= 0:
 		overloaded = true
 		get_node("CollisionShape").disabled = true
+		get_node("AnimationPlayer").play("ShieldShatter")
+	else:
+		get_node("AnimationPlayer").play("DamageImpact")
