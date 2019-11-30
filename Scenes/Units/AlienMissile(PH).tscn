@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scripts/Units/AlienMissile.gd" type="Script" id=1]
 
-
 [sub_resource type="CylinderMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]

@@ -13,14 +13,16 @@ func _ready():
 	var mount_name = self.get_parent().name
 	if "North" in mount_name:
 		self.position = "NorthShield"
-	if "South" in mount_name:
+	elif "South" in mount_name:
 		self.position = "SouthShield"
-	if "West" in mount_name:
+	elif "West" in mount_name:
 		self.position = "WestShield"
-	if "East" in mount_name:
+	elif "East" in mount_name:
 		self.position = "EastShield"
-	if self.position == "":
+	else:
 		self.position = "CityShield"
+	print("Shield position set to ", self.position)
+	self.make_connections()
 	emit_signal("health_changed", self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +35,7 @@ func _process(delta):
 			overloaded = false
 			self.health = self.max_health
 			get_node("CollisionShape").disabled = false
+			emit_signal("health_changed", self)
 	elif recovery_timer >= time_per_recover:
 		recovery_timer = 0
 		if health < max_health:
@@ -40,7 +43,10 @@ func _process(delta):
 			emit_signal("health_changed", self)
 			
 func make_connections():
-	self.connect("health_changed", get_node("../../../MainOverlay"), "structure_health_changed")
+	if self.position == "CityShield":
+		self.connect("health_changed", get_node("../../MainOverlay"), "structure_health_changed")
+	else:
+		self.connect("health_changed", get_node("../../../MainOverlay"), "structure_health_changed")
 			
 func take_damage(var amount: int):
 	# For now, this will always play a flicker/fade animation for the shield, I'd like to modify this

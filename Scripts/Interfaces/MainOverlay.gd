@@ -1,7 +1,7 @@
 extends MarginContainer
 class_name MainOverlay
 
-onready var time_left_label = get_node("HBoxContainer/Counters/Counter/Background/TimerLabel")
+onready var time_left_label = get_node("VBoxContainer/Counters/Counter/Background/TimerLabel")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

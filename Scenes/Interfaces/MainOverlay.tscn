@@ -35,7 +35,6 @@ margin_right = 1004.0
 margin_bottom = 580.0
 
 [node name="Counters" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
 margin_right = 984.0
 margin_bottom = 40.0
 alignment = 2
@@ -149,7 +148,7 @@ fill_mode = 5
 tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 0, 1, 0.054902, 1 )
 radial_fill_degrees = 90.0
-radial_center_offset = Vector2( 31.36, 32.22 )
+radial_center_offset = Vector2( 32.05, 32.22 )
 
 [node name="NorthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
 show_behind_parent = true
@@ -164,7 +163,7 @@ tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 0, 1, 0.054902, 1 )
 radial_initial_angle = 90.0
 radial_fill_degrees = 90.0
-radial_center_offset = Vector2( -30.2, 33.23 )
+radial_center_offset = Vector2( -30.85, 33.23 )
 
 [node name="SouthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
 show_behind_parent = true
@@ -196,7 +195,7 @@ tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 0, 1, 0.054902, 1 )
 radial_initial_angle = 180.0
 radial_fill_degrees = 90.0
-radial_center_offset = Vector2( -33.17, -31.46 )
+radial_center_offset = Vector2( -33.17, -34.14 )
 
 [node name="SouthTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
 editor/display_folded = true
