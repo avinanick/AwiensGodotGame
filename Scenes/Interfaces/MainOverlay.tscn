@@ -1,259 +1,228 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/MainOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/background.png" type="Texture" id=2]
-[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Resources/Materials/health_background.png" type="Texture" id=4]
-[ext_resource path="res://Resources/Materials/health_filler.png" type="Texture" id=5]
-[ext_resource path="res://Resources/Materials/NorthTurretHealth.png" type="Texture" id=6]
-[ext_resource path="res://Resources/Materials/NorthWestBuildingHealth.png" type="Texture" id=7]
-[ext_resource path="res://Resources/Materials/NorthEastBuildingHealth.png" type="Texture" id=8]
-[ext_resource path="res://Resources/Materials/EastTurretHealth.png" type="Texture" id=9]
-[ext_resource path="res://Resources/Materials/SouthEastBuildingHealth.png" type="Texture" id=10]
-[ext_resource path="res://Resources/Materials/SouthWestBuildingHealth.png" type="Texture" id=11]
-[ext_resource path="res://Resources/Materials/SouthTurretHealth.png" type="Texture" id=12]
-[ext_resource path="res://Resources/Materials/WestTurretHealth.png" type="Texture" id=13]
-[ext_resource path="res://icon.png" type="Texture" id=14]
-[ext_resource path="res://Resources/Materials/radar_backdrop.png" type="Texture" id=15]
-[ext_resource path="res://Scripts/Interfaces/Radar.gd" type="Script" id=16]
-[ext_resource path="res://Resources/Materials/hotkey_label_4.png" type="Texture" id=17]
-[ext_resource path="res://Resources/Materials/hotkey_label_3.png" type="Texture" id=18]
-[ext_resource path="res://Resources/Materials/hotkey_label_2.png" type="Texture" id=19]
-[ext_resource path="res://Resources/Materials/hotkey_label_1.png" type="Texture" id=20]
-
-[sub_resource type="CanvasItemMaterial" id=1]
-blend_mode = 2
-
-[sub_resource type="DynamicFont" id=2]
-size = 20
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
-
-[sub_resource type="CanvasItemMaterial" id=3]
-blend_mode = 2
-
-[sub_resource type="DynamicFont" id=4]
-size = 20
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-extra_spacing_char = 1
-font_data = ExtResource( 3 )
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Materials/WestTurretHealth.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Materials/NorthTurretHealth.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Materials/NorthWestBuildingHealth.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Materials/NorthEastBuildingHealth.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Materials/SouthWestBuildingHealth.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Materials/SouthEastBuildingHealth.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Materials/SouthTurretHealth.png" type="Texture" id=10]
+[ext_resource path="res://Resources/Materials/EastTurretHealth.png" type="Texture" id=11]
+[ext_resource path="res://Resources/Materials/radar_backdrop.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Interfaces/Radar.gd" type="Script" id=13]
+[ext_resource path="res://Resources/Materials/hotkey_label_4.png" type="Texture" id=14]
+[ext_resource path="res://Resources/Materials/hotkey_label_3.png" type="Texture" id=15]
+[ext_resource path="res://Resources/Materials/hotkey_label_2.png" type="Texture" id=16]
+[ext_resource path="res://Resources/Materials/hotkey_label_1.png" type="Texture" id=17]
 
 [node name="MainOverlay" type="MarginContainer"]
 anchor_right = 1.0
-margin_bottom = 80.0
+anchor_bottom = 1.0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 script = ExtResource( 1 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 1036.0
-margin_bottom = 104.0
+margin_right = 1004.0
+margin_bottom = 580.0
 
-[node name="Bars" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 882.0
-margin_bottom = 84.0
-size_flags_horizontal = 3
+[node name="Counters" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
+margin_right = 984.0
+margin_bottom = 40.0
+alignment = 2
 
-[node name="TurretBar" type="HBoxContainer" parent="HBoxContainer/Bars"]
-margin_right = 882.0
+[node name="Counter" type="MarginContainer" parent="VBoxContainer/Counters"]
+margin_left = 854.0
+margin_right = 984.0
 margin_bottom = 40.0
 
-[node name="Count" type="MarginContainer" parent="HBoxContainer/Bars/TurretBar"]
-margin_right = 130.0
-margin_bottom = 40.0
-
-[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/TurretBar/Count"]
-margin_right = 130.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 130, 40 )
-texture = ExtResource( 2 )
-
-[node name="TurretLabel" type="Label" parent="HBoxContainer/Bars/TurretBar/Count/Background"]
-material = SubResource( 1 )
-margin_left = 17.36
-margin_right = 91.36
-margin_bottom = 33.0
-custom_fonts/font = SubResource( 2 )
-text = "Turrets"
-
-[node name="NorthTurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/TurretBar"]
-margin_left = 134.0
-margin_right = 318.0
-margin_bottom = 40.0
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 5 )
-
-[node name="EastTurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/TurretBar"]
-margin_left = 322.0
-margin_right = 506.0
-margin_bottom = 40.0
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 5 )
-
-[node name="SouthTurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/TurretBar"]
-margin_left = 510.0
-margin_right = 694.0
-margin_bottom = 40.0
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 5 )
-
-[node name="WestTurretHealth" type="TextureProgress" parent="HBoxContainer/Bars/TurretBar"]
-margin_left = 698.0
-margin_right = 882.0
-margin_bottom = 40.0
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 5 )
-
-[node name="CityBar" type="HBoxContainer" parent="HBoxContainer/Bars"]
-margin_top = 44.0
-margin_right = 882.0
-margin_bottom = 84.0
-
-[node name="Count" type="MarginContainer" parent="HBoxContainer/Bars/CityBar"]
-margin_right = 130.0
-margin_bottom = 40.0
-
-[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/CityBar/Count"]
+[node name="Background" type="NinePatchRect" parent="VBoxContainer/Counters/Counter"]
 margin_right = 130.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 130, 40 )
 texture = ExtResource( 2 )
 
-[node name="CityLabel" type="Label" parent="HBoxContainer/Bars/CityBar/Count/Background"]
-material = SubResource( 3 )
-margin_left = 23.69
-margin_right = 63.69
-margin_bottom = 33.0
-custom_fonts/font = SubResource( 4 )
-text = "City"
-
-[node name="BuildlingHealth1" type="TextureProgress" parent="HBoxContainer/Bars/CityBar"]
-margin_left = 134.0
-margin_right = 318.0
-margin_bottom = 40.0
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 5 )
-
-[node name="NorthTurretHealth" type="Sprite" parent="HBoxContainer/Bars/CityBar/BuildlingHealth1"]
-position = Vector2( 170.656, 621.152 )
-texture = ExtResource( 6 )
-
-[node name="NorthWestBuildingHealth" type="Sprite" parent="HBoxContainer/Bars/CityBar/BuildlingHealth1"]
-position = Vector2( 135.428, 672.007 )
-texture = ExtResource( 7 )
-
-[node name="NorthEastBuildingHealth" type="Sprite" parent="HBoxContainer/Bars/CityBar/BuildlingHealth1"]
-position = Vector2( 203.086, 672.007 )
-texture = ExtResource( 8 )
-
-[node name="EastTurretHealth" type="Sprite" parent="HBoxContainer/Bars/CityBar/BuildlingHealth1"]
-position = Vector2( 254.838, 707.377 )
-texture = ExtResource( 9 )
-
-[node name="SouthEastBuildingHealth" type="Sprite" parent="HBoxContainer/Bars/CityBar/BuildlingHealth1"]
-position = Vector2( 204.807, 741.387 )
-texture = ExtResource( 10 )
-
-[node name="SouthWestBuildingHealth" type="Sprite" parent="HBoxContainer/Bars/CityBar/BuildlingHealth1"]
-position = Vector2( 135.428, 740.026 )
-texture = ExtResource( 11 )
-
-[node name="SouthTurretHealth" type="Sprite" parent="HBoxContainer/Bars/CityBar/BuildlingHealth1"]
-position = Vector2( 170.244, 792.756 )
-texture = ExtResource( 12 )
-
-[node name="WestTurretHealth" type="Sprite" parent="HBoxContainer/Bars/CityBar/BuildlingHealth1"]
-position = Vector2( 88.6304, 706.298 )
-texture = ExtResource( 13 )
-
-[node name="BuildingHealth2" type="TextureProgress" parent="HBoxContainer/Bars/CityBar"]
-margin_left = 322.0
-margin_right = 506.0
-margin_bottom = 40.0
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 5 )
-
-[node name="BuildingHealth3" type="TextureProgress" parent="HBoxContainer/Bars/CityBar"]
-margin_left = 510.0
-margin_right = 694.0
-margin_bottom = 40.0
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 5 )
-
-[node name="BuildingHealth4" type="TextureProgress" parent="HBoxContainer/Bars/CityBar"]
-margin_left = 698.0
-margin_right = 882.0
-margin_bottom = 40.0
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 5 )
-
-[node name="Counters" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 886.0
-margin_right = 1016.0
-margin_bottom = 84.0
-
-[node name="Counter" type="MarginContainer" parent="HBoxContainer/Counters"]
-margin_right = 130.0
-margin_bottom = 84.0
-
-[node name="Background" type="NinePatchRect" parent="HBoxContainer/Counters/Counter"]
-margin_right = 130.0
-margin_bottom = 84.0
-rect_min_size = Vector2( 130, 40 )
-texture = ExtResource( 2 )
-
-[node name="Icon" type="TextureRect" parent="HBoxContainer/Counters/Counter/Background"]
+[node name="Icon" type="TextureRect" parent="VBoxContainer/Counters/Counter/Background"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -64.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 14 )
+texture = ExtResource( 3 )
 stretch_mode = 4
 
-[node name="TimerLabel" type="Label" parent="HBoxContainer/Counters/Counter/Background"]
+[node name="TimerLabel" type="Label" parent="VBoxContainer/Counters/Counter/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 14.0
 text = "10"
 valign = 1
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="HealthSpacing" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 44.0
+margin_right = 984.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HealthBars" type="HBoxContainer" parent="VBoxContainer/HealthSpacing"]
+margin_top = 287.0
+margin_right = 984.0
+margin_bottom = 516.0
+size_flags_vertical = 8
+
+[node name="WestTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars"]
+margin_top = 42.0
+margin_right = 45.0
+margin_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 4 )
+fill_mode = 3
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+
+[node name="CentralBars" type="VBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars"]
+margin_left = 49.0
+margin_right = 193.0
+margin_bottom = 229.0
+
+[node name="NorthTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
+margin_right = 144.0
+margin_bottom = 44.0
+value = 100.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 5 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_initial_angle = 90.0
+radial_fill_degrees = 270.0
+radial_center_offset = Vector2( 0, 21.19 )
+
+[node name="NorthCityBars" type="HBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
+margin_left = 7.0
+margin_top = 48.0
+margin_right = 136.0
+margin_bottom = 112.0
+size_flags_horizontal = 4
+
+[node name="NorthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthCityBars"]
+margin_right = 64.0
+margin_bottom = 64.0
+value = 100.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2( 31.12, 32.22 )
+
+[node name="NorthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthCityBars"]
+margin_left = 68.0
+margin_right = 129.0
+margin_bottom = 64.0
+value = 100.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 7 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_initial_angle = 90.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2( -30.2, 33.23 )
+
+[node name="SouthCityBars" type="HBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
+margin_left = 6.0
+margin_top = 116.0
+margin_right = 138.0
+margin_bottom = 180.0
+size_flags_horizontal = 4
+
+[node name="SouthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthCityBars"]
+margin_right = 64.0
+margin_bottom = 64.0
+value = 100.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 8 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_initial_angle = 270.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2( 33.43, -31.03 )
+
+[node name="SouthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthCityBars"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+value = 100.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 9 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_initial_angle = 180.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2( -33.17, -31.46 )
+
+[node name="SouthTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
+margin_top = 184.0
+margin_right = 144.0
+margin_bottom = 229.0
+value = 100.0
+texture_under = ExtResource( 10 )
+texture_progress = ExtResource( 10 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+
+[node name="EastTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars"]
+margin_left = 197.0
+margin_top = 44.0
+margin_right = 239.0
+margin_bottom = 184.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 100.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 11 )
+fill_mode = 3
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+
+[node name="RadarSprite" type="Sprite" parent="."]
 position = Vector2( 900, 500 )
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 15 )
-script = ExtResource( 16 )
+texture = ExtResource( 12 )
+script = ExtResource( 13 )
 
-[node name="hotkey_label_west" type="Sprite" parent="Sprite"]
+[node name="hotkey_label_west" type="Sprite" parent="RadarSprite"]
 position = Vector2( -345.25, 0 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 17 )
+texture = ExtResource( 14 )
 
-[node name="hotkey_label_east" type="Sprite" parent="Sprite"]
+[node name="hotkey_label_east" type="Sprite" parent="RadarSprite"]
 position = Vector2( 354.75, 0 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 18 )
+texture = ExtResource( 15 )
 
-[node name="hotkey_label_south" type="Sprite" parent="Sprite"]
+[node name="hotkey_label_south" type="Sprite" parent="RadarSprite"]
 position = Vector2( 0, 350 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 19 )
+texture = ExtResource( 16 )
 
-[node name="hotkey_label_north" type="Sprite" parent="Sprite"]
+[node name="hotkey_label_north" type="Sprite" parent="RadarSprite"]
 position = Vector2( 0, -350 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 20 )
+texture = ExtResource( 17 )

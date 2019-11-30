@@ -15,21 +15,21 @@ func structure_health_changed(var structure):
 	var health_bar: TextureProgress
 	match structure.position:
 		"North":
-			health_bar = get_node("HBoxContainer/Bars/TurretBar/NorthTurretHealth")
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthTurretHealthBar")
 		"East":
-			health_bar = get_node("HBoxContainer/Bars/TurretBar/EastTurretHealth")
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/EastTurretHealthBar")
 		"West":
-			health_bar = get_node("HBoxContainer/Bars/TurretBar/WestTurretHealth")
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/WestTurretHealthBar")
 		"South":
-			health_bar = get_node("HBoxContainer/Bars/TurretBar/SouthTurretHealth")
-		"1":
-			health_bar = get_node("HBoxContainer/Bars/CityBar/BuildlingHealth1")
-		"2":
-			health_bar = get_node("HBoxContainer/Bars/CityBar/BuildingHealth2")
-		"3":
-			health_bar = get_node("HBoxContainer/Bars/CityBar/BuildingHealth3")
-		"4":
-			health_bar = get_node("HBoxContainer/Bars/CityBar/BuildingHealth4")
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar")
+		"NorthWest":
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthCityBars/NorthWestCityBar")
+		"NorthEast":
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthCityBars/NorthEastCityBar")
+		"SouthWest":
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthCityBars/SouthWestCityBar")
+		"SouthEast":
+			health_bar = get_node("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthCityBars/SouthEastCityBar")
 	print(structure.position)
 	# In case there is a mistake and this didn't get assigned...
 	if health_bar:
