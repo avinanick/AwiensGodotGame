@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/UpgradesInterface.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/menu_backdrop.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Materials/background.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Materials/LabelImages/turret_upgrade_label.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Interfaces/PurchasableUpgrade.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Resources/Materials/LabelImages/upgrades_upgrade_label.png" type="Texture" id=6]
-[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Materials/Icons/flakcannon.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Materials/LabelImages/upgrades_upgrade_label.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=8]
 
 [node name="UpgradesInterface" type="MarginContainer"]
 anchor_left = 0.5
@@ -73,6 +74,7 @@ margin_right = 76.0
 margin_bottom = 98.0
 hint_tooltip = "A cannon that fire flak shells which explode on contact with a target."
 upgrade_name = "Flak Cannon"
+upgrade_icon = ExtResource( 6 )
 
 [node name="ThunderCannonUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer" instance=ExtResource( 5 )]
 margin_left = 80.0
@@ -85,7 +87,7 @@ upgrade_name = "Thunder Cannon"
 margin_top = 140.0
 margin_right = 236.0
 margin_bottom = 165.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="UpgradesContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 176.0
@@ -122,7 +124,7 @@ upgrade_name = "Energy Shields"
 margin_top = 285.0
 margin_right = 236.0
 margin_bottom = 310.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="RepairsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 321.0
