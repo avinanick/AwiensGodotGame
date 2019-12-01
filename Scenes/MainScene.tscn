@@ -54,13 +54,13 @@ visible = false
 [node name="Guns" type="Spatial" parent="."]
 
 [node name="NorthGun" parent="Guns" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, 12 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87825, 12 )
 
 [node name="EastGun" parent="Guns" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2.137, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.87825, 0 )
 
 [node name="WestGun" parent="Guns" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.137, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.87825, 0 )
 
 [node name="SouthGun" parent="Guns" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.137, -12 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87825, -12 )

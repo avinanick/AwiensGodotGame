@@ -3,57 +3,57 @@
 [ext_resource path="res://Scripts/EnergyShield.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/Textures/shield_shatter_texture.tres" type="Texture" id=2]
 
-[sub_resource type="SphereShape" id=8]
+[sub_resource type="SphereShape" id=1]
 
-[sub_resource type="SphereMesh" id=9]
+[sub_resource type="SphereMesh" id=2]
 
-[sub_resource type="VisualShaderNodeInput" id=13]
+[sub_resource type="VisualShaderNodeInput" id=3]
 output_port_for_preview = 0
 input_name = "uv"
 
-[sub_resource type="VisualShaderNodeTexture" id=14]
+[sub_resource type="VisualShaderNodeTexture" id=4]
 output_port_for_preview = 0
 texture = ExtResource( 2 )
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=15]
+[sub_resource type="VisualShaderNodeScalarUniform" id=5]
 uniform_name = "ShatterVariable"
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=16]
+[sub_resource type="VisualShaderNodeScalarFunc" id=6]
 output_port_for_preview = 0
 function = 0
 
-[sub_resource type="VisualShaderNodeScalarOp" id=17]
+[sub_resource type="VisualShaderNodeScalarOp" id=7]
 output_port_for_preview = 0
 operator = 1
 
-[sub_resource type="VisualShaderNodeInput" id=18]
+[sub_resource type="VisualShaderNodeInput" id=8]
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeColorConstant" id=1]
+[sub_resource type="VisualShaderNodeColorConstant" id=9]
 constant = Color( 0.0195313, 0.747223, 1, 1 )
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=19]
+[sub_resource type="VisualShaderNodeScalarFunc" id=10]
 output_port_for_preview = 0
 function = 15
 
-[sub_resource type="VisualShaderNodeScalarOp" id=20]
+[sub_resource type="VisualShaderNodeScalarOp" id=11]
 operator = 7
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=2]
+[sub_resource type="VisualShaderNodeScalarFunc" id=12]
 function = 0
 
-[sub_resource type="VisualShaderNodeScalarOp" id=3]
+[sub_resource type="VisualShaderNodeScalarOp" id=13]
 default_input_values = [ 0, 0.0, 1, 0.4 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=4]
+[sub_resource type="VisualShaderNodeScalarFunc" id=14]
 output_port_for_preview = 0
 function = 12
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=6]
+[sub_resource type="VisualShaderNodeScalarUniform" id=15]
 uniform_name = "power"
 
-[sub_resource type="VisualShader" id=7]
+[sub_resource type="VisualShader" id=16]
 code = "shader_type spatial;
 render_mode cull_disabled;
 
@@ -133,45 +133,44 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -570.967, 155.363 )
+graph_offset = Vector2( -460, 155.363 )
 modes/cull = 2
 nodes/fragment/0/position = Vector2( 600, 140 )
-nodes/fragment/2/node = SubResource( 1 )
+nodes/fragment/2/node = SubResource( 9 )
 nodes/fragment/2/position = Vector2( 40, 160 )
-nodes/fragment/3/node = SubResource( 2 )
+nodes/fragment/3/node = SubResource( 12 )
 nodes/fragment/3/position = Vector2( -160, 260 )
-nodes/fragment/5/node = SubResource( 3 )
+nodes/fragment/5/node = SubResource( 13 )
 nodes/fragment/5/position = Vector2( 40, 240 )
-nodes/fragment/6/node = SubResource( 4 )
+nodes/fragment/6/node = SubResource( 14 )
 nodes/fragment/6/position = Vector2( 220, 240 )
-nodes/fragment/9/node = SubResource( 6 )
+nodes/fragment/9/node = SubResource( 15 )
 nodes/fragment/9/position = Vector2( -340, 260 )
-nodes/fragment/10/node = SubResource( 13 )
+nodes/fragment/10/node = SubResource( 3 )
 nodes/fragment/10/position = Vector2( -460, 420 )
-nodes/fragment/11/node = SubResource( 14 )
+nodes/fragment/11/node = SubResource( 4 )
 nodes/fragment/11/position = Vector2( -280, 400 )
-nodes/fragment/15/node = SubResource( 15 )
+nodes/fragment/15/node = SubResource( 5 )
 nodes/fragment/15/position = Vector2( -440, 740 )
-nodes/fragment/16/node = SubResource( 16 )
+nodes/fragment/16/node = SubResource( 6 )
 nodes/fragment/16/position = Vector2( -100, 700 )
-nodes/fragment/17/node = SubResource( 17 )
+nodes/fragment/17/node = SubResource( 7 )
 nodes/fragment/17/position = Vector2( 20, 440 )
-nodes/fragment/18/node = SubResource( 18 )
+nodes/fragment/18/node = SubResource( 8 )
 nodes/fragment/18/position = Vector2( -440, 640 )
-nodes/fragment/20/node = SubResource( 19 )
+nodes/fragment/20/node = SubResource( 10 )
 nodes/fragment/20/position = Vector2( 200, 440 )
-nodes/fragment/21/node = SubResource( 20 )
+nodes/fragment/21/node = SubResource( 11 )
 nodes/fragment/21/position = Vector2( 420, 240 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 5, 0, 6, 0, 3, 0, 5, 0, 10, 0, 11, 0, 9, 0, 3, 0, 17, 0, 20, 0, 6, 0, 21, 0, 21, 0, 0, 1, 16, 0, 17, 1, 15, 0, 16, 0, 11, 0, 17, 0, 20, 0, 21, 1 )
 
-[sub_resource type="ShaderMaterial" id=10]
+[sub_resource type="ShaderMaterial" id=17]
 resource_local_to_scene = true
-shader = SubResource( 7 )
-shader_param/power = 0.0
-shader_param/ShatterVariable = -0.5
+shader = SubResource( 16 )
+shader_param/power = 1.57
+shader_param/ShatterVariable = 0.5
 
-[sub_resource type="Animation" id=11]
-resource_name = "DamageImpact"
+[sub_resource type="Animation" id=18]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
@@ -198,8 +197,7 @@ tracks/1/keys = {
 "values": [ -0.5, -0.5 ]
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "Idle"
+[sub_resource type="Animation" id=19]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
@@ -214,7 +212,7 @@ tracks/0/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=20]
 resource_name = "ShieldShatter"
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
@@ -248,13 +246,13 @@ health = 5
 max_health = 5
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 9 )
-material/0 = SubResource( 10 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 17 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/DamageImpact = SubResource( 11 )
-anims/Idle = SubResource( 12 )
-anims/ShieldShatter = SubResource( 21 )
+anims/DamageImpact = SubResource( 18 )
+anims/Idle = SubResource( 19 )
+anims/ShieldShatter = SubResource( 20 )

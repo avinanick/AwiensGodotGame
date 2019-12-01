@@ -48,6 +48,12 @@ func replace_turret(var new_type):
 	else:
 		print("Selected turret not found")
 		
+func reset_sights():
+	get_child(0).reset_sights()
+		
+func sight(var x_rotation: float, var y_rotation: float):
+	get_child(0).sight(x_rotation, y_rotation)
+		
 func validate_upgrades():
 	if Global.upgrade_unlocks["Energy Shields"] and not self.shield:
 		activate_shield()

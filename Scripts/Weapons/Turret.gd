@@ -52,3 +52,13 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 	
 func make_connections():
 	self.connect("health_changed", get_node("../../../MainOverlay"), "structure_health_changed")
+	
+func reset_sights():
+	var model = get_node("TurretModel")
+	if model:
+		model.reset_sights()
+	
+func sight(var x_rotation: float, var y_rotation: float):
+	var model = get_node("TurretModel")
+	if model:
+		model.sight(x_rotation, y_rotation)

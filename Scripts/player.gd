@@ -23,24 +23,32 @@ func _process(delta):
 			selected_turret = get_node("/root/MainScene/Guns/NorthGun")
 			translation = Vector3(0,2.2,12)
 			rotation_degrees = Vector3(0,180,0)
+			if selected_turret and is_instance_valid(selected_turret):
+				selected_turret.reset_sights()
 			print("switch to turret one")
 		if Input.is_action_just_pressed("select_south"):
 			# select the south gun (0,3.5,-13)(0,180,0)
 			selected_turret = get_node("/root/MainScene/Guns/SouthGun")
 			translation = Vector3(0,2.2,-12)
 			rotation_degrees = Vector3(0,0,0)
+			if selected_turret and is_instance_valid(selected_turret):
+				selected_turret.reset_sights()
 			print("switch to turret two")
 		if Input.is_action_just_pressed("select_east"):
 			# select the east gun (13,3.5,0)(0,-90,0)
 			selected_turret = get_node("/root/MainScene/Guns/EastGun")
 			translation = Vector3(12,2.2,0)
 			rotation_degrees = Vector3(0,-90,0)
+			if selected_turret and is_instance_valid(selected_turret):
+				selected_turret.reset_sights()
 			print("switch to turret three")
 		if Input.is_action_just_pressed("select_west"):
 			# select the west gun (-13,3.5,0)(0,90,0)
 			selected_turret = get_node("/root/MainScene/Guns/WestGun")
 			translation = Vector3(-12,2.2,0)
 			rotation_degrees = Vector3(0,90,0)
+			if selected_turret and is_instance_valid(selected_turret):
+				selected_turret.reset_sights()
 			print("switch to turret four")
 		if Input.is_action_pressed("fire_one"):
 			# I need to modify this to accurately spawn at the camera position instead of base player
@@ -59,10 +67,13 @@ func _input(event):
 		# plus gives inverted controls, minus gives regular
 		if rotation_degrees.x - (event.relative.y * rotation_speed) > 90:
 			rotation_degrees.x = 90
+			selected_turret.sight(0, event.relative.x * rotation_speed)
 		elif rotation_degrees.x - (event.relative.y * rotation_speed) < -90:
 			rotation_degrees.x = -90
+			selected_turret.sight(0, event.relative.x * rotation_speed)
 		else:
 			rotation_degrees.x -= (event.relative.y * rotation_speed)
+			selected_turret.sight(event.relative.y * rotation_speed, event.relative.x * rotation_speed)
 		rotation_degrees.y -= (event.relative.x * rotation_speed)
 		
 func activate_camera():
