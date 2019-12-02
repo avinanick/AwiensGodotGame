@@ -1,9 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Units/AlienMissile.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Units/MissileModel.tscn" type="PackedScene" id=2]
 
 [sub_resource type="SphereShape" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fly"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MissileModel:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 45 ), Vector3( 0, 0, 90 ), Vector3( 0, 0, 135 ), Vector3( 0, 0, 180 ), Vector3( 0, 0, 225 ), Vector3( 0, 0, 270 ), Vector3( 0, 0, 325 ), Vector3( 0, 0, 360 ) ]
+}
 
 [node name="AlienMissile(PH)" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -15,4 +32,7 @@ transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 1.8, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MissileModel" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0.380274 )
+transform = Transform( 0.119849, -0.275021, 0, 0.275021, 0.119849, 0, 0, 0, 1, 0, 0, 0.380274 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Fly = SubResource( 2 )
