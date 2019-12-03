@@ -7,7 +7,6 @@
 [ext_resource path="res://Resources/Materials/LabelImages/countdown_number_2.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Materials/LabelImages/countdown_number_1.png" type="Texture" id=6]
 
-
 [node name="LevelCountdown" type="MarginContainer"]
 anchor_left = 0.5
 anchor_top = 0.5

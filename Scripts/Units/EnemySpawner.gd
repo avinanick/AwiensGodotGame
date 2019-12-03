@@ -15,13 +15,20 @@ var enemy_scenes := [preload("res://Scenes/Units/AlienMissile(PH).tscn"),
 	preload("res://Scenes/Units/AlienDrone.tscn"),
 	preload("res://Scenes/Units/AlienFighter.tscn"),
 	preload("res://Scenes/Units/AlienBomber.tscn")]
+var enemy_types := ["AlienMissile",
+	"AlienDrone",
+	"AlienFighter",
+	"AlienBomber"]
 var base_spawn_periods := [5, 7, 11, 13]
+
+signal type_chosen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	add_to_group("Spawners")
 	update_spawner_difficulty()
+	self.connect("type_chosen", get_node("../EnemyWarningInterface"), "add_icon")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -47,4 +54,5 @@ func randomize_spawn():
 	var index: int = randi() % enemy_scenes.size()
 	enemy_scene = enemy_scenes[index]
 	base_spawn_period = base_spawn_periods[index]
+	emit_signal("type_chosen", enemy_types[index])
 	update_spawner_difficulty()

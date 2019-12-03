@@ -30,11 +30,14 @@ onready var turret_placement_camera := get_node("TurretPlacementCamera") as Came
 var enemy_spawner = preload("res://Scenes/Units/EnemySpawner.tscn")
 
 signal start_transition
+signal player_victory
 
 # Called when the node enters the scene tree for the first time.
 # This should be modified to respond to load data
 func _ready():
 	self.connect("start_transition", get_node("LevelCountdown"), "on_transition_start")
+	self.connect("start_transition", get_node("EnemyWarningInterface"), "on_transition_start")
+	self.connect("player_victory", get_node("EnemyWarningInterface"), "clear_display")
 	if victory_screen:
 		victory_screen.visible = false
 	if defeat_screen:
@@ -71,6 +74,7 @@ func _process(delta):
 				defeat_screen.visible = true
 		game_states.victory:
 			if victory_screen and not victory_screen.visible:
+				emit_signal("player_victory")
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				print("we won! Points: " + str(points))
 				victory_screen.update_score(points)
