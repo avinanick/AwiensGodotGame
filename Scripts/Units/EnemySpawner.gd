@@ -12,7 +12,7 @@ var enemy_scene = preload("res://Scenes/Units/AlienMissile(PH).tscn")
 var timer = 0
 onready var main_scene = get_node("/root/MainScene")
 var enemy_scenes := [preload("res://Scenes/Units/AlienMissile(PH).tscn"),
-	preload("res://Scenes/Units/AlienDroneBody.tscn"),
+	preload("res://Scenes/Units/AlienDrone.tscn"),
 	preload("res://Scenes/Units/AlienFighter.tscn"),
 	preload("res://Scenes/Units/AlienBomber.tscn")]
 var base_spawn_periods := [5, 7, 11, 13]

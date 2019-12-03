@@ -1,12 +1,42 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Units/AlienShip.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Units/AlienDroneBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Units/AlienDroneModel.tscn" type="PackedScene" id=2]
 
-[node name="KinematicBody" type="KinematicBody"]
+[sub_resource type="CylinderShape" id=1]
+radius = 1.1
+height = 1.8
+
+[sub_resource type="Animation" id=2]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AlienDroneModel:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 45 ), Vector3( 0, 0, 90 ), Vector3( 0, 0, 135 ), Vector3( 0, 0, 180 ), Vector3( 0, 0, 225 ), Vector3( 0, 0, 270 ), Vector3( 0, 0, 315 ), Vector3( 0, 0, 360 ) ]
+}
+
+[node name="AlienDrone" type="KinematicBody"]
 script = ExtResource( 1 )
 health = 2
 max_health = 2
 point_value = 2
+turn_speed = 0.2
 
-[node name="AlienDroneBody" parent="." instance=ExtResource( 2 )]
+[node name="AlienDroneModel" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.548519, -0.836138, 0, 0.836138, -0.548519, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Fly"
+anims/Fly = SubResource( 2 )
