@@ -94,7 +94,7 @@ func _process(delta):
 				victory_screen.visible = false
 			
 # Used to increment points when destroying an alien
-func enemy_destroyed(var point_value: int):
+func enemy_destroyed(var point_value: int, var alien_name: String):
 	points += point_value
 		
 func next_level():
