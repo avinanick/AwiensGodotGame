@@ -93,6 +93,11 @@ _global_script_classes=[ {
 "class": "VictoryInterface",
 "language": "GDScript",
 "path": "res://Scripts/Interfaces/Victory_interface.gd"
+}, {
+"base": "TextureRect",
+"class": "alien_attacker_icon",
+"language": "GDScript",
+"path": "res://Scripts/Interfaces/AlienAttackerIcon.gd"
 } ]
 _global_script_class_icons={
 "Alien": "",
@@ -111,7 +116,8 @@ _global_script_class_icons={
 "ThunderCannon": "",
 "Turret": "",
 "UpgradeInterface": "",
-"VictoryInterface": ""
+"VictoryInterface": "",
+"alien_attacker_icon": ""
 }
 
 [application]

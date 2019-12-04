@@ -1,4 +1,5 @@
 extends TextureRect
+class_name alien_attacker_icon
 
 var alien_icons := [preload("res://Resources/Materials/Icons/alienmissile.png"),
 	preload("res://Resources/Materials/Icons/aliendrone.png"),
