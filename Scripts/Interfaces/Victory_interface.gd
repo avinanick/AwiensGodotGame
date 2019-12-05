@@ -34,4 +34,4 @@ func enemy_destroyed(var point_value: int, var alien_name: String):
 
 func update_score(points: int):
 	var point_label = get_node("VBoxContainer/Points_label_container/points_label")
-	point_label.text = str(points)
+	point_label.text = str("Points Earned: ", points)
