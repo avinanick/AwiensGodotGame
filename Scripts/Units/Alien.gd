@@ -20,8 +20,9 @@ func _ready():
 func take_damage(var amount: int):
 	health -= amount
 	if health <= 0:
-		main_scene.enemy_destroyed(point_value)
+		emit_signal("alien_destroyed", self.point_value, self.alien_name)
 		destroy_self()
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

@@ -29,6 +29,8 @@ func _ready():
 	add_to_group("Spawners")
 	update_spawner_difficulty()
 	self.connect("type_chosen", get_node("../EnemyWarningInterface"), "add_icon")
+	self.connect("type_chosen", get_node("../Victory_interface"), "add_kill_icon")
+	emit_signal("type_chosen", "AlienMissile")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

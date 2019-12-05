@@ -27,6 +27,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 health = 4
 max_health = 4
+alien_name = "AlienFighter"
 point_value = 3
 speed = 7.0
 turn_speed = 0.2
