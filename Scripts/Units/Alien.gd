@@ -10,6 +10,7 @@ onready var main_scene = get_node("/root/MainScene")
 var alien_direction: Vector3
 
 signal alien_destroyed
+signal alien_damaged
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +20,7 @@ func _ready():
 
 func take_damage(var amount: int):
 	health -= amount
+	emit_signal("alien_damaged")
 	if health <= 0:
 		emit_signal("alien_destroyed", self.point_value, self.alien_name)
 		destroy_self()
