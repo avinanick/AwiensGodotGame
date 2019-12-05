@@ -38,7 +38,7 @@ func _process(delta):
 			# select the east gun (13,3.5,0)(0,-90,0)
 			selected_turret = get_node("/root/MainScene/Guns/EastGun")
 			translation = Vector3(-12,2.2,0)
-			rotation_degrees = Vector3(0,-90,0)
+			rotation_degrees = Vector3(0,90,0)
 			if selected_turret and is_instance_valid(selected_turret):
 				selected_turret.reset_sights()
 			print("switch to turret three")
@@ -46,7 +46,7 @@ func _process(delta):
 			# select the west gun (-13,3.5,0)(0,90,0)
 			selected_turret = get_node("/root/MainScene/Guns/WestGun")
 			translation = Vector3(12,2.2,0)
-			rotation_degrees = Vector3(0,90,0)
+			rotation_degrees = Vector3(0,-90,0)
 			if selected_turret and is_instance_valid(selected_turret):
 				selected_turret.reset_sights()
 			print("switch to turret four")
