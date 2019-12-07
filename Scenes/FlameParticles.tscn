@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Models/Fire/flame_mesh.tres" type="ArrayMesh" id=1]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 3.0
+initial_velocity_random = 1.0
+angular_velocity = -1.06929e-022
+angle = 15.0
+angle_random = 1.0
+
+[node name="Particles" type="Particles"]
+amount = 20
+lifetime = 0.21
+process_material = SubResource( 1 )
+draw_pass_1 = ExtResource( 1 )
