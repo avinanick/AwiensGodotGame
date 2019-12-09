@@ -16,6 +16,17 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func destroy_self():
+	var animation_player = get_node("AnimationPlayer")
+	if animation_player:
+		animation_player.play("Destroy")
+		self.remove_from_group("Earthlings")
+	else:
+		self.queue_free()
+	
+func finish_death():
+	self.queue_free()
+
 func make_connections():
 	self.connect("health_changed", get_node("../../MainOverlay"), "structure_health_changed")
 	
