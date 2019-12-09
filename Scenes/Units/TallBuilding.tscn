@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Units/Structure.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Models/building/building.glb" type="PackedScene" id=2]
@@ -20,6 +20,35 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( -0.163689, -0.154646, -0.187082 ), Vector3( 0.248949, -0.345414, 0.032939 ), Vector3( 0.105453, -0.460023, 0.267311 ), Vector3( 0.105453, -0.731257, -0.440606 ), Vector3( -0.301144, -1.29856, -0.440606 ), Vector3( -0.573655, -1.69526, -0.0652122 ), Vector3( -0.573655, -2.24452, 0.496004 ), Vector3( 0.265197, -2.87842, -0.566068 ), Vector3( 0.685864, -3.91446, -0.566068 ), Vector3( 0.202018, -4.7459, 0.240804 ), Vector3( -0.356167, -5.74311, 0.240804 ), Vector3( 0.362188, -6.6015, 0.240804 ), Vector3( -0.642163, -7.53681, -0.96729 ), Vector3( 0.150756, -8.5051, 0.165732 ), Vector3( 0.150756, -10.246, 0.165732 ) ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finish_death"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene Root:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
 
 [node name="Building" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -32,4 +61,6 @@ transform = Transform( 2, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
 anims/Destroy = SubResource( 2 )
+anims/Idle = SubResource( 3 )

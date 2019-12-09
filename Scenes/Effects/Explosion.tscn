@@ -1,0 +1,153 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Resources/Models/Fire/flame_mesh.tres" type="ArrayMesh" id=1]
+[ext_resource path="res://Resources/Materials/Textures/explosion_range_texture.tres" type="Texture" id=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 3.0
+initial_velocity_random = 1.0
+angular_velocity = 0.0
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3( 0, 4, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 1.0
+
+[sub_resource type="VisualShaderNodeInput" id=6]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeTexture" id=7]
+output_port_for_preview = 0
+texture = ExtResource( 2 )
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=8]
+output_port_for_preview = 0
+function = 15
+
+[sub_resource type="VisualShaderNodeColorConstant" id=9]
+output_port_for_preview = 0
+constant = Color( 0.101563, 0.101563, 0.101563, 1 )
+
+[sub_resource type="VisualShaderNodeScalarOp" id=10]
+default_input_values = [ 0, 0.0, 1, 0.5 ]
+operator = 2
+
+[sub_resource type="VisualShader" id=3]
+code = "shader_type spatial;
+uniform sampler2D tex_frg_3;
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Color:5
+	vec3 n_out5p0;
+	float n_out5p1;
+	n_out5p0 = vec3(0.101563,0.101563,0.101563);
+	n_out5p1 = 1.000000;
+
+// Input:2
+	vec3 n_out2p0;
+	n_out2p0 = vec3(UV,0.0);
+
+// Texture:3
+	vec3 n_out3p0;
+	float n_out3p1;
+	vec4 tex_frg_3_read = texture( tex_frg_3 , n_out2p0.xy );
+	n_out3p0 = tex_frg_3_read.rgb;
+	n_out3p1 = tex_frg_3_read.a;
+
+// ScalarFunc:4
+	float n_out4p0;
+	n_out4p0 = round(dot(n_out3p0,vec3(0.333333,0.333333,0.333333)));
+
+// ScalarOp:6
+	float n_in6p1 = 0.50000;
+	float n_out6p0;
+	n_out6p0 = n_out4p0 * n_in6p1;
+
+// Output:0
+	ALBEDO = n_out5p0;
+	ALPHA = n_out6p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -474.1, 262 )
+nodes/fragment/2/node = SubResource( 6 )
+nodes/fragment/2/position = Vector2( -320, 320 )
+nodes/fragment/3/node = SubResource( 7 )
+nodes/fragment/3/position = Vector2( -120, 280 )
+nodes/fragment/4/node = SubResource( 8 )
+nodes/fragment/4/position = Vector2( 60, 340 )
+nodes/fragment/5/node = SubResource( 9 )
+nodes/fragment/5/position = Vector2( 60, 60 )
+nodes/fragment/6/node = SubResource( 10 )
+nodes/fragment/6/position = Vector2( 200, 220 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 3, 0, 3, 0, 4, 0, 5, 0, 0, 0, 4, 0, 6, 0, 6, 0, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+
+[sub_resource type="SphereMesh" id=5]
+material = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 25.0
+initial_velocity_random = 1.0
+angular_velocity = 0.0
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.980392, 0.596078, 0, 1 )
+metallic = 0.52
+emission_enabled = true
+emission = Color( 0.682353, 0.529412, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SphereMesh" id=12]
+material = SubResource( 13 )
+radius = 0.25
+height = 1.0
+radial_segments = 32
+rings = 16
+
+[node name="Explosion" type="Spatial"]
+
+[node name="Fire" type="Particles" parent="."]
+amount = 20
+lifetime = 0.21
+process_material = SubResource( 1 )
+draw_pass_1 = ExtResource( 1 )
+
+[node name="Smoke" type="Particles" parent="."]
+amount = 25
+lifetime = 0.5
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 5 )
+
+[node name="Sparks" type="Particles" parent="."]
+lifetime = 0.5
+process_material = SubResource( 11 )
+draw_pass_1 = SubResource( 12 )
