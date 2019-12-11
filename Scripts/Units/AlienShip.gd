@@ -102,3 +102,4 @@ func initialize_direction():
 # This is just to make my life easier in above functions when getting direction to the city
 func get_city_location() -> Vector3:
 	return Vector3(city.transform.origin.x, self.transform.origin.y, city.transform.origin.z)
+	

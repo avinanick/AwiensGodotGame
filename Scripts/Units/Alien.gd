@@ -8,6 +8,7 @@ export var point_value: int = 1
 export var speed: float = 5
 onready var main_scene = get_node("/root/MainScene")
 var alien_direction: Vector3
+var moving: bool = false
 
 signal alien_destroyed
 signal alien_damaged
@@ -17,13 +18,7 @@ func _ready():
 	add_to_group("Aliens")
 	self.connect("alien_destroyed", get_node("/root/MainScene"), "enemy_destroyed")
 	self.connect("alien_destroyed", get_node("/root/MainScene/Victory_interface"), "enemy_destroyed")
-
-func take_damage(var amount: int):
-	health -= amount
-	emit_signal("alien_damaged")
-	if health <= 0:
-		emit_signal("alien_destroyed", self.point_value, self.alien_name)
-		destroy_self()
+	get_node("AlienModel").visible = false
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -32,6 +27,30 @@ func take_damage(var amount: int):
 func initialize_direction():
 	pass
 	
+func on_warp_completed():
+	self.moving = true
+	
+func on_warp_expanded():
+	get_node("AlienModel").visible = true
+	
+func on_warp_out_completed():
+	self.queue_free()
+	
+func on_warp_out_expanded():
+	get_node("AlienModel").visible = false
+	
 # Later this will be updated to do a sort of warp out
 func retreat():
-	self.queue_free()
+	self.moving = false
+	get_node("AlienWarp").start_warp_out()
+	
+func take_damage(var amount: int):
+	health -= amount
+	emit_signal("alien_damaged")
+	if health <= 0:
+		emit_signal("alien_destroyed", self.point_value, self.alien_name)
+		destroy_self()
+	
+func warp_in():
+	self.initialize_direction()
+	get_node("AlienWarp").start_warp_in()

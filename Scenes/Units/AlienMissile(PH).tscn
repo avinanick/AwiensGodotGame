@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Units/AlienMissile.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Units/MissileModel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Effects/AlienWarp.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -10,7 +11,7 @@ resource_name = "Fly"
 length = 4.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("MissileModel:rotation_degrees")
+tracks/0/path = NodePath("AlienModel:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -32,9 +33,12 @@ alien_name = "AlienMissile"
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 1.8, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="MissileModel" parent="." instance=ExtResource( 2 )]
+[node name="AlienModel" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.119849, -0.275021, 0, 0.275021, 0.119849, 0, 0, 0, 1, 0, 0, 0.380274 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Fly"
 anims/Fly = SubResource( 2 )
+
+[node name="AlienWarp" parent="." instance=ExtResource( 3 )]
+transform = Transform( -7.86805e-008, 0, 0.5, 0, 0.5, 0, -1.8, 0, -2.18557e-008, 0, 0, 0 )
