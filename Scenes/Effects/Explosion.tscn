@@ -20,27 +20,28 @@ spread = 180.0
 gravity = Vector3( 0, 4, 0 )
 initial_velocity = 5.0
 initial_velocity_random = 1.0
+angular_velocity = 2.8026e-044
 
-[sub_resource type="VisualShaderNodeInput" id=6]
+[sub_resource type="VisualShaderNodeInput" id=3]
 input_name = "uv"
 
-[sub_resource type="VisualShaderNodeTexture" id=7]
+[sub_resource type="VisualShaderNodeTexture" id=4]
 output_port_for_preview = 0
 texture = ExtResource( 2 )
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=8]
+[sub_resource type="VisualShaderNodeScalarFunc" id=5]
 output_port_for_preview = 0
 function = 15
 
-[sub_resource type="VisualShaderNodeColorConstant" id=9]
+[sub_resource type="VisualShaderNodeColorConstant" id=6]
 output_port_for_preview = 0
 constant = Color( 0.101563, 0.101563, 0.101563, 1 )
 
-[sub_resource type="VisualShaderNodeScalarOp" id=10]
+[sub_resource type="VisualShaderNodeScalarOp" id=7]
 default_input_values = [ 0, 0.0, 1, 0.5 ]
 operator = 2
 
-[sub_resource type="VisualShader" id=3]
+[sub_resource type="VisualShader" id=8]
 code = "shader_type spatial;
 uniform sampler2D tex_frg_3;
 
@@ -89,23 +90,23 @@ void light() {
 }
 "
 graph_offset = Vector2( -474.1, 262 )
-nodes/fragment/2/node = SubResource( 6 )
+nodes/fragment/2/node = SubResource( 3 )
 nodes/fragment/2/position = Vector2( -320, 320 )
-nodes/fragment/3/node = SubResource( 7 )
+nodes/fragment/3/node = SubResource( 4 )
 nodes/fragment/3/position = Vector2( -120, 280 )
-nodes/fragment/4/node = SubResource( 8 )
+nodes/fragment/4/node = SubResource( 5 )
 nodes/fragment/4/position = Vector2( 60, 340 )
-nodes/fragment/5/node = SubResource( 9 )
+nodes/fragment/5/node = SubResource( 6 )
 nodes/fragment/5/position = Vector2( 60, 60 )
-nodes/fragment/6/node = SubResource( 10 )
+nodes/fragment/6/node = SubResource( 7 )
 nodes/fragment/6/position = Vector2( 200, 220 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 3, 0, 3, 0, 4, 0, 5, 0, 0, 0, 4, 0, 6, 0, 6, 0, 0, 1 )
 
-[sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
 
-[sub_resource type="SphereMesh" id=5]
-material = SubResource( 4 )
+[sub_resource type="SphereMesh" id=10]
+material = SubResource( 9 )
 
 [sub_resource type="ParticlesMaterial" id=11]
 emission_shape = 1
@@ -117,7 +118,7 @@ initial_velocity = 25.0
 initial_velocity_random = 1.0
 angular_velocity = 0.0
 
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=12]
 albedo_color = Color( 0.980392, 0.596078, 0, 1 )
 metallic = 0.52
 emission_enabled = true
@@ -126,8 +127,8 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SphereMesh" id=12]
-material = SubResource( 13 )
+[sub_resource type="SphereMesh" id=13]
+material = SubResource( 12 )
 radius = 0.25
 height = 1.0
 radial_segments = 32
@@ -145,9 +146,9 @@ draw_pass_1 = ExtResource( 1 )
 amount = 25
 lifetime = 0.5
 process_material = SubResource( 2 )
-draw_pass_1 = SubResource( 5 )
+draw_pass_1 = SubResource( 10 )
 
 [node name="Sparks" type="Particles" parent="."]
 lifetime = 0.5
 process_material = SubResource( 11 )
-draw_pass_1 = SubResource( 12 )
+draw_pass_1 = SubResource( 13 )

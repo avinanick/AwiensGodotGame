@@ -24,8 +24,19 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func destroy_self():
+	get_node("CollisionShape").disabled = true
+	var explosion_effect = get_node("AlienExplosion")
+	if explosion_effect:
+		explosion_effect.explode()
+	else:
+		self.queue_free()
+
 func initialize_direction():
 	pass
+	
+func on_explosion_finished():
+	self.queue_free()
 	
 func on_warp_completed():
 	self.moving = true

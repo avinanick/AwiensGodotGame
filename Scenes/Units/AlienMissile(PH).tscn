@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Units/AlienMissile.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Units/MissileModel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Effects/AlienWarp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Effects/AlienExplosion.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -42,3 +43,5 @@ anims/Fly = SubResource( 2 )
 
 [node name="AlienWarp" parent="." instance=ExtResource( 3 )]
 transform = Transform( -7.86805e-008, 0, 0.5, 0, 0.5, 0, -1.8, 0, -2.18557e-008, 0, 0, 0 )
+
+[node name="AlienExplosion" parent="." instance=ExtResource( 4 )]
