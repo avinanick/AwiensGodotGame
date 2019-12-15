@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/MainOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/background.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Resources/Materials/LabelImages/hotkey_label_3.png" type="Texture" id=16]
 [ext_resource path="res://Resources/Materials/LabelImages/hotkey_label_2.png" type="Texture" id=17]
 [ext_resource path="res://Resources/Materials/LabelImages/hotkey_label_1.png" type="Texture" id=18]
+[ext_resource path="res://Resources/Materials/Masks/LightMask.png" type="Texture" id=19]
 
 [node name="MainOverlay" type="MarginContainer"]
 anchor_right = 1.0
@@ -260,3 +261,11 @@ texture = ExtResource( 17 )
 position = Vector2( 0, -350 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 18 )
+
+[node name="PlayerView" type="Light2D" parent="RadarSprite"]
+position = Vector2( 1.34859, -112.305 )
+rotation = 1.62141
+scale = Vector2( 5, -4 )
+texture = ExtResource( 19 )
+offset = Vector2( -0.692017, -27.6046 )
+energy = 100.0

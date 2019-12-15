@@ -6,6 +6,8 @@ onready var enemy_indicator = preload("res://Scenes/Interfaces/EnemyRadarIndicat
 export var x_map_range: float = 50
 export var y_map_range: float = 50
 var shrink_factor: float
+onready var player_view = get_node("PlayerView")
+onready var player_avatar = get_node("../../Avatar")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +29,9 @@ func populate_indicators():
 	# Since in 2d, positive y is downward
 	clear_indicators()
 	var earthlings = get_tree().get_nodes_in_group("Earthlings")
+	var avatar_position = player_avatar.get_global_transform().origin
+	player_view.position = Vector2(-1 * avatar_position.x * 3, -1 * avatar_position.z * 3)
+	player_view.rotation_degrees = -1 * player_avatar.rotation_degrees.y
 	for earthling in earthlings:
 		var earthling_position: Vector3 = earthling.get_global_transform().origin
 		# I'll need to use the x and z values to figure out where on the radar it goes
