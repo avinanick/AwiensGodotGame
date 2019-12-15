@@ -29,3 +29,4 @@ func _process(delta):
 func explode():
 	exploding = true
 	get_child(0).emitting = true
+	get_child(1).play()
