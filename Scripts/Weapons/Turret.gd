@@ -30,6 +30,9 @@ func _process(delta):
 func fire(start_location : Vector3, start_rotation : Vector3):
 	if is_alive and timer >= fire_cooldown:
 		timer = 0
+		var fire_audio = get_node("TurretFireAudio")
+		if fire_audio:
+			fire_audio.play()
 		var newBullet = projectile.instance()
 		# Get the camera's rotation (in radians) and use that to calculate the direction vector for the
 		# bullet
