@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/UpgradesInterface.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/menu_backdrop.png" type="Texture" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Scenes/Interfaces/PurchasableUpgrade.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Materials/Icons/flakcannon.png" type="Texture" id=6]
 [ext_resource path="res://Resources/Materials/LabelImages/upgrades_upgrade_label.png" type="Texture" id=7]
-[ext_resource path="res://Resources/Materials/Icons/energyshield.png" type="Texture" id=8]
-[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Materials/Icons/shapedblast.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Materials/Icons/energyshield.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=10]
 
 [node name="UpgradesInterface" type="MarginContainer"]
 anchor_left = 0.5
@@ -102,6 +103,7 @@ hint_tooltip = "Explosions from flak shells no longer damage friendly targets."
 cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Shaped Blast"
+upgrade_icon = ExtResource( 8 )
 
 [node name="IncendiaryRounds" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 5 )]
 margin_left = 80.0
@@ -120,13 +122,13 @@ hint_tooltip = "Engages shielding around all friendly targets that block enemy a
 cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Energy Shields"
-upgrade_icon = ExtResource( 8 )
+upgrade_icon = ExtResource( 9 )
 
 [node name="RepairsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 285.0
 margin_right = 236.0
 margin_bottom = 310.0
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="RepairsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 321.0
