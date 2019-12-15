@@ -16,20 +16,17 @@ func _ready():
 	for earthling in earthlings:
 		possible_targets.append(earthling.get_global_transform().origin)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Move the missile and respond to any collisions
 func _process(delta):
 	if main_scene.game_state == main_scene.game_states.running:
 		timer -= delta
 		if timer <= 0:
-			print("destroying missile")
 			self.queue_free()
 		var collision = move_and_collide(alien_direction * speed * delta)
 		if collision:
-			print("collision detected, destroying missile")
 			if collision.collider is Destructible:
-				print("damaging target")
 				collision.collider.take_damage(missile_damage)
-			self.queue_free()
+			self.destroy_self()
 
 func initialize_direction():
 	# This will pick a random coordinate from the earthling positions and set that as the target direction
