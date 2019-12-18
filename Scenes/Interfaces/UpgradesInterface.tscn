@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/UpgradesInterface.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/menu_backdrop.png" type="Texture" id=2]
@@ -6,11 +6,12 @@
 [ext_resource path="res://Resources/Materials/LabelImages/turret_upgrade_label.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Interfaces/PurchasableUpgrade.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Materials/Icons/flakcannon.png" type="Texture" id=6]
-[ext_resource path="res://Resources/Materials/LabelImages/upgrades_upgrade_label.png" type="Texture" id=7]
-[ext_resource path="res://Resources/Materials/Icons/shapedblast.png" type="Texture" id=8]
-[ext_resource path="res://Resources/Materials/Icons/incendiaryrounds.png" type="Texture" id=9]
-[ext_resource path="res://Resources/Materials/Icons/energyshield.png" type="Texture" id=10]
-[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=11]
+[ext_resource path="res://Resources/Materials/Icons/thundercannon.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Materials/LabelImages/upgrades_upgrade_label.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Materials/Icons/shapedblast.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Materials/Icons/incendiaryrounds.png" type="Texture" id=10]
+[ext_resource path="res://Resources/Materials/Icons/energyshield.png" type="Texture" id=11]
+[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=12]
 
 [node name="UpgradesInterface" type="MarginContainer"]
 anchor_left = 0.5
@@ -85,12 +86,13 @@ margin_right = 156.0
 margin_bottom = 98.0
 hint_tooltip = "A cannon that fires bolts of lightning toward the nearest enemy that deal massive damage."
 upgrade_name = "Thunder Cannon"
+upgrade_icon = ExtResource( 7 )
 
 [node name="UpgradesLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 140.0
 margin_right = 236.0
 margin_bottom = 165.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="UpgradesContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 176.0
@@ -104,7 +106,7 @@ hint_tooltip = "Explosions from flak shells no longer damage friendly targets."
 cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Shaped Blast"
-upgrade_icon = ExtResource( 8 )
+upgrade_icon = ExtResource( 9 )
 
 [node name="IncendiaryRounds" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 5 )]
 margin_left = 80.0
@@ -114,7 +116,7 @@ hint_tooltip = "Chaingun rounds now cause the target to burn until death, stacki
 cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Incendiary Rounds"
-upgrade_icon = ExtResource( 9 )
+upgrade_icon = ExtResource( 10 )
 
 [node name="EnergyShieldsUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 5 )]
 margin_left = 160.0
@@ -124,13 +126,13 @@ hint_tooltip = "Engages shielding around all friendly targets that block enemy a
 cost = 15
 upgrade_type = "Upgrade"
 upgrade_name = "Energy Shields"
-upgrade_icon = ExtResource( 10 )
+upgrade_icon = ExtResource( 11 )
 
 [node name="RepairsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 285.0
 margin_right = 236.0
 margin_bottom = 310.0
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="RepairsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 321.0
