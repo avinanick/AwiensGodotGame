@@ -14,8 +14,12 @@ func _ready():
 
 func sight(var x_rotation: float, var y_rotation: float):
 	# This should be called each frame, following the camera using the same values that rotate the camera
-	$Armature/Bone/Bone001/Bone002.rotation_degrees.x -= x_rotation
-	$Armature/Bone/Bone001.rotation_degrees.y -= y_rotation
+	var cannon_bone = $Armature/Bone/Bone001/Bone002
+	if cannon_bone:
+		cannon_bone.rotation_degrees.x -= x_rotation
+	var base_bone = $Armature/Bone/Bone001
+	if base_bone:
+		base_bone.rotation_degrees.y -= y_rotation
 	
 func reset_sights():
 	# This should reset the sights to the base for it's position, which it should get from it's parent

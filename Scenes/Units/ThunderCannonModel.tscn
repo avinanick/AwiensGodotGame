@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Models/ThunderCannon/thunder_cannon.glb" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Weapons/GunSights.gd" type="Script" id=2]
+
+[node name="ThunderCannonModel" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Barrel" parent="Armature/Bone/Bone001" index="0"]
+transform = Transform( 0.322877, -0.820721, -0.471346, 0.463816, 0.571329, -0.677095, 0.825, 0, 0.565133, -0.525037, 1.0366, 0.00216918 )
