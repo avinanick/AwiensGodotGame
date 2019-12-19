@@ -18,6 +18,9 @@ func _ready():
 
 func destroy_self():
 	var animation_player = get_node("AnimationPlayer")
+	var collapse_audio = get_node("CollapseAudioPlayer")
+	if collapse_audio:
+		collapse_audio.play()
 	if animation_player:
 		animation_player.play("Destroy")
 		self.remove_from_group("Earthlings")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Weapons/ThunderCannon.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Units/ThunderCannonModel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Effects/Explosion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Audio/TurretCollapse.wav" type="AudioStream" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 0.8, 1 )
@@ -93,6 +94,7 @@ script = ExtResource( 1 )
 fire_cooldown = 1.0
 
 [node name="TurretModel" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.249216, -2.9255, -0.288303 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.800128, 0 )
@@ -111,4 +113,8 @@ anims/Idle = SubResource( 4 )
 [node name="Explosion" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 visible = false
+
+[node name="CollapseAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+unit_db = 25.0
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
