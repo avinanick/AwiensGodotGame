@@ -20,36 +20,48 @@ func _process(delta):
 	if main_scene.game_state == main_scene.game_states.running:
 		if Input.is_action_just_pressed("select_north"):
 			# select the north gun (0,3.5,13) (0,0,0)
+			var previous_turret = selected_turret
 			selected_turret = get_node("/root/MainScene/Guns/NorthGun")
-			translation = Vector3(0,2.2,12)
-			rotation_degrees = Vector3(0,180,0)
-			if selected_turret and is_instance_valid(selected_turret):
-				selected_turret.reset_sights()
-			print("switch to turret one")
+			if selected_turret.get_child_count() > 0:
+				translation = Vector3(0,2.2,12)
+				rotation_degrees = Vector3(0,180,0)
+				if selected_turret and is_instance_valid(selected_turret):
+					selected_turret.reset_sights()
+			else:
+				selected_turret = previous_turret
 		if Input.is_action_just_pressed("select_south"):
 			# select the south gun (0,3.5,-13)(0,180,0)
+			var previous_turret = selected_turret
 			selected_turret = get_node("/root/MainScene/Guns/SouthGun")
-			translation = Vector3(0,2.2,-12)
-			rotation_degrees = Vector3(0,0,0)
-			if selected_turret and is_instance_valid(selected_turret):
-				selected_turret.reset_sights()
-			print("switch to turret two")
+			if selected_turret.get_child_count() > 0:
+				translation = Vector3(0,2.2,-12)
+				rotation_degrees = Vector3(0,0,0)
+				if selected_turret and is_instance_valid(selected_turret):
+					selected_turret.reset_sights()
+			else:
+				selected_turret = previous_turret
 		if Input.is_action_just_pressed("select_east"):
 			# select the east gun (13,3.5,0)(0,-90,0)
+			var previous_turret = selected_turret
 			selected_turret = get_node("/root/MainScene/Guns/EastGun")
-			translation = Vector3(-12,2.2,0)
-			rotation_degrees = Vector3(0,90,0)
-			if selected_turret and is_instance_valid(selected_turret):
-				selected_turret.reset_sights()
-			print("switch to turret three")
+			if selected_turret.get_child_count() > 0:
+				translation = Vector3(-12,2.2,0)
+				rotation_degrees = Vector3(0,90,0)
+				if selected_turret and is_instance_valid(selected_turret):
+					selected_turret.reset_sights()
+			else:
+				selected_turret = previous_turret
 		if Input.is_action_just_pressed("select_west"):
 			# select the west gun (-13,3.5,0)(0,90,0)
+			var previous_turret = selected_turret
 			selected_turret = get_node("/root/MainScene/Guns/WestGun")
-			translation = Vector3(12,2.2,0)
-			rotation_degrees = Vector3(0,-90,0)
-			if selected_turret and is_instance_valid(selected_turret):
-				selected_turret.reset_sights()
-			print("switch to turret four")
+			if selected_turret.get_child_count() > 0:
+				translation = Vector3(12,2.2,0)
+				rotation_degrees = Vector3(0,-90,0)
+				if selected_turret and is_instance_valid(selected_turret):
+					selected_turret.reset_sights()
+			else:
+				selected_turret = previous_turret
 		if Input.is_action_pressed("fire_one"):
 			# I need to modify this to accurately spawn at the camera position instead of base player
 			# Getting an issue here when I replace the selected turret in the selection screen.
