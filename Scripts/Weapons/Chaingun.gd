@@ -18,3 +18,4 @@ func upgrade_projectile():
 		self.projectile = load("res://Scenes/IncendiaryRound.tscn")
 	else:
 		self.projectile = load("res://Scenes/Bullet.tscn")
+

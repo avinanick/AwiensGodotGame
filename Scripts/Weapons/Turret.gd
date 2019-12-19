@@ -65,3 +65,8 @@ func sight(var x_rotation: float, var y_rotation: float):
 	var model = get_node("TurretModel")
 	if model:
 		model.sight(x_rotation, y_rotation)
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Destroy":
+		self.finish_death()

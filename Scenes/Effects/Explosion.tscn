@@ -11,7 +11,6 @@ spread = 180.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 3.0
 initial_velocity_random = 1.0
-angular_velocity = 0.0
 
 [sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 1
@@ -116,7 +115,6 @@ spread = 180.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 25.0
 initial_velocity_random = 1.0
-angular_velocity = 0.0
 
 [sub_resource type="SpatialMaterial" id=12]
 albedo_color = Color( 0.980392, 0.596078, 0, 1 )
