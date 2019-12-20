@@ -121,4 +121,5 @@ unit_db = 25.0
 
 [node name="TurretFireAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 5 )
+unit_db = 25.0
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
