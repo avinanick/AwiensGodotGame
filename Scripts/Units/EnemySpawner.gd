@@ -19,7 +19,8 @@ var enemy_types := ["AlienMissile",
 	"AlienDrone",
 	"AlienFighter",
 	"AlienBomber"]
-var base_spawn_periods := [5, 7, 11, 13]
+var base_spawn_periods := [3, 5, 7, 11]
+var min_level_requirement := [1, 1, 3, 5]
 
 signal type_chosen
 
@@ -53,7 +54,11 @@ func update_spawner_difficulty():
 	spawn_period = base_spawn_period / pow(1.2, level_difficulty - 1)
 
 func randomize_spawn():
-	var index: int = randi() % enemy_scenes.size()
+	var strongest_alien_index: int = 0
+	for i in range(min_level_requirement.size()):
+		if get_parent().level < min_level_requirement[i]:
+			strongest_alien_index = i
+	var index: int = randi() % (strongest_alien_index + 1)
 	enemy_index = index
 	base_spawn_period = base_spawn_periods[index]
 	emit_signal("type_chosen", enemy_types[index])
