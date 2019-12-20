@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ThunderCannonFire.wav-4a3c25b2d8d10c1367d995f134dd0eaa.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/ThunderCannonFire.wav"
+dest_files=[ "res://.import/ThunderCannonFire.wav-4a3c25b2d8d10c1367d995f134dd0eaa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
