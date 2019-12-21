@@ -25,7 +25,7 @@ upgrade_name = "Placeholder"
 
 [node name="UpgradeList" type="VBoxContainer" parent="."]
 margin_right = 76.0
-margin_bottom = 98.0
+margin_bottom = 152.0
 
 [node name="UpgradeButton" type="Button" parent="UpgradeList"]
 margin_right = 76.0
@@ -51,9 +51,10 @@ valign = 1
 [node name="UpgradeName" type="Label" parent="UpgradeList"]
 margin_top = 74.0
 margin_right = 76.0
-margin_bottom = 98.0
+margin_bottom = 152.0
 custom_fonts/font = SubResource( 2 )
-text = "Placeholder"
+text = "Place Holder Text"
 align = 1
 valign = 1
+autowrap = true
 [connection signal="button_up" from="UpgradeList/UpgradeButton" to="." method="_on_UpgradeButton_button_up"]
