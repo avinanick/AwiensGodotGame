@@ -1,0 +1,130 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "// Lightning
+// By: Brandon Fogerty
+// bfogerty at gmail dot com
+// xdpixel.com
+
+// By: Brandon Fogerty
+// bfogerty at gmail dot com
+// xdpixel.com
+
+// EVEN MORE MODS BY 27
+
+// EVEN MORE MODS BY 27
+shader_type spatial;
+
+uniform vec2 resolution = vec2(256, 128);
+uniform float count = 10.0;
+uniform float speed = 2.7;
+
+float Hash( vec2 p, in float s)
+{
+    vec3 p2 = vec3(p.xy,27.0 * abs(sin(s)));
+    return fract(sin(dot(p2,vec3(27.1,61.7, 12.4)))*273758.5453123);
+}
+
+
+float noise(in vec2 p, in float s)
+{
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    f *= f * (3.0-2.0*f);
+    
+    return mix(mix(Hash(i + vec2(0.,0.), s), Hash(i + vec2(1.,0.), s),f.x),
+               mix(Hash(i + vec2(0.,1.), s), Hash(i + vec2(1.,1.), s),f.x),
+               f.y) * s;
+}
+
+float fbm(vec2 p)
+{
+    float v = - noise(p * 02., 0.25);
+    v += noise(p * 01.1, 0.5) - noise(p * 01.1, 0.25);
+    v += noise(p * 02.1, 0.25) - noise(p * 02.1, 0.125);
+    v += noise(p * 04.1, 0.125) - noise(p * 08.1, 0.0625);
+    v += noise(p * 08.1, 0.0625) - noise(p * 16., 0.03125);
+    v += noise(p * 16.1, 0.03125);
+    return v;
+}
+
+void fragment()
+{
+    float worktime = TIME * speed + 100000.0;
+    
+    vec2 uv = ( FRAGCOORD.xy / resolution.xy ) * 2.0 - 1.0;
+    uv.x *= resolution.x/resolution.y; 
+	
+	vec3 finalColor = vec3( 0.0, 0.0, 0.0 );
+    for( float i = 1.0; i <= count; i++ )
+    {
+        float t = abs(1.0 / ((fbm( UV + worktime / i )) * (i * 100.0)));
+        finalColor +=  t * vec3( i * 0.075, 0.5, 2.0 );
+    }
+    ALBEDO = vec3(finalColor);  
+	ALPHA = 1.0;
+}
+/*
+void vertex() {
+	float worktime = time * speed + 100000.0;
+    
+    vec2 uv = ( FRAGCOORD.xy / resolution.xy ) * 2.0 - 1.0;
+    uv.x *= resolution.x/resolution.y; 
+	
+	vec3 finalColor = vec3( 0.0, 0.0, 0.0 );
+    for( float i = 1.0; i <= count; i++ )
+    {
+        float t = abs(1.0 / ((uv.x + fbm( uv + worktime / i )) * (i * 100.0)));
+        finalColor +=  t * vec3( i * 0.075, 0.5, 2.0 );
+    }
+    COLOR = vec4( finalColor, 1.0 );  
+} */"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/resolution = Vector2( 1071.32, 256 )
+shader_param/count = 25.0
+shader_param/speed = 2.7
+
+[sub_resource type="CylinderMesh" id=3]
+material = SubResource( 2 )
+top_radius = 0.5
+bottom_radius = 0.5
+radial_segments = 32
+rings = 2
+
+[sub_resource type="SphereMesh" id=4]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 1 )
+shader_param/resolution = Vector2( 128, 5000 )
+shader_param/count = 10.0
+shader_param/speed = 2.7
+
+[node name="MeshInstance" type="MeshInstance"]
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33089, 0.062305, 0 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.5424, 0, 0 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner"]
+operation = 2
+radius = 0.5
+height = 2.0
+sides = 32
+material = SubResource( 2 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/CSGCylinder"]
+operation = 2
+radius = 0.4
+height = 3.0
+sides = 32
+material = SubResource( 2 )
