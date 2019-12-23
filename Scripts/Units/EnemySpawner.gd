@@ -56,8 +56,11 @@ func update_spawner_difficulty():
 func randomize_spawn():
 	var strongest_alien_index: int = 0
 	for i in range(min_level_requirement.size()):
-		if get_parent().level < min_level_requirement[i]:
+		print("Checking ", get_parent().level, " against ", min_level_requirement[i], " for index ", i)
+		if get_parent().level >= min_level_requirement[i]:
+			print("passed check, new index ", i)
 			strongest_alien_index = i
+	print("Strongest alien index: ", strongest_alien_index)
 	var index: int = randi() % (strongest_alien_index + 1)
 	enemy_index = index
 	base_spawn_period = base_spawn_periods[index]
