@@ -239,6 +239,7 @@ tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
 [node name="RadarSprite" type="Sprite" parent="."]
 position = Vector2( 900, 500 )
 scale = Vector2( 0.2, 0.2 )
+z_index = 50
 texture = ExtResource( 13 )
 script = ExtResource( 14 )
 
@@ -269,4 +270,6 @@ scale = Vector2( 7, -4 )
 texture = ExtResource( 19 )
 offset = Vector2( -0.627594, -27.5446 )
 energy = 100.0
+range_z_min = 49
+range_z_max = 51
 shadow_color = Color( 0.996078, 0.996078, 0.996078, 0 )
