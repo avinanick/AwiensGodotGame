@@ -51,4 +51,7 @@ func reset_unlocks():
 		turret_unlocks[key] = false
 	for key in upgrade_unlocks:
 		upgrade_unlocks[key] = false
+		
+func save_arcade_game():
+	pass
 	

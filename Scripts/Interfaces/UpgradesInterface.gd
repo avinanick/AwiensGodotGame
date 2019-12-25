@@ -2,7 +2,6 @@ extends MarginContainer
 class_name UpgradeInterface
 
 onready var points_label = get_node("OuterOutline/TotalPointsLabel")
-onready var main_scene = get_node("/root/MainScene")
 
 signal upgrading_finished
 
@@ -13,6 +12,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func display_upgrades():
+	self.visible = true
+	self.update_points(Global.total_points)
 
 func update_points(var amount: int):
 	points_label.text = str(amount)

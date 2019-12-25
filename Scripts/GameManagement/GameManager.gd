@@ -175,6 +175,9 @@ func player_defeat():
 func player_victory():
 	if self.game_state == self.game_states.running:
 		self.game_state = self.game_states.victory
+		Global.total_points += points
+		self.level += 1
+		Global.current_level += 1
 		emit_signal("player_victory")
 	
 func start_level():

@@ -8,7 +8,7 @@ signal continue_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	self.connect("continue_game", get_node("../UpgradesInterface"), "display_upgrades")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -47,8 +47,7 @@ func _on_Continue_button_button_up():
 
 
 func _on_Save_Quit_button_button_up():
-	# Modify this to save to a file before I quit to the main menu
-	#main_scene.save_arcade_game()
+	Global.save_arcade_game()
 	Global.reset_all()
 	get_tree().change_scene("res://Scenes/Interfaces/Main_Menu.tscn")
 
