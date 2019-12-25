@@ -44,6 +44,10 @@ func _ready():
 	self.connect("player_victory", get_node("Victory_interface"), "on_player_victory")
 	self.connect("player_victory", get_node("MissileSpawner"), "end_level")
 	self.connect("start_level", get_node("MainOverlay"), "start_level")
+	var all_children = self.get_children()
+	for child in all_children:
+		if child.has_method("make_connections"):
+			child.make_connections()
 	if victory_screen:
 		victory_screen.visible = false
 	if defeat_screen:
