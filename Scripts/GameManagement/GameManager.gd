@@ -42,6 +42,8 @@ func _ready():
 	self.connect("start_transition", get_node("EnemyWarningInterface"), "on_transition_start")
 	self.connect("player_victory", get_node("EnemyWarningInterface"), "clear_display")
 	self.connect("player_victory", get_node("Victory_interface"), "on_player_victory")
+	self.connect("player_victory", get_node("MissileSpawner"), "end_level")
+	self.connect("start_level", get_node("MainOverlay"), "start_level")
 	if victory_screen:
 		victory_screen.visible = false
 	if defeat_screen:
@@ -102,11 +104,6 @@ func start_level_preparation():
 	for spawner in spawners:
 		spawner.randomize_spawn()
 		spawner.update_spawner_difficulty()
-		
-func start_next_level():
-	if game_state == game_states.transitioning:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		self.game_state = self.game_states.running
 	
 ###########################################REPLACE WITH BELOW#########################################
 
@@ -136,8 +133,8 @@ func player_victory():
 		Global.total_points += points
 		self.level += 1
 		Global.current_level += 1
+		emit_signal("player_victory", points)
 		points = 0
-		emit_signal("player_victory")
 	
 func start_level():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

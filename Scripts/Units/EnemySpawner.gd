@@ -39,6 +39,7 @@ func _process(delta):
 	spawn_enemy(delta)
 		
 func end_level():
+	print("level ended")
 	self.set_process(false)
 
 func spawn_enemy(delta):
