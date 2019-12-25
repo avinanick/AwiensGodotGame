@@ -141,10 +141,10 @@ margin_bottom = 299.0
 alignment = 2
 
 [node name="ContinueButton" type="Button" parent="Panel/TitleElementSeparator/ContinueButtonLayout"]
-margin_left = 795.0
+margin_left = 818.0
 margin_right = 864.0
 margin_bottom = 20.0
-text = "Continue"
+text = "Done"
 [connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
 [connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/SouthTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/SouthTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
 [connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
