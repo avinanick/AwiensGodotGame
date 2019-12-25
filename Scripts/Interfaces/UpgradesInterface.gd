@@ -7,6 +7,8 @@ signal upgrading_finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.connect("upgrading_finished", get_node("../LevelCountdown"), "on_transition_start")
+	self.connect("upgrading_finished", get_node("../EnemyWarningInterface"), "on_transition_start")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

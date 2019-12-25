@@ -12,7 +12,7 @@ func _ready():
 	for child in self.get_children():
 		child.visible = false
 	self.visible = false
-	self.connect("level_countdown_finished", get_node(".."), "start_next_level")
+	self.connect("level_countdown_finished", get_node(".."), "start_level")
 	self.connect("level_countdown_finished", get_node("../EnemyWarningInterface"), "on_round_start")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -31,7 +31,7 @@ func _ready():
 	self.connect("type_chosen", get_node("../Victory_interface"), "add_kill_icon")
 	get_parent().connect("player_defeat", self, "end_level")
 	get_parent().connect("player_victory", self, "end_level")
-	get_parent().connect("start_level", self, "start_level")
+	get_parent().connect("start_transition", self, "on_start_transition")
 	self.randomize_spawn()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,7 +53,8 @@ func spawn_enemy(delta):
 		new_enemy.translation = Vector3(x_value_spawn, self.transform.origin.y, z_value_spawn)
 		new_enemy.warp_in()
 		
-func start_level():
+func on_start_transition():
+	self.randomize_spawn()
 	self.set_process(true)
 
 func update_spawner_difficulty():

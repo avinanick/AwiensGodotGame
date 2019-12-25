@@ -18,6 +18,7 @@ func _ready():
 	add_to_group("Aliens")
 	self.connect("alien_destroyed", get_node("/root/MainScene"), "enemy_destroyed")
 	self.connect("alien_destroyed", get_node("/root/MainScene/Victory_interface"), "enemy_destroyed")
+	get_parent().connect("player_victory", self, "retreat")
 	get_node("AlienModel").visible = false
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.

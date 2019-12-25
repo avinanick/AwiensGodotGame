@@ -25,6 +25,7 @@ func clear_display():
 		
 func on_round_start():
 	self.visible = false
+	self.clear_display()
 		
 func on_transition_start():
 	self.visible = true
