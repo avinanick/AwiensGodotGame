@@ -6,6 +6,8 @@ var flak_cannon_scene = preload("res://Scenes/Units/FlakCannon.tscn")
 var chaingun_scene = preload("res://Scenes/Units/ProtoGun.tscn")
 var thunder_cannon_scene = preload("res://Scenes/Units/ThunderCannon.tscn")
 
+signal turret_type_selected
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

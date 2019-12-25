@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/Victory_interface.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Scripts/Interfaces/Buttons.gd" type="Script" id=3]
-[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.164706, 0.211765, 0.215686, 0.741176 )
 corner_radius_top_left = 30
 corner_radius_top_right = 30
@@ -18,7 +17,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.25098, 0.258824, 0.301961, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -29,7 +28,7 @@ corner_radius_bottom_left = 10
 size = 14
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [node name="Victory_interface" type="MarginContainer"]
 anchor_left = 0.5
@@ -49,25 +48,23 @@ margin_right = 295.0
 margin_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 23.0
-margin_top = 23.0
-margin_right = 274.0
-margin_bottom = 232.0
+margin_right = 295.0
+margin_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 
 [node name="Label_container" type="MarginContainer" parent="VBoxContainer"]
-margin_right = 251.0
+margin_right = 295.0
 margin_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Victory_Label" type="Label" parent="VBoxContainer/Label_container"]
-margin_right = 251.0
+margin_right = 295.0
 margin_bottom = 32.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0901961, 0.796078, 0.0784314, 1 )
@@ -77,16 +74,15 @@ valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 36.0
-margin_right = 251.0
-margin_bottom = 184.0
+margin_right = 295.0
+margin_bottom = 222.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_right = 100.0
-margin_bottom = 148.0
+margin_bottom = 186.0
 size_flags_vertical = 3
 custom_constants/separation = 44
-script = ExtResource( 3 )
 
 [node name="Continue_button" type="Button" parent="VBoxContainer/HBoxContainer/Buttons"]
 margin_right = 100.0
@@ -107,19 +103,19 @@ text = "Abandon City"
 
 [node name="KillCountContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
 margin_left = 104.0
-margin_right = 251.0
-margin_bottom = 148.0
+margin_right = 295.0
+margin_bottom = 186.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/KillCountContainer"]
-margin_right = 147.0
-margin_bottom = 148.0
+margin_right = 191.0
+margin_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 3 )
 
 [node name="KillCountIconGrid" type="GridContainer" parent="VBoxContainer/HBoxContainer/KillCountContainer/Panel"]
 anchor_right = 1.0
@@ -131,19 +127,19 @@ margin_bottom = -5.0
 columns = 2
 
 [node name="Points_label_container" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 188.0
-margin_right = 251.0
-margin_bottom = 212.0
+margin_top = 226.0
+margin_right = 295.0
+margin_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="points_label" type="Label" parent="VBoxContainer/Points_label_container"]
-margin_right = 251.0
+margin_right = 295.0
 margin_bottom = 24.0
 custom_fonts/font = SubResource( 4 )
 text = "Points Earned: 0"
 align = 1
 valign = 1
-[connection signal="button_up" from="VBoxContainer/HBoxContainer/Buttons/Continue_button" to="VBoxContainer/HBoxContainer/Buttons" method="_on_Continue_button_button_up"]
-[connection signal="button_up" from="VBoxContainer/HBoxContainer/Buttons/Save_Quit_button" to="VBoxContainer/HBoxContainer/Buttons" method="_on_Save_Quit_button_button_up"]
-[connection signal="button_up" from="VBoxContainer/HBoxContainer/Buttons/Quit_button" to="VBoxContainer/HBoxContainer/Buttons" method="_on_Quit_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/Buttons/Continue_button" to="." method="_on_Continue_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/Buttons/Save_Quit_button" to="." method="_on_Save_Quit_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/Buttons/Quit_button" to="." method="_on_Quit_button_button_up"]

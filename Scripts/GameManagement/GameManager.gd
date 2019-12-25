@@ -30,7 +30,10 @@ onready var turret_placement_camera := get_node("TurretPlacementCamera") as Came
 var enemy_spawner = preload("res://Scenes/Units/EnemySpawner.tscn")
 
 signal start_transition
+signal pause_game
+signal player_defeat
 signal player_victory
+signal start_level
 
 # Called when the node enters the scene tree for the first time.
 # This should be modified to respond to load data
@@ -154,4 +157,27 @@ func replace_turret(var new_type, var turret_position: String):
 	else:
 		print("Selected mount not found")
 	
+###########################################REPLACE WITH BELOW#########################################
+
+func begin_transition_stage():
+	self.game_state = self.game_states.transitioning
+	emit_signal("start_transition")
+
+func pause_game():
+	if self.game_state == self.game_states.running:
+		self.game_state = self.game_states.paused
+		emit_signal("pause_game")
+
+func player_defeat():
+	self.game_state = self.game_states.defeat
+	emit_signal("player_defeat")
+
+func player_victory():
+	if self.game_state == self.game_states.running:
+		self.game_state = self.game_states.victory
+		emit_signal("player_victory")
+	
+func start_level():
+	self.game_state = self.game_states.running
+	emit_signal("start_level")
 

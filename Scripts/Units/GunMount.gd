@@ -12,11 +12,14 @@ func _ready():
 #	pass
 
 func activate_shield():
-	print("Activating turret shield")
-	var new_shield = shield_scene.instance()
-	self.add_child(new_shield)
-	new_shield.translation = Vector3(0,0,0)
-	shield = new_shield
+	if self.get_child_count() > 0:
+		print("Activating turret shield")
+		var new_shield = shield_scene.instance()
+		self.add_child(new_shield)
+		new_shield.translation = Vector3(0,0,0)
+		shield = new_shield
+	else:
+		print("No gun to shield for ", self.name)
 
 func fire_weapon(start_location : Vector3, start_rotation : Vector3):
 	var child_turret = get_child(0)
@@ -28,6 +31,9 @@ func get_shield():
 	
 func make_connections():
 	get_parent().get_parent().connect("start_transition", self, "validate_upgrades")
+	
+func rebuild_turret():
+	pass
 
 func replace_turret(var new_type):
 	var selected_turret = get_child(0)

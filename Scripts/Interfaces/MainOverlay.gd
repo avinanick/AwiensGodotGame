@@ -3,13 +3,30 @@ class_name MainOverlay
 
 onready var time_left_label = get_node("VBoxContainer/Counters/Counter/Background/TimerLabel")
 
+export var game_time: float = 30
+var timer: float = 0
+
+signal times_up
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	timer += delta
+	if timer < game_time:
+		update_time(int(game_time - timer))
+	else:
+		self.end_level()
+		
+func end_level():
+	set_process(false)
+	emit_signal("times_up")
+	
+func start_level():
+	timer = 0
+	set_process(true)
 
 func structure_health_changed(var structure):
 	var health_bar: TextureProgress

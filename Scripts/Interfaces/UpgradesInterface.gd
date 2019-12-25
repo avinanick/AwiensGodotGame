@@ -4,6 +4,8 @@ class_name UpgradeInterface
 onready var points_label = get_node("OuterOutline/TotalPointsLabel")
 onready var main_scene = get_node("/root/MainScene")
 
+signal upgrading_finished
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -16,7 +18,7 @@ func update_points(var amount: int):
 	points_label.text = str(amount)
 
 func _on_ContinueButton_button_up():
-	main_scene.start_level_preparation()
+	emit_signal("upgrading_finished")
 	self.visible = false
 
 
