@@ -2,21 +2,18 @@ extends Spatial
 
 onready var shield_scene = preload("res://Scenes/CityShield.tscn")
 var shield = null
+var buildings_left: int = 4
+
+signal city_destroyed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_parent().connect("start_transition", self, "validate_upgrades")
-	pass # Replace with function body.
+	self.connect("city_destroyed", get_parent(), "player_defeat")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta): 
-	# This should really  be moved out of process and into a signal response to cut down on frame by frame
-	# work
-	if get_child_count() < 1:
-		var main_scene = get_node("/root/MainScene")
-		main_scene.game_state = main_scene.game_states.defeat
-		print("loser!")
-		self.queue_free()
+#func _process(delta): 
+#	pass
 	
 func activate_shield():
 	print("Activating city shield")
@@ -24,6 +21,15 @@ func activate_shield():
 	self.add_child(new_shield)
 	new_shield.translation = Vector3(0,0,0)
 	shield = new_shield
+	
+func building_lost():
+	self.buildings_left -= 1
+	if self.buildings_left < 1:
+		#var main_scene = get_node("/root/MainScene")
+		emit_signal("city_destroyed")
+		#main_scene.game_state = main_scene.game_states.defeat
+		print("loser!")
+		self.queue_free()
 	
 func validate_upgrades():
 	if Global.upgrade_unlocks["Energy Shields"] and not self.shield:

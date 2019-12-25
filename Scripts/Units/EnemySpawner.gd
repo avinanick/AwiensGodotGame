@@ -10,7 +10,6 @@ var spawn_period: float = 2
 
 var enemy_index: int = 0
 var timer = 0
-onready var main_scene = get_node("/root/MainScene")
 var enemy_scenes := [preload("res://Scenes/Units/AlienMissile(PH).tscn"),
 	preload("res://Scenes/Units/AlienDrone.tscn"),
 	preload("res://Scenes/Units/AlienFighter.tscn"),
@@ -28,15 +27,19 @@ signal type_chosen
 func _ready():
 	randomize()
 	add_to_group("Spawners")
-	update_spawner_difficulty()
 	self.connect("type_chosen", get_node("../EnemyWarningInterface"), "add_icon")
 	self.connect("type_chosen", get_node("../Victory_interface"), "add_kill_icon")
-	emit_signal("type_chosen", "AlienMissile")
+	get_parent().connect("player_defeat", self, "end_level")
+	get_parent().connect("player_victory", self, "end_level")
+	get_parent().connect("start_level", self, "start_level")
+	self.randomize_spawn()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if main_scene.game_state == main_scene.game_states.running:
-		spawn_enemy(delta)
+	spawn_enemy(delta)
+		
+func end_level():
+	self.set_process(false)
 
 func spawn_enemy(delta):
 	timer += delta
@@ -46,9 +49,12 @@ func spawn_enemy(delta):
 		var x_value_spawn: float = cos(spawn_angle_radians) * spawn_radius
 		var z_value_spawn: float = sin(spawn_angle_radians) * spawn_radius
 		var new_enemy = enemy_scenes[enemy_index].instance()
-		main_scene.add_child(new_enemy)
+		get_parent().add_child(new_enemy)
 		new_enemy.translation = Vector3(x_value_spawn, self.transform.origin.y, z_value_spawn)
 		new_enemy.warp_in()
+		
+func start_level():
+	self.set_process(true)
 
 func update_spawner_difficulty():
 	spawn_period = base_spawn_period / pow(1.2, level_difficulty - 1)
