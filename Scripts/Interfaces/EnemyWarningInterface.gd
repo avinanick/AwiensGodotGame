@@ -18,7 +18,7 @@ func add_icon(var enemy_type: String):
 	var enemy_grid = $DisplayPanel/VBoxContainer/IconPanel/ScrollContainer/EnemyList
 	enemy_grid.add_child(new_icon)
 
-func clear_display():
+func clear_display(var points: int):
 	# Clears out all the icons on the grid
 	print("Clearing warning icons")
 	var enemy_list = $DisplayPanel/VBoxContainer/IconPanel/ScrollContainer/EnemyList
@@ -30,7 +30,7 @@ func make_connections():
 		
 func on_round_start():
 	self.visible = false
-	self.clear_display()
+	self.clear_display(0)
 		
 func on_transition_start():
 	self.visible = true
