@@ -42,7 +42,7 @@ func end_level():
 func make_connections():
 	self.connect("type_chosen", get_node("../EnemyWarningInterface"), "add_icon")
 	self.connect("type_chosen", get_node("../Victory_interface"), "add_kill_icon")
-	get_parent().connect("player_victory", self, "end_level")
+	get_parent().connect("player_victory", self, "win_level")
 	get_parent().connect("player_defeat", self, "end_level")
 	get_parent().connect("start_transition", self, "on_start_transition")
 	self.randomize_spawn()
@@ -82,3 +82,6 @@ func randomize_spawn():
 	base_spawn_period = base_spawn_periods[index]
 	emit_signal("type_chosen", enemy_types[index])
 	update_spawner_difficulty()
+	
+func win_level(var points: int):
+	self.end_level()

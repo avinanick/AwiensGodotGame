@@ -25,6 +25,9 @@ func clear_display():
 	for icon in enemy_list.get_children():
 		icon.queue_free()
 		
+func make_connections():
+	get_parent().connect("player_victory", self, "clear_display")
+		
 func on_round_start():
 	self.visible = false
 	self.clear_display()

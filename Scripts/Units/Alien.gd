@@ -18,7 +18,7 @@ func _ready():
 	add_to_group("Aliens")
 	self.connect("alien_destroyed", get_node("/root/MainScene"), "enemy_destroyed")
 	self.connect("alien_destroyed", get_node("/root/MainScene/Victory_interface"), "enemy_destroyed")
-	main_scene.connect("player_victory", self, "retreat")
+	main_scene.connect("player_victory", self, "victory_retreat")
 	get_parent().connect("player_defeat", self, "retreat")
 	get_node("AlienModel").visible = false
 		
@@ -63,6 +63,9 @@ func take_damage(var amount: int):
 	if health <= 0:
 		emit_signal("alien_destroyed", self.point_value, self.alien_name)
 		destroy_self()
+		
+func victory_retreat(var points: int):
+	self.retreat()
 	
 func warp_in():
 	self.initialize_direction()
