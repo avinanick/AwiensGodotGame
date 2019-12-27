@@ -8,8 +8,7 @@ signal city_destroyed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_parent().connect("start_level", self, "validate_upgrades")
-	self.connect("city_destroyed", get_parent(), "player_defeat")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta): 
@@ -27,6 +26,14 @@ func building_lost():
 	if self.buildings_left < 1:
 		emit_signal("city_destroyed")
 		print("loser!")
+		
+func make_connections():
+	get_parent().connect("start_level", self, "validate_upgrades")
+	self.connect("city_destroyed", get_parent(), "player_defeat")
+	var all_children = self.get_children()
+	for child in all_children:
+		if child.has_method("make_connections"):
+			child.make_connections()
 	
 func validate_upgrades():
 	if Global.upgrade_unlocks["Energy Shields"] and not self.shield:

@@ -10,7 +10,7 @@ signal times_up
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.connect("times_up", get_parent(), "player_victory")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,6 +23,9 @@ func _process(delta):
 func end_level():
 	set_process(false)
 	emit_signal("times_up")
+	
+func make_connections():
+	self.connect("times_up", get_parent(), "player_victory")
 	
 func start_level():
 	timer = 0

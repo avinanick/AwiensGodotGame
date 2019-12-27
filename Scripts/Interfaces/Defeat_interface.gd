@@ -9,6 +9,13 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func make_connections():
+	get_parent().connect("player_defeat", self, "on_player_defeat")
+	
+func on_player_defeat():
+	self.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 func update_score(points: int):
 	var points_label = get_node("VBoxContainer/Points_Container/NinePatchRect/Points_Earned_Label")
 	points_label.text = str(points)

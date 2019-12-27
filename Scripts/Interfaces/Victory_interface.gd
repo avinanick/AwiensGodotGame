@@ -8,8 +8,7 @@ signal continue_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.connect("continue_game", get_node("../UpgradesInterface"), "display_upgrades")
-	#self.connect("continue_game", get_parent(), "begin_transition_stage")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -35,6 +34,10 @@ func enemy_destroyed(var point_value: int, var alien_name: String):
 	if killed_alien_icon:
 		killed_alien_icon.increment_count()
 		
+func make_connections():
+	self.connect("continue_game", get_node("../UpgradesInterface"), "display_upgrades")
+	get_parent().connect("player_victory", self, "on_player_victory")
+
 func on_player_victory(var points: int):
 	self.visible = true
 	self.update_score(points)

@@ -7,9 +7,7 @@ signal upgrading_finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#self.connect("upgrading_finished", get_node("../LevelCountdown"), "on_transition_start")
-	#self.connect("upgrading_finished", get_node("../EnemyWarningInterface"), "on_transition_start")
-	self.connect("upgrading_finished", get_parent(), "begin_transition_stage")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -18,6 +16,9 @@ func _ready():
 func display_upgrades():
 	self.visible = true
 	self.update_points(Global.total_points)
+	
+func make_connections():
+	self.connect("upgrading_finished", get_parent(), "begin_transition_stage")
 
 func update_points(var amount: int):
 	points_label.text = str(amount)

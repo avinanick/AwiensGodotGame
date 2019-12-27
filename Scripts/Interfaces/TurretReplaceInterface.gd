@@ -11,10 +11,7 @@ signal West_turret_type_selected
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.connect("North_turret_type_selected", get_node("../Guns/NorthGun"), "replace_turret")
-	self.connect("South_turret_type_selected", get_node("../Guns/SouthGun"), "replace_turret")
-	self.connect("East_turret_type_selected", get_node("../Guns/EastGun"), "replace_turret")
-	self.connect("West_turret_type_selected", get_node("../Guns/WestGun"), "replace_turret")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -24,6 +21,11 @@ func _on_ContinueButton_button_up():
 	get_node("../UpgradesInterface").visible = true
 	self.visible = false
 	
+func make_connections():
+	self.connect("North_turret_type_selected", get_node("../Guns/NorthGun"), "replace_turret")
+	self.connect("South_turret_type_selected", get_node("../Guns/SouthGun"), "replace_turret")
+	self.connect("East_turret_type_selected", get_node("../Guns/EastGun"), "replace_turret")
+	self.connect("West_turret_type_selected", get_node("../Guns/WestGun"), "replace_turret")
 
 func turret_selected(var turret_type: String, var turret_location: String):
 	print("Selected turret type is ", turret_type)

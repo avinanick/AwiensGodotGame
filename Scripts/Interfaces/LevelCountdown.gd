@@ -12,8 +12,6 @@ func _ready():
 	for child in self.get_children():
 		child.visible = false
 	self.visible = false
-	self.connect("level_countdown_finished", get_node(".."), "start_level")
-	self.connect("level_countdown_finished", get_node("../EnemyWarningInterface"), "on_round_start")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -48,6 +46,10 @@ func _process(delta):
 			# for scale, I think I want it to start at 1,1 and end at 4,4
 			var scaling_addition: float = 3 * (1 - (timer - next_number))
 			displaying_number.rect_scale = Vector2(1 + scaling_addition, 1 + scaling_addition)
+		
+func make_connections():
+	self.connect("level_countdown_finished", get_node(".."), "start_level")
+	self.connect("level_countdown_finished", get_node("../EnemyWarningInterface"), "on_round_start")
 		
 func on_transition_start():
 	self.visible = true
