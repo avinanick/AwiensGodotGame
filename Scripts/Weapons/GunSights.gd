@@ -24,13 +24,17 @@ func sight(var x_rotation: float, var y_rotation: float):
 func reset_sights():
 	# This should reset the sights to the base for it's position, which it should get from it's parent
 	var position = get_parent().position
-	$Armature/Bone/Bone001/Bone002.rotation_degrees.x = -90
-	match position:
-		"North":
-			$Armature/Bone/Bone001.rotation_degrees.y = 180
-		"South":
-			$Armature/Bone/Bone001.rotation_degrees.y = 0
-		"East":
-			$Armature/Bone/Bone001.rotation_degrees.y = -90
-		"West":
-			$Armature/Bone/Bone001.rotation_degrees.y = 90
+	var gun_bone = $Armature/Bone/Bone001/Bone002
+	if gun_bone:
+		gun_bone.rotation_degrees.x = -90
+	var turret_bone = $Armature/Bone/Bone001
+	if turret_bone:
+		match position:
+			"North":
+				turret_bone.rotation_degrees.y = 180
+			"South":
+				turret_bone.rotation_degrees.y = 0
+			"East":
+				turret_bone.rotation_degrees.y = -90
+			"West":
+				turret_bone.rotation_degrees.y = 90

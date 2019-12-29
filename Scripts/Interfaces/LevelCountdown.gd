@@ -19,6 +19,9 @@ func _process(delta):
 		timer -= delta
 		if timer <= 0:
 			emit_signal("level_countdown_finished")
+			self.visible = false
+			self.next_number = 5
+			self.timer = 5.3
 		if timer <= next_number:
 			if displaying_number:
 				displaying_number.visible = false

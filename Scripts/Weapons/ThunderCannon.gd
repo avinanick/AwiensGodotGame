@@ -21,6 +21,11 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 			targeting_zone.rotation = start_rotation
 			var target = scan_for_targets()
 			if target:
+				var lightning_effect = get_node("LightningBlast")
+				lightning_effect.scale.z = self.translation.distance_to(target.translation)
+				lightning_effect.rotation = start_rotation
+				if lightning_effect:
+					lightning_effect.get_node("AnimationPlayer").play("LightningFire")
 				timer = 0
 				target.take_damage(lightning_damage)
 	

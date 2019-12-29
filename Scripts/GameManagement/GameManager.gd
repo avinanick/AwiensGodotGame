@@ -41,7 +41,6 @@ func _ready():
 	self.connect("start_transition", get_node("LevelCountdown"), "on_transition_start")
 	self.connect("start_transition", get_node("EnemyWarningInterface"), "on_transition_start")
 	self.connect("player_victory", get_node("EnemyWarningInterface"), "clear_display")
-	self.connect("start_level", get_node("MainOverlay"), "start_level")
 	var all_children = self.get_children()
 	for child in all_children:
 		if child.has_method("make_connections"):
@@ -140,7 +139,8 @@ func player_victory():
 		points = 0
 	
 func start_level():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	self.game_state = self.game_states.running
-	emit_signal("start_level")
+	if self.game_state == self.game_states.transitioning:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		self.game_state = self.game_states.running
+		emit_signal("start_level")
 

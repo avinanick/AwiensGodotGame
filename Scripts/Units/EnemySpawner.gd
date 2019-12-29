@@ -45,6 +45,7 @@ func make_connections():
 	get_parent().connect("player_victory", self, "win_level")
 	get_parent().connect("player_defeat", self, "end_level")
 	get_parent().connect("start_transition", self, "on_start_transition")
+	get_parent().connect("start_level", self, "on_start_level")
 	self.randomize_spawn()
 
 func spawn_enemy(delta):

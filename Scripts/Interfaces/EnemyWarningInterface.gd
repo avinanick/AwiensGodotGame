@@ -30,7 +30,7 @@ func make_connections():
 		
 func on_round_start():
 	self.visible = false
-	self.clear_display(0)
+	#self.clear_display(0)
 		
 func on_transition_start():
 	self.visible = true

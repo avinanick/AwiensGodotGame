@@ -18,6 +18,7 @@ func _process(delta):
 	if timer < game_time:
 		update_time(int(game_time - timer))
 	else:
+		print("times up")
 		self.end_level()
 		
 func end_level():
@@ -26,6 +27,7 @@ func end_level():
 	
 func make_connections():
 	self.connect("times_up", get_parent(), "player_victory")
+	get_parent().connect("start_level", self, "start_level")
 	
 func start_level():
 	timer = 0
