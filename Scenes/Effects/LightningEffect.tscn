@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [sub_resource type="Shader" id=1]
 code = "// Lightning
@@ -56,13 +56,15 @@ void fragment()
     uv.x *= resolution.x/resolution.y; 
 	
 	vec3 finalColor = vec3( 0.0, 0.0, 0.0 );
+	ALPHA = 0.0;
     for( float i = 1.0; i <= count; i++ )
     {
         float t = abs(1.0 / ((fbm( UV + worktime / i )) * (i * 100.0)));
         finalColor +=  t * vec3( i * 0.075, 0.5, 2.0 );
+		ALPHA += t;
     }
     ALBEDO = vec3(finalColor);  
-	ALPHA = 1.0;
+	//ALPHA = 1.0;
 }
 /*
 void vertex() {
@@ -84,47 +86,21 @@ void vertex() {
 shader = SubResource( 1 )
 shader_param/resolution = Vector2( 1071.32, 256 )
 shader_param/count = 25.0
-shader_param/speed = 2.7
+shader_param/speed = 5.0
 
-[sub_resource type="CylinderMesh" id=3]
-material = SubResource( 2 )
-top_radius = 0.5
-bottom_radius = 0.5
-radial_segments = 32
-rings = 2
+[node name="LightningBlast" type="CSGCombiner"]
 
-[sub_resource type="SphereMesh" id=4]
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+operation = 2
 radius = 0.25
-height = 0.5
-
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 1 )
-shader_param/resolution = Vector2( 128, 5000 )
-shader_param/count = 10.0
-shader_param/speed = 2.7
-
-[node name="MeshInstance" type="MeshInstance"]
-mesh = SubResource( 3 )
-material/0 = null
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33089, 0.062305, 0 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
-
-[node name="CSGCombiner" type="CSGCombiner" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.5424, 0, 0 )
-
-[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner"]
-operation = 2
-radius = 0.5
-height = 2.0
 sides = 32
 material = SubResource( 2 )
 
-[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner/CSGCylinder"]
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCylinder"]
 operation = 2
-radius = 0.4
-height = 3.0
+radius = 0.2
+height = 1.1
 sides = 32
+cone = true
 material = SubResource( 2 )
