@@ -14,7 +14,9 @@ func _ready():
 	get_node("UpgradeList/UpgradeButton/CostLabel").text = str(cost)
 	get_node("UpgradeList/UpgradeName").text = upgrade_name
 	get_node("UpgradeList/UpgradeButton").icon = upgrade_icon
-	pass
+	var button = get_node("UpgradeList/UpgradeButton")
+	if button:
+		button.hint_tooltip = self.hint_tooltip
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

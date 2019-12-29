@@ -76,7 +76,7 @@ margin_bottom = 183.0
 [node name="FlakCannonUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer" instance=ExtResource( 5 )]
 margin_right = 76.0
 margin_bottom = 152.0
-hint_tooltip = "A cannon that fire flak shells which explode on contact with a target."
+hint_tooltip = "A cannon that fires flak shells which explode on contact with a target flinging shards that damage all targets in the area."
 upgrade_name = "Flak Cannon"
 upgrade_icon = ExtResource( 6 )
 
@@ -142,6 +142,7 @@ margin_bottom = 581.0
 [node name="RepairUpgradeButton" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer" instance=ExtResource( 5 )]
 margin_right = 76.0
 margin_bottom = 152.0
+hint_tooltip = "Repairs all structures that are still standing."
 cost = 5
 upgrade_type = "Repair"
 upgrade_name = "Repair"
