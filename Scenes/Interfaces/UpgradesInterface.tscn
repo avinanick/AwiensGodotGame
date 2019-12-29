@@ -184,7 +184,9 @@ margin_left = 89.0
 margin_right = 158.0
 margin_bottom = 30.0
 text = "Continue"
+[connection signal="turret_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/FlakCannonUpgrade" to="." method="_on_turret_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/FlakCannonUpgrade" to="." method="_on_upgrade_purchased"]
+[connection signal="turret_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/ThunderCannonUpgrade" to="." method="_on_turret_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/ThunderCannonUpgrade" to="." method="_on_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/ShapedBlastUpgrade" to="." method="_on_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/IncendiaryRounds" to="." method="_on_upgrade_purchased"]

@@ -7,6 +7,7 @@ export var upgrade_name: String = ""  #setget set_name_text, get_name_text
 export var upgrade_icon: Texture = preload("res://icon.png") #setget set_icon_texture, get_icon_texture
 
 onready var interface_handler
+signal turret_purchased
 signal upgrade_purchased
 
 # Called when the node enters the scene tree for the first time.
@@ -30,6 +31,7 @@ func _on_UpgradeButton_button_up():
 		match upgrade_type:
 			"Turret":
 				Global.turret_unlocks[upgrade_name] = true
+				emit_signal("turret_purchased", upgrade_name)
 			"Upgrade":
 				Global.upgrade_unlocks[upgrade_name] = true
 			"Repair":
@@ -37,9 +39,15 @@ func _on_UpgradeButton_button_up():
 				var earthlings = get_tree().get_nodes_in_group("Earthlings")
 				for earthling in earthlings:
 					earthling.health = earthling.max_health
-		get_node("UpgradeList/UpgradeButton").disabled = true
+		disable_upgrade()
 	else:
 		print("Handle Error: Not enough points")
+		
+func disable_upgrade():
+	get_node("UpgradeList/UpgradeButton").disabled = true
+	
+func enable_upgrade():
+	get_node("UpgradeList/UpgradeButton").disabled = false
 		
 func get_cost_text():
 	var cost_label = get_node("UpgradeList/UpgradeButton/CostLabel")
@@ -55,6 +63,11 @@ func get_name_text():
 	var name_label = get_node("UpgradeList/UpgradeName")
 	if name_label:
 		return name_label.text
+		
+func refresh_upgrade():
+	if visible:
+		if upgrade_type == "Repair":
+			enable_upgrade()
 		
 func set_icon_texture(var icon_value: Texture):
 	var upgrade_button = get_node("UpgradeList/UpgradeButton")

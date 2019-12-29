@@ -96,9 +96,9 @@ script = ExtResource( 1 )
 fire_cooldown = 1.0
 
 [node name="TurretModel" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.800128, 0 )
 shape = SubResource( 1 )
 
 [node name="TargetingZone" type="Area" parent="."]
