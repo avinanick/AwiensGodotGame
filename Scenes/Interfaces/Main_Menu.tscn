@@ -6,10 +6,6 @@
 [ext_resource path="res://Resources/Materials/background.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Interfaces/SubMenuContainer.gd" type="Script" id=5]
 
-
-
-
-
 [node name="Main_Menu" type="MarginContainer"]
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -93,10 +89,15 @@ rect_min_size = Vector2( 200, 160 )
 texture = ExtResource( 4 )
 
 [node name="SubMenuContainer" type="VBoxContainer" parent="Backdrop/VBoxContainer/HBoxContainer/DynamicInterfaceBackdrop"]
-margin_left = 25.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
 margin_top = 20.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 5 )
 [connection signal="button_up" from="Backdrop/VBoxContainer/HBoxContainer/Buttons/NewGameButton" to="Backdrop/VBoxContainer/HBoxContainer/DynamicInterfaceBackdrop/SubMenuContainer" method="_on_NewGameButton_button_up"]
 [connection signal="button_up" from="Backdrop/VBoxContainer/HBoxContainer/Buttons/LoadGameButton" to="Backdrop/VBoxContainer/HBoxContainer/DynamicInterfaceBackdrop/SubMenuContainer" method="_on_LoadGameButton_button_up"]
+[connection signal="button_up" from="Backdrop/VBoxContainer/HBoxContainer/Buttons/OptionsButton" to="Backdrop/VBoxContainer/HBoxContainer/DynamicInterfaceBackdrop/SubMenuContainer" method="_on_OptionsButton_button_up"]

@@ -129,6 +129,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
+GameOptions="*res://Scripts/GameOptions.gd"
 
 [input]
 
