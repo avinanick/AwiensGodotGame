@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Weapons/Chaingun.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Units/ChaingunModel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Audio/ChaingunFire.wav" type="AudioStream" id=3]
-[ext_resource path="res://Scenes/Effects/Explosion.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Resources/Audio/TurretCollapse.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scripts/SoundPlayer.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Effects/Explosion.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Audio/TurretCollapse.wav" type="AudioStream" id=6]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
@@ -112,18 +113,20 @@ shape = SubResource( 1 )
 [node name="TurretFireAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 3 )
 unit_db = 25.0
+script = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 anims/Destroy = SubResource( 2 )
 anims/Idle = SubResource( 3 )
 
-[node name="Explosion" parent="." instance=ExtResource( 4 )]
+[node name="Explosion" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
 visible = false
 
 [node name="CollapseAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 unit_db = 25.0
+script = ExtResource( 4 )
 [connection signal="input_event" from="." to="." method="_on_ProtoGun_input_event"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
