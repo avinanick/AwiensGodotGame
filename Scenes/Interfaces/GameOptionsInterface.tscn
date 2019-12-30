@@ -60,4 +60,37 @@ custom_fonts/font = SubResource( 2 )
 text = "1.0"
 align = 1
 valign = 1
+
+[node name="MasterVolumeEdit" type="HBoxContainer" parent="OptionsList"]
+margin_top = 28.0
+margin_right = 1024.0
+margin_bottom = 52.0
+
+[node name="VolumeLabel" type="Label" parent="OptionsList/MasterVolumeEdit"]
+margin_right = 89.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+text = "Game Volume"
+align = 1
+valign = 1
+
+[node name="VolumeSlider" type="HSlider" parent="OptionsList/MasterVolumeEdit"]
+margin_left = 93.0
+margin_right = 1000.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 66.0
+tick_count = 20
+ticks_on_borders = true
+
+[node name="VolumeValueLabel" type="Label" parent="OptionsList/MasterVolumeEdit"]
+margin_left = 1004.0
+margin_right = 1024.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 2 )
+text = "1.0"
+align = 1
+valign = 1
 [connection signal="value_changed" from="OptionsList/MouseSensitivityEdit/SensitivitySlider" to="." method="mouse_sensitivity_modified"]
+[connection signal="value_changed" from="OptionsList/MasterVolumeEdit/VolumeSlider" to="." method="master_volume_modified"]
