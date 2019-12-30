@@ -68,6 +68,12 @@ func refresh_upgrade():
 	if visible:
 		if upgrade_type == "Repair":
 			enable_upgrade()
+		if upgrade_type == "Upgrade":
+			if Global.upgrade_unlocks[self.upgrade_name]:
+				self.disable_upgrade()
+		if upgrade_type == "Turret":
+			if Global.turret_unlocks[self.upgrade_name]:
+				self.disable_upgrade()
 		
 func set_icon_texture(var icon_value: Texture):
 	var upgrade_button = get_node("UpgradeList/UpgradeButton")
