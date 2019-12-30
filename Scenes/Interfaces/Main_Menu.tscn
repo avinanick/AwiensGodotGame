@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/menu_backdrop.png" type="Texture" id=2]
-[ext_resource path="res://Resources/Materials/LabelImages/turret_label.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Resources/Materials/background.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Interfaces/SubMenuContainer.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 1
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Main_Menu" type="MarginContainer"]
 margin_right = 1024.0
@@ -33,22 +39,25 @@ grow_vertical = 2
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Backdrop/VBoxContainer"]
-margin_top = 208.0
+margin_top = 195.0
 margin_right = 1024.0
-margin_bottom = 227.0
+margin_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameTitleLabel" type="TextureRect" parent="Backdrop/VBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Backdrop/VBoxContainer/MarginContainer"]
 margin_right = 1024.0
-margin_bottom = 19.0
-texture = ExtResource( 3 )
-stretch_mode = 4
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Blaze Of Glory!"
+align = 1
+valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Backdrop/VBoxContainer"]
-margin_top = 231.0
+margin_top = 245.0
 margin_right = 1024.0
-margin_bottom = 391.0
+margin_bottom = 405.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_constants/separation = 34

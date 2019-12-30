@@ -75,40 +75,6 @@ func _ready():
 # Used to increment points when destroying an alien
 func enemy_destroyed(var point_value: int, var alien_name: String):
 	points += point_value
-		
-func save_arcade_game():
-	# The corresponding load game is in the LoadGameInterface script
-	var save_game := File.new()
-	save_game.open("user://arcadesave.save", File.WRITE)
-	var save_dict := {
-		"level" : Global.current_level,
-		"points" : Global.total_points
-	}
-	save_game.store_line(to_json(save_dict))
-	save_game.close()
-	
-func start_level_preparation():
-	# This is called after the continue button in the upgrade interface is clicked. It should start a timed countdown
-	# until the enemy waves start spawning again (this is not currently shown to the player) and update the number
-	# and difficulty of the spawners. At some point I'd also like to bring up an interface that shows the new enemy
-	# types
-	upgrade_interface.visible = false
-	turret_replace_interface.visible = false
-	self.game_state = game_states.transitioning
-	self.points = 0
-	self.timer = 0
-	emit_signal("start_transition")
-	# Every 5 levels, add another spawner
-	if self.level % 5 == 0:
-		var new_spawner = enemy_spawner.instance()
-		new_spawner.translation = Vector3(0,30,0)
-		self.add_child(new_spawner)
-	var spawners = get_tree().get_nodes_in_group("Spawners")
-	for spawner in spawners:
-		spawner.randomize_spawn()
-		spawner.update_spawner_difficulty()
-	
-###########################################REPLACE WITH BELOW#########################################
 
 func begin_transition_stage():
 	self.game_state = self.game_states.transitioning

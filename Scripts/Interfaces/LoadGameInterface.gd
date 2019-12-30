@@ -14,19 +14,5 @@ func _ready():
 
 
 func _on_Arcade_Button_button_up():
-	var save_game := File.new()
-	if not save_game.file_exists("user://arcadesave.save"):
-		print("Error: save file not found")
-		return # Need some better error handling here
-		
-	# Read the data from the save file (there should likely be only one line, but while loop just in case
-	save_game.open("user://arcadesave.save", File.READ)
-	while not save_game.eof_reached():
-		var current_line = parse_json(save_game.get_line())
-		# sanity check, as for some reason this is reading an extra line at the end
-		if current_line:
-			Global.current_level = current_line["level"] as int
-			Global.total_points = current_line["points"] as int
-	# and finally, load the actual arcade scene
-	get_tree().change_scene("res://Scenes/MainScene.tscn")
+	Global.load_arcade_game()
 
