@@ -17,6 +17,22 @@ var burst_amount: float = 0.2
 var burst_start_radius: float = 0.1
 var burst_shrapnel_vectors := []
 
+# turrets
+var north_turret_health: int = 10
+var east_turret_health: int = 10
+var west_turret_health: int = 10
+var south_turret_health: int = 10
+var north_turret_type: String = "Chaingun"
+var east_turret_type: String = "Chaingun"
+var west_turret_type: String = "Chaingun"
+var south_turret_type: String = "Chaingun"
+
+# city 
+var north_east_building_health: int = 10
+var north_west_building_health: int = 10
+var south_east_building_health: int = 10
+var south_west_building_health: int = 10
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# code to calculate flak shell burst shrapnel
@@ -40,6 +56,36 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func on_structure_health_changed(var structure):
+	match structure.position:
+		"North":
+			self.north_turret_health = structure.health
+		"East":
+			self.east_turret_health = structure.health
+		"West":
+			self.west_turret_health = structure.health
+		"South":
+			self.south_turret_health = structure.health
+		"NorthEast":
+			self.north_east_building_health = structure.health
+		"NorthWest":
+			self.north_west_building_health = structure.health
+		"SouthEast":
+			self.south_east_building_health = structure.health
+		"SouthWest":
+			self.south_west_building_health = structure.health
+	
+func on_turret_type_changed(var turret_type: String, var turret_location: String):
+	match turret_location:
+		"North":
+			self.north_turret_type = turret_type
+		"East":
+			self.east_turret_type = turret_type
+		"West":
+			self.west_turret_type = turret_type
+		"South":
+			self.south_turret_type = turret_type
 
 func reset_all():
 	current_level = 1

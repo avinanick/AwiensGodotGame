@@ -1,7 +1,6 @@
 extends Spatial
 class_name Player
 
-var rotation_speed = 1
 onready var selected_turret = get_node("/root/MainScene/Guns/SouthGun")
 onready var main_scene := get_node("/root/MainScene")
 onready var camera := get_node("Camera") as Camera
@@ -77,16 +76,16 @@ func _input(event):
 	if event is InputEventMouseMotion and main_scene.game_state == main_scene.game_states.running:
 		# I'm using this method instead of the rotations so that I can keep the z rotation at 0
 		# plus gives inverted controls, minus gives regular
-		if rotation_degrees.x - (event.relative.y * rotation_speed) > 90:
+		if rotation_degrees.x - (event.relative.y * GameOptions.mouse_sensitivity) > 90:
 			rotation_degrees.x = 90
-			selected_turret.sight(0, event.relative.x * rotation_speed)
-		elif rotation_degrees.x - (event.relative.y * rotation_speed) < -90:
+			selected_turret.sight(0, event.relative.x * GameOptions.mouse_sensitivity)
+		elif rotation_degrees.x - (event.relative.y * GameOptions.mouse_sensitivity) < -90:
 			rotation_degrees.x = -90
-			selected_turret.sight(0, event.relative.x * rotation_speed)
+			selected_turret.sight(0, event.relative.x * GameOptions.mouse_sensitivity)
 		else:
-			rotation_degrees.x -= (event.relative.y * rotation_speed)
-			selected_turret.sight(event.relative.y * rotation_speed, event.relative.x * rotation_speed)
-		rotation_degrees.y -= (event.relative.x * rotation_speed)
+			rotation_degrees.x -= (event.relative.y * GameOptions.mouse_sensitivity)
+			selected_turret.sight(event.relative.y * GameOptions.mouse_sensitivity, event.relative.x * GameOptions.mouse_sensitivity)
+		rotation_degrees.y -= (event.relative.x * GameOptions.mouse_sensitivity)
 		
 func activate_camera():
 	camera.make_current()

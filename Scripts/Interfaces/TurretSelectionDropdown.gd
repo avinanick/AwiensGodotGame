@@ -3,11 +3,13 @@ extends OptionButton
 var turret_image_dict := {"Chaingun" : preload("res://Resources/Materials/Icons/autoturret.png"),
 						"Flak Cannon" : preload("res://Resources/Materials/Icons/flakcannon.png"),
 						"Thunder Cannon" : preload("res://Resources/Materials/Icons/thundercannon.png")}
+						
+signal turret_selected
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.add_item("Chaingun")
-	pass # Replace with function body.
+	self.connect("turret_selected", Global, "on_turret_type_changed")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -44,7 +46,6 @@ func update_turret_list():
 func _on_TurretSelectionDropdown_item_selected(ID):
 	# This should alert the interface that the current turret selection has changed
 	# Probably would be best to use signals for this, but I'm just going through getting parents
-	var replace_interface = self.get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()
 	var turret_position: String
 	match get_parent().name:
 		"NorthTurretList":
@@ -59,4 +60,4 @@ func _on_TurretSelectionDropdown_item_selected(ID):
 	var turret_icon = get_node("../TextureRect")
 	if turret_icon:
 		turret_icon.texture = turret_image_dict[self.get_item_text(ID)]
-	replace_interface.turret_selected(self.get_item_text(ID), turret_position)
+	emit_signal("turret_selected", self.get_item_text(ID), turret_position)

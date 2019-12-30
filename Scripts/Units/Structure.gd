@@ -35,6 +35,7 @@ func finish_death():
 func make_connections():
 	self.connect("building_destroyed", get_parent(), "building_lost")
 	self.connect("health_changed", get_node("../../MainOverlay"), "structure_health_changed")
+	self.connect("health_changed", Global, "on_structure_health_changed")
 	
 func repair_structure():
 	health = self.max_health
