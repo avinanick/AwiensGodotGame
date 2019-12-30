@@ -16,7 +16,7 @@ enum game_states{
 export var game_time: int = 30
 var level: int = 1
 var timer: float = 0
-var game_state = game_states.running
+var game_state = game_states.transitioning
 var points: int = 0
 
 onready var victory_screen := get_node("Victory_interface")
@@ -65,7 +65,7 @@ func _ready():
 			new_spawner.update_spawner_difficulty()
 		get_node("MissileSpawner").randomize_spawn()
 		emit_signal("load_data")
-		# This should also start the unit warning and countdown till start
+	emit_signal("start_transition")
 	
 
 # Process should probably be redone using signals
