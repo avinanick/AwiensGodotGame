@@ -46,6 +46,9 @@ func _ready():
 	for child in all_children:
 		if child.has_method("make_connections"):
 			child.make_connections()
+	var guns_collection = get_node("Guns")
+	for gun in guns_collection.get_children():
+		gun.make_connections()
 	if victory_screen:
 		victory_screen.visible = false
 	if defeat_screen:

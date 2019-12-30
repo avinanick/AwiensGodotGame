@@ -9,7 +9,7 @@ var shield = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	make_connections()
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -48,6 +48,7 @@ func load_data():
 func make_connections():
 	get_parent().get_parent().connect("start_transition", self, "validate_upgrades")
 	get_parent().get_parent().connect("load_data", self, "load_data")
+	get_child(0).make_connections()
 	
 func rebuild_turret():
 	pass
@@ -67,6 +68,7 @@ func replace_turret(var new_type: String):
 		new_turret.set_name(node_name)
 		new_turret.position = gun_position
 		self.add_child(new_turret)
+		new_turret.make_connections()
 		print(new_turret.get_path())
 		print("Turret replaced")
 	else:
