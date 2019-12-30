@@ -1,9 +1,5 @@
 extends MarginContainer
 
-var turret_type_dict := {"Chaingun" : preload("res://Scenes/Units/ProtoGun.tscn"),
-	"Flak Cannon" : preload("res://Scenes/Units/FlakCannon.tscn"),
-	"Thunder Cannon" : preload("res://Scenes/Units/ThunderCannon.tscn")}
-
 signal North_turret_type_selected
 signal South_turret_type_selected
 signal East_turret_type_selected
@@ -29,7 +25,7 @@ func make_connections():
 
 func turret_selected(var turret_type: String, var turret_location: String):
 	print("Selected turret type is ", turret_type)
-	emit_signal(str(turret_location, "_turret_type_selected"), self.turret_type_dict[turret_type])
+	emit_signal(str(turret_location, "_turret_type_selected"), turret_type)
 	#match turret_location:
 	#	"North":
 	#		emit_signal("north_turret_type_selected", self.turret_type_dict[turret_type])

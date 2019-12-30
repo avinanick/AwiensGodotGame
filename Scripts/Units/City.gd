@@ -27,8 +27,15 @@ func building_lost():
 		emit_signal("city_destroyed")
 		print("loser!")
 		
+func load_data():
+	var buildings = self.get_children()
+	for building in buildings:
+		building.load_data()
+	self.validate_upgrades()
+		
 func make_connections():
 	get_parent().connect("start_level", self, "validate_upgrades")
+	get_parent().connect("load_data", self, "load_data")
 	self.connect("city_destroyed", get_parent(), "player_defeat")
 	var all_children = self.get_children()
 	for child in all_children:

@@ -31,6 +31,28 @@ func destroy_self():
 	
 func finish_death():
 	self.queue_free()
+	
+func load_data():
+	match self.position:
+		"North":
+			self.health = Global.north_turret_health
+		"East":
+			self.health = Global.east_turret_health
+		"West":
+			self.health = Global.west_turret_health
+		"South":
+			self.health = Global.south_turret_health
+		"NorthEast":
+			self.health = Global.north_east_building_health
+		"NorthWest":
+			self.health = Global.north_west_building_health
+		"SouthEast":
+			self.health = Global.south_east_building_health
+		"SouthWest":
+			self.health = Global.south_west_building_health
+	emit_signal("health_changed", self)
+	if self.health <= 0:
+		self.queue_free()
 
 func make_connections():
 	self.connect("building_destroyed", get_parent(), "building_lost")

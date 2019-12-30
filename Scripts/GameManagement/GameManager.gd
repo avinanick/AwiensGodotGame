@@ -29,6 +29,7 @@ onready var turret_placement_camera := get_node("TurretPlacementCamera") as Came
 
 var enemy_spawner = preload("res://Scenes/Units/EnemySpawner.tscn")
 
+signal load_data
 signal start_transition
 signal pause_game
 signal player_defeat
@@ -63,7 +64,8 @@ func _ready():
 			new_spawner.randomize_spawn()
 			new_spawner.update_spawner_difficulty()
 		get_node("MissileSpawner").randomize_spawn()
-			# This should also start the unit warning and countdown till start
+		emit_signal("load_data")
+		# This should also start the unit warning and countdown till start
 	
 
 # Process should probably be redone using signals
