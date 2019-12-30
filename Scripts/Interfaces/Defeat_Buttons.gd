@@ -18,4 +18,4 @@ func _on_Quit_Button_button_up():
 	var dir = Directory.new()
 	dir.remove("user://arcadesave.save")
 	Global.reset_all()
-	get_tree().change_scene("res://Scenes/Main_Menu.tscn")
+	get_tree().change_scene("res://Scenes/Interfaces/Main_Menu.tscn")
