@@ -1,8 +1,8 @@
 extends OptionButton
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var turret_image_dict := {"Chaingun" : preload("res://Resources/Materials/Icons/autoturret.png"),
+						"Flak Cannon" : preload("res://Resources/Materials/Icons/flakcannon.png"),
+						"Thunder Cannon" : preload("res://Resources/Materials/Icons/thundercannon.png")}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -56,4 +56,7 @@ func _on_TurretSelectionDropdown_item_selected(ID):
 		"WestTurretList":
 			turret_position = "West"
 	print(self.get_item_text(ID))
+	var turret_icon = get_node("../TextureRect")
+	if turret_icon:
+		turret_icon.texture = turret_image_dict[self.get_item_text(ID)]
 	replace_interface.turret_selected(self.get_item_text(ID), turret_position)
