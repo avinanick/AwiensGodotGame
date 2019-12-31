@@ -1,12 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/TurretReplaceInterface.gd" type="Script" id=1]
 [ext_resource path="res://Themes/PopupInterface.tres" type="Theme" id=2]
-[ext_resource path="res://Resources/Materials/Icons/autoturret.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Scripts/Interfaces/TurretSelectionDropdown.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Materials/Icons/autoturret.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Interfaces/TurretSelectionDropdown.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 4 )
 
 [node name="TurretReplaceInterface" type="MarginContainer"]
@@ -34,66 +40,50 @@ custom_constants/separation = 60
 
 [node name="TurretSelectionTitleLabel" type="Label" parent="Panel/TitleElementSeparator"]
 margin_right = 864.0
-margin_bottom = 14.0
-text = "Turret Selection"
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 1 )
+text = "Select Turrets"
 align = 1
 valign = 1
 
 [node name="TurretsVSeparation" type="VBoxContainer" parent="Panel/TitleElementSeparator"]
-margin_top = 74.0
+margin_top = 87.0
 margin_right = 864.0
-margin_bottom = 219.0
+margin_bottom = 325.0
 size_flags_vertical = 3
 custom_constants/separation = 17
 
 [node name="TurretsHSeparationTop" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation"]
 margin_right = 864.0
-margin_bottom = 64.0
+margin_bottom = 95.0
 
-[node name="NorthTurretList" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop"]
+[node name="NorthLabelSeparator" type="VBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop"]
 margin_right = 430.0
-margin_bottom = 64.0
+margin_bottom = 95.0
 size_flags_horizontal = 3
-alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture = ExtResource( 3 )
-
-[node name="Label" type="Label" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList/TextureRect"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -27.0
-custom_fonts/font = SubResource( 1 )
-text = "North"
+[node name="Label" type="Label" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthLabelSeparator"]
+margin_right = 430.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+text = "North Turret"
 align = 1
 valign = 1
 clip_text = true
 
-[node name="TurretSelectionDropdown" type="OptionButton" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList"]
-margin_left = 68.0
-margin_top = 22.0
+[node name="NorthTurretList" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthLabelSeparator"]
+margin_top = 31.0
 margin_right = 430.0
-margin_bottom = 42.0
+margin_bottom = 95.0
 size_flags_horizontal = 3
-size_flags_vertical = 4
-align = 1
-script = ExtResource( 5 )
+alignment = 1
 
-[node name="SouthTurretList" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop"]
-margin_left = 434.0
-margin_right = 864.0
-margin_bottom = 64.0
-size_flags_horizontal = 3
-
-[node name="TextureRect" type="TextureRect" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/SouthTurretList"]
+[node name="TextureRect" type="TextureRect" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthLabelSeparator/NorthTurretList"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 
-[node name="TurretSelectionDropdown" type="OptionButton" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/SouthTurretList"]
+[node name="TurretSelectionDropdown" type="OptionButton" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthLabelSeparator/NorthTurretList"]
 margin_left = 68.0
 margin_top = 22.0
 margin_right = 430.0
@@ -101,24 +91,75 @@ margin_bottom = 42.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 align = 1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="EastLabelSeparator" type="VBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop"]
+margin_left = 434.0
+margin_right = 864.0
+margin_bottom = 95.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/EastLabelSeparator"]
+margin_right = 430.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+text = "East Turret"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="EastTurretList" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/EastLabelSeparator"]
+margin_top = 31.0
+margin_right = 430.0
+margin_bottom = 95.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/EastLabelSeparator/EastTurretList"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+
+[node name="TurretSelectionDropdown" type="OptionButton" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/EastLabelSeparator/EastTurretList"]
+margin_left = 68.0
+margin_top = 22.0
+margin_right = 430.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+align = 1
+script = ExtResource( 6 )
 
 [node name="TurretsHSeparationBot" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation"]
-margin_top = 81.0
+margin_top = 112.0
 margin_right = 864.0
-margin_bottom = 145.0
+margin_bottom = 207.0
 
-[node name="WestTurretList" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot"]
+[node name="WestLabelSeparator" type="VBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot"]
 margin_right = 430.0
-margin_bottom = 64.0
+margin_bottom = 95.0
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestTurretList"]
+[node name="Label" type="Label" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestLabelSeparator"]
+margin_right = 430.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+text = "West Turret"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="WestTurretList" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestLabelSeparator"]
+margin_top = 31.0
+margin_right = 430.0
+margin_bottom = 95.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestLabelSeparator/WestTurretList"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 
-[node name="TurretSelectionDropdown" type="OptionButton" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestTurretList"]
+[node name="TurretSelectionDropdown" type="OptionButton" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestLabelSeparator/WestTurretList"]
 margin_left = 68.0
 margin_top = 22.0
 margin_right = 430.0
@@ -126,20 +167,35 @@ margin_bottom = 42.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 align = 1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
-[node name="EastTurretList" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot"]
+[node name="SouthLabelSeparator" type="VBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot"]
 margin_left = 434.0
 margin_right = 864.0
-margin_bottom = 64.0
+margin_bottom = 95.0
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/EastTurretList"]
+[node name="Label" type="Label" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/SouthLabelSeparator"]
+margin_right = 430.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+text = "South Turret"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="SouthTurretList" type="HBoxContainer" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/SouthLabelSeparator"]
+margin_top = 31.0
+margin_right = 430.0
+margin_bottom = 95.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/SouthLabelSeparator/SouthTurretList"]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 
-[node name="TurretSelectionDropdown" type="OptionButton" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/EastTurretList"]
+[node name="TurretSelectionDropdown" type="OptionButton" parent="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/SouthLabelSeparator/SouthTurretList"]
 margin_left = 68.0
 margin_top = 22.0
 margin_right = 430.0
@@ -147,12 +203,12 @@ margin_bottom = 42.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 align = 1
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="ContinueButtonLayout" type="HBoxContainer" parent="Panel/TitleElementSeparator"]
-margin_top = 279.0
+margin_top = 385.0
 margin_right = 864.0
-margin_bottom = 299.0
+margin_bottom = 405.0
 alignment = 2
 
 [node name="ContinueButton" type="Button" parent="Panel/TitleElementSeparator/ContinueButtonLayout"]
@@ -160,12 +216,12 @@ margin_left = 818.0
 margin_right = 864.0
 margin_bottom = 20.0
 text = "Done"
-[connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
-[connection signal="turret_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList/TurretSelectionDropdown" to="." method="turret_selected"]
-[connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/SouthTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/SouthTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
-[connection signal="turret_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/SouthTurretList/TurretSelectionDropdown" to="." method="turret_selected"]
-[connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
-[connection signal="turret_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestTurretList/TurretSelectionDropdown" to="." method="turret_selected"]
-[connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/EastTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/EastTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
-[connection signal="turret_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/EastTurretList/TurretSelectionDropdown" to="." method="turret_selected"]
+[connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthLabelSeparator/NorthTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthLabelSeparator/NorthTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
+[connection signal="turret_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthLabelSeparator/NorthTurretList/TurretSelectionDropdown" to="." method="turret_selected"]
+[connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/EastLabelSeparator/EastTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/EastLabelSeparator/EastTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
+[connection signal="turret_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/EastLabelSeparator/EastTurretList/TurretSelectionDropdown" to="." method="turret_selected"]
+[connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestLabelSeparator/WestTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestLabelSeparator/WestTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
+[connection signal="turret_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestLabelSeparator/WestTurretList/TurretSelectionDropdown" to="." method="turret_selected"]
+[connection signal="item_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/SouthLabelSeparator/SouthTurretList/TurretSelectionDropdown" to="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/SouthLabelSeparator/SouthTurretList/TurretSelectionDropdown" method="_on_TurretSelectionDropdown_item_selected"]
+[connection signal="turret_selected" from="Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/SouthLabelSeparator/SouthTurretList/TurretSelectionDropdown" to="." method="turret_selected"]
 [connection signal="button_up" from="Panel/TitleElementSeparator/ContinueButtonLayout/ContinueButton" to="." method="_on_ContinueButton_button_up"]

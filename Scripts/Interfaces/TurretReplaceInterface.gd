@@ -26,19 +26,10 @@ func make_connections():
 func turret_selected(var turret_type: String, var turret_location: String):
 	print("Selected turret type is ", turret_type)
 	emit_signal(str(turret_location, "_turret_type_selected"), turret_type)
-	#match turret_location:
-	#	"North":
-	#		emit_signal("north_turret_type_selected", self.turret_type_dict[turret_type])
-	#	"South":
-	#		emit_signal("south_turret_type_selected", self.turret_type_dict[turret_type])
-	#	"East":
-	#		emit_signal("east_turret_type_selected", self.turret_type_dict[turret_type])
-	#	"West":
-	#		emit_signal("west_turret_type_selected", self.turret_type_dict[turret_type])
-			
+	
 func update_turret_options():
-	get_node("Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthTurretList/TurretSelectionDropdown").update_turret_list()
-	get_node("Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/SouthTurretList/TurretSelectionDropdown").update_turret_list()
-	get_node("Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestTurretList/TurretSelectionDropdown").update_turret_list()
-	get_node("Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/EastTurretList/TurretSelectionDropdown").update_turret_list()
+	get_node("Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/NorthLabelSeparator/NorthTurretList/TurretSelectionDropdown").update_turret_list()
+	get_node("Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/SouthLabelSeparator/SouthTurretList/TurretSelectionDropdown").update_turret_list()
+	get_node("Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationBot/WestLabelSeparator/WestTurretList/TurretSelectionDropdown").update_turret_list()
+	get_node("Panel/TitleElementSeparator/TurretsVSeparation/TurretsHSeparationTop/EastLabelSeparator/EastTurretList/TurretSelectionDropdown").update_turret_list()
 	

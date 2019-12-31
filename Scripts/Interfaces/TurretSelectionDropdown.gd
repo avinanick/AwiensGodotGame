@@ -22,13 +22,13 @@ func update_turret_list():
 	var linked_turret
 	match get_parent().name:
 		"NorthTurretList":
-			linked_turret = get_node("../../../../../../../Guns/NorthGun")
+			linked_turret = get_node("../../../../../../../../Guns/NorthGun")
 		"SouthTurretList":
-			linked_turret = get_node("../../../../../../../Guns/SouthGun")
+			linked_turret = get_node("../../../../../../../../Guns/SouthGun")
 		"EastTurretList":
-			linked_turret = get_node("../../../../../../../Guns/EastGun")
+			linked_turret = get_node("../../../../../../../../Guns/EastGun")
 		"WestTurretList":
-			linked_turret = get_node("../../../../../../../Guns/WestGun")
+			linked_turret = get_node("../../../../../../../../Guns/WestGun")
 	if linked_turret.get_child_count() < 1:
 		# If there's no linked turret, disable the dropdown
 		get_node("../TextureRect").modulate = Color(1,1,1,0.5)
