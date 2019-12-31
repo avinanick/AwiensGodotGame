@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/GameOptionsInterface.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Interfaces/TurretKeybindEdit.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 14
@@ -92,5 +93,34 @@ custom_fonts/font = SubResource( 2 )
 text = "1.0"
 align = 1
 valign = 1
+
+[node name="NorthTurretKeybindEdit" parent="OptionsList" instance=ExtResource( 3 )]
+
+[node name="EastTurretKeybindEdit" parent="OptionsList" instance=ExtResource( 3 )]
+margin_top = 90.0
+margin_bottom = 120.0
+turret_position = "East"
+
+[node name="WestTurretKeybindEdit" parent="OptionsList" instance=ExtResource( 3 )]
+margin_top = 124.0
+margin_bottom = 154.0
+turret_position = "West"
+
+[node name="SouthTurretKeybindEdit" parent="OptionsList" instance=ExtResource( 3 )]
+margin_top = 158.0
+margin_bottom = 188.0
+turret_position = "South"
 [connection signal="value_changed" from="OptionsList/MouseSensitivityEdit/SensitivitySlider" to="." method="mouse_sensitivity_modified"]
 [connection signal="value_changed" from="OptionsList/MasterVolumeEdit/VolumeSlider" to="." method="master_volume_modified"]
+[connection signal="keybind_updated" from="OptionsList/NorthTurretKeybindEdit" to="OptionsList/SouthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/NorthTurretKeybindEdit" to="OptionsList/EastTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/NorthTurretKeybindEdit" to="OptionsList/WestTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/EastTurretKeybindEdit" to="OptionsList/SouthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/EastTurretKeybindEdit" to="OptionsList/WestTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/EastTurretKeybindEdit" to="OptionsList/NorthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/WestTurretKeybindEdit" to="OptionsList/SouthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/WestTurretKeybindEdit" to="OptionsList/EastTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/WestTurretKeybindEdit" to="OptionsList/NorthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/SouthTurretKeybindEdit" to="OptionsList/EastTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/SouthTurretKeybindEdit" to="OptionsList/WestTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/SouthTurretKeybindEdit" to="OptionsList/NorthTurretKeybindEdit" method="update_key_text"]
