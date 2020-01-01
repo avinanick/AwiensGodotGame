@@ -32,6 +32,7 @@ var enemy_spawner = preload("res://Scenes/Units/EnemySpawner.tscn")
 signal load_data
 signal start_transition
 signal pause_game
+signal unpause_game
 signal player_defeat
 signal player_victory
 signal start_level
@@ -89,10 +90,16 @@ func begin_transition_stage():
 		new_spawner.make_connections()
 	emit_signal("start_transition")
 
-func pause_game():
+func pause_unpause_game():
 	if self.game_state == self.game_states.running:
 		self.game_state = self.game_states.paused
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		emit_signal("pause_game")
+	if self.game_state == self.game_states.paused:
+		self.game_state = self.game_states.running
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		emit_signal("unpause_game")
+		
 
 func player_defeat():
 	self.game_state = self.game_states.defeat

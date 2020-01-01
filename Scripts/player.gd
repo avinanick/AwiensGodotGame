@@ -68,8 +68,7 @@ func _process(delta):
 			if selected_turret and is_instance_valid(selected_turret):
 				selected_turret.fire_weapon(camera.get_global_transform().origin, rotation) 
 		if Input.is_action_just_pressed("pause"):
-			var manager = get_node("/root/MainScene")
-			manager.game_state = manager.game_states.paused
+			self.main_scene.pause_unpause_game()
 	
 # This I think should be called whenever an input event happens
 func _input(event):
