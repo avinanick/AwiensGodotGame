@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/GameManagement/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Environments/Ground.tscn" type="PackedScene" id=2]
@@ -12,7 +12,8 @@
 [ext_resource path="res://Scenes/Interfaces/TurretReplaceInterface.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Interfaces/LevelCountdown.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Interfaces/EnemyWarningInterface.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Units/GunMount.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Interfaces/PauseMenu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Units/GunMount.tscn" type="PackedScene" id=14]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -55,16 +56,22 @@ visible = false
 [node name="EnemyWarningInterface" parent="." instance=ExtResource( 12 )]
 visible = false
 
+[node name="PauseMenu" parent="." instance=ExtResource( 13 )]
+pause_mode = 2
+visible = false
+margin_left = -59.985
+margin_right = 61.425
+
 [node name="Guns" type="Spatial" parent="."]
 
-[node name="NorthGun" parent="Guns" instance=ExtResource( 13 )]
+[node name="NorthGun" parent="Guns" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87825, 12 )
 
-[node name="EastGun" parent="Guns" instance=ExtResource( 13 )]
+[node name="EastGun" parent="Guns" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.878, 0 )
 
-[node name="WestGun" parent="Guns" instance=ExtResource( 13 )]
+[node name="WestGun" parent="Guns" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.878, 0 )
 
-[node name="SouthGun" parent="Guns" instance=ExtResource( 13 )]
+[node name="SouthGun" parent="Guns" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87825, -12 )

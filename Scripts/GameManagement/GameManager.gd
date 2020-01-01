@@ -94,10 +94,14 @@ func pause_unpause_game():
 	if self.game_state == self.game_states.running:
 		self.game_state = self.game_states.paused
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		print("pausing game")
+		get_tree().paused = true
 		emit_signal("pause_game")
-	if self.game_state == self.game_states.paused:
+	elif self.game_state == self.game_states.paused:
 		self.game_state = self.game_states.running
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		print("unpausing game")
+		get_tree().paused = false
 		emit_signal("unpause_game")
 		
 
