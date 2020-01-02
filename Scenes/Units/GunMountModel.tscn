@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/Models/GunMount/gun_mount.glb" type="PackedScene" id=1]
+
+[node name="GunMountModel" instance=ExtResource( 1 )]

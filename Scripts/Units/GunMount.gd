@@ -16,7 +16,7 @@ func _ready():
 #	pass
 
 func activate_shield():
-	if self.get_child_count() > 0:
+	if self.get_turret():
 		print("Activating turret shield")
 		var new_shield = shield_scene.instance()
 		self.add_child(new_shield)
@@ -26,9 +26,15 @@ func activate_shield():
 		print("No gun to shield for ", self.name)
 
 func fire_weapon(start_location : Vector3, start_rotation : Vector3):
-	var child_turret = get_child(0)
+	var child_turret = get_turret()
 	if child_turret and is_instance_valid(child_turret):
 		child_turret.fire(start_location, start_rotation)
+		
+func get_turret() -> Turret:
+	for child in get_children():
+		if child is Turret:
+			return child
+	return null
 		
 func get_shield():
 	return shield
@@ -42,20 +48,20 @@ func load_data():
 		replace_turret(Global.west_turret_type)
 	if "South" in self.name:
 		replace_turret(Global.south_turret_type)
-	get_child(0).load_data()
+	get_turret().load_data()
 	validate_upgrades()
 	
 func make_connections():
 	get_parent().get_parent().connect("start_transition", self, "validate_upgrades")
 	get_parent().get_parent().connect("load_data", self, "load_data")
-	get_child(0).make_connections()
+	get_turret().make_connections()
 	
 func rebuild_turret():
 	pass
 
 func replace_turret(var new_type: String):
 	var new_turret_type = self.turret_type_dict[new_type]
-	var selected_turret = get_child(0)
+	var selected_turret = self.get_turret()
 	if selected_turret:
 		var health: int = selected_turret.health
 		var position: Vector3 = Vector3(0,0,0) # Since the gun will be positioned at this nodes location
@@ -75,12 +81,19 @@ func replace_turret(var new_type: String):
 		print("Selected turret not found")
 		
 func reset_sights():
-	get_child(0).reset_sights()
+	var selected_turret = self.get_turret()
+	if selected_turret:
+		selected_turret.reset_sights()
 		
 func sight(var x_rotation: float, var y_rotation: float):
-	var turret = get_child(0)
+	var turret = self.get_turret()
 	if turret and is_instance_valid(turret):
 		turret.sight(x_rotation, y_rotation)
+		
+func turret_destroyed():
+	for i in range(get_child_count()):
+		if i > 0:
+			get_child(i).queue_free()
 		
 func validate_upgrades():
 	if Global.upgrade_unlocks["Energy Shields"] and not self.shield:

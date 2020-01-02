@@ -59,7 +59,6 @@ visible = false
 [node name="PauseMenu" parent="." instance=ExtResource( 13 )]
 pause_mode = 2
 visible = false
-margin_left = -59.985
 margin_right = 61.425
 
 [node name="Guns" type="Spatial" parent="."]
@@ -68,10 +67,10 @@ margin_right = 61.425
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87825, 12 )
 
 [node name="EastGun" parent="Guns" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.878, 0 )
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -12, 1.878, 0 )
 
 [node name="WestGun" parent="Guns" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.878, 0 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 12, 1.878, 0 )
 
 [node name="SouthGun" parent="Guns" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87825, -12 )
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 1.87825, -12 )
