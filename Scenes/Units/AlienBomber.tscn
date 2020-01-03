@@ -32,9 +32,7 @@ point_value = 5
 speed = 2.5
 defense_destroyer = true
 turn_speed = 0.1
-attack_damage = 5
 attack_interval = 4.0
-projectile_speed = 50.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )

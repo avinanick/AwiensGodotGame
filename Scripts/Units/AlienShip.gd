@@ -4,10 +4,8 @@ class_name AlienShip
 export var defense_destroyer: bool = false
 export var attack_range: float = 40
 export var turn_speed: float = 3
-export var attack_damage: int = 1
 export var attack_interval: float = 2
 export var projectile = preload("res://Scenes/Bullet.tscn")
-export var projectile_speed: float = 100
 onready var earthlings = get_tree().get_nodes_in_group("Earthlings")
 onready var city = get_node("/root/MainScene/City")
 var current_target
@@ -75,7 +73,6 @@ func attack_target(delta):
 		if current_target != null:
 			attack_cooldown = attack_interval
 			var newBullet = projectile.instance()
-			newBullet.bullet_damage = self.attack_damage
 			newBullet.set_name("bullet")
 			main_scene.add_child(newBullet)
 			# Make sure the start location for the bullet is offset from the ship so it doesn't immediately collide with 
@@ -88,7 +85,6 @@ func attack_target(delta):
 			var directionVector: Vector3
 			directionVector = current_target.get_global_transform().origin - self.get_global_transform().origin
 			directionVector = directionVector.normalized()
-			newBullet.speed = projectile_speed
 			newBullet.bulletDirection = directionVector
 			
 func initialize_direction():
