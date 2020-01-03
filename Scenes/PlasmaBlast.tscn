@@ -17,7 +17,7 @@ operator = 2
 default_input_values = [ 0, 0.5, 1, 0.5, 2, 1.0 ]
 
 [sub_resource type="VisualShaderNodeColorConstant" id=5]
-constant = Color( 0, 0.86377, 0.953125, 1 )
+constant = Color( 0, 0.841431, 0.953125, 1 )
 
 [sub_resource type="VisualShaderNodeScalarFunc" id=6]
 function = 0
@@ -42,7 +42,7 @@ void fragment() {
 // Color:6
 	vec3 n_out6p0;
 	float n_out6p1;
-	n_out6p0 = vec3(0.000000,0.863770,0.953125);
+	n_out6p0 = vec3(0.000000,0.841431,0.953125);
 	n_out6p1 = 1.000000;
 
 // Input:2
@@ -88,7 +88,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -894, 193 )
+graph_offset = Vector2( -433, 103 )
 nodes/fragment/2/node = SubResource( 1 )
 nodes/fragment/2/position = Vector2( -340, 220 )
 nodes/fragment/3/node = SubResource( 2 )
@@ -169,12 +169,12 @@ material/0 = null
 shape = SubResource( 12 )
 
 [node name="Ring" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.555457, 0.831545, 0, -0.831545, 0.555457, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.680878, -0.732396, 0, 0.732396, 0.680878, 0, 0, 0 )
 mesh = SubResource( 13 )
 material/0 = null
 
 [node name="Ring2" type="MeshInstance" parent="Ring"]
-transform = Transform( 0.444366, -0.665236, 2.90784e-008, 0, -3.49691e-008, -0.8, 0.665236, 0.444366, -1.94238e-008, 0, 0, 0 )
+transform = Transform( 0.544703, 0.585917, -2.56112e-008, 0, -3.49691e-008, -0.8, -0.585917, 0.544703, -2.38097e-008, 0, 0, 0 )
 mesh = SubResource( 13 )
 material/0 = null
 
