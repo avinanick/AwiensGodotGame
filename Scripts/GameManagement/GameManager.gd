@@ -107,6 +107,7 @@ func pause_unpause_game():
 
 func player_defeat():
 	self.game_state = self.game_states.defeat
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	emit_signal("player_defeat")
 
 func player_victory():

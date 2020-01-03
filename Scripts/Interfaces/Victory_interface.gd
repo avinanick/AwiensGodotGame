@@ -37,6 +37,10 @@ func enemy_destroyed(var point_value: int, var alien_name: String):
 func make_connections():
 	self.connect("continue_game", get_node("../UpgradesInterface"), "display_upgrades")
 	get_parent().connect("player_victory", self, "on_player_victory")
+	get_parent().connect("player_defeat", self, "on_player_defeat")
+	
+func on_player_defeat():
+	self.visible = false
 
 func on_player_victory(var points: int):
 	self.visible = true
