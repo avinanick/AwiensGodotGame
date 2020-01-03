@@ -38,7 +38,7 @@ func _on_UpgradeButton_button_up():
 				# I don't like having this unique special case, I bet I can do better later
 				var earthlings = get_tree().get_nodes_in_group("Earthlings")
 				for earthling in earthlings:
-					earthling.health = earthling.max_health
+					earthling.repair_structure()
 		disable_upgrade()
 	else:
 		print("Handle Error: Not enough points")

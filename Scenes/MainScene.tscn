@@ -59,7 +59,6 @@ visible = false
 [node name="PauseMenu" parent="." instance=ExtResource( 13 )]
 pause_mode = 2
 visible = false
-margin_right = 61.425
 
 [node name="Guns" type="Spatial" parent="."]
 
