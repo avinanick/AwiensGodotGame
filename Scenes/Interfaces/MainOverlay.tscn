@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/MainOverlay.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/background.png" type="Texture" id=2]
@@ -12,13 +12,16 @@
 [ext_resource path="res://Resources/Materials/HealthBars/SouthEastBuildingHealth.png" type="Texture" id=10]
 [ext_resource path="res://Resources/Materials/HealthBars/SouthTurretHealth.png" type="Texture" id=11]
 [ext_resource path="res://Resources/Materials/HealthBars/EastTurretHealth.png" type="Texture" id=12]
-[ext_resource path="res://Resources/Materials/radar_backdrop.png" type="Texture" id=13]
-[ext_resource path="res://Scripts/Interfaces/Radar.gd" type="Script" id=14]
-[ext_resource path="res://Resources/Materials/LabelImages/hotkey_label_4.png" type="Texture" id=15]
-[ext_resource path="res://Resources/Materials/LabelImages/hotkey_label_3.png" type="Texture" id=16]
-[ext_resource path="res://Resources/Materials/LabelImages/hotkey_label_2.png" type="Texture" id=17]
-[ext_resource path="res://Resources/Materials/LabelImages/hotkey_label_1.png" type="Texture" id=18]
-[ext_resource path="res://Resources/Materials/Masks/LightMask.png" type="Texture" id=19]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://Resources/Materials/radar_backdrop.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Interfaces/RadarTexture.gd" type="Script" id=15]
+[ext_resource path="res://Resources/Materials/Masks/LightMask.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 13 )
 
 [node name="MainOverlay" type="MarginContainer"]
 anchor_right = 1.0
@@ -36,6 +39,7 @@ margin_right = 1004.0
 margin_bottom = 580.0
 
 [node name="Counters" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
 margin_right = 984.0
 margin_bottom = 40.0
 alignment = 2
@@ -103,6 +107,7 @@ fill_mode = 3
 tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
 
 [node name="CentralBars" type="VBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars"]
+editor/display_folded = true
 margin_left = 49.0
 margin_right = 193.0
 margin_bottom = 223.0
@@ -216,6 +221,7 @@ texture_progress = ExtResource( 11 )
 tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
 
 [node name="EastTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars"]
+editor/display_folded = true
 margin_left = 197.0
 margin_top = 41.0
 margin_right = 239.0
@@ -236,40 +242,80 @@ texture_progress = ExtResource( 12 )
 fill_mode = 3
 tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
 
-[node name="RadarSprite" type="Sprite" parent="."]
-position = Vector2( 900, 500 )
-scale = Vector2( 0.2, 0.2 )
-z_index = 50
-texture = ExtResource( 13 )
-script = ExtResource( 14 )
+[node name="RadarSetup" type="HBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars"]
+margin_left = 243.0
+margin_top = 23.0
+margin_right = 984.0
+margin_bottom = 223.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+custom_constants/separation = 10
+alignment = 2
 
-[node name="hotkey_label_west" type="Sprite" parent="RadarSprite"]
-position = Vector2( -345.25, 0 )
-scale = Vector2( 5, 5 )
-texture = ExtResource( 15 )
+[node name="hotkey_label_west" type="Label" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup"]
+margin_left = 589.0
+margin_top = 77.0
+margin_right = 605.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.0392157, 1, 1 )
+text = "3"
+align = 1
+valign = 1
 
-[node name="hotkey_label_east" type="Sprite" parent="RadarSprite"]
-position = Vector2( 354.75, 0 )
-scale = Vector2( 5, 5 )
+[node name="central_radar" type="VBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup"]
+margin_left = 615.0
+margin_right = 715.0
+margin_bottom = 200.0
+size_flags_vertical = 4
+
+[node name="hotkey_label_north" type="Label" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup/central_radar"]
+margin_right = 100.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.0392157, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="RadarTexture" type="TextureRect" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup/central_radar"]
+light_mask = 2
+margin_top = 50.0
+margin_right = 100.0
+margin_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 100 )
+rect_pivot_offset = Vector2( 50, 50 )
+texture = ExtResource( 14 )
+expand = true
+script = ExtResource( 15 )
+
+[node name="PlayerView" type="Light2D" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup/central_radar/RadarTexture"]
+position = Vector2( 20.665, 48.585 )
+rotation = -1.62141
+scale = Vector2( 1.4, -0.8 )
 texture = ExtResource( 16 )
-
-[node name="hotkey_label_south" type="Sprite" parent="RadarSprite"]
-position = Vector2( 0, 350 )
-scale = Vector2( 5, 5 )
-texture = ExtResource( 17 )
-
-[node name="hotkey_label_north" type="Sprite" parent="RadarSprite"]
-position = Vector2( 0, -350 )
-scale = Vector2( 5, 5 )
-texture = ExtResource( 18 )
-
-[node name="PlayerView" type="Light2D" parent="RadarSprite"]
-position = Vector2( -24.7256, -107.074 )
-rotation = 1.62141
-scale = Vector2( 7, -4 )
-texture = ExtResource( 19 )
 offset = Vector2( -0.627594, -27.5446 )
 energy = 100.0
-range_z_min = 49
-range_z_max = 51
+range_item_cull_mask = 2
 shadow_color = Color( 0.996078, 0.996078, 0.996078, 0 )
+
+[node name="hotkey_label_south" type="Label" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup/central_radar"]
+margin_top = 154.0
+margin_right = 100.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.0392157, 1, 1 )
+text = "2"
+align = 1
+valign = 1
+
+[node name="hotkey_label_east" type="Label" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup"]
+margin_left = 725.0
+margin_top = 77.0
+margin_right = 741.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.0392157, 1, 1 )
+text = "4"

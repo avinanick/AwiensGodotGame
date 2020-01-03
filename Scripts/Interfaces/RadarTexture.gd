@@ -1,4 +1,4 @@
-extends Sprite
+extends TextureRect
 
 onready var ally_indicator = preload("res://Scenes/Interfaces/AllyRadarIndicator.tscn")
 onready var enemy_indicator = preload("res://Scenes/Interfaces/EnemyRadarIndicator.tscn")
@@ -7,7 +7,7 @@ export var x_map_range: float = 50
 export var y_map_range: float = 50
 var shrink_factor: float
 onready var player_view = get_node("PlayerView")
-onready var player_avatar = get_node("../../../../../Avatar")
+onready var player_avatar = get_node("../../../../../../../Avatar")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,22 +30,34 @@ func populate_indicators():
 	clear_indicators()
 	var earthlings = get_tree().get_nodes_in_group("Earthlings")
 	var avatar_position = player_avatar.get_global_transform().origin
-	player_view.position = Vector2(-1 * avatar_position.x * 3, -1 * avatar_position.z * 3)
+	player_view.position = position_indicator(avatar_position)
 	player_view.rotation_degrees = -1 * player_avatar.rotation_degrees.y
 	for earthling in earthlings:
 		var earthling_position: Vector3 = earthling.get_global_transform().origin
 		# I'll need to use the x and z values to figure out where on the radar it goes
-		var indicator_position: Vector2 = Vector2( -1 * earthling_position.x * 3, -1 * earthling_position.z * 3)
+		var indicator_position: Vector2 = position_indicator(earthling_position)
 		var new_ally = ally_indicator.instance()
 		self.add_child(new_ally)
 		new_ally.add_to_group("Indicators")
+		scale_indicator(new_ally)
 		new_ally.position = indicator_position
 	var aliens = get_tree().get_nodes_in_group("Aliens")
 	for alien in aliens:
 		var alien_position: Vector3 = alien.get_global_transform().origin
 		# I'll need to use the x and z values to figure out where on the radar it goes
-		var indicator_position: Vector2 = Vector2(-1 * alien_position.x * 3, -1 * alien_position.z * 3)
+		var indicator_position: Vector2 = position_indicator(alien_position)
 		var new_enemy = enemy_indicator.instance()
 		self.add_child(new_enemy)
+		scale_indicator(new_enemy)
 		new_enemy.add_to_group("Indicators")
 		new_enemy.position = indicator_position
+		
+func position_indicator(var indicator_position_3D: Vector3) -> Vector2:
+	var position: Vector2
+	position.x = -1 * indicator_position_3D.x * 1 + 50
+	position.y = -1 * indicator_position_3D.z * 1 + 50
+	return position
+	
+func scale_indicator(var indicator):
+	indicator.scale.x = 0.5
+	indicator.scale.y = 0.5
