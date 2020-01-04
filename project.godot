@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Units/AlienShip.gd"
 }, {
+"base": "Turret",
+"class": "AutoTurret",
+"language": "GDScript",
+"path": "res://Scripts/Units/AutoTurret.gd"
+}, {
 "base": "Projectile",
 "class": "Bullet",
 "language": "GDScript",
@@ -103,6 +108,7 @@ _global_script_class_icons={
 "Alien": "",
 "AlienMissile": "",
 "AlienShip": "",
+"AutoTurret": "",
 "Bullet": "",
 "DefeatInterface": "",
 "Destructible": "",

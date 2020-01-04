@@ -32,7 +32,7 @@ func fire_weapon(start_location : Vector3, start_rotation : Vector3):
 		
 func get_turret() -> Turret:
 	for child in get_children():
-		if child is Turret:
+		if (child is Turret) and not (child is AutoTurret):
 			return child
 	return null
 		
