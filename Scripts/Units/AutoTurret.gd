@@ -21,7 +21,7 @@ func _physics_process(delta):
 	else:
 		var direction_to_enemy: Vector3 = target.get_global_transform().origin - self.get_global_transform().origin
 		sight(atan(direction_to_enemy.y / direction_to_enemy.x),atan(direction_to_enemy.z / Vector2(direction_to_enemy.x, direction_to_enemy.y).length()))
-		fire(self.tranform, self.rotation)
+		fire(self.get_global_transform().origin, self.rotation)
 		
 func activate():
 	self.visible = true
