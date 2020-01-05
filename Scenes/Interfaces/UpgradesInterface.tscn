@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/UpgradesInterface.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/menu_backdrop.png" type="Texture" id=2]
@@ -12,7 +12,8 @@
 [ext_resource path="res://Resources/Materials/Icons/shapedblast.png" type="Texture" id=10]
 [ext_resource path="res://Resources/Materials/Icons/incendiaryrounds.png" type="Texture" id=11]
 [ext_resource path="res://Resources/Materials/Icons/energyshield.png" type="Texture" id=12]
-[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=13]
+[ext_resource path="res://Resources/Materials/Icons/automatedturret.png" type="Texture" id=13]
+[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
@@ -76,9 +77,8 @@ grow_horizontal = 2
 custom_styles/panel = SubResource( 1 )
 
 [node name="TotalPointsLabel" type="Label" parent="OuterOutline/InnerBackground/PointsBackdrop"]
-margin_top = 2.0
-margin_right = 139.0
-margin_bottom = 24.0
+margin_right = 131.0
+margin_bottom = 22.0
 grow_horizontal = 2
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -87,7 +87,6 @@ align = 1
 valign = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="OuterOutline/InnerBackground"]
-editor/display_folded = true
 margin_left = 54.0
 margin_top = 50.0
 margin_right = 448.0
@@ -96,18 +95,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer"]
-margin_right = 236.0
+margin_right = 316.0
 margin_bottom = 581.0
 custom_constants/separation = 11
 
 [node name="TurretsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
-margin_right = 236.0
+margin_right = 316.0
 margin_bottom = 20.0
 texture = ExtResource( 5 )
 
 [node name="TurretsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 31.0
-margin_right = 236.0
+margin_right = 316.0
 margin_bottom = 183.0
 
 [node name="FlakCannonUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer" instance=ExtResource( 6 )]
@@ -127,13 +126,13 @@ upgrade_icon = ExtResource( 8 )
 
 [node name="UpgradesLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 194.0
-margin_right = 236.0
+margin_right = 316.0
 margin_bottom = 219.0
 texture = ExtResource( 9 )
 
 [node name="UpgradesContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 230.0
-margin_right = 236.0
+margin_right = 316.0
 margin_bottom = 382.0
 
 [node name="ShapedBlastUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 6 )]
@@ -165,15 +164,25 @@ upgrade_type = "Upgrade"
 upgrade_name = "Energy Shields"
 upgrade_icon = ExtResource( 12 )
 
+[node name="AutoTurretsUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 6 )]
+margin_left = 240.0
+margin_right = 316.0
+margin_bottom = 152.0
+hint_tooltip = "Deploys automated turrets next to each gun fixture that will attack nearby aliens."
+cost = 15
+upgrade_type = "Upgrade"
+upgrade_name = "Auto-Turrets"
+upgrade_icon = ExtResource( 13 )
+
 [node name="RepairsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 393.0
-margin_right = 236.0
+margin_right = 316.0
 margin_bottom = 418.0
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="RepairsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
 margin_top = 429.0
-margin_right = 236.0
+margin_right = 316.0
 margin_bottom = 581.0
 
 [node name="RepairUpgradeButton" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer" instance=ExtResource( 6 )]
@@ -214,6 +223,7 @@ text = "Continue"
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/ShapedBlastUpgrade" to="." method="_on_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/IncendiaryRounds" to="." method="_on_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/EnergyShieldsUpgrade" to="." method="_on_upgrade_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/AutoTurretsUpgrade" to="." method="_on_upgrade_purchased"]
 [connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer/RepairUpgradeButton" to="." method="_on_upgrade_purchased"]
 [connection signal="button_up" from="OuterOutline/ExitInterfaceOptions/EditTurretsButton" to="." method="_on_EditTurretsButton_button_up"]
 [connection signal="button_up" from="OuterOutline/ExitInterfaceOptions/ContinueButton" to="." method="_on_ContinueButton_button_up"]

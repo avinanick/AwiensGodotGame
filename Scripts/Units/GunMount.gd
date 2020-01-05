@@ -9,11 +9,14 @@ var shield = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	get_node("AutoTurret").deactivate()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func activate_auto_turret():
+	get_node("AutoTurret").activate()
 
 func activate_shield():
 	if self.get_turret():
@@ -98,3 +101,5 @@ func turret_destroyed():
 func validate_upgrades():
 	if Global.upgrade_unlocks["Energy Shields"] and not self.shield:
 		activate_shield()
+	if Global.upgrade_unlocks["Auto-Turrets"] and not get_node("AutoTurret").visible and get_node("AutoTurret").health > 0:
+		activate_auto_turret()

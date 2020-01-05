@@ -8,7 +8,7 @@ export var targeting_range: float = 15.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	self.deactivate()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -22,6 +22,21 @@ func _physics_process(delta):
 		var direction_to_enemy: Vector3 = target.get_global_transform().origin - self.get_global_transform().origin
 		sight(atan(direction_to_enemy.y / direction_to_enemy.x),atan(direction_to_enemy.z / Vector2(direction_to_enemy.x, direction_to_enemy.y).length()))
 		fire(self.tranform, self.rotation)
+		
+func activate():
+	self.visible = true
+	get_node("TargetingRange").monitoring = true
+	self.add_to_group("Earthlings")
+	self.set_physics_process(true)
+	
+func deactivate():
+	self.visible = false
+	get_node("TargetingRange").monitoring = false
+	self.remove_from_group("Earthlings")
+	self.set_physics_process(false)
+	
+func finish_death():
+	self.deactivate()
 		
 func fire(start_location: Vector3, start_rotation: Vector3):
 	if not self.validate_target_clearance(get_world().direct_space_state, target):
