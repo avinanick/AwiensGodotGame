@@ -1,7 +1,7 @@
 extends MarginContainer
 class_name UpgradeInterface
 
-onready var points_label = get_node("OuterOutline/TotalPointsLabel")
+onready var points_label = get_node("OuterOutline/InnerBackground/PointsBackdrop/TotalPointsLabel")
 var upgrade_requirements := {"Thunder Cannon" : [],
 							"Flak Cannon" : []}
 
@@ -38,7 +38,7 @@ func make_connections():
 	self.connect("upgrading_finished", get_parent(), "begin_transition_stage")
 
 func update_points(var amount: int):
-	points_label.text = str(amount)
+	points_label.text = str("Current Points: ", amount)
 
 func _on_ContinueButton_button_up():
 	emit_signal("upgrading_finished")
