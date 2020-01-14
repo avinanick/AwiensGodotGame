@@ -21,7 +21,7 @@ func _physics_process(delta):
 	else:
 		var direction_to_enemy: Vector3 = target.get_global_transform().origin - self.get_global_transform().origin
 		sight(atan(direction_to_enemy.y / direction_to_enemy.x),atan(direction_to_enemy.z / Vector2(direction_to_enemy.x, direction_to_enemy.y).length()))
-		fire(self.get_global_transform().origin, self.rotation)
+		fire(self.get_global_transform().origin, direction_to_enemy.normalized())
 		
 func activate():
 	self.visible = true
@@ -38,7 +38,7 @@ func deactivate():
 func finish_death():
 	self.deactivate()
 		
-func fire(start_location: Vector3, start_rotation: Vector3):
+func fire(start_location: Vector3, target_direction: Vector3):
 	if not self.validate_target_clearance(get_world().direct_space_state, target):
 		print("Target lost")
 		self.target = null
@@ -49,20 +49,15 @@ func fire(start_location: Vector3, start_rotation: Vector3):
 		if fire_audio:
 			fire_audio.play()
 		var newBullet = projectile.instance()
-		# Get the camera's rotation (in radians) and use that to calculate the direction vector for the
-		# bullet
-		var directionVector := Vector3()
-		directionVector.x = (-1) * sin(start_rotation.y) * cos(start_rotation.x)
-		directionVector.y = sin(start_rotation.x)
-		directionVector.z = (-1) * cos(start_rotation.y) * cos(start_rotation.x)
-		directionVector = directionVector.normalized()
+		var directionVector := target_direction
 		newBullet.add_collision_exception_with(self)
 		# If the turret has an active shield, set the bullet to ignore the shield
 		var shield = get_parent().get_shield()
 		if shield:
 			newBullet.add_collision_exception_with(shield)
 		newBullet.translation = start_location
-		newBullet.rotation = start_rotation
+		# I may want to redo this to actually calculate rotation
+		#newBullet.rotation = start_rotation
 		newBullet.bulletDirection = directionVector
 		main_scene.add_child(newBullet)
 
