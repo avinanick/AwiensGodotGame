@@ -26,10 +26,10 @@ func _process(delta):
 
 # Add a function that searches through the defender group for enemies in range
 # This function scans the earthlings group for valid targets, if this ship is a defense destroyer, all are valid,
-# otherwise only non-combatants are valid
+# otherwise only non-combatants are valid 
 func scan_for_targets():
 	for earthling in earthlings:
-		if is_instance_valid(self) and is_instance_valid(earthling):
+		if is_instance_valid(self) and is_instance_valid(earthling) and earthling is Structure:
 			var valid_target: bool = false
 			if self.defense_destroyer:
 				valid_target = true

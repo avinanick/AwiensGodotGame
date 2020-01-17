@@ -28,6 +28,7 @@ func activate():
 	get_node("TargetingRange").monitoring = true
 	self.add_to_group("Earthlings")
 	self.set_physics_process(true)
+	self.health = self.max_health
 	
 func deactivate():
 	self.visible = false
