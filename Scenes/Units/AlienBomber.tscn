@@ -38,7 +38,7 @@ attack_interval = 4.0
 shape = SubResource( 1 )
 
 [node name="AlienModel" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.829979, -0.557794, 0, 0.557794, -0.829979, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -0.635021, 0.772494, 0, -0.772494, -0.635021, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Fly"
