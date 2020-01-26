@@ -1,26 +1,5 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Resources/Models/alienDrone.glb" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Units/AlienModel.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Models/AlienDrone_v2.0/alienDronev2.0.glb" type="PackedScene" id=1]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Take_Damage"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Cube:mesh:surface_1/material:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 0.60666, 0.60666, 0.60666, 1 ), Color( 1, 1, 1, 1 ), Color( 0.607843, 0.607843, 0.607843, 1 ) ]
-}
-
-[node name="AlienDroneModel" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
-anims/Take_Damage = SubResource( 1 )
+[node name="AlienDroneModel" index="0" instance=ExtResource( 1 )]

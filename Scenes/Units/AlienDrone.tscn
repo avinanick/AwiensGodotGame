@@ -36,9 +36,10 @@ turn_speed = 0.2
 projectile = ExtResource( 2 )
 
 [node name="AlienModel" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.04937, -0.329893, 0, 0.329893, 1.04937, 0, 0, 0, 1.2, 0, 0, -0.26 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -46,6 +47,6 @@ autoplay = "Fly"
 anims/Fly = SubResource( 2 )
 
 [node name="AlienWarp" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1.5, 0, 1.5, 0, -1, 0, -6.55671e-08, 0, 0, 0 )
+transform = Transform( -4.37114e-008, 0, 1.5, 0, 1.5, 0, -1, 0, -6.55671e-008, 0, 0, 0 )
 
 [node name="AlienExplosion" parent="." instance=ExtResource( 5 )]
