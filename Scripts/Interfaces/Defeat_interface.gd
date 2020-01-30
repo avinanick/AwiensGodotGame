@@ -17,9 +17,9 @@ func on_player_defeat():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func update_score(points: int):
-	var points_label = get_node("VBoxContainer/Points_Container/NinePatchRect/Points_Earned_Label")
+	var points_label = get_node("VBoxContainer/Points_Container/Points_Earned_Label")
 	points_label.text = str(points)
 	
 func update_time(time_remaining: int):
-	var time_label = get_node("VBoxContainer/Time_Remaining_Container/NinePatchRect/Time_Remaining_Label")
+	var time_label = get_node("VBoxContainer/Time_Remaining_Container/Time_Remaining_Label")
 	time_label.text = str(time_remaining)
