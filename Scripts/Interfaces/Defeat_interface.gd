@@ -18,8 +18,8 @@ func on_player_defeat():
 
 func update_score(points: int):
 	var points_label = get_node("VBoxContainer/Points_Container/Points_Earned_Label")
-	points_label.text = str(points)
+	points_label.text = str("Points Earned: ", points)
 	
 func update_time(time_remaining: int):
 	var time_label = get_node("VBoxContainer/Time_Remaining_Container/Time_Remaining_Label")
-	time_label.text = str(time_remaining)
+	time_label.text = str("Time Left: ", time_remaining)
