@@ -18,13 +18,13 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 	# zone, if the cooldown is ready. TargetingZone can be rotated directly, and will work perfectly
 	if is_alive and timer >= fire_cooldown:
 		if targeting_zone:
-			var modified_rotation = Vector3(-1 * start_rotation.x, start_rotation.y, -1 * start_rotation.z)
+			var modified_rotation = start_rotation - get_parent().rotation
 			targeting_zone.rotation = modified_rotation
 			var target = scan_for_targets()
 			if target:
 				var lightning_effect = get_node("LightningBlast")
 				lightning_effect.scale.z = self.translation.distance_to(target.translation)
-				lightning_effect.rotation = start_rotation
+				lightning_effect.rotation = modified_rotation
 				if lightning_effect:
 					lightning_effect.get_node("AnimationPlayer").play("LightningFire")
 				timer = 0
