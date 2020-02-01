@@ -18,7 +18,8 @@ func fire(start_location : Vector3, start_rotation : Vector3):
 	# zone, if the cooldown is ready. TargetingZone can be rotated directly, and will work perfectly
 	if is_alive and timer >= fire_cooldown:
 		if targeting_zone:
-			targeting_zone.rotation = start_rotation
+			var modified_rotation = Vector3(-1 * start_rotation.x, start_rotation.y, -1 * start_rotation.z)
+			targeting_zone.rotation = modified_rotation
 			var target = scan_for_targets()
 			if target:
 				var lightning_effect = get_node("LightningBlast")
@@ -45,6 +46,4 @@ func scan_for_targets():
 				if possible_target.is_in_group("Aliens"):
 					target = possible_target
 					smallest_distance = distance
-	else:
-		print("No targets in range")
 	return target

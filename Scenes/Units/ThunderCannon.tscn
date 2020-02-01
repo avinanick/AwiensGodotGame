@@ -105,7 +105,7 @@ shape = SubResource( 1 )
 [node name="TargetingZone" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="TargetingZone"]
-transform = Transform( 1, 0, 0, 0, -1.31134e-06, -1, 0, 30, -4.37114e-08, 0, 0, -30 )
+transform = Transform( 1, 0, 0, 0, -1.31134e-006, -1, 0, 30, -4.37114e-008, 0, 0, -30 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
