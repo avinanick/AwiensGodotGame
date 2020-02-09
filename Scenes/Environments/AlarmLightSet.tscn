@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Spin"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 180 ), Vector3( 0, 0, 360 ) ]
+}
+
+[node name="AlarmLightSet" type="Spatial"]
+transform = Transform( -0.078134, 0.996943, 0, -0.996943, -0.078134, 0, 0, 0, 1, 12.894, 4.46422, 6.82228 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0.0125761, -0.193506, -0.204183 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 5.65
+spot_range = 15.0
+
+[node name="SpotLight2" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.194, -0.204 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 5.65
+spot_range = 15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Spin"
+anims/Spin = SubResource( 1 )
