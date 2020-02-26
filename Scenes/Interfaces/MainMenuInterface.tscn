@@ -35,6 +35,9 @@ margin_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="Backdrop/VBoxContainer"]
 margin_top = 195.0

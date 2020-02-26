@@ -129,7 +129,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Awiens!"
-run/main_scene="res://Scenes/Interfaces/Main_Menu.tscn"
+run/main_scene="res://Scenes/Interfaces/MainMenuInterface.tscn"
 config/icon="res://icon.png"
 
 [autoload]

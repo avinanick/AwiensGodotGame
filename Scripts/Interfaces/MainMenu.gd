@@ -23,4 +23,4 @@ func load_arcade_game():
 		var current_line = parse_json(save_game.get_line())
 		Global.current_level = current_line["level"]
 		Global.total_points = current_line["points"]
-	get_tree().change_scene("res://Scenes/MainScene.tscn")
+	get_tree().change_scene("res://Scenes/Levels/MainScene.tscn")

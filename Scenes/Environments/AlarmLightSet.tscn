@@ -17,7 +17,7 @@ tracks/0/keys = {
 }
 
 [node name="AlarmLightSet" type="Spatial"]
-transform = Transform( -0.078134, 0.996943, 0, -0.996943, -0.078134, 0, 0, 0, 1, 12.894, 4.46422, 6.82228 )
+transform = Transform( 0.997099, -0.0761235, 0, 0.0761235, 0.997099, 0, 0, 0, 1, 12.894, 4.46422, 6.82228 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0.0125761, -0.193506, -0.204183 )
