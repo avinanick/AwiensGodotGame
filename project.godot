@@ -132,6 +132,11 @@ config/name="Awiens!"
 run/main_scene="res://Scenes/Interfaces/MainMenuInterface.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameOptions="*res://Scripts/GameOptions.gd"
+Global="*res://Scripts/Global.gd"
+
 [input]
 
 select_north={
