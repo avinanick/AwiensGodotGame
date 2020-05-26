@@ -63,8 +63,8 @@ func repair_structure():
 	health = self.max_health
 	emit_signal("health_changed", self)
 
-func take_damage(var amount: int):
-	health -= amount
+func handle_damage(var amount: int):
+	health -= (amount * damage_modifier)
 	emit_signal("health_changed", self)
 	if health <= 0:
 		destroy_self()
