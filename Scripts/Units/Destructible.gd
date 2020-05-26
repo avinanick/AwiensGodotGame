@@ -12,6 +12,7 @@ signal destructible_destroyed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.add_to_group("Destructible")
 	self.connect("attack_incoming", self, "handle_damage")
 	
 func take_damage(var amount: int):

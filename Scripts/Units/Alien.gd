@@ -27,12 +27,17 @@ func _ready():
 #	pass
 
 func destroy_self():
+	emit_signal("alien_destroyed", self.point_value, self.alien_name)
 	get_node("CollisionShape").disabled = true
 	var explosion_effect = get_node("AlienExplosion")
 	if explosion_effect:
 		explosion_effect.explode()
 	else:
 		self.queue_free()
+		
+func handle_damage(var amount: int):
+	emit_signal("alien_damaged")
+	.handle_damage(amount)
 
 func initialize_direction():
 	pass
@@ -56,13 +61,6 @@ func on_warp_out_expanded():
 func retreat():
 	self.moving = false
 	get_node("AlienWarp").start_warp_out()
-	
-func take_damage(var amount: int):
-	health -= amount
-	emit_signal("alien_damaged")
-	if health <= 0:
-		emit_signal("alien_destroyed", self.point_value, self.alien_name)
-		destroy_self()
 		
 func victory_retreat(var points: int):
 	self.retreat()
