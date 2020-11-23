@@ -15,7 +15,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func propagate_message(var message: String):
+func propagate_message(var message: String, var args: Dictionary):
 	for child in self.get_children():
 		if child.has_method("process_message"):
-			child.process_message(message)
+			child.process_message(message, args)

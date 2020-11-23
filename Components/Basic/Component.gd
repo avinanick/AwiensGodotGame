@@ -15,5 +15,5 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func process_message(var message: String):
+func process_message(var message: String, var args: Dictionary):
 	pass
