@@ -16,4 +16,6 @@ func _ready():
 #	pass
 
 func propagate_message(var message: String):
-	pass
+	for child in self.get_children():
+		if child.has_method("process_message"):
+			child.process_message(message)
