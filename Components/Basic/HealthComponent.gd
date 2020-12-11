@@ -17,7 +17,9 @@ func _ready():
 #	pass
 
 func take_damage(var amount: int):
-	pass
+	self.health_points -= amount
+	if self.health_points <= 0:
+		get_parent().propagate_message("self_destroyed", {})
 
 func process_message(var message: String, var args: Dictionary):
 	if message == "deal damage":
