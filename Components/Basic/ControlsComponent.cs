@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Component : Node
+public class ControlsComponent : Component
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;
