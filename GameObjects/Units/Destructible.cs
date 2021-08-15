@@ -6,6 +6,14 @@ public class Destructible : KinematicBody
 	// Declare member variables here. Examples:
 	// private int a = 2;
 	// private string b = "text";
+	[Export]
+	private int Health = 10;
+
+	[Export]
+	private int MaxHealth = 10;
+
+	private float DamageModifier = 1.0;
+	private bool IsAlive = true;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -18,4 +26,12 @@ public class Destructible : KinematicBody
 //  {
 //      
 //  }
+
+	public void DestroySelf() {
+		// STUB
+	}
+
+	public void TakeDamage(int amount) {
+		// STUB
+	}
 }
