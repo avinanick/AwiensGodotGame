@@ -14,10 +14,12 @@ public class Avatar : Spatial
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+	public override void _Process(float delta)
+	{
+		if(Input.IsActionPressed("fire_one")) {
+			GD.Print("Firing");
+		}
+	}
 
 	public override void _Input(InputEvent inputEvent) {
 		if(inputEvent.IsActionPressed("select_north")) {
