@@ -29,6 +29,7 @@ public class Destructible : KinematicBody
 
 	public void DestroySelf() {
 		// STUB
+		QueueFree();
 	}
 	
 	public void RepairDamage(int amount) {
