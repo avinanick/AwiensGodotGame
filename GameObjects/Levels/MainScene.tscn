@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/GameManagement/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://GameObjects/Environments/Ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Units/EnemySpawner.gd" type="Script" id=3]
-[ext_resource path="res://GameObjects/Units/City.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameObjects/Units/Earthlings/City.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameObjects/Avatar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameObjects/Interfaces/MainOverlay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameObjects/Interfaces/Victory_interface.tscn" type="PackedScene" id=7]
@@ -13,7 +13,7 @@
 [ext_resource path="res://GameObjects/Interfaces/LevelCountdown.tscn" type="PackedScene" id=11]
 [ext_resource path="res://GameObjects/Interfaces/EnemyWarningInterface.tscn" type="PackedScene" id=12]
 [ext_resource path="res://GameObjects/Interfaces/PauseMenu.tscn" type="PackedScene" id=13]
-[ext_resource path="res://GameObjects/Units/GunMount.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GameObjects/Units/Earthlings/GunMount.tscn" type="PackedScene" id=14]
 
 [node name="MainScene" type="Spatial"]
 script = ExtResource( 1 )

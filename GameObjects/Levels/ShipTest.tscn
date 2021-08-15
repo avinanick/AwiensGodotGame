@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/GameManagement/GameManager.gd" type="Script" id=1]
-[ext_resource path="res://GameObjects/Units/City.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GameObjects/Units/AlienFighter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameObjects/Units/Earthlings/City.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/Units/Aliens/AlienFighter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameObjects/Interfaces/Victory_interface.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameObjects/Interfaces/UpgradesInterface.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameObjects/Interfaces/MainOverlay.tscn" type="PackedScene" id=6]

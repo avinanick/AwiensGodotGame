@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Units/GunMount.gd" type="Script" id=1]
-[ext_resource path="res://GameObjects/Units/GunMountModel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GameObjects/Units/ProtoGun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GameObjects/Units/AutoTurret.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameObjects/Units/Earthlings/GunMountModel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/Units/Earthlings/ProtoGun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameObjects/Units/Earthlings/AutoTurret.tscn" type="PackedScene" id=4]
 
 [node name="GunMount" type="Spatial"]
 script = ExtResource( 1 )

@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Interfaces/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Resources/Materials/background.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Interfaces/SubMenuContainer.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Interfaces/SubMenuContainer.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Materials/background.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [node name="Main_Menu" type="MarginContainer"]
 margin_right = 1024.0
@@ -96,7 +96,7 @@ margin_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 200, 160 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 
 [node name="SubMenuContainer" type="VBoxContainer" parent="Backdrop/VBoxContainer/HBoxContainer/DynamicInterfaceBackdrop"]
 anchor_right = 1.0
@@ -107,7 +107,8 @@ margin_right = -20.0
 margin_bottom = -20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 5 )
+script = ExtResource( 2 )
+
 [connection signal="button_up" from="Backdrop/VBoxContainer/HBoxContainer/Buttons/NewGameButton" to="Backdrop/VBoxContainer/HBoxContainer/DynamicInterfaceBackdrop/SubMenuContainer" method="_on_NewGameButton_button_up"]
 [connection signal="button_up" from="Backdrop/VBoxContainer/HBoxContainer/Buttons/LoadGameButton" to="Backdrop/VBoxContainer/HBoxContainer/DynamicInterfaceBackdrop/SubMenuContainer" method="_on_LoadGameButton_button_up"]
 [connection signal="button_up" from="Backdrop/VBoxContainer/HBoxContainer/Buttons/OptionsButton" to="Backdrop/VBoxContainer/HBoxContainer/DynamicInterfaceBackdrop/SubMenuContainer" method="_on_OptionsButton_button_up"]

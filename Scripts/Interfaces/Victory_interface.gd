@@ -1,7 +1,7 @@
 extends MarginContainer
 class_name VictoryInterface
 
-var kill_icon_scene = preload("res://Scenes/Interfaces/KillCountIcon.tscn")
+var kill_icon_scene = preload("res://GameObjects/Interfaces/KillCountIcon.tscn")
 var active_icons := {}
 
 signal continue_game

@@ -6,7 +6,6 @@
 [ext_resource path="res://Resources/Audio/BuildingCollapse.wav" type="AudioStream" id=4]
 [ext_resource path="res://Scripts/SoundPlayer.gd" type="Script" id=5]
 
-
 [sub_resource type="BoxShape" id=1]
 
 [sub_resource type="Animation" id=2]
