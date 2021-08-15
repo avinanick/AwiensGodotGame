@@ -1,0 +1,12 @@
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\bin\Debug\Awiens!.deps.json
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\bin\Debug\Awiens!.dll
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\bin\Debug\ref\Awiens!.dll
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\bin\Debug\Awiens!.pdb
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\obj\Debug\Awiens!.csproj.AssemblyReference.cache
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\obj\Debug\Awiens!.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\obj\Debug\Awiens!.AssemblyInfoInputs.cache
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\obj\Debug\Awiens!.AssemblyInfo.cs
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\obj\Debug\Awiens!.csproj.CoreCompileInputs.cache
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\obj\Debug\Awiens!.dll
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\obj\Debug\ref\Awiens!.dll
+C:\Users\avina\Development\GameDev\Games\AwiensGodotGame\.mono\temp\obj\Debug\Awiens!.pdb

@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Interfaces/GameOptionsInterface.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GameObjects/Interfaces/TurretKeybindEdit.tscn" type="PackedScene" id=3]
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="GameOptionsInterface" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 1 )
+
+[node name="OptionsList" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="MouseSensitivityEdit" type="HBoxContainer" parent="OptionsList"]
+margin_right = 1024.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="SensitivityLabel" type="Label" parent="OptionsList/MouseSensitivityEdit"]
+margin_right = 68.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+text = "Aim Speed"
+align = 1
+valign = 1
+
+[node name="SensitivitySlider" type="HSlider" parent="OptionsList/MouseSensitivityEdit"]
+margin_left = 72.0
+margin_right = 1000.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 0.1
+max_value = 2.0
+step = 0.1
+value = 1.0
+tick_count = 20
+ticks_on_borders = true
+
+[node name="SensitivityValueLabel" type="Label" parent="OptionsList/MouseSensitivityEdit"]
+margin_left = 1004.0
+margin_right = 1024.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 2 )
+text = "1.0"
+align = 1
+valign = 1
+
+[node name="MasterVolumeEdit" type="HBoxContainer" parent="OptionsList"]
+margin_top = 28.0
+margin_right = 1024.0
+margin_bottom = 52.0
+
+[node name="VolumeLabel" type="Label" parent="OptionsList/MasterVolumeEdit"]
+margin_right = 89.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+text = "Game Volume"
+align = 1
+valign = 1
+
+[node name="VolumeSlider" type="HSlider" parent="OptionsList/MasterVolumeEdit"]
+margin_left = 93.0
+margin_right = 1000.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 66.0
+tick_count = 20
+ticks_on_borders = true
+
+[node name="VolumeValueLabel" type="Label" parent="OptionsList/MasterVolumeEdit"]
+margin_left = 1004.0
+margin_right = 1024.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 2 )
+text = "1.0"
+align = 1
+valign = 1
+
+[node name="NorthTurretKeybindEdit" parent="OptionsList" instance=ExtResource( 3 )]
+
+[node name="EastTurretKeybindEdit" parent="OptionsList" instance=ExtResource( 3 )]
+margin_top = 90.0
+margin_bottom = 120.0
+turret_position = "East"
+
+[node name="WestTurretKeybindEdit" parent="OptionsList" instance=ExtResource( 3 )]
+margin_top = 124.0
+margin_bottom = 154.0
+turret_position = "West"
+
+[node name="SouthTurretKeybindEdit" parent="OptionsList" instance=ExtResource( 3 )]
+margin_top = 158.0
+margin_bottom = 188.0
+turret_position = "South"
+[connection signal="value_changed" from="OptionsList/MouseSensitivityEdit/SensitivitySlider" to="." method="mouse_sensitivity_modified"]
+[connection signal="value_changed" from="OptionsList/MasterVolumeEdit/VolumeSlider" to="." method="master_volume_modified"]
+[connection signal="keybind_updated" from="OptionsList/NorthTurretKeybindEdit" to="OptionsList/SouthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/NorthTurretKeybindEdit" to="OptionsList/EastTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/NorthTurretKeybindEdit" to="OptionsList/WestTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/EastTurretKeybindEdit" to="OptionsList/SouthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/EastTurretKeybindEdit" to="OptionsList/WestTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/EastTurretKeybindEdit" to="OptionsList/NorthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/WestTurretKeybindEdit" to="OptionsList/SouthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/WestTurretKeybindEdit" to="OptionsList/EastTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/WestTurretKeybindEdit" to="OptionsList/NorthTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/SouthTurretKeybindEdit" to="OptionsList/EastTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/SouthTurretKeybindEdit" to="OptionsList/WestTurretKeybindEdit" method="update_key_text"]
+[connection signal="keybind_updated" from="OptionsList/SouthTurretKeybindEdit" to="OptionsList/NorthTurretKeybindEdit" method="update_key_text"]
