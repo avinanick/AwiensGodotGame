@@ -33,6 +33,10 @@ public class Destructible : KinematicBody
 	
 	public void RepairDamage(int amount) {
 		// STUB
+		Health += amount;
+		if(Health > MaxHealth) {
+			Health = MaxHealth;
+		}
 	}
 
 	public void TakeDamage(int amount) {
