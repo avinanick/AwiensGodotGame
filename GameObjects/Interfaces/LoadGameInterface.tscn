@@ -15,4 +15,5 @@ margin_bottom = 40.0
 margin_right = 56.0
 margin_bottom = 40.0
 text = "Arcade"
+
 [connection signal="button_up" from="HBoxContainer/Arcade_Button" to="." method="_on_Arcade_Button_button_up"]

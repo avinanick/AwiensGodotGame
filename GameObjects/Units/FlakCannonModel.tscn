@@ -11,13 +11,13 @@ metallic = 0.5
 script = ExtResource( 2 )
 
 [node name="Bone" parent="Armature" index="0"]
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 
 [node name="Bone002" parent="Armature/Bone/Bone001" index="0"]
-transform = Transform( -1, 6.74614e-008, -5.5603e-008, 0, 0.636024, 0.771669, 8.74228e-008, 0.771669, -0.636024, 0, 0.332955, 0 )
+transform = Transform( -1, 6.74614e-08, -5.5603e-08, 0, 0.636024, 0.771669, 8.74228e-08, 0.771669, -0.636024, 0, 0.332955, 0 )
 
 [node name="Bone003" parent="Armature/Bone/Bone001/Bone002" index="0"]
-transform = Transform( 1, 0, 0, 0, 0.772279, 0.635283, 0, -0.635283, 0.772279, 1.39698e-009, 0.690743, -1.22353e-007 )
+transform = Transform( 1, 0, 0, 0, 0.772279, 0.635283, 0, -0.635283, 0.772279, 1.39698e-09, 0.690743, -1.22353e-07 )
 
 [node name="Head" parent="Armature/Bone/Bone001" index="1"]
 material/0 = SubResource( 1 )

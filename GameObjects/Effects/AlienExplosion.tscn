@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scripts/AlienExplosion.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/Textures/shield_shatter_texture.tres" type="Texture" id=2]
-[ext_resource path="res://Resources/Audio/AlienExplosion.wav" type="AudioStream" id=3]
-[ext_resource path="res://Scripts/SoundPlayer.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/SoundPlayer.gd" type="Script" id=3]
+[ext_resource path="res://Resources/Audio/AlienExplosion.wav" type="AudioStream" id=4]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 1
@@ -94,6 +94,6 @@ process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 4 )
 
 [node name="AlienExplodeFX" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 unit_db = 25.0
-script = ExtResource( 4 )
+script = ExtResource( 3 )

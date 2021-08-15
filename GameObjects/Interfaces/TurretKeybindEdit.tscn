@@ -49,4 +49,5 @@ custom_fonts/font = SubResource( 1 )
 text = "Press new keybind to assign"
 align = 1
 valign = 1
+
 [connection signal="button_up" from="KeyButton" to="." method="_on_KeyButton_button_up"]

@@ -122,7 +122,7 @@ tracks/0/keys = {
 [node name="LightningBlast" type="CSGCombiner"]
 
 [node name="CSGCylinder" type="CSGCylinder" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, -0.5 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.5 )
 operation = 2
 radius = 0.25
 sides = 32
