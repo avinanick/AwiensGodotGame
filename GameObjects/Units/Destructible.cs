@@ -33,6 +33,7 @@ public class Destructible : KinematicBody
 //  }
 
 	public void DestroySelf() {
+		EmitSignal(nameof(Destroyed));
 		QueueFree();
 	}
 	
@@ -41,10 +42,12 @@ public class Destructible : KinematicBody
 		if(Health > MaxHealth) {
 			Health = MaxHealth;
 		}
+		EmitSignal(nameof(HealthChanged), Health);
 	}
 
 	public void TakeDamage(int amount) {
 		Health -= amount;
+		EmitSignal(nameof(HealthChanged), Health);
 		if(Health <= 0) {
 			DestroySelf()
 		}
