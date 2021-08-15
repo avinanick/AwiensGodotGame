@@ -12,7 +12,7 @@ public class Destructible : KinematicBody
 	[Export]
 	private int MaxHealth = 10;
 
-	private float DamageModifier = 1.0;
+	private double DamageModifier = 1.0;
 	private bool IsAlive = true;
 
 	// Called when the node enters the scene tree for the first time.
@@ -30,8 +30,16 @@ public class Destructible : KinematicBody
 	public void DestroySelf() {
 		// STUB
 	}
+	
+	public void RepairDamage(int amount) {
+		// STUB
+	}
 
 	public void TakeDamage(int amount) {
 		// STUB
+		Health -= amount;
+		if(Health <= 0) {
+			DestroySelf()
+		}
 	}
 }
