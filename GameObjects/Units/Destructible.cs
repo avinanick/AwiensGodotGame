@@ -53,7 +53,7 @@ public class Destructible : KinematicBody
 		Health -= amount;
 		EmitSignal(nameof(HealthChanged), Health);
 		if(Health <= 0) {
-			DestroySelf()
+			DestroySelf();
 		}
 	}
 }
