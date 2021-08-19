@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/building.glb-f3fe3bbd1e8909bb3c35a5dd9311d915.scn"
+path="res://.import/StoreStrip.glb-06b678ddb42d8c62988512ad756119ec.scn"
 
 [deps]
 
-source_file="res://Resources/Models/building/building.glb"
-dest_files=[ "res://.import/building.glb-f3fe3bbd1e8909bb3c35a5dd9311d915.scn" ]
+source_file="res://Resources/Models/Buildings/StoreStrip/StoreStrip.glb"
+dest_files=[ "res://.import/StoreStrip.glb-06b678ddb42d8c62988512ad756119ec.scn" ]
 
 [params]
 
@@ -16,6 +16,7 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
+nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
@@ -24,6 +25,7 @@ meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
+skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15
