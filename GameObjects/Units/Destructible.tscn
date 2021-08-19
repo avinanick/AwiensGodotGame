@@ -15,9 +15,47 @@ node_connections = [ "output", 0, "Animation" ]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Destroy"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "CompleteDestruction"
+} ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="Destructible" type="KinematicBody" groups=[
 "Destructible",
@@ -34,6 +72,7 @@ tree_root = SubResource( 4 )
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Destroy = SubResource( 2 )
