@@ -32,9 +32,12 @@ public class Destructible : KinematicBody
 //      
 //  }
 
+	public void CompleteDestruction() {
+		QueueFree();
+	}
+
 	public void DestroySelf() {
 		EmitSignal(nameof(Destroyed));
-		QueueFree();
 	}
 	
 	public void RepairDamage(int amount) {
