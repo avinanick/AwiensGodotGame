@@ -8,6 +8,12 @@ public class AttackerComponent : Component
 	// private string b = "text";
 	[Export]
 	private int Damage = 1;
+	
+	[Export]
+	private PackedScene Projectile;
+	
+	[Export]
+	private float Cooldown = 1.0f;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -20,4 +26,8 @@ public class AttackerComponent : Component
 //  {
 //      
 //  }
+
+	public void Fire(Vector3 startPosition, Vector3 startRotation) {
+		
+	}
 }
