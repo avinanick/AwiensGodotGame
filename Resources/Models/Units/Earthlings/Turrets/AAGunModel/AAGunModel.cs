@@ -6,11 +6,16 @@ public class AAGunModel : Spatial
 	// Declare member variables here. Examples:
 	// private int a = 2;
 	// private string b = "text";
+	Spatial ShouldersBone;
+	Spatial HeadBone;
+	Spatial BaseBone;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		ShouldersBone = GetNode<Spatial>("Bone0/Bone1");
+		HeadBone = GetNode<Spatial>("Bone0/Bone2");
+		BaseBone = GetNode<Spatial>("Bone0");
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,27 +25,19 @@ public class AAGunModel : Spatial
 //  }
 
 	public void Sight(float XRotation, float YRotation) {
-		Spatial shouldersBone = GetNode<Spatial>("Bone0/Bone1");
-		Spatial headBone = GetNode<Spatial>("Bone0/Bone2");
-		Spatial baseBone = GetNode<Spatial>("Bone0");
-		
-		Vector3 horizontalRotation = baseBone.RotationDegrees;
+		Vector3 horizontalRotation = BaseBone.RotationDegrees;
 		horizontalRotation.x -= XRotation;
-		Vector3 verticalRotation = shouldersBone.RotationDegrees;
+		Vector3 verticalRotation = ShouldersBone.RotationDegrees;
 		verticalRotation.y -= YRotation;
 		
-		baseBone.RotationDegrees = horizontalRotation;
-		shouldersBone.RotationDegrees = verticalRotation;
-		headBone.RotationDegrees = verticalRotation;
+		BaseBone.RotationDegrees = horizontalRotation;
+		ShouldersBone.RotationDegrees = verticalRotation;
+		HeadBone.RotationDegrees = verticalRotation;
 	}
 	
-	public void ResetSights() {
-		Spatial shouldersBone = GetNode<Spatial>("Bone0/Bone1");
-		Spatial headBone = GetNode<Spatial>("Bone0/Bone2");
-		Spatial baseBone = GetNode<Spatial>("Bone0");
-		
-		shouldersBone.RotationDegrees = new Vector3(0,0,0);
-		headBone.RotationDegrees = new Vector3(0,0,0);
-		baseBone.RotationDegrees = new Vector3(0,0,0);
+	public void ResetSights() {		
+		ShouldersBone.RotationDegrees = new Vector3(0,0,0);
+		HeadBone.RotationDegrees = new Vector3(0,0,0);
+		BaseBone.RotationDegrees = new Vector3(0,0,0);
 	}
 }
