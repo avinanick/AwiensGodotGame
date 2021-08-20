@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Models/Units/Earthlings/Turrets/AAHead/metalPurple(Clone).material" type="Material" id=1]
 [ext_resource path="res://Resources/Models/Units/Earthlings/Turrets/AAHead/metalGreen(Clone).material" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Resources/Models/Units/Earthlings/Turrets/AAHead/metalOrange(Clone).material" type="Material" id=5]
 [ext_resource path="res://Resources/Models/Units/Earthlings/Turrets/AAHead/shield(Clone).material" type="Material" id=6]
 [ext_resource path="res://Resources/Models/Units/Earthlings/Turrets/AAHead/metal(Clone).material" type="Material" id=7]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Turrets/TurretBase/TurretBase.glb" type="PackedScene" id=8]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "ring_bevel"
@@ -315,6 +316,7 @@ surfaces/2 = {
 [node name="AAGunModel" type="Spatial"]
 
 [node name="Bone0" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="ring_bevel" type="MeshInstance" parent="Bone0"]
 mesh = SubResource( 1 )
@@ -379,3 +381,5 @@ mesh = SubResource( 10 )
 material/0 = null
 material/1 = null
 material/2 = null
+
+[node name="TurretBase" parent="." instance=ExtResource( 8 )]
