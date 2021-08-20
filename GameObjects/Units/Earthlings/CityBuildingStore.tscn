@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GameObjects/Units/Earthlings/CityBuilding.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Resources/Models/Buildings/StoreStrip/bricks(Clone).material" type="Material" id=2]
-[ext_resource path="res://Resources/Models/Buildings/StoreStrip/bricksDark(Clone).material" type="Material" id=3]
-[ext_resource path="res://Resources/Models/Buildings/StoreStrip/foliage(Clone).material" type="Material" id=4]
-[ext_resource path="res://Resources/Models/Buildings/StoreStrip/metalLight(Clone).material" type="Material" id=5]
-[ext_resource path="res://Resources/Models/Buildings/StoreStrip/stone(Clone).material" type="Material" id=6]
-[ext_resource path="res://Resources/Models/Buildings/StoreStrip/glass(Clone).material" type="Material" id=7]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/StoreStrip/bricks(Clone).material" type="Material" id=2]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/StoreStrip/bricksDark(Clone).material" type="Material" id=3]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/StoreStrip/foliage(Clone).material" type="Material" id=4]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/StoreStrip/metalLight(Clone).material" type="Material" id=5]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/StoreStrip/stone(Clone).material" type="Material" id=6]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/StoreStrip/glass(Clone).material" type="Material" id=7]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 1, 1, 4 )

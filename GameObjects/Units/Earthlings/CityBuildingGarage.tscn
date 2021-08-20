@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GameObjects/Units/Earthlings/CityBuilding.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Resources/Models/Buildings/ParkingGarage/stoneDark(Clone).material" type="Material" id=2]
-[ext_resource path="res://Resources/Models/Buildings/ParkingGarage/metal(Clone).material" type="Material" id=3]
-[ext_resource path="res://Resources/Models/Buildings/ParkingGarage/bricks(Clone).material" type="Material" id=4]
-[ext_resource path="res://Resources/Models/Buildings/ParkingGarage/dark(Clone).material" type="Material" id=5]
-[ext_resource path="res://Resources/Models/Buildings/ParkingGarage/stone(Clone).material" type="Material" id=6]
-[ext_resource path="res://Resources/Models/Buildings/ParkingGarage/metalDark(Clone).material" type="Material" id=7]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/ParkingGarage/stoneDark(Clone).material" type="Material" id=2]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/ParkingGarage/metal(Clone).material" type="Material" id=3]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/ParkingGarage/bricks(Clone).material" type="Material" id=4]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/ParkingGarage/dark(Clone).material" type="Material" id=5]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/ParkingGarage/stone(Clone).material" type="Material" id=6]
+[ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/ParkingGarage/metalDark(Clone).material" type="Material" id=7]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 2.5, 1.1, 3.5 )
