@@ -3,9 +3,7 @@ using System;
 
 public class Turret : Destructible
 {
-	// Declare member variables here. Examples:
-	// private int a = 2;
-	// private string b = "text";
+
 	protected AttackerComponent Attacker;
 	protected TurretModel Model;
 
@@ -20,4 +18,16 @@ public class Turret : Destructible
 //  {
 //      
 //  }
+
+	public void AttemptAttack(Vector3 attackSpawn, Vector3 attackRotation) {
+		Attacker.Fire(attackSpawn, attackRotation);
+	}
+	
+	public void ResetSights() {
+		Model.ResetSights();
+	}
+	
+	public void Sight(float xRotation, float yRotation) {
+		Model.Sight(xRotation, yRotation);
+	}
 }
