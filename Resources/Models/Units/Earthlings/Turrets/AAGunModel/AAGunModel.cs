@@ -1,21 +1,16 @@
 using Godot;
 using System;
 
-public class AAGunModel : Spatial
+public class AAGunModel : TurretModel
 {
-	// Declare member variables here. Examples:
-	// private int a = 2;
-	// private string b = "text";
-	Spatial ShouldersBone;
-	Spatial HeadBone;
-	Spatial BaseBone;
+	// Note: I may want to make a base "GunModel" class that others inherit 
+	// from, for ease of use in the turret scene. Either that or an interface
+	protected Spatial HeadBone;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		ShouldersBone = GetNode<Spatial>("Bone0/Bone1");
 		HeadBone = GetNode<Spatial>("Bone0/Bone2");
-		BaseBone = GetNode<Spatial>("Bone0");
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,19 +19,19 @@ public class AAGunModel : Spatial
 //      
 //  }
 
-	public void Sight(float XRotation, float YRotation) {
+	public override void Sight(float XRotation, float YRotation) {
 		Vector3 horizontalRotation = BaseBone.RotationDegrees;
 		horizontalRotation.x -= XRotation;
-		Vector3 verticalRotation = ShouldersBone.RotationDegrees;
+		Vector3 verticalRotation = GunBone.RotationDegrees;
 		verticalRotation.y -= YRotation;
 		
 		BaseBone.RotationDegrees = horizontalRotation;
-		ShouldersBone.RotationDegrees = verticalRotation;
+		GunBone.RotationDegrees = verticalRotation;
 		HeadBone.RotationDegrees = verticalRotation;
 	}
 	
-	public void ResetSights() {		
-		ShouldersBone.RotationDegrees = new Vector3(0,0,0);
+	public override void ResetSights() {		
+		GunBone.RotationDegrees = new Vector3(0,0,0);
 		HeadBone.RotationDegrees = new Vector3(0,0,0);
 		BaseBone.RotationDegrees = new Vector3(0,0,0);
 	}
