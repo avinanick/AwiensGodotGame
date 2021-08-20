@@ -18,4 +18,19 @@ public class AAGunModel : Spatial
 //  {
 //      
 //  }
+
+	public void Sight(float XRotation, float YRotation) {
+		Spatial shouldersBone = GetNode<Spatial>("Bone0/Bone1");
+		Spatial headBone = GetNode<Spatial>("Bone0/Bone2");
+		Spatial baseBone = GetNode<Spatial>("Bone0");
+		
+		Vector3 horizontalRotation = baseBone.RotationDegrees;
+		horizontalRotation.x -= XRotation;
+		Vector3 verticalRotation = shouldersBone.RotationDegrees;
+		verticalRotation.y -= YRotation;
+		
+		baseBone.RotationDegrees = horizontalRotation;
+		shouldersBone.RotationDegrees = verticalRotation;
+		headBone.RotationDegrees = verticalRotation;
+	}
 }
