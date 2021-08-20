@@ -33,4 +33,14 @@ public class AAGunModel : Spatial
 		shouldersBone.RotationDegrees = verticalRotation;
 		headBone.RotationDegrees = verticalRotation;
 	}
+	
+	public void ResetSights() {
+		Spatial shouldersBone = GetNode<Spatial>("Bone0/Bone1");
+		Spatial headBone = GetNode<Spatial>("Bone0/Bone2");
+		Spatial baseBone = GetNode<Spatial>("Bone0");
+		
+		shouldersBone.RotationDegrees = new Vector3(0,0,0);
+		headBone.RotationDegrees = new Vector3(0,0,0);
+		baseBone.RotationDegrees = new Vector3(0,0,0);
+	}
 }
