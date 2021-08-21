@@ -24,10 +24,10 @@ public class Projectile : KinematicBody
 //  }
 
 	public void SetDamage(float damageAmount) {
-		
+		Damage = damageAmount;
 	}
 
 	public void SetDirection(Vector3 newDirection) {
-		
+		DirectionVector = newDirection.Normalized();
 	}
 }
