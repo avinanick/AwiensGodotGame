@@ -10,11 +10,13 @@ public class Projectile : KinematicBody
 	protected int Damage;
 	[Export]
 	protected float ProjectileSpeed = 5.0f;
+	[Export]
+	protected float Lifespan = 10.0f;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		GetNode<Timer>("LifeTimer").Start(Lifespan);
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
