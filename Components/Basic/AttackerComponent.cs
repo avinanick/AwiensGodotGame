@@ -14,6 +14,8 @@ public class AttackerComponent : Component
 	
 	[Export]
 	private float Cooldown = 1.0f;
+	
+	private bool ReadyToFire = true;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -27,7 +29,14 @@ public class AttackerComponent : Component
 //      
 //  }
 
+	public void CooldownFinished() {
+		ReadyToFire = true;
+	}
+
 	public void Fire(Vector3 startPosition, Vector3 startRotation) {
-		
+		if(ReadyToFire) {
+			ReadyToFire = false;
+			GetNode<Timer>("CooldownTimer").Start(Cooldown);
+		}
 	}
 }
