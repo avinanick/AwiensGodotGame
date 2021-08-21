@@ -11,6 +11,7 @@ public class Turret : Destructible
 	public override void _Ready()
 	{
 		Attacker = GetNode<AttackerComponent>("Attacker");
+		Model = GetNode<TurretModel>("GunModel");
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
