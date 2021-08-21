@@ -20,10 +20,10 @@ public class Projectile : KinematicBody
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+  public override void _Process(float delta)
+  {
+	  HandleImpact(MoveAndCollide(DirectionVector * ProjectileSpeed * delta));
+  }
 
 	private void DestroySelf() {
 		QueueFree();
