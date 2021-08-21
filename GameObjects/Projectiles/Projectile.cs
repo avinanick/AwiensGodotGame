@@ -23,6 +23,14 @@ public class Projectile : KinematicBody
 //      
 //  }
 
+	private void DestroySelf() {
+		
+	}
+
+	private void HandleImpact(KinematicCollision collision) {
+		
+	}
+
 	public void SetDamage(float damageAmount) {
 		Damage = damageAmount;
 	}
