@@ -7,7 +7,7 @@ public class Projectile : KinematicBody
 	// private int a = 2;
 	// private string b = "text";
 	protected Vector3 DirectionVector;
-	protected float Damage;
+	protected int Damage;
 	[Export]
 	protected float ProjectileSpeed = 5.0f;
 
@@ -24,14 +24,19 @@ public class Projectile : KinematicBody
 //  }
 
 	private void DestroySelf() {
-		
+		QueueFree();
 	}
 
 	private void HandleImpact(KinematicCollision collision) {
-		
+		if(collision != null) {
+			if(collision.Collider is Destructible destructible) {
+				destructible.TakeDamage(Damage);
+			}
+			DestroySelf();
+		}
 	}
 
-	public void SetDamage(float damageAmount) {
+	public void SetDamage(int damageAmount) {
 		Damage = damageAmount;
 	}
 
