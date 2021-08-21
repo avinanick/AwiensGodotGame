@@ -7,8 +7,8 @@ albedo_color = Color( 1, 0.960784, 0, 1 )
 
 [sub_resource type="SphereMesh" id=1]
 material = SubResource( 2 )
-radius = 0.2
-height = 0.4
+radius = 0.06
+height = 0.12
 
 [node name="Bullet" instance=ExtResource( 1 )]
 ProjectileSpeed = 50.0
