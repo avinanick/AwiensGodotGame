@@ -46,15 +46,19 @@ public class DefenseGrid : Spatial
 		switch(weaponPosition) {
 			case NORTH:
 				PlayerAvatar.Translation = NorthPosition;
+				PlayerAvatar.RotationDegrees = new Vector3(0,180,0);
 				break;
 			case EAST:
 				PlayerAvatar.Translation = EastPosition;
+				PlayerAvatar.RotationDegrees = new Vector3(0,-90,0);
 				break;
 			case WEST:
 				PlayerAvatar.Translation = WestPosition;
+				PlayerAvatar.RotationDegrees = new Vector3(0,90,0);
 				break;
 			case SOUTH:
 				PlayerAvatar.Translation = SouthPosition;
+				PlayerAvatar.RotationDegrees = new Vector3(0,0,0);
 				break;
 		}
 		
