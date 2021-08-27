@@ -16,6 +16,11 @@ public class DefenseGrid : Spatial
 	private WeaponPlatform EastPlatform;
 	private WeaponPlatform WestPlatform;
 	private WeaponPlatform SouthPlatform;
+	
+	public const int NORTH = 0;
+	public const int EAST = 1;
+	public const int WEST = 2;
+	public const int SOUTH = 3;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -37,15 +42,47 @@ public class DefenseGrid : Spatial
 //      
 //  }
 
-	public void SelectWeapon() {
+	public void SelectWeapon(int weaponPosition) {
+		switch(weaponPosition) {
+			case NORTH:
+				PlayerAvatar.Translation = NorthPosition;
+				break;
+			case EAST:
+				PlayerAvatar.Translation = EastPosition;
+				break;
+			case WEST:
+				PlayerAvatar.Translation = WestPosition;
+				break;
+			case SOUTH:
+				PlayerAvatar.Translation = SouthPosition;
+				break;
+		}
 		
 	}
 	
-	public void WeaponDamaged() {
-		
+	public void WeaponDamaged(int weaponPosition) {
+		switch(weaponPosition) {
+			case NORTH:
+				break;
+			case EAST:
+				break;
+			case WEST:
+				break;
+			case SOUTH:
+				break;
+		}
 	}
 	
-	public void WeaponDestroyed() {
-		
+	public void WeaponDestroyed(int weaponPosition) {
+		switch(weaponPosition) {
+			case NORTH:
+				break;
+			case EAST:
+				break;
+			case WEST:
+				break;
+			case SOUTH:
+				break;
+		}
 	}
 }
