@@ -25,10 +25,10 @@ public class DefenseGrid : Spatial
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		NorthPosition = new Vector3(0,0,15);
-		EastPosition = new Vector3(15,0,0);
-		WestPosition = new Vector3(-15,0,0);
-		SouthPosition = new Vector3(0,0,-15);
+		NorthPosition = new Vector3(0,2,15);
+		EastPosition = new Vector3(15,2,0);
+		WestPosition = new Vector3(-15,2,0);
+		SouthPosition = new Vector3(0,2,-15);
 		PlayerAvatar = GetNode<Avatar>("Avatar");
 		NorthPlatform = GetNode<WeaponPlatform>("WeaponPlatform3");
 		EastPlatform = GetNode<WeaponPlatform>("WeaponPlatform");
