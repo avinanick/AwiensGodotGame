@@ -6,6 +6,7 @@ public class Avatar : Spatial
 	// Declare member variables here. Examples:
 	// private int a = 2;
 	// private string b = "text";
+	private WeaponPlatform SelectedWeapon;
 	
 	[Signal]
 	public delegate void TurretSelect(int selectionPosition);
@@ -20,7 +21,7 @@ public class Avatar : Spatial
 	public override void _Process(float delta)
 	{
 		if(Input.IsActionPressed("fire_one")) {
-			GD.Print("Firing");
+			SelectedWeapon.AttemptAttack(GlobalTransform.origin, Rotation);
 		}
 	}
 
@@ -58,5 +59,9 @@ public class Avatar : Spatial
 		if(inputEvent.IsActionPressed("pause")) {
 			GD.Print("Pause the game");
 		}
+	}
+	
+	public void SetWeapon(WeaponPlatform newWeapon) {
+		SelectedWeapon = newWeapon;
 	}
 }
