@@ -16,6 +16,7 @@ public class Projectile : KinematicBody
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		base._Ready();
 		GetNode<Timer>("LifeTimer").Start(Lifespan);
 	}
 

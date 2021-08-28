@@ -25,6 +25,7 @@ public class DefenseGrid : Spatial
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		base._Ready();
 		NorthPosition = new Vector3(0,2,15);
 		EastPosition = new Vector3(15,2,0);
 		WestPosition = new Vector3(-15,2,0);

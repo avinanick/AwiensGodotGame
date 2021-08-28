@@ -12,6 +12,7 @@ public class TurretModel : Spatial
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		base._Ready();
 		GunBone = GetNode<Spatial>("Bone0/Bone1");
 		BaseBone = GetNode<Spatial>("Bone0");
 	}
