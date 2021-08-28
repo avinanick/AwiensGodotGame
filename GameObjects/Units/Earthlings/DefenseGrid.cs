@@ -47,18 +47,22 @@ public class DefenseGrid : Spatial
 			case NORTH:
 				PlayerAvatar.Translation = NorthPosition;
 				PlayerAvatar.RotationDegrees = new Vector3(0,180,0);
+				NorthPlatform.ResetSights();
 				break;
 			case EAST:
 				PlayerAvatar.Translation = EastPosition;
 				PlayerAvatar.RotationDegrees = new Vector3(0,-90,0);
+				EastPlatform.ResetSights();
 				break;
 			case WEST:
 				PlayerAvatar.Translation = WestPosition;
 				PlayerAvatar.RotationDegrees = new Vector3(0,90,0);
+				WestPlatform.ResetSights();
 				break;
 			case SOUTH:
 				PlayerAvatar.Translation = SouthPosition;
 				PlayerAvatar.RotationDegrees = new Vector3(0,0,0);
+				SouthPlatform.ResetSights();
 				break;
 		}
 		
