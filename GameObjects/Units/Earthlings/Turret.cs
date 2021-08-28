@@ -10,7 +10,7 @@ public class Turret : Destructible
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Attacker = GetNode<AttackerComponent>("Attacker");
+		Attacker = GetNode<AttackerComponent>("AttackerComponent");
 		Model = GetNode<TurretModel>("GunModel");
 	}
 
