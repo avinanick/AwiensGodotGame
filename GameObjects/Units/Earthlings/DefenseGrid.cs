@@ -34,6 +34,8 @@ public class DefenseGrid : Spatial
 		EastPlatform = GetNode<WeaponPlatform>("WeaponPlatform");
 		WestPlatform = GetNode<WeaponPlatform>("WeaponPlatform2");
 		SouthPlatform = GetNode<WeaponPlatform>("WeaponPlatform4");
+		// Default selection should be south platform
+		SelectWeapon(SOUTH);
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,21 +50,25 @@ public class DefenseGrid : Spatial
 				PlayerAvatar.Translation = NorthPosition;
 				PlayerAvatar.RotationDegrees = new Vector3(0,180,0);
 				NorthPlatform.ResetSights();
+				PlayerAvatar.SetWeapon(NorthPlatform);
 				break;
 			case EAST:
 				PlayerAvatar.Translation = EastPosition;
 				PlayerAvatar.RotationDegrees = new Vector3(0,-90,0);
 				EastPlatform.ResetSights();
+				PlayerAvatar.SetWeapon(EastPlatform);
 				break;
 			case WEST:
 				PlayerAvatar.Translation = WestPosition;
 				PlayerAvatar.RotationDegrees = new Vector3(0,90,0);
 				WestPlatform.ResetSights();
+				PlayerAvatar.SetWeapon(WestPlatform);
 				break;
 			case SOUTH:
 				PlayerAvatar.Translation = SouthPosition;
 				PlayerAvatar.RotationDegrees = new Vector3(0,0,0);
 				SouthPlatform.ResetSights();
+				PlayerAvatar.SetWeapon(SouthPlatform);
 				break;
 		}
 		
