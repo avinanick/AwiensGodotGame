@@ -10,7 +10,7 @@ public class AttackerComponent : Component
 	private int Damage = 1;
 	
 	[Export]
-	private PackedScene Projectile;
+	private PackedScene AttackProjectile;
 	
 	[Export]
 	private float Cooldown = 1.0f;
@@ -37,6 +37,19 @@ public class AttackerComponent : Component
 		if(ReadyToFire) {
 			ReadyToFire = false;
 			GetNode<Timer>("CooldownTimer").Start(Cooldown);
+			Projectile newBullet = (Projectile)AttackProjectile.Instance();
+			
+			Vector3 directionVector = new Vector3();
+			directionVector.x = (float)((-1) * Math.Sin(startRotation.y) * Math.Cos(startRotation.x));
+			directionVector.y = (float)Math.Sin(startRotation.x);
+			directionVector.z = (float)((-1) * Math.Cos(startRotation.y) * Math.Cos(startRotation.x));
+			
+			newBullet.Translation = startPosition;
+			newBullet.Rotation = startRotation;
+			newBullet.SetDirection(directionVector.Normalized());
+			newBullet.SetDamage(Damage);
+			
+			GetTree().CurrentScene.AddChild(newBullet);
 		}
 	}
 }
