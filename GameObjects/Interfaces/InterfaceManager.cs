@@ -18,4 +18,20 @@ public class InterfaceManager : MarginContainer
 //  {
 //      
 //  }
+
+	public void BuildingDamaged(int position) {
+		
+	}
+
+	public void PlayerDefeat() {
+		
+	}
+
+	public void PlayerVictory() {
+		
+	}
+	
+	public void TurretDamaged(int position) {
+		
+	}
 }
