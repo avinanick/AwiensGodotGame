@@ -40,9 +40,9 @@ public class AttackerComponent : Component
 			Projectile newBullet = (Projectile)AttackProjectile.Instance();
 			
 			Vector3 directionVector = new Vector3();
-			directionVector.x = (float)((-1) * Math.Sin(startRotation.y) * Math.Cos(startRotation.x));
-			directionVector.y = (float)Math.Sin(startRotation.x);
-			directionVector.z = (float)((-1) * Math.Cos(startRotation.y) * Math.Cos(startRotation.x));
+			directionVector.x = (float)((-1) * Mathf.Sin(startRotation.y) * Mathf.Cos(startRotation.x));
+			directionVector.y = (float)Mathf.Sin(startRotation.x);
+			directionVector.z = (float)((-1) * Mathf.Cos(startRotation.y) * Mathf.Cos(startRotation.x));
 			
 			newBullet.Translation = startPosition;
 			newBullet.Rotation = startRotation;
