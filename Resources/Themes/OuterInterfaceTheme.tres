@@ -31,5 +31,5 @@ Button/styles/hover = null
 Button/styles/normal = null
 Button/styles/pressed = null
 Panel/styles/panel = SubResource( 1 )
-Panel/styles/panelf = SubResource( 1 )
+Panel/styles/panelf = null
 Panel/styles/panelnc = null
