@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class InterfaceManager : MarginContainer
+public class DefeatInterface : PanelContainer
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;
@@ -18,20 +18,4 @@ public class InterfaceManager : MarginContainer
 //  {
 //      
 //  }
-
-	public void BuildingDamaged(int position) {
-		
-	}
-
-	public void PlayerDefeat() {
-		
-	}
-
-	public void PlayerVictory() {
-		
-	}
-	
-	public void TurretDamaged(int position) {
-		
-	}
 }
