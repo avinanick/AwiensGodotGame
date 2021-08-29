@@ -11,7 +11,7 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[node name="Defeat_interface" type="PanelContainer"]
+[node name="DefeatInterface" type="PanelContainer"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -24,6 +24,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 15.0
@@ -32,14 +35,14 @@ margin_right = 135.0
 margin_bottom = 170.0
 alignment = 1
 
-[node name="Defeat_Text_Container" type="MarginContainer" parent="VBoxContainer"]
+[node name="DefeatTextContainer" type="MarginContainer" parent="VBoxContainer"]
 margin_right = 120.0
 margin_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 40, 20 )
 
-[node name="Label" type="Label" parent="VBoxContainer/Defeat_Text_Container"]
+[node name="Label" type="Label" parent="VBoxContainer/DefeatTextContainer"]
 margin_right = 120.0
 margin_bottom = 32.0
 size_flags_vertical = 1
@@ -49,7 +52,7 @@ text = "Defeat!"
 align = 1
 valign = 1
 
-[node name="Time_Remaining_Container" type="MarginContainer" parent="VBoxContainer"]
+[node name="TimeRemainingContainer" type="MarginContainer" parent="VBoxContainer"]
 margin_top = 36.0
 margin_right = 120.0
 margin_bottom = 63.0
@@ -59,7 +62,7 @@ rect_min_size = Vector2( 40, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Time_Remaining_Label" type="Label" parent="VBoxContainer/Time_Remaining_Container"]
+[node name="TimeRemainingLabel" type="Label" parent="VBoxContainer/TimeRemainingContainer"]
 margin_right = 120.0
 margin_bottom = 27.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -67,7 +70,7 @@ text = "Time Left: 1:00"
 align = 1
 valign = 1
 
-[node name="Points_Container" type="MarginContainer" parent="VBoxContainer"]
+[node name="PointsContainer" type="MarginContainer" parent="VBoxContainer"]
 margin_top = 67.0
 margin_right = 120.0
 margin_bottom = 94.0
@@ -75,30 +78,27 @@ grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 40, 20 )
 
-[node name="Points_Earned_Label" type="Label" parent="VBoxContainer/Points_Container"]
+[node name="PointsEarnedLabel" type="Label" parent="VBoxContainer/PointsContainer"]
 margin_right = 120.0
 margin_bottom = 27.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Points Earned: 0"
 align = 1
 
-[node name="Defeat_Buttons" type="VBoxContainer" parent="VBoxContainer"]
+[node name="DefeatButtons" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 98.0
 margin_right = 120.0
 margin_bottom = 156.0
 script = ExtResource( 4 )
 
-[node name="Retry_Button" type="Button" parent="VBoxContainer/Defeat_Buttons"]
+[node name="RetryButton" type="Button" parent="VBoxContainer/DefeatButtons"]
 margin_right = 120.0
 margin_bottom = 27.0
 rect_min_size = Vector2( 60, 20 )
 text = "Restart"
 
-[node name="Quit_Button" type="Button" parent="VBoxContainer/Defeat_Buttons"]
+[node name="QuitButton" type="Button" parent="VBoxContainer/DefeatButtons"]
 margin_top = 31.0
 margin_right = 120.0
 margin_bottom = 58.0
 text = "Quit"
-
-[connection signal="button_up" from="VBoxContainer/Defeat_Buttons/Retry_Button" to="VBoxContainer/Defeat_Buttons" method="_on_Retry_Button_button_up"]
-[connection signal="button_up" from="VBoxContainer/Defeat_Buttons/Quit_Button" to="VBoxContainer/Defeat_Buttons" method="_on_Quit_Button_button_up"]
