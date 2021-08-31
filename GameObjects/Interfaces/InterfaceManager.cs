@@ -24,7 +24,7 @@ public class InterfaceManager : MarginContainer
 	}
 
 	public void PlayerDefeat() {
-		
+		GetNode<DefeatInterface>("DefeatInterface").PlayerDefeated();
 	}
 
 	public void PlayerVictory() {
