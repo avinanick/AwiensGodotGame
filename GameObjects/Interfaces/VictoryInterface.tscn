@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Scripts/Interfaces/Victory_interface.gd" type="Script" id=1]
+[ext_resource path="res://GameObjects/Interfaces/VictoryInterface.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Interfaces/metalPanel.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=4]
