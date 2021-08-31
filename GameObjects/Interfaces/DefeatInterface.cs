@@ -18,4 +18,16 @@ public class DefeatInterface : PanelContainer
 //  {
 //      
 //  }
+
+	public void PlayerDefeated() {
+		
+	}
+	
+	public void UpdateScore(int pointsEarned) {
+		
+	}
+	
+	public void UpdateTimeRemaining(int secondsLeft) {
+		
+	}
 }
