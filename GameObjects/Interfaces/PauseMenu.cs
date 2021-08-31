@@ -21,14 +21,19 @@ public class PauseMenu : PanelContainer
 //  }
 
 	public void OnAbandonCity() {
-		
+		// Here, the current save file should be deleted and the player taken to
+		// the main menu
 	}
 
 	public void OnPause() {
-		
+		Visible = true;
+		GetTree().Paused = true;
+		Input.SetMouseMode(Input.MouseMode.Visible);
 	}
 	
 	public void OnUnpause() {
-		
+		Visible = false;
+		GetTree().Paused = false;
+		Input.SetMouseMode(Input.MouseMode.Captured);
 	}
 }
