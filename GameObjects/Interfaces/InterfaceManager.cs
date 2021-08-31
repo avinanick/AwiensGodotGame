@@ -24,7 +24,8 @@ public class InterfaceManager : MarginContainer
 	}
 	
 	public void GamePaused() {
-		
+		GD.Print("Receiving game pause signal");
+		GetNode<PauseMenu>("PauseMenu").OnPause();
 	}
 
 	public void PlayerDefeat() {
