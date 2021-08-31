@@ -22,6 +22,7 @@ public class DefeatInterface : PanelContainer
 
 	public void PlayerDefeated() {
 		Visible = true;
+		Input.SetMouseMode(Input.MouseMode.Visible);
 	}
 	
 	public void QuitGame() {
