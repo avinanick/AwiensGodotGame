@@ -36,7 +36,7 @@ size = 14
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[node name="Victory_interface" type="PanelContainer"]
+[node name="VictoryInterface" type="PanelContainer"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
