@@ -5,15 +5,16 @@
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 4 )
 
 [node name="PauseMenu" type="PanelContainer"]
+pause_mode = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -42,7 +43,7 @@ custom_constants/separation = 5
 [node name="PauseLabel" type="Label" parent="VBoxContainer"]
 margin_right = 99.0
 margin_bottom = 27.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.92549, 0.933333, 0, 1 )
 text = "Paused!"
 align = 1
@@ -52,14 +53,14 @@ valign = 1
 margin_top = 32.0
 margin_right = 99.0
 margin_bottom = 59.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Abandon City"
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
 margin_top = 64.0
 margin_right = 99.0
 margin_bottom = 91.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Resume"
 
 [connection signal="button_up" from="VBoxContainer/AbandonButton" to="." method="_on_AbandonButton_button_up"]
