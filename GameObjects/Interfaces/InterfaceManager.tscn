@@ -16,6 +16,7 @@ __meta__ = {
 }
 
 [node name="Defeat_interface" parent="." instance=ExtResource( 1 )]
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -26,12 +27,14 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="MainOverlay" parent="." instance=ExtResource( 2 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="UpgradesInterface" parent="." instance=ExtResource( 3 )]
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -42,16 +45,18 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="Victory_interface" parent="." instance=ExtResource( 4 )]
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 444.0
-margin_top = 172.0
-margin_right = 579.0
-margin_bottom = 427.0
+margin_left = 497.0
+margin_top = 286.0
+margin_right = 526.0
+margin_bottom = 314.0
 
 [node name="PauseMenu" parent="." instance=ExtResource( 6 )]
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

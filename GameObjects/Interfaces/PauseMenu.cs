@@ -23,6 +23,7 @@ public class PauseMenu : PanelContainer
 	public void OnAbandonCity() {
 		// Here, the current save file should be deleted and the player taken to
 		// the main menu
+		GD.Print("Not yet functional");
 	}
 
 	public void OnPause() {
