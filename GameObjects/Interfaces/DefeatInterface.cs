@@ -11,6 +11,7 @@ public class DefeatInterface : PanelContainer
 	public override void _Ready()
 	{
 		base._Ready();
+		Visible = false;
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,7 +21,18 @@ public class DefeatInterface : PanelContainer
 //  }
 
 	public void PlayerDefeated() {
-		
+		Visible = true;
+	}
+	
+	public void QuitGame() {
+		// This should delete the current save and load the main menu, should I
+		// impliment this in the autoload since the pause menu has an identical
+		// need?
+	}
+	
+	public void RetryGame() {
+		// This should delete the current save and reload to level one for a new
+		// game
 	}
 	
 	public void UpdateScore(int pointsEarned) {
