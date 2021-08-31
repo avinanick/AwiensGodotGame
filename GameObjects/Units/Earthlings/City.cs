@@ -18,4 +18,12 @@ public class City : Spatial
 //  {
 //      
 //  }
+
+	public void BuildingDestroyed() {
+		
+	}
+	
+	public void BuildingHealthUpdated(int newValue, int buildingPosition) {
+		
+	}
 }
