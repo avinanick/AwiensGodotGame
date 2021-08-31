@@ -38,6 +38,7 @@ public class Destructible : KinematicBody
 
 	public void DestroySelf() {
 		EmitSignal(nameof(Destroyed));
+		GetNode<AnimationPlayer>("AnimationPlayer").Play("Destroy");
 	}
 	
 	public void RepairDamage(int amount) {
