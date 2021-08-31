@@ -63,5 +63,4 @@ margin_bottom = 91.0
 custom_fonts/font = SubResource( 2 )
 text = "Resume"
 
-[connection signal="button_up" from="VBoxContainer/AbandonButton" to="." method="_on_AbandonButton_button_up"]
-[connection signal="button_up" from="VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_button_up"]
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="OnUnpause"]
