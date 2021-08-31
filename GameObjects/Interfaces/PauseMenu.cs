@@ -19,4 +19,16 @@ public class PauseMenu : PanelContainer
 //  {
 //      
 //  }
+
+	public void OnAbandonCity() {
+		
+	}
+
+	public void OnPause() {
+		
+	}
+	
+	public void OnUnpause() {
+		
+	}
 }
