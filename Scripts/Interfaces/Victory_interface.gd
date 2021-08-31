@@ -1,4 +1,4 @@
-extends MarginContainer
+extends PanelContainer
 class_name VictoryInterface
 
 var kill_icon_scene = preload("res://GameObjects/Interfaces/KillCountIcon.tscn")
