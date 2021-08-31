@@ -11,5 +11,3 @@
 [node name="DefenseGrid" parent="." instance=ExtResource( 2 )]
 
 [node name="InterfaceManager" parent="." instance=ExtResource( 3 )]
-
-[connection signal="PlayerPausedGame" from="DefenseGrid" to="InterfaceManager" method="GamePaused"]

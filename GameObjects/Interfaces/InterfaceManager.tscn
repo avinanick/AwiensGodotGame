@@ -23,10 +23,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = 496.0
+margin_top = 286.0
+margin_right = 527.0
+margin_bottom = 314.0
 
 [node name="MainOverlay" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -63,7 +63,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = 496.0
+margin_top = 286.0
+margin_right = 527.0
+margin_bottom = 314.0

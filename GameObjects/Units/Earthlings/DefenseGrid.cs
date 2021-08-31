@@ -21,9 +21,6 @@ public class DefenseGrid : Spatial
 	public const int EAST = 1;
 	public const int WEST = 2;
 	public const int SOUTH = 3;
-	
-	[Signal]
-	public delegate void PlayerPausedGame();
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -47,10 +44,6 @@ public class DefenseGrid : Spatial
 //  {
 //      
 //  }
-
-	public void OnPauseGame() {
-		EmitSignal(nameof(PlayerPausedGame));
-	}
 
 	public void SelectWeapon(int weaponPosition) {
 		switch(weaponPosition) {

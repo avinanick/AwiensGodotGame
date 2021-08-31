@@ -20,6 +20,17 @@ public class PauseMenu : PanelContainer
 //      
 //  }
 
+	public override void _Input(InputEvent inputEvent) {
+		if(inputEvent.IsActionPressed("pause")) {
+			if(GetTree().Paused) {
+				OnUnpause();
+			}
+			else {
+				OnPause();
+			}
+		}
+	}
+
 	public void OnAbandonCity() {
 		// Here, the current save file should be deleted and the player taken to
 		// the main menu

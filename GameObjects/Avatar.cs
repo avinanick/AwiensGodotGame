@@ -10,9 +10,6 @@ public class Avatar : Spatial
 	
 	[Signal]
 	public delegate void TurretSelect(int selectionPosition);
-	
-	[Signal]
-	public delegate void PauseGame();
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -58,10 +55,6 @@ public class Avatar : Spatial
 			rotation.y -= motionEvent.Relative.x;
 			
 			RotationDegrees = rotation;
-		}
-
-		if(inputEvent.IsActionPressed("pause")) {
-			EmitSignal(nameof(PauseGame));
 		}
 	}
 	

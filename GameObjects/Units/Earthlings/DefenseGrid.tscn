@@ -22,5 +22,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15 )
 [node name="Avatar" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15 )
 
-[connection signal="PauseGame" from="Avatar" to="." method="OnPauseGame"]
 [connection signal="TurretSelect" from="Avatar" to="." method="SelectWeapon"]
