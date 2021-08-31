@@ -22,6 +22,10 @@ public class InterfaceManager : MarginContainer
 	public void BuildingDamaged(int position) {
 		
 	}
+	
+	public void GamePaused() {
+		
+	}
 
 	public void PlayerDefeat() {
 		
