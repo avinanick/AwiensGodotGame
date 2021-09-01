@@ -54,6 +54,7 @@ public class VictoryInterface : PanelContainer
 	
 	public void PlayerVictory() {
 		UpdateScore();
+		Input.SetMouseMode(Input.MouseMode.Visible);
 		Visible = true;
 	}
 	
