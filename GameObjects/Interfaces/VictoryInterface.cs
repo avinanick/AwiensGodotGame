@@ -6,6 +6,8 @@ public class VictoryInterface : PanelContainer
 	// Declare member variables here. Examples:
 	// private int a = 2;
 	// private string b = "text";
+	[Signal]
+	public delegate void GameContinued();
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -23,12 +25,14 @@ public class VictoryInterface : PanelContainer
 		
 	}
 	
-	public void ClearKillIcons() {
+	private void ClearKillIcons() {
 		
 	}
 
 	public void ContinueGame() {
-		
+		Visible = false;
+		ClearKillIcons();
+		EmitSignal(nameof(GameContinued));
 	}
 	
 	public void EnemyDefeated() {
@@ -36,22 +40,27 @@ public class VictoryInterface : PanelContainer
 	}
 
 	public void PlayerDefeat() {
-		
+		// this should never actually be called, mostly just in case of error 
+		// elsewhere
+		Visible = false;
 	}
 	
 	public void PlayerVictory() {
-		
+		UpdateScore();
+		Visible = true;
 	}
 	
 	public void QuitGame() {
-		
+		// I'm going to put a lot of this functionality into an autoload, since
+		// several interfaces share this
 	}
 	
 	public void SaveAndQuit() {
-		
+		// I'm going to put a lot of this functionality into an autoload, since
+		// several interfaces share this
 	}
 	
-	public void UpdateScore() {
+	private void UpdateScore() {
 		
 	}
 }
