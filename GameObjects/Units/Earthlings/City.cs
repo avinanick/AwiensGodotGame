@@ -46,7 +46,9 @@ public class City : Spatial
 	}
 	
 	public void WaveTimeFinished() {
-		if(Array.Exists(DestroyedBuildings, element => element == true)) {
+		GD.Print("Level time is up!");
+		if(Array.Exists(DestroyedBuildings, element => element == false)) {
+			GD.Print("Player should have won");
 			EmitSignal(nameof(PlayerVictory));
 		}
 	}
