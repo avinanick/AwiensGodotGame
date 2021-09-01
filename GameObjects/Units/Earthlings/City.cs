@@ -13,6 +13,9 @@ public class City : Spatial
 	
 	[Signal]
 	public delegate void PlayerDefeated();
+	
+	[Signal]
+	public delegate void PlayerVictory();
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -39,6 +42,12 @@ public class City : Spatial
 				// The player has lost
 				EmitSignal(nameof(PlayerDefeated));
 			}
+		}
+	}
+	
+	public void WaveTimeFinished() {
+		if(Array.Exists(DestroyedBuildings, element => element == true)) {
+			EmitSignal(nameof(PlayerVictory));
 		}
 	}
 }
