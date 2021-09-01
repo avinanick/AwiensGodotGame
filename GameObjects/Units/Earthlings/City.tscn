@@ -34,7 +34,13 @@ __meta__ = {
 "_editor_clip_": 0
 }
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
 [connection signal="HealthChanged" from="CityBuildingTall" to="." method="BuildingHealthUpdated" binds= [ 0 ]]
 [connection signal="HealthChanged" from="CityBuildingWide" to="." method="BuildingHealthUpdated" binds= [ 3 ]]
 [connection signal="HealthChanged" from="CityBuildingStore" to="." method="BuildingHealthUpdated" binds= [ 1 ]]
 [connection signal="HealthChanged" from="CityBuildingGarage" to="." method="BuildingHealthUpdated" binds= [ 2 ]]
+[connection signal="timeout" from="Timer" to="." method="WaveTimeFinished"]
