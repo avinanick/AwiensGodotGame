@@ -28,7 +28,7 @@ public class InterfaceManager : MarginContainer
 	}
 
 	public void PlayerVictory() {
-		
+		GetNode<VictoryInterface>("VictoryInterface").PlayerVictory();
 	}
 	
 	public void TurretDamaged(int position) {

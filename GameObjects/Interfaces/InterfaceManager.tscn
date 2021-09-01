@@ -46,7 +46,7 @@ margin_top = 0.0
 margin_right = 1024.0
 margin_bottom = 600.0
 
-[node name="Victory_interface" parent="." instance=ExtResource( 4 )]
+[node name="VictoryInterface" parent="." instance=ExtResource( 4 )]
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
