@@ -26,7 +26,14 @@ public class VictoryInterface : PanelContainer
 	}
 	
 	private void ClearKillIcons() {
-		
+		// I do not like these godot collections, the documentation is spotty
+		GridContainer iconContainer = GetNode<GridContainer>("VBoxContainer/HBoxContainer/KillCountContainer/KillCountIconGrid");
+		Godot.Collections.Array icons = iconContainer.GetChildren();
+		for(int i = 0; i < icons.Count; i++) {
+			if(icons[i] is Node nextIcon) {
+				nextIcon.QueueFree();
+			}
+		}
 	}
 
 	public void ContinueGame() {
