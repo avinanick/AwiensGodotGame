@@ -71,7 +71,7 @@ public class MainOverlay : MarginContainer
 				GD.Print("Modifying east city building bar");
 				break;
 			case DefenseGrid.WEST:
-				westCityBar.Value = newValue;
+				WestCityBar.Value = newValue;
 				GD.Print("Modifying west city building bar");
 				break;
 			case DefenseGrid.SOUTH:
@@ -94,7 +94,7 @@ public class MainOverlay : MarginContainer
 				GD.Print("Modifying east turret building bar");
 				break;
 			case DefenseGrid.WEST:
-				westTurretBar.Value = newValue;
+				WestTurretBar.Value = newValue;
 				GD.Print("Modifying west turret building bar");
 				break;
 			case DefenseGrid.SOUTH:
