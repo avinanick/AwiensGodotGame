@@ -17,9 +17,19 @@ public class Ship : Destructible
 		base._Ready();
 	}
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(float delta)
+	{
+		base._Process(delta);
+		HandleCollision(MoveAndCollide(DirectionVector * ShipSpeed * delta));
+	}
+	
+	public virtual void HandleCollision(KinematicCollision collision) {
+		// The base implimentation will do nothing, in the missile version it 
+		// explode and damage the target if possible
+	}
+
+	public void InitializeDirection(Vector3 direction) {
+		DirectionVector = direction.Normalized();
+	}
 }
