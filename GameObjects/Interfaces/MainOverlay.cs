@@ -27,7 +27,7 @@ public class MainOverlay : MarginContainer
 		
 		NorthTurretBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthTurretHealthBar");
 		EastTurretBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/EastTurretHealthBar");
-		WestTurretBar = GetNode<TextureProgress>("VBoxContainerHealthSpacing/HealthBars/WestTurretHealthBar");
+		WestTurretBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/WestTurretHealthBar");
 		SouthTurretBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar");
 		
 		NorthCityBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/NorthWestCityBar");
