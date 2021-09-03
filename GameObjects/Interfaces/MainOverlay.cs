@@ -25,21 +25,21 @@ public class MainOverlay : MarginContainer
 	{
 		base._Ready();
 		
-		NorthTurretBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/CentralBars/NorthTurretHealthBar");
-		EastTurretBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/EastTurretHealthBar");
-		WestTurretBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/WestTurretHealthBar");
-		SouthTurretBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar");
+		NorthTurretBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthTurretHealthBar");
+		EastTurretBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/EastTurretHealthBar");
+		WestTurretBar = GetNode<TextureProgress>("VBoxContainerHealthSpacing/HealthBars/WestTurretHealthBar");
+		SouthTurretBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar");
 		
-		NorthCityBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/NorthWestCityBar");
-		EastCityBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/NorthEastCityBar");
-		WestCityBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/SouthWestCityBar");
-		SouthCityBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/SouthEastCityBar");
+		NorthCityBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/NorthWestCityBar");
+		EastCityBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/NorthEastCityBar");
+		WestCityBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/SouthWestCityBar");
+		SouthCityBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar/SouthEastCityBar");
 		
-		NorthTurretShieldBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/CentralBars/NorthTurretHealthBar/NorthShieldHealthBar");
-		EastTurretShieldBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/EastTurretHealthBar/EastShieldHealthBar");
-		WestTurretShieldBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/WestTurretHealthBar/WestShieldHealthBar");
-		SouthTurretShieldBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar/SouthShieldHealthBar");
-		CityShieldBar = GetNode<TextureProgress>("HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar");
+		NorthTurretShieldBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthTurretHealthBar/NorthShieldHealthBar");
+		EastTurretShieldBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/EastTurretHealthBar/EastShieldHealthBar");
+		WestTurretShieldBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/WestTurretHealthBar/WestShieldHealthBar");
+		SouthTurretShieldBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar/SouthShieldHealthBar");
+		CityShieldBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar");
 		
 	}
 
@@ -63,20 +63,16 @@ public class MainOverlay : MarginContainer
 		// also these values are likely off
 		switch(position) {
 			case DefenseGrid.NORTH:
-				NorthCityBar.Value = newValue;
-				GD.Print("Modifying north city building bar");
+				NorthCityBar.Value = newValue * 10;
 				break;
 			case DefenseGrid.EAST:
-				EastCityBar.Value = newValue;
-				GD.Print("Modifying east city building bar");
+				EastCityBar.Value = newValue * 10;
 				break;
 			case DefenseGrid.WEST:
-				WestCityBar.Value = newValue;
-				GD.Print("Modifying west city building bar");
+				WestCityBar.Value = newValue * 10;
 				break;
 			case DefenseGrid.SOUTH:
-				SouthCityBar.Value = newValue;
-				GD.Print("Modifying south city building bar");
+				SouthCityBar.Value = newValue * 10;
 				break;
 		}
 	}
