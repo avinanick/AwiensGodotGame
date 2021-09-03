@@ -11,10 +11,10 @@ var spawning: bool = true
 
 var enemy_index: int = 0
 var timer = 0
-var enemy_scenes := [preload("res://Scenes/Units/AlienMissile(PH).tscn"),
-	preload("res://Scenes/Units/AlienDrone.tscn"),
-	preload("res://Scenes/Units/AlienFighter.tscn"),
-	preload("res://Scenes/Units/AlienBomber.tscn")]
+var enemy_scenes := [preload("res://GameObjects/Units/Aliens/AlienMissile(PH).tscn"),
+	preload("res://GameObjects/Units/Aliens/AlienDrone.tscn"),
+	preload("res://GameObjects/Units/Aliens/AlienFighter.tscn"),
+	preload("res://GameObjects/Units/Aliens/AlienBomber.tscn")]
 var enemy_types := ["AlienMissile",
 	"AlienDrone",
 	"AlienFighter",
