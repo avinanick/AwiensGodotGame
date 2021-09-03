@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://GameObjects/Interfaces/MainOverlay.cs" type="Script" id=1]
-[ext_resource path="res://Resources/Materials/background.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Themes/PopupInterface.tres" type="Theme" id=2]
 [ext_resource path="res://Resources/Materials/HealthBars/WestTurretHealth.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Materials/HealthBars/NorthTurretHealth.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Materials/HealthBars/CityShield.png" type="Texture" id=6]
@@ -26,6 +25,7 @@ font_data = ExtResource( 13 )
 [node name="MainOverlay" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
@@ -43,47 +43,45 @@ margin_bottom = 580.0
 
 [node name="Counters" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 984.0
-margin_bottom = 40.0
+margin_bottom = 55.0
 alignment = 2
 
 [node name="Counter" type="MarginContainer" parent="VBoxContainer/Counters"]
 margin_left = 854.0
 margin_right = 984.0
-margin_bottom = 40.0
+margin_bottom = 55.0
 
-[node name="Background" type="NinePatchRect" parent="VBoxContainer/Counters/Counter"]
+[node name="Background" type="PanelContainer" parent="VBoxContainer/Counters/Counter"]
 margin_right = 130.0
-margin_bottom = 40.0
+margin_bottom = 55.0
 rect_min_size = Vector2( 130, 40 )
-texture = ExtResource( 2 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="Icon" type="TextureRect" parent="VBoxContainer/Counters/Counter/Background"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -64.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
-stretch_mode = 4
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Counters/Counter/Background"]
+margin_left = 15.0
+margin_top = 14.0
+margin_right = 114.0
+margin_bottom = 41.0
 
-[node name="TimerLabel" type="Label" parent="VBoxContainer/Counters/Counter/Background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 14.0
-text = "0"
+[node name="TimerLabel" type="Label" parent="VBoxContainer/Counters/Counter/Background/HBoxContainer"]
+margin_right = 97.0
+margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time Left: 30"
 valign = 1
 
 [node name="HealthSpacing" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 44.0
+margin_top = 59.0
 margin_right = 984.0
 margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HealthBars" type="HBoxContainer" parent="VBoxContainer/HealthSpacing"]
-margin_top = 293.0
+margin_top = 278.0
 margin_right = 984.0
-margin_bottom = 516.0
+margin_bottom = 501.0
 size_flags_vertical = 8
 
 [node name="WestTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars"]
@@ -106,6 +104,9 @@ margin_bottom = 40.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CentralBars" type="VBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars"]
 margin_left = 49.0
@@ -155,6 +156,9 @@ tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 0, 1, 0.054902, 1 )
 radial_fill_degrees = 90.0
 radial_center_offset = Vector2( 32.05, 32.22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NorthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
 show_behind_parent = true
@@ -170,6 +174,9 @@ tint_progress = Color( 0, 1, 0.054902, 1 )
 radial_initial_angle = 90.0
 radial_fill_degrees = 90.0
 radial_center_offset = Vector2( -30.85, 33.23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SouthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
 show_behind_parent = true
