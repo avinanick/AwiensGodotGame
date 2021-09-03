@@ -7,6 +7,9 @@ public class WeaponPlatform : Spatial
 	// private int a = 2;
 	// private string b = "text";
 	private Turret CurrentWeapon;
+	
+	[Signal]
+	public delegate void WeaponHealthChanged(int newValue);
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -35,5 +38,9 @@ public class WeaponPlatform : Spatial
 
 	public void SwitchWeapon(string weaponPath) {
 		
+	}
+	
+	public void OnWeaponHealthChanged(int newValue) {
+		EmitSignal(nameof(WeaponHealthChanged), newValue);
 	}
 }
