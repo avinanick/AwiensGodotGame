@@ -22,4 +22,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15 )
 [node name="Avatar" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15 )
 
+[connection signal="WeaponHealthChanged" from="WeaponPlatform" to="." method="WeaponDamaged" binds= [ 1 ]]
+[connection signal="WeaponHealthChanged" from="WeaponPlatform2" to="." method="WeaponDamaged" binds= [ 2 ]]
+[connection signal="WeaponHealthChanged" from="WeaponPlatform3" to="." method="WeaponDamaged" binds= [ 0 ]]
+[connection signal="WeaponHealthChanged" from="WeaponPlatform4" to="." method="WeaponDamaged" binds= [ 3 ]]
 [connection signal="TurretSelect" from="Avatar" to="." method="SelectWeapon"]
