@@ -21,6 +21,9 @@ public class DefenseGrid : Spatial
 	public const int EAST = 1;
 	public const int WEST = 2;
 	public const int SOUTH = 3;
+	
+	[Signal]
+	public delegate void TurretHealthChanged(int newValue, int position);
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -75,7 +78,8 @@ public class DefenseGrid : Spatial
 		
 	}
 	
-	public void WeaponDamaged(int weaponPosition) {
+	public void WeaponDamaged(int newValue, int weaponPosition) {
+		EmitSignal(nameof(TurretHealthChanged), newValue, weaponPosition);
 		switch(weaponPosition) {
 			case NORTH:
 				break;
