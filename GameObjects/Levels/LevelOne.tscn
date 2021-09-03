@@ -12,5 +12,7 @@
 
 [node name="InterfaceManager" parent="." instance=ExtResource( 3 )]
 
+[connection signal="BuildingHealthChanged" from="City" to="InterfaceManager" method="BuildingDamaged"]
 [connection signal="PlayerDefeated" from="City" to="InterfaceManager" method="PlayerDefeat"]
 [connection signal="PlayerVictory" from="City" to="InterfaceManager" method="PlayerVictory"]
+[connection signal="TurretHealthChanged" from="DefenseGrid" to="InterfaceManager" method="TurretDamaged"]
