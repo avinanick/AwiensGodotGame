@@ -19,8 +19,8 @@ public class InterfaceManager : MarginContainer
 //      
 //  }
 
-	public void BuildingDamaged(int position) {
-		
+	public void BuildingDamaged(int newValue, int position) {
+		GetNode<MainOverlay>("MainOverlay").StructureHealthChanged(newValue, position);
 	}
 
 	public void PlayerDefeat() {
@@ -31,7 +31,7 @@ public class InterfaceManager : MarginContainer
 		GetNode<VictoryInterface>("VictoryInterface").PlayerVictory();
 	}
 	
-	public void TurretDamaged(int position) {
-		
+	public void TurretDamaged(int newValue, int position) {
+		GetNode<MainOverlay>("MainOverlay").TurretHealthChanged(newValue, position);
 	}
 }
