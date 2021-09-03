@@ -10,11 +10,13 @@ public class Ship : Destructible
 	protected float ShipSpeed = 5.0f;
 	
 	protected Vector3 DirectionVector;
+	protected Random RNG;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		base._Ready();
+		RNG = new Random();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,5 +33,9 @@ public class Ship : Destructible
 
 	public void InitializeDirection(Vector3 direction) {
 		DirectionVector = direction.Normalized();
+	}
+	
+	public virtual void SpawnShip() {
+		// Base implimentation will do nothing
 	}
 }
