@@ -82,20 +82,16 @@ public class MainOverlay : MarginContainer
 		// also these values are likely off
 		switch(position) {
 			case DefenseGrid.NORTH:
-				NorthTurretBar.Value = newValue;
-				GD.Print("Modifying north turret building bar");
+				NorthTurretBar.Value = newValue * 10;
 				break;
 			case DefenseGrid.EAST:
-				EastTurretBar.Value = newValue;
-				GD.Print("Modifying east turret building bar");
+				EastTurretBar.Value = newValue * 10;
 				break;
 			case DefenseGrid.WEST:
-				WestTurretBar.Value = newValue;
-				GD.Print("Modifying west turret building bar");
+				WestTurretBar.Value = newValue * 10;
 				break;
 			case DefenseGrid.SOUTH:
-				SouthTurretBar.Value = newValue;
-				GD.Print("Modifying south turret building bar");
+				SouthTurretBar.Value = newValue * 10;
 				break;
 		}
 	}
