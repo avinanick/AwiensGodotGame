@@ -16,10 +16,10 @@ public class AlienMissile : Ship
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(float delta)
-	{
-		base._Process(delta);
-	}
+//	public override void _Process(float delta)
+//	{
+//		base._Process(delta);
+//	}
 
 	public override void HandleCollision(KinematicCollision collision) {
 		if(collision != null) {
@@ -28,5 +28,14 @@ public class AlienMissile : Ship
 			}
 			DestroySelf();
 		}
+	}
+	
+	public override void SpawnShip() {
+		// Here I should pick a random earthling and find the direction to it
+		Godot.Collections.Array earthlings = GetTree().GetNodesInGroup("Earthling");
+		Godot.Collections.Array<Spatial> targets = new Godot.Collections.Array<Spatial>(earthlings);
+		int randomIndex = RNG.Next(0, targets.Count);
+		InitializeDirection(targets[randomIndex].GlobalTransform.origin - GlobalTransform.origin);
+		
 	}
 }
