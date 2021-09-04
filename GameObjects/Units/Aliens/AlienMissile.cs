@@ -35,7 +35,6 @@ public class AlienMissile : Ship
 		Godot.Collections.Array earthlings = GetTree().GetNodesInGroup("Earthling");
 		Godot.Collections.Array<Spatial> targets = new Godot.Collections.Array<Spatial>(earthlings);
 		int randomIndex = RNG.Next(0, targets.Count);
-		InitializeDirection(targets[randomIndex].GlobalTransform.origin - GlobalTransform.origin);
-		
+		InitializeDirection(targets[randomIndex].GlobalTransform.origin - GlobalTransform.origin);		
 	}
 }

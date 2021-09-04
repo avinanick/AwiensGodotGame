@@ -18,4 +18,28 @@ public class EnemySpawner : Spatial
 //  {
 //      
 //  }
+
+    public void EndLevel() {
+
+    }
+
+    public void OnStartLevel() {
+
+    }
+
+    public void OnStartTransition() {
+
+    }
+
+    public void RandomizeSpawn() {
+        
+    }
+
+    public void SpawnEnemy() {
+
+    }
+
+    public void UpdateDifficulty() {
+
+    }
 }
