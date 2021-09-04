@@ -30,11 +30,12 @@ public class EnemySpawner : Spatial
 //  }
 
     public void EndLevel() {
-
+        GetNode<Timer>("Timer").Stop();
     }
 
     public void OnStartLevel() {
-
+        UpdateDifficulty();
+        GetNode<Timer>("Timer").Start(SpawnPeriod);
     }
 
     public void OnStartTransition() {
@@ -45,15 +46,15 @@ public class EnemySpawner : Spatial
 
     }
 
-    public void SetSpawn() {
-
+    public void SetSpawn(PackedScene newEnemyScene) {
+        EnemyScene = newEnemyScene;
     }
 
     public void SpawnEnemy() {
 
     }
 
-    public void UpdateDifficulty() {
+    private void UpdateDifficulty() {
 
     }
 }
