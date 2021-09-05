@@ -6,6 +6,15 @@ public class CampaignTracker : Node
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
+    public enum GameMode {
+        RLikeCampaign,
+        RLiteCampaign,
+        Survival
+    }
+
+    public GameMode CurrentMode = GameMode.RLikeCampaign;
+    public int CurrentDifficultyLevel = 1;
+    // I think I need something to track completed zones in the campaigns somehow
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
