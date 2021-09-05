@@ -18,4 +18,16 @@ public class SaveGuardian : Node
 //  {
 //      
 //  }
+
+    public void DeleteSavedGame() {
+
+    }
+
+    public void LoadGame() {
+
+    }
+
+    public void SaveGame() {
+        
+    }
 }
