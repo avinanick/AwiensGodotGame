@@ -27,4 +27,12 @@ public class CampaignTracker : Node
 //  {
 //      
 //  }
+
+    public Godot.Collections.Dictionary<string, object> GetSaveData() {
+        return new Godot.Collections.Dictionary<string, object>() {
+            {"NodeType", "CampaignTracker"},
+            {"CurrentMode", CurrentMode},
+            {"Difficulty", CurrentDifficultyLevel}
+        };
+    }
 }
