@@ -18,4 +18,10 @@ public class UserInventory : Node
 //  {
 //      
 //  }
+
+    public Godot.Collections.Dictionary<string, object> GetSaveDate() {
+        return new Godot.Collections.Dictionary<string, object>() {
+
+        };
+    }
 }
