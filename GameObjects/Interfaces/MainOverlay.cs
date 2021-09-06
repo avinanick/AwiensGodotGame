@@ -45,13 +45,21 @@ public class MainOverlay : MarginContainer
 		SouthTurretShieldBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar/SouthShieldHealthBar");
 		CityShieldBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar");
 		
+		CountdownLabel = GetNode<Label>("VBoxContainer/Counters/Counter/Background/HBoxContainer/TimerLabel");
 	}
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(float delta)
+	{
+		base._Process(delta);
+		if(LevelRunning) {
+			LevelTimeRemaining -= delta;
+			CountdownLabel.Text = ((int)LevelTimeRemaining).ToString();
+			if(LevelTimeRemaining <= 0) {
+				EndLevel();
+			}
+		}
+	}
 
 	public void EndLevel() {
 		// This function is mainly used for just the visible timer
