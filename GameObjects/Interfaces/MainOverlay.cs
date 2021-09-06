@@ -19,6 +19,10 @@ public class MainOverlay : MarginContainer
 	private TextureProgress EastTurretShieldBar;
 	private TextureProgress WestTurretShieldBar;
 	private TextureProgress SouthTurretShieldBar;
+	private Label CountdownLabel;
+
+	private float LevelTimeRemaining = 30f;
+	private bool LevelRunning = false;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
