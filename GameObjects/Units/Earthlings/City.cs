@@ -6,6 +6,9 @@ public class City : Spatial
 	// Declare member variables here. Examples:
 	// private int a = 2;
 	// private string b = "text";
+	[Export]
+	private int TotalPopulation = 1000;
+
 	bool[] DestroyedBuildings = new bool[4] {false, false, false, false};
 	
 	[Signal]
