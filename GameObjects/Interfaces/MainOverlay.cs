@@ -24,6 +24,9 @@ public class MainOverlay : MarginContainer
 	private float LevelTimeRemaining = 30f;
 	private bool LevelRunning = false;
 
+	[Signal]
+	public delegate void LevelTimeEnded();
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -62,7 +65,9 @@ public class MainOverlay : MarginContainer
 	}
 
 	public void EndLevel() {
-		// This function is mainly used for just the visible timer
+		// This function should emit a signal that will let everyone else know the level has ended
+		LevelRunning = false;
+		EmitSignal(nameof(LevelTimeEnded));
 	}
 	
 	public void StartLevel() {
