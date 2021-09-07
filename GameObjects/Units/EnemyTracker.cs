@@ -6,6 +6,7 @@ public class EnemyTracker : Spatial
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
+    private PackedScene SpawnerScene = (PackedScene)GD.Load("res://GameObjects/Units/EnemySpawner.tscn");
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -20,4 +21,8 @@ public class EnemyTracker : Spatial
 //  {
 //      
 //  }
+
+    public void SetLevelEnemies() {
+        
+    }
 }
