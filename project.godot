@@ -94,7 +94,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Interfaces/UpgradesInterface.gd"
 }, {
-"base": "MarginContainer",
+"base": "PanelContainer",
 "class": "VictoryInterface",
 "language": "GDScript",
 "path": "res://Scripts/Interfaces/Victory_interface.gd"
@@ -134,8 +134,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GameOptions="*res://Scripts/GameOptions.gd"
-Global="*res://Scripts/Global.gd"
+SaveGuardianAL="*res://GameSystems/SaveGuardian.tscn"
+CampaignTrackerAL="*res://GameSystems/CampaignTracker.tscn"
+UserInventoryAL="*res://GameSystems/UserInventory.tscn"
+AlienDataAL="*res://GameSystems/AlienData.tscn"
 
 [input]
 
