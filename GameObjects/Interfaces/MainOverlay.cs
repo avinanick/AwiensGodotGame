@@ -73,6 +73,7 @@ public class MainOverlay : MarginContainer
 	public void StartLevel() {
 		// This function is mainly used for just the visible timer, and possibly
 		// for resetting the health bars
+		LevelRunning = true;
 	}
 	
 	public void StructureHealthChanged(int newValue, int position) {
