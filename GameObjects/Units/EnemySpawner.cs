@@ -63,6 +63,7 @@ public class EnemySpawner : Spatial
     }
 
     private void UpdateDifficulty() {
-
+        SpawnPeriod = BaseSpawnPeriod / (Mathf.Pow(1.1f, 
+            GetNode<CampaignTracker>("/root/CampaignTrackerAL").GetCurrentDifficulty() - 1));
     }
 }
