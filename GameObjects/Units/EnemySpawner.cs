@@ -23,6 +23,8 @@ public class EnemySpawner : Spatial
     {
         base._Ready();
         RNG = new Random();
+        UpdateDifficulty();
+        GetNode<Timer>("Timer").Start(SpawnPeriod);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,11 +37,6 @@ public class EnemySpawner : Spatial
         GetNode<Timer>("Timer").Stop();
     }
 
-    public void OnStartLevel() {
-        UpdateDifficulty();
-        GetNode<Timer>("Timer").Start(SpawnPeriod);
-    }
-
     public void OnStartTransition() {
 
     }
@@ -48,7 +45,10 @@ public class EnemySpawner : Spatial
 
     }
 
-    public void SetSpawn(PackedScene newEnemyScene) {
+    public void SetSpawn(string enemyName) {
+        AlienData alienData = GetNode<AlienData>("/root/AlienDataAL");
+        PackedScene newEnemyScene = (PackedScene)GD.Load(alienData.GetAlienFilePath(enemyName));
+        BaseSpawnPeriod = alienData.GetAlienSpawnInterval(enemyName);
         EnemyScene = newEnemyScene;
     }
 
