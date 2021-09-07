@@ -14,6 +14,8 @@ public class EnemyTracker : Spatial
         base._Ready();
         // This should ask the Campaign manager about the current enemy requirements, create
         // the needed spawners, and order them to start
+        // I hope this call deferred works, I'm iffy on the array args part
+        CallDeferred("SetLevelEnemies", GetNode<CampaignTracker>("/root/CampaignTrackerAL").GetCurrentEnemies());
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
