@@ -26,7 +26,7 @@ public class EnemyTracker : Spatial
         for(int i = 0; i < enemyList.Length; i++) {
             EnemySpawner newSpawner = (EnemySpawner)SpawnerScene.Instance();
             // Maybe I'll change the arg for this method to be a packed scene array?
-            newSpawner.SetSpawn((PackedScene)GD.Load(enemyList[i]));
+            newSpawner.SetSpawn(enemyList[i]);
             newSpawner.Translation = Translation;
             AddChild(newSpawner);
         }
