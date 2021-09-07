@@ -23,6 +23,14 @@ public class InterfaceManager : MarginContainer
 		GetNode<MainOverlay>("MainOverlay").StructureHealthChanged(newValue, position);
 	}
 
+	public void OnLevelEnded() {
+		
+	}
+
+	public void OnLevelStarted() {
+
+	}
+
 	public void PlayerDefeat() {
 		GetNode<DefeatInterface>("DefeatInterface").PlayerDefeated();
 	}
