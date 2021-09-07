@@ -13,7 +13,9 @@ public class CampaignTracker : Node
     }
 
     public GameMode CurrentMode = GameMode.RLikeCampaign;
-    public int CurrentDifficultyLevel = 1;
+    private int PopulationSaved = 0;
+    private int CurrentPoints = 0;
+    private int CurrentDifficultyLevel = 1;
     // I think I need something to track completed zones in the campaigns somehow
 
     // Called when the node enters the scene tree for the first time.
@@ -34,5 +36,9 @@ public class CampaignTracker : Node
             {"CurrentMode", CurrentMode},
             {"Difficulty", CurrentDifficultyLevel}
         };
+    }
+
+    public int GetCurrentDifficulty() {
+        return CurrentDifficultyLevel;
     }
 }
