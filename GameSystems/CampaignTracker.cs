@@ -16,6 +16,7 @@ public class CampaignTracker : Node
     private int PopulationSaved = 0;
     private int CurrentPoints = 0;
     private int CurrentDifficultyLevel = 1;
+    private string[] LevelEnemies = new string[1] {"Alien Missile"};
     // I think I need something to track completed zones in the campaigns somehow
 
     // Called when the node enters the scene tree for the first time.
