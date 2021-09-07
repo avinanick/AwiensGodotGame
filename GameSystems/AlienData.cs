@@ -34,6 +34,7 @@ public class AlienData : Node
     public override void _Ready()
     {
         DataSet = new System.Collections.Generic.Dictionary<string, AlienSet>();
+        DataSet.Add("Alien Missile", new AlienSet("res://GameObjects/Units/Aliens/AlienMissile.tscn", "", 3.0f));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,4 +42,16 @@ public class AlienData : Node
 //  {
 //      
 //  }
+
+    public string GetAlienFilePath(string alienName) {
+        return DataSet[alienName].GetScenePath();
+    }
+
+    public string GetAlienIconPath(string alienName) {
+        return DataSet[alienName].GetIconPath();
+    }
+
+    public float GetAlienSpawnInterval(string alienName) {
+        return DataSet[alienName].GetSpawnInterval();
+    }
 }
