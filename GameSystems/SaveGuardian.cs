@@ -28,6 +28,7 @@ public class SaveGuardian : Node
     }
 
     public void SaveGame() {
-        
+        // This needs to save the current state of the campaign tracker, and probably the
+        // inventory and tech tree as well.
     }
 }

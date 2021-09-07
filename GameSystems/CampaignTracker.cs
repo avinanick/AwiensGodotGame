@@ -41,4 +41,8 @@ public class CampaignTracker : Node
     public int GetCurrentDifficulty() {
         return CurrentDifficultyLevel;
     }
+
+    public void IncrimentDifficulty() {
+        CurrentDifficultyLevel += 1;
+    }
 }

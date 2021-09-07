@@ -24,11 +24,11 @@ public class InterfaceManager : MarginContainer
 	}
 
 	public void OnLevelEnded() {
-		
+
 	}
 
 	public void OnLevelStarted() {
-
+		GetNode<MainOverlay>("MainOverlay").StartLevel();
 	}
 
 	public void PlayerDefeat() {
