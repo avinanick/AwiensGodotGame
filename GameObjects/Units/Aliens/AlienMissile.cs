@@ -34,7 +34,7 @@ public class AlienMissile : Ship
 		// Here I should pick a random earthling and find the direction to it
 		Godot.Collections.Array earthlings = GetTree().GetNodesInGroup("Earthling");
 		Godot.Collections.Array<Spatial> targets = new Godot.Collections.Array<Spatial>(earthlings);
-		int randomIndex = RNG.Next(0, targets.Count);
+		int randomIndex = (int)GD.Randi() % targets.Count;
 		InitializeDirection(targets[randomIndex].GlobalTransform.origin - GlobalTransform.origin);		
 	}
 }
