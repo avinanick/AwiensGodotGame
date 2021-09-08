@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Resources/Models/Roads/road_bend/pavement.material" type="Material" id=1]
 [ext_resource path="res://Resources/Models/Roads/road_bend/asphaltEdge.material" type="Material" id=2]
@@ -44,6 +44,8 @@
 [ext_resource path="res://Resources/Models/Roads/road_straight/asphalt.material" type="Material" id=42]
 [ext_resource path="res://Resources/Models/Roads/road_straight/asphaltEdge.material" type="Material" id=43]
 [ext_resource path="res://Resources/Models/Roads/road_straight/line.material" type="Material" id=44]
+[ext_resource path="res://Resources/Models/Terrain/ground_grass/grass.material" type="Material" id=45]
+[ext_resource path="res://Resources/Models/Roads/tile_low/pavement.material" type="Material" id=46]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "road_bend"
@@ -606,6 +608,36 @@ surfaces/3 = {
 "vertex_count": 64
 }
 
+[sub_resource type="ArrayMesh" id=12]
+resource_name = "ground_grass"
+surfaces/0 = {
+"aabb": AABB( -0.5, 0, -0.5, 1, 1e-05, 1.00001 ),
+"array_data": PoolByteArray( 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 0, 127, 0, 0, 127, 0, 0, 127, 235, 204, 43, 77, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 0, 127, 0, 0, 127, 0, 0, 127, 235, 204, 171, 204, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 127, 0, 0, 127, 0, 0, 127, 235, 76, 43, 77, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 0, 127, 0, 0, 127, 0, 0, 127, 235, 76, 171, 204 ),
+"array_index_data": PoolByteArray( 2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 6,
+"material": ExtResource( 45 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[sub_resource type="ArrayMesh" id=13]
+resource_name = "tile_low"
+surfaces/0 = {
+"aabb": AABB( -0.5, 0, -0.5, 1, 0.02, 1 ),
+"array_data": PoolByteArray( 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 0, 129, 0, 0, 129, 0, 0, 127, 235, 76, 171, 204, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 0, 129, 0, 0, 129, 0, 0, 127, 235, 76, 43, 77, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 0, 129, 0, 0, 129, 0, 0, 127, 235, 204, 171, 204, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 129, 0, 0, 129, 0, 0, 127, 235, 204, 43, 77, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 127, 0, 0, 0, 0, 0, 129, 127, 235, 204, 0, 60, 0, 0, 0, 63, 10, 215, 163, 60, 0, 0, 0, 63, 127, 0, 0, 0, 0, 0, 129, 127, 235, 204, 205, 50, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 127, 0, 0, 0, 0, 0, 129, 127, 235, 76, 0, 60, 0, 0, 0, 63, 10, 215, 163, 60, 0, 0, 0, 191, 127, 0, 0, 0, 0, 0, 129, 127, 235, 76, 205, 50, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 127, 0, 127, 0, 0, 127, 235, 76, 0, 60, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 127, 0, 127, 0, 0, 127, 235, 204, 0, 60, 0, 0, 0, 63, 10, 215, 163, 60, 0, 0, 0, 63, 0, 0, 127, 0, 127, 0, 0, 127, 235, 76, 205, 50, 0, 0, 0, 191, 10, 215, 163, 60, 0, 0, 0, 63, 0, 0, 127, 0, 127, 0, 0, 127, 235, 204, 205, 50, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 129, 0, 129, 0, 0, 127, 235, 76, 0, 60, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 129, 0, 129, 0, 0, 127, 235, 204, 0, 60, 0, 0, 0, 191, 10, 215, 163, 60, 0, 0, 0, 191, 0, 0, 129, 0, 129, 0, 0, 127, 235, 76, 205, 50, 0, 0, 0, 63, 10, 215, 163, 60, 0, 0, 0, 191, 0, 0, 129, 0, 129, 0, 0, 127, 235, 204, 205, 50, 0, 0, 0, 191, 10, 215, 163, 60, 0, 0, 0, 63, 129, 0, 0, 0, 0, 0, 127, 127, 235, 76, 205, 50, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 129, 0, 0, 0, 0, 0, 127, 127, 235, 76, 0, 60, 0, 0, 0, 191, 10, 215, 163, 60, 0, 0, 0, 191, 129, 0, 0, 0, 0, 0, 127, 127, 235, 204, 205, 50, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 129, 0, 0, 0, 0, 0, 127, 127, 235, 204, 0, 60, 0, 0, 0, 191, 10, 215, 163, 60, 0, 0, 0, 63, 0, 127, 0, 0, 127, 0, 0, 127, 235, 204, 43, 77, 0, 0, 0, 191, 10, 215, 163, 60, 0, 0, 0, 191, 0, 127, 0, 0, 127, 0, 0, 127, 235, 204, 171, 204, 0, 0, 0, 63, 10, 215, 163, 60, 0, 0, 0, 63, 0, 127, 0, 0, 127, 0, 0, 127, 235, 76, 43, 77, 0, 0, 0, 63, 10, 215, 163, 60, 0, 0, 0, 191, 0, 127, 0, 0, 127, 0, 0, 127, 235, 76, 171, 204 ),
+"array_index_data": PoolByteArray( 2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0, 6, 0, 4, 0, 5, 0, 5, 0, 7, 0, 6, 0, 10, 0, 8, 0, 9, 0, 9, 0, 11, 0, 10, 0, 14, 0, 12, 0, 13, 0, 13, 0, 15, 0, 14, 0, 18, 0, 16, 0, 17, 0, 17, 0, 19, 0, 18, 0, 22, 0, 20, 0, 21, 0, 21, 0, 23, 0, 22, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 36,
+"material": ExtResource( 46 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
 [node name="RoadMeshLibraryScene" type="Spatial"]
 
 [node name="road_bend" type="MeshInstance" parent="."]
@@ -694,3 +726,13 @@ material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
+
+[node name="ground_grass" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 12 )
+material/0 = null
+
+[node name="tile_low" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75 )
+mesh = SubResource( 13 )
+material/0 = null
