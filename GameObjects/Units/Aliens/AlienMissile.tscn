@@ -55,10 +55,9 @@ material = SubResource( 5 )
 "Alien",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-Health = null
-MaxHealth = null
-ShipSpeed = null
-MissileDamage = null
+Health = 1
+MaxHealth = 1
+ShipSpeed = 5.0
 
 [node name="CollisionShape" parent="." index="0"]
 shape = SubResource( 1 )
