@@ -16,15 +16,12 @@ public class EnemySpawner : Spatial
     private float SpawnPeriod = 2.0f;
     private bool Spawning = true;
     private PackedScene EnemyScene;
-    private Random RNG;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         base._Ready();
-        RNG = new Random();
-        UpdateDifficulty();
-        GetNode<Timer>("Timer").Start(SpawnPeriod);
+        GD.Randomize();
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,10 +47,12 @@ public class EnemySpawner : Spatial
         PackedScene newEnemyScene = (PackedScene)GD.Load(alienData.GetAlienFilePath(enemyName));
         BaseSpawnPeriod = alienData.GetAlienSpawnInterval(enemyName);
         EnemyScene = newEnemyScene;
+        UpdateDifficulty();
+        GetNode<Timer>("Timer").Start(SpawnPeriod);
     }
 
     public void SpawnEnemy() {
-        float spawnAngleRadians = (float)RNG.NextDouble() * 2 * Mathf.Pi;
+        float spawnAngleRadians = (float)GD.RandRange(0, 2 * Mathf.Pi);
         float xValueSpawn = Mathf.Cos(spawnAngleRadians) * SpawnRadius;
         float zValueSpawn = Mathf.Sin(spawnAngleRadians) * SpawnRadius;
         Ship newEnemy = (Ship)EnemyScene.Instance();
