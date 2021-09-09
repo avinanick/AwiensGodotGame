@@ -23,8 +23,17 @@ public class RadarIndicator : Sprite
 //      
 //  }
 
-    private void AssignUnit(Spatial newUnit) {
-
+    private void AssignUnit(Destructible newUnit) {
+        if(newUnit.IsInGroup("Alien")) {
+            this.Texture = EnemyIndicatorTexture;
+            this.Modulate = EnemyModulate;
+        }
+        else {
+            this.Texture = AllyIndicatorTexture;
+            this.Modulate = AllyModulate;
+        }
+        newUnit.Connect("Destroyed", this, "UnitDefeated");
+        UpdatePosition(); // Probably don't need this?
     }
 
     private void UnitDefeated() {
@@ -32,6 +41,6 @@ public class RadarIndicator : Sprite
     }
 
     private void UpdatePosition() {
-        
+
     }
 }
