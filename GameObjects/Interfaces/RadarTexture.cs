@@ -7,9 +7,9 @@ public class RadarTexture : TextureRect
 	// private int a = 2;
 	// private string b = "text";
 	[Export]
-	private PackedScene EnemyIndicator;
+	private PackedScene EnemyIndicator = (PackedScene)GD.Load("res://GameObjects/Interfaces/EnemyRadarIndicator.tscn");
 	[Export]
-	private PackedScene AllyIndicator;
+	private PackedScene AllyIndicator = (PackedScene)GD.Load("res://GameObjects/Interfaces/AllyRadarIndicator.tscn");
 
 	private Light2D PlayerView;
 	private System.Collections.Stack SpareAllyIndicators = new System.Collections.Stack();
@@ -20,6 +20,7 @@ public class RadarTexture : TextureRect
 	public override void _Ready()
 	{
 		base._Ready();
+		PlayerView = GetNode<Light2D>("PlayerView");
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
