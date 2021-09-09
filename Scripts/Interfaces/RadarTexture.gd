@@ -1,7 +1,7 @@
 extends TextureRect
 
-onready var ally_indicator = preload("res://Scenes/Interfaces/AllyRadarIndicator.tscn")
-onready var enemy_indicator = preload("res://Scenes/Interfaces/EnemyRadarIndicator.tscn")
+onready var ally_indicator = preload("res://GameObjects/Interfaces/AllyRadarIndicator.tscn")
+onready var enemy_indicator = preload("res://GameObjects/Interfaces/EnemyRadarIndicator.tscn")
 # I need to get a better way to populate these with the map size, then turn it into a radius
 export var x_map_range: float = 50
 export var y_map_range: float = 50

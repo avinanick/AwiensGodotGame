@@ -18,4 +18,17 @@ public class RadarTexture : TextureRect
 //  {
 //      
 //  }
+
+	private void ClearIndicators() {
+
+	}
+
+	private void PopulateIndicators() {
+
+	}
+
+	private Vector2 PositionIndicator(Vector3 indicatorPosition3D) {
+		Vector2 position = new Vector2();
+		return position;
+	}
 }
