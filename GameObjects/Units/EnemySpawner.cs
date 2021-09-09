@@ -17,6 +17,9 @@ public class EnemySpawner : Spatial
     private bool Spawning = true;
     private PackedScene EnemyScene;
 
+    [Signal]
+    public delegate void AlienSpawned(Destructible newAlien);
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -59,6 +62,7 @@ public class EnemySpawner : Spatial
         GetTree().CurrentScene.AddChild(newEnemy);
         newEnemy.Translation  = new Vector3(xValueSpawn, GlobalTransform.origin.y, zValueSpawn);
         newEnemy.SpawnShip();
+        EmitSignal(nameof(AlienSpawned), newEnemy);
     }
 
     private void UpdateDifficulty() {
