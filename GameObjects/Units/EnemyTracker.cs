@@ -39,7 +39,7 @@ public class EnemyTracker : Spatial
             AddChild(newSpawner);
             newSpawner.SetSpawn(enemyList[i]);
             newSpawner.Translation = Translation;
-            newSpawner.Connect("AlienSpawned", this, nameof(AlienSpawned));
+            newSpawner.Connect("AlienSpawned", this, nameof(OnAlienSpawned));
         }
     }
 }
