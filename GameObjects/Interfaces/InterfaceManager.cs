@@ -42,4 +42,8 @@ public class InterfaceManager : MarginContainer
 	public void TurretDamaged(int newValue, int position) {
 		GetNode<MainOverlay>("MainOverlay").TurretHealthChanged(newValue, position);
 	}
+
+	public void UnitSpawned(Destructible newUnit) {
+		GetNode<MainOverlay>("MainOverlay").UnitSpawned(newUnit);
+	}
 }
