@@ -30,7 +30,22 @@ public class RadarTexture : TextureRect
 //  }
 
 	private void ClearIndicators() {
-
+		Godot.Collections.Array<Node> enemyIndicators = new Godot.Collections.Array<Node>(GetTree().GetNodesInGroup("EnemyIndicators"));
+		Godot.Collections.Array<Node> allyIndicators = new Godot.Collections.Array<Node>(GetTree().GetNodesInGroup("AllyIndicators"));
+		for(int i = 0; i < enemyIndicators.Count; i++) {
+			Node indicatorParent = enemyIndicators[i].GetParent();
+			if(indicatorParent != null) {
+				indicatorParent.RemoveChild(enemyIndicators[i]);
+				SpareEnemyIndicators.Push(enemyIndicators[i]);
+			}
+		}
+		for(int i = 0; i < allyIndicators.Count; i++) {
+			Node indicatorParent = allyIndicators[i].GetParent();
+			if(indicatorParent != null) {
+				indicatorParent.RemoveChild(allyIndicators[i]);
+				SpareAllyIndicators.Push(allyIndicators[i]);
+			}
+		}
 	}
 
 	private void PopulateIndicators() {
