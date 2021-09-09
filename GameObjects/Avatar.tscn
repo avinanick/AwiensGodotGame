@@ -11,7 +11,9 @@ ground_horizon_color = Color( 0.00784314, 0.501961, 0.0509804, 1 )
 background_mode = 2
 background_sky = SubResource( 1 )
 
-[node name="Avatar" type="Spatial"]
+[node name="Avatar" type="Spatial" groups=[
+"Player",
+]]
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
