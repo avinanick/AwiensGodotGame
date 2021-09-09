@@ -37,7 +37,7 @@ public class RadarIndicator : Sprite
     }
 
     private void UnitDefeated() {
-
+        QueueFree();
     }
 
     private void UpdatePosition() {
