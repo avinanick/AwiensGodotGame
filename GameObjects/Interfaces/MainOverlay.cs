@@ -20,6 +20,7 @@ public class MainOverlay : MarginContainer
 	private TextureProgress WestTurretShieldBar;
 	private TextureProgress SouthTurretShieldBar;
 	private Label CountdownLabel;
+	private RadarTexture Radar;
 
 	private float LevelTimeRemaining = 30f;
 	private bool LevelRunning = false;
@@ -49,6 +50,8 @@ public class MainOverlay : MarginContainer
 		CityShieldBar = GetNode<TextureProgress>("VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar");
 		
 		CountdownLabel = GetNode<Label>("VBoxContainer/Counters/Counter/Background/HBoxContainer/TimerLabel");
+
+		Radar = GetNode<RadarTexture>("VBoxContainer/HealthSpacing/HealthBars/RadarSetup/central_radar/RadarTexture");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -112,5 +115,9 @@ public class MainOverlay : MarginContainer
 				SouthTurretBar.Value = newValue * 10;
 				break;
 		}
+	}
+
+	public void UnitSpawned(Destructible newUnit) {
+		Radar.DestructibleSpawned(newUnit);
 	}
 }
