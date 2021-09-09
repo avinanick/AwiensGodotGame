@@ -18,11 +18,12 @@ public class RadarIndicator : Sprite
         base._Ready();
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(float delta)
+    {
+        base._Process(delta);
+        UpdatePosition();
+    }
 
     private void AssignUnit(Destructible newUnit) {
         if(newUnit.IsInGroup("Alien")) {
