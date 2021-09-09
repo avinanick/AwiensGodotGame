@@ -2,6 +2,8 @@
 
 [ext_resource path="res://Resources/Interfaces/dotGreen.png" type="Texture" id=1]
 
-[node name="AllyRadarIndicator" type="Sprite"]
+[node name="AllyRadarIndicator" type="Sprite" groups=[
+"AllyIndicators",
+]]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )

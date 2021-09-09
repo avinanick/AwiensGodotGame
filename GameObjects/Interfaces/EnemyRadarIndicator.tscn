@@ -2,7 +2,9 @@
 
 [ext_resource path="res://Resources/Interfaces/dotRed.png" type="Texture" id=1]
 
-[node name="EnemyRadarIndicator" type="Sprite"]
+[node name="EnemyRadarIndicator" type="Sprite" groups=[
+"EnemyIndicators",
+]]
 modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
