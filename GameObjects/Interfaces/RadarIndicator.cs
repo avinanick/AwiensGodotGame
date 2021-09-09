@@ -25,7 +25,7 @@ public class RadarIndicator : Sprite
         UpdatePosition();
     }
 
-    private void AssignUnit(Destructible newUnit) {
+    public void AssignUnit(Destructible newUnit) {
         if(newUnit.IsInGroup("Alien")) {
             this.Texture = EnemyIndicatorTexture;
             this.Modulate = EnemyModulate;
@@ -39,7 +39,7 @@ public class RadarIndicator : Sprite
         UpdatePosition(); // Probably don't need this?
     }
 
-    private void UnitDefeated() {
+    public void UnitDefeated() {
         QueueFree();
     }
 
