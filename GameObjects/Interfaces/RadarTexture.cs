@@ -7,7 +7,7 @@ public class RadarTexture : TextureRect
 	// private int a = 2;
 	// private string b = "text";
 	[Export]
-	private PackedScene Indicator = (PackedScene)GD.Load("res://GameObjects/Interfaces/RadarIndicator.tscn");
+	private PackedScene IndicatorScene = (PackedScene)GD.Load("res://GameObjects/Interfaces/RadarIndicator.tscn");
 
 	private Light2D PlayerView;
 
@@ -17,6 +17,7 @@ public class RadarTexture : TextureRect
 	{
 		base._Ready();
 		PlayerView = GetNode<Light2D>("PlayerView");
+		CallDeferred("PopulateIndicators");
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,13 +27,15 @@ public class RadarTexture : TextureRect
 //  }
 
 	public void DestructibleSpawned(Destructible newUnit) {
-		
+		RadarIndicator newIndicator = (RadarIndicator)IndicatorScene.Instance();
+		AddChild(newIndicator);
+		newIndicator.AssignUnit(newUnit);
 	}
 
 	private void PopulateIndicators() {
 		Godot.Collections.Array<Destructible> units = new Godot.Collections.Array<Destructible>(GetTree().GetNodesInGroup("Destructible"));
 		for(int i = 0; i < units.Count; i++) {
-
+			DestructibleSpawned(units[i]);
 		}
 	}
 }
