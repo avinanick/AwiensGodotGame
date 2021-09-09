@@ -4,6 +4,6 @@
 [ext_resource path="res://GameObjects/Interfaces/RadarIndicator.cs" type="Script" id=2]
 
 [node name="RadarIndicator" type="Sprite"]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
