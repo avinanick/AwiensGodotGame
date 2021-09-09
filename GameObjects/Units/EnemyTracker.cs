@@ -8,6 +8,9 @@ public class EnemyTracker : Spatial
     // private string b = "text";
     private PackedScene SpawnerScene = (PackedScene)GD.Load("res://GameObjects/Units/EnemySpawner.tscn");
 
+    [Signal]
+    public delegate void AlienSpawned(Destructible newAlien);
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -24,6 +27,10 @@ public class EnemyTracker : Spatial
 //      
 //  }
 
+    public void OnAlienSpawned(Destructible newAlien) {
+        EmitSignal(nameof(AlienSpawned), newAlien);
+    }
+
     public void SetLevelEnemies() {
         string[] enemyList = GetNode<CampaignTracker>("/root/CampaignTrackerAL").GetCurrentEnemies();
         for(int i = 0; i < enemyList.Length; i++) {
@@ -32,6 +39,7 @@ public class EnemyTracker : Spatial
             AddChild(newSpawner);
             newSpawner.SetSpawn(enemyList[i]);
             newSpawner.Translation = Translation;
+            newSpawner.Connect("AlienSpawned", this, nameof(AlienSpawned));
         }
     }
 }
