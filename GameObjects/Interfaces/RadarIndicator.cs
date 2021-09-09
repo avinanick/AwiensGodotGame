@@ -10,6 +10,7 @@ public class RadarIndicator : Sprite
     private Color AllyModulate = new Color(1, 1, 1);
     private Texture EnemyIndicatorTexture = (Texture)GD.Load("res://Resources/Interfaces/dotRed.png");
     private Color EnemyModulate = new Color(1, 0, 0);
+    private Destructible AssignedUnit;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -33,6 +34,7 @@ public class RadarIndicator : Sprite
             this.Modulate = AllyModulate;
         }
         newUnit.Connect("Destroyed", this, "UnitDefeated");
+        AssignedUnit = newUnit;
         UpdatePosition(); // Probably don't need this?
     }
 
@@ -41,6 +43,12 @@ public class RadarIndicator : Sprite
     }
 
     private void UpdatePosition() {
-
+        if(AssignedUnit != null) {
+            Vector3 unitPosition = AssignedUnit.GlobalTransform.origin;
+            Vector2 convertedPosition = new Vector2();
+            convertedPosition.x = (-1) * unitPosition.x * 1 + 50;
+            convertedPosition.y = (-1) * unitPosition.z * 1 + 50;
+            Position = convertedPosition;
+        }
     }
 }
