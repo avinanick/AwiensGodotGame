@@ -4,17 +4,16 @@
 
 [sub_resource type="CapsuleShape" id=1]
 
-[sub_resource type="AnimationNodeAnimation" id=3]
+[sub_resource type="AnimationNodeAnimation" id=2]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeBlendTree" id=4]
+[sub_resource type="AnimationNodeBlendTree" id=3]
 graph_offset = Vector2( -186, 95 )
-nodes/Animation/node = SubResource( 3 )
+nodes/Animation/node = SubResource( 2 )
 nodes/Animation/position = Vector2( 0, 160 )
 node_connections = [ "output", 0, "Animation" ]
 
-[sub_resource type="Animation" id=2]
-resource_name = "Destroy"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:visible")
 tracks/0/interp = 1
@@ -68,12 +67,12 @@ shape = SubResource( 1 )
 [node name="DeathAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 4 )
+tree_root = SubResource( 3 )
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Destroy = SubResource( 2 )
+anims/Destroy = SubResource( 4 )
 anims/Idle = SubResource( 5 )
