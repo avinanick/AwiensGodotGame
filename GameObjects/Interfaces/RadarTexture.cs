@@ -6,11 +6,20 @@ public class RadarTexture : TextureRect
 	// Declare member variables here. Examples:
 	// private int a = 2;
 	// private string b = "text";
+	[Export]
+	private PackedScene EnemyIndicator;
+	[Export]
+	private PackedScene AllyIndicator;
+
+	private Light2D PlayerView;
+	private System.Collections.Stack SpareAllyIndicators = new System.Collections.Stack();
+	private System.Collections.Stack SpareEnemyIndicators = new System.Collections.Stack();
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		base._Ready();
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
