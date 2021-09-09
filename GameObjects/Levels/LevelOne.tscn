@@ -20,3 +20,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 0 )
 [connection signal="PlayerDefeated" from="City" to="InterfaceManager" method="PlayerDefeat"]
 [connection signal="PlayerVictory" from="City" to="InterfaceManager" method="PlayerVictory"]
 [connection signal="TurretHealthChanged" from="DefenseGrid" to="InterfaceManager" method="TurretDamaged"]
+[connection signal="AlienSpawned" from="EnemyTracker" to="InterfaceManager" method="UnitSpawned"]
