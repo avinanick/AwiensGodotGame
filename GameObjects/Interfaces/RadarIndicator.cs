@@ -34,7 +34,7 @@ public class RadarIndicator : Sprite
             this.Texture = AllyIndicatorTexture;
             this.Modulate = AllyModulate;
         }
-        newUnit.Connect("Destroyed", this, "UnitDefeated");
+        newUnit.Connect("Destroyed", this, nameof(UnitDefeated));
         AssignedUnit = newUnit;
         UpdatePosition(); // Probably don't need this?
     }
