@@ -9,7 +9,8 @@ public class City : Spatial
 	[Export]
 	private int TotalPopulation = 1000;
 
-	bool[] DestroyedBuildings = new bool[4] {false, false, false, false};
+	private bool[] DestroyedBuildings = new bool[4] {false, false, false, false};
+	private int[] LowestBuildingHealth;
 	
 	[Signal]
 	public delegate void BuildingHealthChanged(int newValue, int buildingPosition);
@@ -24,6 +25,15 @@ public class City : Spatial
 	public override void _Ready()
 	{
 		base._Ready();
+		LowestBuildingHealth = new int[GetChildCount() - 2];
+		Godot.Collections.Array<Node> children = new Godot.Collections.Array<Node>(GetChildren());
+		int index = 0;
+		for(int i = 0; i < children.Count; i++) {
+			if(children[i] is Destructible building) {
+				LowestBuildingHealth[index] = building.GetMaxHealth();
+				index++;
+			}
+		}
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,7 +49,7 @@ public class City : Spatial
 	public void BuildingHealthUpdated(int newValue, int buildingPosition) {
 		EmitSignal(nameof(BuildingHealthChanged), newValue, buildingPosition);
 		if(newValue <= 0) {
-			// Handle some sort of death tally here
+			// Handle some sort of death tally here, or maybe in the destroyed function?
 			DestroyedBuildings[buildingPosition] = true;
 			if(!Array.Exists(DestroyedBuildings, element => element == false)) {
 				// The player has lost
