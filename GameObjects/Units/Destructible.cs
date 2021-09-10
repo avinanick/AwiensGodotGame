@@ -40,6 +40,11 @@ public class Destructible : KinematicBody
 		EmitSignal(nameof(Destroyed));
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("Destroy");
 	}
+
+	public int GetMaxHealth() {
+		return MaxHealth;
+	}
+
 	
 	public void RepairDamage(int amount) {
 		Health += amount;
