@@ -46,8 +46,8 @@ public class Avatar : Spatial
 			if(rotation.x - (motionEvent.Relative.y) > 90) {
 				rotation.x = 90;
 			}
-			else if(rotation.x - (motionEvent.Relative.y) < -90) {
-				rotation.x = -90;
+			else if(rotation.x - (motionEvent.Relative.y) < -30) {
+				rotation.x = -30;
 			}
 			else {
 				rotation.x -= motionEvent.Relative.y;
