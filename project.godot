@@ -34,11 +34,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Weapons/Bullet.gd"
 }, {
-"base": "MarginContainer",
-"class": "DefeatInterface",
-"language": "GDScript",
-"path": "res://Scripts/Interfaces/Defeat_interface.gd"
-}, {
 "base": "KinematicBody",
 "class": "Destructible",
 "language": "GDScript",
@@ -53,11 +48,6 @@ _global_script_classes=[ {
 "class": "EnergyShield",
 "language": "GDScript",
 "path": "res://Scripts/EnergyShield.gd"
-}, {
-"base": "MarginContainer",
-"class": "MainOverlay",
-"language": "GDScript",
-"path": "res://Scripts/Interfaces/MainOverlay.gd"
 }, {
 "base": "Spatial",
 "class": "Player",
@@ -89,11 +79,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Interfaces/UpgradesInterface.gd"
 }, {
-"base": "PanelContainer",
-"class": "VictoryInterface",
-"language": "GDScript",
-"path": "res://Scripts/Interfaces/Victory_interface.gd"
-}, {
 "base": "TextureRect",
 "class": "alien_attacker_icon",
 "language": "GDScript",
@@ -105,18 +90,15 @@ _global_script_class_icons={
 "AlienShip": "",
 "AutoTurret": "",
 "Bullet": "",
-"DefeatInterface": "",
 "Destructible": "",
 "EnemySpawner": "",
 "EnergyShield": "",
-"MainOverlay": "",
 "Player": "",
 "Projectile": "",
 "Structure": "",
 "ThunderCannon": "",
 "Turret": "",
 "UpgradeInterface": "",
-"VictoryInterface": "",
 "alien_attacker_icon": ""
 }
 
