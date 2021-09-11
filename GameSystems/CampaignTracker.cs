@@ -43,6 +43,7 @@ public class CampaignTracker : Node
     public void ConfirmLevelPoints() {
         CurrentPoints += LevelPointsEarned;
         PopulationSaved += LevelPointsEarned;
+        LevelPointsEarned = 0;
     }
 
     public int GetCurrentDifficulty() {
