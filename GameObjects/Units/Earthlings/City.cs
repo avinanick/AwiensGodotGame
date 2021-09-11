@@ -11,6 +11,7 @@ public class City : Spatial
 
 	private bool[] DestroyedBuildings = new bool[4] {false, false, false, false};
 	private int[] LowestBuildingHealth;
+	private int TotalMaxHealth = 0;
 	
 	[Signal]
 	public delegate void BuildingHealthChanged(int newValue, int buildingPosition);
@@ -48,8 +49,10 @@ public class City : Spatial
 	
 	public void BuildingHealthUpdated(int newValue, int buildingPosition) {
 		EmitSignal(nameof(BuildingHealthChanged), newValue, buildingPosition);
+		if(newValue < LowestBuildingHealth[buildingPosition]) {
+			LowestBuildingHealth[buildingPosition] = newValue;
+		}
 		if(newValue <= 0) {
-			// Handle some sort of death tally here, or maybe in the destroyed function?
 			DestroyedBuildings[buildingPosition] = true;
 			if(!Array.Exists(DestroyedBuildings, element => element == false)) {
 				// The player has lost
@@ -60,6 +63,13 @@ public class City : Spatial
 	
 	public void WaveTimeFinished() {
 		GD.Print("Level time is up!");
+		// This method should also calculate the final population that evacuated.
+		int remainingHealth = 0;
+		for(int i = 0; i < LowestBuildingHealth.Length; i++) {
+			remainingHealth += LowestBuildingHealth[i];
+		}
+		// Here let the campaign tracker know how many points were earned
+		int remainingPopulation = TotalPopulation - ((TotalPopulation * remainingHealth) / TotalMaxHealth);
 		if(Array.Exists(DestroyedBuildings, element => element == false)) {
 			GD.Print("Player should have won");
 			EmitSignal(nameof(PlayerVictory));
