@@ -62,7 +62,6 @@ public class City : Spatial
 	}
 	
 	public void WaveTimeFinished() {
-		GD.Print("Level time is up!");
 		// This method should also calculate the final population that evacuated.
 		int remainingHealth = 0;
 		for(int i = 0; i < LowestBuildingHealth.Length; i++) {
@@ -72,7 +71,6 @@ public class City : Spatial
 		int remainingPopulation = TotalPopulation - ((TotalPopulation * remainingHealth) / TotalMaxHealth);
 		GetNode<CampaignTracker>("/root/CampaignTrackerAL").SetLevelPoints(remainingPopulation);
 		if(Array.Exists(DestroyedBuildings, element => element == false)) {
-			GD.Print("Player should have won");
 			EmitSignal(nameof(PlayerVictory));
 		}
 	}
