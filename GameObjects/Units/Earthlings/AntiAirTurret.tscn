@@ -15,5 +15,6 @@ shape = SubResource( 1 )
 
 [node name="AttackerComponent" parent="." index="5"]
 AttackProjectile = ExtResource( 3 )
+Cooldown = 0.3
 
 [node name="GunModel" parent="." index="6" instance=ExtResource( 2 )]
