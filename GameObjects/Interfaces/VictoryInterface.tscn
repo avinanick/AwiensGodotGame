@@ -218,3 +218,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Points Earned: 0"
 align = 1
 valign = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Continue_button" to="." method="ContinueGame"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Save_Quit_Button" to="." method="SaveAndQuit"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Quit_Button" to="." method="QuitGame"]
