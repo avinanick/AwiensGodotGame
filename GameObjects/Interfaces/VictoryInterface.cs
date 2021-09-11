@@ -68,6 +68,7 @@ public class VictoryInterface : PanelContainer
 		// I'm going to put a lot of this functionality into an autoload, since
 		// several interfaces share this
 		GetNode<CampaignTracker>("/root/CampaignTrackerAL").ConfirmLevelPoints();
+		GetNode<SaveGuardian>("/root/SaveGuardianAL").SaveGame();
 	}
 	
 	private void UpdateScore() {
