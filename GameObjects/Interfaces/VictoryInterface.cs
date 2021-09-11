@@ -39,6 +39,7 @@ public class VictoryInterface : PanelContainer
 	public void ContinueGame() {
 		Visible = false;
 		ClearKillIcons();
+		GetNode<CampaignTracker>("/root/CampaignTrackerAL").ConfirmLevelPoints();
 		EmitSignal(nameof(GameContinued));
 	}
 	
@@ -66,6 +67,7 @@ public class VictoryInterface : PanelContainer
 	public void SaveAndQuit() {
 		// I'm going to put a lot of this functionality into an autoload, since
 		// several interfaces share this
+		GetNode<CampaignTracker>("/root/CampaignTrackerAL").ConfirmLevelPoints();
 	}
 	
 	private void UpdateScore() {
