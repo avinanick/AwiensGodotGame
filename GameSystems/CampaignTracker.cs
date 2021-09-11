@@ -53,6 +53,10 @@ public class CampaignTracker : Node
         return CurrentPoints;
     }
 
+    public int GetPoinsEarned() {
+        return LevelPointsEarned;
+    }
+
     public void IncrimentDifficulty() {
         CurrentDifficultyLevel += 1;
     }
