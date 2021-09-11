@@ -27,6 +27,7 @@ public class AlienMissile : Ship
 				destructible.TakeDamage(MissileDamage);
 			}
 			DestroySelf();
+			SetProcess(false);
 		}
 	}
 	
