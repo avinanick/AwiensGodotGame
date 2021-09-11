@@ -70,6 +70,7 @@ public class City : Spatial
 		}
 		// Here let the campaign tracker know how many points were earned
 		int remainingPopulation = TotalPopulation - ((TotalPopulation * remainingHealth) / TotalMaxHealth);
+		GetNode<CampaignTracker>("/root/CampaignTrackerAL").SetLevelPoints(remainingPopulation);
 		if(Array.Exists(DestroyedBuildings, element => element == false)) {
 			GD.Print("Player should have won");
 			EmitSignal(nameof(PlayerVictory));
