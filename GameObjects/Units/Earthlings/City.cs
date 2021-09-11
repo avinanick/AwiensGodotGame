@@ -32,6 +32,7 @@ public class City : Spatial
 		for(int i = 0; i < children.Count; i++) {
 			if(children[i] is Destructible building) {
 				LowestBuildingHealth[index] = building.GetMaxHealth();
+				TotalMaxHealth += building.GetMaxHealth();
 				index++;
 			}
 		}
@@ -68,7 +69,7 @@ public class City : Spatial
 			remainingHealth += LowestBuildingHealth[i];
 		}
 		// Here let the campaign tracker know how many points were earned
-		int remainingPopulation = TotalPopulation - ((TotalPopulation * remainingHealth) / TotalMaxHealth);
+		int remainingPopulation = ((TotalPopulation * remainingHealth) / TotalMaxHealth);
 		GetNode<CampaignTracker>("/root/CampaignTrackerAL").SetLevelPoints(remainingPopulation);
 		if(Array.Exists(DestroyedBuildings, element => element == false)) {
 			EmitSignal(nameof(PlayerVictory));
