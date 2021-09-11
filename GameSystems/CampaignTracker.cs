@@ -16,6 +16,7 @@ public class CampaignTracker : Node
     private int PopulationSaved = 0;
     private int CurrentPoints = 0;
     private int CurrentDifficultyLevel = 1;
+    private int LevelPointsEarned = 0;
     private string[] LevelEnemies = new string[1] {"Alien Missile"};
     // I think I need something to track completed zones in the campaigns somehow
 
@@ -39,8 +40,16 @@ public class CampaignTracker : Node
         };
     }
 
+    public void ConfirmLevelPoints() {
+        CurrentPoints += LevelPointsEarned;
+    }
+
     public int GetCurrentDifficulty() {
         return CurrentDifficultyLevel;
+    }
+
+    public int GetCurrentPoints() {
+        return CurrentPoints;
     }
 
     public void IncrimentDifficulty() {
@@ -49,5 +58,9 @@ public class CampaignTracker : Node
 
     public string[] GetCurrentEnemies() {
         return LevelEnemies;
+    }
+
+    public void SetLevelPoints(int levelPoints) {
+        LevelPointsEarned = levelPoints;
     }
 }
