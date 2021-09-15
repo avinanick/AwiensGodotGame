@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Components/Basic/AttackerComponent.cs" type="Script" id=1]
+[ext_resource path="res://Components/Basic/Component.tscn" type="PackedScene" id=2]
+
+[node name="AttackerComponent" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="CooldownTimer" type="Timer" parent="." index="0"]
+one_shot = true
+
+[connection signal="timeout" from="CooldownTimer" to="." method="CooldownFinished"]

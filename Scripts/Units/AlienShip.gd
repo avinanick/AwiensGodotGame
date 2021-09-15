@@ -5,7 +5,7 @@ export var defense_destroyer: bool = false
 export var attack_range: float = 40
 export var turn_speed: float = 3
 export var attack_interval: float = 2
-export var projectile = preload("res://Scenes/Bullet.tscn")
+export var projectile = preload("res://GameObjects/Projectiles/Bullet.tscn")
 onready var earthlings = get_tree().get_nodes_in_group("Earthlings")
 onready var city = get_node("/root/MainScene/City")
 var current_target

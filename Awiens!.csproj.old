@@ -1,0 +1,7 @@
+<Project Sdk="Godot.NET.Sdk/3.2.3">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <RootNamespace>Awiens</RootNamespace>
+  </PropertyGroup>
+</Project>

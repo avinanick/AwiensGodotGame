@@ -1,0 +1,233 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/Interfaces/UpgradesInterface.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Materials/menu_backdrop.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Materials/background.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Resources/Materials/LabelImages/turret_upgrade_label.png" type="Texture" id=5]
+[ext_resource path="res://GameObjects/Interfaces/PurchasableUpgrade.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Materials/Icons/flakcannon.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Materials/Icons/thundercannon.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Materials/LabelImages/upgrades_upgrade_label.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Materials/Icons/shapedblast.png" type="Texture" id=10]
+[ext_resource path="res://Resources/Materials/Icons/incendiaryrounds.png" type="Texture" id=11]
+[ext_resource path="res://Resources/Materials/Icons/energyshield.png" type="Texture" id=12]
+[ext_resource path="res://Resources/Materials/Icons/automatedturret.png" type="Texture" id=13]
+[ext_resource path="res://Resources/Materials/LabelImages/repair_upgrade_label.png" type="Texture" id=14]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=2]
+size = 13
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 1
+font_data = ExtResource( 4 )
+
+[node name="UpgradesInterface" type="MarginContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OuterOutline" type="NinePatchRect" parent="."]
+margin_right = 500.0
+margin_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 500, 500 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+
+[node name="InnerBackground" type="NinePatchRect" parent="OuterOutline"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -225.0
+margin_right = 225.0
+margin_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 500, 500 )
+texture = ExtResource( 3 )
+
+[node name="PointsBackdrop" type="PanelContainer" parent="OuterOutline/InnerBackground"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -7.0
+margin_top = 8.0
+margin_right = 7.0
+margin_bottom = 22.0
+grow_horizontal = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="TotalPointsLabel" type="Label" parent="OuterOutline/InnerBackground/PointsBackdrop"]
+margin_right = 131.0
+margin_bottom = 22.0
+grow_horizontal = 2
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Current Points: PH"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="OuterOutline/InnerBackground"]
+margin_left = 54.0
+margin_top = 50.0
+margin_right = 448.0
+margin_bottom = 448.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer"]
+margin_right = 316.0
+margin_bottom = 581.0
+custom_constants/separation = 11
+
+[node name="TurretsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
+margin_right = 316.0
+margin_bottom = 20.0
+texture = ExtResource( 5 )
+
+[node name="TurretsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
+margin_top = 31.0
+margin_right = 316.0
+margin_bottom = 183.0
+
+[node name="FlakCannonUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer" instance=ExtResource( 6 )]
+margin_right = 76.0
+margin_bottom = 152.0
+hint_tooltip = "A cannon that fires flak shells which explode on contact with a target flinging shards that damage all targets in the area."
+upgrade_name = "Flak Cannon"
+upgrade_icon = ExtResource( 7 )
+
+[node name="ThunderCannonUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer" instance=ExtResource( 6 )]
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 152.0
+hint_tooltip = "A cannon that fires bolts of lightning toward the nearest enemy that deal massive damage."
+upgrade_name = "Thunder Cannon"
+upgrade_icon = ExtResource( 8 )
+
+[node name="UpgradesLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
+margin_top = 194.0
+margin_right = 316.0
+margin_bottom = 219.0
+texture = ExtResource( 9 )
+
+[node name="UpgradesContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
+margin_top = 230.0
+margin_right = 316.0
+margin_bottom = 382.0
+
+[node name="ShapedBlastUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 6 )]
+margin_right = 76.0
+margin_bottom = 152.0
+hint_tooltip = "Explosions from flak shells no longer damage friendly targets."
+cost = 15
+upgrade_type = "Upgrade"
+upgrade_name = "Shaped Blast"
+upgrade_icon = ExtResource( 10 )
+
+[node name="IncendiaryRounds" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 6 )]
+margin_left = 80.0
+margin_right = 156.0
+margin_bottom = 152.0
+hint_tooltip = "Chaingun rounds now cause the target to burn until death, stacking."
+cost = 15
+upgrade_type = "Upgrade"
+upgrade_name = "Incendiary Rounds"
+upgrade_icon = ExtResource( 11 )
+
+[node name="EnergyShieldsUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 6 )]
+margin_left = 160.0
+margin_right = 236.0
+margin_bottom = 152.0
+hint_tooltip = "Engages shielding around all friendly targets that block enemy attacks while active."
+cost = 15
+upgrade_type = "Upgrade"
+upgrade_name = "Energy Shields"
+upgrade_icon = ExtResource( 12 )
+
+[node name="AutoTurretsUpgrade" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer" instance=ExtResource( 6 )]
+margin_left = 240.0
+margin_right = 316.0
+margin_bottom = 152.0
+hint_tooltip = "Deploys automated turrets next to each gun fixture that will attack nearby aliens."
+cost = 15
+upgrade_type = "Upgrade"
+upgrade_name = "Auto-Turrets"
+upgrade_icon = ExtResource( 13 )
+
+[node name="RepairsLabel" type="TextureRect" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
+margin_top = 393.0
+margin_right = 316.0
+margin_bottom = 418.0
+texture = ExtResource( 14 )
+
+[node name="RepairsContainer" type="HBoxContainer" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer"]
+margin_top = 429.0
+margin_right = 316.0
+margin_bottom = 581.0
+
+[node name="RepairUpgradeButton" parent="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer" instance=ExtResource( 6 )]
+margin_right = 76.0
+margin_bottom = 152.0
+hint_tooltip = "Repairs all structures that are still standing."
+cost = 5
+upgrade_type = "Repair"
+upgrade_name = "Repair"
+
+[node name="ExitInterfaceOptions" type="HBoxContainer" parent="OuterOutline"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+margin_right = -10.0
+margin_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="EditTurretsButton" type="Button" parent="OuterOutline/ExitInterfaceOptions"]
+margin_right = 85.0
+margin_bottom = 30.0
+text = "Edit Turrets"
+
+[node name="ContinueButton" type="Button" parent="OuterOutline/ExitInterfaceOptions"]
+margin_left = 89.0
+margin_right = 158.0
+margin_bottom = 30.0
+text = "Continue"
+
+[connection signal="turret_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/FlakCannonUpgrade" to="." method="_on_turret_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/FlakCannonUpgrade" to="." method="_on_upgrade_purchased"]
+[connection signal="turret_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/ThunderCannonUpgrade" to="." method="_on_turret_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/TurretsContainer/ThunderCannonUpgrade" to="." method="_on_upgrade_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/ShapedBlastUpgrade" to="." method="_on_upgrade_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/IncendiaryRounds" to="." method="_on_upgrade_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/EnergyShieldsUpgrade" to="." method="_on_upgrade_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/UpgradesContainer/AutoTurretsUpgrade" to="." method="_on_upgrade_purchased"]
+[connection signal="upgrade_purchased" from="OuterOutline/InnerBackground/ScrollContainer/VBoxContainer/RepairsContainer/RepairUpgradeButton" to="." method="_on_upgrade_purchased"]
+[connection signal="button_up" from="OuterOutline/ExitInterfaceOptions/EditTurretsButton" to="." method="_on_EditTurretsButton_button_up"]
+[connection signal="button_up" from="OuterOutline/ExitInterfaceOptions/ContinueButton" to="." method="_on_ContinueButton_button_up"]

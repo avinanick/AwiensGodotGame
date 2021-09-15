@@ -34,11 +34,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Weapons/Bullet.gd"
 }, {
-"base": "MarginContainer",
-"class": "DefeatInterface",
-"language": "GDScript",
-"path": "res://Scripts/Interfaces/Defeat_interface.gd"
-}, {
 "base": "KinematicBody",
 "class": "Destructible",
 "language": "GDScript",
@@ -53,16 +48,6 @@ _global_script_classes=[ {
 "class": "EnergyShield",
 "language": "GDScript",
 "path": "res://Scripts/EnergyShield.gd"
-}, {
-"base": "Node",
-"class": "GameManager",
-"language": "GDScript",
-"path": "res://Scripts/GameManagement/GameManager.gd"
-}, {
-"base": "MarginContainer",
-"class": "MainOverlay",
-"language": "GDScript",
-"path": "res://Scripts/Interfaces/MainOverlay.gd"
 }, {
 "base": "Spatial",
 "class": "Player",
@@ -94,11 +79,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Interfaces/UpgradesInterface.gd"
 }, {
-"base": "MarginContainer",
-"class": "VictoryInterface",
-"language": "GDScript",
-"path": "res://Scripts/Interfaces/Victory_interface.gd"
-}, {
 "base": "TextureRect",
 "class": "alien_attacker_icon",
 "language": "GDScript",
@@ -110,32 +90,30 @@ _global_script_class_icons={
 "AlienShip": "",
 "AutoTurret": "",
 "Bullet": "",
-"DefeatInterface": "",
 "Destructible": "",
 "EnemySpawner": "",
 "EnergyShield": "",
-"GameManager": "",
-"MainOverlay": "",
 "Player": "",
 "Projectile": "",
 "Structure": "",
 "ThunderCannon": "",
 "Turret": "",
 "UpgradeInterface": "",
-"VictoryInterface": "",
 "alien_attacker_icon": ""
 }
 
 [application]
 
 config/name="Awiens!"
-run/main_scene="res://Scenes/Interfaces/MainMenuInterface.tscn"
+run/main_scene="res://GameObjects/Interfaces/MainMenuInterface.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-GameOptions="*res://Scripts/GameOptions.gd"
-Global="*res://Scripts/Global.gd"
+SaveGuardianAL="*res://GameSystems/SaveGuardian.tscn"
+CampaignTrackerAL="*res://GameSystems/CampaignTracker.tscn"
+UserInventoryAL="*res://GameSystems/UserInventory.tscn"
+AlienDataAL="*res://GameSystems/AlienData.tscn"
 
 [input]
 
@@ -177,4 +155,5 @@ pause={
 
 [rendering]
 
+2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"

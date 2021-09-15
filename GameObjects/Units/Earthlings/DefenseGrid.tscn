@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GameObjects/Units/Earthlings/WeaponPlatform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameObjects/Avatar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/Units/Earthlings/DefenseGrid.cs" type="Script" id=3]
+
+[node name="DefenseGrid" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="WeaponPlatform" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 0 )
+
+[node name="WeaponPlatform2" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, 0 )
+
+[node name="WeaponPlatform3" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 15 )
+
+[node name="WeaponPlatform4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15 )
+
+[node name="Avatar" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15 )
+
+[connection signal="WeaponHealthChanged" from="WeaponPlatform" to="." method="WeaponDamaged" binds= [ 1 ]]
+[connection signal="WeaponHealthChanged" from="WeaponPlatform2" to="." method="WeaponDamaged" binds= [ 2 ]]
+[connection signal="WeaponHealthChanged" from="WeaponPlatform3" to="." method="WeaponDamaged" binds= [ 0 ]]
+[connection signal="WeaponHealthChanged" from="WeaponPlatform4" to="." method="WeaponDamaged" binds= [ 3 ]]
+[connection signal="TurretSelect" from="Avatar" to="." method="SelectWeapon"]

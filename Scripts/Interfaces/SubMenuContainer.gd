@@ -1,8 +1,8 @@
 extends VBoxContainer
 
-var new_game_menu = preload("res://Scenes/Interfaces/NewGameInterface.tscn")
-var load_game_menu = preload("res://Scenes/Interfaces/LoadGameInterface.tscn")
-var options_menu = preload("res://Scenes/Interfaces/GameOptionsInterface.tscn")
+var new_game_menu = preload("res://GameObjects/Interfaces/NewGameInterface.tscn")
+var load_game_menu = preload("res://GameObjects/Interfaces/LoadGameInterface.tscn")
+var options_menu = preload("res://GameObjects/Interfaces/GameOptionsInterface.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
