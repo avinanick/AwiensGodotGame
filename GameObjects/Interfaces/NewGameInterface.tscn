@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Interfaces/NewArcadeGame.gd" type="Script" id=1]
+
+[node name="NewGameMenu" type="MarginContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 56.0
+margin_bottom = 40.0
+
+[node name="Arcade_Button" type="Button" parent="HBoxContainer"]
+margin_right = 56.0
+margin_bottom = 40.0
+text = "Arcade"
+
+[connection signal="button_up" from="HBoxContainer/Arcade_Button" to="." method="_on_Arcade_Button_button_up"]

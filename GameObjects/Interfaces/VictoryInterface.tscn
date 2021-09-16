@@ -1,0 +1,224 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://GameObjects/Interfaces/VictoryInterface.cs" type="Script" id=1]
+[ext_resource path="res://Resources/Interfaces/metalPanel.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Resources/Interfaces/blue_button00.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Interfaces/blue_button01.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Interfaces/red_panel.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 100, 100 )
+margin_left = 14.0
+margin_right = 15.0
+margin_top = 15.0
+margin_bottom = 13.0
+modulate_color = Color( 0.827451, 0.827451, 0.827451, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 19
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 13
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 14
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="VictoryInterface" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -147.5
+margin_top = -125.0
+margin_right = 147.5
+margin_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 14.0
+margin_top = 15.0
+margin_right = 280.0
+margin_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_container" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 266.0
+margin_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Victory_Label" type="Label" parent="VBoxContainer/Label_container"]
+margin_right = 266.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0901961, 0.796078, 0.0784314, 1 )
+text = "Victory!"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 266.0
+margin_bottom = 199.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 163.0
+size_flags_vertical = 3
+custom_constants/separation = 44
+
+[node name="Continue_button" type="TextureButton" parent="VBoxContainer/HBoxContainer/Buttons"]
+margin_right = 100.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 100, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/Buttons/Continue_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Buttons/Continue_button/MarginContainer"]
+margin_top = 1.0
+margin_right = 100.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 3 )
+text = "Continue"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save_Quit_Button" type="TextureButton" parent="VBoxContainer/HBoxContainer/Buttons"]
+margin_top = 69.0
+margin_right = 100.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 100, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/Buttons/Save_Quit_Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Buttons/Save_Quit_Button/MarginContainer"]
+margin_top = 1.0
+margin_right = 100.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 3 )
+text = "Save and Quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit_Button" type="TextureButton" parent="VBoxContainer/HBoxContainer/Buttons"]
+margin_top = 138.0
+margin_right = 100.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 100, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/Buttons/Quit_Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Buttons/Quit_Button/MarginContainer"]
+margin_top = 1.0
+margin_right = 100.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 3 )
+text = "Abandon City"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KillCountContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 266.0
+margin_bottom = 163.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 4 )
+
+[node name="KillCountIconGrid" type="GridContainer" parent="VBoxContainer/HBoxContainer/KillCountContainer"]
+margin_right = 162.0
+margin_bottom = 163.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points_label_container" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 203.0
+margin_right = 266.0
+margin_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="points_label" type="Label" parent="VBoxContainer/Points_label_container"]
+margin_right = 266.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Points Earned: 0"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Continue_button" to="." method="ContinueGame"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Save_Quit_Button" to="." method="SaveAndQuit"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Quit_Button" to="." method="QuitGame"]

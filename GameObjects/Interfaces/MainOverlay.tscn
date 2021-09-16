@@ -1,0 +1,326 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://GameObjects/Interfaces/MainOverlay.cs" type="Script" id=1]
+[ext_resource path="res://Themes/PopupInterface.tres" type="Theme" id=2]
+[ext_resource path="res://Resources/Interfaces/blue_circle.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Materials/HealthBars/WestTurretHealth.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Materials/HealthBars/NorthTurretHealth.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Materials/HealthBars/CityShield.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Materials/HealthBars/NorthWestBuildingHealth.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Materials/HealthBars/NorthEastBuildingHealth.png" type="Texture" id=8]
+[ext_resource path="res://Resources/Materials/HealthBars/SouthWestBuildingHealth.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Materials/HealthBars/SouthEastBuildingHealth.png" type="Texture" id=10]
+[ext_resource path="res://Resources/Materials/HealthBars/SouthTurretHealth.png" type="Texture" id=11]
+[ext_resource path="res://Resources/Materials/HealthBars/EastTurretHealth.png" type="Texture" id=12]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://GameObjects/Interfaces/RadarTexture.cs" type="Script" id=15]
+[ext_resource path="res://Resources/Materials/Masks/LightMask.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 13 )
+
+[node name="MainOverlay" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 580.0
+
+[node name="Counters" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 55.0
+alignment = 2
+
+[node name="Counter" type="MarginContainer" parent="VBoxContainer/Counters"]
+margin_left = 854.0
+margin_right = 984.0
+margin_bottom = 55.0
+
+[node name="Background" type="PanelContainer" parent="VBoxContainer/Counters/Counter"]
+margin_right = 130.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 130, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Counters/Counter/Background"]
+margin_left = 15.0
+margin_top = 14.0
+margin_right = 114.0
+margin_bottom = 41.0
+
+[node name="TimerLabel" type="Label" parent="VBoxContainer/Counters/Counter/Background/HBoxContainer"]
+margin_right = 97.0
+margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time Left: 30"
+valign = 1
+
+[node name="HealthSpacing" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 59.0
+margin_right = 984.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HealthBars" type="HBoxContainer" parent="VBoxContainer/HealthSpacing"]
+margin_top = 278.0
+margin_right = 984.0
+margin_bottom = 501.0
+size_flags_vertical = 8
+
+[node name="WestTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars"]
+margin_top = 39.0
+margin_right = 45.0
+margin_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+value = 100.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 4 )
+fill_mode = 3
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+
+[node name="WestShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/WestTurretHealthBar"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_progress = ExtResource( 4 )
+fill_mode = 3
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CentralBars" type="VBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars"]
+margin_left = 49.0
+margin_right = 193.0
+margin_bottom = 223.0
+
+[node name="NorthTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
+margin_right = 144.0
+margin_bottom = 44.0
+value = 100.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 5 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_initial_angle = 90.0
+radial_fill_degrees = 270.0
+radial_center_offset = Vector2( 0, 21.19 )
+
+[node name="NorthShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/NorthTurretHealthBar"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_progress = ExtResource( 5 )
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+
+[node name="CityShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
+margin_left = 9.0
+margin_top = 48.0
+margin_right = 135.0
+margin_bottom = 174.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+
+[node name="NorthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
+show_behind_parent = true
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 63.0
+margin_bottom = 63.0
+value = 100.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 7 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2( 32.05, 32.22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NorthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
+show_behind_parent = true
+margin_left = 67.17
+margin_right = 128.17
+margin_bottom = 64.0
+value = 100.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 8 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_initial_angle = 90.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2( -30.85, 33.23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SouthWestCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
+show_behind_parent = true
+margin_left = -1.0
+margin_top = 67.11
+margin_right = 63.0
+margin_bottom = 131.11
+value = 100.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 9 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_initial_angle = 270.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2( 33.43, -31.03 )
+
+[node name="SouthEastCityBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/CityShieldHealthBar"]
+show_behind_parent = true
+margin_left = 67.22
+margin_top = 67.23
+margin_right = 131.22
+margin_bottom = 131.23
+value = 100.0
+texture_under = ExtResource( 10 )
+texture_progress = ExtResource( 10 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+radial_initial_angle = 180.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2( -33.17, -34.14 )
+
+[node name="SouthTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars"]
+margin_top = 178.0
+margin_right = 144.0
+margin_bottom = 223.0
+value = 100.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 11 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+
+[node name="SouthShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/CentralBars/SouthTurretHealthBar"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_progress = ExtResource( 11 )
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+
+[node name="EastTurretHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars"]
+margin_left = 197.0
+margin_top = 41.0
+margin_right = 239.0
+margin_bottom = 181.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 100.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 12 )
+fill_mode = 3
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0, 1, 0.054902, 1 )
+
+[node name="EastShieldHealthBar" type="TextureProgress" parent="VBoxContainer/HealthSpacing/HealthBars/EastTurretHealthBar"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_progress = ExtResource( 12 )
+fill_mode = 3
+tint_progress = Color( 0.054902, 0.713726, 0.917647, 0.627451 )
+
+[node name="RadarSetup" type="HBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars"]
+margin_left = 243.0
+margin_top = 23.0
+margin_right = 984.0
+margin_bottom = 223.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+custom_constants/separation = 10
+alignment = 2
+
+[node name="hotkey_label_west" type="Label" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup"]
+margin_left = 589.0
+margin_top = 77.0
+margin_right = 605.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.0392157, 1, 1 )
+text = "4"
+align = 1
+valign = 1
+
+[node name="central_radar" type="VBoxContainer" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup"]
+margin_left = 615.0
+margin_right = 715.0
+margin_bottom = 200.0
+size_flags_vertical = 4
+
+[node name="hotkey_label_north" type="Label" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup/central_radar"]
+margin_right = 100.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.0392157, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="RadarTexture" type="TextureRect" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup/central_radar"]
+modulate = Color( 1, 1, 1, 0.654902 )
+light_mask = 2
+margin_top = 50.0
+margin_right = 100.0
+margin_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 100, 100 )
+rect_pivot_offset = Vector2( 50, 50 )
+texture = ExtResource( 3 )
+expand = true
+script = ExtResource( 15 )
+
+[node name="PlayerView" type="Light2D" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup/central_radar/RadarTexture"]
+position = Vector2( 20.665, 48.585 )
+rotation = -1.62141
+scale = Vector2( 1.4, -0.8 )
+texture = ExtResource( 16 )
+offset = Vector2( -0.627594, -27.5446 )
+range_item_cull_mask = 2
+shadow_color = Color( 0.996078, 0.996078, 0.996078, 0 )
+
+[node name="hotkey_label_south" type="Label" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup/central_radar"]
+margin_top = 154.0
+margin_right = 100.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.0392157, 1, 1 )
+text = "2"
+align = 1
+valign = 1
+
+[node name="hotkey_label_east" type="Label" parent="VBoxContainer/HealthSpacing/HealthBars/RadarSetup"]
+margin_left = 725.0
+margin_top = 77.0
+margin_right = 741.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0.0392157, 1, 1 )
+text = "3"

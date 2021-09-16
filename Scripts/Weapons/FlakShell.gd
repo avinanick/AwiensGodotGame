@@ -1,6 +1,6 @@
 extends Projectile
 
-export var burst_projectile = preload("res://Scenes/Bullet.tscn")
+export var burst_projectile = preload("res://GameObjects/Projectiles/Bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

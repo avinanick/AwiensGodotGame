@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GameObjects/Interfaces/DefeatInterface.cs" type="Script" id=1]
+[ext_resource path="res://Themes/PopupInterface.tres" type="Theme" id=2]
+[ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 19
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="DefeatInterface" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = -75.0
+margin_right = 60.0
+margin_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 15.0
+margin_top = 14.0
+margin_right = 135.0
+margin_bottom = 170.0
+alignment = 1
+
+[node name="DefeatTextContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 120.0
+margin_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 40, 20 )
+
+[node name="Label" type="Label" parent="VBoxContainer/DefeatTextContainer"]
+margin_right = 120.0
+margin_bottom = 32.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Defeat!"
+align = 1
+valign = 1
+
+[node name="TimeRemainingContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 120.0
+margin_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 40, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TimeRemainingLabel" type="Label" parent="VBoxContainer/TimeRemainingContainer"]
+margin_right = 120.0
+margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time Left: 1:00"
+align = 1
+valign = 1
+
+[node name="PointsContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 67.0
+margin_right = 120.0
+margin_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 40, 20 )
+
+[node name="PointsEarnedLabel" type="Label" parent="VBoxContainer/PointsContainer"]
+margin_right = 120.0
+margin_bottom = 27.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Points Earned: 0"
+align = 1
+
+[node name="DefeatButtons" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 98.0
+margin_right = 120.0
+margin_bottom = 156.0
+
+[node name="RetryButton" type="Button" parent="VBoxContainer/DefeatButtons"]
+margin_right = 120.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 60, 20 )
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/DefeatButtons"]
+margin_top = 31.0
+margin_right = 120.0
+margin_bottom = 58.0
+text = "Quit"

@@ -3,7 +3,7 @@ extends Structure
 class_name Turret
 
 export var fire_cooldown: float = 0.3
-export var projectile = preload("res://Scenes/Bullet.tscn")
+export var projectile = preload("res://GameObjects/Projectiles/Bullet.tscn")
 
 var timer: float = 0
 
