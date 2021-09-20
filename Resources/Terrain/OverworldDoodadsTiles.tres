@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=177 format=2]
+[gd_resource type="TileSet" load_steps=167 format=2]
 
 [ext_resource path="res://Resources/Isometric/Doodads/tree_cone_NE.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallG_NW.png" type="Texture" id=4]
@@ -79,16 +79,13 @@
 [ext_resource path="res://Resources/Isometric/Doodads/tree_tall_fall_NE.png" type="Texture" id=229]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeF_SW.png" type="Texture" id=232]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallB_SW.png" type="Texture" id=233]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallD_NE.png" type="Texture" id=234]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeE_NE.png" type="Texture" id=235]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallA_SE.png" type="Texture" id=236]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallD_SE.png" type="Texture" id=237]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatA_SE.png" type="Texture" id=238]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallE_SE.png" type="Texture" id=239]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallC_SW.png" type="Texture" id=240]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeE_NW.png" type="Texture" id=241]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallB_SE.png" type="Texture" id=242]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallE_NE.png" type="Texture" id=243]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallA_SW.png" type="Texture" id=244]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeE_SW.png" type="Texture" id=245]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeF_NW.png" type="Texture" id=246]
@@ -96,21 +93,14 @@
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeF_SE.png" type="Texture" id=248]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallA_NE.png" type="Texture" id=249]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallB_NE.png" type="Texture" id=250]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallC_NE.png" type="Texture" id=251]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallE_NW.png" type="Texture" id=252]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallE_SW.png" type="Texture" id=253]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatA_SW.png" type="Texture" id=254]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatB_NE.png" type="Texture" id=255]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallD_NW.png" type="Texture" id=256]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatB_NW.png" type="Texture" id=257]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatB_SE.png" type="Texture" id=258]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatA_NW.png" type="Texture" id=259]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatB_SW.png" type="Texture" id=260]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatC_NE.png" type="Texture" id=261]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallA_NW.png" type="Texture" id=262]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallC_SE.png" type="Texture" id=263]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallC_NW.png" type="Texture" id=264]
-[ext_resource path="res://Resources/Isometric/Doodads/stone_smallD_SW.png" type="Texture" id=265]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatA_NE.png" type="Texture" id=266]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeF_NE.png" type="Texture" id=267]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallFlatC_NW.png" type="Texture" id=268]
@@ -182,7 +172,7 @@
 0/texture = ExtResource( 303 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 512, 512 )
+0/region = Rect2( 204, 289, 101, 50 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 256, 256 )
 0/navigation_offset = Vector2( 256, 256 )
@@ -196,7 +186,7 @@
 1/texture = ExtResource( 279 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 512, 512 )
+1/region = Rect2( 204, 289, 101, 50 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 256, 256 )
 1/navigation_offset = Vector2( 256, 256 )
@@ -210,7 +200,7 @@
 2/texture = ExtResource( 327 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 512, 512 )
+2/region = Rect2( 221, 289, 84, 50 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 256, 256 )
 2/navigation_offset = Vector2( 256, 256 )
@@ -224,7 +214,7 @@
 3/texture = ExtResource( 280 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 0, 0, 512, 512 )
+3/region = Rect2( 204, 289, 101, 50 )
 3/tile_mode = 0
 3/occluder_offset = Vector2( 256, 256 )
 3/navigation_offset = Vector2( 256, 256 )
@@ -238,7 +228,7 @@
 4/texture = ExtResource( 350 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 0, 0, 512, 512 )
+4/region = Rect2( 221, 272, 84, 67 )
 4/tile_mode = 0
 4/occluder_offset = Vector2( 256, 256 )
 4/navigation_offset = Vector2( 256, 256 )
@@ -252,7 +242,7 @@
 5/texture = ExtResource( 351 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 0, 512, 512 )
+5/region = Rect2( 204, 272, 118, 50 )
 5/tile_mode = 0
 5/occluder_offset = Vector2( 256, 256 )
 5/navigation_offset = Vector2( 256, 256 )
@@ -266,7 +256,7 @@
 6/texture = ExtResource( 407 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 0, 0, 512, 512 )
+6/region = Rect2( 204, 289, 101, 50 )
 6/tile_mode = 0
 6/occluder_offset = Vector2( 256, 256 )
 6/navigation_offset = Vector2( 256, 256 )
@@ -280,7 +270,7 @@
 7/texture = ExtResource( 412 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 0, 0, 512, 512 )
+7/region = Rect2( 204, 272, 84, 67 )
 7/tile_mode = 0
 7/occluder_offset = Vector2( 256, 256 )
 7/navigation_offset = Vector2( 256, 256 )
@@ -294,7 +284,7 @@
 8/texture = ExtResource( 408 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 0, 0, 512, 512 )
+8/region = Rect2( 221, 255, 84, 84 )
 8/tile_mode = 0
 8/occluder_offset = Vector2( 256, 256 )
 8/navigation_offset = Vector2( 256, 256 )
@@ -308,7 +298,7 @@
 9/texture = ExtResource( 413 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 0, 0, 512, 512 )
+9/region = Rect2( 204, 255, 118, 84 )
 9/tile_mode = 0
 9/occluder_offset = Vector2( 256, 256 )
 9/navigation_offset = Vector2( 256, 256 )
@@ -322,7 +312,7 @@
 10/texture = ExtResource( 414 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 0, 0, 512, 512 )
+10/region = Rect2( 204, 272, 101, 67 )
 10/tile_mode = 0
 10/occluder_offset = Vector2( 256, 256 )
 10/navigation_offset = Vector2( 256, 256 )
@@ -336,7 +326,7 @@
 11/texture = ExtResource( 405 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 0, 0, 512, 512 )
+11/region = Rect2( 204, 255, 84, 84 )
 11/tile_mode = 0
 11/occluder_offset = Vector2( 256, 256 )
 11/navigation_offset = Vector2( 256, 256 )
@@ -350,7 +340,7 @@
 12/texture = ExtResource( 409 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
-12/region = Rect2( 0, 0, 512, 512 )
+12/region = Rect2( 204, 272, 101, 67 )
 12/tile_mode = 0
 12/occluder_offset = Vector2( 256, 256 )
 12/navigation_offset = Vector2( 256, 256 )
@@ -364,7 +354,7 @@
 13/texture = ExtResource( 415 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
-13/region = Rect2( 0, 0, 512, 512 )
+13/region = Rect2( 204, 272, 101, 67 )
 13/tile_mode = 0
 13/occluder_offset = Vector2( 256, 256 )
 13/navigation_offset = Vector2( 256, 256 )
@@ -378,7 +368,7 @@
 14/texture = ExtResource( 410 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
-14/region = Rect2( 0, 0, 512, 512 )
+14/region = Rect2( 204, 272, 101, 67 )
 14/tile_mode = 0
 14/occluder_offset = Vector2( 256, 256 )
 14/navigation_offset = Vector2( 256, 256 )
@@ -392,7 +382,7 @@
 15/texture = ExtResource( 416 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
-15/region = Rect2( 0, 0, 512, 512 )
+15/region = Rect2( 204, 272, 118, 67 )
 15/tile_mode = 0
 15/occluder_offset = Vector2( 256, 256 )
 15/navigation_offset = Vector2( 256, 256 )
@@ -406,7 +396,7 @@
 16/texture = ExtResource( 417 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
-16/region = Rect2( 0, 0, 512, 512 )
+16/region = Rect2( 204, 255, 118, 84 )
 16/tile_mode = 0
 16/occluder_offset = Vector2( 256, 256 )
 16/navigation_offset = Vector2( 256, 256 )
@@ -420,7 +410,7 @@
 17/texture = ExtResource( 411 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
-17/region = Rect2( 0, 0, 512, 512 )
+17/region = Rect2( 204, 238, 101, 101 )
 17/tile_mode = 0
 17/occluder_offset = Vector2( 256, 256 )
 17/navigation_offset = Vector2( 256, 256 )
@@ -434,7 +424,7 @@
 18/texture = ExtResource( 406 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
-18/region = Rect2( 0, 0, 512, 512 )
+18/region = Rect2( 204, 255, 118, 101 )
 18/tile_mode = 0
 18/occluder_offset = Vector2( 256, 256 )
 18/navigation_offset = Vector2( 256, 256 )
@@ -448,7 +438,7 @@
 19/texture = ExtResource( 247 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
-19/region = Rect2( 0, 0, 512, 512 )
+19/region = Rect2( 187, 255, 118, 84 )
 19/tile_mode = 0
 19/occluder_offset = Vector2( 256, 256 )
 19/navigation_offset = Vector2( 256, 256 )
@@ -462,7 +452,7 @@
 20/texture = ExtResource( 235 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
-20/region = Rect2( 0, 0, 512, 512 )
+20/region = Rect2( 204, 272, 101, 67 )
 20/tile_mode = 0
 20/occluder_offset = Vector2( 256, 256 )
 20/navigation_offset = Vector2( 256, 256 )
@@ -476,7 +466,7 @@
 21/texture = ExtResource( 241 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
-21/region = Rect2( 0, 0, 512, 512 )
+21/region = Rect2( 204, 272, 101, 67 )
 21/tile_mode = 0
 21/occluder_offset = Vector2( 256, 256 )
 21/navigation_offset = Vector2( 256, 256 )
@@ -490,7 +480,7 @@
 22/texture = ExtResource( 269 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
-22/region = Rect2( 0, 0, 512, 512 )
+22/region = Rect2( 204, 272, 101, 67 )
 22/tile_mode = 0
 22/occluder_offset = Vector2( 256, 256 )
 22/navigation_offset = Vector2( 256, 256 )
@@ -504,7 +494,7 @@
 23/texture = ExtResource( 245 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
-23/region = Rect2( 0, 0, 512, 512 )
+23/region = Rect2( 204, 272, 101, 67 )
 23/tile_mode = 0
 23/occluder_offset = Vector2( 256, 256 )
 23/navigation_offset = Vector2( 256, 256 )
@@ -518,7 +508,7 @@
 24/texture = ExtResource( 267 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
-24/region = Rect2( 0, 0, 512, 512 )
+24/region = Rect2( 204, 255, 101, 84 )
 24/tile_mode = 0
 24/occluder_offset = Vector2( 256, 256 )
 24/navigation_offset = Vector2( 256, 256 )
@@ -532,7 +522,7 @@
 25/texture = ExtResource( 246 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
-25/region = Rect2( 0, 0, 512, 512 )
+25/region = Rect2( 204, 255, 101, 84 )
 25/tile_mode = 0
 25/occluder_offset = Vector2( 256, 256 )
 25/navigation_offset = Vector2( 256, 256 )
@@ -546,7 +536,7 @@
 26/texture = ExtResource( 248 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
-26/region = Rect2( 0, 0, 512, 512 )
+26/region = Rect2( 204, 255, 101, 84 )
 26/tile_mode = 0
 26/occluder_offset = Vector2( 256, 256 )
 26/navigation_offset = Vector2( 256, 256 )
@@ -560,7 +550,7 @@
 27/texture = ExtResource( 232 )
 27/tex_offset = Vector2( 0, 0 )
 27/modulate = Color( 1, 1, 1, 1 )
-27/region = Rect2( 0, 0, 512, 512 )
+27/region = Rect2( 204, 255, 101, 84 )
 27/tile_mode = 0
 27/occluder_offset = Vector2( 256, 256 )
 27/navigation_offset = Vector2( 256, 256 )
@@ -574,7 +564,7 @@
 28/texture = ExtResource( 249 )
 28/tex_offset = Vector2( 0, 0 )
 28/modulate = Color( 1, 1, 1, 1 )
-28/region = Rect2( 0, 0, 512, 512 )
+28/region = Rect2( 238, 289, 50, 33 )
 28/tile_mode = 0
 28/occluder_offset = Vector2( 256, 256 )
 28/navigation_offset = Vector2( 256, 256 )
@@ -588,7 +578,7 @@
 29/texture = ExtResource( 262 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
-29/region = Rect2( 0, 0, 512, 512 )
+29/region = Rect2( 238, 289, 33, 33 )
 29/tile_mode = 0
 29/occluder_offset = Vector2( 256, 256 )
 29/navigation_offset = Vector2( 256, 256 )
@@ -602,7 +592,7 @@
 30/texture = ExtResource( 236 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
-30/region = Rect2( 0, 0, 512, 512 )
+30/region = Rect2( 238, 289, 33, 33 )
 30/tile_mode = 0
 30/occluder_offset = Vector2( 256, 256 )
 30/navigation_offset = Vector2( 256, 256 )
@@ -616,7 +606,7 @@
 31/texture = ExtResource( 244 )
 31/tex_offset = Vector2( 0, 0 )
 31/modulate = Color( 1, 1, 1, 1 )
-31/region = Rect2( 0, 0, 512, 512 )
+31/region = Rect2( 238, 289, 33, 50 )
 31/tile_mode = 0
 31/occluder_offset = Vector2( 256, 256 )
 31/navigation_offset = Vector2( 256, 256 )
@@ -630,7 +620,7 @@
 32/texture = ExtResource( 250 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
-32/region = Rect2( 0, 0, 512, 512 )
+32/region = Rect2( 238, 289, 50, 33 )
 32/tile_mode = 0
 32/occluder_offset = Vector2( 256, 256 )
 32/navigation_offset = Vector2( 256, 256 )
@@ -644,7 +634,7 @@
 33/texture = ExtResource( 272 )
 33/tex_offset = Vector2( 0, 0 )
 33/modulate = Color( 1, 1, 1, 1 )
-33/region = Rect2( 0, 0, 512, 512 )
+33/region = Rect2( 221, 289, 67, 50 )
 33/tile_mode = 0
 33/occluder_offset = Vector2( 256, 256 )
 33/navigation_offset = Vector2( 256, 256 )
@@ -658,7 +648,7 @@
 34/texture = ExtResource( 242 )
 34/tex_offset = Vector2( 0, 0 )
 34/modulate = Color( 1, 1, 1, 1 )
-34/region = Rect2( 0, 0, 512, 512 )
+34/region = Rect2( 221, 289, 67, 50 )
 34/tile_mode = 0
 34/occluder_offset = Vector2( 256, 256 )
 34/navigation_offset = Vector2( 256, 256 )
@@ -672,7 +662,7 @@
 35/texture = ExtResource( 233 )
 35/tex_offset = Vector2( 0, 0 )
 35/modulate = Color( 1, 1, 1, 1 )
-35/region = Rect2( 0, 0, 512, 512 )
+35/region = Rect2( 238, 289, 33, 50 )
 35/tile_mode = 0
 35/occluder_offset = Vector2( 256, 256 )
 35/navigation_offset = Vector2( 256, 256 )
@@ -682,53 +672,11 @@
 35/shape_one_way_margin = 0.0
 35/shapes = [  ]
 35/z_index = 0
-36/name = "stone_smallC_NE"
-36/texture = ExtResource( 251 )
-36/tex_offset = Vector2( 0, 0 )
-36/modulate = Color( 1, 1, 1, 1 )
-36/region = Rect2( 0, 0, 512, 512 )
-36/tile_mode = 0
-36/occluder_offset = Vector2( 256, 256 )
-36/navigation_offset = Vector2( 256, 256 )
-36/shape_offset = Vector2( 0, 0 )
-36/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-36/shape_one_way = false
-36/shape_one_way_margin = 0.0
-36/shapes = [  ]
-36/z_index = 0
-37/name = "stone_smallC_NW"
-37/texture = ExtResource( 264 )
-37/tex_offset = Vector2( 0, 0 )
-37/modulate = Color( 1, 1, 1, 1 )
-37/region = Rect2( 0, 0, 512, 512 )
-37/tile_mode = 0
-37/occluder_offset = Vector2( 256, 256 )
-37/navigation_offset = Vector2( 256, 256 )
-37/shape_offset = Vector2( 0, 0 )
-37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-37/shape_one_way = false
-37/shape_one_way_margin = 0.0
-37/shapes = [  ]
-37/z_index = 0
-38/name = "stone_smallC_SE"
-38/texture = ExtResource( 263 )
-38/tex_offset = Vector2( 0, 0 )
-38/modulate = Color( 1, 1, 1, 1 )
-38/region = Rect2( 0, 0, 512, 512 )
-38/tile_mode = 0
-38/occluder_offset = Vector2( 256, 256 )
-38/navigation_offset = Vector2( 256, 256 )
-38/shape_offset = Vector2( 0, 0 )
-38/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-38/shape_one_way = false
-38/shape_one_way_margin = 0.0
-38/shapes = [  ]
-38/z_index = 0
 39/name = "stone_smallC_SW"
 39/texture = ExtResource( 240 )
 39/tex_offset = Vector2( 0, 0 )
 39/modulate = Color( 1, 1, 1, 1 )
-39/region = Rect2( 0, 0, 512, 512 )
+39/region = Rect2( 238, 289, 33, 50 )
 39/tile_mode = 0
 39/occluder_offset = Vector2( 256, 256 )
 39/navigation_offset = Vector2( 256, 256 )
@@ -738,39 +686,11 @@
 39/shape_one_way_margin = 0.0
 39/shapes = [  ]
 39/z_index = 0
-40/name = "stone_smallD_NE"
-40/texture = ExtResource( 234 )
-40/tex_offset = Vector2( 0, 0 )
-40/modulate = Color( 1, 1, 1, 1 )
-40/region = Rect2( 0, 0, 512, 512 )
-40/tile_mode = 0
-40/occluder_offset = Vector2( 256, 256 )
-40/navigation_offset = Vector2( 256, 256 )
-40/shape_offset = Vector2( 0, 0 )
-40/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-40/shape_one_way = false
-40/shape_one_way_margin = 0.0
-40/shapes = [  ]
-40/z_index = 0
-41/name = "stone_smallD_NW"
-41/texture = ExtResource( 256 )
-41/tex_offset = Vector2( 0, 0 )
-41/modulate = Color( 1, 1, 1, 1 )
-41/region = Rect2( 0, 0, 512, 512 )
-41/tile_mode = 0
-41/occluder_offset = Vector2( 256, 256 )
-41/navigation_offset = Vector2( 256, 256 )
-41/shape_offset = Vector2( 0, 0 )
-41/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-41/shape_one_way = false
-41/shape_one_way_margin = 0.0
-41/shapes = [  ]
-41/z_index = 0
 42/name = "stone_smallD_SE"
 42/texture = ExtResource( 237 )
 42/tex_offset = Vector2( 0, 0 )
 42/modulate = Color( 1, 1, 1, 1 )
-42/region = Rect2( 0, 0, 512, 512 )
+42/region = Rect2( 238, 289, 50, 50 )
 42/tile_mode = 0
 42/occluder_offset = Vector2( 256, 256 )
 42/navigation_offset = Vector2( 256, 256 )
@@ -780,81 +700,11 @@
 42/shape_one_way_margin = 0.0
 42/shapes = [  ]
 42/z_index = 0
-43/name = "stone_smallD_SW"
-43/texture = ExtResource( 265 )
-43/tex_offset = Vector2( 0, 0 )
-43/modulate = Color( 1, 1, 1, 1 )
-43/region = Rect2( 0, 0, 512, 512 )
-43/tile_mode = 0
-43/occluder_offset = Vector2( 256, 256 )
-43/navigation_offset = Vector2( 256, 256 )
-43/shape_offset = Vector2( 0, 0 )
-43/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-43/shape_one_way = false
-43/shape_one_way_margin = 0.0
-43/shapes = [  ]
-43/z_index = 0
-44/name = "stone_smallE_NE"
-44/texture = ExtResource( 243 )
-44/tex_offset = Vector2( 0, 0 )
-44/modulate = Color( 1, 1, 1, 1 )
-44/region = Rect2( 0, 0, 512, 512 )
-44/tile_mode = 0
-44/occluder_offset = Vector2( 256, 256 )
-44/navigation_offset = Vector2( 256, 256 )
-44/shape_offset = Vector2( 0, 0 )
-44/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-44/shape_one_way = false
-44/shape_one_way_margin = 0.0
-44/shapes = [  ]
-44/z_index = 0
-45/name = "stone_smallE_NW"
-45/texture = ExtResource( 252 )
-45/tex_offset = Vector2( 0, 0 )
-45/modulate = Color( 1, 1, 1, 1 )
-45/region = Rect2( 0, 0, 512, 512 )
-45/tile_mode = 0
-45/occluder_offset = Vector2( 256, 256 )
-45/navigation_offset = Vector2( 256, 256 )
-45/shape_offset = Vector2( 0, 0 )
-45/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-45/shape_one_way = false
-45/shape_one_way_margin = 0.0
-45/shapes = [  ]
-45/z_index = 0
-46/name = "stone_smallE_SE"
-46/texture = ExtResource( 239 )
-46/tex_offset = Vector2( 0, 0 )
-46/modulate = Color( 1, 1, 1, 1 )
-46/region = Rect2( 0, 0, 512, 512 )
-46/tile_mode = 0
-46/occluder_offset = Vector2( 256, 256 )
-46/navigation_offset = Vector2( 256, 256 )
-46/shape_offset = Vector2( 0, 0 )
-46/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-46/shape_one_way = false
-46/shape_one_way_margin = 0.0
-46/shapes = [  ]
-46/z_index = 0
-47/name = "stone_smallE_SW"
-47/texture = ExtResource( 253 )
-47/tex_offset = Vector2( 0, 0 )
-47/modulate = Color( 1, 1, 1, 1 )
-47/region = Rect2( 0, 0, 512, 512 )
-47/tile_mode = 0
-47/occluder_offset = Vector2( 256, 256 )
-47/navigation_offset = Vector2( 256, 256 )
-47/shape_offset = Vector2( 0, 0 )
-47/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-47/shape_one_way = false
-47/shape_one_way_margin = 0.0
-47/shapes = [  ]
-47/z_index = 0
 48/name = "stone_smallFlatA_NE"
 48/texture = ExtResource( 266 )
 48/tex_offset = Vector2( 0, 0 )
 48/modulate = Color( 1, 1, 1, 1 )
-48/region = Rect2( 0, 0, 512, 512 )
+48/region = Rect2( 221, 289, 67, 50 )
 48/tile_mode = 0
 48/occluder_offset = Vector2( 256, 256 )
 48/navigation_offset = Vector2( 256, 256 )
@@ -868,7 +718,7 @@
 49/texture = ExtResource( 259 )
 49/tex_offset = Vector2( 0, 0 )
 49/modulate = Color( 1, 1, 1, 1 )
-49/region = Rect2( 0, 0, 512, 512 )
+49/region = Rect2( 221, 289, 67, 50 )
 49/tile_mode = 0
 49/occluder_offset = Vector2( 256, 256 )
 49/navigation_offset = Vector2( 256, 256 )
@@ -882,7 +732,7 @@
 50/texture = ExtResource( 238 )
 50/tex_offset = Vector2( 0, 0 )
 50/modulate = Color( 1, 1, 1, 1 )
-50/region = Rect2( 0, 0, 512, 512 )
+50/region = Rect2( 221, 289, 67, 50 )
 50/tile_mode = 0
 50/occluder_offset = Vector2( 256, 256 )
 50/navigation_offset = Vector2( 256, 256 )
@@ -896,7 +746,7 @@
 51/texture = ExtResource( 254 )
 51/tex_offset = Vector2( 0, 0 )
 51/modulate = Color( 1, 1, 1, 1 )
-51/region = Rect2( 0, 0, 512, 512 )
+51/region = Rect2( 221, 289, 67, 33 )
 51/tile_mode = 0
 51/occluder_offset = Vector2( 256, 256 )
 51/navigation_offset = Vector2( 256, 256 )
@@ -910,7 +760,7 @@
 52/texture = ExtResource( 255 )
 52/tex_offset = Vector2( 0, 0 )
 52/modulate = Color( 1, 1, 1, 1 )
-52/region = Rect2( 0, 0, 512, 512 )
+52/region = Rect2( 238, 289, 33, 50 )
 52/tile_mode = 0
 52/occluder_offset = Vector2( 256, 256 )
 52/navigation_offset = Vector2( 256, 256 )
@@ -924,7 +774,7 @@
 53/texture = ExtResource( 257 )
 53/tex_offset = Vector2( 0, 0 )
 53/modulate = Color( 1, 1, 1, 1 )
-53/region = Rect2( 0, 0, 512, 512 )
+53/region = Rect2( 221, 289, 67, 33 )
 53/tile_mode = 0
 53/occluder_offset = Vector2( 256, 256 )
 53/navigation_offset = Vector2( 256, 256 )
@@ -938,7 +788,7 @@
 54/texture = ExtResource( 258 )
 54/tex_offset = Vector2( 0, 0 )
 54/modulate = Color( 1, 1, 1, 1 )
-54/region = Rect2( 0, 0, 512, 512 )
+54/region = Rect2( 221, 289, 67, 50 )
 54/tile_mode = 0
 54/occluder_offset = Vector2( 256, 256 )
 54/navigation_offset = Vector2( 256, 256 )
@@ -952,7 +802,7 @@
 55/texture = ExtResource( 260 )
 55/tex_offset = Vector2( 0, 0 )
 55/modulate = Color( 1, 1, 1, 1 )
-55/region = Rect2( 0, 0, 512, 512 )
+55/region = Rect2( 238, 289, 33, 50 )
 55/tile_mode = 0
 55/occluder_offset = Vector2( 256, 256 )
 55/navigation_offset = Vector2( 256, 256 )
@@ -966,7 +816,7 @@
 56/texture = ExtResource( 261 )
 56/tex_offset = Vector2( 0, 0 )
 56/modulate = Color( 1, 1, 1, 1 )
-56/region = Rect2( 0, 0, 512, 512 )
+56/region = Rect2( 221, 289, 67, 50 )
 56/tile_mode = 0
 56/occluder_offset = Vector2( 256, 256 )
 56/navigation_offset = Vector2( 256, 256 )
@@ -980,7 +830,7 @@
 57/texture = ExtResource( 268 )
 57/tex_offset = Vector2( 0, 0 )
 57/modulate = Color( 1, 1, 1, 1 )
-57/region = Rect2( 0, 0, 512, 512 )
+57/region = Rect2( 221, 289, 50, 50 )
 57/tile_mode = 0
 57/occluder_offset = Vector2( 256, 256 )
 57/navigation_offset = Vector2( 256, 256 )
@@ -994,7 +844,7 @@
 58/texture = ExtResource( 270 )
 58/tex_offset = Vector2( 0, 0 )
 58/modulate = Color( 1, 1, 1, 1 )
-58/region = Rect2( 0, 0, 512, 512 )
+58/region = Rect2( 221, 289, 67, 50 )
 58/tile_mode = 0
 58/occluder_offset = Vector2( 256, 256 )
 58/navigation_offset = Vector2( 256, 256 )
@@ -1008,7 +858,7 @@
 59/texture = ExtResource( 271 )
 59/tex_offset = Vector2( 0, 0 )
 59/modulate = Color( 1, 1, 1, 1 )
-59/region = Rect2( 0, 0, 512, 512 )
+59/region = Rect2( 221, 289, 50, 33 )
 59/tile_mode = 0
 59/occluder_offset = Vector2( 256, 256 )
 59/navigation_offset = Vector2( 256, 256 )
@@ -1022,7 +872,7 @@
 60/texture = ExtResource( 275 )
 60/tex_offset = Vector2( 0, 0 )
 60/modulate = Color( 1, 1, 1, 1 )
-60/region = Rect2( 0, 0, 512, 512 )
+60/region = Rect2( 238, 289, 33, 33 )
 60/tile_mode = 0
 60/occluder_offset = Vector2( 256, 256 )
 60/navigation_offset = Vector2( 256, 256 )
@@ -1036,7 +886,7 @@
 61/texture = ExtResource( 276 )
 61/tex_offset = Vector2( 0, 0 )
 61/modulate = Color( 1, 1, 1, 1 )
-61/region = Rect2( 0, 0, 512, 512 )
+61/region = Rect2( 238, 289, 33, 33 )
 61/tile_mode = 0
 61/occluder_offset = Vector2( 256, 256 )
 61/navigation_offset = Vector2( 256, 256 )
@@ -1050,7 +900,7 @@
 62/texture = ExtResource( 277 )
 62/tex_offset = Vector2( 0, 0 )
 62/modulate = Color( 1, 1, 1, 1 )
-62/region = Rect2( 0, 0, 512, 512 )
+62/region = Rect2( 238, 289, 33, 33 )
 62/tile_mode = 0
 62/occluder_offset = Vector2( 256, 256 )
 62/navigation_offset = Vector2( 256, 256 )
@@ -1064,7 +914,7 @@
 63/texture = ExtResource( 273 )
 63/tex_offset = Vector2( 0, 0 )
 63/modulate = Color( 1, 1, 1, 1 )
-63/region = Rect2( 0, 0, 512, 512 )
+63/region = Rect2( 221, 289, 50, 33 )
 63/tile_mode = 0
 63/occluder_offset = Vector2( 256, 256 )
 63/navigation_offset = Vector2( 256, 256 )
@@ -1078,7 +928,7 @@
 64/texture = ExtResource( 278 )
 64/tex_offset = Vector2( 0, 0 )
 64/modulate = Color( 1, 1, 1, 1 )
-64/region = Rect2( 0, 0, 512, 512 )
+64/region = Rect2( 221, 272, 67, 67 )
 64/tile_mode = 0
 64/occluder_offset = Vector2( 256, 256 )
 64/navigation_offset = Vector2( 256, 256 )
@@ -1092,7 +942,7 @@
 65/texture = ExtResource( 274 )
 65/tex_offset = Vector2( 0, 0 )
 65/modulate = Color( 1, 1, 1, 1 )
-65/region = Rect2( 0, 0, 512, 512 )
+65/region = Rect2( 221, 272, 67, 67 )
 65/tile_mode = 0
 65/occluder_offset = Vector2( 256, 256 )
 65/navigation_offset = Vector2( 256, 256 )
@@ -1106,7 +956,7 @@
 66/texture = ExtResource( 448 )
 66/tex_offset = Vector2( 0, 0 )
 66/modulate = Color( 1, 1, 1, 1 )
-66/region = Rect2( 0, 0, 512, 512 )
+66/region = Rect2( 221, 272, 67, 67 )
 66/tile_mode = 0
 66/occluder_offset = Vector2( 256, 256 )
 66/navigation_offset = Vector2( 256, 256 )
@@ -1120,7 +970,7 @@
 67/texture = ExtResource( 450 )
 67/tex_offset = Vector2( 0, 0 )
 67/modulate = Color( 1, 1, 1, 1 )
-67/region = Rect2( 0, 0, 512, 512 )
+67/region = Rect2( 221, 272, 67, 67 )
 67/tile_mode = 0
 67/occluder_offset = Vector2( 256, 256 )
 67/navigation_offset = Vector2( 256, 256 )
@@ -1134,7 +984,7 @@
 68/texture = ExtResource( 446 )
 68/tex_offset = Vector2( 0, 0 )
 68/modulate = Color( 1, 1, 1, 1 )
-68/region = Rect2( 0, 0, 512, 512 )
+68/region = Rect2( 221, 272, 67, 50 )
 68/tile_mode = 0
 68/occluder_offset = Vector2( 256, 256 )
 68/navigation_offset = Vector2( 256, 256 )
@@ -1148,7 +998,7 @@
 69/texture = ExtResource( 447 )
 69/tex_offset = Vector2( 0, 0 )
 69/modulate = Color( 1, 1, 1, 1 )
-69/region = Rect2( 0, 0, 512, 512 )
+69/region = Rect2( 221, 272, 67, 50 )
 69/tile_mode = 0
 69/occluder_offset = Vector2( 256, 256 )
 69/navigation_offset = Vector2( 256, 256 )
@@ -1162,7 +1012,7 @@
 70/texture = ExtResource( 449 )
 70/tex_offset = Vector2( 0, 0 )
 70/modulate = Color( 1, 1, 1, 1 )
-70/region = Rect2( 0, 0, 512, 512 )
+70/region = Rect2( 221, 272, 67, 50 )
 70/tile_mode = 0
 70/occluder_offset = Vector2( 256, 256 )
 70/navigation_offset = Vector2( 256, 256 )
@@ -1176,7 +1026,7 @@
 71/texture = ExtResource( 429 )
 71/tex_offset = Vector2( 0, 0 )
 71/modulate = Color( 1, 1, 1, 1 )
-71/region = Rect2( 0, 0, 512, 512 )
+71/region = Rect2( 221, 272, 67, 50 )
 71/tile_mode = 0
 71/occluder_offset = Vector2( 256, 256 )
 71/navigation_offset = Vector2( 256, 256 )
@@ -1190,7 +1040,7 @@
 72/texture = ExtResource( 437 )
 72/tex_offset = Vector2( 0, 0 )
 72/modulate = Color( 1, 1, 1, 1 )
-72/region = Rect2( 0, 0, 512, 512 )
+72/region = Rect2( 221, 289, 50, 33 )
 72/tile_mode = 0
 72/occluder_offset = Vector2( 256, 256 )
 72/navigation_offset = Vector2( 256, 256 )
@@ -1204,7 +1054,7 @@
 73/texture = ExtResource( 419 )
 73/tex_offset = Vector2( 0, 0 )
 73/modulate = Color( 1, 1, 1, 1 )
-73/region = Rect2( 0, 0, 512, 512 )
+73/region = Rect2( 221, 289, 50, 33 )
 73/tile_mode = 0
 73/occluder_offset = Vector2( 256, 256 )
 73/navigation_offset = Vector2( 256, 256 )
@@ -1218,7 +1068,7 @@
 74/texture = ExtResource( 423 )
 74/tex_offset = Vector2( 0, 0 )
 74/modulate = Color( 1, 1, 1, 1 )
-74/region = Rect2( 0, 0, 512, 512 )
+74/region = Rect2( 221, 289, 50, 33 )
 74/tile_mode = 0
 74/occluder_offset = Vector2( 256, 256 )
 74/navigation_offset = Vector2( 256, 256 )
@@ -1232,7 +1082,7 @@
 75/texture = ExtResource( 436 )
 75/tex_offset = Vector2( 0, 0 )
 75/modulate = Color( 1, 1, 1, 1 )
-75/region = Rect2( 0, 0, 512, 512 )
+75/region = Rect2( 221, 289, 50, 33 )
 75/tile_mode = 0
 75/occluder_offset = Vector2( 256, 256 )
 75/navigation_offset = Vector2( 256, 256 )
@@ -1246,7 +1096,7 @@
 76/texture = ExtResource( 444 )
 76/tex_offset = Vector2( 0, 0 )
 76/modulate = Color( 1, 1, 1, 1 )
-76/region = Rect2( 0, 0, 512, 512 )
+76/region = Rect2( 221, 289, 67, 50 )
 76/tile_mode = 0
 76/occluder_offset = Vector2( 256, 256 )
 76/navigation_offset = Vector2( 256, 256 )
@@ -1260,7 +1110,7 @@
 77/texture = ExtResource( 435 )
 77/tex_offset = Vector2( 0, 0 )
 77/modulate = Color( 1, 1, 1, 1 )
-77/region = Rect2( 0, 0, 512, 512 )
+77/region = Rect2( 221, 289, 67, 33 )
 77/tile_mode = 0
 77/occluder_offset = Vector2( 256, 256 )
 77/navigation_offset = Vector2( 256, 256 )
@@ -1274,7 +1124,7 @@
 78/texture = ExtResource( 424 )
 78/tex_offset = Vector2( 0, 0 )
 78/modulate = Color( 1, 1, 1, 1 )
-78/region = Rect2( 0, 0, 512, 512 )
+78/region = Rect2( 221, 289, 67, 50 )
 78/tile_mode = 0
 78/occluder_offset = Vector2( 256, 256 )
 78/navigation_offset = Vector2( 256, 256 )
@@ -1288,7 +1138,7 @@
 79/texture = ExtResource( 440 )
 79/tex_offset = Vector2( 0, 0 )
 79/modulate = Color( 1, 1, 1, 1 )
-79/region = Rect2( 0, 0, 512, 512 )
+79/region = Rect2( 221, 289, 67, 50 )
 79/tile_mode = 0
 79/occluder_offset = Vector2( 256, 256 )
 79/navigation_offset = Vector2( 256, 256 )
@@ -1302,7 +1152,7 @@
 80/texture = ExtResource( 430 )
 80/tex_offset = Vector2( 0, 0 )
 80/modulate = Color( 1, 1, 1, 1 )
-80/region = Rect2( 0, 0, 512, 512 )
+80/region = Rect2( 221, 289, 67, 50 )
 80/tile_mode = 0
 80/occluder_offset = Vector2( 256, 256 )
 80/navigation_offset = Vector2( 256, 256 )
@@ -1316,7 +1166,7 @@
 81/texture = ExtResource( 434 )
 81/tex_offset = Vector2( 0, 0 )
 81/modulate = Color( 1, 1, 1, 1 )
-81/region = Rect2( 0, 0, 512, 512 )
+81/region = Rect2( 221, 289, 67, 50 )
 81/tile_mode = 0
 81/occluder_offset = Vector2( 256, 256 )
 81/navigation_offset = Vector2( 256, 256 )
@@ -1330,7 +1180,7 @@
 82/texture = ExtResource( 425 )
 82/tex_offset = Vector2( 0, 0 )
 82/modulate = Color( 1, 1, 1, 1 )
-82/region = Rect2( 0, 0, 512, 512 )
+82/region = Rect2( 221, 289, 67, 50 )
 82/tile_mode = 0
 82/occluder_offset = Vector2( 256, 256 )
 82/navigation_offset = Vector2( 256, 256 )
@@ -1344,7 +1194,7 @@
 83/texture = ExtResource( 438 )
 83/tex_offset = Vector2( 0, 0 )
 83/modulate = Color( 1, 1, 1, 1 )
-83/region = Rect2( 0, 0, 512, 512 )
+83/region = Rect2( 221, 289, 67, 50 )
 83/tile_mode = 0
 83/occluder_offset = Vector2( 256, 256 )
 83/navigation_offset = Vector2( 256, 256 )
@@ -1358,7 +1208,7 @@
 84/texture = ExtResource( 439 )
 84/tex_offset = Vector2( 0, 0 )
 84/modulate = Color( 1, 1, 1, 1 )
-84/region = Rect2( 0, 0, 512, 512 )
+84/region = Rect2( 221, 221, 84, 118 )
 84/tile_mode = 0
 84/occluder_offset = Vector2( 256, 256 )
 84/navigation_offset = Vector2( 256, 256 )
@@ -1372,7 +1222,7 @@
 85/texture = ExtResource( 442 )
 85/tex_offset = Vector2( 0, 0 )
 85/modulate = Color( 1, 1, 1, 1 )
-85/region = Rect2( 0, 0, 512, 512 )
+85/region = Rect2( 204, 221, 101, 118 )
 85/tile_mode = 0
 85/occluder_offset = Vector2( 256, 256 )
 85/navigation_offset = Vector2( 256, 256 )
@@ -1386,7 +1236,7 @@
 86/texture = ExtResource( 426 )
 86/tex_offset = Vector2( 0, 0 )
 86/modulate = Color( 1, 1, 1, 1 )
-86/region = Rect2( 0, 0, 512, 512 )
+86/region = Rect2( 204, 221, 101, 118 )
 86/tile_mode = 0
 86/occluder_offset = Vector2( 256, 256 )
 86/navigation_offset = Vector2( 256, 256 )
@@ -1400,7 +1250,7 @@
 87/texture = ExtResource( 420 )
 87/tex_offset = Vector2( 0, 0 )
 87/modulate = Color( 1, 1, 1, 1 )
-87/region = Rect2( 0, 0, 512, 512 )
+87/region = Rect2( 204, 221, 84, 118 )
 87/tile_mode = 0
 87/occluder_offset = Vector2( 256, 256 )
 87/navigation_offset = Vector2( 256, 256 )
@@ -1414,7 +1264,7 @@
 88/texture = ExtResource( 443 )
 88/tex_offset = Vector2( 0, 0 )
 88/modulate = Color( 1, 1, 1, 1 )
-88/region = Rect2( 0, 0, 512, 512 )
+88/region = Rect2( 204, 238, 101, 101 )
 88/tile_mode = 0
 88/occluder_offset = Vector2( 256, 256 )
 88/navigation_offset = Vector2( 256, 256 )
@@ -1428,7 +1278,7 @@
 89/texture = ExtResource( 432 )
 89/tex_offset = Vector2( 0, 0 )
 89/modulate = Color( 1, 1, 1, 1 )
-89/region = Rect2( 0, 0, 512, 512 )
+89/region = Rect2( 204, 238, 101, 101 )
 89/tile_mode = 0
 89/occluder_offset = Vector2( 256, 256 )
 89/navigation_offset = Vector2( 256, 256 )
@@ -1442,7 +1292,7 @@
 90/texture = ExtResource( 427 )
 90/tex_offset = Vector2( 0, 0 )
 90/modulate = Color( 1, 1, 1, 1 )
-90/region = Rect2( 0, 0, 512, 512 )
+90/region = Rect2( 221, 238, 84, 101 )
 90/tile_mode = 0
 90/occluder_offset = Vector2( 256, 256 )
 90/navigation_offset = Vector2( 256, 256 )
@@ -1456,7 +1306,7 @@
 91/texture = ExtResource( 421 )
 91/tex_offset = Vector2( 0, 0 )
 91/modulate = Color( 1, 1, 1, 1 )
-91/region = Rect2( 0, 0, 512, 512 )
+91/region = Rect2( 221, 238, 84, 101 )
 91/tile_mode = 0
 91/occluder_offset = Vector2( 256, 256 )
 91/navigation_offset = Vector2( 256, 256 )
@@ -1470,7 +1320,7 @@
 92/texture = ExtResource( 445 )
 92/tex_offset = Vector2( 0, 0 )
 92/modulate = Color( 1, 1, 1, 1 )
-92/region = Rect2( 0, 0, 512, 512 )
+92/region = Rect2( 221, 238, 67, 84 )
 92/tile_mode = 0
 92/occluder_offset = Vector2( 256, 256 )
 92/navigation_offset = Vector2( 256, 256 )
@@ -1484,7 +1334,7 @@
 93/texture = ExtResource( 418 )
 93/tex_offset = Vector2( 0, 0 )
 93/modulate = Color( 1, 1, 1, 1 )
-93/region = Rect2( 0, 0, 512, 512 )
+93/region = Rect2( 221, 238, 50, 101 )
 93/tile_mode = 0
 93/occluder_offset = Vector2( 256, 256 )
 93/navigation_offset = Vector2( 256, 256 )
@@ -1498,7 +1348,7 @@
 94/texture = ExtResource( 422 )
 94/tex_offset = Vector2( 0, 0 )
 94/modulate = Color( 1, 1, 1, 1 )
-94/region = Rect2( 0, 0, 512, 512 )
+94/region = Rect2( 238, 238, 50, 101 )
 94/tile_mode = 0
 94/occluder_offset = Vector2( 256, 256 )
 94/navigation_offset = Vector2( 256, 256 )
@@ -1512,7 +1362,7 @@
 95/texture = ExtResource( 433 )
 95/tex_offset = Vector2( 0, 0 )
 95/modulate = Color( 1, 1, 1, 1 )
-95/region = Rect2( 0, 0, 512, 512 )
+95/region = Rect2( 221, 238, 67, 101 )
 95/tile_mode = 0
 95/occluder_offset = Vector2( 256, 256 )
 95/navigation_offset = Vector2( 256, 256 )
@@ -1526,7 +1376,7 @@
 96/texture = ExtResource( 428 )
 96/tex_offset = Vector2( 0, 0 )
 96/modulate = Color( 1, 1, 1, 1 )
-96/region = Rect2( 0, 0, 512, 512 )
+96/region = Rect2( 221, 238, 67, 84 )
 96/tile_mode = 0
 96/occluder_offset = Vector2( 256, 256 )
 96/navigation_offset = Vector2( 256, 256 )
@@ -1540,7 +1390,7 @@
 97/texture = ExtResource( 431 )
 97/tex_offset = Vector2( 0, 0 )
 97/modulate = Color( 1, 1, 1, 1 )
-97/region = Rect2( 0, 0, 512, 512 )
+97/region = Rect2( 238, 238, 33, 101 )
 97/tile_mode = 0
 97/occluder_offset = Vector2( 256, 256 )
 97/navigation_offset = Vector2( 256, 256 )
@@ -1554,7 +1404,7 @@
 98/texture = ExtResource( 441 )
 98/tex_offset = Vector2( 0, 0 )
 98/modulate = Color( 1, 1, 1, 1 )
-98/region = Rect2( 0, 0, 512, 512 )
+98/region = Rect2( 238, 238, 33, 101 )
 98/tile_mode = 0
 98/occluder_offset = Vector2( 256, 256 )
 98/navigation_offset = Vector2( 256, 256 )
@@ -1568,7 +1418,7 @@
 99/texture = ExtResource( 17 )
 99/tex_offset = Vector2( 0, 0 )
 99/modulate = Color( 1, 1, 1, 1 )
-99/region = Rect2( 0, 0, 512, 512 )
+99/region = Rect2( 221, 238, 67, 84 )
 99/tile_mode = 0
 99/occluder_offset = Vector2( 256, 256 )
 99/navigation_offset = Vector2( 256, 256 )
@@ -1582,7 +1432,7 @@
 100/texture = ExtResource( 39 )
 100/tex_offset = Vector2( 0, 0 )
 100/modulate = Color( 1, 1, 1, 1 )
-100/region = Rect2( 0, 0, 512, 512 )
+100/region = Rect2( 221, 272, 67, 67 )
 100/tile_mode = 0
 100/occluder_offset = Vector2( 256, 256 )
 100/navigation_offset = Vector2( 256, 256 )
@@ -1596,7 +1446,7 @@
 101/texture = ExtResource( 32 )
 101/tex_offset = Vector2( 0, 0 )
 101/modulate = Color( 1, 1, 1, 1 )
-101/region = Rect2( 0, 0, 512, 512 )
+101/region = Rect2( 221, 272, 67, 67 )
 101/tile_mode = 0
 101/occluder_offset = Vector2( 256, 256 )
 101/navigation_offset = Vector2( 256, 256 )
@@ -1610,7 +1460,7 @@
 102/texture = ExtResource( 18 )
 102/tex_offset = Vector2( 0, 0 )
 102/modulate = Color( 1, 1, 1, 1 )
-102/region = Rect2( 0, 0, 512, 512 )
+102/region = Rect2( 221, 272, 67, 67 )
 102/tile_mode = 0
 102/occluder_offset = Vector2( 256, 256 )
 102/navigation_offset = Vector2( 256, 256 )
@@ -1624,7 +1474,7 @@
 103/texture = ExtResource( 46 )
 103/tex_offset = Vector2( 0, 0 )
 103/modulate = Color( 1, 1, 1, 1 )
-103/region = Rect2( 0, 0, 512, 512 )
+103/region = Rect2( 221, 272, 67, 67 )
 103/tile_mode = 0
 103/occluder_offset = Vector2( 256, 256 )
 103/navigation_offset = Vector2( 256, 256 )
@@ -1638,7 +1488,7 @@
 104/texture = ExtResource( 47 )
 104/tex_offset = Vector2( 0, 0 )
 104/modulate = Color( 1, 1, 1, 1 )
-104/region = Rect2( 0, 0, 512, 512 )
+104/region = Rect2( 221, 255, 67, 84 )
 104/tile_mode = 0
 104/occluder_offset = Vector2( 256, 256 )
 104/navigation_offset = Vector2( 256, 256 )
@@ -1652,7 +1502,7 @@
 105/texture = ExtResource( 6 )
 105/tex_offset = Vector2( 0, 0 )
 105/modulate = Color( 1, 1, 1, 1 )
-105/region = Rect2( 0, 0, 512, 512 )
+105/region = Rect2( 221, 255, 67, 84 )
 105/tile_mode = 0
 105/occluder_offset = Vector2( 256, 256 )
 105/navigation_offset = Vector2( 256, 256 )
@@ -1666,7 +1516,7 @@
 106/texture = ExtResource( 64 )
 106/tex_offset = Vector2( 0, 0 )
 106/modulate = Color( 1, 1, 1, 1 )
-106/region = Rect2( 0, 0, 512, 512 )
+106/region = Rect2( 221, 255, 67, 84 )
 106/tile_mode = 0
 106/occluder_offset = Vector2( 256, 256 )
 106/navigation_offset = Vector2( 256, 256 )
@@ -1680,7 +1530,7 @@
 107/texture = ExtResource( 25 )
 107/tex_offset = Vector2( 0, 0 )
 107/modulate = Color( 1, 1, 1, 1 )
-107/region = Rect2( 0, 0, 512, 512 )
+107/region = Rect2( 221, 255, 67, 84 )
 107/tile_mode = 0
 107/occluder_offset = Vector2( 256, 256 )
 107/navigation_offset = Vector2( 256, 256 )
@@ -1694,7 +1544,7 @@
 108/texture = ExtResource( 33 )
 108/tex_offset = Vector2( 0, 0 )
 108/modulate = Color( 1, 1, 1, 1 )
-108/region = Rect2( 0, 0, 512, 512 )
+108/region = Rect2( 221, 238, 67, 101 )
 108/tile_mode = 0
 108/occluder_offset = Vector2( 256, 256 )
 108/navigation_offset = Vector2( 256, 256 )
@@ -1708,7 +1558,7 @@
 109/texture = ExtResource( 4 )
 109/tex_offset = Vector2( 0, 0 )
 109/modulate = Color( 1, 1, 1, 1 )
-109/region = Rect2( 0, 0, 512, 512 )
+109/region = Rect2( 221, 238, 67, 101 )
 109/tile_mode = 0
 109/occluder_offset = Vector2( 256, 256 )
 109/navigation_offset = Vector2( 256, 256 )
@@ -1722,7 +1572,7 @@
 110/texture = ExtResource( 35 )
 110/tex_offset = Vector2( 0, 0 )
 110/modulate = Color( 1, 1, 1, 1 )
-110/region = Rect2( 0, 0, 512, 512 )
+110/region = Rect2( 221, 238, 67, 101 )
 110/tile_mode = 0
 110/occluder_offset = Vector2( 256, 256 )
 110/navigation_offset = Vector2( 256, 256 )
@@ -1736,7 +1586,7 @@
 111/texture = ExtResource( 34 )
 111/tex_offset = Vector2( 0, 0 )
 111/modulate = Color( 1, 1, 1, 1 )
-111/region = Rect2( 0, 0, 512, 512 )
+111/region = Rect2( 221, 238, 67, 101 )
 111/tile_mode = 0
 111/occluder_offset = Vector2( 256, 256 )
 111/navigation_offset = Vector2( 256, 256 )
@@ -1750,7 +1600,7 @@
 112/texture = ExtResource( 48 )
 112/tex_offset = Vector2( 0, 0 )
 112/modulate = Color( 1, 1, 1, 1 )
-112/region = Rect2( 0, 0, 512, 512 )
+112/region = Rect2( 221, 255, 67, 84 )
 112/tile_mode = 0
 112/occluder_offset = Vector2( 256, 256 )
 112/navigation_offset = Vector2( 256, 256 )
@@ -1764,7 +1614,7 @@
 113/texture = ExtResource( 5 )
 113/tex_offset = Vector2( 0, 0 )
 113/modulate = Color( 1, 1, 1, 1 )
-113/region = Rect2( 0, 0, 512, 512 )
+113/region = Rect2( 221, 255, 67, 84 )
 113/tile_mode = 0
 113/occluder_offset = Vector2( 256, 256 )
 113/navigation_offset = Vector2( 256, 256 )
@@ -1778,7 +1628,7 @@
 114/texture = ExtResource( 9 )
 114/tex_offset = Vector2( 0, 0 )
 114/modulate = Color( 1, 1, 1, 1 )
-114/region = Rect2( 0, 0, 512, 512 )
+114/region = Rect2( 221, 255, 67, 84 )
 114/tile_mode = 0
 114/occluder_offset = Vector2( 256, 256 )
 114/navigation_offset = Vector2( 256, 256 )
@@ -1792,7 +1642,7 @@
 115/texture = ExtResource( 27 )
 115/tex_offset = Vector2( 0, 0 )
 115/modulate = Color( 1, 1, 1, 1 )
-115/region = Rect2( 0, 0, 512, 512 )
+115/region = Rect2( 221, 238, 67, 101 )
 115/tile_mode = 0
 115/occluder_offset = Vector2( 256, 256 )
 115/navigation_offset = Vector2( 256, 256 )
@@ -1806,7 +1656,7 @@
 116/texture = ExtResource( 61 )
 116/tex_offset = Vector2( 0, 0 )
 116/modulate = Color( 1, 1, 1, 1 )
-116/region = Rect2( 0, 0, 512, 512 )
+116/region = Rect2( 221, 238, 67, 101 )
 116/tile_mode = 0
 116/occluder_offset = Vector2( 256, 256 )
 116/navigation_offset = Vector2( 256, 256 )
@@ -1820,7 +1670,7 @@
 117/texture = ExtResource( 26 )
 117/tex_offset = Vector2( 0, 0 )
 117/modulate = Color( 1, 1, 1, 1 )
-117/region = Rect2( 0, 0, 512, 512 )
+117/region = Rect2( 238, 238, 50, 101 )
 117/tile_mode = 0
 117/occluder_offset = Vector2( 256, 256 )
 117/navigation_offset = Vector2( 256, 256 )
@@ -1834,7 +1684,7 @@
 118/texture = ExtResource( 40 )
 118/tex_offset = Vector2( 0, 0 )
 118/modulate = Color( 1, 1, 1, 1 )
-118/region = Rect2( 0, 0, 512, 512 )
+118/region = Rect2( 221, 238, 67, 101 )
 118/tile_mode = 0
 118/occluder_offset = Vector2( 256, 256 )
 118/navigation_offset = Vector2( 256, 256 )
@@ -1848,7 +1698,7 @@
 119/texture = ExtResource( 60 )
 119/tex_offset = Vector2( 0, 0 )
 119/modulate = Color( 1, 1, 1, 1 )
-119/region = Rect2( 0, 0, 512, 512 )
+119/region = Rect2( 221, 238, 67, 84 )
 119/tile_mode = 0
 119/occluder_offset = Vector2( 256, 256 )
 119/navigation_offset = Vector2( 256, 256 )
@@ -1862,7 +1712,7 @@
 120/texture = ExtResource( 7 )
 120/tex_offset = Vector2( 0, 0 )
 120/modulate = Color( 1, 1, 1, 1 )
-120/region = Rect2( 0, 0, 512, 512 )
+120/region = Rect2( 221, 255, 67, 84 )
 120/tile_mode = 0
 120/occluder_offset = Vector2( 256, 256 )
 120/navigation_offset = Vector2( 256, 256 )
@@ -1876,7 +1726,7 @@
 121/texture = ExtResource( 63 )
 121/tex_offset = Vector2( 0, 0 )
 121/modulate = Color( 1, 1, 1, 1 )
-121/region = Rect2( 0, 0, 512, 512 )
+121/region = Rect2( 221, 255, 67, 84 )
 121/tile_mode = 0
 121/occluder_offset = Vector2( 256, 256 )
 121/navigation_offset = Vector2( 256, 256 )
@@ -1890,7 +1740,7 @@
 122/texture = ExtResource( 50 )
 122/tex_offset = Vector2( 0, 0 )
 122/modulate = Color( 1, 1, 1, 1 )
-122/region = Rect2( 0, 0, 512, 512 )
+122/region = Rect2( 221, 255, 67, 84 )
 122/tile_mode = 0
 122/occluder_offset = Vector2( 256, 256 )
 122/navigation_offset = Vector2( 256, 256 )
@@ -1904,7 +1754,7 @@
 123/texture = ExtResource( 59 )
 123/tex_offset = Vector2( 0, 0 )
 123/modulate = Color( 1, 1, 1, 1 )
-123/region = Rect2( 0, 0, 512, 512 )
+123/region = Rect2( 221, 255, 67, 84 )
 123/tile_mode = 0
 123/occluder_offset = Vector2( 256, 256 )
 123/navigation_offset = Vector2( 256, 256 )
@@ -1918,7 +1768,7 @@
 124/texture = ExtResource( 21 )
 124/tex_offset = Vector2( 0, 0 )
 124/modulate = Color( 1, 1, 1, 1 )
-124/region = Rect2( 0, 0, 512, 512 )
+124/region = Rect2( 221, 187, 67, 135 )
 124/tile_mode = 0
 124/occluder_offset = Vector2( 256, 256 )
 124/navigation_offset = Vector2( 256, 256 )
@@ -1932,7 +1782,7 @@
 125/texture = ExtResource( 36 )
 125/tex_offset = Vector2( 0, 0 )
 125/modulate = Color( 1, 1, 1, 1 )
-125/region = Rect2( 0, 0, 512, 512 )
+125/region = Rect2( 221, 187, 67, 135 )
 125/tile_mode = 0
 125/occluder_offset = Vector2( 256, 256 )
 125/navigation_offset = Vector2( 256, 256 )
@@ -1946,7 +1796,7 @@
 126/texture = ExtResource( 2 )
 126/tex_offset = Vector2( 0, 0 )
 126/modulate = Color( 1, 1, 1, 1 )
-126/region = Rect2( 0, 0, 512, 512 )
+126/region = Rect2( 221, 187, 67, 135 )
 126/tile_mode = 0
 126/occluder_offset = Vector2( 256, 256 )
 126/navigation_offset = Vector2( 256, 256 )
@@ -1960,7 +1810,7 @@
 127/texture = ExtResource( 37 )
 127/tex_offset = Vector2( 0, 0 )
 127/modulate = Color( 1, 1, 1, 1 )
-127/region = Rect2( 0, 0, 512, 512 )
+127/region = Rect2( 221, 170, 67, 152 )
 127/tile_mode = 0
 127/occluder_offset = Vector2( 256, 256 )
 127/navigation_offset = Vector2( 256, 256 )
@@ -1974,7 +1824,7 @@
 128/texture = ExtResource( 43 )
 128/tex_offset = Vector2( 0, 0 )
 128/modulate = Color( 1, 1, 1, 1 )
-128/region = Rect2( 0, 0, 512, 512 )
+128/region = Rect2( 204, 170, 101, 152 )
 128/tile_mode = 0
 128/occluder_offset = Vector2( 256, 256 )
 128/navigation_offset = Vector2( 256, 256 )
@@ -1988,7 +1838,7 @@
 129/texture = ExtResource( 51 )
 129/tex_offset = Vector2( 0, 0 )
 129/modulate = Color( 1, 1, 1, 1 )
-129/region = Rect2( 0, 0, 512, 512 )
+129/region = Rect2( 221, 170, 84, 152 )
 129/tile_mode = 0
 129/occluder_offset = Vector2( 256, 256 )
 129/navigation_offset = Vector2( 256, 256 )
@@ -2002,7 +1852,7 @@
 130/texture = ExtResource( 31 )
 130/tex_offset = Vector2( 0, 0 )
 130/modulate = Color( 1, 1, 1, 1 )
-130/region = Rect2( 0, 0, 512, 512 )
+130/region = Rect2( 221, 187, 84, 135 )
 130/tile_mode = 0
 130/occluder_offset = Vector2( 256, 256 )
 130/navigation_offset = Vector2( 256, 256 )
@@ -2016,7 +1866,7 @@
 131/texture = ExtResource( 44 )
 131/tex_offset = Vector2( 0, 0 )
 131/modulate = Color( 1, 1, 1, 1 )
-131/region = Rect2( 0, 0, 512, 512 )
+131/region = Rect2( 221, 187, 84, 135 )
 131/tile_mode = 0
 131/occluder_offset = Vector2( 256, 256 )
 131/navigation_offset = Vector2( 256, 256 )
@@ -2030,7 +1880,7 @@
 132/texture = ExtResource( 45 )
 132/tex_offset = Vector2( 0, 0 )
 132/modulate = Color( 1, 1, 1, 1 )
-132/region = Rect2( 0, 0, 512, 512 )
+132/region = Rect2( 221, 204, 84, 118 )
 132/tile_mode = 0
 132/occluder_offset = Vector2( 256, 256 )
 132/navigation_offset = Vector2( 256, 256 )
@@ -2044,7 +1894,7 @@
 133/texture = ExtResource( 16 )
 133/tex_offset = Vector2( 0, 0 )
 133/modulate = Color( 1, 1, 1, 1 )
-133/region = Rect2( 0, 0, 512, 512 )
+133/region = Rect2( 221, 221, 67, 101 )
 133/tile_mode = 0
 133/occluder_offset = Vector2( 256, 256 )
 133/navigation_offset = Vector2( 256, 256 )
@@ -2058,7 +1908,7 @@
 134/texture = ExtResource( 73 )
 134/tex_offset = Vector2( 0, 0 )
 134/modulate = Color( 1, 1, 1, 1 )
-134/region = Rect2( 0, 0, 512, 512 )
+134/region = Rect2( 221, 221, 67, 101 )
 134/tile_mode = 0
 134/occluder_offset = Vector2( 256, 256 )
 134/navigation_offset = Vector2( 256, 256 )
@@ -2072,7 +1922,7 @@
 135/texture = ExtResource( 69 )
 135/tex_offset = Vector2( 0, 0 )
 135/modulate = Color( 1, 1, 1, 1 )
-135/region = Rect2( 0, 0, 512, 512 )
+135/region = Rect2( 221, 221, 67, 101 )
 135/tile_mode = 0
 135/occluder_offset = Vector2( 256, 256 )
 135/navigation_offset = Vector2( 256, 256 )
@@ -2086,7 +1936,7 @@
 136/texture = ExtResource( 70 )
 136/tex_offset = Vector2( 0, 0 )
 136/modulate = Color( 1, 1, 1, 1 )
-136/region = Rect2( 0, 0, 512, 512 )
+136/region = Rect2( 221, 204, 67, 118 )
 136/tile_mode = 0
 136/occluder_offset = Vector2( 256, 256 )
 136/navigation_offset = Vector2( 256, 256 )
@@ -2100,7 +1950,7 @@
 137/texture = ExtResource( 121 )
 137/tex_offset = Vector2( 0, 0 )
 137/modulate = Color( 1, 1, 1, 1 )
-137/region = Rect2( 0, 0, 512, 512 )
+137/region = Rect2( 221, 204, 67, 118 )
 137/tile_mode = 0
 137/occluder_offset = Vector2( 256, 256 )
 137/navigation_offset = Vector2( 256, 256 )
@@ -2114,7 +1964,7 @@
 138/texture = ExtResource( 118 )
 138/tex_offset = Vector2( 0, 0 )
 138/modulate = Color( 1, 1, 1, 1 )
-138/region = Rect2( 0, 0, 512, 512 )
+138/region = Rect2( 221, 204, 67, 118 )
 138/tile_mode = 0
 138/occluder_offset = Vector2( 256, 256 )
 138/navigation_offset = Vector2( 256, 256 )
@@ -2128,7 +1978,7 @@
 139/texture = ExtResource( 85 )
 139/tex_offset = Vector2( 0, 0 )
 139/modulate = Color( 1, 1, 1, 1 )
-139/region = Rect2( 0, 0, 512, 512 )
+139/region = Rect2( 221, 187, 67, 135 )
 139/tile_mode = 0
 139/occluder_offset = Vector2( 256, 256 )
 139/navigation_offset = Vector2( 256, 256 )
@@ -2142,7 +1992,7 @@
 140/texture = ExtResource( 72 )
 140/tex_offset = Vector2( 0, 0 )
 140/modulate = Color( 1, 1, 1, 1 )
-140/region = Rect2( 0, 0, 512, 512 )
+140/region = Rect2( 221, 187, 67, 135 )
 140/tile_mode = 0
 140/occluder_offset = Vector2( 256, 256 )
 140/navigation_offset = Vector2( 256, 256 )
@@ -2156,7 +2006,7 @@
 141/texture = ExtResource( 98 )
 141/tex_offset = Vector2( 0, 0 )
 141/modulate = Color( 1, 1, 1, 1 )
-141/region = Rect2( 0, 0, 512, 512 )
+141/region = Rect2( 221, 238, 67, 101 )
 141/tile_mode = 0
 141/occluder_offset = Vector2( 256, 256 )
 141/navigation_offset = Vector2( 256, 256 )
@@ -2170,7 +2020,7 @@
 142/texture = ExtResource( 75 )
 142/tex_offset = Vector2( 0, 0 )
 142/modulate = Color( 1, 1, 1, 1 )
-142/region = Rect2( 0, 0, 512, 512 )
+142/region = Rect2( 221, 221, 67, 118 )
 142/tile_mode = 0
 142/occluder_offset = Vector2( 256, 256 )
 142/navigation_offset = Vector2( 256, 256 )
@@ -2184,7 +2034,7 @@
 143/texture = ExtResource( 86 )
 143/tex_offset = Vector2( 0, 0 )
 143/modulate = Color( 1, 1, 1, 1 )
-143/region = Rect2( 0, 0, 512, 512 )
+143/region = Rect2( 221, 204, 67, 118 )
 143/tile_mode = 0
 143/occluder_offset = Vector2( 256, 256 )
 143/navigation_offset = Vector2( 256, 256 )
@@ -2198,7 +2048,7 @@
 144/texture = ExtResource( 103 )
 144/tex_offset = Vector2( 0, 0 )
 144/modulate = Color( 1, 1, 1, 1 )
-144/region = Rect2( 0, 0, 512, 512 )
+144/region = Rect2( 221, 221, 67, 101 )
 144/tile_mode = 0
 144/occluder_offset = Vector2( 256, 256 )
 144/navigation_offset = Vector2( 256, 256 )
@@ -2212,7 +2062,7 @@
 145/texture = ExtResource( 107 )
 145/tex_offset = Vector2( 0, 0 )
 145/modulate = Color( 1, 1, 1, 1 )
-145/region = Rect2( 0, 0, 512, 512 )
+145/region = Rect2( 221, 204, 67, 118 )
 145/tile_mode = 0
 145/occluder_offset = Vector2( 256, 256 )
 145/navigation_offset = Vector2( 256, 256 )
@@ -2226,7 +2076,7 @@
 146/texture = ExtResource( 66 )
 146/tex_offset = Vector2( 0, 0 )
 146/modulate = Color( 1, 1, 1, 1 )
-146/region = Rect2( 0, 0, 512, 512 )
+146/region = Rect2( 221, 221, 67, 101 )
 146/tile_mode = 0
 146/occluder_offset = Vector2( 256, 256 )
 146/navigation_offset = Vector2( 256, 256 )
@@ -2240,7 +2090,7 @@
 147/texture = ExtResource( 82 )
 147/tex_offset = Vector2( 0, 0 )
 147/modulate = Color( 1, 1, 1, 1 )
-147/region = Rect2( 0, 0, 512, 512 )
+147/region = Rect2( 221, 204, 67, 118 )
 147/tile_mode = 0
 147/occluder_offset = Vector2( 256, 256 )
 147/navigation_offset = Vector2( 256, 256 )
@@ -2254,7 +2104,7 @@
 148/texture = ExtResource( 111 )
 148/tex_offset = Vector2( 0, 0 )
 148/modulate = Color( 1, 1, 1, 1 )
-148/region = Rect2( 0, 0, 512, 512 )
+148/region = Rect2( 221, 221, 67, 101 )
 148/tile_mode = 0
 148/occluder_offset = Vector2( 256, 256 )
 148/navigation_offset = Vector2( 256, 256 )
@@ -2268,7 +2118,7 @@
 149/texture = ExtResource( 114 )
 149/tex_offset = Vector2( 0, 0 )
 149/modulate = Color( 1, 1, 1, 1 )
-149/region = Rect2( 0, 0, 512, 512 )
+149/region = Rect2( 221, 221, 67, 101 )
 149/tile_mode = 0
 149/occluder_offset = Vector2( 256, 256 )
 149/navigation_offset = Vector2( 256, 256 )
@@ -2282,7 +2132,7 @@
 150/texture = ExtResource( 129 )
 150/tex_offset = Vector2( 0, 0 )
 150/modulate = Color( 1, 1, 1, 1 )
-150/region = Rect2( 0, 0, 512, 512 )
+150/region = Rect2( 221, 238, 67, 84 )
 150/tile_mode = 0
 150/occluder_offset = Vector2( 256, 256 )
 150/navigation_offset = Vector2( 256, 256 )
@@ -2296,7 +2146,7 @@
 151/texture = ExtResource( 130 )
 151/tex_offset = Vector2( 0, 0 )
 151/modulate = Color( 1, 1, 1, 1 )
-151/region = Rect2( 0, 0, 512, 512 )
+151/region = Rect2( 221, 221, 67, 101 )
 151/tile_mode = 0
 151/occluder_offset = Vector2( 256, 256 )
 151/navigation_offset = Vector2( 256, 256 )
@@ -2310,7 +2160,7 @@
 152/texture = ExtResource( 138 )
 152/tex_offset = Vector2( 0, 0 )
 152/modulate = Color( 1, 1, 1, 1 )
-152/region = Rect2( 0, 0, 512, 512 )
+152/region = Rect2( 221, 238, 67, 84 )
 152/tile_mode = 0
 152/occluder_offset = Vector2( 256, 256 )
 152/navigation_offset = Vector2( 256, 256 )
@@ -2324,7 +2174,7 @@
 153/texture = ExtResource( 167 )
 153/tex_offset = Vector2( 0, 0 )
 153/modulate = Color( 1, 1, 1, 1 )
-153/region = Rect2( 0, 0, 512, 512 )
+153/region = Rect2( 221, 187, 67, 135 )
 153/tile_mode = 0
 153/occluder_offset = Vector2( 256, 256 )
 153/navigation_offset = Vector2( 256, 256 )
@@ -2338,7 +2188,7 @@
 154/texture = ExtResource( 177 )
 154/tex_offset = Vector2( 0, 0 )
 154/modulate = Color( 1, 1, 1, 1 )
-154/region = Rect2( 0, 0, 512, 512 )
+154/region = Rect2( 221, 187, 67, 135 )
 154/tile_mode = 0
 154/occluder_offset = Vector2( 256, 256 )
 154/navigation_offset = Vector2( 256, 256 )
@@ -2352,7 +2202,7 @@
 155/texture = ExtResource( 209 )
 155/tex_offset = Vector2( 0, 0 )
 155/modulate = Color( 1, 1, 1, 1 )
-155/region = Rect2( 0, 0, 512, 512 )
+155/region = Rect2( 221, 153, 67, 169 )
 155/tile_mode = 0
 155/occluder_offset = Vector2( 256, 256 )
 155/navigation_offset = Vector2( 256, 256 )
@@ -2366,7 +2216,7 @@
 156/texture = ExtResource( 161 )
 156/tex_offset = Vector2( 0, 0 )
 156/modulate = Color( 1, 1, 1, 1 )
-156/region = Rect2( 0, 0, 512, 512 )
+156/region = Rect2( 221, 153, 67, 169 )
 156/tile_mode = 0
 156/occluder_offset = Vector2( 256, 256 )
 156/navigation_offset = Vector2( 256, 256 )
@@ -2380,7 +2230,7 @@
 157/texture = ExtResource( 217 )
 157/tex_offset = Vector2( 0, 0 )
 157/modulate = Color( 1, 1, 1, 1 )
-157/region = Rect2( 0, 0, 512, 512 )
+157/region = Rect2( 221, 187, 67, 135 )
 157/tile_mode = 0
 157/occluder_offset = Vector2( 256, 256 )
 157/navigation_offset = Vector2( 256, 256 )
@@ -2394,7 +2244,7 @@
 158/texture = ExtResource( 183 )
 158/tex_offset = Vector2( 0, 0 )
 158/modulate = Color( 1, 1, 1, 1 )
-158/region = Rect2( 0, 0, 512, 512 )
+158/region = Rect2( 221, 187, 67, 135 )
 158/tile_mode = 0
 158/occluder_offset = Vector2( 256, 256 )
 158/navigation_offset = Vector2( 256, 256 )
@@ -2408,7 +2258,7 @@
 159/texture = ExtResource( 218 )
 159/tex_offset = Vector2( 0, 0 )
 159/modulate = Color( 1, 1, 1, 1 )
-159/region = Rect2( 0, 0, 512, 512 )
+159/region = Rect2( 221, 153, 67, 169 )
 159/tile_mode = 0
 159/occluder_offset = Vector2( 256, 256 )
 159/navigation_offset = Vector2( 256, 256 )
@@ -2422,7 +2272,7 @@
 160/texture = ExtResource( 158 )
 160/tex_offset = Vector2( 0, 0 )
 160/modulate = Color( 1, 1, 1, 1 )
-160/region = Rect2( 0, 0, 512, 512 )
+160/region = Rect2( 221, 153, 67, 169 )
 160/tile_mode = 0
 160/occluder_offset = Vector2( 256, 256 )
 160/navigation_offset = Vector2( 256, 256 )
@@ -2436,7 +2286,7 @@
 161/texture = ExtResource( 215 )
 161/tex_offset = Vector2( 0, 0 )
 161/modulate = Color( 1, 1, 1, 1 )
-161/region = Rect2( 0, 0, 512, 512 )
+161/region = Rect2( 221, 204, 67, 118 )
 161/tile_mode = 0
 161/occluder_offset = Vector2( 256, 256 )
 161/navigation_offset = Vector2( 256, 256 )
@@ -2450,7 +2300,7 @@
 162/texture = ExtResource( 157 )
 162/tex_offset = Vector2( 0, 0 )
 162/modulate = Color( 1, 1, 1, 1 )
-162/region = Rect2( 0, 0, 512, 512 )
+162/region = Rect2( 221, 204, 67, 118 )
 162/tile_mode = 0
 162/occluder_offset = Vector2( 256, 256 )
 162/navigation_offset = Vector2( 256, 256 )
@@ -2464,7 +2314,7 @@
 163/texture = ExtResource( 165 )
 163/tex_offset = Vector2( 0, 0 )
 163/modulate = Color( 1, 1, 1, 1 )
-163/region = Rect2( 0, 0, 512, 512 )
+163/region = Rect2( 221, 204, 67, 118 )
 163/tile_mode = 0
 163/occluder_offset = Vector2( 256, 256 )
 163/navigation_offset = Vector2( 256, 256 )
@@ -2478,7 +2328,7 @@
 164/texture = ExtResource( 216 )
 164/tex_offset = Vector2( 0, 0 )
 164/modulate = Color( 1, 1, 1, 1 )
-164/region = Rect2( 0, 0, 512, 512 )
+164/region = Rect2( 238, 187, 50, 135 )
 164/tile_mode = 0
 164/occluder_offset = Vector2( 256, 256 )
 164/navigation_offset = Vector2( 256, 256 )
@@ -2492,7 +2342,7 @@
 165/texture = ExtResource( 189 )
 165/tex_offset = Vector2( 0, 0 )
 165/modulate = Color( 1, 1, 1, 1 )
-165/region = Rect2( 0, 0, 512, 512 )
+165/region = Rect2( 238, 187, 50, 135 )
 165/tile_mode = 0
 165/occluder_offset = Vector2( 256, 256 )
 165/navigation_offset = Vector2( 256, 256 )
@@ -2506,7 +2356,7 @@
 166/texture = ExtResource( 213 )
 166/tex_offset = Vector2( 0, 0 )
 166/modulate = Color( 1, 1, 1, 1 )
-166/region = Rect2( 0, 0, 512, 512 )
+166/region = Rect2( 238, 187, 50, 135 )
 166/tile_mode = 0
 166/occluder_offset = Vector2( 256, 256 )
 166/navigation_offset = Vector2( 256, 256 )
@@ -2520,7 +2370,7 @@
 167/texture = ExtResource( 191 )
 167/tex_offset = Vector2( 0, 0 )
 167/modulate = Color( 1, 1, 1, 1 )
-167/region = Rect2( 0, 0, 512, 512 )
+167/region = Rect2( 238, 221, 50, 101 )
 167/tile_mode = 0
 167/occluder_offset = Vector2( 256, 256 )
 167/navigation_offset = Vector2( 256, 256 )
@@ -2534,7 +2384,7 @@
 168/texture = ExtResource( 203 )
 168/tex_offset = Vector2( 0, 0 )
 168/modulate = Color( 1, 1, 1, 1 )
-168/region = Rect2( 0, 0, 512, 512 )
+168/region = Rect2( 238, 221, 50, 101 )
 168/tile_mode = 0
 168/occluder_offset = Vector2( 256, 256 )
 168/navigation_offset = Vector2( 256, 256 )
@@ -2548,7 +2398,7 @@
 169/texture = ExtResource( 207 )
 169/tex_offset = Vector2( 0, 0 )
 169/modulate = Color( 1, 1, 1, 1 )
-169/region = Rect2( 0, 0, 512, 512 )
+169/region = Rect2( 238, 221, 50, 101 )
 169/tile_mode = 0
 169/occluder_offset = Vector2( 256, 256 )
 169/navigation_offset = Vector2( 256, 256 )
@@ -2562,7 +2412,7 @@
 170/texture = ExtResource( 219 )
 170/tex_offset = Vector2( 0, 0 )
 170/modulate = Color( 1, 1, 1, 1 )
-170/region = Rect2( 0, 0, 512, 512 )
+170/region = Rect2( 238, 170, 50, 152 )
 170/tile_mode = 0
 170/occluder_offset = Vector2( 256, 256 )
 170/navigation_offset = Vector2( 256, 256 )
@@ -2576,7 +2426,7 @@
 171/texture = ExtResource( 229 )
 171/tex_offset = Vector2( 0, 0 )
 171/modulate = Color( 1, 1, 1, 1 )
-171/region = Rect2( 0, 0, 512, 512 )
+171/region = Rect2( 238, 170, 50, 152 )
 171/tile_mode = 0
 171/occluder_offset = Vector2( 256, 256 )
 171/navigation_offset = Vector2( 256, 256 )
@@ -2590,7 +2440,7 @@
 172/texture = ExtResource( 226 )
 172/tex_offset = Vector2( 0, 0 )
 172/modulate = Color( 1, 1, 1, 1 )
-172/region = Rect2( 0, 0, 512, 512 )
+172/region = Rect2( 238, 170, 50, 152 )
 172/tile_mode = 0
 172/occluder_offset = Vector2( 256, 256 )
 172/navigation_offset = Vector2( 256, 256 )
@@ -2604,7 +2454,7 @@
 173/texture = ExtResource( 148 )
 173/tex_offset = Vector2( 0, 0 )
 173/modulate = Color( 1, 1, 1, 1 )
-173/region = Rect2( 0, 0, 512, 512 )
+173/region = Rect2( 221, 187, 67, 135 )
 173/tile_mode = 0
 173/occluder_offset = Vector2( 256, 256 )
 173/navigation_offset = Vector2( 256, 256 )
@@ -2618,7 +2468,7 @@
 174/texture = ExtResource( 150 )
 174/tex_offset = Vector2( 0, 0 )
 174/modulate = Color( 1, 1, 1, 1 )
-174/region = Rect2( 0, 0, 512, 512 )
+174/region = Rect2( 221, 187, 67, 135 )
 174/tile_mode = 0
 174/occluder_offset = Vector2( 256, 256 )
 174/navigation_offset = Vector2( 256, 256 )
@@ -2632,7 +2482,7 @@
 175/texture = ExtResource( 147 )
 175/tex_offset = Vector2( 0, 0 )
 175/modulate = Color( 1, 1, 1, 1 )
-175/region = Rect2( 0, 0, 512, 512 )
+175/region = Rect2( 221, 187, 67, 135 )
 175/tile_mode = 0
 175/occluder_offset = Vector2( 256, 256 )
 175/navigation_offset = Vector2( 256, 256 )
