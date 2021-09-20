@@ -914,9 +914,9 @@
 55/shape_one_way_margin = 0.0
 55/shapes = [  ]
 55/z_index = 0
-56/name = "cliff_grass_bottom"
+56/name = "cliff_grass_bottom_thin"
 56/texture = ExtResource( 51 )
-56/tex_offset = Vector2( 0, 0 )
+56/tex_offset = Vector2( 0, 16 )
 56/modulate = Color( 1, 1, 1, 1 )
 56/region = Rect2( 0, 0, 133, 83 )
 56/tile_mode = 0
@@ -1112,7 +1112,7 @@
 69/z_index = 0
 70/name = "cliff_grass_bottom"
 70/texture = ExtResource( 26 )
-70/tex_offset = Vector2( 0, 0 )
+70/tex_offset = Vector2( 0, 16 )
 70/modulate = Color( 1, 1, 1, 1 )
 70/region = Rect2( 0, 0, 132, 83 )
 70/tile_mode = 0
