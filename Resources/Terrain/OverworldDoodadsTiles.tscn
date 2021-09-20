@@ -1,35 +1,18 @@
-[gd_scene load_steps=451 format=2]
+[gd_scene load_steps=177 format=2]
 
-[ext_resource path="res://Resources/Isometric/Doodads/tree_default_fall_SE.png" type="Texture" id=1]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_cone_NE.png" type="Texture" id=2]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_NW.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallG_NW.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallH_NW.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallF_NW.png" type="Texture" id=6]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallJ_NE.png" type="Texture" id=7]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_cone_dark_SW.png" type="Texture" id=8]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallH_SE.png" type="Texture" id=9]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_cone_fall_NW.png" type="Texture" id=10]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_dark_NW.png" type="Texture" id=11]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_cone_SW.png" type="Texture" id=12]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_cone_fall_SE.png" type="Texture" id=13]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_dark_SE.png" type="Texture" id=14]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_fall_NW.png" type="Texture" id=15]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_fat_darkh_NE.png" type="Texture" id=16]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallD_SW.png" type="Texture" id=17]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallE_SE.png" type="Texture" id=18]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_cone_dark_SE.png" type="Texture" id=19]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_SE.png" type="Texture" id=20]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_cone_dark_NE.png" type="Texture" id=21]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_fat_darkh_NW.png" type="Texture" id=22]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_fat_darkh_SE.png" type="Texture" id=23]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_default_fall_NW.png" type="Texture" id=24]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallF_SW.png" type="Texture" id=25]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallI_NW.png" type="Texture" id=26]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallH_SW.png" type="Texture" id=27]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_cone_fall_SW.png" type="Texture" id=28]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_cone_SE.png" type="Texture" id=29]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_default_dark_NW.png" type="Texture" id=30]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_dark_NE.png" type="Texture" id=31]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallE_NW.png" type="Texture" id=32]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallG_NE.png" type="Texture" id=33]
@@ -37,200 +20,63 @@
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallG_SE.png" type="Texture" id=35]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_cone_fall_NE.png" type="Texture" id=36]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_default_dark_NE.png" type="Texture" id=37]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_default_SW.png" type="Texture" id=38]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallE_NE.png" type="Texture" id=39]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallI_SE.png" type="Texture" id=40]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_cone_dark_NW.png" type="Texture" id=41]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_cone_NW.png" type="Texture" id=42]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_default_fall_NE.png" type="Texture" id=43]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_fall_NE.png" type="Texture" id=44]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_NE.png" type="Texture" id=45]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallE_SW.png" type="Texture" id=46]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallF_NE.png" type="Texture" id=47]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallH_NE.png" type="Texture" id=48]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_default_fall_SW.png" type="Texture" id=49]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallJ_SE.png" type="Texture" id=50]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_default_NE.png" type="Texture" id=51]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_default_NW.png" type="Texture" id=52]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_default_SE.png" type="Texture" id=53]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_default_dark_SW.png" type="Texture" id=54]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_dark_SW.png" type="Texture" id=55]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_fall_SE.png" type="Texture" id=56]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_fall_SW.png" type="Texture" id=57]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_detailed_SW.png" type="Texture" id=58]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallJ_SW.png" type="Texture" id=59]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallI_SW.png" type="Texture" id=60]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallI_NE.png" type="Texture" id=61]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_default_dark_SE.png" type="Texture" id=62]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallJ_NW.png" type="Texture" id=63]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_tallF_SE.png" type="Texture" id=64]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundE_SE.png" type="Texture" id=65]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundD_NE.png" type="Texture" id=66]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundA_SW.png" type="Texture" id=67]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_oak_dark_SE.png" type="Texture" id=68]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_fat_NE.png" type="Texture" id=69]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_oak_dark_NE.png" type="Texture" id=70]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineDefaultB_SE.png" type="Texture" id=71]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineDefaultB_NE.png" type="Texture" id=72]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_fat_fall_NE.png" type="Texture" id=73]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineGroundA_SW.png" type="Texture" id=74]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineGroundB_NE.png" type="Texture" id=75]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_oak_SW.png" type="Texture" id=76]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundA_SE.png" type="Texture" id=77]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundB_SW.png" type="Texture" id=78]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundC_NW.png" type="Texture" id=79]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundD_SE.png" type="Texture" id=80]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineDefaultA_SW.png" type="Texture" id=81]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundE_NE.png" type="Texture" id=82]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallA_NW.png" type="Texture" id=83]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_oak_dark_SW.png" type="Texture" id=84]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineDefaultA_NE.png" type="Texture" id=85]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundA_NE.png" type="Texture" id=86]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_fat_SW.png" type="Texture" id=87]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundD_SW.png" type="Texture" id=88]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundC_SE.png" type="Texture" id=89]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_oak_SE.png" type="Texture" id=90]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_fat_SE.png" type="Texture" id=91]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_oak_dark_NW.png" type="Texture" id=92]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_oak_fall_NW.png" type="Texture" id=93]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineDefaultA_NW.png" type="Texture" id=94]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_fat_fall_SW.png" type="Texture" id=95]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineDefaultA_SE.png" type="Texture" id=96]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineDefaultB_SW.png" type="Texture" id=97]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineGroundA_NE.png" type="Texture" id=98]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineGroundB_SE.png" type="Texture" id=99]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineGroundB_SW.png" type="Texture" id=100]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_oak_NW.png" type="Texture" id=101]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineGroundA_SE.png" type="Texture" id=102]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundB_NE.png" type="Texture" id=103]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundB_NW.png" type="Texture" id=104]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundC_SW.png" type="Texture" id=105]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundD_NW.png" type="Texture" id=106]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundC_NE.png" type="Texture" id=107]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_fat_NW.png" type="Texture" id=108]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundA_NW.png" type="Texture" id=109]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundB_SE.png" type="Texture" id=110]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundF_NE.png" type="Texture" id=111]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundF_NW.png" type="Texture" id=112]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundF_SE.png" type="Texture" id=113]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallA_NE.png" type="Texture" id=114]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_fat_fall_SE.png" type="Texture" id=115]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineGroundB_NW.png" type="Texture" id=116]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallA_SE.png" type="Texture" id=117]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_oak_NE.png" type="Texture" id=118]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_fat_darkh_SW.png" type="Texture" id=119]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_fat_fall_NW.png" type="Texture" id=120]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_oak_fall_SE.png" type="Texture" id=121]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_oak_fall_NE.png" type="Texture" id=122]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineDefaultB_NW.png" type="Texture" id=123]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineGroundA_NW.png" type="Texture" id=124]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_oak_fall_SW.png" type="Texture" id=125]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundE_SW.png" type="Texture" id=126]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundF_SW.png" type="Texture" id=127]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineRoundE_NW.png" type="Texture" id=128]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallB_NE.png" type="Texture" id=129]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallC_NE.png" type="Texture" id=130]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallB_SW.png" type="Texture" id=131]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallD_SW.png" type="Texture" id=132]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallC_NW.png" type="Texture" id=133]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallC_SE.png" type="Texture" id=134]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallA_SW.png" type="Texture" id=135]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallC_SW.png" type="Texture" id=136]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallB_SE.png" type="Texture" id=137]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallD_NE.png" type="Texture" id=138]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallB_NW.png" type="Texture" id=139]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallD_NW.png" type="Texture" id=140]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineSmallD_SE.png" type="Texture" id=141]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_thin_dark_NW.png" type="Texture" id=142]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_thin_fall_NW.png" type="Texture" id=143]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_thin_fall_SE.png" type="Texture" id=144]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_tall_SW.png" type="Texture" id=145]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_thin_dark_SE.png" type="Texture" id=146]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_thin_NE.png" type="Texture" id=147]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_thin_dark_NE.png" type="Texture" id=148]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_thin_dark_SW.png" type="Texture" id=149]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_thin_fall_NE.png" type="Texture" id=150]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_thin_SW.png" type="Texture" id=151]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_thin_NW.png" type="Texture" id=152]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_thin_fall_SW.png" type="Texture" id=153]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_thin_SE.png" type="Texture" id=154]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallA_detailed_SE.png" type="Texture" id=155]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_dark_SE.png" type="Texture" id=156]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_fall_NE.png" type="Texture" id=157]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallD_NE.png" type="Texture" id=158]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallD_SW.png" type="Texture" id=159]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_simple_NW.png" type="Texture" id=160]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallB_NE.png" type="Texture" id=161]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallC_SW.png" type="Texture" id=162]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallD_NW.png" type="Texture" id=163]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_fall_SW.png" type="Texture" id=164]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_NE.png" type="Texture" id=165]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallB_detailed_NW.png" type="Texture" id=166]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallA_detailed_NE.png" type="Texture" id=167]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallC_NW.png" type="Texture" id=168]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallC_detailed_NW.png" type="Texture" id=169]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallC_detailed_SW.png" type="Texture" id=170]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallA_SW.png" type="Texture" id=171]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallD_SE.png" type="Texture" id=172]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_fall_NW.png" type="Texture" id=173]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_NW.png" type="Texture" id=174]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_simple_dark_NW.png" type="Texture" id=175]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallB_SE.png" type="Texture" id=176]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallA_NE.png" type="Texture" id=177]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallB_SW.png" type="Texture" id=178]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallA_detailed_NW.png" type="Texture" id=179]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallA_NW.png" type="Texture" id=180]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallB_detailed_SE.png" type="Texture" id=181]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallB_NW.png" type="Texture" id=182]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallC_NE.png" type="Texture" id=183]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallC_SE.png" type="Texture" id=184]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallA_SE.png" type="Texture" id=185]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_simple_dark_SE.png" type="Texture" id=186]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallD_detailed_NW.png" type="Texture" id=187]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_simple_dark_SW.png" type="Texture" id=188]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_simple_fall_NE.png" type="Texture" id=189]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_simple_SW.png" type="Texture" id=190]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_small_dark_NE.png" type="Texture" id=191]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallB_detailed_SW.png" type="Texture" id=192]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallC_detailed_SE.png" type="Texture" id=193]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallD_detailed_SW.png" type="Texture" id=194]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_simple_fall_NW.png" type="Texture" id=195]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_simple_fall_SE.png" type="Texture" id=196]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_small_dark_NW.png" type="Texture" id=197]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_small_dark_SE.png" type="Texture" id=198]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_fall_SE.png" type="Texture" id=199]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallD_detailed_SE.png" type="Texture" id=200]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_simple_fall_SW.png" type="Texture" id=201]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_small_dark_SW.png" type="Texture" id=202]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_small_fall_NE.png" type="Texture" id=203]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_dark_SW.png" type="Texture" id=204]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_small_fall_NW.png" type="Texture" id=205]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_small_fall_SW.png" type="Texture" id=206]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_small_NE.png" type="Texture" id=207]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_dark_NW.png" type="Texture" id=208]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallB_detailed_NE.png" type="Texture" id=209]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_small_fall_SE.png" type="Texture" id=210]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_small_NW.png" type="Texture" id=211]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallA_detailed_SW.png" type="Texture" id=212]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_simple_NE.png" type="Texture" id=213]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_simple_SE.png" type="Texture" id=214]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_plateau_dark_NE.png" type="Texture" id=215]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_simple_dark_NE.png" type="Texture" id=216]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallC_detailed_NE.png" type="Texture" id=217]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_pineTallD_detailed_NE.png" type="Texture" id=218]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_tall_dark_NE.png" type="Texture" id=219]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_tall_dark_NW.png" type="Texture" id=220]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_tall_fall_NW.png" type="Texture" id=221]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_tall_fall_SE.png" type="Texture" id=222]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_tall_fall_SW.png" type="Texture" id=223]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_tall_dark_SW.png" type="Texture" id=224]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_small_SW.png" type="Texture" id=225]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_tall_NE.png" type="Texture" id=226]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_tall_SE.png" type="Texture" id=227]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_tall_NW.png" type="Texture" id=228]
 [ext_resource path="res://Resources/Isometric/Doodads/tree_tall_fall_NE.png" type="Texture" id=229]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_small_SE.png" type="Texture" id=230]
-[ext_resource path="res://Resources/Isometric/Doodads/tree_tall_dark_SE.png" type="Texture" id=231]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeF_SW.png" type="Texture" id=232]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallB_SW.png" type="Texture" id=233]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallD_NE.png" type="Texture" id=234]
@@ -280,130 +126,10 @@
 [ext_resource path="res://Resources/Isometric/Doodads/stone_smallG_NE.png" type="Texture" id=278]
 [ext_resource path="res://Resources/Isometric/Doodads/platform_stone_NW.png" type="Texture" id=279]
 [ext_resource path="res://Resources/Isometric/Doodads/platform_stone_SW.png" type="Texture" id=280]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeE_SW.png" type="Texture" id=281]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallA_NW.png" type="Texture" id=282]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeF_NW.png" type="Texture" id=283]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallA_SW.png" type="Texture" id=284]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatB_SE.png" type="Texture" id=285]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatB_SW.png" type="Texture" id=286]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeA_NE.png" type="Texture" id=287]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatC_SE.png" type="Texture" id=288]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatC_NE.png" type="Texture" id=289]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeB_SE.png" type="Texture" id=290]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeD_SW.png" type="Texture" id=291]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatC_NW.png" type="Texture" id=292]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatC_SW.png" type="Texture" id=293]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallF_NE.png" type="Texture" id=294]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeE_SE.png" type="Texture" id=295]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallF_NW.png" type="Texture" id=296]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeD_NW.png" type="Texture" id=297]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeC_NE.png" type="Texture" id=298]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallA_NE.png" type="Texture" id=299]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeD_SE.png" type="Texture" id=300]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallB_NE.png" type="Texture" id=301]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallC_SW.png" type="Texture" id=302]
 [ext_resource path="res://Resources/Isometric/Doodads/platform_stone_NE.png" type="Texture" id=303]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeB_NE.png" type="Texture" id=304]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeF_NE.png" type="Texture" id=305]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallB_SE.png" type="Texture" id=306]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallB_SW.png" type="Texture" id=307]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeF_SW.png" type="Texture" id=308]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeE_NW.png" type="Texture" id=309]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallC_SE.png" type="Texture" id=310]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallD_NE.png" type="Texture" id=311]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeB_NW.png" type="Texture" id=312]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeB_SW.png" type="Texture" id=313]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallA_SE.png" type="Texture" id=314]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallD_NW.png" type="Texture" id=315]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallD_SE.png" type="Texture" id=316]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeE_NE.png" type="Texture" id=317]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallE_NW.png" type="Texture" id=318]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeA_SE.png" type="Texture" id=319]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallE_SW.png" type="Texture" id=320]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatA_NE.png" type="Texture" id=321]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeA_NW.png" type="Texture" id=322]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeF_SE.png" type="Texture" id=323]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatA_NW.png" type="Texture" id=324]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatA_SE.png" type="Texture" id=325]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatA_SW.png" type="Texture" id=326]
 [ext_resource path="res://Resources/Isometric/Doodads/platform_stone_SE.png" type="Texture" id=327]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeA_SW.png" type="Texture" id=328]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallC_NE.png" type="Texture" id=329]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeC_SE.png" type="Texture" id=330]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatB_NE.png" type="Texture" id=331]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallB_NW.png" type="Texture" id=332]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallD_SW.png" type="Texture" id=333]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallE_NE.png" type="Texture" id=334]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallFlatB_NW.png" type="Texture" id=335]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeC_NW.png" type="Texture" id=336]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeC_SW.png" type="Texture" id=337]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallE_SE.png" type="Texture" id=338]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_largeD_NE.png" type="Texture" id=339]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallC_NW.png" type="Texture" id=340]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallH_NE.png" type="Texture" id=341]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallH_NW.png" type="Texture" id=342]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallI_SE.png" type="Texture" id=343]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallA_NE.png" type="Texture" id=344]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallA_SW.png" type="Texture" id=345]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallB_NE.png" type="Texture" id=346]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallG_SE.png" type="Texture" id=347]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallJ_SW.png" type="Texture" id=348]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallG_NE.png" type="Texture" id=349]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeA_NE.png" type="Texture" id=350]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeA_NW.png" type="Texture" id=351]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallTopB_NW.png" type="Texture" id=352]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallC_NE.png" type="Texture" id=353]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallTopB_SW.png" type="Texture" id=354]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallH_NE.png" type="Texture" id=355]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallG_NE.png" type="Texture" id=356]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallC_NW.png" type="Texture" id=357]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallD_SE.png" type="Texture" id=358]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallA_NW.png" type="Texture" id=359]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallI_NE.png" type="Texture" id=360]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallI_NW.png" type="Texture" id=361]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallD_NE.png" type="Texture" id=362]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallTopA_NE.png" type="Texture" id=363]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallI_NE.png" type="Texture" id=364]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallA_SE.png" type="Texture" id=365]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallC_SW.png" type="Texture" id=366]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallE_NE.png" type="Texture" id=367]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallJ_NE.png" type="Texture" id=368]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallH_SW.png" type="Texture" id=369]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallJ_NW.png" type="Texture" id=370]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallB_SW.png" type="Texture" id=371]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallI_SW.png" type="Texture" id=372]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallF_NE.png" type="Texture" id=373]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallJ_SE.png" type="Texture" id=374]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallF_SE.png" type="Texture" id=375]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallD_NW.png" type="Texture" id=376]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallF_SW.png" type="Texture" id=377]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallTopB_SE.png" type="Texture" id=378]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallB_SE.png" type="Texture" id=379]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallH_SE.png" type="Texture" id=380]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallE_NW.png" type="Texture" id=381]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallF_SE.png" type="Texture" id=382]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallE_SE.png" type="Texture" id=383]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallE_SW.png" type="Texture" id=384]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallG_SW.png" type="Texture" id=385]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallH_SW.png" type="Texture" id=386]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallTopA_NW.png" type="Texture" id=387]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallF_NW.png" type="Texture" id=388]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallTopA_SW.png" type="Texture" id=389]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallTopA_SE.png" type="Texture" id=390]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallG_SE.png" type="Texture" id=391]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallG_NW.png" type="Texture" id=392]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallG_SW.png" type="Texture" id=393]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallH_NW.png" type="Texture" id=394]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallH_SE.png" type="Texture" id=395]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallG_NW.png" type="Texture" id=396]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_smallTopB_NE.png" type="Texture" id=397]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallI_NW.png" type="Texture" id=398]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallI_SE.png" type="Texture" id=399]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallC_SE.png" type="Texture" id=400]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallF_SW.png" type="Texture" id=401]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallI_SW.png" type="Texture" id=402]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallB_NW.png" type="Texture" id=403]
-[ext_resource path="res://Resources/Isometric/Doodads/rock_tallD_SW.png" type="Texture" id=404]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeB_SW.png" type="Texture" id=405]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeD_SE.png" type="Texture" id=406]
 [ext_resource path="res://Resources/Isometric/Doodads/stone_largeA_SE.png" type="Texture" id=407]
@@ -454,11 +180,11 @@
 [node name="OverworldDoodadsTiles" type="Node2D"]
 
 [node name="platform_stone_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 600, 269.983 )
 texture = ExtResource( 303 )
 
 [node name="platform_stone_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 300, 269.983 )
 texture = ExtResource( 279 )
 
 [node name="platform_stone_SE" type="Sprite" parent="."]
@@ -468,486 +194,6 @@ texture = ExtResource( 327 )
 [node name="platform_stone_SW" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 280 )
-
-[node name="rock_largeA_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 287 )
-
-[node name="rock_largeA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 322 )
-
-[node name="rock_largeA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 319 )
-
-[node name="rock_largeA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 328 )
-
-[node name="rock_largeB_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 304 )
-
-[node name="rock_largeB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 312 )
-
-[node name="rock_largeB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 290 )
-
-[node name="rock_largeB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 313 )
-
-[node name="rock_largeC_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 298 )
-
-[node name="rock_largeC_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 336 )
-
-[node name="rock_largeC_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 330 )
-
-[node name="rock_largeC_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 337 )
-
-[node name="rock_largeD_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 339 )
-
-[node name="rock_largeD_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 297 )
-
-[node name="rock_largeD_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 300 )
-
-[node name="rock_largeD_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 291 )
-
-[node name="rock_largeE_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 317 )
-
-[node name="rock_largeE_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 309 )
-
-[node name="rock_largeE_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 295 )
-
-[node name="rock_largeE_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 281 )
-
-[node name="rock_largeF_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 305 )
-
-[node name="rock_largeF_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 283 )
-
-[node name="rock_largeF_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 323 )
-
-[node name="rock_largeF_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 308 )
-
-[node name="rock_smallA_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 299 )
-
-[node name="rock_smallA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 282 )
-
-[node name="rock_smallA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 314 )
-
-[node name="rock_smallA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 284 )
-
-[node name="rock_smallB_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 301 )
-
-[node name="rock_smallB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 332 )
-
-[node name="rock_smallB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 306 )
-
-[node name="rock_smallB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 307 )
-
-[node name="rock_smallC_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 329 )
-
-[node name="rock_smallC_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 340 )
-
-[node name="rock_smallC_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 310 )
-
-[node name="rock_smallC_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 302 )
-
-[node name="rock_smallD_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 311 )
-
-[node name="rock_smallD_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 315 )
-
-[node name="rock_smallD_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 316 )
-
-[node name="rock_smallD_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 333 )
-
-[node name="rock_smallE_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 334 )
-
-[node name="rock_smallE_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 318 )
-
-[node name="rock_smallE_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 338 )
-
-[node name="rock_smallE_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 320 )
-
-[node name="rock_smallFlatA_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 321 )
-
-[node name="rock_smallFlatA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 324 )
-
-[node name="rock_smallFlatA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 325 )
-
-[node name="rock_smallFlatA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 326 )
-
-[node name="rock_smallFlatB_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 331 )
-
-[node name="rock_smallFlatB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 335 )
-
-[node name="rock_smallFlatB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 285 )
-
-[node name="rock_smallFlatB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 286 )
-
-[node name="rock_smallFlatC_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 289 )
-
-[node name="rock_smallFlatC_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 292 )
-
-[node name="rock_smallFlatC_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 288 )
-
-[node name="rock_smallFlatC_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 293 )
-
-[node name="rock_smallF_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 294 )
-
-[node name="rock_smallF_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 296 )
-
-[node name="rock_smallF_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 382 )
-
-[node name="rock_smallF_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 377 )
-
-[node name="rock_smallG_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 356 )
-
-[node name="rock_smallG_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 396 )
-
-[node name="rock_smallG_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 391 )
-
-[node name="rock_smallG_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 385 )
-
-[node name="rock_smallH_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 341 )
-
-[node name="rock_smallH_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 342 )
-
-[node name="rock_smallH_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 380 )
-
-[node name="rock_smallH_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 386 )
-
-[node name="rock_smallI_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 364 )
-
-[node name="rock_smallI_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 361 )
-
-[node name="rock_smallI_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 343 )
-
-[node name="rock_smallI_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 372 )
-
-[node name="rock_smallTopA_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 363 )
-
-[node name="rock_smallTopA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 387 )
-
-[node name="rock_smallTopA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 390 )
-
-[node name="rock_smallTopA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 389 )
-
-[node name="rock_smallTopB_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 397 )
-
-[node name="rock_smallTopB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 352 )
-
-[node name="rock_smallTopB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 378 )
-
-[node name="rock_smallTopB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 354 )
-
-[node name="rock_tallA_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 344 )
-
-[node name="rock_tallA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 359 )
-
-[node name="rock_tallA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 365 )
-
-[node name="rock_tallA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 345 )
-
-[node name="rock_tallB_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 346 )
-
-[node name="rock_tallB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 403 )
-
-[node name="rock_tallB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 379 )
-
-[node name="rock_tallB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 371 )
-
-[node name="rock_tallC_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 353 )
-
-[node name="rock_tallC_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 357 )
-
-[node name="rock_tallC_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 400 )
-
-[node name="rock_tallC_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 366 )
-
-[node name="rock_tallD_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 362 )
-
-[node name="rock_tallD_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 376 )
-
-[node name="rock_tallD_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 358 )
-
-[node name="rock_tallD_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 404 )
-
-[node name="rock_tallE_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 367 )
-
-[node name="rock_tallE_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 381 )
-
-[node name="rock_tallE_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 383 )
-
-[node name="rock_tallE_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 384 )
-
-[node name="rock_tallF_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 373 )
-
-[node name="rock_tallF_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 388 )
-
-[node name="rock_tallF_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 375 )
-
-[node name="rock_tallF_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 401 )
-
-[node name="rock_tallG_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 349 )
-
-[node name="rock_tallG_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 392 )
-
-[node name="rock_tallG_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 347 )
-
-[node name="rock_tallG_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 393 )
-
-[node name="rock_tallH_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 355 )
-
-[node name="rock_tallH_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 394 )
-
-[node name="rock_tallH_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 395 )
-
-[node name="rock_tallH_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 369 )
-
-[node name="rock_tallI_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 360 )
-
-[node name="rock_tallI_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 398 )
-
-[node name="rock_tallI_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 399 )
-
-[node name="rock_tallI_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 402 )
-
-[node name="rock_tallJ_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 368 )
-
-[node name="rock_tallJ_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 370 )
-
-[node name="rock_tallJ_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 374 )
-
-[node name="rock_tallJ_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 348 )
 
 [node name="stone_largeA_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
@@ -1433,822 +679,206 @@ texture = ExtResource( 59 )
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 21 )
 
-[node name="tree_cone_dark_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 41 )
-
-[node name="tree_cone_dark_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 19 )
-
-[node name="tree_cone_dark_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 8 )
-
 [node name="tree_cone_fall_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 36 )
-
-[node name="tree_cone_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 10 )
-
-[node name="tree_cone_fall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 13 )
-
-[node name="tree_cone_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 28 )
 
 [node name="tree_cone_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 2 )
 
-[node name="tree_cone_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 42 )
-
-[node name="tree_cone_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 29 )
-
-[node name="tree_cone_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 12 )
-
 [node name="tree_default_dark_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 300, 269.983 )
 texture = ExtResource( 37 )
-
-[node name="tree_default_dark_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 30 )
-
-[node name="tree_default_dark_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 62 )
-
-[node name="tree_default_dark_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 54 )
 
 [node name="tree_default_fall_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 43 )
 
-[node name="tree_default_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 24 )
-
-[node name="tree_default_fall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 1 )
-
-[node name="tree_default_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 49 )
-
 [node name="tree_default_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 51 )
-
-[node name="tree_default_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 52 )
-
-[node name="tree_default_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 53 )
-
-[node name="tree_default_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 38 )
 
 [node name="tree_detailed_dark_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 31 )
 
-[node name="tree_detailed_dark_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 11 )
-
-[node name="tree_detailed_dark_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 14 )
-
-[node name="tree_detailed_dark_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 55 )
-
 [node name="tree_detailed_fall_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 44 )
-
-[node name="tree_detailed_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 15 )
-
-[node name="tree_detailed_fall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 56 )
-
-[node name="tree_detailed_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 57 )
 
 [node name="tree_detailed_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 45 )
 
-[node name="tree_detailed_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 3 )
-
-[node name="tree_detailed_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 20 )
-
-[node name="tree_detailed_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 58 )
-
 [node name="tree_fat_darkh_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 16 )
-
-[node name="tree_fat_darkh_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 22 )
-
-[node name="tree_fat_darkh_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 23 )
-
-[node name="tree_fat_darkh_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 119 )
 
 [node name="tree_fat_fall_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 73 )
 
-[node name="tree_fat_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 120 )
-
-[node name="tree_fat_fall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 115 )
-
-[node name="tree_fat_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 95 )
-
 [node name="tree_fat_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 69 )
-
-[node name="tree_fat_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 108 )
-
-[node name="tree_fat_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 91 )
-
-[node name="tree_fat_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 87 )
 
 [node name="tree_oak_dark_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 70 )
 
-[node name="tree_oak_dark_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 92 )
-
-[node name="tree_oak_dark_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 68 )
-
-[node name="tree_oak_dark_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 84 )
-
-[node name="tree_oak_fall_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 122 )
-
-[node name="tree_oak_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 93 )
-
 [node name="tree_oak_fall_SE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 121 )
 
-[node name="tree_oak_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 125 )
-
 [node name="tree_oak_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 967.412, 309.183 )
 texture = ExtResource( 118 )
-
-[node name="tree_oak_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 101 )
-
-[node name="tree_oak_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 90 )
-
-[node name="tree_oak_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 76 )
 
 [node name="tree_pineDefaultA_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 85 )
 
-[node name="tree_pineDefaultA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 94 )
-
-[node name="tree_pineDefaultA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 96 )
-
-[node name="tree_pineDefaultA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 81 )
-
 [node name="tree_pineDefaultB_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 72 )
-
-[node name="tree_pineDefaultB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 123 )
-
-[node name="tree_pineDefaultB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 71 )
-
-[node name="tree_pineDefaultB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 97 )
 
 [node name="tree_pineGroundA_NE" type="Sprite" parent="."]
 position = Vector2( 476.88, 269.983 )
 texture = ExtResource( 98 )
 
-[node name="tree_pineGroundA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 124 )
-
-[node name="tree_pineGroundA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 102 )
-
-[node name="tree_pineGroundA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 74 )
-
 [node name="tree_pineGroundB_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 349.745, 108.945 )
 texture = ExtResource( 75 )
 
-[node name="tree_pineGroundB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 116 )
-
-[node name="tree_pineGroundB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 99 )
-
-[node name="tree_pineGroundB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 100 )
-
 [node name="tree_pineRoundA_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 784.125, 171.453 )
 texture = ExtResource( 86 )
 
-[node name="tree_pineRoundA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 109 )
-
-[node name="tree_pineRoundA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 77 )
-
-[node name="tree_pineRoundA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 67 )
-
 [node name="tree_pineRoundB_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 840.276, 464.924 )
 texture = ExtResource( 103 )
 
-[node name="tree_pineRoundB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 104 )
-
-[node name="tree_pineRoundB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 110 )
-
-[node name="tree_pineRoundB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 78 )
-
 [node name="tree_pineRoundC_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 424.967, 138.61 )
 texture = ExtResource( 107 )
 
-[node name="tree_pineRoundC_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 79 )
-
-[node name="tree_pineRoundC_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 89 )
-
-[node name="tree_pineRoundC_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 105 )
-
 [node name="tree_pineRoundD_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 457.81, 447.973 )
 texture = ExtResource( 66 )
 
-[node name="tree_pineRoundD_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 106 )
-
-[node name="tree_pineRoundD_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 80 )
-
-[node name="tree_pineRoundD_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 88 )
-
 [node name="tree_pineRoundE_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 571.173, 482.935 )
 texture = ExtResource( 82 )
 
-[node name="tree_pineRoundE_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 128 )
-
-[node name="tree_pineRoundE_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 65 )
-
-[node name="tree_pineRoundE_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 126 )
-
 [node name="tree_pineRoundF_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 985.423, 45.3772 )
 texture = ExtResource( 111 )
 
-[node name="tree_pineRoundF_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 112 )
-
-[node name="tree_pineRoundF_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 113 )
-
-[node name="tree_pineRoundF_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 127 )
-
 [node name="tree_pineSmallA_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 365.637, 334.611 )
 texture = ExtResource( 114 )
 
-[node name="tree_pineSmallA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 83 )
-
-[node name="tree_pineSmallA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 117 )
-
-[node name="tree_pineSmallA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 135 )
-
 [node name="tree_pineSmallB_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 82.7601, 480.816 )
 texture = ExtResource( 129 )
 
-[node name="tree_pineSmallB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 139 )
-
-[node name="tree_pineSmallB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 137 )
-
-[node name="tree_pineSmallB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 131 )
-
 [node name="tree_pineSmallC_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 613.551, 188.405 )
 texture = ExtResource( 130 )
 
-[node name="tree_pineSmallC_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 133 )
-
-[node name="tree_pineSmallC_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 134 )
-
-[node name="tree_pineSmallC_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 136 )
-
 [node name="tree_pineSmallD_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 500.189, 50.6745 )
 texture = ExtResource( 138 )
 
-[node name="tree_pineSmallD_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 140 )
-
-[node name="tree_pineSmallD_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 141 )
-
-[node name="tree_pineSmallD_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 132 )
-
 [node name="tree_pineTallA_detailed_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 635.8, 290.113 )
 texture = ExtResource( 167 )
 
-[node name="tree_pineTallA_detailed_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 179 )
-
-[node name="tree_pineTallA_detailed_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 155 )
-
-[node name="tree_pineTallA_detailed_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 212 )
-
 [node name="tree_pineTallA_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 894.309, 85.6368 )
 texture = ExtResource( 177 )
 
-[node name="tree_pineTallA_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 180 )
-
-[node name="tree_pineTallA_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 185 )
-
-[node name="tree_pineTallA_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 171 )
-
 [node name="tree_pineTallB_detailed_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 246.977, 107.885 )
 texture = ExtResource( 209 )
 
-[node name="tree_pineTallB_detailed_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 166 )
-
-[node name="tree_pineTallB_detailed_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 181 )
-
-[node name="tree_pineTallB_detailed_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 192 )
-
 [node name="tree_pineTallB_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 662.286, 490.352 )
 texture = ExtResource( 161 )
 
-[node name="tree_pineTallB_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 182 )
-
-[node name="tree_pineTallB_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 176 )
-
-[node name="tree_pineTallB_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 178 )
-
 [node name="tree_pineTallC_detailed_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 953.639, 186.286 )
 texture = ExtResource( 217 )
 
-[node name="tree_pineTallC_detailed_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 169 )
-
-[node name="tree_pineTallC_detailed_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 193 )
-
-[node name="tree_pineTallC_detailed_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 170 )
-
 [node name="tree_pineTallC_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 364.577, 64.4475 )
 texture = ExtResource( 183 )
 
-[node name="tree_pineTallC_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 168 )
-
-[node name="tree_pineTallC_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 184 )
-
-[node name="tree_pineTallC_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 162 )
-
 [node name="tree_pineTallD_detailed_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 347.626, 503.065 )
 texture = ExtResource( 218 )
 
-[node name="tree_pineTallD_detailed_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 187 )
-
-[node name="tree_pineTallD_detailed_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 200 )
-
-[node name="tree_pineTallD_detailed_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 194 )
-
 [node name="tree_pineTallD_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 939.866, 453.27 )
 texture = ExtResource( 158 )
 
-[node name="tree_pineTallD_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 163 )
-
-[node name="tree_pineTallD_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 172 )
-
-[node name="tree_pineTallD_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 159 )
-
 [node name="tree_plateau_dark_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 86.998, 108.945 )
 texture = ExtResource( 215 )
 
-[node name="tree_plateau_dark_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 208 )
-
-[node name="tree_plateau_dark_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 156 )
-
-[node name="tree_plateau_dark_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 204 )
-
 [node name="tree_plateau_fall_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 61.5709, 301.767 )
 texture = ExtResource( 157 )
 
-[node name="tree_plateau_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 173 )
-
-[node name="tree_plateau_fall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 199 )
-
-[node name="tree_plateau_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 164 )
-
 [node name="tree_plateau_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 167.517, 304.946 )
 texture = ExtResource( 165 )
 
-[node name="tree_plateau_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 174 )
-
 [node name="tree_simple_dark_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 874.179, 381.227 )
 texture = ExtResource( 216 )
 
-[node name="tree_simple_dark_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 175 )
-
-[node name="tree_simple_dark_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 186 )
-
-[node name="tree_simple_dark_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 188 )
-
 [node name="tree_simple_fall_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 206.717, 138.61 )
 texture = ExtResource( 189 )
 
-[node name="tree_simple_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 195 )
-
-[node name="tree_simple_fall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 196 )
-
-[node name="tree_simple_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 201 )
-
 [node name="tree_simple_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 823.325, 133.313 )
 texture = ExtResource( 213 )
 
-[node name="tree_simple_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 160 )
-
-[node name="tree_simple_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 214 )
-
-[node name="tree_simple_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 190 )
-
 [node name="tree_small_dark_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 249.096, 427.843 )
 texture = ExtResource( 191 )
 
-[node name="tree_small_dark_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 197 )
-
-[node name="tree_small_dark_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 198 )
-
-[node name="tree_small_dark_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 202 )
-
 [node name="tree_small_fall_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 877.357, 190.524 )
 texture = ExtResource( 203 )
 
-[node name="tree_small_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 205 )
-
-[node name="tree_small_fall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 210 )
-
-[node name="tree_small_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 206 )
-
 [node name="tree_small_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 771.411, 495.649 )
 texture = ExtResource( 207 )
 
-[node name="tree_small_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 211 )
-
-[node name="tree_small_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 230 )
-
-[node name="tree_small_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 225 )
-
 [node name="tree_tall_dark_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 165.398, 172.513 )
 texture = ExtResource( 219 )
 
-[node name="tree_tall_dark_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 220 )
-
-[node name="tree_tall_dark_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 231 )
-
-[node name="tree_tall_dark_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 224 )
-
 [node name="tree_tall_fall_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 582.827, 76.1016 )
 texture = ExtResource( 229 )
 
-[node name="tree_tall_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 221 )
-
-[node name="tree_tall_fall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 222 )
-
-[node name="tree_tall_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 223 )
-
 [node name="tree_tall_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 174.933, 425.724 )
 texture = ExtResource( 226 )
 
-[node name="tree_tall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 228 )
-
-[node name="tree_tall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 227 )
-
-[node name="tree_tall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 145 )
-
 [node name="tree_thin_dark_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 754.46, 426.784 )
 texture = ExtResource( 148 )
 
-[node name="tree_thin_dark_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 142 )
-
-[node name="tree_thin_dark_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 146 )
-
-[node name="tree_thin_dark_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 149 )
-
 [node name="tree_thin_fall_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 708.903, 82.4584 )
 texture = ExtResource( 150 )
 
-[node name="tree_thin_fall_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 143 )
-
-[node name="tree_thin_fall_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 144 )
-
-[node name="tree_thin_fall_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 153 )
-
 [node name="tree_thin_NE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
+position = Vector2( 725.854, 261.508 )
 texture = ExtResource( 147 )
-
-[node name="tree_thin_NW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 152 )
-
-[node name="tree_thin_SE" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 154 )
-
-[node name="tree_thin_SW" type="Sprite" parent="."]
-position = Vector2( 476.88, 269.983 )
-texture = ExtResource( 151 )
