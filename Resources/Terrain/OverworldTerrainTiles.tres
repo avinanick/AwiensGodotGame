@@ -130,7 +130,7 @@
 [ext_resource path="res://Resources/Isometric/Terrain/landscapeTiles_127.png" type="Texture" id=128]
 
 [resource]
-0/name = "landscapeTiles_000"
+0/name = "river_incline_lower_left"
 0/texture = ExtResource( 78 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
@@ -144,7 +144,7 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
-1/name = "landscapeTiles_001"
+1/name = "river_incline_upper_left"
 1/texture = ExtResource( 92 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
@@ -158,7 +158,7 @@
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
-2/name = "landscapeTiles_002"
+2/name = "river_incline_lower_right"
 2/texture = ExtResource( 102 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
@@ -172,7 +172,7 @@
 2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
-3/name = "landscapeTiles_003"
+3/name = "river_incline_beach_lower_left"
 3/texture = ExtResource( 104 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
@@ -186,7 +186,7 @@
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
-4/name = "landscapeTiles_004"
+4/name = "river_incline_upper_right"
 4/texture = ExtResource( 71 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
@@ -200,7 +200,7 @@
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
-5/name = "landscapeTiles_005"
+5/name = "river_incline_steep_upper_right"
 5/texture = ExtResource( 84 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
@@ -214,7 +214,7 @@
 5/shape_one_way_margin = 0.0
 5/shapes = [  ]
 5/z_index = 0
-6/name = "landscapeTiles_006"
+6/name = "river_incline_beach_upper_left"
 6/texture = ExtResource( 85 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
@@ -228,7 +228,7 @@
 6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
-7/name = "landscapeTiles_007"
+7/name = "river_incline_beach_lower_right"
 7/texture = ExtResource( 76 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
@@ -242,7 +242,7 @@
 7/shape_one_way_margin = 0.0
 7/shapes = [  ]
 7/z_index = 0
-8/name = "landscapeTiles_008"
+8/name = "river_incline_steep_upper_left"
 8/texture = ExtResource( 77 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
@@ -256,7 +256,7 @@
 8/shape_one_way_margin = 0.0
 8/shapes = [  ]
 8/z_index = 0
-9/name = "landscapeTiles_009"
+9/name = "river_incline_steep_lower_right"
 9/texture = ExtResource( 101 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
@@ -270,7 +270,7 @@
 9/shape_one_way_margin = 0.0
 9/shapes = [  ]
 9/z_index = 0
-10/name = "landscapeTiles_010"
+10/name = "grass_incline_lower_left"
 10/texture = ExtResource( 106 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
@@ -284,7 +284,7 @@
 10/shape_one_way_margin = 0.0
 10/shapes = [  ]
 10/z_index = 0
-11/name = "landscapeTiles_011"
+11/name = "river_incline_beach_upper_right"
 11/texture = ExtResource( 91 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
@@ -298,7 +298,7 @@
 11/shape_one_way_margin = 0.0
 11/shapes = [  ]
 11/z_index = 0
-12/name = "landscapeTiles_012"
+12/name = "river_incline_beach_steep_upper_right"
 12/texture = ExtResource( 86 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
@@ -312,7 +312,7 @@
 12/shape_one_way_margin = 0.0
 12/shapes = [  ]
 12/z_index = 0
-13/name = "landscapeTiles_013"
+13/name = "river_incline_steep_lower_left"
 13/texture = ExtResource( 95 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
@@ -326,7 +326,7 @@
 13/shape_one_way_margin = 0.0
 13/shapes = [  ]
 13/z_index = 0
-14/name = "landscapeTiles_014"
+14/name = "dirt_aquifer_lower_left"
 14/texture = ExtResource( 79 )
 14/tex_offset = Vector2( 0, 16 )
 14/modulate = Color( 1, 1, 1, 1 )
@@ -340,7 +340,7 @@
 14/shape_one_way_margin = 0.0
 14/shapes = [  ]
 14/z_index = 0
-15/name = "landscapeTiles_015"
+15/name = "grass_incline_upper_left"
 15/texture = ExtResource( 96 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
@@ -354,7 +354,7 @@
 15/shape_one_way_margin = 0.0
 15/shapes = [  ]
 15/z_index = 0
-16/name = "landscapeTiles_016"
+16/name = "grass_incline_lower_right"
 16/texture = ExtResource( 98 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
@@ -368,7 +368,7 @@
 16/shape_one_way_margin = 0.0
 16/shapes = [  ]
 16/z_index = 0
-17/name = "landscapeTiles_017"
+17/name = "river_incline_beach_steep_upper_left"
 17/texture = ExtResource( 87 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
@@ -382,7 +382,7 @@
 17/shape_one_way_margin = 0.0
 17/shapes = [  ]
 17/z_index = 0
-18/name = "landscapeTiles_018"
+18/name = "river_incline_beach_steep_lower_right"
 18/texture = ExtResource( 88 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
@@ -396,7 +396,7 @@
 18/shape_one_way_margin = 0.0
 18/shapes = [  ]
 18/z_index = 0
-19/name = "landscapeTiles_019"
+19/name = "river_bottom_top"
 19/texture = ExtResource( 103 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
@@ -410,7 +410,7 @@
 19/shape_one_way_margin = 0.0
 19/shapes = [  ]
 19/z_index = 0
-20/name = "landscapeTiles_020"
+20/name = "dirt_aquifer_lower_right"
 20/texture = ExtResource( 93 )
 20/tex_offset = Vector2( 0, 16 )
 20/modulate = Color( 1, 1, 1, 1 )
@@ -424,7 +424,7 @@
 20/shape_one_way_margin = 0.0
 20/shapes = [  ]
 20/z_index = 0
-21/name = "landscapeTiles_021"
+21/name = "grass_incline_bottom"
 21/texture = ExtResource( 80 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
@@ -438,7 +438,7 @@
 21/shape_one_way_margin = 0.0
 21/shapes = [  ]
 21/z_index = 0
-22/name = "landscapeTiles_022"
+22/name = "grass_incline_upper_right"
 22/texture = ExtResource( 73 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
@@ -452,7 +452,7 @@
 22/shape_one_way_margin = 0.0
 22/shapes = [  ]
 22/z_index = 0
-23/name = "landscapeTiles_023"
+23/name = "road_bridge_bottom_top"
 23/texture = ExtResource( 105 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
@@ -466,7 +466,7 @@
 23/shape_one_way_margin = 0.0
 23/shapes = [  ]
 23/z_index = 0
-24/name = "landscapeTiles_024"
+24/name = "river_incline_beach_steep_lower_left"
 24/texture = ExtResource( 94 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
@@ -480,7 +480,7 @@
 24/shape_one_way_margin = 0.0
 24/shapes = [  ]
 24/z_index = 0
-25/name = "landscapeTiles_025"
+25/name = "river_top_bottom"
 25/texture = ExtResource( 107 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
@@ -494,7 +494,7 @@
 25/shape_one_way_margin = 0.0
 25/shapes = [  ]
 25/z_index = 0
-26/name = "landscapeTiles_026"
+26/name = "river_fall_top_bottom"
 26/texture = ExtResource( 97 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
@@ -508,7 +508,7 @@
 26/shape_one_way_margin = 0.0
 26/shapes = [  ]
 26/z_index = 0
-27/name = "landscapeTiles_027"
+27/name = "beach_top_right"
 27/texture = ExtResource( 83 )
 27/tex_offset = Vector2( 0, 0 )
 27/modulate = Color( 1, 1, 1, 1 )
@@ -522,7 +522,7 @@
 27/shape_one_way_margin = 0.0
 27/shapes = [  ]
 27/z_index = 0
-28/name = "landscapeTiles_028"
+28/name = "grass_incline_right"
 28/texture = ExtResource( 81 )
 28/tex_offset = Vector2( 0, 0 )
 28/modulate = Color( 1, 1, 1, 1 )
@@ -536,7 +536,7 @@
 28/shape_one_way_margin = 0.0
 28/shapes = [  ]
 28/z_index = 0
-29/name = "landscapeTiles_029"
+29/name = "grass_incline_left"
 29/texture = ExtResource( 89 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
@@ -550,7 +550,7 @@
 29/shape_one_way_margin = 0.0
 29/shapes = [  ]
 29/z_index = 0
-30/name = "landscapeTiles_030"
+30/name = "road_bridge_support_bottom_top"
 30/texture = ExtResource( 72 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
@@ -564,7 +564,7 @@
 30/shape_one_way_margin = 0.0
 30/shapes = [  ]
 30/z_index = 0
-31/name = "landscapeTiles_031"
+31/name = "road_bridge_top_bottom"
 31/texture = ExtResource( 108 )
 31/tex_offset = Vector2( 0, 0 )
 31/modulate = Color( 1, 1, 1, 1 )
@@ -578,7 +578,7 @@
 31/shape_one_way_margin = 0.0
 31/shapes = [  ]
 31/z_index = 0
-32/name = "landscapeTiles_032"
+32/name = "river_beach_bottom_top"
 32/texture = ExtResource( 74 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
@@ -592,7 +592,7 @@
 32/shape_one_way_margin = 0.0
 32/shapes = [  ]
 32/z_index = 0
-33/name = "landscapeTiles_033"
+33/name = "river_fall_bottom_top"
 33/texture = ExtResource( 82 )
 33/tex_offset = Vector2( 0, 0 )
 33/modulate = Color( 1, 1, 1, 1 )
@@ -606,7 +606,7 @@
 33/shape_one_way_margin = 0.0
 33/shapes = [  ]
 33/z_index = 0
-34/name = "landscapeTiles_034"
+34/name = "beach_upper_left"
 34/texture = ExtResource( 90 )
 34/tex_offset = Vector2( 0, 0 )
 34/modulate = Color( 1, 1, 1, 1 )
@@ -620,7 +620,7 @@
 34/shape_one_way_margin = 0.0
 34/shapes = [  ]
 34/z_index = 0
-35/name = "landscapeTiles_035"
+35/name = "beach_lower_right"
 35/texture = ExtResource( 99 )
 35/tex_offset = Vector2( 0, 16 )
 35/modulate = Color( 1, 1, 1, 1 )
@@ -634,7 +634,7 @@
 35/shape_one_way_margin = 0.0
 35/shapes = [  ]
 35/z_index = 0
-36/name = "landscapeTiles_036"
+36/name = "grass_incline_top"
 36/texture = ExtResource( 75 )
 36/tex_offset = Vector2( 0, 0 )
 36/modulate = Color( 1, 1, 1, 1 )
@@ -648,7 +648,7 @@
 36/shape_one_way_margin = 0.0
 36/shapes = [  ]
 36/z_index = 0
-37/name = "landscapeTiles_037"
+37/name = "ocean_ice_lower_left"
 37/texture = ExtResource( 100 )
 37/tex_offset = Vector2( 0, 16 )
 37/modulate = Color( 1, 1, 1, 1 )
@@ -662,7 +662,7 @@
 37/shape_one_way_margin = 0.0
 37/shapes = [  ]
 37/z_index = 0
-38/name = "landscapeTiles_038"
+38/name = "road_bridge_support_top_botton"
 38/texture = ExtResource( 113 )
 38/tex_offset = Vector2( 0, 0 )
 38/modulate = Color( 1, 1, 1, 1 )
@@ -676,7 +676,7 @@
 38/shape_one_way_margin = 0.0
 38/shapes = [  ]
 38/z_index = 0
-39/name = "landscapeTiles_039"
+39/name = "river_beach_top_botton"
 39/texture = ExtResource( 109 )
 39/tex_offset = Vector2( 0, 0 )
 39/modulate = Color( 1, 1, 1, 1 )
@@ -690,7 +690,7 @@
 39/shape_one_way_margin = 0.0
 39/shapes = [  ]
 39/z_index = 0
-40/name = "landscapeTiles_040"
+40/name = "river_fall_beach_top_bottom"
 40/texture = ExtResource( 112 )
 40/tex_offset = Vector2( 0, 0 )
 40/modulate = Color( 1, 1, 1, 1 )
@@ -704,7 +704,7 @@
 40/shape_one_way_margin = 0.0
 40/shapes = [  ]
 40/z_index = 0
-41/name = "landscapeTiles_041"
+41/name = "beach_top"
 41/texture = ExtResource( 114 )
 41/tex_offset = Vector2( 0, 0 )
 41/modulate = Color( 1, 1, 1, 1 )
@@ -718,7 +718,7 @@
 41/shape_one_way_margin = 0.0
 41/shapes = [  ]
 41/z_index = 0
-42/name = "landscapeTiles_042"
+42/name = "beach_lower_left"
 42/texture = ExtResource( 110 )
 42/tex_offset = Vector2( 0, 16 )
 42/modulate = Color( 1, 1, 1, 1 )
@@ -732,7 +732,7 @@
 42/shape_one_way_margin = 0.0
 42/shapes = [  ]
 42/z_index = 0
-43/name = "landscapeTiles_043"
+43/name = "cliff_grass_upper_right"
 43/texture = ExtResource( 111 )
 43/tex_offset = Vector2( 0, 0 )
 43/modulate = Color( 1, 1, 1, 1 )
@@ -746,7 +746,7 @@
 43/shape_one_way_margin = 0.0
 43/shapes = [  ]
 43/z_index = 0
-44/name = "landscapeTiles_044"
+44/name = "ocean_ice_upper_left"
 44/texture = ExtResource( 43 )
 44/tex_offset = Vector2( 0, 16 )
 44/modulate = Color( 1, 1, 1, 1 )
@@ -760,7 +760,7 @@
 44/shape_one_way_margin = 0.0
 44/shapes = [  ]
 44/z_index = 0
-45/name = "landscapeTiles_045"
+45/name = "ocean_ice_lower_right"
 45/texture = ExtResource( 14 )
 45/tex_offset = Vector2( 0, 16 )
 45/modulate = Color( 1, 1, 1, 1 )
@@ -774,7 +774,7 @@
 45/shape_one_way_margin = 0.0
 45/shapes = [  ]
 45/z_index = 0
-46/name = "landscapeTiles_046"
+46/name = "bridge_ocean_bottom_top"
 46/texture = ExtResource( 29 )
 46/tex_offset = Vector2( 0, 0 )
 46/modulate = Color( 1, 1, 1, 1 )
@@ -788,7 +788,7 @@
 46/shape_one_way_margin = 0.0
 46/shapes = [  ]
 46/z_index = 0
-47/name = "landscapeTiles_047"
+47/name = "river_fall_beach_lower_left"
 47/texture = ExtResource( 27 )
 47/tex_offset = Vector2( 0, 0 )
 47/modulate = Color( 1, 1, 1, 1 )
@@ -802,7 +802,7 @@
 47/shape_one_way_margin = 0.0
 47/shapes = [  ]
 47/z_index = 0
-48/name = "landscapeTiles_048"
+48/name = "beach_left"
 48/texture = ExtResource( 50 )
 48/tex_offset = Vector2( 0, 0 )
 48/modulate = Color( 1, 1, 1, 1 )
@@ -816,7 +816,7 @@
 48/shape_one_way_margin = 0.0
 48/shapes = [  ]
 48/z_index = 0
-49/name = "landscapeTiles_049"
+49/name = "beach_right"
 49/texture = ExtResource( 35 )
 49/tex_offset = Vector2( 0, 0 )
 49/modulate = Color( 1, 1, 1, 1 )
@@ -830,7 +830,7 @@
 49/shape_one_way_margin = 0.0
 49/shapes = [  ]
 49/z_index = 0
-50/name = "landscapeTiles_050"
+50/name = "cliff_grass_upper_left"
 50/texture = ExtResource( 7 )
 50/tex_offset = Vector2( 0, 0 )
 50/modulate = Color( 1, 1, 1, 1 )
@@ -844,7 +844,7 @@
 50/shape_one_way_margin = 0.0
 50/shapes = [  ]
 50/z_index = 0
-51/name = "landscapeTiles_051"
+51/name = "cliff_grass_lower_right"
 51/texture = ExtResource( 44 )
 51/tex_offset = Vector2( 0, 0 )
 51/modulate = Color( 1, 1, 1, 1 )
@@ -858,7 +858,7 @@
 51/shape_one_way_margin = 0.0
 51/shapes = [  ]
 51/z_index = 0
-52/name = "landscapeTiles_052"
+52/name = "ocean_ice_upper_right"
 52/texture = ExtResource( 31 )
 52/tex_offset = Vector2( 0, 16 )
 52/modulate = Color( 1, 1, 1, 1 )
@@ -872,7 +872,7 @@
 52/shape_one_way_margin = 0.0
 52/shapes = [  ]
 52/z_index = 0
-53/name = "landscapeTiles_053"
+53/name = "beach_corner_bottom"
 53/texture = ExtResource( 52 )
 53/tex_offset = Vector2( 0, 0 )
 53/modulate = Color( 1, 1, 1, 1 )
@@ -886,7 +886,7 @@
 53/shape_one_way_margin = 0.0
 53/shapes = [  ]
 53/z_index = 0
-54/name = "landscapeTiles_054"
+54/name = "bridge_ocean_top_bottom"
 54/texture = ExtResource( 2 )
 54/tex_offset = Vector2( 0, 0 )
 54/modulate = Color( 1, 1, 1, 1 )
@@ -900,7 +900,7 @@
 54/shape_one_way_margin = 0.0
 54/shapes = [  ]
 54/z_index = 0
-55/name = "landscapeTiles_055"
+55/name = "cliff_grass_top"
 55/texture = ExtResource( 32 )
 55/tex_offset = Vector2( 0, 0 )
 55/modulate = Color( 1, 1, 1, 1 )
@@ -914,7 +914,7 @@
 55/shape_one_way_margin = 0.0
 55/shapes = [  ]
 55/z_index = 0
-56/name = "landscapeTiles_056"
+56/name = "cliff_grass_bottom"
 56/texture = ExtResource( 51 )
 56/tex_offset = Vector2( 0, 0 )
 56/modulate = Color( 1, 1, 1, 1 )
@@ -928,7 +928,7 @@
 56/shape_one_way_margin = 0.0
 56/shapes = [  ]
 56/z_index = 0
-57/name = "landscapeTiles_057"
+57/name = "river_beach_bottom_top"
 57/texture = ExtResource( 19 )
 57/tex_offset = Vector2( 0, 0 )
 57/modulate = Color( 1, 1, 1, 1 )
@@ -942,7 +942,7 @@
 57/shape_one_way_margin = 0.0
 57/shapes = [  ]
 57/z_index = 0
-58/name = "landscapeTiles_058"
+58/name = "cliff_grass_bottom_left"
 58/texture = ExtResource( 33 )
 58/tex_offset = Vector2( 0, 0 )
 58/modulate = Color( 1, 1, 1, 1 )
@@ -956,7 +956,7 @@
 58/shape_one_way_margin = 0.0
 58/shapes = [  ]
 58/z_index = 0
-59/name = "landscapeTiles_059"
+59/name = "sand"
 59/texture = ExtResource( 57 )
 59/tex_offset = Vector2( 0, 0 )
 59/modulate = Color( 1, 1, 1, 1 )
@@ -970,7 +970,7 @@
 59/shape_one_way_margin = 0.0
 59/shapes = [  ]
 59/z_index = 0
-60/name = "landscapeTiles_060"
+60/name = "beach_corner_right"
 60/texture = ExtResource( 54 )
 60/tex_offset = Vector2( 0, 16 )
 60/modulate = Color( 1, 1, 1, 1 )
@@ -984,7 +984,7 @@
 60/shape_one_way_margin = 0.0
 60/shapes = [  ]
 60/z_index = 0
-61/name = "landscapeTiles_061"
+61/name = "beach_corner_left"
 61/texture = ExtResource( 4 )
 61/tex_offset = Vector2( 0, 16 )
 61/modulate = Color( 1, 1, 1, 1 )
@@ -998,7 +998,7 @@
 61/shape_one_way_margin = 0.0
 61/shapes = [  ]
 61/z_index = 0
-62/name = "landscapeTiles_062"
+62/name = "cliff_grass_left"
 62/texture = ExtResource( 62 )
 62/tex_offset = Vector2( 0, 0 )
 62/modulate = Color( 1, 1, 1, 1 )
@@ -1012,7 +1012,7 @@
 62/shape_one_way_margin = 0.0
 62/shapes = [  ]
 62/z_index = 0
-63/name = "landscapeTiles_063"
+63/name = "cliff_crass_right"
 63/texture = ExtResource( 13 )
 63/tex_offset = Vector2( 0, 0 )
 63/modulate = Color( 1, 1, 1, 1 )
@@ -1026,7 +1026,7 @@
 63/shape_one_way_margin = 0.0
 63/shapes = [  ]
 63/z_index = 0
-64/name = "landscapeTiles_064"
+64/name = "river_bottom_top"
 64/texture = ExtResource( 34 )
 64/tex_offset = Vector2( 0, 0 )
 64/modulate = Color( 1, 1, 1, 1 )
@@ -1040,7 +1040,7 @@
 64/shape_one_way_margin = 0.0
 64/shapes = [  ]
 64/z_index = 0
-65/name = "landscapeTiles_065"
+65/name = "river_beach_top_bottom"
 65/texture = ExtResource( 20 )
 65/tex_offset = Vector2( 0, 0 )
 65/modulate = Color( 1, 1, 1, 1 )
@@ -1054,7 +1054,7 @@
 65/shape_one_way_margin = 0.0
 65/shapes = [  ]
 65/z_index = 0
-66/name = "landscapeTiles_066"
+66/name = "ocean"
 66/texture = ExtResource( 3 )
 66/tex_offset = Vector2( 0, 16 )
 66/modulate = Color( 1, 1, 1, 1 )
@@ -1068,7 +1068,7 @@
 66/shape_one_way_margin = 0.0
 66/shapes = [  ]
 66/z_index = 0
-67/name = "landscapeTiles_067"
+67/name = "grass"
 67/texture = ExtResource( 25 )
 67/tex_offset = Vector2( 0, 0 )
 67/modulate = Color( 1, 1, 1, 1 )
@@ -1082,7 +1082,7 @@
 67/shape_one_way_margin = 0.0
 67/shapes = [  ]
 67/z_index = 0
-68/name = "landscapeTiles_068"
+68/name = "beach_corner_top"
 68/texture = ExtResource( 45 )
 68/tex_offset = Vector2( 0, 0 )
 68/modulate = Color( 1, 1, 1, 1 )
@@ -1096,7 +1096,7 @@
 68/shape_one_way_margin = 0.0
 68/shapes = [  ]
 68/z_index = 0
-69/name = "landscapeTiles_069"
+69/name = "cliff_grass_corner_bottom"
 69/texture = ExtResource( 23 )
 69/tex_offset = Vector2( 0, 0 )
 69/modulate = Color( 1, 1, 1, 1 )
@@ -1110,7 +1110,7 @@
 69/shape_one_way_margin = 0.0
 69/shapes = [  ]
 69/z_index = 0
-70/name = "landscapeTiles_070"
+70/name = "cliff_grass_bottom"
 70/texture = ExtResource( 26 )
 70/tex_offset = Vector2( 0, 0 )
 70/modulate = Color( 1, 1, 1, 1 )
@@ -1124,7 +1124,7 @@
 70/shape_one_way_margin = 0.0
 70/shapes = [  ]
 70/z_index = 0
-71/name = "landscapeTiles_071"
+71/name = "river_bend_bottom"
 71/texture = ExtResource( 28 )
 71/tex_offset = Vector2( 0, 0 )
 71/modulate = Color( 1, 1, 1, 1 )
@@ -1138,7 +1138,7 @@
 71/shape_one_way_margin = 0.0
 71/shapes = [  ]
 71/z_index = 0
-72/name = "landscapeTiles_072"
+72/name = "river_top_bottom"
 72/texture = ExtResource( 5 )
 72/tex_offset = Vector2( 0, 0 )
 72/modulate = Color( 1, 1, 1, 1 )
@@ -1152,7 +1152,7 @@
 72/shape_one_way_margin = 0.0
 72/shapes = [  ]
 72/z_index = 0
-73/name = "landscapeTiles_073"
+73/name = "dirt"
 73/texture = ExtResource( 30 )
 73/tex_offset = Vector2( 0, 16 )
 73/modulate = Color( 1, 1, 1, 1 )
@@ -1166,7 +1166,7 @@
 73/shape_one_way_margin = 0.0
 73/shapes = [  ]
 73/z_index = 0
-74/name = "landscapeTiles_074"
+74/name = "road_top_bottom"
 74/texture = ExtResource( 42 )
 74/tex_offset = Vector2( 0, 0 )
 74/modulate = Color( 1, 1, 1, 1 )
@@ -1180,7 +1180,7 @@
 74/shape_one_way_margin = 0.0
 74/shapes = [  ]
 74/z_index = 0
-75/name = "landscapeTiles_075"
+75/name = "grass_full"
 75/texture = ExtResource( 56 )
 75/tex_offset = Vector2( 0, 0 )
 75/modulate = Color( 1, 1, 1, 1 )
@@ -1194,7 +1194,7 @@
 75/shape_one_way_margin = 0.0
 75/shapes = [  ]
 75/z_index = 0
-76/name = "landscapeTiles_076"
+76/name = "cliff_grass_corner_right"
 76/texture = ExtResource( 46 )
 76/tex_offset = Vector2( 0, 0 )
 76/modulate = Color( 1, 1, 1, 1 )
@@ -1208,7 +1208,7 @@
 76/shape_one_way_margin = 0.0
 76/shapes = [  ]
 76/z_index = 0
-77/name = "landscapeTiles_077"
+77/name = "cliff_grass_corner_left"
 77/texture = ExtResource( 53 )
 77/tex_offset = Vector2( 0, 0 )
 77/modulate = Color( 1, 1, 1, 1 )
@@ -1222,7 +1222,7 @@
 77/shape_one_way_margin = 0.0
 77/shapes = [  ]
 77/z_index = 0
-78/name = "landscapeTiles_078"
+78/name = "river_bend_right"
 78/texture = ExtResource( 38 )
 78/tex_offset = Vector2( 0, 0 )
 78/modulate = Color( 1, 1, 1, 1 )
@@ -1236,7 +1236,7 @@
 78/shape_one_way_margin = 0.0
 78/shapes = [  ]
 78/z_index = 0
-79/name = "landscapeTiles_079"
+79/name = "river_bend_left"
 79/texture = ExtResource( 39 )
 79/tex_offset = Vector2( 0, 0 )
 79/modulate = Color( 1, 1, 1, 1 )
@@ -1250,7 +1250,7 @@
 79/shape_one_way_margin = 0.0
 79/shapes = [  ]
 79/z_index = 0
-80/name = "landscapeTiles_080"
+80/name = "asphalt_edge_upper_right"
 80/texture = ExtResource( 55 )
 80/tex_offset = Vector2( 0, 0 )
 80/modulate = Color( 1, 1, 1, 1 )
@@ -1264,7 +1264,7 @@
 80/shape_one_way_margin = 0.0
 80/shapes = [  ]
 80/z_index = 0
-81/name = "landscapeTiles_081"
+81/name = "asphalt"
 81/texture = ExtResource( 47 )
 81/tex_offset = Vector2( 0, 0 )
 81/modulate = Color( 1, 1, 1, 1 )
@@ -1278,7 +1278,7 @@
 81/shape_one_way_margin = 0.0
 81/shapes = [  ]
 81/z_index = 0
-82/name = "landscapeTiles_082"
+82/name = "road_bottom_top"
 82/texture = ExtResource( 36 )
 82/tex_offset = Vector2( 0, 0 )
 82/modulate = Color( 1, 1, 1, 1 )
@@ -1292,7 +1292,7 @@
 82/shape_one_way_margin = 0.0
 82/shapes = [  ]
 82/z_index = 0
-83/name = "landscapeTiles_083"
+83/name = "dirt_full"
 83/texture = ExtResource( 6 )
 83/tex_offset = Vector2( 0, 0 )
 83/modulate = Color( 1, 1, 1, 1 )
@@ -1306,7 +1306,7 @@
 83/shape_one_way_margin = 0.0
 83/shapes = [  ]
 83/z_index = 0
-84/name = "landscapeTiles_084"
+84/name = "cliff_corner_top"
 84/texture = ExtResource( 48 )
 84/tex_offset = Vector2( 0, 0 )
 84/modulate = Color( 1, 1, 1, 1 )
@@ -1320,7 +1320,7 @@
 84/shape_one_way_margin = 0.0
 84/shapes = [  ]
 84/z_index = 0
-85/name = "landscapeTiles_085"
+85/name = "river_bend_beach_bottom"
 85/texture = ExtResource( 58 )
 85/tex_offset = Vector2( 0, 0 )
 85/modulate = Color( 1, 1, 1, 1 )
@@ -1334,7 +1334,7 @@
 85/shape_one_way_margin = 0.0
 85/shapes = [  ]
 85/z_index = 0
-86/name = "landscapeTiles_086"
+86/name = "river_bend_top"
 86/texture = ExtResource( 21 )
 86/tex_offset = Vector2( 0, 0 )
 86/modulate = Color( 1, 1, 1, 1 )
@@ -1348,7 +1348,7 @@
 86/shape_one_way_margin = 0.0
 86/shapes = [  ]
 86/z_index = 0
-87/name = "landscapeTiles_087"
+87/name = "asphalt_edge_top_left"
 87/texture = ExtResource( 8 )
 87/tex_offset = Vector2( 0, 0 )
 87/modulate = Color( 1, 1, 1, 1 )
@@ -1362,7 +1362,7 @@
 87/shape_one_way_margin = 0.0
 87/shapes = [  ]
 87/z_index = 0
-88/name = "landscapeTiles_088"
+88/name = "asphalt_edge_lower_right"
 88/texture = ExtResource( 59 )
 88/tex_offset = Vector2( 0, 0 )
 88/modulate = Color( 1, 1, 1, 1 )
@@ -1376,7 +1376,7 @@
 88/shape_one_way_margin = 0.0
 88/shapes = [  ]
 88/z_index = 0
-89/name = "landscapeTiles_089"
+89/name = "road_t_upper_left"
 89/texture = ExtResource( 41 )
 89/tex_offset = Vector2( 0, 0 )
 89/modulate = Color( 1, 1, 1, 1 )
@@ -1390,7 +1390,7 @@
 89/shape_one_way_margin = 0.0
 89/shapes = [  ]
 89/z_index = 0
-90/name = "landscapeTiles_090"
+90/name = "road_x"
 90/texture = ExtResource( 60 )
 90/tex_offset = Vector2( 0, 0 )
 90/modulate = Color( 1, 1, 1, 1 )
@@ -1404,7 +1404,7 @@
 90/shape_one_way_margin = 0.0
 90/shapes = [  ]
 90/z_index = 0
-91/name = "landscapeTiles_091"
+91/name = "grass_incline_steep_lower_right"
 91/texture = ExtResource( 24 )
 91/tex_offset = Vector2( 0, 0 )
 91/modulate = Color( 1, 1, 1, 1 )
@@ -1418,7 +1418,7 @@
 91/shape_one_way_margin = 0.0
 91/shapes = [  ]
 91/z_index = 0
-92/name = "landscapeTiles_092"
+92/name = "river_bend_beach_right"
 92/texture = ExtResource( 40 )
 92/tex_offset = Vector2( 0, 0 )
 92/modulate = Color( 1, 1, 1, 1 )
@@ -1432,7 +1432,7 @@
 92/shape_one_way_margin = 0.0
 92/shapes = [  ]
 92/z_index = 0
-93/name = "landscapeTiles_093"
+93/name = "river_bend_beach_left"
 93/texture = ExtResource( 37 )
 93/tex_offset = Vector2( 0, 0 )
 93/modulate = Color( 1, 1, 1, 1 )
@@ -1446,7 +1446,7 @@
 93/shape_one_way_margin = 0.0
 93/shapes = [  ]
 93/z_index = 0
-94/name = "landscapeTiles_094"
+94/name = "asphalt_road_upper_right"
 94/texture = ExtResource( 61 )
 94/tex_offset = Vector2( 0, 0 )
 94/modulate = Color( 1, 1, 1, 1 )
@@ -1460,7 +1460,7 @@
 94/shape_one_way_margin = 0.0
 94/shapes = [  ]
 94/z_index = 0
-95/name = "landscapeTiles_095"
+95/name = "asphalt_edge_lower_left"
 95/texture = ExtResource( 9 )
 95/tex_offset = Vector2( 0, 0 )
 95/modulate = Color( 1, 1, 1, 1 )
@@ -1474,7 +1474,7 @@
 95/shape_one_way_margin = 0.0
 95/shapes = [  ]
 95/z_index = 0
-96/name = "landscapeTiles_096"
+96/name = "road_t_lower_right"
 96/texture = ExtResource( 49 )
 96/tex_offset = Vector2( 0, 0 )
 96/modulate = Color( 1, 1, 1, 1 )
@@ -1488,7 +1488,7 @@
 96/shape_one_way_margin = 0.0
 96/shapes = [  ]
 96/z_index = 0
-97/name = "landscapeTiles_097"
+97/name = "road_t_lower_left"
 97/texture = ExtResource( 22 )
 97/tex_offset = Vector2( 0, 0 )
 97/modulate = Color( 1, 1, 1, 1 )
@@ -1502,7 +1502,7 @@
 97/shape_one_way_margin = 0.0
 97/shapes = [  ]
 97/z_index = 0
-98/name = "landscapeTiles_098"
+98/name = "grass_incline_steep_upper_right"
 98/texture = ExtResource( 15 )
 98/tex_offset = Vector2( 0, 0 )
 98/modulate = Color( 1, 1, 1, 1 )
@@ -1516,7 +1516,7 @@
 98/shape_one_way_margin = 0.0
 98/shapes = [  ]
 98/z_index = 0
-99/name = "landscapeTiles_099"
+99/name = "grass_incline_steep_lower_left"
 99/texture = ExtResource( 63 )
 99/tex_offset = Vector2( 0, 0 )
 99/modulate = Color( 1, 1, 1, 1 )
@@ -1530,7 +1530,7 @@
 99/shape_one_way_margin = 0.0
 99/shapes = [  ]
 99/z_index = 0
-100/name = "landscapeTiles_100"
+100/name = "river_bend_beach_top"
 100/texture = ExtResource( 17 )
 100/tex_offset = Vector2( 0, 0 )
 100/modulate = Color( 1, 1, 1, 1 )
@@ -1544,7 +1544,7 @@
 100/shape_one_way_margin = 0.0
 100/shapes = [  ]
 100/z_index = 0
-101/name = "landscapeTiles_101"
+101/name = "asphalt_road_upper_left"
 101/texture = ExtResource( 1 )
 101/tex_offset = Vector2( 0, 0 )
 101/modulate = Color( 1, 1, 1, 1 )
@@ -1558,7 +1558,7 @@
 101/shape_one_way_margin = 0.0
 101/shapes = [  ]
 101/z_index = 0
-102/name = "landscapeTiles_102"
+102/name = "asphalt_road_lower_right"
 102/texture = ExtResource( 64 )
 102/tex_offset = Vector2( 0, 0 )
 102/modulate = Color( 1, 1, 1, 1 )
@@ -1572,7 +1572,7 @@
 102/shape_one_way_margin = 0.0
 102/shapes = [  ]
 102/z_index = 0
-103/name = "landscapeTiles_103"
+103/name = "road_incline_lower_right"
 103/texture = ExtResource( 10 )
 103/tex_offset = Vector2( 0, 0 )
 103/modulate = Color( 1, 1, 1, 1 )
@@ -1586,7 +1586,7 @@
 103/shape_one_way_margin = 0.0
 103/shapes = [  ]
 103/z_index = 0
-104/name = "landscapeTiles_104"
+104/name = "road_t_upper_right"
 104/texture = ExtResource( 11 )
 104/tex_offset = Vector2( 0, 0 )
 104/modulate = Color( 1, 1, 1, 1 )
@@ -1600,7 +1600,7 @@
 104/shape_one_way_margin = 0.0
 104/shapes = [  ]
 104/z_index = 0
-105/name = "landscapeTiles_105"
+105/name = "road_end_upper_left"
 105/texture = ExtResource( 12 )
 105/tex_offset = Vector2( 0, 0 )
 105/modulate = Color( 1, 1, 1, 1 )
@@ -1614,7 +1614,7 @@
 105/shape_one_way_margin = 0.0
 105/shapes = [  ]
 105/z_index = 0
-106/name = "landscapeTiles_106"
+106/name = "grass_incline_steep_upper_left"
 106/texture = ExtResource( 16 )
 106/tex_offset = Vector2( 0, 0 )
 106/modulate = Color( 1, 1, 1, 1 )
@@ -1628,7 +1628,7 @@
 106/shape_one_way_margin = 0.0
 106/shapes = [  ]
 106/z_index = 0
-107/name = "landscapeTiles_107"
+107/name = "road_divided_top_bottom"
 107/texture = ExtResource( 18 )
 107/tex_offset = Vector2( 0, 0 )
 107/modulate = Color( 1, 1, 1, 1 )
@@ -1642,7 +1642,7 @@
 107/shape_one_way_margin = 0.0
 107/shapes = [  ]
 107/z_index = 0
-108/name = "landscapeTiles_108"
+108/name = "asphalt_road_lower_left"
 108/texture = ExtResource( 68 )
 108/tex_offset = Vector2( 0, 0 )
 108/modulate = Color( 1, 1, 1, 1 )
@@ -1656,7 +1656,7 @@
 108/shape_one_way_margin = 0.0
 108/shapes = [  ]
 108/z_index = 0
-109/name = "landscapeTiles_109"
+109/name = "road_incline_upper_right"
 109/texture = ExtResource( 66 )
 109/tex_offset = Vector2( 0, 0 )
 109/modulate = Color( 1, 1, 1, 1 )
@@ -1670,7 +1670,7 @@
 109/shape_one_way_margin = 0.0
 109/shapes = [  ]
 109/z_index = 0
-110/name = "landscapeTiles_110"
+110/name = "road_incline_lower_left"
 110/texture = ExtResource( 67 )
 110/tex_offset = Vector2( 0, 0 )
 110/modulate = Color( 1, 1, 1, 1 )
@@ -1684,7 +1684,7 @@
 110/shape_one_way_margin = 0.0
 110/shapes = [  ]
 110/z_index = 0
-111/name = "landscapeTiles_111"
+111/name = "road_end_upper_right"
 111/texture = ExtResource( 69 )
 111/tex_offset = Vector2( 0, 0 )
 111/modulate = Color( 1, 1, 1, 1 )
@@ -1698,7 +1698,7 @@
 111/shape_one_way_margin = 0.0
 111/shapes = [  ]
 111/z_index = 0
-112/name = "landscapeTiles_112"
+112/name = "road_end_lower_right"
 112/texture = ExtResource( 65 )
 112/tex_offset = Vector2( 0, 0 )
 112/modulate = Color( 1, 1, 1, 1 )
@@ -1712,7 +1712,7 @@
 112/shape_one_way_margin = 0.0
 112/shapes = [  ]
 112/z_index = 0
-113/name = "landscapeTiles_113"
+113/name = "road_divided_bottom_top"
 113/texture = ExtResource( 70 )
 113/tex_offset = Vector2( 0, 0 )
 113/modulate = Color( 1, 1, 1, 1 )
@@ -1726,7 +1726,7 @@
 113/shape_one_way_margin = 0.0
 113/shapes = [  ]
 113/z_index = 0
-114/name = "landscapeTiles_114"
+114/name = "asphalt_corner_top"
 114/texture = ExtResource( 116 )
 114/tex_offset = Vector2( 0, 0 )
 114/modulate = Color( 1, 1, 1, 1 )
@@ -1740,7 +1740,7 @@
 114/shape_one_way_margin = 0.0
 114/shapes = [  ]
 114/z_index = 0
-115/name = "landscapeTiles_115"
+115/name = "road_incline_upper_left"
 115/texture = ExtResource( 119 )
 115/tex_offset = Vector2( 0, 0 )
 115/modulate = Color( 1, 1, 1, 1 )
@@ -1754,7 +1754,7 @@
 115/shape_one_way_margin = 0.0
 115/shapes = [  ]
 115/z_index = 0
-116/name = "landscapeTiles_116"
+116/name = "road_incline_separated_lower_right"
 116/texture = ExtResource( 126 )
 116/tex_offset = Vector2( 0, 0 )
 116/modulate = Color( 1, 1, 1, 1 )
@@ -1768,7 +1768,7 @@
 116/shape_one_way_margin = 0.0
 116/shapes = [  ]
 116/z_index = 0
-117/name = "landscapeTiles_117"
+117/name = "road_end_lower_left"
 117/texture = ExtResource( 123 )
 117/tex_offset = Vector2( 0, 0 )
 117/modulate = Color( 1, 1, 1, 1 )
@@ -1782,7 +1782,7 @@
 117/shape_one_way_margin = 0.0
 117/shapes = [  ]
 117/z_index = 0
-118/name = "landscapeTiles_118"
+118/name = "asphalt_corner_left"
 118/texture = ExtResource( 115 )
 118/tex_offset = Vector2( 0, 0 )
 118/modulate = Color( 1, 1, 1, 1 )
@@ -1796,7 +1796,7 @@
 118/shape_one_way_margin = 0.0
 118/shapes = [  ]
 118/z_index = 0
-119/name = "landscapeTiles_119"
+119/name = "asphalt_corner_right"
 119/texture = ExtResource( 120 )
 119/tex_offset = Vector2( 0, 0 )
 119/modulate = Color( 1, 1, 1, 1 )
@@ -1810,7 +1810,7 @@
 119/shape_one_way_margin = 0.0
 119/shapes = [  ]
 119/z_index = 0
-120/name = "landscapeTiles_120"
+120/name = "road_incline_separated_upper_right"
 120/texture = ExtResource( 127 )
 120/tex_offset = Vector2( 0, 0 )
 120/modulate = Color( 1, 1, 1, 1 )
@@ -1824,7 +1824,7 @@
 120/shape_one_way_margin = 0.0
 120/shapes = [  ]
 120/z_index = 0
-121/name = "landscapeTiles_121"
+121/name = "road_incline_separated_lower_left"
 121/texture = ExtResource( 121 )
 121/tex_offset = Vector2( 0, 0 )
 121/modulate = Color( 1, 1, 1, 1 )
@@ -1838,7 +1838,7 @@
 121/shape_one_way_margin = 0.0
 121/shapes = [  ]
 121/z_index = 0
-122/name = "landscapeTiles_122"
+122/name = "asphalt_corner_bottom"
 122/texture = ExtResource( 122 )
 122/tex_offset = Vector2( 0, 0 )
 122/modulate = Color( 1, 1, 1, 1 )
@@ -1852,7 +1852,7 @@
 122/shape_one_way_margin = 0.0
 122/shapes = [  ]
 122/z_index = 0
-123/name = "landscapeTiles_123"
+123/name = "road_bend_botton"
 123/texture = ExtResource( 124 )
 123/tex_offset = Vector2( 0, 0 )
 123/modulate = Color( 1, 1, 1, 1 )
@@ -1866,7 +1866,7 @@
 123/shape_one_way_margin = 0.0
 123/shapes = [  ]
 123/z_index = 0
-124/name = "landscapeTiles_124"
+124/name = "road_incline_separated_upper_left"
 124/texture = ExtResource( 117 )
 124/tex_offset = Vector2( 0, 0 )
 124/modulate = Color( 1, 1, 1, 1 )
@@ -1880,7 +1880,7 @@
 124/shape_one_way_margin = 0.0
 124/shapes = [  ]
 124/z_index = 0
-125/name = "landscapeTiles_125"
+125/name = "road_bend_right"
 125/texture = ExtResource( 118 )
 125/tex_offset = Vector2( 0, 0 )
 125/modulate = Color( 1, 1, 1, 1 )
@@ -1894,7 +1894,7 @@
 125/shape_one_way_margin = 0.0
 125/shapes = [  ]
 125/z_index = 0
-126/name = "landscapeTiles_126"
+126/name = "road_bend_left"
 126/texture = ExtResource( 125 )
 126/tex_offset = Vector2( 0, 0 )
 126/modulate = Color( 1, 1, 1, 1 )
@@ -1908,7 +1908,7 @@
 126/shape_one_way_margin = 0.0
 126/shapes = [  ]
 126/z_index = 0
-127/name = "landscapeTiles_127"
+127/name = "road_bend_top"
 127/texture = ExtResource( 128 )
 127/tex_offset = Vector2( 0, 0 )
 127/modulate = Color( 1, 1, 1, 1 )
