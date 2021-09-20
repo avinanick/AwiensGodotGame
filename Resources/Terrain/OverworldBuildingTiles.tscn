@@ -1,0 +1,104 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_038.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_043.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_007.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_032.png" type="Texture" id=9]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_008.png" type="Texture" id=12]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_049.png" type="Texture" id=14]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_023.png" type="Texture" id=18]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_054.png" type="Texture" id=20]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_056.png" type="Texture" id=21]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_050.png" type="Texture" id=23]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_052.png" type="Texture" id=27]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_051.png" type="Texture" id=33]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_016.png" type="Texture" id=37]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_024.png" type="Texture" id=44]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_031.png" type="Texture" id=45]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_039.png" type="Texture" id=47]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_044.png" type="Texture" id=51]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_055.png" type="Texture" id=56]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_015.png" type="Texture" id=59]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_045.png" type="Texture" id=61]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_047.png" type="Texture" id=62]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_048.png" type="Texture" id=63]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_053.png" type="Texture" id=64]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_078.png" type="Texture" id=116]
+[ext_resource path="res://Resources/Isometric/Buildings/buildingTiles_000.png" type="Texture" id=126]
+
+[node name="OverworldBuildingTiles" type="Node2D"]
+
+[node name="buildingTiles_000" type="Sprite" parent="."]
+texture = ExtResource( 126 )
+
+[node name="buildingTiles_007" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+
+[node name="buildingTiles_008" type="Sprite" parent="."]
+texture = ExtResource( 12 )
+
+[node name="buildingTiles_015" type="Sprite" parent="."]
+texture = ExtResource( 59 )
+
+[node name="buildingTiles_016" type="Sprite" parent="."]
+texture = ExtResource( 37 )
+
+[node name="buildingTiles_023" type="Sprite" parent="."]
+texture = ExtResource( 18 )
+
+[node name="buildingTiles_024" type="Sprite" parent="."]
+texture = ExtResource( 44 )
+
+[node name="buildingTiles_031" type="Sprite" parent="."]
+texture = ExtResource( 45 )
+
+[node name="buildingTiles_032" type="Sprite" parent="."]
+texture = ExtResource( 9 )
+
+[node name="buildingTiles_038" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="buildingTiles_039" type="Sprite" parent="."]
+texture = ExtResource( 47 )
+
+[node name="buildingTiles_043" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+
+[node name="buildingTiles_044" type="Sprite" parent="."]
+texture = ExtResource( 51 )
+
+[node name="buildingTiles_045" type="Sprite" parent="."]
+texture = ExtResource( 61 )
+
+[node name="buildingTiles_047" type="Sprite" parent="."]
+texture = ExtResource( 62 )
+
+[node name="buildingTiles_048" type="Sprite" parent="."]
+texture = ExtResource( 63 )
+
+[node name="buildingTiles_049" type="Sprite" parent="."]
+texture = ExtResource( 14 )
+
+[node name="buildingTiles_050" type="Sprite" parent="."]
+texture = ExtResource( 23 )
+
+[node name="buildingTiles_051" type="Sprite" parent="."]
+texture = ExtResource( 33 )
+
+[node name="buildingTiles_052" type="Sprite" parent="."]
+texture = ExtResource( 27 )
+
+[node name="buildingTiles_053" type="Sprite" parent="."]
+texture = ExtResource( 64 )
+
+[node name="buildingTiles_054" type="Sprite" parent="."]
+texture = ExtResource( 20 )
+
+[node name="buildingTiles_055" type="Sprite" parent="."]
+texture = ExtResource( 56 )
+
+[node name="buildingTiles_056" type="Sprite" parent="."]
+texture = ExtResource( 21 )
+
+[node name="buildingTiles_078" type="Sprite" parent="."]
+texture = ExtResource( 116 )
