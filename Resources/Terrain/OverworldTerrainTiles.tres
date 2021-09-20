@@ -622,7 +622,7 @@
 34/z_index = 0
 35/name = "landscapeTiles_035"
 35/texture = ExtResource( 99 )
-35/tex_offset = Vector2( 0, 0 )
+35/tex_offset = Vector2( 0, 16 )
 35/modulate = Color( 1, 1, 1, 1 )
 35/region = Rect2( 0, 0, 132, 83 )
 35/tile_mode = 0
@@ -720,7 +720,7 @@
 41/z_index = 0
 42/name = "landscapeTiles_042"
 42/texture = ExtResource( 110 )
-42/tex_offset = Vector2( 0, 0 )
+42/tex_offset = Vector2( 0, 16 )
 42/modulate = Color( 1, 1, 1, 1 )
 42/region = Rect2( 0, 0, 133, 83 )
 42/tile_mode = 0
@@ -972,7 +972,7 @@
 59/z_index = 0
 60/name = "landscapeTiles_060"
 60/texture = ExtResource( 54 )
-60/tex_offset = Vector2( 0, 0 )
+60/tex_offset = Vector2( 0, 16 )
 60/modulate = Color( 1, 1, 1, 1 )
 60/region = Rect2( 0, 0, 132, 83 )
 60/tile_mode = 0
@@ -986,7 +986,7 @@
 60/z_index = 0
 61/name = "landscapeTiles_061"
 61/texture = ExtResource( 4 )
-61/tex_offset = Vector2( 0, 0 )
+61/tex_offset = Vector2( 0, 16 )
 61/modulate = Color( 1, 1, 1, 1 )
 61/region = Rect2( 0, 0, 132, 83 )
 61/tile_mode = 0
