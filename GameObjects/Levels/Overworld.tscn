@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Resources/Terrain/OverworldTerrainTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Terrain/OverworldBuildingTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Resources/Terrain/OverworldDoodadsTiles.tres" type="TileSet" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 8 )
 
 [node name="Overworld" type="Node2D"]
 
@@ -31,3 +34,201 @@ tile_set = ExtResource( 3 )
 cell_size = Vector2( 128, 64 )
 format = 1
 tile_data = PoolIntArray( -1703902, 536870921, 0, -1572830, 536871047, 0, -1310697, 536871039, 0, -1310674, 536871056, 0, -1310672, 536870929, 0, -1114071, 536871052, 0, -1048547, 536871045, 0, -1048531, 536870941, 0, -1048529, 536871058, 0, -1048524, 536871066, 0, -1048521, 536871062, 0, -983019, 536871041, 0, -917474, 536870963, 0, -917457, 536871071, 0, -851936, 536871036, 0, -786380, 536871062, 0, -589773, 536871059, 0, -524231, 536871021, 0, -458699, 536871066, 0, -458696, 536871069, 0, -327628, 536871065, 0, -196587, 536871081, 0, 27, 536871076, 0, 196632, 0, 0, 262167, 536871075, 0, 327708, 536871073, 0, 327715, 536871087, 0, 458781, 536871019, 0, 458782, 536871075, 0, 524340, 536871006, 0, 524345, 536871044, 0, 655423, 536871036, 0, 655431, 536871050, 0, 720927, 536871073, 0, 786487, 536871036, 0, 786497, 536871038, 0, 852007, 536870996, 0, 852021, 536871047, 0, 917574, 536871032, 0, 983077, 536871085, 0, 983097, 536870985, 0, 1048609, 536870920, 0, 1048634, 536871042, 0, 1245223, 536871084, 0, 1703975, 536871075, 0, 1835051, 536871018, 0, 1966114, 536871050, 0, 1966120, 536871079, 0, 2031654, 536870986, 0, 2097189, 536871048, 0, 2293809, 536871085, 0, 2424881, 536870915, 0 )
+
+[node name="Cities" type="Node2D" parent="."]
+
+[node name="OverworldCityArea" type="Area2D" parent="Cities"]
+position = Vector2( 256, 133 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea2" type="Area2D" parent="Cities"]
+position = Vector2( 384, 133 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea2"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea3" type="Area2D" parent="Cities"]
+position = Vector2( 231, 235 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea3"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea4" type="Area2D" parent="Cities"]
+position = Vector2( 308, 184 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea4"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea5" type="Area2D" parent="Cities"]
+position = Vector2( 282, 274 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea5"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea6" type="Area2D" parent="Cities"]
+position = Vector2( 359, 300 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea6"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea7" type="Area2D" parent="Cities"]
+position = Vector2( 308, 389 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea7"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea8" type="Area2D" parent="Cities"]
+position = Vector2( 26, 440 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea8"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea9" type="Area2D" parent="Cities"]
+position = Vector2( 103, 427 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea9"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea10" type="Area2D" parent="Cities"]
+position = Vector2( 142, 472 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea10"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea11" type="Area2D" parent="Cities"]
+position = Vector2( 192, 536 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea11"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea12" type="Area2D" parent="Cities"]
+position = Vector2( 525, 408 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea12"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea13" type="Area2D" parent="Cities"]
+position = Vector2( 551, 510 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea13"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea14" type="Area2D" parent="Cities"]
+position = Vector2( 640, 440 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea14"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea15" type="Area2D" parent="Cities"]
+position = Vector2( 666, 529 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea15"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea16" type="Area2D" parent="Cities"]
+position = Vector2( 756, 549 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea16"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea17" type="Area2D" parent="Cities"]
+position = Vector2( 807, 370 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea17"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea18" type="Area2D" parent="Cities"]
+position = Vector2( 832, 293 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea18"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea19" type="Area2D" parent="Cities"]
+position = Vector2( 884, 280 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea19"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea20" type="Area2D" parent="Cities"]
+position = Vector2( 756, 254 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea20"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea21" type="Area2D" parent="Cities"]
+position = Vector2( 858, 216 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea21"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea22" type="Area2D" parent="Cities"]
+position = Vector2( 781, 165 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea22"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea23" type="Area2D" parent="Cities"]
+position = Vector2( 871, 146 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea23"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea24" type="Area2D" parent="Cities"]
+position = Vector2( 781, 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea24"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea25" type="Area2D" parent="Cities"]
+position = Vector2( 704, 75 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea25"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea26" type="Area2D" parent="Cities"]
+position = Vector2( 602, 50 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea26"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea27" type="Area2D" parent="Cities"]
+position = Vector2( 576, 114 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea27"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea28" type="Area2D" parent="Cities"]
+position = Vector2( 487, 69 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cities/OverworldCityArea28"]
+z_index = 1
+shape = SubResource( 1 )
