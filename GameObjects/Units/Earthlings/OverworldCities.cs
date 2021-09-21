@@ -18,4 +18,28 @@ public class OverworldCities : Node2D
 //  {
 //      
 //  }
+
+    public void CityClicked(int cityNumber) {
+
+    }
+
+    public void CityMouseEntered(int cityNumber) {
+
+    }
+
+    public void CityMouseExited(int cityNumber) {
+
+    }
+
+    public void LoadThreats() {
+
+    }
+
+    public void SaveThreats() {
+
+    }
+
+    public void UpdateThreats() {
+        
+    }
 }
