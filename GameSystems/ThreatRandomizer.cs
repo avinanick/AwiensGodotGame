@@ -30,11 +30,34 @@ public class ThreatRandomizer : Node
 //      
 //  }
 
-    public void PickThreat(int difficultyLevel) {
+    public void PickThreat(bool alienThreat, int difficultyLevel) {
+        // If the alien bool is true, get a new alien threat to return to the
+        // caller, otherwise get a modifier. The pool to choose from depends on the 
+        // difficulty level passed in
+        if(alienThreat) {
+            if(difficultyLevel < MediumAlienThreshold) {
 
-    }
+            }
+            else if(difficultyLevel < HardAlienThreshold) {
 
-    private void ReadThreats() {
+            }
+            else {
 
+            }
+        }
+        else {
+            if(difficultyLevel < EasyModifierThreshold) {
+                GD.Print("Error: no modifier can be assigned");
+            }
+            else if(difficultyLevel < MediumModifierThreshold) {
+
+            }
+            else if(difficultyLevel < HardModifierThreshold) {
+
+            }
+            else {
+
+            }
+        }
     }
 }
