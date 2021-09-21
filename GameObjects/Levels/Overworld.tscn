@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resources/Terrain/OverworldTerrainTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Terrain/OverworldBuildingTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Resources/Terrain/OverworldDoodadsTiles.tres" type="TileSet" id=3]
 [ext_resource path="res://GameObjects/Units/Earthlings/OverworldCities.cs" type="Script" id=4]
+[ext_resource path="res://GameSystems/ThreatRandomizer.cs" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 8 )
@@ -234,3 +235,6 @@ position = Vector2( 487, 69 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea28"]
 z_index = 1
 shape = SubResource( 1 )
+
+[node name="ThreatRandomizer" type="Node" parent="."]
+script = ExtResource( 5 )
