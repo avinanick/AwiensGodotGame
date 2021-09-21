@@ -7,6 +7,11 @@ public class OverworldCities : Node2D
     // private int a = 2;
     // private string b = "text";
     private Vector2[] CityPositions;
+    // I'm currently thinking the threats will be an array of stacks, that
+    // allows me to push additions to the stack and use an enumerator to easily
+    // read the stack contents for the interface, since it shouldn't really get
+    // exceptionally long.
+    private System.Collections.Stack[] CityThreats;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -16,6 +21,7 @@ public class OverworldCities : Node2D
         for(int i = 0; i < cities.Count; i++) {
             CityPositions[i] = cities[i].GlobalPosition;
         }
+        CityThreats = new System.Collections.Stack[cities.Count];
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
