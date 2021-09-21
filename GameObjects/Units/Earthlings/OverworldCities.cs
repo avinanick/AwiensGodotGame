@@ -24,16 +24,18 @@ public class OverworldCities : Node2D
 //      
 //  }
 
-    public void CityClicked(int cityNumber) {
-
+    public void CityClicked(Node viewportDetector, InputEvent eventDetected, int shapeIndex, int cityNumber) {
+        if(eventDetected.IsAction("select") && eventDetected.IsPressed()) {
+            GD.Print(cityNumber, " city clicked");
+        }
     }
 
     public void CityMouseEntered(int cityNumber) {
-
+        GD.Print(cityNumber, " city mouse entered");
     }
 
     public void CityMouseExited(int cityNumber) {
-
+        GD.Print(cityNumber, " city mouse exited");
     }
 
     public void LoadThreats() {
