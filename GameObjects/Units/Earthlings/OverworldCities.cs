@@ -46,7 +46,20 @@ public class OverworldCities : Node2D
     }
 
     public void LoadThreats() {
+        File threatSave = new File();
+        if(!threatSave.FileExists("user://threats.save")) {
+            GD.Print("No threat save file found");
+            return;
+        }
+        threatSave.Open("user://threats.save", File.ModeFlags.Read);
 
+        Godot.Collections.Dictionary<int, string[]> threatsDict = new Godot.Collections.Dictionary<int, string[]>((Godot.Collections.Dictionary)JSON.Parse(threatSave.GetLine()).Result);
+        for(int i = 0; i < threatsDict.Count; i++) {
+            for(int j = 0; j < threatsDict[i].Length; j++) {
+                CityThreats[i].Push(threatsDict[i][j]);
+            }
+        }
+        threatSave.Close();
     }
 
     public void SaveThreats() {
