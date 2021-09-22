@@ -22,6 +22,7 @@ public class OverworldCities : Node2D
             CityPositions[i] = cities[i].GlobalPosition;
         }
         CityThreats = new System.Collections.Stack[cities.Count];
+        LoadThreats();
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,7 +50,15 @@ public class OverworldCities : Node2D
     }
 
     public void SaveThreats() {
-
+        // I probably want to change this to save it all in a single file
+        for(int i = 0; i < CityThreats.Length; i++) {
+            File threatSave = new File();
+            threatSave.Open("user://threats" + i + ".save", File.ModeFlags.Write);
+            foreach(string threatString in CityThreats[i]) {
+                threatSave.StoreLine(threatString);
+            }
+            threatSave.Close();
+        }
     }
 
     public void UpdateThreats() {
