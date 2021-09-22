@@ -53,6 +53,14 @@ public class OverworldCities : Node2D
     }
 
     public void UpdateThreats() {
-
+        Godot.Collections.Array<ThreatRandomizer>threatRandomizers = new Godot.Collections.Array<ThreatRandomizer>(GetTree().GetNodesInGroup("ThreatSource"));
+        if(threatRandomizers.Count > 0) {
+            for(int i = 0; i < CityThreats.Length; i++) {
+                CityThreats[i].Push(threatRandomizers[0].PickThreat());
+            }
+        }
+        else {
+            GD.Print("Error: No threat randomizer found");
+        }
     }
 }
