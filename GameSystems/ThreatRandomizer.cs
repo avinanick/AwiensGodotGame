@@ -30,10 +30,12 @@ public class ThreatRandomizer : Node
 //      
 //  }
 
-    public string PickThreat(bool alienThreat, int difficultyLevel) {
+    public string PickThreat() {
         // If the alien bool is true, get a new alien threat to return to the
         // caller, otherwise get a modifier. The pool to choose from depends on the 
         // difficulty level passed in
+        int difficultyLevel = GetNode<CampaignTracker>("/root/CampaignTrackerAL").GetCurrentDifficulty();
+        bool alienThreat = (difficultyLevel % 2 == 0 || difficultyLevel < EasyModifierThreshold);
         string[] relevantThreats = new string[0];
         if(alienThreat) {
             if(difficultyLevel < MediumAlienThreshold) {
@@ -59,14 +61,17 @@ public class ThreatRandomizer : Node
                 GD.Print("Error: no modifier can be assigned");
             }
             else if(difficultyLevel < MediumModifierThreshold) {
+                // Pick randomly from the easy modifiers
                 relevantThreats = EasyModifiers;
             }
             else if(difficultyLevel < HardModifierThreshold) {
+                // Pick randomly from the easy and medium modifiers
                 relevantThreats = new string[EasyModifiers.Length + MediumModifiers.Length];
                 Array.Copy(EasyModifiers, relevantThreats, EasyModifiers.Length);
                 Array.Copy(MediumModifiers, 0, relevantThreats, EasyModifiers.Length, MediumModifiers.Length);
             }
             else {
+                // Pick randomly from all modifiers
                 relevantThreats = new string[EasyModifiers.Length + MediumModifiers.Length + HardModifiers.Length];
                 Array.Copy(EasyModifiers, relevantThreats, EasyModifiers.Length);
                 Array.Copy(MediumModifiers, 0, relevantThreats, EasyModifiers.Length, MediumModifiers.Length);
