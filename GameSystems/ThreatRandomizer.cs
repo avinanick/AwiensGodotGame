@@ -34,15 +34,24 @@ public class ThreatRandomizer : Node
         // If the alien bool is true, get a new alien threat to return to the
         // caller, otherwise get a modifier. The pool to choose from depends on the 
         // difficulty level passed in
+        string[] relevantThreats = new string[0];
         if(alienThreat) {
             if(difficultyLevel < MediumAlienThreshold) {
-
+                // Pick randomly from easy aliens
+                relevantThreats = EasyAliens;
             }
             else if(difficultyLevel < HardAlienThreshold) {
-
+                // Pick randomly from easy and medium aliens
+                relevantThreats = new string[EasyAliens.Length + MediumAliens.Length];
+                Array.Copy(EasyAliens, relevantThreats, EasyAliens.Length);
+                Array.Copy(MediumAliens, 0, relevantThreats, EasyAliens.Length, MediumAliens.Length);
             }
             else {
-
+                // Pick randomly from all aliens
+                relevantThreats = new string[EasyAliens.Length + MediumAliens.Length + HardAliens.Length];
+                Array.Copy(EasyAliens, relevantThreats, EasyAliens.Length);
+                Array.Copy(MediumAliens, 0, relevantThreats, EasyAliens.Length, MediumAliens.Length);
+                Array.Copy(HardAliens, 0, relevantThreats, EasyAliens.Length + MediumAliens.Length, HardAliens.Length);
             }
         }
         else {
@@ -50,14 +59,23 @@ public class ThreatRandomizer : Node
                 GD.Print("Error: no modifier can be assigned");
             }
             else if(difficultyLevel < MediumModifierThreshold) {
-
+                relevantThreats = EasyModifiers;
             }
             else if(difficultyLevel < HardModifierThreshold) {
-
+                relevantThreats = new string[EasyModifiers.Length + MediumModifiers.Length];
+                Array.Copy(EasyModifiers, relevantThreats, EasyModifiers.Length);
+                Array.Copy(MediumModifiers, 0, relevantThreats, EasyModifiers.Length, MediumModifiers.Length);
             }
             else {
-
+                relevantThreats = new string[EasyModifiers.Length + MediumModifiers.Length + HardModifiers.Length];
+                Array.Copy(EasyModifiers, relevantThreats, EasyModifiers.Length);
+                Array.Copy(MediumModifiers, 0, relevantThreats, EasyModifiers.Length, MediumModifiers.Length);
+                Array.Copy(HardModifiers, 0, relevantThreats, EasyModifiers.Length + MediumModifiers.Length, HardModifiers.Length);
             }
+        }
+        if(relevantThreats.Length > 0) {
+        int index = Mathf.Abs((int)(GD.Randi() % relevantThreats.Length));
+        return relevantThreats[index];
         }
         return "";
     }
