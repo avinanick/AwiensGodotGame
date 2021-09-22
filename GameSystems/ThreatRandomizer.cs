@@ -6,9 +6,9 @@ public class ThreatRandomizer : Node
     // I want an array for enemy types, separated into difficulties, and one
     // for enemy buffs, also separated into difficulties
     // I'll likely make and use data singletons for this, that seems best
-    private string[] EasyAliens = new string[1] {"Alien Missile"};
-    private string[] MediumAliens = new string[0] {};
-    private string[] HardAliens = new string[0] {};
+    private string[] EasyAliens = new string[3] {"Alien Missile", "Alien Drone", "Alien Planet Drill"};
+    private string[] MediumAliens = new string[3] {"Alien Fighter", "Alien Scout", "Alien Inhibitor"};
+    private string[] HardAliens = new string[3] {"Alien Bomber", "Alien Carrier", "Alien Artillery"};
     private string[] EasyModifiers = new string[0] {};
     private string[] MediumModifiers = new string[0] {};
     private string[] HardModifiers = new string[0] {};
@@ -30,7 +30,7 @@ public class ThreatRandomizer : Node
 //      
 //  }
 
-    public void PickThreat(bool alienThreat, int difficultyLevel) {
+    public string PickThreat(bool alienThreat, int difficultyLevel) {
         // If the alien bool is true, get a new alien threat to return to the
         // caller, otherwise get a modifier. The pool to choose from depends on the 
         // difficulty level passed in
@@ -59,5 +59,6 @@ public class ThreatRandomizer : Node
 
             }
         }
+        return "";
     }
 }
