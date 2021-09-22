@@ -50,15 +50,19 @@ public class OverworldCities : Node2D
     }
 
     public void SaveThreats() {
-        // I probably want to change this to save it all in a single file
+        Godot.Collections.Dictionary<int, string[]> threatsDict = new Godot.Collections.Dictionary<int, string[]>();
+        
+        File threatSave = new File();
+        threatSave.Open("user://threats.save", File.ModeFlags.Write);
         for(int i = 0; i < CityThreats.Length; i++) {
-            File threatSave = new File();
-            threatSave.Open("user://threats" + i + ".save", File.ModeFlags.Write);
+            threatsDict.Add(i, new string[CityThreats[i].Count]);
+            int j = 0;
             foreach(string threatString in CityThreats[i]) {
-                threatSave.StoreLine(threatString);
+                threatsDict[i][j] = threatString;
             }
-            threatSave.Close();
         }
+        threatSave.StoreLine(JSON.Print(threatsDict));
+        threatSave.Close();
     }
 
     public void UpdateThreats() {
