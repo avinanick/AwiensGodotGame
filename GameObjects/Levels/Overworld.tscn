@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resources/Terrain/OverworldTerrainTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Terrain/OverworldBuildingTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Resources/Terrain/OverworldDoodadsTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://GameObjects/Units/Earthlings/OverworldCities.cs" type="Script" id=4]
+[ext_resource path="res://GameSystems/ThreatRandomizer.cs" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 8 )
 
 [node name="Overworld" type="Node2D"]
 
@@ -31,3 +36,292 @@ tile_set = ExtResource( 3 )
 cell_size = Vector2( 128, 64 )
 format = 1
 tile_data = PoolIntArray( -1703902, 536870921, 0, -1572830, 536871047, 0, -1310697, 536871039, 0, -1310674, 536871056, 0, -1310672, 536870929, 0, -1114071, 536871052, 0, -1048547, 536871045, 0, -1048531, 536870941, 0, -1048529, 536871058, 0, -1048524, 536871066, 0, -1048521, 536871062, 0, -983019, 536871041, 0, -917474, 536870963, 0, -917457, 536871071, 0, -851936, 536871036, 0, -786380, 536871062, 0, -589773, 536871059, 0, -524231, 536871021, 0, -458699, 536871066, 0, -458696, 536871069, 0, -327628, 536871065, 0, -196587, 536871081, 0, 27, 536871076, 0, 196632, 0, 0, 262167, 536871075, 0, 327708, 536871073, 0, 327715, 536871087, 0, 458781, 536871019, 0, 458782, 536871075, 0, 524340, 536871006, 0, 524345, 536871044, 0, 655423, 536871036, 0, 655431, 536871050, 0, 720927, 536871073, 0, 786487, 536871036, 0, 786497, 536871038, 0, 852007, 536870996, 0, 852021, 536871047, 0, 917574, 536871032, 0, 983077, 536871085, 0, 983097, 536870985, 0, 1048609, 536870920, 0, 1048634, 536871042, 0, 1245223, 536871084, 0, 1703975, 536871075, 0, 1835051, 536871018, 0, 1966114, 536871050, 0, 1966120, 536871079, 0, 2031654, 536870986, 0, 2097189, 536871048, 0, 2293809, 536871085, 0, 2424881, 536870915, 0 )
+
+[node name="OverworldCities" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="OverworldCityArea" type="Area2D" parent="OverworldCities"]
+position = Vector2( 256, 133 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea2" type="Area2D" parent="OverworldCities"]
+position = Vector2( 384, 133 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea2"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea3" type="Area2D" parent="OverworldCities"]
+position = Vector2( 231, 235 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea3"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea4" type="Area2D" parent="OverworldCities"]
+position = Vector2( 308, 184 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea4"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea5" type="Area2D" parent="OverworldCities"]
+position = Vector2( 282, 274 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea5"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea6" type="Area2D" parent="OverworldCities"]
+position = Vector2( 359, 300 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea6"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea7" type="Area2D" parent="OverworldCities"]
+position = Vector2( 308, 389 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea7"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea8" type="Area2D" parent="OverworldCities"]
+position = Vector2( 26, 440 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea8"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea9" type="Area2D" parent="OverworldCities"]
+position = Vector2( 103, 427 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea9"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea10" type="Area2D" parent="OverworldCities"]
+position = Vector2( 142, 472 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea10"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea11" type="Area2D" parent="OverworldCities"]
+position = Vector2( 192, 536 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea11"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea12" type="Area2D" parent="OverworldCities"]
+position = Vector2( 525, 408 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea12"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea13" type="Area2D" parent="OverworldCities"]
+position = Vector2( 551, 510 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea13"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea14" type="Area2D" parent="OverworldCities"]
+position = Vector2( 640, 440 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea14"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea15" type="Area2D" parent="OverworldCities"]
+position = Vector2( 666, 529 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea15"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea16" type="Area2D" parent="OverworldCities"]
+position = Vector2( 756, 549 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea16"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea17" type="Area2D" parent="OverworldCities"]
+position = Vector2( 807, 370 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea17"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea18" type="Area2D" parent="OverworldCities"]
+position = Vector2( 832, 293 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea18"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea19" type="Area2D" parent="OverworldCities"]
+position = Vector2( 884, 280 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea19"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea20" type="Area2D" parent="OverworldCities"]
+position = Vector2( 756, 254 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea20"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea21" type="Area2D" parent="OverworldCities"]
+position = Vector2( 858, 216 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea21"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea22" type="Area2D" parent="OverworldCities"]
+position = Vector2( 781, 165 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea22"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea23" type="Area2D" parent="OverworldCities"]
+position = Vector2( 871, 146 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea23"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea24" type="Area2D" parent="OverworldCities"]
+position = Vector2( 781, 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea24"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea25" type="Area2D" parent="OverworldCities"]
+position = Vector2( 704, 75 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea25"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea26" type="Area2D" parent="OverworldCities"]
+position = Vector2( 602, 50 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea26"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea27" type="Area2D" parent="OverworldCities"]
+position = Vector2( 576, 114 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea27"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="OverworldCityArea28" type="Area2D" parent="OverworldCities"]
+position = Vector2( 487, 69 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverworldCities/OverworldCityArea28"]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="ThreatRandomizer" type="Node" parent="." groups=[
+"ThreatSource",
+]]
+script = ExtResource( 5 )
+
+[connection signal="input_event" from="OverworldCities/OverworldCityArea" to="OverworldCities" method="CityClicked" binds= [ 0 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea" to="OverworldCities" method="CityMouseEntered" binds= [ 0 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea" to="OverworldCities" method="CityMouseExited" binds= [ 0 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea2" to="OverworldCities" method="CityClicked" binds= [ 1 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea2" to="OverworldCities" method="CityMouseEntered" binds= [ 1 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea2" to="OverworldCities" method="CityMouseExited" binds= [ 1 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea3" to="OverworldCities" method="CityClicked" binds= [ 2 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea3" to="OverworldCities" method="CityMouseEntered" binds= [ 2 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea3" to="OverworldCities" method="CityMouseExited" binds= [ 2 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea4" to="OverworldCities" method="CityClicked" binds= [ 3 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea4" to="OverworldCities" method="CityMouseEntered" binds= [ 3 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea4" to="OverworldCities" method="CityMouseExited" binds= [ 3 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea5" to="OverworldCities" method="CityClicked" binds= [ 4 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea5" to="OverworldCities" method="CityMouseEntered" binds= [ 4 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea5" to="OverworldCities" method="CityMouseExited" binds= [ 4 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea6" to="OverworldCities" method="CityClicked" binds= [ 5 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea6" to="OverworldCities" method="CityMouseEntered" binds= [ 5 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea6" to="OverworldCities" method="CityMouseExited" binds= [ 5 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea7" to="OverworldCities" method="CityClicked" binds= [ 6 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea7" to="OverworldCities" method="CityMouseEntered" binds= [ 6 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea7" to="OverworldCities" method="CityMouseExited" binds= [ 6 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea8" to="OverworldCities" method="CityClicked" binds= [ 7 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea8" to="OverworldCities" method="CityMouseEntered" binds= [ 7 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea8" to="OverworldCities" method="CityMouseExited" binds= [ 7 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea9" to="OverworldCities" method="CityClicked" binds= [ 8 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea9" to="OverworldCities" method="CityMouseEntered" binds= [ 8 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea9" to="OverworldCities" method="CityMouseExited" binds= [ 8 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea10" to="OverworldCities" method="CityClicked" binds= [ 9 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea10" to="OverworldCities" method="CityMouseEntered" binds= [ 9 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea10" to="OverworldCities" method="CityMouseExited" binds= [ 9 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea11" to="OverworldCities" method="CityClicked" binds= [ 10 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea11" to="OverworldCities" method="CityMouseEntered" binds= [ 10 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea11" to="OverworldCities" method="CityMouseExited" binds= [ 10 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea12" to="OverworldCities" method="CityClicked" binds= [ 11 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea12" to="OverworldCities" method="CityMouseEntered" binds= [ 11 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea12" to="OverworldCities" method="CityMouseExited" binds= [ 11 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea13" to="OverworldCities" method="CityClicked" binds= [ 12 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea13" to="OverworldCities" method="CityMouseEntered" binds= [ 12 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea13" to="OverworldCities" method="CityMouseExited" binds= [ 12 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea14" to="OverworldCities" method="CityClicked" binds= [ 13 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea14" to="OverworldCities" method="CityMouseEntered" binds= [ 13 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea14" to="OverworldCities" method="CityMouseExited" binds= [ 13 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea15" to="OverworldCities" method="CityClicked" binds= [ 14 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea15" to="OverworldCities" method="CityMouseEntered" binds= [ 14 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea15" to="OverworldCities" method="CityMouseExited" binds= [ 14 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea16" to="OverworldCities" method="CityClicked" binds= [ 15 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea16" to="OverworldCities" method="CityMouseEntered" binds= [ 15 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea16" to="OverworldCities" method="CityMouseExited" binds= [ 15 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea17" to="OverworldCities" method="CityClicked" binds= [ 16 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea17" to="OverworldCities" method="CityMouseEntered" binds= [ 16 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea17" to="OverworldCities" method="CityMouseExited" binds= [ 16 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea18" to="OverworldCities" method="CityClicked" binds= [ 17 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea18" to="OverworldCities" method="CityMouseEntered" binds= [ 17 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea18" to="OverworldCities" method="CityMouseExited" binds= [ 17 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea19" to="OverworldCities" method="CityClicked" binds= [ 18 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea19" to="OverworldCities" method="CityMouseEntered" binds= [ 18 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea19" to="OverworldCities" method="CityMouseExited" binds= [ 18 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea20" to="OverworldCities" method="CityClicked" binds= [ 19 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea20" to="OverworldCities" method="CityMouseEntered" binds= [ 19 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea20" to="OverworldCities" method="CityMouseExited" binds= [ 19 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea21" to="OverworldCities" method="CityClicked" binds= [ 20 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea21" to="OverworldCities" method="CityMouseEntered" binds= [ 20 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea21" to="OverworldCities" method="CityMouseExited" binds= [ 20 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea22" to="OverworldCities" method="CityClicked" binds= [ 21 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea22" to="OverworldCities" method="CityMouseEntered" binds= [ 21 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea22" to="OverworldCities" method="CityMouseExited" binds= [ 21 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea23" to="OverworldCities" method="CityClicked" binds= [ 22 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea23" to="OverworldCities" method="CityMouseEntered" binds= [ 22 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea23" to="OverworldCities" method="CityMouseExited" binds= [ 22 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea24" to="OverworldCities" method="CityClicked" binds= [ 23 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea24" to="OverworldCities" method="CityMouseEntered" binds= [ 23 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea24" to="OverworldCities" method="CityMouseExited" binds= [ 23 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea25" to="OverworldCities" method="CityClicked" binds= [ 24 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea25" to="OverworldCities" method="CityMouseEntered" binds= [ 24 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea25" to="OverworldCities" method="CityMouseExited" binds= [ 24 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea26" to="OverworldCities" method="CityClicked" binds= [ 25 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea26" to="OverworldCities" method="CityMouseEntered" binds= [ 25 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea26" to="OverworldCities" method="CityMouseExited" binds= [ 25 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea27" to="OverworldCities" method="CityClicked" binds= [ 26 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea27" to="OverworldCities" method="CityMouseEntered" binds= [ 26 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea27" to="OverworldCities" method="CityMouseExited" binds= [ 26 ]]
+[connection signal="input_event" from="OverworldCities/OverworldCityArea28" to="OverworldCities" method="CityClicked" binds= [ 27 ]]
+[connection signal="mouse_entered" from="OverworldCities/OverworldCityArea28" to="OverworldCities" method="CityMouseEntered" binds= [ 27 ]]
+[connection signal="mouse_exited" from="OverworldCities/OverworldCityArea28" to="OverworldCities" method="CityMouseExited" binds= [ 27 ]]
