@@ -18,4 +18,16 @@ public class ThreatsPreviewInterface : MarginContainer
 //  {
 //      
 //  }
+
+    public void AddThreat(string threatName, bool isAlien) {
+        // This should get the icon for the threat and add it to the appropriate list
+    }
+
+    public void ClearThreats() {
+        // Remove all threats, used when switching to another city
+    }
+
+    public void SetCityName(string cityName) {
+        
+    }
 }
