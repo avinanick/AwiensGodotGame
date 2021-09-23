@@ -9,3 +9,13 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 33.0
+margin_bottom = 33.0
