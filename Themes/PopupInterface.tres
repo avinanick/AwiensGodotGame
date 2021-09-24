@@ -16,6 +16,7 @@ region_rect = Rect2( 0, 0, 190, 49 )
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 190, 45 )
+modulate_color = Color( 0.768627, 0.768627, 0.768627, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.819608, 0.192157, 0.192157, 1 )

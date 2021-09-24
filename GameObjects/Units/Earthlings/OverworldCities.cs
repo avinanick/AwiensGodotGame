@@ -11,18 +11,24 @@ public class OverworldCities : Node2D
     // allows me to push additions to the stack and use an enumerator to easily
     // read the stack contents for the interface, since it shouldn't really get
     // exceptionally long.
-    private System.Collections.Stack[] CityThreats;
+    private System.Collections.Generic.Stack<string>[] CityThreats;
+
+    [Signal]
+    public delegate void EnterCity(string cityName, Vector2 location, string[] threats);
+    [Signal]
+    public delegate void ExitCity();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         Godot.Collections.Array<Node2D> cities = new Godot.Collections.Array<Node2D>(GetChildren());
+        CityThreats = new System.Collections.Generic.Stack<string>[cities.Count];
         CityPositions = new Vector2[cities.Count];
         for(int i = 0; i < cities.Count; i++) {
             CityPositions[i] = cities[i].GlobalPosition;
+            CityThreats[i] = new System.Collections.Generic.Stack<string>();
         }
-        CityThreats = new System.Collections.Stack[cities.Count];
-        LoadThreats();
+        CallDeferred(nameof(LoadThreats));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,9 +45,11 @@ public class OverworldCities : Node2D
 
     public void CityMouseEntered(int cityNumber) {
         GD.Print(cityNumber, " city mouse entered");
+        EmitSignal(nameof(EnterCity), "", CityPositions[cityNumber], CityThreats[cityNumber].ToArray());
     }
 
     public void CityMouseExited(int cityNumber) {
+        EmitSignal(nameof(ExitCity));
         GD.Print(cityNumber, " city mouse exited");
     }
 
@@ -49,6 +57,7 @@ public class OverworldCities : Node2D
         File threatSave = new File();
         if(!threatSave.FileExists("user://threats.save")) {
             GD.Print("No threat save file found");
+            UpdateThreats();
             return;
         }
         threatSave.Open("user://threats.save", File.ModeFlags.Read);
