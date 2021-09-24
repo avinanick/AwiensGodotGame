@@ -43,6 +43,6 @@ public class ThreatsPreviewInterface : MarginContainer
     }
 
     public void SetCityName(string cityName) {
-
+        GetNode<Label>("PanelContainer/VBoxContainer/CityNameLabel").Text = cityName;
     }
 }
