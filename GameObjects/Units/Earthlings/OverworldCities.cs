@@ -12,6 +12,7 @@ public class OverworldCities : Node2D
     // read the stack contents for the interface, since it shouldn't really get
     // exceptionally long.
     private System.Collections.Generic.Stack<string>[] CityThreats;
+    private int SelectedCity = -1;
 
     [Signal]
     public delegate void EnterCity(string cityName, Vector2 location, string[] threats);
@@ -44,6 +45,8 @@ public class OverworldCities : Node2D
             GD.Print(cityNumber, " city clicked");
             // I think I want some sort of confirmation interface to pop up, and if the player
             // clicks accept then we'll go to the level
+            SelectedCity = cityNumber;
+            EmitSignal(nameof(SelectCity), CityPositions[cityNumber]);
         }
     }
 
