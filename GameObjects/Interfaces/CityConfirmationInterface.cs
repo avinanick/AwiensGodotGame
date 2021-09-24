@@ -18,4 +18,16 @@ public class CityConfirmationInterface : MarginContainer
 //  {
 //      
 //  }
+
+    public void AcceptButtonPressed() {
+
+    }
+
+    public void CancelButtonPressed() {
+
+    }
+
+    public void CityClicked() {
+        
+    }
 }
