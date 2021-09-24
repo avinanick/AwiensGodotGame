@@ -22,12 +22,13 @@ public class OverworldCities : Node2D
     public override void _Ready()
     {
         Godot.Collections.Array<Node2D> cities = new Godot.Collections.Array<Node2D>(GetChildren());
+        CityThreats = new System.Collections.Generic.Stack<string>[cities.Count];
         CityPositions = new Vector2[cities.Count];
         for(int i = 0; i < cities.Count; i++) {
             CityPositions[i] = cities[i].GlobalPosition;
+            CityThreats[i] = new System.Collections.Generic.Stack<string>();
         }
-        CityThreats = new System.Collections.Generic.Stack<string>[cities.Count];
-        LoadThreats();
+        CallDeferred(nameof(LoadThreats));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
