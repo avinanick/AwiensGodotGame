@@ -49,6 +49,7 @@ public class OverworldCities : Node2D
         File threatSave = new File();
         if(!threatSave.FileExists("user://threats.save")) {
             GD.Print("No threat save file found");
+            UpdateThreats();
             return;
         }
         threatSave.Open("user://threats.save", File.ModeFlags.Read);
