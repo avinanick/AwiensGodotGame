@@ -54,4 +54,8 @@ public class AlienData : Node
     public float GetAlienSpawnInterval(string alienName) {
         return DataSet[alienName].GetSpawnInterval();
     }
+
+    public bool IsAnAlien(string potentialAlienName) {
+        return DataSet.ContainsKey(potentialAlienName);
+    }
 }
