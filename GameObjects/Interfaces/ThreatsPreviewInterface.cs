@@ -22,6 +22,16 @@ public class ThreatsPreviewInterface : MarginContainer
 
     public void AddThreat(string threatName, bool isAlien) {
         // This should get the icon for the threat and add it to the appropriate list
+        ThreatIcon newIcon = (ThreatIcon)IconPackedScene.Instance();
+        AlienData dataAL = GetNode<AlienData>("/root/AlienDataAL");
+        Texture iconTexture = GD.Load<Texture>(dataAL.GetAlienIconPath(threatName));
+        newIcon.SetIcon(iconTexture);
+        if(isAlien) {
+            GetNode("PanelContainer/VBoxContainer/HBoxContainer").AddChild(newIcon);
+        }
+        else {
+            GetNode("PanelContainer/VBoxContainer/HBoxContainer2").AddChild(newIcon);
+        }
     }
 
     public void AttachAtLocation(Vector2 location) {
