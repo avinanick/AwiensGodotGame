@@ -30,13 +30,16 @@ margin_top = 18.0
 margin_right = 114.0
 margin_bottom = 38.0
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="CancelButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 margin_right = 54.0
 margin_bottom = 20.0
 text = "Cancel"
 
-[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="AcceptButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 margin_left = 58.0
 margin_right = 114.0
 margin_bottom = 20.0
 text = "Accept"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/CancelButton" to="." method="CancelButtonPressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/AcceptButton" to="." method="AcceptButtonPressed"]
