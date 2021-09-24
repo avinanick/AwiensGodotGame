@@ -11,7 +11,7 @@ public class ThreatsPreviewInterface : MarginContainer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        Visible = false;
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,6 +30,16 @@ public class ThreatsPreviewInterface : MarginContainer
 
     public void ClearThreats() {
         // Remove all threats, used when switching to another city
+        Node aliensContainer = GetNode<Node>("PanelContainer/VBoxContainer/HBoxContainer");
+        Node modifiersContainer = GetNode<Node>("PanelContainer/VBoxContainer/HBoxContainer2");
+        Godot.Collections.Array<Node> alienIcons = new Godot.Collections.Array<Node>(aliensContainer.GetChildren());
+        Godot.Collections.Array<Node> modifierIcons = new Godot.Collections.Array<Node>(modifiersContainer.GetChildren());
+        for(int i = 0; i < alienIcons.Count; i++) {
+            alienIcons[i].QueueFree();
+        }
+        for(int i = 0; i < modifierIcons.Count; i++) {
+            modifierIcons[i].QueueFree();
+        }
     }
 
     public void SetCityName(string cityName) {
