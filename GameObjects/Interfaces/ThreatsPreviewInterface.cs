@@ -60,7 +60,7 @@ public class ThreatsPreviewInterface : MarginContainer
         GetNode<Label>("PanelContainer/VBoxContainer/CityNameLabel").Text = cityName;
     }
 
-    public void ShowCity(string cityName, Vector2 location, System.Collections.Stack threats) {
+    public void ShowCity(string cityName, Vector2 location, string[] threats) {
         // This should reset the interface then add all the new city information to the interface
         // before showing itself.
         ClearThreats();
