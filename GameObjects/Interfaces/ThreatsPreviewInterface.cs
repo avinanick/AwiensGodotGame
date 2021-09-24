@@ -52,6 +52,10 @@ public class ThreatsPreviewInterface : MarginContainer
         }
     }
 
+    public void HideCity() {
+        Visible = false;
+    }
+
     private void SetCityName(string cityName) {
         GetNode<Label>("PanelContainer/VBoxContainer/CityNameLabel").Text = cityName;
     }
