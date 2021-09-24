@@ -25,6 +25,8 @@ public class ThreatIcon : MarginContainer
 
     public void SetIcon(Texture iconImage) {
         GetNode<TextureRect>("PanelContainer/TextureRect").Texture = iconImage;
+        Hide();
+        Show();
         Vector2 scaling = new Vector2(1,1);
         if(RectSize.x > MaxSizeX) {
             scaling.x = MaxSizeX / RectSize.x;
@@ -33,5 +35,6 @@ public class ThreatIcon : MarginContainer
             scaling.y = MaxSizeY / RectSize.y;
         }
         RectScale = scaling;
+        GD.Print(scaling);
     }
 }

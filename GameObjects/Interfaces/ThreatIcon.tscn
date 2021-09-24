@@ -9,6 +9,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+MaxSizeX = 32
+MaxSizeY = 32
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 margin_right = 40.0
