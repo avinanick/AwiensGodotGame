@@ -94,6 +94,10 @@ public class OverworldCities : Node2D
         threatSave.Close();
     }
 
+    public void SelectionConfirmed() {
+        
+    }
+
     public void UpdateThreats() {
         Godot.Collections.Array<ThreatRandomizer>threatRandomizers = new Godot.Collections.Array<ThreatRandomizer>(GetTree().GetNodesInGroup("ThreatSource"));
         if(threatRandomizers.Count > 0) {
