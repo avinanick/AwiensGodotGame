@@ -22,6 +22,6 @@ public class ThreatIcon : MarginContainer
 //  }
 
     public void SetIcon(Texture iconImage) {
-
+        GetNode<TextureRect>("PanelContainer/TextureRect").Texture = iconImage;
     }
 }
