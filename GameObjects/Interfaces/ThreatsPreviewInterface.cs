@@ -20,7 +20,7 @@ public class ThreatsPreviewInterface : MarginContainer
 //      
 //  }
 
-    public void AddThreat(string threatName, bool isAlien) {
+    private void AddThreat(string threatName, bool isAlien) {
         // This should get the icon for the threat and add it to the appropriate list
         ThreatIcon newIcon = (ThreatIcon)IconPackedScene.Instance();
         AlienData dataAL = GetNode<AlienData>("/root/AlienDataAL");
@@ -34,13 +34,13 @@ public class ThreatsPreviewInterface : MarginContainer
         }
     }
 
-    public void AttachAtLocation(Vector2 location) {
+    private void AttachAtLocation(Vector2 location) {
         // I need to figure out the exact location I want this, until I do this will
         // just be a straightforward set
         RectPosition = location;
     }
 
-    public void ClearThreats() {
+    private void ClearThreats() {
         // Remove all threats, used when switching to another city
         Node aliensContainer = GetNode<Node>("PanelContainer/VBoxContainer/HBoxContainer");
         Node modifiersContainer = GetNode<Node>("PanelContainer/VBoxContainer/HBoxContainer2");
@@ -54,7 +54,11 @@ public class ThreatsPreviewInterface : MarginContainer
         }
     }
 
-    public void SetCityName(string cityName) {
+    private void SetCityName(string cityName) {
         GetNode<Label>("PanelContainer/VBoxContainer/CityNameLabel").Text = cityName;
+    }
+
+    public void ShowCity(string cityName, Vector2 location, System.Collections.Stack threats) {
+        ClearThreats();
     }
 }
