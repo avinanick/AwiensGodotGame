@@ -21,7 +21,7 @@ public class ThreatIcon : MarginContainer
 //      
 //  }
 
-    public void SetIcon(string iconPath) {
+    public void SetIcon(Texture iconImage) {
 
     }
 }
