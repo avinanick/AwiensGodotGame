@@ -33,7 +33,8 @@ public class CityConfirmationInterface : MarginContainer
         Visible = false;
     }
 
-    public void CityClicked() {
-
+    public void CityClicked(Vector2 location) {
+        RectPosition = location;
+        Visible = true;
     }
 }
