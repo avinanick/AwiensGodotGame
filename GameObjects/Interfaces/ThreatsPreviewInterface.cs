@@ -25,7 +25,9 @@ public class ThreatsPreviewInterface : MarginContainer
     }
 
     public void AttachAtLocation(Vector2 location) {
-
+        // I need to figure out the exact location I want this, until I do this will
+        // just be a straightforward set
+        RectPosition = location;
     }
 
     public void ClearThreats() {
