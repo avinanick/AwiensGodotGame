@@ -66,6 +66,10 @@ public class CampaignTracker : Node
         return LevelEnemies;
     }
 
+    public void SetLevelEnemies(string[] nextLevelEnemies) {
+        LevelEnemies = nextLevelEnemies;
+    }
+
     public void SetLevelPoints(int levelPoints) {
         LevelPointsEarned = levelPoints;
     }
