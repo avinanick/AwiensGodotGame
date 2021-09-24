@@ -20,11 +20,9 @@ public class ThreatsPreviewInterface : MarginContainer
 //      
 //  }
 
-    private void AddThreat(string threatName, bool isAlien) {
+    private void AddThreat(Texture iconTexture, bool isAlien) {
         // This should get the icon for the threat and add it to the appropriate list
         ThreatIcon newIcon = (ThreatIcon)IconPackedScene.Instance();
-        AlienData dataAL = GetNode<AlienData>("/root/AlienDataAL");
-        Texture iconTexture = GD.Load<Texture>(dataAL.GetAlienIconPath(threatName));
         newIcon.SetIcon(iconTexture);
         if(isAlien) {
             GetNode("PanelContainer/VBoxContainer/HBoxContainer").AddChild(newIcon);
@@ -59,6 +57,17 @@ public class ThreatsPreviewInterface : MarginContainer
     }
 
     public void ShowCity(string cityName, Vector2 location, System.Collections.Stack threats) {
+        // This should reset the interface then add all the new city information to the interface
+        // before showing itself.
         ClearThreats();
+        SetCityName(cityName);
+        AlienData data = GetNode<AlienData>("/root/AlienDataAL");
+        foreach(string threatName in threats) {
+            bool threatIsAlien = data.IsAnAlien(threatName);
+            Texture threatIcon = GD.Load<Texture>(data.GetAlienIconPath(threatName));
+            AddThreat(threatIcon, threatIsAlien);
+        }
+        Visible = true;
+        AttachAtLocation(location);
     }
 }
