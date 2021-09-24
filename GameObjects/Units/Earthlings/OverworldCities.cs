@@ -13,6 +13,11 @@ public class OverworldCities : Node2D
     // exceptionally long.
     private System.Collections.Stack[] CityThreats;
 
+    [Signal]
+    public delegate void EnterCity(string cityName, Vector2 location, System.Collections.Stack threats);
+    [Signal]
+    public delegate void ExitCity();
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -39,9 +44,11 @@ public class OverworldCities : Node2D
 
     public void CityMouseEntered(int cityNumber) {
         GD.Print(cityNumber, " city mouse entered");
+        EmitSignal(nameof(EnterCity), "", CityPositions[cityNumber], CityThreats[cityNumber]);
     }
 
     public void CityMouseExited(int cityNumber) {
+        EmitSignal(nameof(ExitCity));
         GD.Print(cityNumber, " city mouse exited");
     }
 
