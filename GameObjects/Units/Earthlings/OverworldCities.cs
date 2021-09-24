@@ -17,6 +17,8 @@ public class OverworldCities : Node2D
     public delegate void EnterCity(string cityName, Vector2 location, string[] threats);
     [Signal]
     public delegate void ExitCity();
+    [Signal]
+    public delegate void SelectCity(Vector2 location);
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -40,6 +42,8 @@ public class OverworldCities : Node2D
     public void CityClicked(Node viewportDetector, InputEvent eventDetected, int shapeIndex, int cityNumber) {
         if(eventDetected.IsAction("select") && eventDetected.IsPressed()) {
             GD.Print(cityNumber, " city clicked");
+            // I think I want some sort of confirmation interface to pop up, and if the player
+            // clicks accept then we'll go to the level
         }
     }
 
