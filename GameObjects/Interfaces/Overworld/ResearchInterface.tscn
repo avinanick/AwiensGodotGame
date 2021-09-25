@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://GameObjects/Interfaces/ResearchInterface.cs" type="Script" id=1]
-[ext_resource path="res://GameObjects/Interfaces/ResearchTree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/Interfaces/Overworld/ResearchInterface.cs" type="Script" id=1]
+[ext_resource path="res://GameObjects/Interfaces/Overworld/ResearchTree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Themes/HologramInterface.tres" type="Theme" id=3]
 
 [node name="ResearchInterface" type="MarginContainer"]
