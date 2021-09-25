@@ -19,6 +19,8 @@ public class CampaignTracker : Node
     private int LevelPointsEarned = 0;
     private string[] LevelEnemies = new string[1] {"Alien Missile"};
     // I think I need something to track completed zones in the campaigns somehow
+    private int CurrentCity = -1;
+    private System.Collections.Generic.Stack<int> CompletedCities = new System.Collections.Generic.Stack<int>();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -36,7 +38,10 @@ public class CampaignTracker : Node
         return new Godot.Collections.Dictionary<string, object>() {
             {"NodeType", "CampaignTracker"},
             {"CurrentMode", CurrentMode},
-            {"Difficulty", CurrentDifficultyLevel}
+            {"Difficulty", CurrentDifficultyLevel},
+            {"CompletedCities", CompletedCities.ToArray()},
+            {"PopulationSaved", PopulationSaved},
+            {"CurrentPoints", CurrentPoints}
         };
     }
 
@@ -44,6 +49,8 @@ public class CampaignTracker : Node
         CurrentPoints += LevelPointsEarned;
         PopulationSaved += LevelPointsEarned;
         LevelPointsEarned = 0;
+        CompletedCities.Push(CurrentCity);
+        CurrentCity = -1;
     }
 
     public int GetCurrentDifficulty() {
@@ -54,7 +61,7 @@ public class CampaignTracker : Node
         return CurrentPoints;
     }
 
-    public int GetPoinsEarned() {
+    public int GetPointsEarned() {
         return LevelPointsEarned;
     }
 
@@ -66,8 +73,9 @@ public class CampaignTracker : Node
         return LevelEnemies;
     }
 
-    public void SetLevelEnemies(string[] nextLevelEnemies) {
+    public void SetLevelEnemies(string[] nextLevelEnemies, int nextCity) {
         LevelEnemies = nextLevelEnemies;
+        CurrentCity = nextCity;
     }
 
     public void SetLevelPoints(int levelPoints) {
