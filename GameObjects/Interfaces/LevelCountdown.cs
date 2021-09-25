@@ -18,4 +18,12 @@ public class LevelCountdown : MarginContainer
 //  {
 //      
 //  }
+
+    public void EndCountdown() {
+        
+    }
+
+    private void StartCountdown() {
+
+    }
 }
