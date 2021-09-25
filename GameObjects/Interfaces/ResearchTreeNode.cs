@@ -25,4 +25,16 @@ public class ResearchTreeNode : Button
 //  {
 //      
 //  }
+
+    private void AddLine(Button neighbor) {
+
+    }
+
+    public void AddNeighbor(Button newNeighbor) {
+
+    }
+
+    public void NodeClicked() {
+        
+    }
 }
