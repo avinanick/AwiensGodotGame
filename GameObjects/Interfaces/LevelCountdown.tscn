@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scripts/Interfaces/LevelCountdown.gd" type="Script" id=1]
+[ext_resource path="res://GameObjects/Interfaces/LevelCountdown.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Materials/LabelImages/countdown_number_5.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Materials/LabelImages/countdown_number_4.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Materials/LabelImages/countdown_number_3.png" type="Texture" id=4]
