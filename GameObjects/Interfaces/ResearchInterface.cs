@@ -18,4 +18,12 @@ public class ResearchInterface : MarginContainer
 //  {
 //      
 //  }
+
+    public void CloseInterface() {
+        Visible = false;
+    }
+
+    public void OpenInterface() {
+        Visible = true;
+    }
 }
