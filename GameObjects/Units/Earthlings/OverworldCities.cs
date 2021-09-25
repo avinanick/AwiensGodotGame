@@ -67,10 +67,8 @@ public class OverworldCities : Node2D
         threatSave.Open("user://threats.save", File.ModeFlags.Read);
 
         Godot.Collections.Dictionary<int, string[]> threatsDict = new Godot.Collections.Dictionary<int, string[]>((Godot.Collections.Dictionary)JSON.Parse(threatSave.GetLine()).Result);
-        for(int i = 0; i < threatsDict.Count; i++) {
-            for(int j = 0; j < threatsDict[i].Length; j++) {
-                CityThreats[i].Push(threatsDict[i][j]);
-            }
+        foreach(int i in threatsDict.Keys) {
+            CityThreats[i] = new System.Collections.Generic.Stack<string>(threatsDict[i]);
         }
         threatSave.Close();
     }
@@ -81,11 +79,7 @@ public class OverworldCities : Node2D
         File threatSave = new File();
         threatSave.Open("user://threats.save", File.ModeFlags.Write);
         for(int i = 0; i < CityThreats.Length; i++) {
-            threatsDict.Add(i, new string[CityThreats[i].Count]);
-            int j = 0;
-            foreach(string threatString in CityThreats[i]) {
-                threatsDict[i][j] = threatString;
-            }
+            threatsDict.Add(i, CityThreats[i].ToArray());
         }
         threatSave.StoreLine(JSON.Print(threatsDict));
         threatSave.Close();
