@@ -83,3 +83,5 @@ margin_left = 38.0
 margin_right = 88.8063
 margin_bottom = 37.0799
 text = "Close"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="CloseInterface"]
