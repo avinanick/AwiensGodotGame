@@ -37,10 +37,12 @@ public class VictoryInterface : PanelContainer
 	}
 
 	public void ContinueGame() {
+		GD.Print("Continue clicked");
 		Visible = false;
 		ClearKillIcons();
 		GetNode<CampaignTracker>("/root/CampaignTrackerAL").ConfirmLevelPoints();
 		EmitSignal(nameof(GameContinued));
+		GetTree().ChangeScene("res://GameObjects/Levels/Overworld.tscn");
 	}
 	
 	public void EnemyDefeated() {
