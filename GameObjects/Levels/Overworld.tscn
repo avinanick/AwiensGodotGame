@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Resources/Terrain/OverworldTerrainTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Terrain/OverworldBuildingTiles.tres" type="TileSet" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://GameSystems/ThreatRandomizer.cs" type="Script" id=5]
 [ext_resource path="res://GameObjects/Interfaces/ThreatsPreviewInterface.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameObjects/Interfaces/CityConfirmationInterface.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameObjects/Interfaces/ItemsInterface.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameObjects/Interfaces/ResearchInterface.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 8 )
@@ -244,8 +246,16 @@ shape = SubResource( 1 )
 script = ExtResource( 5 )
 
 [node name="ThreatsPreviewInterface" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [node name="CityConfirmationInterface" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="ItemsInterface" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="ResearchInterface" parent="." instance=ExtResource( 9 )]
+visible = false
 
 [connection signal="EnterCity" from="OverworldCities" to="ThreatsPreviewInterface" method="ShowCity"]
 [connection signal="ExitCity" from="OverworldCities" to="ThreatsPreviewInterface" method="HideCity"]
