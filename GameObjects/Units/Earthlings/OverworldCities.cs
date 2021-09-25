@@ -67,10 +67,11 @@ public class OverworldCities : Node2D
         threatSave.Open("user://threats.save", File.ModeFlags.Read);
 
         Godot.Collections.Dictionary<int, string[]> threatsDict = new Godot.Collections.Dictionary<int, string[]>((Godot.Collections.Dictionary)JSON.Parse(threatSave.GetLine()).Result);
-        foreach(int i in threatsDict.Keys) {
-            CityThreats[i] = new System.Collections.Generic.Stack<string>(threatsDict[i]);
+        foreach(System.Collections.Generic.KeyValuePair<int, string[]> item in threatsDict) {
+            CityThreats[item.Key] = new System.Collections.Generic.Stack<string>(item.Value);
         }
         threatSave.Close();
+        UpdateThreats();
     }
 
     public void SaveThreats() {
