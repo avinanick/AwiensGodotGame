@@ -42,7 +42,6 @@ public class OverworldCities : Node2D
 
     public void CityClicked(Node viewportDetector, InputEvent eventDetected, int shapeIndex, int cityNumber) {
         if(eventDetected.IsAction("select") && eventDetected.IsPressed()) {
-            GD.Print(cityNumber, " city clicked");
             // I think I want some sort of confirmation interface to pop up, and if the player
             // clicks accept then we'll go to the level
             SelectedCity = cityNumber;
@@ -51,13 +50,11 @@ public class OverworldCities : Node2D
     }
 
     public void CityMouseEntered(int cityNumber) {
-        GD.Print(cityNumber, " city mouse entered");
         EmitSignal(nameof(EnterCity), "", CityPositions[cityNumber], CityThreats[cityNumber].ToArray());
     }
 
     public void CityMouseExited(int cityNumber) {
         EmitSignal(nameof(ExitCity));
-        GD.Print(cityNumber, " city mouse exited");
     }
 
     public void LoadThreats() {
@@ -95,7 +92,12 @@ public class OverworldCities : Node2D
     }
 
     public void SelectionConfirmed() {
-        
+        SaveThreats();
+        CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
+        tracker.SetLevelEnemies(CityThreats[SelectedCity].ToArray(), SelectedCity);
+        // Need to figure out how exactly I want to switch to the city defense level
+        // this will just be temporary.
+        GetTree().ChangeScene("res://GameObjects/Levels/LevelOne.tscn");
     }
 
     public void UpdateThreats() {
