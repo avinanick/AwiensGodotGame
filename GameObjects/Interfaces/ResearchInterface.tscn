@@ -50,10 +50,10 @@ size_flags_vertical = 3
 [node name="Offensive" type="ScrollContainer" parent="PanelContainer/VBoxContainer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 45.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 7.0
+margin_top = 54.0
+margin_right = -6.0
+margin_bottom = -13.0
 
 [node name="ResearchTree" parent="PanelContainer/VBoxContainer/TabContainer/Offensive" instance=ExtResource( 2 )]
 margin_right = 0.0
