@@ -10,7 +10,7 @@ public class LevelCountdown : MarginContainer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        CallDeferred(nameof(StartCountdown));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,10 +20,11 @@ public class LevelCountdown : MarginContainer
 //  }
 
     public void EndCountdown() {
-        
+        GetTree().Paused = false;
     }
 
     private void StartCountdown() {
-
+        GetTree().Paused = true;
+        GetNode<AnimationPlayer>("AnimationPlayer").Play("Countdown");
     }
 }
