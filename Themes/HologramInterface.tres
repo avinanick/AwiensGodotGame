@@ -4,7 +4,7 @@
 [ext_resource path="res://Resources/Interfaces/glassPanel.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 100, 100 )
 margin_left = 4.77485
@@ -30,7 +30,7 @@ margin_top = 5.82518
 margin_bottom = 5.54779
 modulate_color = Color( 0.764706, 0.764706, 0.764706, 1 )
 
-[sub_resource type="StyleBoxTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 100, 100 )
 margin_left = 7.0
@@ -53,7 +53,7 @@ Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = SubResource( 4 )
+Button/styles/hover = SubResource( 1 )
 Button/styles/normal = SubResource( 2 )
 Button/styles/pressed = SubResource( 3 )
-PanelContainer/styles/panel = SubResource( 1 )
+PanelContainer/styles/panel = SubResource( 4 )

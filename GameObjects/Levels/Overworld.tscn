@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Resources/Terrain/OverworldTerrainTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Terrain/OverworldBuildingTiles.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://GameObjects/Units/Earthlings/OverworldCities.cs" type="Script" id=4]
 [ext_resource path="res://GameSystems/ThreatRandomizer.cs" type="Script" id=5]
 [ext_resource path="res://GameObjects/Interfaces/ThreatsPreviewInterface.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameObjects/Interfaces/CityConfirmationInterface.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 8 )
@@ -244,8 +245,11 @@ script = ExtResource( 5 )
 
 [node name="ThreatsPreviewInterface" parent="." instance=ExtResource( 6 )]
 
+[node name="CityConfirmationInterface" parent="." instance=ExtResource( 7 )]
+
 [connection signal="EnterCity" from="OverworldCities" to="ThreatsPreviewInterface" method="ShowCity"]
 [connection signal="ExitCity" from="OverworldCities" to="ThreatsPreviewInterface" method="HideCity"]
+[connection signal="SelectCity" from="OverworldCities" to="CityConfirmationInterface" method="CityClicked"]
 [connection signal="input_event" from="OverworldCities/OverworldCityArea" to="OverworldCities" method="CityClicked" binds= [ 0 ]]
 [connection signal="mouse_entered" from="OverworldCities/OverworldCityArea" to="OverworldCities" method="CityMouseEntered" binds= [ 0 ]]
 [connection signal="mouse_exited" from="OverworldCities/OverworldCityArea" to="OverworldCities" method="CityMouseExited" binds= [ 0 ]]
@@ -330,3 +334,4 @@ script = ExtResource( 5 )
 [connection signal="input_event" from="OverworldCities/OverworldCityArea28" to="OverworldCities" method="CityClicked" binds= [ 27 ]]
 [connection signal="mouse_entered" from="OverworldCities/OverworldCityArea28" to="OverworldCities" method="CityMouseEntered" binds= [ 27 ]]
 [connection signal="mouse_exited" from="OverworldCities/OverworldCityArea28" to="OverworldCities" method="CityMouseExited" binds= [ 27 ]]
+[connection signal="Confirmed" from="CityConfirmationInterface" to="OverworldCities" method="SelectionConfirmed"]
