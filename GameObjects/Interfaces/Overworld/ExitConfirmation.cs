@@ -20,7 +20,7 @@ public class ExitConfirmation : PanelContainer
 //  }
 
     public void AbandonCancelled() {
-
+        // Close the menu
     }
 
     public void AbandonClicked() {
@@ -28,10 +28,14 @@ public class ExitConfirmation : PanelContainer
     }
 
     public void AbandonConfirmed() {
+        // Use the abandon world thing I'll put in a singleton?
+    }
 
+    public void QuitCancelled() {
+        
     }
 
     public void QuitClicked() {
-
+        // This should just quit to main menu
     }
 }
