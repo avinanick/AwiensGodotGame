@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GameObjects/Interfaces/Overworld/OverworldOverlay.cs" type="Script" id=1]
 [ext_resource path="res://Themes/HologramInterface.tres" type="Theme" id=2]
 [ext_resource path="res://GameObjects/Interfaces/Overworld/ItemsInterface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameObjects/Interfaces/Overworld/ResearchInterface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameObjects/Interfaces/Overworld/ExitConfirmation.tscn" type="PackedScene" id=5]
 
 [node name="OverworldOverlay" type="MarginContainer"]
 anchor_right = 1.0
@@ -102,5 +103,13 @@ margin_left = 505.0
 margin_top = 254.0
 margin_right = 519.0
 margin_bottom = 279.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ExitConfirmation" parent="VBoxContainer/MarginContainer" instance=ExtResource( 5 )]
+margin_left = 443.0
+margin_top = 179.0
+margin_right = 580.0
+margin_bottom = 354.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
