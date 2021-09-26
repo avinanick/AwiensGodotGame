@@ -18,4 +18,20 @@ public class ExitConfirmation : PanelContainer
 //  {
 //      
 //  }
+
+    public void AbandonCancelled() {
+
+    }
+
+    public void AbandonClicked() {
+
+    }
+
+    public void AbandonConfirmed() {
+
+    }
+
+    public void QuitClicked() {
+
+    }
 }
