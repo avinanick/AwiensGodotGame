@@ -25,6 +25,9 @@ surfaces/0 = {
 
 [node name="AlienDrone" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+Health = 1
+MaxHealth = 1
+TargetGroups = PoolStringArray( "Civilian" )
 
 [node name="CollisionShape" parent="." index="0"]
 shape = SubResource( 2 )
