@@ -77,3 +77,9 @@ margin_left = 40.0
 margin_right = 70.8063
 margin_bottom = 37.0799
 text = "No"
+
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="QuitClicked"]
+[connection signal="pressed" from="VBoxContainer/AbandonButton" to="." method="AbandonClicked"]
+[connection signal="pressed" from="VBoxContainer/CancelButton" to="." method="QuitCancelled"]
+[connection signal="pressed" from="DoubleCheck/VBoxContainer/HBoxContainer/YesButton" to="." method="AbandonConfirmed"]
+[connection signal="pressed" from="DoubleCheck/VBoxContainer/HBoxContainer/NoButton" to="." method="AbandonCancelled"]
