@@ -33,11 +33,13 @@ public class OverworldOverlay : MarginContainer
     }
 
     public void QuitClicked() {
-
+        CloseMenus();
+        GetNode<Control>("VBoxContainer/MarginContainer/ExitConfirmation").Visible = true;
     }
 
     public void ResearchClicked() {
-
+        CloseMenus();
+        GetNode<Control>("VBoxContainer/MarginContainer/ResearchInterface").Visible = true;
     }
 
     private void UpdateStats() {
