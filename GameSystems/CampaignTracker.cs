@@ -53,12 +53,20 @@ public class CampaignTracker : Node
         CurrentCity = -1;
     }
 
+    public System.Collections.Generic.Stack<int> GetCitiesCompleted() {
+        return CompletedCities;
+    }
+
     public int GetCurrentDifficulty() {
         return CurrentDifficultyLevel;
     }
 
     public int GetCurrentPoints() {
         return CurrentPoints;
+    }
+
+    public int GetNumCitiesComplete() {
+        return CompletedCities.Count;
     }
 
     public int GetPointsEarned() {

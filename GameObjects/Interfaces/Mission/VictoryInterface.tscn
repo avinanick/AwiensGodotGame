@@ -1,11 +1,12 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://GameObjects/Interfaces/VictoryInterface.cs" type="Script" id=1]
+[ext_resource path="res://GameObjects/Interfaces/Mission/VictoryInterface.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Interfaces/metalPanel.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-B.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Resources/Fonts/andika-basic/AndikaNewBasic-R.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Themes/PopupInterface.tres" type="Theme" id=5]
 [ext_resource path="res://Resources/Interfaces/red_panel.png" type="Texture" id=7]
+
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )

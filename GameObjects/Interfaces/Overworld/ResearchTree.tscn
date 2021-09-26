@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GameObjects/Interfaces/Overworld/ResearchTree.cs" type="Script" id=1]
+[ext_resource path="res://GameObjects/Interfaces/Overworld/ResearchTreeNode.tscn" type="PackedScene" id=2]
+
+[node name="ResearchTree" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResearchTreeNode" parent="." instance=ExtResource( 2 )]
+margin_left = 8.47574
+margin_top = 233.082
+margin_right = 192.476
+margin_bottom = 303.082
+
+[node name="ResearchTreeNode2" parent="." instance=ExtResource( 2 )]
+margin_left = 254.271
+margin_top = 342.207
+margin_right = 438.271
+margin_bottom = 412.207
+
+[node name="ResearchTreeNode3" parent="." instance=ExtResource( 2 )]
+margin_left = 253.212
+margin_top = 149.384
+margin_right = 437.212
+margin_bottom = 219.384
+
+[node name="ResearchTreeNode4" parent="." instance=ExtResource( 2 )]
+margin_left = 533.969
+margin_top = 50.8542
+margin_right = 717.969
+margin_bottom = 120.854
+
+[node name="ResearchTreeNode5" parent="." instance=ExtResource( 2 )]
+margin_left = 542.445
+margin_top = 191.763
+margin_right = 726.445
+margin_bottom = 261.763
+
+[node name="ResearchTreeNode6" parent="." instance=ExtResource( 2 )]
+margin_left = 548.802
+margin_top = 296.65
+margin_right = 732.802
+margin_bottom = 366.65
+
+[node name="ResearchTreeNode7" parent="." instance=ExtResource( 2 )]
+margin_left = 550.921
+margin_top = 426.964
+margin_right = 734.921
+margin_bottom = 496.964

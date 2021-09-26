@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GameObjects/Interfaces/Overworld/ResearchInterface.cs" type="Script" id=1]
+[ext_resource path="res://GameObjects/Interfaces/Overworld/ResearchTree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Themes/HologramInterface.tres" type="Theme" id=3]
+
+[node name="ResearchInterface" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 13.0
+margin_right = 1017.0
+margin_bottom = 588.0
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+margin_right = 1010.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 13.0
+margin_right = 1003.0
+margin_bottom = 40.0
+text = "Research Tree"
+align = 1
+valign = 1
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 1010.0
+margin_bottom = 534.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Offensive" type="ScrollContainer" parent="PanelContainer/VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 54.0
+margin_right = -6.0
+margin_bottom = -13.0
+
+[node name="ResearchTree" parent="PanelContainer/VBoxContainer/TabContainer/Offensive" instance=ExtResource( 2 )]
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Defensive" type="ScrollContainer" parent="PanelContainer/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 54.0
+margin_right = -6.0
+margin_bottom = -13.0
+
+[node name="ResearchTree" parent="PanelContainer/VBoxContainer/TabContainer/Defensive" instance=ExtResource( 2 )]
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 538.0
+margin_right = 1010.0
+margin_bottom = 575.0
+alignment = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_left = 960.0
+margin_right = 1010.81
+margin_bottom = 37.0799
+text = "Close"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Button" to="." method="CloseInterface"]

@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://GameObjects/Interfaces/ThreatsPreviewInterface.cs" type="Script" id=1]
+[ext_resource path="res://GameObjects/Interfaces/Overworld/ThreatsPreviewInterface.cs" type="Script" id=1]
 [ext_resource path="res://Themes/HologramInterface.tres" type="Theme" id=2]
+
 
 [node name="ThreatsPreviewInterface" type="MarginContainer"]
 margin_right = 74.0
