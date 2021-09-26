@@ -22,10 +22,13 @@ public class ExitConfirmation : PanelContainer
 
     public void AbandonCancelled() {
         // Close the menu
+        GetNode<Control>("DoubleCheck").Visible = false;
+        GetNode<Control>("VBoxContainer").Visible = true;
     }
 
     public void AbandonClicked() {
-
+        GetNode<Control>("VBoxContainer").Visible = false;
+        GetNode<Control>("DoubleCheck").Visible = true;
     }
 
     public void AbandonConfirmed() {
