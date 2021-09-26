@@ -114,3 +114,7 @@ margin_right = 519.0
 margin_bottom = 279.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer2/TechTreeButton" to="." method="ResearchClicked"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer2/ItemsButton" to="." method="ItemsClicked"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer/ExitButton" to="." method="QuitClicked"]
