@@ -18,4 +18,8 @@ public class CombatShip : Ship
 //  {
 //      
 //  }
+
+    public override void SpawnShip() {
+        
+    }
 }
