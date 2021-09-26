@@ -33,6 +33,11 @@ public class OverworldOverlay : MarginContainer
     }
 
     private void UpdateStats() {
-
+        // Update points label
+        CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
+        int credits = tracker.GetCurrentPoints();
+        string creditsText = "Credits: " +  credits.ToString();
+        GetNode<Label>("VBoxContainer/PanelContainer/HBoxContainer/PointsLabel").Text = creditsText;
+        // Update progress label
     }
 }
