@@ -28,7 +28,8 @@ public class OverworldOverlay : MarginContainer
     }
 
     public void ItemsClicked() {
-
+        CloseMenus();
+        GetNode<Control>("VBoxContainer/MarginContainer/ItemsInterface").Visible = true;
     }
 
     public void QuitClicked() {
