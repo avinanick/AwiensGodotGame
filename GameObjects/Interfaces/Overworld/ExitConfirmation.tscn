@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GameObjects/Interfaces/Overworld/ExitConfirmation.cs" type="Script" id=1]
+
+[node name="PanelContainer" type="PanelContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 117.0
+margin_bottom = 51.0
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_right = 110.0
+margin_bottom = 20.0
+text = "Quit to Menu"
+
+[node name="AbandonButton" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 110.0
+margin_bottom = 44.0
+text = "Abandon World"
