@@ -10,7 +10,8 @@ public class OverworldOverlay : MarginContainer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        base._Ready();
+        CallDeferred(nameof(UpdateStats));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,4 +19,20 @@ public class OverworldOverlay : MarginContainer
 //  {
 //      
 //  }
+
+    public void ItemsClicked() {
+
+    }
+
+    public void QuitClicked() {
+
+    }
+
+    public void ResearchClicked() {
+
+    }
+
+    private void UpdateStats() {
+
+    }
 }
