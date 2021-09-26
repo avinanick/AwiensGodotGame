@@ -16,7 +16,7 @@ __meta__ = {
 margin_left = 7.0
 margin_top = 13.0
 margin_right = 130.0
-margin_bottom = 122.0
+margin_bottom = 163.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 margin_right = 123.0
@@ -37,6 +37,12 @@ margin_top = 72.0
 margin_right = 123.806
 margin_bottom = 109.08
 text = "Abandon World"
+
+[node name="CancelButton" type="Button" parent="VBoxContainer"]
+margin_top = 113.0
+margin_right = 123.0
+margin_bottom = 150.08
+text = "Cancel"
 
 [node name="DoubleCheck" type="PanelContainer" parent="."]
 visible = false
