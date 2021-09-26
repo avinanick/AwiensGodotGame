@@ -49,5 +49,8 @@ public class OverworldOverlay : MarginContainer
         string creditsText = "Credits: " +  credits.ToString();
         GetNode<Label>("VBoxContainer/PanelContainer/HBoxContainer/PointsLabel").Text = creditsText;
         // Update progress label
+        int completedCities = tracker.GetNumCitiesComplete();
+        string progressText = "Cities: " + completedCities.ToString() + " / 28";
+        GetNode<Label>("VBoxContainer/PanelContainer/HBoxContainer/ProgressLabel").Text = progressText;
     }
 }
