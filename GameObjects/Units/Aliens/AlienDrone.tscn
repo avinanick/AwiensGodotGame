@@ -36,10 +36,13 @@ TargetGroups = PoolStringArray( "Civilian" )
 shape = SubResource( 2 )
 
 [node name="MeshInstance" parent="." index="3"]
-transform = Transform( -0.775067, -7.75906e-08, -0.631879, -0.631879, -2.76203e-08, 0.775067, -7.75906e-08, 1, -2.76203e-08, 0, 0, 0.324049 )
+transform = Transform( 1.74846e-07, -4.37114e-08, -1, -1, -4.37114e-08, -1.74846e-07, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0.324049 )
 visible = true
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="AnimationPlayer" parent="." index="4"]
+autoplay = "Idle"
 
 [node name="AttackerComponent" parent="." index="5" instance=ExtResource( 4 )]
 AttackProjectile = ExtResource( 5 )
