@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/alienDronev2.0.glb-e5b184621abc22c80e1fa0bfe00a6567.scn"
+path="res://.import/alienDronev2.0.glb-2d941cd767a529ea4b6a9459cc41b57e.scn"
 
 [deps]
 
-source_file="res://Resources/Models/AlienDrone_v2.0/alienDronev2.0.glb"
-dest_files=[ "res://.import/alienDronev2.0.glb-e5b184621abc22c80e1fa0bfe00a6567.scn" ]
+source_file="res://Resources/Models/Units/Aliens/AlienDrone_v2.0/alienDronev2.0.glb"
+dest_files=[ "res://.import/alienDronev2.0.glb-2d941cd767a529ea4b6a9459cc41b57e.scn" ]
 
 [params]
 
@@ -16,6 +16,7 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
+nodes/use_legacy_names=true
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
@@ -24,6 +25,7 @@ meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
+skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15
