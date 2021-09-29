@@ -21,6 +21,7 @@ public class CombatShip : Ship
     [Export]
     protected string[] TargetGroups;
     protected AttackerComponent Weapon;
+    protected Destructible CurrentTarget;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -34,6 +35,10 @@ public class CombatShip : Ship
     {
         base._Process(delta);
         UpdateShipDirectionOrbit();
+        UpdateTarget();
+        if(CurrentTarget != null) {
+            Weapon.FireAt(CurrentTarget.GetGlobalTransform().origin, GetGlobalTransform().origin);
+        }
     }
 
     public override void SpawnShip() {
