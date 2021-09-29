@@ -15,13 +15,12 @@ public class CombatShip : Ship
     [Export]
     protected AttackPatternType AttackPattern = AttackPatternType.Orbit;
     [Export]
-    protected float AttackRange = 40;
-    [Export]
     protected float TurnSpeed = 4f;
     [Export]
     protected string[] TargetGroups;
     protected AttackerComponent Weapon;
     protected Destructible CurrentTarget;
+    protected Godot.Collections.Array<Destructible> PotentialTargets = new Godot.Collections.Array<Destructible>();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -38,6 +37,32 @@ public class CombatShip : Ship
         UpdateTarget();
         if(CurrentTarget != null) {
             Weapon.FireAt(CurrentTarget.GetGlobalTransform().origin, GetGlobalTransform().origin);
+        }
+    }
+
+    public void BodyEnteringRange(Node body) {
+        if(body is Destructible potentialTarget) {
+            if(potentialTarget == CurrentTarget) {
+                CurrentTarget = null;
+                return;
+            }
+            for(int i = 0; i < TargetGroups.Length; i++) {
+                if(potentialTarget.IsInGroup(TargetGroups[i])) {
+                    PotentialTargets.Add(potentialTarget);
+                    return;
+                }
+            }
+        }
+    }
+
+    public void BodyExitingRange(Node body) {
+        if(body is Destructible potentialTarget) {
+            for(int i = 0; i < TargetGroups.Length; i++) {
+                if(potentialTarget.IsInGroup(TargetGroups[i])) {
+                    PotentialTargets.Remove(potentialTarget);
+                    return;
+                }
+            }
         }
     }
 
@@ -62,6 +87,11 @@ public class CombatShip : Ship
     }
 
     protected void UpdateTarget() {
+        if(CurrentTarget != null) {
+            
+        }
+        if(CurrentTarget == null) {
 
+        }
     }
 }
