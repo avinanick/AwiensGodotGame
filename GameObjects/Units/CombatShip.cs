@@ -87,11 +87,11 @@ public class CombatShip : Ship
     }
 
     protected void UpdateTarget() {
-        if(CurrentTarget != null) {
-            
-        }
         if(CurrentTarget == null) {
-
+            if(PotentialTargets.Count > 0) {
+                CurrentTarget = PotentialTargets[PotentialTargets.Count - 1];
+                PotentialTargets.RemoveAt(PotentialTargets.Count - 1);
+            }
         }
     }
 }
