@@ -52,4 +52,8 @@ public class AttackerComponent : Component
 			GetTree().CurrentScene.AddChild(newBullet);
 		}
 	}
+
+	public void FireAt(Vector3 targetPosition, Vector3 unitPosition) {
+		
+	}
 }
