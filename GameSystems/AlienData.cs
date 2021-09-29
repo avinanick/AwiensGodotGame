@@ -35,6 +35,7 @@ public class AlienData : Node
     {
         DataSet = new System.Collections.Generic.Dictionary<string, AlienSet>();
         DataSet.Add("Alien Missile", new AlienSet("res://GameObjects/Units/Aliens/AlienMissile.tscn", "res://icon.png", 3.0f));
+        DataSet.Add("Alien Drone", new AlienSet("res://GameObjects/Units/Aliens/AlienDrone.tscn", "res://icon.png", 5.0f));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
