@@ -54,6 +54,18 @@ public class AttackerComponent : Component
 	}
 
 	public void FireAt(Vector3 targetPosition, Vector3 unitPosition) {
-		
+		if(ReadyToFire) {
+			ReadyToFire = false;
+			GetNode<Timer>("CooldownTimer").Start(Cooldown);
+			Projectile newBullet = (Projectile)AttackProjectile.Instance();
+
+			Vector3 directionVector = (targetPosition - unitPosition).Normalized();
+			Vector3 spawnPosition = unitPosition + (2 * directionVector);
+			newBullet.Translation = spawnPosition;
+			newBullet.SetDirection(directionVector);
+			newBullet.SetDamage(Damage);
+
+			GetTree().CurrentScene.AddChild(newBullet);
+		}
 	}
 }
