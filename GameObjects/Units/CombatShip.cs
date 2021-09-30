@@ -27,6 +27,7 @@ public class CombatShip : Ship
     {
         base._Ready();
         Weapon = GetNode<AttackerComponent>("AttackerComponent");
+        InitialEnemyPopulation();
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,6 +64,13 @@ public class CombatShip : Ship
                     return;
                 }
             }
+        }
+    }
+
+    protected void InitialEnemyPopulation() {
+        Godot.Collections.Array<Destructible> startingTargets = new Godot.Collections.Array<Destructible>(GetNode<Area>("AttackRangeArea").GetOverlappingBodies());
+        for(int i = 0; i < startingTargets.Count; i++) {
+            BodyEnteringRange(startingTargets[i]);
         }
     }
 
