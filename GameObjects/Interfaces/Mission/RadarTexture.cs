@@ -7,7 +7,7 @@ public class RadarTexture : TextureRect
 	// private int a = 2;
 	// private string b = "text";
 	[Export]
-	private PackedScene IndicatorScene = (PackedScene)GD.Load("res://GameObjects/Interfaces/RadarIndicator.tscn");
+	private PackedScene IndicatorScene = (PackedScene)GD.Load("res://GameObjects/Interfaces/Mission/RadarIndicator.tscn");
 
 	private Light2D PlayerView;
 	private Avatar PlayerAvatar;
