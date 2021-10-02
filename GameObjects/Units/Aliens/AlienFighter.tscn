@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/Basic/AttackerComponent.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameObjects/Projectiles/Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameObjects/Units/CombatShip.cs" type="Script" id=4]
+[ext_resource path="res://Resources/Models/Units/Aliens/AlienFighter_v2.0/AlienFighter.glb" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.5, 0.5, 2 )
 
 [node name="AlienFighter" groups=[
 "Alien",
@@ -13,5 +17,11 @@ Health = 5
 MaxHealth = 5
 TargetGroups = PoolStringArray( "Defender" )
 
+[node name="CollisionShape" parent="." index="0"]
+shape = SubResource( 1 )
+
 [node name="AttackerComponent" parent="." index="5" instance=ExtResource( 2 )]
 AttackProjectile = ExtResource( 3 )
+
+[node name="AlienFighter" parent="." index="6" instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 0, 0 )
