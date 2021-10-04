@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GameObjects/Units/CombatShip.cs" type="Script" id=1]
+[ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Components/Basic/AttackerComponent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameObjects/Projectiles/Bullet.tscn" type="PackedScene" id=4]
+
+[node name="AlienBomber" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+AttackPattern = 1
+
+[node name="AttackerComponent" parent="." index="5" instance=ExtResource( 3 )]
+AttackProjectile = ExtResource( 4 )
