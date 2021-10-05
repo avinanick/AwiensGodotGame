@@ -14,6 +14,8 @@ public class AttackerComponent : Component
 	
 	[Export]
 	private float Cooldown = 1.0f;
+	[Export]
+	private Vector3 SpawnOffset = new Vector3();
 	
 	private bool ReadyToFire = true;
 
@@ -44,7 +46,12 @@ public class AttackerComponent : Component
 			directionVector.y = (float)Mathf.Sin(startRotation.x);
 			directionVector.z = (float)((-1) * Mathf.Cos(startRotation.y) * Mathf.Cos(startRotation.x));
 			
-			newBullet.Translation = startPosition + 2 * directionVector.Normalized();
+			if(SpawnOffset.Length() > 0) {
+				newBullet.Translation = startPosition + SpawnOffset;
+			}
+			else {
+				newBullet.Translation = startPosition + 2 * directionVector.Normalized();
+			}
 			newBullet.Rotation = startRotation;
 			newBullet.SetDirection(directionVector.Normalized());
 			newBullet.SetDamage(Damage);
