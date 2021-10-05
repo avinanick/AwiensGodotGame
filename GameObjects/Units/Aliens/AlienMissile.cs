@@ -21,6 +21,10 @@ public class AlienMissile : Ship
 //		base._Process(delta);
 //	}
 
+	public void ChargeMissile() {
+		
+	}
+
 	public override void HandleCollision(KinematicCollision collision) {
 		if(collision != null) {
 			if(collision.Collider is Destructible destructible) {
