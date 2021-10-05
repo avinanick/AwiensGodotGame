@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Resources/Models/AlienBomber_v2.0/alien_bomberv2.0.glb" type="PackedScene" id=1]
-
-[node name="AlienBomberModel" index="0" instance=ExtResource( 1 )]
