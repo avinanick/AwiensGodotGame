@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://GameObjects/Units/CombatShip.cs" type="Script" id=1]
+[ext_resource path="res://GameObjects/Units/Aliens/AlienBomber.cs" type="Script" id=1]
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Components/Basic/AttackerComponent.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GameObjects/Projectiles/Bullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Resources/Models/Units/Aliens/AlienBomber_v3.0/Material.material" type="Material" id=5]
 
 [sub_resource type="BoxShape" id=2]
@@ -26,7 +24,6 @@ surfaces/0 = {
 
 [node name="AlienBomber" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
-AttackPattern = 1
 
 [node name="CollisionShape" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.196238, 0 )
@@ -38,5 +35,4 @@ visible = true
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="AttackerComponent" parent="." index="5" instance=ExtResource( 3 )]
-AttackProjectile = ExtResource( 4 )
+[node name="BombCooldownTimer" type="Timer" parent="." index="5"]
