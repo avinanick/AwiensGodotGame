@@ -33,12 +33,14 @@ public class AlienBomber : CombatShip
         AddChild(newMissile);
         newMissile.Translation = BombSpawnOffset;
         CurrentMissile = newMissile;
-        // unfinished, need an animation for creating instead of standard
+        newMissile.Connect("ChargeMissileFinished", this, nameof(BombLaunched));
+        newMissile.ChargeMissile();
     }
 
     public void BombLaunched() {
         RemoveChild(CurrentMissile);
         GetTree().CurrentScene.AddChild(CurrentMissile);
         CurrentMissile.SpawnShip();
+        GetNode<Timer>("BombCooldownTimer").Start(BombCooldown);
     }
 }
