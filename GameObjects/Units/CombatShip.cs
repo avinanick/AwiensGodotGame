@@ -41,7 +41,16 @@ public class CombatShip : Ship
     public override void _Process(float delta)
     {
         base._Process(delta);
-        UpdateShipDirectionOrbit();
+        switch(AttackPattern) {
+            case AttackPatternType.Orbit:
+                UpdateShipDirectionOrbit();
+                break;
+            case AttackPatternType.Strafe:
+                UpdateShipDirectionStrafe();
+                break;
+            case AttackPatternType.Hover:
+                break;
+        }
         UpdateTarget();
         if(CurrentTarget != null) {
             Weapon.FireAt(CurrentTarget.GetGlobalTransform().origin, GetGlobalTransform().origin);
@@ -98,7 +107,6 @@ public class CombatShip : Ship
                     StrafeState = StrafeStateType.Departing;
                     return;
                 }
-                Vector3 facingDirection = new Vector3((-1) * Mathf.Sin(Rotation.y), 0, Mathf.Cos(Rotation.y));
                 break;
             case StrafeStateType.Departing:
                 if(GlobalTransform.origin.DistanceTo(new Vector3(0,GlobalTransform.origin.y, 0)) >= TurnaroundDistance) {
@@ -106,6 +114,7 @@ public class CombatShip : Ship
                 }
                 break;
             case StrafeStateType.Turning:
+                Vector3 facingDirection = new Vector3((-1) * Mathf.Sin(Rotation.y), 0, Mathf.Cos(Rotation.y));
                 break;
         }
     }
