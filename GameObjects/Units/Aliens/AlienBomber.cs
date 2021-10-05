@@ -11,6 +11,8 @@ public class AlienBomber : CombatShip
     protected float BombCooldown = 2f;
     [Export]
     protected PackedScene BombScene = GD.Load<PackedScene>("res://GameObjects/Units/Aliens/AlienMissile.tscn");
+    [Export]
+    protected Vector3 BombSpawnOffset = new Vector3();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
