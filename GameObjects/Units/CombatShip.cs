@@ -78,6 +78,11 @@ public class CombatShip : Ship
 
     }
 
+    protected void UpdateShipDirectionStrafe() {
+        // This needs to be a movement pattern that moves toward the city, passes over it
+        // continues on, then turns around and repeats.
+    }
+
     protected void UpdateShipDirectionOrbit() {
         // get the vector from the current position to the city, if we aren't pointed at the city, start turning
 		// the default rotation for the ship will be along the negative z-axis, which is a rotation of:
