@@ -87,7 +87,12 @@ public class CombatShip : Ship
         // turn to face the city. If approaching and facing, move toward the city until reaching
         // it. If not approaching, move away until reaching a distance of 40
         if(ApproachingTarget) {
-
+            Vector3 directionToCity = new Vector3(0, GlobalTransform.origin.y, 0) - GlobalTransform.origin;
+            if(directionToCity.Length() <= 0.1) {
+                ApproachingTarget = false;
+                return;
+            }
+            Vector3 facingDirection = new Vector3((-1) * Mathf.Sin(Rotation.y), 0, Mathf.Cos(Rotation.y));
         }
         else {
             if(GlobalTransform.origin.DistanceTo(new Vector3(0,GlobalTransform.origin.y, 0)) >= TurnaroundDistance) {
