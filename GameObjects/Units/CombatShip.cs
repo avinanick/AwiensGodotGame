@@ -28,6 +28,7 @@ public class CombatShip : Ship
     protected Godot.Collections.Array<Destructible> PotentialTargets = new Godot.Collections.Array<Destructible>();
     protected StrafeStateType StrafeState = StrafeStateType.Approaching;
     protected float TurnaroundDistance = 40;
+    protected float RotateSpeed = 1;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -46,7 +47,7 @@ public class CombatShip : Ship
                 UpdateShipDirectionOrbit();
                 break;
             case AttackPatternType.Strafe:
-                UpdateShipDirectionStrafe();
+                UpdateShipDirectionStrafe(delta);
                 break;
             case AttackPatternType.Hover:
                 break;
@@ -94,15 +95,15 @@ public class CombatShip : Ship
 
     }
 
-    protected void UpdateShipDirectionStrafe() {
+    protected void UpdateShipDirectionStrafe(float delta) {
         // This needs to be a movement pattern that moves toward the city, passes over it
         // continues on, then turns around and repeats.
         // For now I'm  going to try: if approaching the city and not currently facing it, 
         // turn to face the city. If approaching and facing, move toward the city until reaching
         // it. If not approaching, move away until reaching a distance of 40
+        Vector3 directionToCity = new Vector3(0, GlobalTransform.origin.y, 0) - GlobalTransform.origin;
         switch(StrafeState) {
             case StrafeStateType.Approaching:
-                Vector3 directionToCity = new Vector3(0, GlobalTransform.origin.y, 0) - GlobalTransform.origin;
                 if(directionToCity.Length() <= 0.1) {
                     StrafeState = StrafeStateType.Departing;
                     return;
@@ -111,10 +112,19 @@ public class CombatShip : Ship
             case StrafeStateType.Departing:
                 if(GlobalTransform.origin.DistanceTo(new Vector3(0,GlobalTransform.origin.y, 0)) >= TurnaroundDistance) {
                     StrafeState = StrafeStateType.Turning;
+                    DirectionVector = new Vector3(0,0,0);
                 }
                 break;
             case StrafeStateType.Turning:
                 Vector3 facingDirection = new Vector3((-1) * Mathf.Sin(Rotation.y), 0, Mathf.Cos(Rotation.y));
+                float angleBetween = Mathf.Acos(facingDirection.Dot(directionToCity) / (facingDirection.Length() * directionToCity.Length()));
+                if(angleBetween <= 0.01f) {
+                    DirectionVector = directionToCity.Normalized();
+                    StrafeState = StrafeStateType.Approaching;
+                }
+                else {
+                    RotateY(RotateSpeed * delta);
+                }
                 break;
         }
     }
