@@ -36,3 +36,5 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="BombCooldownTimer" type="Timer" parent="." index="5"]
+
+[connection signal="timeout" from="BombCooldownTimer" to="." method="BombCooldownFinished"]
