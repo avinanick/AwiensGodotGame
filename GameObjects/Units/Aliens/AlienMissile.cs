@@ -24,6 +24,10 @@ public class AlienMissile : Ship
 //		base._Process(delta);
 //	}
 
+	public void ChargeFinished() {
+		
+	}
+
 	public void ChargeMissile() {
 
 	}
