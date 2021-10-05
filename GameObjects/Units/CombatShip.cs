@@ -11,6 +11,11 @@ public class CombatShip : Ship
         Strafe,
         Hover
     }
+    protected enum StrafeStateType {
+        Approaching,
+        Departing,
+        Turning
+    }
 
     [Export]
     protected AttackPatternType AttackPattern = AttackPatternType.Orbit;
@@ -21,7 +26,7 @@ public class CombatShip : Ship
     protected AttackerComponent Weapon;
     protected Destructible CurrentTarget;
     protected Godot.Collections.Array<Destructible> PotentialTargets = new Godot.Collections.Array<Destructible>();
-    protected bool ApproachingTarget = true;
+    protected StrafeStateType StrafeState = StrafeStateType.Approaching;
     protected float TurnaroundDistance = 40;
 
     // Called when the node enters the scene tree for the first time.
@@ -86,18 +91,22 @@ public class CombatShip : Ship
         // For now I'm  going to try: if approaching the city and not currently facing it, 
         // turn to face the city. If approaching and facing, move toward the city until reaching
         // it. If not approaching, move away until reaching a distance of 40
-        if(ApproachingTarget) {
-            Vector3 directionToCity = new Vector3(0, GlobalTransform.origin.y, 0) - GlobalTransform.origin;
-            if(directionToCity.Length() <= 0.1) {
-                ApproachingTarget = false;
-                return;
-            }
-            Vector3 facingDirection = new Vector3((-1) * Mathf.Sin(Rotation.y), 0, Mathf.Cos(Rotation.y));
-        }
-        else {
-            if(GlobalTransform.origin.DistanceTo(new Vector3(0,GlobalTransform.origin.y, 0)) >= TurnaroundDistance) {
-                ApproachingTarget = true;
-            }
+        switch(StrafeState) {
+            case StrafeStateType.Approaching:
+                Vector3 directionToCity = new Vector3(0, GlobalTransform.origin.y, 0) - GlobalTransform.origin;
+                if(directionToCity.Length() <= 0.1) {
+                    StrafeState = StrafeStateType.Departing;
+                    return;
+                }
+                Vector3 facingDirection = new Vector3((-1) * Mathf.Sin(Rotation.y), 0, Mathf.Cos(Rotation.y));
+                break;
+            case StrafeStateType.Departing:
+                if(GlobalTransform.origin.DistanceTo(new Vector3(0,GlobalTransform.origin.y, 0)) >= TurnaroundDistance) {
+                    StrafeState = StrafeStateType.Turning;
+                }
+                break;
+            case StrafeStateType.Turning:
+                break;
         }
     }
 
