@@ -14,6 +14,8 @@ public class AlienBomber : CombatShip
     [Export]
     protected Vector3 BombSpawnOffset = new Vector3();
 
+    protected AlienMissile CurrentMissile = null;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -30,10 +32,13 @@ public class AlienBomber : CombatShip
         AlienMissile newMissile = BombScene.Instance<AlienMissile>();
         AddChild(newMissile);
         newMissile.Translation = BombSpawnOffset;
+        CurrentMissile = newMissile;
         // unfinished, need an animation for creating instead of standard
     }
 
     public void BombLaunched() {
-
+        RemoveChild(CurrentMissile);
+        GetTree().CurrentScene.AddChild(CurrentMissile);
+        CurrentMissile.SpawnShip();
     }
 }
