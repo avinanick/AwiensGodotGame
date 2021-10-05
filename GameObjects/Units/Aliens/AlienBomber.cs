@@ -27,7 +27,10 @@ public class AlienBomber : CombatShip
 //  }
 
     public void BombCooldownFinished() {
-
+        AlienMissile newMissile = BombScene.Instance<AlienMissile>();
+        AddChild(newMissile);
+        newMissile.Translation = BombSpawnOffset;
+        // unfinished, need an animation for creating instead of standard
     }
 
     public void BombLaunched() {
