@@ -9,6 +9,9 @@ public class AlienMissile : Ship
 	[Export]
 	private int MissileDamage = 1;
 
+	[Signal]
+	public delegate void MissileChargeFinished();
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -20,6 +23,14 @@ public class AlienMissile : Ship
 //	{
 //		base._Process(delta);
 //	}
+
+	public void ChargeFinished() {
+		
+	}
+
+	public void ChargeMissile() {
+
+	}
 
 	public override void HandleCollision(KinematicCollision collision) {
 		if(collision != null) {

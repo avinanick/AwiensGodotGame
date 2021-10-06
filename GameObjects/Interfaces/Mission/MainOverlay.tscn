@@ -16,7 +16,6 @@
 [ext_resource path="res://GameObjects/Interfaces/Mission/RadarTexture.cs" type="Script" id=15]
 [ext_resource path="res://Resources/Materials/Masks/LightMask.png" type="Texture" id=16]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 28
 outline_size = 1

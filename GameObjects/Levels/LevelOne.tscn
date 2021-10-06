@@ -14,7 +14,7 @@
 [node name="InterfaceManager" parent="." instance=ExtResource( 3 )]
 
 [node name="EnemyTracker" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0 )
 
 [connection signal="BuildingHealthChanged" from="City" to="InterfaceManager" method="BuildingDamaged"]
 [connection signal="PlayerDefeated" from="City" to="InterfaceManager" method="PlayerDefeat"]

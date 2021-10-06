@@ -6,7 +6,7 @@ public class ThreatRandomizer : Node
     // I want an array for enemy types, separated into difficulties, and one
     // for enemy buffs, also separated into difficulties
     // I'll likely make and use data singletons for this, that seems best
-    private string[] EasyAliens = new string[1] {"Alien Missile"};
+    private string[] EasyAliens = new string[2] {"Alien Missile", "Alien Drone"};
     //private string[] EasyAliens = new string[3] {"Alien Missile", "Alien Drone", "Alien Planet Drill"};
     private string[] MediumAliens = new string[3] {"Alien Fighter", "Alien Scout", "Alien Inhibitor"};
     private string[] HardAliens = new string[3] {"Alien Bomber", "Alien Carrier", "Alien Artillery"};
