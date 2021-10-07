@@ -118,7 +118,7 @@ shader = SubResource( 2 )
 shader_param/_Scale = 0.05
 shader_param/_Opacity = 1.976
 shader_param/_Edge = 0.37
-shader_param/_ColorAura = Color( 0.823529, 0.152941, 0.152941, 1 )
+shader_param/_ColorAura = Color( 1, 0, 0, 1 )
 shader_param/_ColorRim = Color( 0.670588, 0.0117647, 0.0117647, 1 )
 shader_param/_Brightness = 6.606
 shader_param/_SpeedX = 3.0
@@ -129,10 +129,10 @@ shader_param/_OutlineFixed = 2.0
 shader_param/_RimPower2 = 6.0
 shader_param/fuwafuwa_speed = 10.0
 shader_param/fuwafuwa_size = 0.05
-shader_param/outline_color = Color( 0.0784314, 0.00392157, 0.00392157, 1 )
-shader_param/outline_ratio = 2.0
-shader_param/noise_speed = 2.0
-shader_param/noise_scale = 1.437
+shader_param/outline_color = Color( 0, 0, 0, 1 )
+shader_param/outline_ratio = 20.0
+shader_param/noise_speed = 0.2
+shader_param/noise_scale = 0.5
 shader_param/_NoiseTex = SubResource( 4 )
 
 [sub_resource type="SphereMesh" id=6]
