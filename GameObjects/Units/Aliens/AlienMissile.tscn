@@ -14,7 +14,7 @@ code = "/*
 */
 
 shader_type spatial;
-render_mode depth_draw_never, cull_front, blend_add;
+render_mode depth_draw_never, cull_front, blend_mul;
 
 uniform sampler2D _NoiseTex;
 uniform float _Scale : hint_range(0.0, 0.05) = 0.05;
@@ -116,21 +116,21 @@ noise = SubResource( 3 )
 [sub_resource type="ShaderMaterial" id=5]
 shader = SubResource( 2 )
 shader_param/_Scale = 0.05
-shader_param/_Opacity = 1.976
-shader_param/_Edge = 0.37
+shader_param/_Opacity = 2.055
+shader_param/_Edge = 0.1
 shader_param/_ColorAura = Color( 1, 0, 0, 1 )
-shader_param/_ColorRim = Color( 0.670588, 0.0117647, 0.0117647, 1 )
-shader_param/_Brightness = 6.606
+shader_param/_ColorRim = Color( 0.866667, 0, 0, 1 )
+shader_param/_Brightness = 2.0
 shader_param/_SpeedX = 3.0
 shader_param/_SpeedY = 3.0
 shader_param/_OffsetFade = 1.0
-shader_param/_GlowBrightness = 3.0
-shader_param/_OutlineFixed = 2.0
-shader_param/_RimPower2 = 6.0
+shader_param/_GlowBrightness = 30.0
+shader_param/_OutlineFixed = 0.622
+shader_param/_RimPower2 = 10.0
 shader_param/fuwafuwa_speed = 10.0
 shader_param/fuwafuwa_size = 0.05
-shader_param/outline_color = Color( 0, 0, 0, 1 )
-shader_param/outline_ratio = 20.0
+shader_param/outline_color = Color( 0.94902, 0, 0, 1 )
+shader_param/outline_ratio = 100.0
 shader_param/noise_speed = 0.2
 shader_param/noise_scale = 0.5
 shader_param/_NoiseTex = SubResource( 4 )
