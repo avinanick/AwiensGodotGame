@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/Units/Aliens/AlienMissile.cs" type="Script" id=2]
@@ -135,8 +135,67 @@ shader_param/noise_speed = 0.2
 shader_param/noise_scale = 0.5
 shader_param/_NoiseTex = SubResource( 4 )
 
-[sub_resource type="SphereMesh" id=6]
+[sub_resource type="SphereMesh" id=11]
 material = SubResource( 5 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "Charge"
+
+[sub_resource type="Shader" id=8]
+code = "shader_type particles;
+
+//this defines how far out the particles will spawn
+uniform float particle_spawn_radius = 1f;
+
+const float PI = 3.14159265358979323846;
+
+//input a value that changes over time and can also be a coordinate
+//use vec(TIME,0) if you got no coordinates
+float rand(vec2 co){
+    //this will give a pseudorandom value between 0-1
+    return fract(sin(dot(co.xy ,vec2(23.21,101.83))) * 34759.214);
+}
+
+void vertex() {
+	// Sets up everything
+	// Spawn particles in a radius around the emitter
+	if(RESTART) {
+		//set the position to be randomly dispersed in an area
+		float h_modifier = (rand(vec2(TIME,0))*2f*PI);
+		float v_modifier = (rand(vec2(TIME+1f,0))*2f*PI);
+		float x_coord = particle_spawn_radius * cos(h_modifier);
+		float y_coord = particle_spawn_radius * sin(h_modifier);
+		float z_coord = particle_spawn_radius * sin(v_modifier);
+		
+		//centers effect
+		TRANSFORM[3][0] = x_coord;
+		TRANSFORM[3][1] = y_coord;
+		TRANSFORM[3][2] = z_coord;
+		
+		VELOCITY = -1f * vec3(TRANSFORM[3][0], TRANSFORM[3][1], TRANSFORM[3][2]);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = SubResource( 8 )
+shader_param/particle_spawn_radius = 1.0
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.972549, 0, 0, 0.705882 )
+metallic = 0.27
+metallic_specular = 0.72
+emission_enabled = true
+emission = Color( 0.721569, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SphereMesh" id=13]
+material = SubResource( 10 )
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
 
 [node name="AlienMissile" groups=[
 "Alien",
@@ -149,6 +208,13 @@ MaxHealth = 1
 shape = SubResource( 1 )
 
 [node name="MeshInstance" parent="." index="3"]
-visible = true
-mesh = SubResource( 6 )
+mesh = SubResource( 11 )
 material/0 = null
+
+[node name="AnimationPlayer" parent="." index="4"]
+anims/Charge = SubResource( 7 )
+
+[node name="Particles" type="Particles" parent="." index="5"]
+emitting = false
+process_material = SubResource( 12 )
+draw_pass_1 = SubResource( 13 )
