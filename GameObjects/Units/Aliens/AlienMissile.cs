@@ -25,11 +25,11 @@ public class AlienMissile : Ship
 //	}
 
 	public void ChargeFinished() {
-		
+		EmitSignal(nameof(MissileChargeFinished));
 	}
 
 	public void ChargeMissile() {
-
+		GetNode<AnimationPlayer>("AnimationPlayer").Play("Charge");
 	}
 
 	public override void HandleCollision(KinematicCollision collision) {
