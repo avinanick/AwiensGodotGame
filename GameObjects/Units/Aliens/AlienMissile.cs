@@ -25,7 +25,7 @@ public class AlienMissile : Ship
 //	}
 
 	public void ChargeFinished() {
-		
+		EmitSignal(nameof(MissileChargeFinished));
 	}
 
 	public void ChargeMissile() {
