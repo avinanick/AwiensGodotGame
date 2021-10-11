@@ -56,7 +56,7 @@ public class CombatShip : Ship
                 break;
         }
         UpdateTarget();
-        if(CurrentTarget != null) {
+        if(CurrentTarget != null & Weapon != null) {
             Weapon.FireAt(CurrentTarget.GetGlobalTransform().origin, GetGlobalTransform().origin);
         }
     }
