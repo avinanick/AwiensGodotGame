@@ -94,6 +94,10 @@ public class CombatShip : Ship
         }
     }
 
+    protected virtual void SetHoverLocation() {
+        
+    }
+
     public override void SpawnShip() {
 
     }
