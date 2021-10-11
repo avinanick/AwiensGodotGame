@@ -97,8 +97,16 @@ public class CombatShip : Ship
 
     }
 
-    protected void UpdateShipDirectionHover(float delta) {
-        
+    protected void UpdateShipDirectionHover() {
+        // Move toward the hover location, if arrived, set the direction vector to 0
+        // otherwise move toward the hover location. This move type will need to move
+        // toward a target, and update when the target is destroyed.
+        if(!HoverLocationReached) {
+
+        }
+        else {
+            DirectionVector = new Vector3(0,0,0);
+        }
     }
 
     protected void UpdateShipDirectionStrafe(float delta) {
@@ -153,6 +161,7 @@ public class CombatShip : Ship
 
     protected void UpdateTarget() {
         if(CurrentTarget == null) {
+            HoverLocationReached = false;
             if(PotentialTargets.Count > 0) {
                 CurrentTarget = PotentialTargets[PotentialTargets.Count - 1];
                 PotentialTargets.RemoveAt(PotentialTargets.Count - 1);
