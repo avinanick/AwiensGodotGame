@@ -23,6 +23,7 @@ surfaces/0 = {
 "Alien",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+ShipSpeed = 3.0
 AttackPattern = 2
 TargetGroups = PoolStringArray( "Earthling" )
 
