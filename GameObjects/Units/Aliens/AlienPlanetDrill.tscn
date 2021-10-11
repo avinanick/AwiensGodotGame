@@ -23,9 +23,7 @@ surfaces/0 = {
 "Alien",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-Health = 10
-MaxHealth = 10
-ShipSpeed = 5.0
+AttackPattern = 2
 
 [node name="MeshInstance" parent="." index="3"]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
