@@ -102,10 +102,13 @@ public class CombatShip : Ship
         // otherwise move toward the hover location. This move type will need to move
         // toward a target, and update when the target is destroyed.
         if(!HoverLocationReached) {
-
-        }
-        else {
-            DirectionVector = new Vector3(0,0,0);
+            if(GlobalTransform.origin.DistanceTo(HoverLocation) < 0.1) {
+                HoverLocationReached = true;
+                DirectionVector = new Vector3(0,0,0);
+            }
+            else {
+                DirectionVector = (HoverLocation - GlobalTransform.origin).Normalized();
+            }
         }
     }
 
