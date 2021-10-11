@@ -24,6 +24,7 @@ surfaces/0 = {
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 AttackPattern = 2
+TargetGroups = PoolStringArray( "Earthling" )
 
 [node name="MeshInstance" parent="." index="3"]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
