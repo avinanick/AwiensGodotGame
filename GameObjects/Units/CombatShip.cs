@@ -29,6 +29,8 @@ public class CombatShip : Ship
     protected StrafeStateType StrafeState = StrafeStateType.Approaching;
     protected float TurnaroundDistance = 40;
     protected float RotateSpeed = 1;
+    protected Vector3 HoverLocation = new Vector3();
+    protected bool HoverLocationReached = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -93,6 +95,10 @@ public class CombatShip : Ship
 
     public override void SpawnShip() {
 
+    }
+
+    protected void UpdateShipDirectionHover(float delta) {
+        
     }
 
     protected void UpdateShipDirectionStrafe(float delta) {
