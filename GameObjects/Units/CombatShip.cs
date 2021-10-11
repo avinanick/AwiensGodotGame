@@ -95,7 +95,7 @@ public class CombatShip : Ship
     }
 
     protected virtual void SetHoverLocation() {
-        
+
     }
 
     public override void SpawnShip() {
@@ -173,6 +173,9 @@ public class CombatShip : Ship
             if(PotentialTargets.Count > 0) {
                 CurrentTarget = PotentialTargets[PotentialTargets.Count - 1];
                 PotentialTargets.RemoveAt(PotentialTargets.Count - 1);
+                if(AttackPattern == AttackPatternType.Hover) {
+                    SetHoverLocation();
+                }
             }
         }
     }
