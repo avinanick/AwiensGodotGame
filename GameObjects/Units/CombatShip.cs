@@ -56,7 +56,7 @@ public class CombatShip : Ship
                 break;
         }
         UpdateTarget();
-        if(CurrentTarget != null & Weapon != null) {
+        if(CurrentTarget != null & Weapon != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
             Weapon.FireAt(CurrentTarget.GetGlobalTransform().origin, GetGlobalTransform().origin);
         }
     }
@@ -168,7 +168,7 @@ public class CombatShip : Ship
     }
 
     protected void UpdateTarget() {
-        if(CurrentTarget == null) {
+        if(CurrentTarget == null || !Godot.Object.IsInstanceValid(CurrentTarget)) {
             HoverLocationReached = false;
             if(PotentialTargets.Count > 0) {
                 CurrentTarget = PotentialTargets[PotentialTargets.Count - 1];

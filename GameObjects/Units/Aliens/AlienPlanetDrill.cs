@@ -20,6 +20,8 @@ public class AlienPlanetDrill : CombatShip
 //  }
 
     protected override void SetHoverLocation() {
+        if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
 
+        }
     }
 }
