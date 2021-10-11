@@ -52,6 +52,7 @@ public class CombatShip : Ship
                 UpdateShipDirectionStrafe(delta);
                 break;
             case AttackPatternType.Hover:
+                UpdateShipDirectionHover();
                 break;
         }
         UpdateTarget();
