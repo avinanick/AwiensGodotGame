@@ -6,6 +6,8 @@ public class AlienPlanetDrill : CombatShip
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
+    [Export]
+    protected int LaserDamage = 1;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -20,11 +22,17 @@ public class AlienPlanetDrill : CombatShip
 //  }
 
     public void EndAttackChannel() {
-        
+
     }
 
     public void PulseDamage() {
-
+        if(HoverLocationReached) {
+            GetNode<Timer>("DamagePulseTimer").Start();
+            Godot.Collections.Array<Destructible> damageTargets = new Godot.Collections.Array<Destructible>(GetNode<Area>("Area").GetOverlappingBodies());
+            for(int i = 0; i < damageTargets.Count; i++) {
+                damageTargets[i].TakeDamage(LaserDamage);
+            }
+        }
     }
 
     protected override void SetHoverLocation() {
