@@ -23,6 +23,12 @@ public class AlienImpeder : CombatShip
 
     protected void EndImpedence() {
         // I'll probably call this in the destroy animation player
+        if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
+            if(CurrentTarget is Turret turretTarget) {
+                turretTarget.EnableTurret();
+                // Need some sort of visual/animation
+            }
+        }
     }
 
     protected override void HoverDestinationReached() {
