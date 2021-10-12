@@ -10,7 +10,7 @@ public class AlienImpeder : CombatShip
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        base._Ready();
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,4 +18,21 @@ public class AlienImpeder : CombatShip
 //  {
 //      
 //  }
+
+    protected void EndImpedence() {
+
+    }
+
+    protected override void HoverDestinationReached() {
+        // Start up the impedence
+    }
+
+    protected override void SetHoverLocation()
+    {
+        base.SetHoverLocation();
+    }
+
+    protected void StartImpedence() {
+        
+    }
 }
