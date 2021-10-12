@@ -87,6 +87,11 @@ public class CombatShip : Ship
         }
     }
 
+    protected virtual void HoverDestinationReached() {
+        HoverLocationReached = true;
+        DirectionVector = new Vector3(0,0,0);
+    }
+
     protected void InitialEnemyPopulation() {
         //Godot.Collections.Array<Destructible> startingTargets = new Godot.Collections.Array<Destructible>(GetNode<Area>("AttackRangeArea").GetOverlappingBodies());
         //for(int i = 0; i < startingTargets.Count; i++) {
@@ -113,8 +118,7 @@ public class CombatShip : Ship
         // toward a target, and update when the target is destroyed.
         if(!HoverLocationReached) {
             if(GlobalTransform.origin.DistanceTo(HoverLocation) < 0.1) {
-                HoverLocationReached = true;
-                DirectionVector = new Vector3(0,0,0);
+                HoverDestinationReached();
             }
             else {
                 DirectionVector = (HoverLocation - GlobalTransform.origin).Normalized();
