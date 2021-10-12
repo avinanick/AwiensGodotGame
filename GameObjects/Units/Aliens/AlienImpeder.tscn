@@ -22,11 +22,15 @@ surfaces/0 = {
 "vertex_count": 196
 }
 
-[node name="AlienImpeder" instance=ExtResource( 1 )]
+[node name="AlienImpeder" groups=[
+"Alien",
+] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-Health = 10
-MaxHealth = 10
-ShipSpeed = 5.0
+Health = 5
+MaxHealth = 5
+ShipSpeed = 4.0
+AttackPattern = 2
+TargetGroups = PoolStringArray( "Defender" )
 
 [node name="CollisionShape" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.373455, 0 )
