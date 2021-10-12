@@ -23,6 +23,7 @@ public class AlienPlanetDrill : CombatShip
 
     public void EndAttackChannel() {
         // This should play the end attack animation
+        GetNode<AnimationPlayer>("AnimationPlayer").PlayBackwards("BeamAttack");
     }
 
     protected override void HoverDestinationReached()
@@ -52,7 +53,7 @@ public class AlienPlanetDrill : CombatShip
 
     protected void StartAttackChannel() {
         // play the start attack animation, for now will just turn on the attack mesh
-        GetNode<MeshInstance>("AttackMesh").Visible = true;
+        GetNode<AnimationPlayer>("AnimationPlayer").Play("BeamAttack");
         PulseDamage();
     }
 }
