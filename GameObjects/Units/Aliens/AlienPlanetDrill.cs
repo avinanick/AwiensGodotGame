@@ -51,6 +51,8 @@ public class AlienPlanetDrill : CombatShip
     }
 
     protected void StartAttackChannel() {
-        // play the start attack animation
+        // play the start attack animation, for now will just turn on the attack mesh
+        GetNode<MeshInstance>("AttackMesh").Visible = true;
+        PulseDamage();
     }
 }
