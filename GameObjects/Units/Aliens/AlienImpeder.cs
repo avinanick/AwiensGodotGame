@@ -22,11 +22,13 @@ public class AlienImpeder : CombatShip
 //  }
 
     protected void EndImpedence() {
-
+        // I'll probably call this in the destroy animation player
     }
 
     protected override void HoverDestinationReached() {
         // Start up the impedence
+        base.HoverDestinationReached();
+        StartImpedence();
     }
 
     protected override void SetHoverLocation()
