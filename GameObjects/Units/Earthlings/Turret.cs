@@ -32,6 +32,10 @@ public class Turret : Destructible
 		TurretDisabled = true;
 		// May want to add an animation?
 	}
+
+	public void EnableTurret() {
+		TurretDisabled = false;
+	}
 	
 	public void ResetSights() {
 		Model.ResetSights();
