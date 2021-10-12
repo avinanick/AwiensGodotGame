@@ -48,6 +48,10 @@ public class AlienScout : CombatShip
         }
     }
 
+    public void SpawnMissile() {
+        
+    }
+
     protected void StartTargeting() {
         Targeting = true;
         GetNode<Timer>("MissileWarpTimer").Start();
