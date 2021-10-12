@@ -19,11 +19,23 @@ public class AlienPlanetDrill : CombatShip
 //      
 //  }
 
+    public void EndAttackChannel() {
+        
+    }
+
+    public void PulseDamage() {
+
+    }
+
     protected override void SetHoverLocation() {
         if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
             Vector3 location = CurrentTarget.GlobalTransform.origin;
             location.y += 20;
             HoverLocation = location;
         }
+    }
+
+    public void StartAttackChannel() {
+
     }
 }
