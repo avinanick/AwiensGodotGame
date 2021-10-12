@@ -122,6 +122,7 @@ public class CombatShip : Ship
             }
             else {
                 DirectionVector = (HoverLocation - GlobalTransform.origin).Normalized();
+                LookAt(HoverLocation, new Vector3(0,1,0));
             }
         }
     }
