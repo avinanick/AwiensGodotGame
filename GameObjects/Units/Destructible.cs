@@ -36,7 +36,7 @@ public class Destructible : KinematicBody
 		QueueFree();
 	}
 
-	public void DestroySelf() {
+	public virtual void DestroySelf() {
 		EmitSignal(nameof(Destroyed));
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("Destroy");
 	}

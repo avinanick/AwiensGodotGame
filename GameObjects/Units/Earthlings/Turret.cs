@@ -5,6 +5,7 @@ public class Turret : Destructible
 {
 
 	protected AttackerComponent Attacker;
+	protected bool TurretDisabled = false;
 	protected TurretModel Model;
 
 	// Called when the node enters the scene tree for the first time.
@@ -22,7 +23,18 @@ public class Turret : Destructible
 //  }
 
 	public void AttemptAttack(Vector3 attackSpawn, Vector3 attackRotation) {
-		Attacker.Fire(attackSpawn, attackRotation);
+		if(!TurretDisabled) {
+			Attacker.Fire(attackSpawn, attackRotation);
+		}
+	}
+
+	public void DisableTurret() {
+		TurretDisabled = true;
+		// May want to add an animation?
+	}
+
+	public void EnableTurret() {
+		TurretDisabled = false;
 	}
 	
 	public void ResetSights() {
@@ -30,6 +42,8 @@ public class Turret : Destructible
 	}
 	
 	public void Sight(float xRotation, float yRotation) {
-		Model.Sight(xRotation, yRotation);
+		if(!TurretDisabled) {
+			Model.Sight(xRotation, yRotation);
+		}
 	}
 }
