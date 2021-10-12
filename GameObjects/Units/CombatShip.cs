@@ -29,6 +29,8 @@ public class CombatShip : Ship
     protected StrafeStateType StrafeState = StrafeStateType.Approaching;
     protected float TurnaroundDistance = 40;
     protected float RotateSpeed = 1;
+    protected Vector3 HoverLocation = new Vector3();
+    protected bool HoverLocationReached = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -50,10 +52,11 @@ public class CombatShip : Ship
                 UpdateShipDirectionStrafe(delta);
                 break;
             case AttackPatternType.Hover:
+                UpdateShipDirectionHover();
                 break;
         }
         UpdateTarget();
-        if(CurrentTarget != null) {
+        if(CurrentTarget != null & Weapon != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
             Weapon.FireAt(CurrentTarget.GetGlobalTransform().origin, GetGlobalTransform().origin);
         }
     }
@@ -84,15 +87,43 @@ public class CombatShip : Ship
         }
     }
 
+    protected virtual void HoverDestinationReached() {
+        HoverLocationReached = true;
+        DirectionVector = new Vector3(0,0,0);
+    }
+
     protected void InitialEnemyPopulation() {
-        Godot.Collections.Array<Destructible> startingTargets = new Godot.Collections.Array<Destructible>(GetNode<Area>("AttackRangeArea").GetOverlappingBodies());
-        for(int i = 0; i < startingTargets.Count; i++) {
-            BodyEnteringRange(startingTargets[i]);
+        //Godot.Collections.Array<Destructible> startingTargets = new Godot.Collections.Array<Destructible>(GetNode<Area>("AttackRangeArea").GetOverlappingBodies());
+        //for(int i = 0; i < startingTargets.Count; i++) {
+        //    BodyEnteringRange(startingTargets[i]);
+        //}
+        // Do I want to just make ranges global instead?
+        Godot.Collections.Array<Destructible> possibleTargets = new Godot.Collections.Array<Destructible>(GetTree().GetNodesInGroup("Destructible"));
+        for(int i = 0; i < possibleTargets.Count; i++) {
+            BodyEnteringRange(possibleTargets[i]);
         }
+    }
+
+    protected virtual void SetHoverLocation() {
+
     }
 
     public override void SpawnShip() {
 
+    }
+
+    protected void UpdateShipDirectionHover() {
+        // Move toward the hover location, if arrived, set the direction vector to 0
+        // otherwise move toward the hover location. This move type will need to move
+        // toward a target, and update when the target is destroyed.
+        if(!HoverLocationReached) {
+            if(GlobalTransform.origin.DistanceTo(HoverLocation) < 0.1) {
+                HoverDestinationReached();
+            }
+            else {
+                DirectionVector = (HoverLocation - GlobalTransform.origin).Normalized();
+            }
+        }
     }
 
     protected void UpdateShipDirectionStrafe(float delta) {
@@ -146,10 +177,14 @@ public class CombatShip : Ship
     }
 
     protected void UpdateTarget() {
-        if(CurrentTarget == null) {
+        if(CurrentTarget == null || !Godot.Object.IsInstanceValid(CurrentTarget)) {
+            HoverLocationReached = false;
             if(PotentialTargets.Count > 0) {
                 CurrentTarget = PotentialTargets[PotentialTargets.Count - 1];
                 PotentialTargets.RemoveAt(PotentialTargets.Count - 1);
+                if(AttackPattern == AttackPatternType.Hover) {
+                    SetHoverLocation();
+                }
             }
         }
     }
