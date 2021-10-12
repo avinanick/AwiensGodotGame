@@ -51,6 +51,7 @@ public class AlienImpeder : CombatShip
             if(CurrentTarget is Turret turretTarget) {
                 turretTarget.DisableTurret();
                 // Need some sort of visual/animation
+                GetNode<AnimationPlayer>("AnimationPlayer").Play("StartDisable");
             }
         }
     }
