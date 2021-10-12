@@ -9,6 +9,7 @@ public class AlienScout : CombatShip
     [Export]
     protected float HoverDistance = 9f;
     protected PackedScene MissileScene = GD.Load<PackedScene>("res://GameObjects/Units/Aliens/AlienMissile.tscn");
+    protected bool Targeting = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -28,7 +29,8 @@ public class AlienScout : CombatShip
     }
 
     protected void EndTargeting() {
-        
+        Targeting = false;
+        // Targeting end animation here
     }
 
     protected override void HoverDestinationReached() {
@@ -47,6 +49,8 @@ public class AlienScout : CombatShip
     }
 
     protected void StartTargeting() {
-        
+        Targeting = true;
+        GetNode<Timer>("MissileWarpTimer").Start();
+        // Add animation here
     }
 }
