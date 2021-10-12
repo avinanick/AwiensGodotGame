@@ -36,3 +36,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0
 visible = true
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="MissileWarpTimer" type="Timer" parent="." index="5"]
+wait_time = 2.0
+one_shot = true
