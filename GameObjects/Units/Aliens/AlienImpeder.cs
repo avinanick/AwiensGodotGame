@@ -41,6 +41,11 @@ public class AlienImpeder : CombatShip
     }
 
     protected void StartImpedence() {
-
+        if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
+            if(CurrentTarget is Turret turretTarget) {
+                turretTarget.DisableTurret();
+                // Need some sort of visual/animation
+            }
+        }
     }
 }
