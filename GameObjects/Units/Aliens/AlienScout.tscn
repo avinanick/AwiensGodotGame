@@ -40,3 +40,5 @@ material/0 = null
 [node name="MissileWarpTimer" type="Timer" parent="." index="5"]
 wait_time = 2.0
 one_shot = true
+
+[connection signal="timeout" from="MissileWarpTimer" to="." method="SpawnMissile"]
