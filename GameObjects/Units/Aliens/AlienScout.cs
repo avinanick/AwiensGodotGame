@@ -8,6 +8,7 @@ public class AlienScout : CombatShip
     // private string b = "text";
     [Export]
     protected float HoverDistance = 9f;
+    protected PackedScene MissileScene = GD.Load<PackedScene>("res://GameObjects/Units/Aliens/AlienMissile.tscn");
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
