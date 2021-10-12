@@ -88,9 +88,14 @@ public class CombatShip : Ship
     }
 
     protected void InitialEnemyPopulation() {
-        Godot.Collections.Array<Destructible> startingTargets = new Godot.Collections.Array<Destructible>(GetNode<Area>("AttackRangeArea").GetOverlappingBodies());
-        for(int i = 0; i < startingTargets.Count; i++) {
-            BodyEnteringRange(startingTargets[i]);
+        //Godot.Collections.Array<Destructible> startingTargets = new Godot.Collections.Array<Destructible>(GetNode<Area>("AttackRangeArea").GetOverlappingBodies());
+        //for(int i = 0; i < startingTargets.Count; i++) {
+        //    BodyEnteringRange(startingTargets[i]);
+        //}
+        // Do I want to just make ranges global instead?
+        Godot.Collections.Array<Destructible> possibleTargets = new Godot.Collections.Array<Destructible>(GetTree().GetNodesInGroup("Destructible"));
+        for(int i = 0; i < possibleTargets.Count; i++) {
+            BodyEnteringRange(possibleTargets[i]);
         }
     }
 
