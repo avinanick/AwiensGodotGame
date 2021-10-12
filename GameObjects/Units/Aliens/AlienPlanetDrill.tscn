@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/Units/Aliens/AlienPlanetDrill.cs" type="Script" id=2]
@@ -17,6 +17,34 @@ surfaces/0 = {
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 2740
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "BeamAttack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("AttackMesh:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AttackMesh:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.1, 1, 0.1 ), Vector3( 1, 1, 1 ) ]
 }
 
 [sub_resource type="CylinderShape" id=2]
@@ -45,6 +73,7 @@ material/0 = null
 
 [node name="AnimationPlayer" parent="." index="4"]
 autoplay = "Idle"
+anims/BeamAttack = SubResource( 5 )
 
 [node name="Area" type="Area" parent="." index="5"]
 
@@ -56,7 +85,7 @@ shape = SubResource( 2 )
 wait_time = 0.5
 
 [node name="AttackMesh" type="MeshInstance" parent="." index="7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.5, 0 )
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, -11.5, 0 )
 visible = false
 mesh = SubResource( 4 )
 material/0 = null
