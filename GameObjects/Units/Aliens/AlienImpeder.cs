@@ -21,6 +21,11 @@ public class AlienImpeder : CombatShip
 //      
 //  }
 
+    public override void DestroySelf() {
+        base.DestroySelf();
+        EndImpedence();
+    }
+
     protected void EndImpedence() {
         // I'll probably call this in the destroy animation player
         if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
