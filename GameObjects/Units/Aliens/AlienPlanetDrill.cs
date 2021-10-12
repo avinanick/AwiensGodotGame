@@ -22,7 +22,13 @@ public class AlienPlanetDrill : CombatShip
 //  }
 
     public void EndAttackChannel() {
+        // This should play the end attack animation
+    }
 
+    protected override void HoverDestinationReached()
+    {
+        base.HoverDestinationReached();
+        StartAttackChannel();
     }
 
     public void PulseDamage() {
@@ -40,10 +46,11 @@ public class AlienPlanetDrill : CombatShip
             Vector3 location = CurrentTarget.GlobalTransform.origin;
             location.y += 20;
             HoverLocation = location;
+            EndAttackChannel();
         }
     }
 
-    public void StartAttackChannel() {
-
+    protected void StartAttackChannel() {
+        // play the start attack animation
     }
 }
