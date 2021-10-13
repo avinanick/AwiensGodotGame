@@ -49,7 +49,15 @@ public class AlienScout : CombatShip
     }
 
     public void SpawnMissile() {
-        
+        if(Targeting) {
+            Vector3 spawnLocation = GlobalTransform.origin + new Vector3(0,30,0);
+            AlienMissile newMissile = MissileScene.Instance<AlienMissile>();
+            GetTree().CurrentScene.AddChild(newMissile);
+            newMissile.Translation = spawnLocation;
+            newMissile.SetTarget(CurrentTarget);
+            newMissile.WarpIn();
+            GetNode<Timer>("MissileWarpTimer").Start();
+        }
     }
 
     protected void StartTargeting() {
