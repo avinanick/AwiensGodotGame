@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Models/Units/Aliens/AlienScout/Material.material" type="Material" id=2]
@@ -21,6 +21,36 @@ surfaces/0 = {
 "vertex_count": 342
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "TargetPoint"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpotterBeam:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.882353, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 0.501961, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="CylinderMesh" id=5]
+material = SubResource( 4 )
+top_radius = 0.1
+bottom_radius = 0.1
+height = 4.7
+
 [node name="AlienScout" groups=[
 "Alien",
 ] instance=ExtResource( 1 )]
@@ -38,8 +68,34 @@ visible = true
 mesh = SubResource( 2 )
 material/0 = null
 
+[node name="AnimationPlayer" parent="." index="4"]
+anims/TargetPoint = SubResource( 3 )
+
 [node name="MissileWarpTimer" type="Timer" parent="." index="5"]
 wait_time = 2.0
 one_shot = true
+
+[node name="SpotterBeam" type="Spatial" parent="." index="6"]
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="SpotterBeam" index="0"]
+transform = Transform( 1, 0, 0, 0, 0.475609, 0.879657, 0, -0.879657, 0.475609, 0, 1.05316, 2.79589 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="SpotterBeam" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 7.14424 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="SpotterBeam" index="2"]
+transform = Transform( -0.022269, 0.55499, 0.831559, -0.999641, -4.36957e-08, -0.0267702, -0.0148571, -0.831857, 0.554791, 1.26072, -0.053255, 2.9531 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="SpotterBeam" index="3"]
+transform = Transform( 0.0705755, -0.556803, -0.827641, 0.996384, -4.35533e-08, 0.0849648, -0.0473087, -0.830644, 0.55479, -1.22629, -0.053255, 2.9531 )
+mesh = SubResource( 5 )
+material/0 = null
 
 [connection signal="timeout" from="MissileWarpTimer" to="." method="SpawnMissile"]
