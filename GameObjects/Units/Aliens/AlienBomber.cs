@@ -33,7 +33,7 @@ public class AlienBomber : CombatShip
         AddChild(newMissile);
         newMissile.Translation = BombSpawnOffset;
         CurrentMissile = newMissile;
-        newMissile.Connect("ChargeMissileFinished", this, nameof(BombLaunched));
+        newMissile.Connect("MissileChargeFinished", this, nameof(BombLaunched));
         newMissile.ChargeMissile();
     }
 
