@@ -31,6 +31,7 @@ public class AlienScout : CombatShip
     protected void EndTargeting() {
         Targeting = false;
         // Targeting end animation here
+        GetNode<AnimationPlayer>("AnimationPlayer").PlayBackwards("TargetPoint");
     }
 
     protected override void HoverDestinationReached() {
@@ -64,5 +65,6 @@ public class AlienScout : CombatShip
         Targeting = true;
         GetNode<Timer>("MissileWarpTimer").Start();
         // Add animation here
+        GetNode<AnimationPlayer>("AnimationPlayer").Play("TargetPoint");
     }
 }
