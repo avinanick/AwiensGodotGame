@@ -43,7 +43,7 @@ public class AlienMissile : Ship
 	}
 
 	public void SetTarget(Destructible target) {
-		
+		InitializeDirection(target.GlobalTransform.origin - GlobalTransform.origin);
 	}
 	
 	public override void SpawnShip() {
