@@ -39,6 +39,7 @@ public class AlienArtillery : CombatShip
             newMissile.Translation = MissileSpawnOffset;
             CurrentMissile = newMissile;
             newMissile.ChargeMissile();
+            newMissile.Connect("ChargeMissileFinished", this, nameof(LaunchMissile));
         }
     }
 
