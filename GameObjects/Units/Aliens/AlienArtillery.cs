@@ -36,6 +36,9 @@ public class AlienArtillery : CombatShip
     protected override void SetHoverLocation()
     {
         base.SetHoverLocation();
+        // Move away from the city a short distance, and lower to height 15
+        Vector3 vectorFromCity = (GlobalTransform.origin - new Vector3(0,GlobalTransform.origin.y, 0)).Normalized();
+        HoverLocation = vectorFromCity * 10 + new Vector3(0,15,0);
     }
 
     protected void StartBombardment() {
