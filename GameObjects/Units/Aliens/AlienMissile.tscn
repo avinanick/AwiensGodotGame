@@ -135,7 +135,7 @@ shader_param/noise_speed = 0.2
 shader_param/noise_scale = 0.5
 shader_param/_NoiseTex = SubResource( 4 )
 
-[sub_resource type="SphereMesh" id=11]
+[sub_resource type="SphereMesh" id=6]
 material = SubResource( 5 )
 
 [sub_resource type="Animation" id=7]
@@ -238,7 +238,7 @@ void vertex() {
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id=12]
+[sub_resource type="ShaderMaterial" id=9]
 shader = SubResource( 8 )
 shader_param/particle_spawn_radius = 1.0
 
@@ -252,7 +252,7 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SphereMesh" id=13]
+[sub_resource type="SphereMesh" id=11]
 material = SubResource( 10 )
 radius = 0.1
 height = 0.2
@@ -270,7 +270,8 @@ MaxHealth = 1
 shape = SubResource( 1 )
 
 [node name="MeshInstance" parent="." index="3"]
-mesh = SubResource( 11 )
+visible = true
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="AnimationPlayer" parent="." index="4"]
@@ -278,5 +279,5 @@ anims/Charge = SubResource( 7 )
 
 [node name="Particles" type="Particles" parent="." index="5"]
 emitting = false
-process_material = SubResource( 12 )
-draw_pass_1 = SubResource( 13 )
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 11 )
