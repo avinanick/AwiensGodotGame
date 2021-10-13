@@ -32,3 +32,7 @@ TargetGroups = PoolStringArray( "Earthling" )
 visible = true
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="MissileLaunchTimer" type="Timer" parent="." index="5"]
+wait_time = 3.0
+one_shot = true
