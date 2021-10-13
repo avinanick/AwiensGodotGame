@@ -59,11 +59,11 @@ AttackPattern = 2
 TargetGroups = PoolStringArray( "Earthling" )
 
 [node name="CollisionShape" parent="." index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.554165 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0178381 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" parent="." index="3"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.715325 )
 visible = true
 mesh = SubResource( 2 )
 material/0 = null
@@ -76,6 +76,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="SpotterBeam" type="Spatial" parent="." index="6"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0 )
 visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="SpotterBeam" index="0"]
