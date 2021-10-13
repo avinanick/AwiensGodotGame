@@ -31,6 +31,7 @@ public class AlienArtillery : CombatShip
 
     protected override void HoverDestinationReached() {
         base.HoverDestinationReached();
+        StartBombardment();
     }
 
     protected override void SetHoverLocation()
@@ -42,6 +43,7 @@ public class AlienArtillery : CombatShip
     }
 
     protected void StartBombardment() {
-
+        Bombarding = true;
+        GetNode<Timer>("MissileLaunchTimer").Start();
     }
 }
