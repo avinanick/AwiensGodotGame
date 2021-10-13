@@ -41,6 +41,10 @@ public class AlienMissile : Ship
 			SetProcess(false);
 		}
 	}
+
+	public void SetTarget(Destructible target) {
+		InitializeDirection(target.GlobalTransform.origin - GlobalTransform.origin);
+	}
 	
 	public override void SpawnShip() {
 		// Here I should pick a random earthling and find the direction to it

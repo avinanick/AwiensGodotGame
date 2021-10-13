@@ -37,4 +37,8 @@ public class Ship : Destructible
 	public virtual void SpawnShip() {
 		// Base implimentation will do nothing
 	}
+
+	public virtual void WarpIn() {
+		
+	}
 }
