@@ -1,11 +1,95 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=1]
-[ext_resource path="res://GameObjects/Units/Aliens/AlienMissile.cs" type="Script" id=2]
 
-[sub_resource type="SphereShape" id=1]
+[sub_resource type="CSharpScript" id=1]
+script/source = "using Godot;
+using System;
 
-[sub_resource type="Shader" id=2]
+public class AlienMissile : Ship
+{
+	// Declare member variables here. Examples:
+	// private int a = 2;
+	// private string b = \"text\";
+	[Export]
+	private int MissileDamage = 1;
+
+	[Signal]
+	public delegate void MissileChargeFinished();
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		base._Ready();
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+//	public override void _Process(float delta)
+//	{
+//		base._Process(delta);
+//	}
+
+	public void ChargeFinished() {
+		EmitSignal(nameof(MissileChargeFinished));
+	}
+
+	public void ChargeMissile() {
+		GetNode<AnimationPlayer>(\"AnimationPlayer\").Play(\"Charge\");
+	}
+
+	public override void HandleCollision(KinematicCollision collision) {
+		if(collision != null) {
+			if(collision.Collider is Destructible destructible) {
+				destructible.TakeDamage(MissileDamage);
+			}
+			DestroySelf();
+			SetProcess(false);
+		}
+	}
+
+	public void SetTarget(Destructible target) {
+		InitializeDirection(target.GlobalTransform.origin - GlobalTransform.origin);
+	}
+	
+	public override void SpawnShip() {
+		// Here I should pick a random earthling and find the direction to it
+		Godot.Collections.Array earthlings = GetTree().GetNodesInGroup(\"Earthling\");
+		Godot.Collections.Array<Spatial> targets = new Godot.Collections.Array<Spatial>(earthlings);
+		int randomIndex = Mathf.Abs((int)GD.Randi()) % targets.Count;
+		InitializeDirection(targets[randomIndex].GlobalTransform.origin - GlobalTransform.origin);		
+	}
+}
+"
+
+[sub_resource type="SphereShape" id=22]
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Charge"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Destroy"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+
+[sub_resource type="AnimationNodeStateMachine" id=8]
+states/Charge/node = SubResource( 3 )
+states/Charge/position = Vector2( 320, 58 )
+states/Destroy/node = SubResource( 4 )
+states/Destroy/position = Vector2( 733, 58 )
+states/Idle/node = SubResource( 5 )
+states/Idle/position = Vector2( 545, 58 )
+transitions = [ "Charge", "Idle", SubResource( 6 ), "Idle", "Destroy", SubResource( 7 ) ]
+start_node = "Charge"
+graph_offset = Vector2( -115, 0 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
+
+[sub_resource type="Shader" id=10]
 code = "/*
 	バブルシェーダー by あるる（きのもと 結衣） @arlez80
 	Bubble Shader by Yui Kinomoto @arlez80
@@ -104,17 +188,17 @@ void fragment( )
 	ALPHA = outline_color.a * outline_alpha;
 }"
 
-[sub_resource type="OpenSimplexNoise" id=3]
+[sub_resource type="OpenSimplexNoise" id=11]
 seed = 2
 octaves = 5
 period = 59.8
 
-[sub_resource type="NoiseTexture" id=4]
+[sub_resource type="NoiseTexture" id=12]
 seamless = true
-noise = SubResource( 3 )
+noise = SubResource( 11 )
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 2 )
+[sub_resource type="ShaderMaterial" id=20]
+shader = SubResource( 10 )
 shader_param/_Scale = 0.05
 shader_param/_Opacity = 2.055
 shader_param/_Edge = 0.1
@@ -133,13 +217,15 @@ shader_param/outline_color = Color( 0.94902, 0, 0, 1 )
 shader_param/outline_ratio = 100.0
 shader_param/noise_speed = 0.2
 shader_param/noise_scale = 0.5
-shader_param/_NoiseTex = SubResource( 4 )
+shader_param/_NoiseTex = SubResource( 12 )
 
-[sub_resource type="SphereMesh" id=6]
-material = SubResource( 5 )
+[sub_resource type="SphereMesh" id=21]
+resource_local_to_scene = true
+material = SubResource( 20 )
+radius = 0.1
+height = 0.2
 
-[sub_resource type="Animation" id=7]
-resource_name = "Charge"
+[sub_resource type="Animation" id=15]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Particles:emitting")
 tracks/0/interp = 1
@@ -202,8 +288,32 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("MeshInstance:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="Shader" id=8]
+[sub_resource type="Shader" id=16]
 code = "shader_type particles;
 
 //this defines how far out the particles will spawn
@@ -238,11 +348,11 @@ void vertex() {
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id=9]
-shader = SubResource( 8 )
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 16 )
 shader_param/particle_spawn_radius = 1.0
 
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=18]
 albedo_color = Color( 0.972549, 0, 0, 0.705882 )
 metallic = 0.27
 metallic_specular = 0.72
@@ -252,8 +362,8 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SphereMesh" id=11]
-material = SubResource( 10 )
+[sub_resource type="SphereMesh" id=19]
+material = SubResource( 18 )
 radius = 0.1
 height = 0.2
 radial_segments = 8
@@ -262,22 +372,25 @@ rings = 4
 [node name="AlienMissile" groups=[
 "Alien",
 ] instance=ExtResource( 1 )]
-script = ExtResource( 2 )
-Health = 1
-MaxHealth = 1
+script = SubResource( 1 )
 
 [node name="CollisionShape" parent="." index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 22 )
+disabled = true
+
+[node name="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 8 )
+parameters/playback = SubResource( 9 )
 
 [node name="MeshInstance" parent="." index="3"]
 visible = true
-mesh = SubResource( 6 )
+mesh = SubResource( 21 )
 material/0 = null
 
 [node name="AnimationPlayer" parent="." index="4"]
-anims/Charge = SubResource( 7 )
+anims/Charge = SubResource( 15 )
 
 [node name="Particles" type="Particles" parent="." index="5"]
-emitting = false
-process_material = SubResource( 9 )
-draw_pass_1 = SubResource( 11 )
+amount = 20
+process_material = SubResource( 17 )
+draw_pass_1 = SubResource( 19 )
