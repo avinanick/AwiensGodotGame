@@ -12,6 +12,7 @@ public class AlienArtillery : CombatShip
     protected PackedScene MissileScene = GD.Load<PackedScene>("res://GameObjects/Units/Aliens/AlienMissile.tscn");
     protected bool Bombarding = false;
     protected AlienMissile CurrentMissile = null;
+    protected bool HoverLocked = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -43,19 +44,34 @@ public class AlienArtillery : CombatShip
 
     protected override void HoverDestinationReached() {
         base.HoverDestinationReached();
+        HoverLocked = true;
         StartBombardment();
     }
 
     public void LaunchMissile() {
-        
+        RemoveChild(CurrentMissile);
+        GetTree().CurrentScene.AddChild(CurrentMissile);
+        if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
+            CurrentMissile.SetTarget(CurrentTarget);
+        }
+        else {
+            CurrentMissile.SpawnShip();
+        }
+        GetNode<Timer>("MissileLaunchTimer").Start();
+        CurrentMissile = null;
     }
 
     protected override void SetHoverLocation()
     {
-        base.SetHoverLocation();
-        // Move away from the city a short distance, and lower to height 15
-        Vector3 vectorFromCity = (GlobalTransform.origin - new Vector3(0,GlobalTransform.origin.y, 0)).Normalized();
-        HoverLocation = vectorFromCity * 10 + new Vector3(0,15,0);
+        if(!HoverLocked) {
+            base.SetHoverLocation();
+            // Move away from the city a short distance, and lower to height 15
+            Vector3 vectorFromCity = (GlobalTransform.origin - new Vector3(0,GlobalTransform.origin.y, 0)).Normalized();
+            HoverLocation = vectorFromCity * 10 + new Vector3(0,15,0);
+        }
+        else {
+            HoverLocation = GlobalTransform.origin;
+        }
     }
 
     protected void StartBombardment() {
