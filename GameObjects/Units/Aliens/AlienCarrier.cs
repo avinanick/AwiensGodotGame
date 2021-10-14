@@ -56,6 +56,7 @@ public class AlienCarrier : CombatShip
     }
 
     protected void StartSeige() {
-        
+        Seiging = true;
+        GetNode<Timer>("ShipSpawnTimer").Start();
     }
 }
