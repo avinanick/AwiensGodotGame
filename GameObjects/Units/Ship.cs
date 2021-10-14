@@ -39,6 +39,7 @@ public class Ship : Destructible
 	}
 
 	public virtual void WarpIn() {
-		
+		SpawnShip();
+		// STUB, should play the warp in animation.
 	}
 }
