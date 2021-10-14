@@ -7,10 +7,13 @@ public class AlienCarrier : CombatShip
     // private int a = 2;
     // private string b = "text";
     [Export]
-    Vector3 ShipSpawnOffset = new Vector3(0,3,0);
+    protected Vector3 ShipSpawnOffset = new Vector3(0,3,0);
+    [Export]
+    protected PackedScene[] ShipScenes;
 
     protected bool Seiging = false;
     protected bool HoverLocked = false;
+    
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -25,7 +28,13 @@ public class AlienCarrier : CombatShip
 //  }
 
     protected void CreateShip() {
-        
+        if(ShipScenes.Length > 0) {
+            int shipIndex = Mathf.Abs((int)GD.Randi()) % ShipScenes.Length;
+            CombatShip newShip = ShipScenes[shipIndex].Instance<CombatShip>();
+            GetTree().CurrentScene.AddChild(newShip);
+            newShip.Translation = GlobalTransform.origin + ShipSpawnOffset;
+            newShip.WarpIn();
+        }
     }
 
     protected void EndSeige() {
