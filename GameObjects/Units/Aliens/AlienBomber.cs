@@ -38,8 +38,10 @@ public class AlienBomber : CombatShip
     }
 
     public void BombLaunched() {
+        Transform missileTransform = CurrentMissile.GlobalTransform;
         RemoveChild(CurrentMissile);
         GetTree().CurrentScene.AddChild(CurrentMissile);
+        CurrentMissile.GlobalTransform = missileTransform;
         CurrentMissile.SpawnShip();
         GetNode<Timer>("BombCooldownTimer").Start(BombCooldown);
     }
