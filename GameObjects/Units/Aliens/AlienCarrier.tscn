@@ -30,6 +30,7 @@ Health = 15
 MaxHealth = 15
 AttackPattern = 2
 TargetGroups = PoolStringArray( "Earthling" )
+LooksAtTarget = false
 ShipScenes = [ ExtResource( 4 ), ExtResource( 5 ) ]
 
 [node name="CollisionShape" parent="." index="0"]
