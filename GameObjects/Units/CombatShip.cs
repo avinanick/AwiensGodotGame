@@ -23,6 +23,8 @@ public class CombatShip : Ship
     protected float TurnSpeed = 4f;
     [Export]
     protected string[] TargetGroups;
+    [Export]
+    protected bool LooksAtTarget = true;
     protected AttackerComponent Weapon;
     protected Destructible CurrentTarget;
     protected Godot.Collections.Array<Destructible> PotentialTargets = new Godot.Collections.Array<Destructible>();
@@ -122,7 +124,9 @@ public class CombatShip : Ship
             }
             else {
                 DirectionVector = (HoverLocation - GlobalTransform.origin).Normalized();
-                LookAt(HoverLocation, new Vector3(0,1,0));
+                if(LooksAtTarget) {
+                    LookAt(HoverLocation, new Vector3(0,1,0));
+                }
             }
         }
     }
@@ -174,7 +178,9 @@ public class CombatShip : Ship
         // x coordinate
         Vector3 movementDirection = new Vector3((-1) * directionToCity.z, 0, directionToCity.x);
         DirectionVector = movementDirection.Normalized();
-        LookAt(new Vector3(0,GetGlobalTransform().origin.y,0), new Vector3(0,1,0));
+        if(LooksAtTarget) {
+            LookAt(new Vector3(0,GetGlobalTransform().origin.y,0), new Vector3(0,1,0));
+        }
     }
 
     protected void UpdateTarget() {
