@@ -30,3 +30,6 @@ TargetGroups = PoolStringArray( "Earthling" )
 visible = true
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="ShipSpawnTimer" type="Timer" parent="." index="5"]
+wait_time = 2.0
