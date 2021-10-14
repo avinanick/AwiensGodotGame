@@ -23,10 +23,13 @@ public class ShipTester : Spatial
 //  }
 
     public void OnShipTimerTimeout() {
+        CallDeferred(nameof(SpawnShip));
+    }
+
+    public void SpawnShip() {
         CombatShip newAlien = ShipScene.Instance<CombatShip>();
         GetTree().CurrentScene.AddChild(newAlien);
         newAlien.GlobalTransform = GlobalTransform;
         newAlien.SpawnShip();
-
     }
 }
