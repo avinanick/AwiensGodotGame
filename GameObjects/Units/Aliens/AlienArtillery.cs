@@ -33,13 +33,16 @@ public class AlienArtillery : CombatShip
     protected void FireOrdinance() {
         if(Bombarding) {
             // Calculate the missile spawn, then charge and launch it.
-            //Vector3 missileSpawnPoint = GlobalTransform.origin + MissileSpawnOffset;
+            Vector3 missileSpawnPoint = GlobalTransform.origin + MissileSpawnOffset;
             AlienMissile newMissile = MissileScene.Instance<AlienMissile>();
-            AddChild(newMissile);
-            newMissile.Translation = MissileSpawnOffset;
+            newMissile.Visible = false;
+            GetTree().CurrentScene.AddChild(newMissile);
+            newMissile.Translation = missileSpawnPoint;
+            //AddChild(newMissile);
+            //newMissile.Translation = MissileSpawnOffset;
             CurrentMissile = newMissile;
             newMissile.ChargeMissile();
-            newMissile.Connect("ChargeMissileFinished", this, nameof(LaunchMissile));
+            newMissile.Connect("MissileChargeFinished", (AlienArtillery)this, nameof(LaunchMissile));
         }
     }
 
@@ -51,8 +54,8 @@ public class AlienArtillery : CombatShip
     }
 
     public void LaunchMissile() {
-        RemoveChild(CurrentMissile);
-        GetTree().CurrentScene.AddChild(CurrentMissile);
+        //RemoveChild(CurrentMissile);
+        //GetTree().CurrentScene.AddChild(CurrentMissile);
         if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
             CurrentMissile.SetTarget(CurrentTarget);
         }
