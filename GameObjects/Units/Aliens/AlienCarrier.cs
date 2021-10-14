@@ -28,12 +28,13 @@ public class AlienCarrier : CombatShip
 //  }
 
     protected void CreateShip() {
-        if(ShipScenes.Length > 0) {
+        if(ShipScenes.Length > 0 & Seiging) {
             int shipIndex = Mathf.Abs((int)GD.Randi()) % ShipScenes.Length;
             CombatShip newShip = ShipScenes[shipIndex].Instance<CombatShip>();
             GetTree().CurrentScene.AddChild(newShip);
             newShip.Translation = GlobalTransform.origin + ShipSpawnOffset;
             newShip.WarpIn();
+            GetNode<Timer>("ShipSpawnTimer").Start();
         }
     }
 
