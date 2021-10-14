@@ -42,3 +42,5 @@ material/0 = null
 
 [node name="ShipSpawnTimer" type="Timer" parent="." index="5"]
 wait_time = 2.0
+
+[connection signal="timeout" from="ShipSpawnTimer" to="." method="CreateShip"]
