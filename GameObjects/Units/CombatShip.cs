@@ -140,6 +140,7 @@ public class CombatShip : Ship
         Vector3 directionToCity = new Vector3(0, GlobalTransform.origin.y, 0) - GlobalTransform.origin;
         switch(StrafeState) {
             case StrafeStateType.Approaching:
+                DirectionVector = directionToCity.Normalized();
                 if(directionToCity.Length() <= 0.1) {
                     StrafeState = StrafeStateType.Departing;
                     return;
