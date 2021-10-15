@@ -18,6 +18,7 @@ public class CampaignTracker : Node
     private int CurrentDifficultyLevel = 1;
     private int LevelPointsEarned = 0;
     private string[] LevelEnemies = new string[1] {"Alien Missile"};
+    private string[] LevelEnemyEnhancements = new string[] {};
     // I think I need something to track completed zones in the campaigns somehow
     private int CurrentCity = -1;
     private System.Collections.Generic.Stack<int> CompletedCities = new System.Collections.Generic.Stack<int>();
@@ -61,6 +62,10 @@ public class CampaignTracker : Node
         return CurrentDifficultyLevel;
     }
 
+    public string[] GetCurrentEnemyEnhancements() {
+        return LevelEnemyEnhancements;
+    }
+
     public int GetCurrentPoints() {
         return CurrentPoints;
     }
@@ -84,6 +89,10 @@ public class CampaignTracker : Node
     public void SetLevelEnemies(string[] nextLevelEnemies, int nextCity) {
         LevelEnemies = nextLevelEnemies;
         CurrentCity = nextCity;
+    }
+
+    public void SetLevelEnemyEnhancements(string[] nextLevelEnhancements) {
+        LevelEnemyEnhancements = nextLevelEnhancements;
     }
 
     public void SetLevelPoints(int levelPoints) {
