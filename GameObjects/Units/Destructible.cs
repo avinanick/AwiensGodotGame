@@ -7,12 +7,12 @@ public class Destructible : KinematicBody
 	// private int a = 2;
 	// private string b = "text";
 	[Export]
-	private int Health = 10;
+	protected int Health = 10;
 
 	[Export]
-	private int MaxHealth = 10;
+	protected int MaxHealth = 10;
 
-	private double DamageModifier = 1.0;
+	protected double DamageModifier = 1.0;
 	private bool IsAlive = true;
 	
 	[Signal]
