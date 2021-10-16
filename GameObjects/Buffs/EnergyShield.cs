@@ -26,6 +26,10 @@ public class EnergyShield : Destructible
 //      
 //  }
 
+    public void EnableShield() {
+        GetNode<CollisionShape>("CollisionShape").Disabled = false;
+    }
+
     public void OverloadRecoveryCompleted() {
         Health = MaxHealth;
         Overloaded = false;
