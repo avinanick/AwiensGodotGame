@@ -30,6 +30,7 @@ public class EnergyShield : Destructible
         Health = MaxHealth;
         Overloaded = false;
         GetNode<Timer>("RecoveryPeriodTimer").Start(RecoveryTime);
+        GetNode<CollisionShape>("CollisionShape").Disabled = false;
     }
 
     public void RecoveryPeriod() {
@@ -48,9 +49,12 @@ public class EnergyShield : Destructible
 			Overloaded = true;
             GetNode<Timer>("OverloadTimer").Start(OverloadTime);
             // Here I'll need to play the breaking animation
+            GetNode<AnimationPlayer>("AnimationPlayer").Play("ShieldShatter");
+            GetNode<CollisionShape>("CollisionShape").Disabled = true;
 		}
         else {
             // play the damage taken animation
+            GetNode<AnimationPlayer>("AnimationPlayer").Play("DamageImpact");
         }
     }
 }
