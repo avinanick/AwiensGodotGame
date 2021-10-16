@@ -114,6 +114,10 @@ public class CombatShip : Ship
 
     }
 
+    protected void UnlockAlienShield() {
+        GetNode<EnergyShield>("EnergyShield").EnableShield();
+    }
+
     protected void UpdateShipDirectionHover() {
         // Move toward the hover location, if arrived, set the direction vector to 0
         // otherwise move toward the hover location. This move type will need to move
