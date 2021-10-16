@@ -58,7 +58,7 @@ public class Destructible : KinematicBody
 		RepairDamage(MaxHealth);
 	}
 
-	public void TakeDamage(int amount) {
+	public virtual void TakeDamage(int amount) {
 		Health -= amount;
 		EmitSignal(nameof(HealthChanged), Health);
 		if(Health <= 0) {
