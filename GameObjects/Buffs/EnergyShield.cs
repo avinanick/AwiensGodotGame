@@ -21,4 +21,20 @@ public class EnergyShield : Destructible
 //  {
 //      
 //  }
+
+    public void OverloadRecoveryCompleted() {
+
+    }
+
+    public void RecoveryPeriod() {
+        
+    }
+
+    public override void TakeDamage(int amount) {
+        Health -= (int)((double)amount * DamageModifier);
+		EmitSignal(nameof(HealthChanged), Health);
+		if(Health <= 0) {
+			DestroySelf();
+		}
+    }
 }
