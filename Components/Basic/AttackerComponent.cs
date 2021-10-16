@@ -18,6 +18,7 @@ public class AttackerComponent : Component
 	private Vector3 SpawnOffset = new Vector3();
 	
 	private bool ReadyToFire = true;
+	private KinematicBody ShieldException = null;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -30,6 +31,10 @@ public class AttackerComponent : Component
 //  {
 //      
 //  }
+
+	public void AddShieldExeption(KinematicBody shield){
+		ShieldException = shield;
+	}
 
 	public void CooldownFinished() {
 		ReadyToFire = true;
@@ -55,6 +60,9 @@ public class AttackerComponent : Component
 			newBullet.Rotation = startRotation;
 			newBullet.SetDirection(directionVector.Normalized());
 			newBullet.SetDamage(Damage);
+			if(ShieldException != null) {
+				newBullet.AddCollisionExceptionWith(ShieldException);
+			}
 			
 			GetTree().CurrentScene.AddChild(newBullet);
 		}
