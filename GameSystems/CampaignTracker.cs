@@ -46,6 +46,13 @@ public class CampaignTracker : Node
         };
     }
 
+    public bool CheckForEnhancement(String enhancement) {
+        if(Array.Exists<String>(LevelEnemyEnhancements, element => element == "Shielded")) {
+            return true;
+        }
+        return false;
+    }
+
     public void ConfirmLevelPoints() {
         CurrentPoints += LevelPointsEarned;
         PopulationSaved += LevelPointsEarned;
