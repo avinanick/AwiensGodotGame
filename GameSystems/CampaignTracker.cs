@@ -18,7 +18,7 @@ public class CampaignTracker : Node
     private int CurrentDifficultyLevel = 1;
     private int LevelPointsEarned = 0;
     private string[] LevelEnemies = new string[1] {"Alien Missile"};
-    private string[] LevelEnemyEnhancements = new string[] {};
+    private string[] LevelEnemyEnhancements = new string[1] {"Shielded"};
     // I think I need something to track completed zones in the campaigns somehow
     private int CurrentCity = -1;
     private System.Collections.Generic.Stack<int> CompletedCities = new System.Collections.Generic.Stack<int>();
