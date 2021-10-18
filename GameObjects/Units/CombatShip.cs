@@ -40,6 +40,7 @@ public class CombatShip : Ship
         base._Ready();
         Weapon = GetNode<AttackerComponent>("AttackerComponent");
         InitialEnemyPopulation();
+        CheckEnhancements();
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -84,6 +85,20 @@ public class CombatShip : Ship
                 if(potentialTarget.IsInGroup(TargetGroups[i])) {
                     PotentialTargets.Remove(potentialTarget);
                     return;
+                }
+            }
+        }
+    }
+
+    protected void CheckEnhancements() {
+        CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
+        if(tracker.CheckForEnhancement("Shielded")) {
+            // Set up the shields
+            EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
+            if(shipShield != null) {
+                shipShield.EnableShield();
+                if(Weapon != null) {
+                    Weapon.AddShieldExeption(shipShield);
                 }
             }
         }
