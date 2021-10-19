@@ -1,10 +1,13 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/Units/Aliens/AlienPlanetDrill.cs" type="Script" id=2]
 [ext_resource path="res://Resources/Models/Units/Aliens/AlienPlanetDrill/Material_001.material" type="Material" id=3]
 [ext_resource path="res://Resources/Materials/Textures/shield_shatter_texture.tres" type="Texture" id=4]
 [ext_resource path="res://GameObjects/Buffs/EnergyShield.cs" type="Script" id=5]
+
+[sub_resource type="SphereShape" id=32]
+radius = 2.3
 
 [sub_resource type="ArrayMesh" id=26]
 resource_name = "Cylinder"
@@ -292,6 +295,9 @@ script = ExtResource( 2 )
 ShipSpeed = 3.0
 AttackPattern = 2
 TargetGroups = PoolStringArray( "Earthling" )
+
+[node name="CollisionShape" parent="." index="0"]
+shape = SubResource( 32 )
 
 [node name="MeshInstance" parent="." index="3"]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
