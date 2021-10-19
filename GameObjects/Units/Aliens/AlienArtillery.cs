@@ -42,6 +42,14 @@ public class AlienArtillery : CombatShip
             //newMissile.Translation = MissileSpawnOffset;
             CurrentMissile = newMissile;
             newMissile.ChargeMissile();
+            EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
+            if(shipShield != null) {
+                newMissile.AddCollisionExceptionWith(shipShield);
+                EnergyShield spawnedShield = newMissile.GetNode<EnergyShield>("EnergyShield");
+                if(spawnedShield != null) {
+                    spawnedShield.AddCollisionExceptionWith(shipShield);
+                }
+            }
             newMissile.Connect("MissileChargeFinished", (AlienArtillery)this, nameof(LaunchMissile));
         }
     }
