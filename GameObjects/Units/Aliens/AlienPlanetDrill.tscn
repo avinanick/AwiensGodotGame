@@ -1,10 +1,9 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/Units/Aliens/AlienPlanetDrill.cs" type="Script" id=2]
 [ext_resource path="res://Resources/Models/Units/Aliens/AlienPlanetDrill/Material_001.material" type="Material" id=3]
 [ext_resource path="res://Resources/Materials/Textures/shield_shatter_texture.tres" type="Texture" id=4]
-[ext_resource path="res://GameObjects/Buffs/EnergyShield.cs" type="Script" id=5]
 
 [sub_resource type="SphereShape" id=32]
 radius = 2.3
@@ -62,10 +61,10 @@ albedo_color = Color( 1, 0.0823529, 0.0823529, 1 )
 material = SubResource( 29 )
 height = 20.0
 
-[sub_resource type="SphereShape" id=6]
+[sub_resource type="SphereShape" id=33]
 radius = 3.0
 
-[sub_resource type="SphereMesh" id=7]
+[sub_resource type="SphereMesh" id=34]
 radius = 3.0
 height = 6.0
 
@@ -219,7 +218,7 @@ shader = SubResource( 21 )
 shader_param/power = 0.0
 shader_param/ShatterVariable = -0.5
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=35]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
@@ -246,7 +245,7 @@ tracks/1/keys = {
 "values": [ -0.5, -0.5 ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=36]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
@@ -261,7 +260,7 @@ tracks/0/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=37]
 resource_name = "ShieldShatter"
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
@@ -325,20 +324,20 @@ mesh = SubResource( 30 )
 material/0 = null
 
 [node name="EnergyShield" parent="." index="8"]
-script = ExtResource( 5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="EnergyShield" index="0"]
-shape = SubResource( 6 )
+shape = SubResource( 33 )
 disabled = true
 
 [node name="MeshInstance" type="MeshInstance" parent="EnergyShield" index="1"]
-mesh = SubResource( 7 )
+mesh = SubResource( 34 )
 material/0 = SubResource( 31 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnergyShield" index="2"]
-anims/DamageImpact = SubResource( 23 )
-anims/Idle = SubResource( 24 )
-anims/ShieldShatter = SubResource( 25 )
+anims/DamageImpact = SubResource( 35 )
+anims/Idle = SubResource( 36 )
+anims/ShieldShatter = SubResource( 37 )
 
 [node name="OverloadTimer" type="Timer" parent="EnergyShield" index="3"]
 wait_time = 5.0
