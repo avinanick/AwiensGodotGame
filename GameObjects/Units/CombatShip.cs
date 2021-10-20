@@ -97,6 +97,7 @@ public class CombatShip : Ship
             EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
             if(shipShield != null) {
                 shipShield.EnableShield();
+                AddCollisionExceptionWith(shipShield);
                 if(Weapon != null) {
                     Weapon.AddShieldExeption(shipShield);
                 }
