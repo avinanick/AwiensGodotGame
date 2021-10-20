@@ -40,6 +40,7 @@ public class CombatShip : Ship
         base._Ready();
         Weapon = GetNode<AttackerComponent>("AttackerComponent");
         InitialEnemyPopulation();
+        CheckEnhancements();
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -59,7 +60,7 @@ public class CombatShip : Ship
         }
         UpdateTarget();
         if(CurrentTarget != null & Weapon != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
-            Weapon.FireAt(CurrentTarget.GetGlobalTransform().origin, GetGlobalTransform().origin);
+            Weapon.FireAt(CurrentTarget.GlobalTransform.origin, GlobalTransform.origin);
         }
     }
 
@@ -89,6 +90,21 @@ public class CombatShip : Ship
         }
     }
 
+    protected void CheckEnhancements() {
+        CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
+        if(tracker.CheckForEnhancement("Shielded")) {
+            // Set up the shields
+            EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
+            if(shipShield != null) {
+                shipShield.EnableShield();
+                AddCollisionExceptionWith(shipShield);
+                if(Weapon != null) {
+                    Weapon.AddShieldExeption(shipShield);
+                }
+            }
+        }
+    }
+
     protected virtual void HoverDestinationReached() {
         HoverLocationReached = true;
         DirectionVector = new Vector3(0,0,0);
@@ -112,6 +128,10 @@ public class CombatShip : Ship
 
     public override void SpawnShip() {
 
+    }
+
+    protected void UnlockAlienShield() {
+        GetNode<EnergyShield>("EnergyShield").EnableShield();
     }
 
     protected void UpdateShipDirectionHover() {
@@ -173,14 +193,14 @@ public class CombatShip : Ship
 		//      Only need to change the y rotation for direction, with + going toward +x-axis from here
         // For now I'm assuming the city is always at (0,0,0), I think I'd like to keep that consistant
         // across levels.
-		Vector3 directionToCity = new Vector3(0,GetGlobalTransform().origin.y,0) - GetGlobalTransform().origin;
+		Vector3 directionToCity = new Vector3(0,GlobalTransform.origin.y,0) - GlobalTransform.origin;
         Vector3 facingDirection = new Vector3((-1) * Mathf.Sin(Rotation.y), 0, Mathf.Cos(Rotation.y));
         // To get a clockwise perpendicular vector, we switch the x and z vector values and negate the new
         // x coordinate
         Vector3 movementDirection = new Vector3((-1) * directionToCity.z, 0, directionToCity.x);
         DirectionVector = movementDirection.Normalized();
         if(LooksAtTarget) {
-            LookAt(new Vector3(0,GetGlobalTransform().origin.y,0), new Vector3(0,1,0));
+            LookAt(new Vector3(0,GlobalTransform.origin.y,0), new Vector3(0,1,0));
         }
     }
 

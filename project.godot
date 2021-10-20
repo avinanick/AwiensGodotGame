@@ -9,21 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Destructible",
-"class": "Alien",
-"language": "GDScript",
-"path": "res://Scripts/Units/Alien.gd"
-}, {
-"base": "Alien",
-"class": "AlienMissile",
-"language": "GDScript",
-"path": "res://Scripts/Units/AlienMissile.gd"
-}, {
-"base": "Alien",
-"class": "AlienShip",
-"language": "GDScript",
-"path": "res://Scripts/Units/AlienShip.gd"
-}, {
 "base": "Turret",
 "class": "AutoTurret",
 "language": "GDScript",
@@ -33,11 +18,6 @@ _global_script_classes=[ {
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://Scripts/Weapons/Bullet.gd"
-}, {
-"base": "Structure",
-"class": "EnergyShield",
-"language": "GDScript",
-"path": "res://Scripts/EnergyShield.gd"
 }, {
 "base": "KinematicBody",
 "class": "Projectile",
@@ -65,12 +45,8 @@ _global_script_classes=[ {
 "path": "res://Scripts/Interfaces/AlienAttackerIcon.gd"
 } ]
 _global_script_class_icons={
-"Alien": "",
-"AlienMissile": "",
-"AlienShip": "",
 "AutoTurret": "",
 "Bullet": "",
-"EnergyShield": "",
 "Projectile": "",
 "ThunderCannon": "",
 "Turret": "",

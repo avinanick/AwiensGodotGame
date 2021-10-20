@@ -35,6 +35,14 @@ public class AlienBomber : CombatShip
         CurrentMissile = newMissile;
         newMissile.Connect("MissileChargeFinished", this, nameof(BombLaunched));
         newMissile.ChargeMissile();
+        EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
+        if(shipShield != null) {
+            newMissile.AddCollisionExceptionWith(shipShield);
+            EnergyShield spawnedShield = newMissile.GetNode<EnergyShield>("EnergyShield");
+            if(spawnedShield != null) {
+                spawnedShield.AddCollisionExceptionWith(shipShield);
+            }
+        }
     }
 
     public void BombLaunched() {

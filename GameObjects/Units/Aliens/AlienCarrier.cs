@@ -34,6 +34,14 @@ public class AlienCarrier : CombatShip
             GetTree().CurrentScene.AddChild(newShip);
             newShip.Translation = GlobalTransform.origin + ShipSpawnOffset;
             newShip.WarpIn();
+            EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
+            if(shipShield != null) {
+                newShip.AddCollisionExceptionWith(shipShield);
+                EnergyShield spawnedShield = newShip.GetNode<EnergyShield>("EnergyShield");
+                if(spawnedShield != null) {
+                    spawnedShield.AddCollisionExceptionWith(shipShield);
+                }
+            }
             GetNode<Timer>("ShipSpawnTimer").Start();
         }
     }
