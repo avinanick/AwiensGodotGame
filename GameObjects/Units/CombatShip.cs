@@ -92,29 +92,32 @@ public class CombatShip : Ship
 
     protected void CheckEnhancements() {
         CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
-        if(tracker.CheckForEnhancement("Shielded")) {
+        int shieldCount = tracker.CheckForEnhancement("Shielded");
+        if(shieldCount > 0) {
             // Set up the shields
             EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
             if(shipShield != null) {
                 shipShield.EnableShield();
+                shipShield.AddHealthModifier(shieldCount);
                 AddCollisionExceptionWith(shipShield);
                 if(Weapon != null) {
                     Weapon.AddShieldExeption(shipShield);
                 }
             }
         }
-        if(tracker.CheckForEnhancement("Swarming")) {
+        int swarmingCount = tracker.CheckForEnhancement("Swarming");
+        if(swarmingCount > 0) {
             // Reduce current and max health and damage
             // Should I have a swarming modifier constant saved somewhere?
-            AddHealthModifier(0.8f);
+            AddHealthModifier(Mathf.Pow(0.8f, swarmingCount));
             if(Weapon != null) {
                 // Need modifications to effect damage
-                Weapon.AddDamageModifier(1f);
+                Weapon.AddDamageModifier(Mathf.Pow(1f, swarmingCount));
             }
             EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
             if(shipShield != null) {
                 // lower shield amount
-                shipShield.AddHealthModifier(0.8f);
+                shipShield.AddHealthModifier(Mathf.Pow(0.8f, swarmingCount));
             }
         }
     }

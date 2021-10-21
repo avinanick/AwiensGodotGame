@@ -35,8 +35,9 @@ public class EnemySpawner : Spatial
 
     protected void CheckForEnhancements() {
         CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
-        if(tracker.CheckForEnhancement("Swarming")) {
-            SpawnPeriod = (float)(SpawnPeriod * 0.8);
+        int swarmingCount = tracker.CheckForEnhancement("Swarming");
+        if(swarmingCount > 0) {
+            SpawnPeriod = (float)(SpawnPeriod * (Mathf.Pow(0.8f,swarmingCount)));
         }
     }
 
