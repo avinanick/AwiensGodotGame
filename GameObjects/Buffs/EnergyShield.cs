@@ -46,6 +46,11 @@ public class EnergyShield : Destructible
         }
     }
 
+    public void SetHealthModifier(float modifier) {
+        Health = (int)(Health * 0.8);
+        MaxHealth = (int)(MaxHealth * 0.8);
+    }
+
     public override void TakeDamage(int amount) {
         Health -= (int)((double)amount * DamageModifier);
 		EmitSignal(nameof(HealthChanged), Health);
