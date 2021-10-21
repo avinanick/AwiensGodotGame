@@ -120,6 +120,21 @@ public class CombatShip : Ship
                 shipShield.AddHealthModifier(Mathf.Pow(0.8f, swarmingCount));
             }
         }
+        int eliteCount = tracker.CheckForEnhancement("Elites");
+        if(eliteCount > 0) {
+            // Increase current and max health and damage
+            // Should I have a elite modifier constant saved somewhere?
+            AddHealthModifier(Mathf.Pow(1.2f, eliteCount));
+            if(Weapon != null) {
+                // Need modifications to effect damage
+                Weapon.AddDamageModifier(Mathf.Pow(1f, eliteCount));
+            }
+            EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
+            if(shipShield != null) {
+                // lower shield amount
+                shipShield.AddHealthModifier(Mathf.Pow(1.2f, eliteCount));
+            }
+        }
     }
 
     protected virtual void HoverDestinationReached() {
