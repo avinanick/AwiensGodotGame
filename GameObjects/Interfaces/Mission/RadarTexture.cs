@@ -30,7 +30,9 @@ public class RadarTexture : TextureRect
 	public override void _Process(float delta)
 	{
 		base._Process(delta);
-		UpdateAvatarIndicator();
+		if(!Jammed) {
+			UpdateAvatarIndicator();
+		}
 	}
 
 	public void AssignPlayer() {
@@ -49,9 +51,11 @@ public class RadarTexture : TextureRect
     }
 
 	public void DestructibleSpawned(Destructible newUnit) {
-		RadarIndicator newIndicator = (RadarIndicator)IndicatorScene.Instance();
-		AddChild(newIndicator);
-		newIndicator.AssignUnit(newUnit);
+		if(!Jammed) {
+			RadarIndicator newIndicator = (RadarIndicator)IndicatorScene.Instance();
+			AddChild(newIndicator);
+			newIndicator.AssignUnit(newUnit);
+		}
 	}
 
 	private void PopulateIndicators() {
