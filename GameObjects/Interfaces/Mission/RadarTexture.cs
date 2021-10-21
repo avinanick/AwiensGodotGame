@@ -20,8 +20,10 @@ public class RadarTexture : TextureRect
 		base._Ready();
 		PlayerView = GetNode<Light2D>("PlayerView");
 		CheckEnhancements();
-		CallDeferred("PopulateIndicators");
-		CallDeferred("AssignPlayer");
+		if(!Jammed) {
+			CallDeferred("PopulateIndicators");
+			CallDeferred("AssignPlayer");
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,6 +43,8 @@ public class RadarTexture : TextureRect
         if(jammingCount > 0) {
 			// Disable the radar
 			Jammed = true;
+			SetProcess(false);
+			// Should have some visual later to indicate nonfunctional radar.
 		}
     }
 
