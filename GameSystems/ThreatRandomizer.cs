@@ -9,7 +9,7 @@ public class ThreatRandomizer : Node
     private string[] EasyAliens = new string[3] {"Alien Missile", "Alien Drone", "Alien Planet Drill"};
     private string[] MediumAliens = new string[3] {"Alien Fighter", "Alien Scout", "Alien Inhibitor"};
     private string[] HardAliens = new string[3] {"Alien Bomber", "Alien Carrier", "Alien Artillery"};
-    private string[] EasyModifiers = new string[0] {};
+    private string[] EasyModifiers = new string[1] {"Jamming"};
     private string[] MediumModifiers = new string[2] {"Shielded", "Elites"};
     private string[] HardModifiers = new string[1] {"Swarming"};
     private int MediumAlienThreshold = 3;

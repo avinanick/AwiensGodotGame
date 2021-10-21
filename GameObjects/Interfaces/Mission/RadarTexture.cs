@@ -11,6 +11,7 @@ public class RadarTexture : TextureRect
 
 	private Light2D PlayerView;
 	private Avatar PlayerAvatar;
+	private bool Jammed = false;
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -18,25 +19,43 @@ public class RadarTexture : TextureRect
 	{
 		base._Ready();
 		PlayerView = GetNode<Light2D>("PlayerView");
-		CallDeferred("PopulateIndicators");
-		CallDeferred("AssignPlayer");
+		CheckEnhancements();
+		if(!Jammed) {
+			CallDeferred("PopulateIndicators");
+			CallDeferred("AssignPlayer");
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{
 		base._Process(delta);
-		UpdateAvatarIndicator();
+		if(!Jammed) {
+			UpdateAvatarIndicator();
+		}
 	}
 
 	public void AssignPlayer() {
 		PlayerAvatar = new Godot.Collections.Array<Avatar>(GetTree().GetNodesInGroup("Player"))[0];
 	}
 
+	protected void CheckEnhancements() {
+        CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
+        int jammingCount = tracker.CheckForEnhancement("Jamming");
+        if(jammingCount > 0) {
+			// Disable the radar
+			Jammed = true;
+			SetProcess(false);
+			// Should have some visual later to indicate nonfunctional radar.
+		}
+    }
+
 	public void DestructibleSpawned(Destructible newUnit) {
-		RadarIndicator newIndicator = (RadarIndicator)IndicatorScene.Instance();
-		AddChild(newIndicator);
-		newIndicator.AssignUnit(newUnit);
+		if(!Jammed) {
+			RadarIndicator newIndicator = (RadarIndicator)IndicatorScene.Instance();
+			AddChild(newIndicator);
+			newIndicator.AssignUnit(newUnit);
+		}
 	}
 
 	private void PopulateIndicators() {
