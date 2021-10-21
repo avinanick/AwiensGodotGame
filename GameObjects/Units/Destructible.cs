@@ -32,6 +32,11 @@ public class Destructible : KinematicBody
 //      
 //  }
 
+	public void AddHealthModifier(float modifier) {
+		Health = (int)(Health * modifier);
+		MaxHealth = (int)(MaxHealth * modifier);
+	}
+
 	public void CompleteDestruction() {
 		QueueFree();
 	}
