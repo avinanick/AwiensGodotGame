@@ -11,6 +11,7 @@ public class RadarTexture : TextureRect
 
 	private Light2D PlayerView;
 	private Avatar PlayerAvatar;
+	private bool Jammed = false;
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -18,6 +19,7 @@ public class RadarTexture : TextureRect
 	{
 		base._Ready();
 		PlayerView = GetNode<Light2D>("PlayerView");
+		CheckEnhancements();
 		CallDeferred("PopulateIndicators");
 		CallDeferred("AssignPlayer");
 	}
@@ -32,6 +34,15 @@ public class RadarTexture : TextureRect
 	public void AssignPlayer() {
 		PlayerAvatar = new Godot.Collections.Array<Avatar>(GetTree().GetNodesInGroup("Player"))[0];
 	}
+
+	protected void CheckEnhancements() {
+        CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
+        int jammingCount = tracker.CheckForEnhancement("Jamming");
+        if(jammingCount > 0) {
+			// Disable the radar
+			Jammed = true;
+		}
+    }
 
 	public void DestructibleSpawned(Destructible newUnit) {
 		RadarIndicator newIndicator = (RadarIndicator)IndicatorScene.Instance();
