@@ -105,14 +105,15 @@ public class CombatShip : Ship
         }
         if(tracker.CheckForEnhancement("Swarming")) {
             // Reduce current and max health and damage
-            Health = (int)(Health * 0.8);
-            MaxHealth = (int)(MaxHealth * 0.8);
+            // Should I have a swarming modifier constant saved somewhere?
+            AddHealthModifier(0.8f);
             if(Weapon != null) {
                 // Need modifications to effect damage
             }
             EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
             if(shipShield != null) {
                 // lower shield amount
+                shipShield.AddHealthModifier(0.8f);
             }
         }
     }
