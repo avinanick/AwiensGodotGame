@@ -33,11 +33,14 @@ public class AlienPlanetDrill : CombatShip
     }
 
     public void PulseDamage() {
+        EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
         if(HoverLocationReached) {
             GetNode<Timer>("DamagePulseTimer").Start();
             Godot.Collections.Array<Destructible> damageTargets = new Godot.Collections.Array<Destructible>(GetNode<Area>("Area").GetOverlappingBodies());
             for(int i = 0; i < damageTargets.Count; i++) {
-                damageTargets[i].TakeDamage(LaserDamage);
+                if(damageTargets[i] != this & damageTargets[i] != shipShield) {
+                    damageTargets[i].TakeDamage(LaserDamage);
+                }
             }
         }
     }

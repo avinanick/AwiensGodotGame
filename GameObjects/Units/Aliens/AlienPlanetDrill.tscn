@@ -5,10 +5,10 @@
 [ext_resource path="res://Resources/Models/Units/Aliens/AlienPlanetDrill/Material_001.material" type="Material" id=3]
 [ext_resource path="res://Resources/Materials/Textures/shield_shatter_texture.tres" type="Texture" id=4]
 
-[sub_resource type="SphereShape" id=38]
+[sub_resource type="SphereShape" id=1]
 radius = 2.3
 
-[sub_resource type="ArrayMesh" id=26]
+[sub_resource type="ArrayMesh" id=2]
 resource_name = "Cylinder"
 surfaces/0 = {
 "aabb": AABB( -3.0582, -2.39858, -3.0582, 6.1164, 4.17103, 6.1164 ),
@@ -23,7 +23,7 @@ surfaces/0 = {
 "vertex_count": 2740
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=3]
 resource_name = "BeamAttack"
 length = 0.3
 tracks/0/type = "value"
@@ -51,70 +51,70 @@ tracks/1/keys = {
 "values": [ Vector3( 0.1, 1, 0.1 ), Vector3( 1, 1, 1 ) ]
 }
 
-[sub_resource type="CylinderShape" id=28]
+[sub_resource type="CylinderShape" id=4]
 height = 20.0
 
-[sub_resource type="SpatialMaterial" id=29]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 1, 0.0823529, 0.0823529, 1 )
 
-[sub_resource type="CylinderMesh" id=30]
-material = SubResource( 29 )
+[sub_resource type="CylinderMesh" id=6]
+material = SubResource( 5 )
 height = 20.0
 
-[sub_resource type="SphereShape" id=33]
+[sub_resource type="SphereShape" id=7]
 radius = 3.0
 
-[sub_resource type="SphereMesh" id=34]
+[sub_resource type="SphereMesh" id=8]
 radius = 3.0
 height = 6.0
 
-[sub_resource type="VisualShaderNodeInput" id=8]
+[sub_resource type="VisualShaderNodeInput" id=9]
 output_port_for_preview = 0
 input_name = "uv"
 
-[sub_resource type="VisualShaderNodeTexture" id=9]
+[sub_resource type="VisualShaderNodeTexture" id=10]
 output_port_for_preview = 0
 texture = ExtResource( 4 )
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=10]
+[sub_resource type="VisualShaderNodeScalarUniform" id=11]
 uniform_name = "ShatterVariable"
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=11]
+[sub_resource type="VisualShaderNodeScalarFunc" id=12]
 output_port_for_preview = 0
 function = 0
 
-[sub_resource type="VisualShaderNodeScalarOp" id=12]
+[sub_resource type="VisualShaderNodeScalarOp" id=13]
 output_port_for_preview = 0
 operator = 1
 
-[sub_resource type="VisualShaderNodeInput" id=13]
+[sub_resource type="VisualShaderNodeInput" id=14]
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeColorConstant" id=14]
+[sub_resource type="VisualShaderNodeColorConstant" id=15]
 constant = Color( 0.0195313, 0.747223, 1, 1 )
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=15]
+[sub_resource type="VisualShaderNodeScalarFunc" id=16]
 output_port_for_preview = 0
 function = 15
 
-[sub_resource type="VisualShaderNodeScalarOp" id=16]
+[sub_resource type="VisualShaderNodeScalarOp" id=17]
 operator = 7
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=17]
+[sub_resource type="VisualShaderNodeScalarFunc" id=18]
 function = 0
 
-[sub_resource type="VisualShaderNodeScalarOp" id=18]
+[sub_resource type="VisualShaderNodeScalarOp" id=19]
 default_input_values = [ 0, 0.0, 1, 0.4 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=19]
+[sub_resource type="VisualShaderNodeScalarFunc" id=20]
 output_port_for_preview = 0
 function = 12
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=20]
+[sub_resource type="VisualShaderNodeScalarUniform" id=21]
 uniform_name = "power"
 
-[sub_resource type="VisualShader" id=21]
+[sub_resource type="VisualShader" id=22]
 code = "shader_type spatial;
 render_mode cull_disabled, specular_schlick_ggx;
 
@@ -184,41 +184,41 @@ void light() {
 graph_offset = Vector2( -460, 380.363 )
 modes/cull = 2
 nodes/fragment/0/position = Vector2( 600, 140 )
-nodes/fragment/2/node = SubResource( 14 )
+nodes/fragment/2/node = SubResource( 15 )
 nodes/fragment/2/position = Vector2( 40, 160 )
-nodes/fragment/3/node = SubResource( 17 )
+nodes/fragment/3/node = SubResource( 18 )
 nodes/fragment/3/position = Vector2( -160, 260 )
-nodes/fragment/5/node = SubResource( 18 )
+nodes/fragment/5/node = SubResource( 19 )
 nodes/fragment/5/position = Vector2( 40, 240 )
-nodes/fragment/6/node = SubResource( 19 )
+nodes/fragment/6/node = SubResource( 20 )
 nodes/fragment/6/position = Vector2( 220, 240 )
-nodes/fragment/9/node = SubResource( 20 )
+nodes/fragment/9/node = SubResource( 21 )
 nodes/fragment/9/position = Vector2( -340, 260 )
-nodes/fragment/10/node = SubResource( 8 )
+nodes/fragment/10/node = SubResource( 9 )
 nodes/fragment/10/position = Vector2( -460, 420 )
-nodes/fragment/11/node = SubResource( 9 )
+nodes/fragment/11/node = SubResource( 10 )
 nodes/fragment/11/position = Vector2( -280, 400 )
-nodes/fragment/15/node = SubResource( 10 )
+nodes/fragment/15/node = SubResource( 11 )
 nodes/fragment/15/position = Vector2( -440, 740 )
-nodes/fragment/16/node = SubResource( 11 )
+nodes/fragment/16/node = SubResource( 12 )
 nodes/fragment/16/position = Vector2( -100, 700 )
-nodes/fragment/17/node = SubResource( 12 )
+nodes/fragment/17/node = SubResource( 13 )
 nodes/fragment/17/position = Vector2( 20, 440 )
-nodes/fragment/18/node = SubResource( 13 )
+nodes/fragment/18/node = SubResource( 14 )
 nodes/fragment/18/position = Vector2( -440, 640 )
-nodes/fragment/20/node = SubResource( 15 )
+nodes/fragment/20/node = SubResource( 16 )
 nodes/fragment/20/position = Vector2( 200, 440 )
-nodes/fragment/21/node = SubResource( 16 )
+nodes/fragment/21/node = SubResource( 17 )
 nodes/fragment/21/position = Vector2( 420, 240 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 5, 0, 6, 0, 3, 0, 5, 0, 10, 0, 11, 0, 9, 0, 3, 0, 17, 0, 20, 0, 6, 0, 21, 0, 21, 0, 0, 1, 16, 0, 17, 1, 15, 0, 16, 0, 11, 0, 17, 0, 20, 0, 21, 1 )
 
-[sub_resource type="ShaderMaterial" id=31]
+[sub_resource type="ShaderMaterial" id=23]
 resource_local_to_scene = true
-shader = SubResource( 21 )
+shader = SubResource( 22 )
 shader_param/power = 0.0
 shader_param/ShatterVariable = -0.5
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=24]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
@@ -245,7 +245,7 @@ tracks/1/keys = {
 "values": [ -0.5, -0.5 ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=25]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
@@ -260,7 +260,7 @@ tracks/0/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=26]
 resource_name = "ShieldShatter"
 tracks/0/type = "value"
 tracks/0/path = NodePath("MeshInstance:material/0:shader_param/power")
@@ -296,23 +296,23 @@ AttackPattern = 2
 TargetGroups = PoolStringArray( "Earthling" )
 
 [node name="CollisionShape" parent="." index="0"]
-shape = SubResource( 38 )
+shape = SubResource( 1 )
 
 [node name="MeshInstance" parent="." index="3"]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 visible = true
-mesh = SubResource( 26 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="AnimationPlayer" parent="." index="4"]
 autoplay = "Idle"
-anims/BeamAttack = SubResource( 27 )
+anims/BeamAttack = SubResource( 3 )
 
 [node name="Area" type="Area" parent="." index="5"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.5, 0 )
-shape = SubResource( 28 )
+shape = SubResource( 4 )
 
 [node name="DamagePulseTimer" type="Timer" parent="." index="6"]
 wait_time = 0.5
@@ -320,24 +320,24 @@ wait_time = 0.5
 [node name="AttackMesh" type="MeshInstance" parent="." index="7"]
 transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, -11.5, 0 )
 visible = false
-mesh = SubResource( 30 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="EnergyShield" parent="." index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="EnergyShield" index="0"]
-shape = SubResource( 33 )
+shape = SubResource( 7 )
 disabled = true
 
 [node name="MeshInstance" type="MeshInstance" parent="EnergyShield" index="1"]
-mesh = SubResource( 34 )
-material/0 = SubResource( 31 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 23 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnergyShield" index="2"]
-anims/DamageImpact = SubResource( 35 )
-anims/Idle = SubResource( 36 )
-anims/ShieldShatter = SubResource( 37 )
+anims/DamageImpact = SubResource( 24 )
+anims/Idle = SubResource( 25 )
+anims/ShieldShatter = SubResource( 26 )
 
 [node name="OverloadTimer" type="Timer" parent="EnergyShield" index="3"]
 wait_time = 5.0
