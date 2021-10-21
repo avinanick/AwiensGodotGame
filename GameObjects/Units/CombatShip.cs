@@ -109,6 +109,7 @@ public class CombatShip : Ship
             AddHealthModifier(0.8f);
             if(Weapon != null) {
                 // Need modifications to effect damage
+                Weapon.AddDamageModifier(1f);
             }
             EnergyShield shipShield = GetNode<EnergyShield>("EnergyShield");
             if(shipShield != null) {
