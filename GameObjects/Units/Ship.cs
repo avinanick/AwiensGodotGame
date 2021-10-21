@@ -24,6 +24,10 @@ public class Ship : Destructible
 		base._Process(delta);
 		HandleCollision(MoveAndCollide(DirectionVector * ShipSpeed * delta));
 	}
+
+	protected void AddSpeedModifier(float modifier) {
+		ShipSpeed = ShipSpeed * modifier;
+	}
 	
 	public virtual void HandleCollision(KinematicCollision collision) {
 		// The base implimentation will do nothing, in the missile version it 
