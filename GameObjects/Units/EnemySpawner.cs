@@ -33,6 +33,14 @@ public class EnemySpawner : Spatial
 //      
 //  }
 
+    protected void CheckForEnhancements() {
+        CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
+        int swarmingCount = tracker.CheckForEnhancement("Swarming");
+        if(swarmingCount > 0) {
+            SpawnPeriod = (float)(SpawnPeriod * (Mathf.Pow(0.8f,swarmingCount)));
+        }
+    }
+
     public void EndLevel() {
         GetNode<Timer>("Timer").Stop();
     }
@@ -68,5 +76,6 @@ public class EnemySpawner : Spatial
     private void UpdateDifficulty() {
         SpawnPeriod = BaseSpawnPeriod / (Mathf.Pow(1.1f, 
             GetNode<CampaignTracker>("/root/CampaignTrackerAL").GetCurrentDifficulty() - 1));
+        CheckForEnhancements();
     }
 }

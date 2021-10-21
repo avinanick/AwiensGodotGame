@@ -32,6 +32,10 @@ public class AttackerComponent : Component
 //      
 //  }
 
+	public void AddDamageModifier(float modifier) {
+		Damage = (int)(Damage * modifier);
+	}
+
 	public void AddShieldExeption(KinematicBody shield){
 		ShieldException = shield;
 	}
