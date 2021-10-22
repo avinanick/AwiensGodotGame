@@ -1,17 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/Materials/Textures/Particles/smoke_04.png" type="Texture" id=1]
 
 [sub_resource type="Shader" id=3]
 code = "shader_type spatial;
 
-uniform sampler2D noise_texture;
-
 uniform sampler2D texture_mask;
-uniform float time_scale = 3.0;
-uniform vec2 texture_scale = vec2(1.0);
-uniform float edge_softness = 0.1;
-
-varying vec3 world_coord;
-varying float world_x_dot;
 
 void vertex() {
 	// Billboard code, taken directly from a spatial material
@@ -20,20 +14,18 @@ void vertex() {
 	mat4 mat_world = mat4(normalize(CAMERA_MATRIX[0])*length(WORLD_MATRIX[0]),normalize(CAMERA_MATRIX[1])*length(WORLD_MATRIX[0]),normalize(CAMERA_MATRIX[2])*length(WORLD_MATRIX[2]),WORLD_MATRIX[3]);
 	mat_world = mat_world * mat4( vec4(cos(INSTANCE_CUSTOM.x),-sin(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0),vec4(0.0, 0.0, 1.0, 0.0),vec4(0.0, 0.0, 0.0, 1.0));
 	MODELVIEW_MATRIX = INV_CAMERA_MATRIX * mat_world;
+}
+
+void fragment() {
+	vec4 point = texture(texture_mask, UV);
 	
-	// We map the coordinates on the vertical planes xy and zy
-	// we also calculate how to blend between the two based on where the world space normal
-	// is pointing.
-	world_coord = (mat_world * vec4(VERTEX, 1.0)).rgb;
-	vec4 world_normal = (mat_world * vec4(NORMAL, 0.0));
-	world_x_dot =  abs(dot(normalize(world_normal.rgb), vec3(1.0,0.0,0.0)));
+	ALBEDO = point.rgb;
+	ALPHA = point.a;
 }"
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = SubResource( 3 )
-shader_param/time_scale = 3.0
-shader_param/texture_scale = Vector2( 1, 1 )
-shader_param/edge_softness = 0.1
+shader_param/texture_mask = ExtResource( 1 )
 
 [sub_resource type="ParticlesMaterial" id=1]
 lifetime_randomness = 1.0
@@ -41,15 +33,16 @@ spread = 180.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 2.0
 initial_velocity_random = 1.0
-damping = 0.5
-damping_random = 0.8
+damping = 2.0
+damping_random = 0.5
+scale = 2.0
 scale_random = 1.0
 
 [sub_resource type="QuadMesh" id=2]
 
 [node name="Smokescreen" type="Particles"]
 material_override = SubResource( 4 )
-amount = 20
+amount = 50
 lifetime = 5.0
 explosiveness = 1.0
 process_material = SubResource( 1 )
