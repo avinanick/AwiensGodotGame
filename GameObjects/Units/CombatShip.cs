@@ -33,6 +33,7 @@ public class CombatShip : Ship
     protected float RotateSpeed = 1;
     protected Vector3 HoverLocation = new Vector3();
     protected bool HoverLocationReached = false;
+    protected bool UseSmokescreen = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -140,6 +141,25 @@ public class CombatShip : Ship
             // Increase current ship speed
             // Should I have a boost modifier constant saved somewhere?
             AddSpeedModifier(Mathf.Pow(1.2f, boostCount));
+        }
+        int smokeCount = tracker.CheckForEnhancement("Smokescreen");
+        if(smokeCount > 0) {
+            // Set the smokescreen to be used on death
+            // How would I want this to scale?
+            UseSmokescreen = true;
+        }
+    }
+
+    public override void DestroySelf()
+    {
+        base.DestroySelf();
+        if(UseSmokescreen) {
+            Particles smokescreen = GetNode<Particles>("Smokescreen");
+            Transform position = smokescreen.GlobalTransform;
+            RemoveChild(smokescreen);
+            GetTree().CurrentScene.AddChild(smokescreen);
+            smokescreen.Emitting = true;
+            // Need to figure out something so the smokescreen is destroyed after use
         }
     }
 
