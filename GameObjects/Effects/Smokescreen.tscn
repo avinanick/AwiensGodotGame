@@ -45,5 +45,6 @@ material_override = SubResource( 4 )
 amount = 50
 lifetime = 5.0
 explosiveness = 1.0
+local_coords = false
 process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 2 )
