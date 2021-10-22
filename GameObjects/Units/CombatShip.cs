@@ -135,6 +135,12 @@ public class CombatShip : Ship
                 shipShield.AddHealthModifier(Mathf.Pow(1.2f, eliteCount));
             }
         }
+        int boostCount = tracker.CheckForEnhancement("Boosted");
+        if(boostCount > 0) {
+            // Increase current ship speed
+            // Should I have a boost modifier constant saved somewhere?
+            AddSpeedModifier(Mathf.Pow(1.2f, boostCount));
+        }
     }
 
     protected virtual void HoverDestinationReached() {
