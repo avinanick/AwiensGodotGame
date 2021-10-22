@@ -154,12 +154,11 @@ public class CombatShip : Ship
     {
         base.DestroySelf();
         if(UseSmokescreen) {
-            Particles smokescreen = GetNode<Particles>("Smokescreen");
+            Smokescreen smokescreen = GetNode<Smokescreen>("Smokescreen");
             Transform position = smokescreen.GlobalTransform;
             RemoveChild(smokescreen);
             GetTree().CurrentScene.AddChild(smokescreen);
-            smokescreen.Emitting = true;
-            // Need to figure out something so the smokescreen is destroyed after use
+            smokescreen.Blast();
         }
     }
 
