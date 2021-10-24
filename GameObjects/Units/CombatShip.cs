@@ -152,7 +152,6 @@ public class CombatShip : Ship
 
     public override void DestroySelf()
     {
-        base.DestroySelf();
         if(UseSmokescreen) {
             Smokescreen smokescreen = GetNode<Smokescreen>("Smokescreen");
             Transform position = smokescreen.GlobalTransform;
@@ -160,6 +159,7 @@ public class CombatShip : Ship
             GetTree().CurrentScene.AddChild(smokescreen);
             smokescreen.Blast();
         }
+        base.DestroySelf();
     }
 
     protected virtual void HoverDestinationReached() {

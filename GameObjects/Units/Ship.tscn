@@ -8,6 +8,12 @@
 [node name="Ship" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="MeshInstance" parent="." index="3"]
+visible = true
+
+[node name="AnimationPlayer" parent="." index="4"]
+autoplay = "Idle"
+
 [node name="EnergyShield" parent="." index="5" instance=ExtResource( 3 )]
 
 [node name="Smokescreen" parent="." index="6" instance=ExtResource( 4 )]
