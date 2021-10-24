@@ -157,6 +157,7 @@ public class CombatShip : Ship
             Transform position = smokescreen.GlobalTransform;
             RemoveChild(smokescreen);
             GetTree().CurrentScene.AddChild(smokescreen);
+            smokescreen.GlobalTransform = position;
             smokescreen.Blast();
         }
         base.DestroySelf();
