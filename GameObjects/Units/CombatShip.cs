@@ -50,20 +50,25 @@ public class CombatShip : Ship
     public override void _Process(float delta)
     {
         base._Process(delta);
-        switch(AttackPattern) {
-            case AttackPatternType.Orbit:
-                UpdateShipDirectionOrbit();
-                break;
-            case AttackPatternType.Strafe:
-                UpdateShipDirectionStrafe(delta);
-                break;
-            case AttackPatternType.Hover:
-                UpdateShipDirectionHover();
-                break;
+        if(Crashing) {
+            CrashMotionUpdate(delta);
         }
-        UpdateTarget();
-        if(CurrentTarget != null & Weapon != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
-            Weapon.FireAt(CurrentTarget.GlobalTransform.origin, GlobalTransform.origin);
+        else {
+            switch(AttackPattern) {
+                case AttackPatternType.Orbit:
+                    UpdateShipDirectionOrbit();
+                    break;
+                case AttackPatternType.Strafe:
+                    UpdateShipDirectionStrafe(delta);
+                    break;
+                case AttackPatternType.Hover:
+                    UpdateShipDirectionHover();
+                    break;
+            }
+            UpdateTarget();
+            if(CurrentTarget != null & Weapon != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
+                Weapon.FireAt(CurrentTarget.GlobalTransform.origin, GlobalTransform.origin);
+            }
         }
     }
 
