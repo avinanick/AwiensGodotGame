@@ -34,6 +34,7 @@ public class CombatShip : Ship
     protected Vector3 HoverLocation = new Vector3();
     protected bool HoverLocationReached = false;
     protected bool UseSmokescreen = false;
+    protected int PayloadLoaded = 0;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -148,6 +149,7 @@ public class CombatShip : Ship
             // How would I want this to scale?
             UseSmokescreen = true;
         }
+        PayloadLoaded = tracker.CheckForEnhancement("Unstable Payload");
     }
 
     public override void DestroySelf()
