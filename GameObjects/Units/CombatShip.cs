@@ -153,6 +153,10 @@ public class CombatShip : Ship
         PayloadLoaded = tracker.CheckForEnhancement("Unstable Payload");
     }
 
+    protected void CrashMotionUpdate(float delta) {
+        DirectionVector.y -= 9.8f * delta;
+    }
+
     public override void DestroySelf()
     {
         if(UseSmokescreen) {
