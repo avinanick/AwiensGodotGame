@@ -35,6 +35,7 @@ public class CombatShip : Ship
     protected bool HoverLocationReached = false;
     protected bool UseSmokescreen = false;
     protected int PayloadLoaded = 0;
+    protected bool Crashing = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -188,6 +189,23 @@ public class CombatShip : Ship
 
     public override void SpawnShip() {
 
+    }
+
+    public override void TakeDamage(int amount)
+    {
+        if(IsAlive) {
+			Health -= (int)((double)amount * DamageModifier);
+			EmitSignal(nameof(HealthChanged), Health);
+			if(Health <= 0) {
+                if(PayloadLoaded < 1 || Crashing) {
+                    IsAlive = false;
+                    DestroySelf();
+                }
+                else {
+                    Crashing = true;
+                }
+			}
+		}
     }
 
     protected void UnlockAlienShield() {
