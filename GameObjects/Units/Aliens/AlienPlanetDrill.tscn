@@ -300,12 +300,10 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" parent="." index="3"]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
-visible = true
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="AnimationPlayer" parent="." index="4"]
-autoplay = "Idle"
 anims/BeamAttack = SubResource( 3 )
 
 [node name="Area" type="Area" parent="." index="5"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Materials/Textures/Particles/smoke_04.png" type="Texture" id=1]
+[ext_resource path="res://GameObjects/Effects/Smokescreen.cs" type="Script" id=2]
+
+[sub_resource type="Shader" id=3]
+code = "shader_type spatial;
+
+uniform sampler2D texture_mask;
+
+void vertex() {
+	// Billboard code, taken directly from a spatial material
+	// create a spatial material, enable billboard with billboard keep scale, and then convert
+	// to shader material, and it will create a shader with this code.
+	mat4 mat_world = mat4(normalize(CAMERA_MATRIX[0])*length(WORLD_MATRIX[0]),normalize(CAMERA_MATRIX[1])*length(WORLD_MATRIX[0]),normalize(CAMERA_MATRIX[2])*length(WORLD_MATRIX[2]),WORLD_MATRIX[3]);
+	mat_world = mat_world * mat4( vec4(cos(INSTANCE_CUSTOM.x),-sin(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0),vec4(0.0, 0.0, 1.0, 0.0),vec4(0.0, 0.0, 0.0, 1.0));
+	MODELVIEW_MATRIX = INV_CAMERA_MATRIX * mat_world;
+}
+
+void fragment() {
+	vec4 point = texture(texture_mask, UV);
+	
+	ALBEDO = point.rgb;
+	ALPHA = point.a;
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/texture_mask = ExtResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.0
+initial_velocity_random = 1.0
+damping = 2.0
+damping_random = 0.5
+scale = 2.0
+scale_random = 1.0
+
+[sub_resource type="QuadMesh" id=2]
+
+[node name="Smokescreen" type="Particles"]
+material_override = SubResource( 4 )
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+local_coords = false
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="Finish"]

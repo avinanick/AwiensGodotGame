@@ -64,10 +64,13 @@ public class Destructible : KinematicBody
 	}
 
 	public virtual void TakeDamage(int amount) {
-		Health -= (int)((double)amount * DamageModifier);
-		EmitSignal(nameof(HealthChanged), Health);
-		if(Health <= 0) {
-			DestroySelf();
+		if(IsAlive) {
+			Health -= (int)((double)amount * DamageModifier);
+			EmitSignal(nameof(HealthChanged), Health);
+			if(Health <= 0) {
+				IsAlive = false;
+				DestroySelf();
+			}
 		}
 	}
 }
