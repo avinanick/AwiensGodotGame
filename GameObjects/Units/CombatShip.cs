@@ -175,6 +175,19 @@ public class CombatShip : Ship
         base.DestroySelf();
     }
 
+    public override void HandleCollision(KinematicCollision collision)
+    {
+        if(Crashing) {
+            if(collision != null) {
+                if(collision.Collider is Destructible destructible) {
+                    destructible.TakeDamage(PayloadLoaded);
+                }
+                DestroySelf();
+                SetProcess(false);
+            }
+        }
+    }
+
     protected virtual void HoverDestinationReached() {
         HoverLocationReached = true;
         DirectionVector = new Vector3(0,0,0);
