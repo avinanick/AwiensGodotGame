@@ -13,7 +13,7 @@ public class Destructible : KinematicBody
 	protected int MaxHealth = 10;
 
 	protected double DamageModifier = 1.0;
-	private bool IsAlive = true;
+	protected bool IsAlive = true;
 	
 	[Signal]
 	public delegate void HealthChanged(int newValue);

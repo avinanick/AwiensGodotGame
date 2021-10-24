@@ -34,6 +34,8 @@ public class CombatShip : Ship
     protected Vector3 HoverLocation = new Vector3();
     protected bool HoverLocationReached = false;
     protected bool UseSmokescreen = false;
+    protected int PayloadLoaded = 0;
+    protected bool Crashing = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -48,20 +50,25 @@ public class CombatShip : Ship
     public override void _Process(float delta)
     {
         base._Process(delta);
-        switch(AttackPattern) {
-            case AttackPatternType.Orbit:
-                UpdateShipDirectionOrbit();
-                break;
-            case AttackPatternType.Strafe:
-                UpdateShipDirectionStrafe(delta);
-                break;
-            case AttackPatternType.Hover:
-                UpdateShipDirectionHover();
-                break;
+        if(Crashing) {
+            CrashMotionUpdate(delta);
         }
-        UpdateTarget();
-        if(CurrentTarget != null & Weapon != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
-            Weapon.FireAt(CurrentTarget.GlobalTransform.origin, GlobalTransform.origin);
+        else {
+            switch(AttackPattern) {
+                case AttackPatternType.Orbit:
+                    UpdateShipDirectionOrbit();
+                    break;
+                case AttackPatternType.Strafe:
+                    UpdateShipDirectionStrafe(delta);
+                    break;
+                case AttackPatternType.Hover:
+                    UpdateShipDirectionHover();
+                    break;
+            }
+            UpdateTarget();
+            if(CurrentTarget != null & Weapon != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
+                Weapon.FireAt(CurrentTarget.GlobalTransform.origin, GlobalTransform.origin);
+            }
         }
     }
 
@@ -148,6 +155,11 @@ public class CombatShip : Ship
             // How would I want this to scale?
             UseSmokescreen = true;
         }
+        PayloadLoaded = tracker.CheckForEnhancement("Unstable Payload");
+    }
+
+    protected void CrashMotionUpdate(float delta) {
+        DirectionVector.y -= 9.8f * delta;
     }
 
     public override void DestroySelf()
@@ -161,6 +173,19 @@ public class CombatShip : Ship
             smokescreen.Blast();
         }
         base.DestroySelf();
+    }
+
+    public override void HandleCollision(KinematicCollision collision)
+    {
+        if(Crashing) {
+            if(collision != null) {
+                if(collision.Collider is Destructible destructible) {
+                    destructible.TakeDamage(PayloadLoaded);
+                }
+                DestroySelf();
+                SetProcess(false);
+            }
+        }
     }
 
     protected virtual void HoverDestinationReached() {
@@ -186,6 +211,24 @@ public class CombatShip : Ship
 
     public override void SpawnShip() {
 
+    }
+
+    public override void TakeDamage(int amount)
+    {
+        if(IsAlive) {
+			Health -= (int)((double)amount * DamageModifier);
+			EmitSignal(nameof(HealthChanged), Health);
+			if(Health <= 0) {
+                if(PayloadLoaded < 1 || Crashing) {
+                    IsAlive = false;
+                    DestroySelf();
+                }
+                else {
+                    Crashing = true;
+                    Health = 1; // This may update with payload count?
+                }
+			}
+		}
     }
 
     protected void UnlockAlienShield() {
