@@ -21,6 +21,7 @@ public class Smokescreen : Particles
 
     public void Blast() {
         GetNode<Timer>("Timer").Start();
+        Emitting = true;
     }
 
     public void Finish() {
