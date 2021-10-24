@@ -207,6 +207,7 @@ public class CombatShip : Ship
                 }
                 else {
                     Crashing = true;
+                    Health = 1; // This may update with payload count?
                 }
 			}
 		}
