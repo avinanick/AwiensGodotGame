@@ -18,4 +18,13 @@ public class AlienBullet : Projectile
 //  {
 //      
 //  }
+
+    protected void CheckEnhancements() {
+
+    }
+
+    protected override void HandleImpact(KinematicCollision collision)
+    {
+        base.HandleImpact(collision);
+    }
 }
