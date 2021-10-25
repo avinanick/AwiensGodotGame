@@ -19,12 +19,21 @@ public class AlienBullet : Projectile
 //      
 //  }
 
-    protected void CheckEnhancements() {
-
+    protected void CheckEnhancements(KinematicCollision collision) {
+        CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
+        int emwCount = tracker.CheckForEnhancement("EM Weapons");
+        if(emwCount > 0) {
+            if(collision != null) {
+                if(collision.Collider is EnergyShield shield) {
+                    Damage = (int)(Damage * Mathf.Pow(1.1f, emwCount));
+                }
+            }
+        }
     }
 
     protected override void HandleImpact(KinematicCollision collision)
     {
+        CheckEnhancements(collision);
         base.HandleImpact(collision);
     }
 }
