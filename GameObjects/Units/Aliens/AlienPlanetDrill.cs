@@ -32,6 +32,17 @@ public class AlienPlanetDrill : CombatShip
                 }
             }
         }
+        int apwCount = tracker.CheckForEnhancement("AP Weapons");
+        if(apwCount > 0) {
+            if(target != null) {
+                if(target is EnergyShield shield) {
+                    // Need to do something in a different case
+                }
+                else {
+                    damage = (int)(LaserDamage * Mathf.Pow(1.1f, apwCount));
+                }
+            }
+        }
         return damage;
     }
 
