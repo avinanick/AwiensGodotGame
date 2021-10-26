@@ -29,6 +29,17 @@ public class AlienBullet : Projectile
                 }
             }
         }
+        int apwCount = tracker.CheckForEnhancement("AP Weapons");
+        if(apwCount > 0) {
+            if(collision != null) {
+                if(collision.Collider is EnergyShield shield) {
+                    // Need to do something in a different case
+                }
+                else {
+                    Damage = (int)(Damage * Mathf.Pow(1.1f, apwCount));
+                }
+            }
+        }
     }
 
     protected override void HandleImpact(KinematicCollision collision)
