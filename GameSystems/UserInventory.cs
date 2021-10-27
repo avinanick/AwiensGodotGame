@@ -23,7 +23,14 @@ public class UserInventory : Node
 //  }
 
     public void AddItem(String itemName, int amount) {
-
+        // If the item is already in the inventory, just add to it, otherwise
+        // we need to make the entry
+        if(InventoryItems.ContainsKey(itemName)) {
+            InventoryItems[itemName] += amount;
+        }
+        else {
+            InventoryItems.Add(itemName, amount);
+        }
     }
 
     public void EquipItem(String itemName, int amount = -1) {
