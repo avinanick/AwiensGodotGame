@@ -27,7 +27,7 @@ public class ShipTester : Spatial
     }
 
     public void SpawnShip() {
-        CombatShip newAlien = ShipScene.Instance<CombatShip>();
+        Ship newAlien = ShipScene.Instance<Ship>();
         GetTree().CurrentScene.AddChild(newAlien);
         newAlien.GlobalTransform = GlobalTransform;
         newAlien.SpawnShip();
