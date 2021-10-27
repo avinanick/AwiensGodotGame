@@ -56,6 +56,11 @@ public class UserInventory : Node
     }
 
     public int UseItem(String itemName) {
-        return 0; // STUB
+        if(EquippedItems.ContainsKey(itemName) & EquippedItems[itemName] > 0) {
+            EquippedItems[itemName] -= 1;
+            return EquippedItems[itemName];
+            // do I actually deploy the item here?
+        }
+        return -1;
     }
 }
