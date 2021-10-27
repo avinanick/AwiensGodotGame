@@ -32,7 +32,31 @@ public class AlienMissile : Ship
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("Charge");
 	}
 
+	protected void CheckEnhancements(KinematicCollision collision) {
+        CampaignTracker tracker = GetNode<CampaignTracker>("/root/CampaignTrackerAL");
+        int emwCount = tracker.CheckForEnhancement("EM Weapons");
+        if(emwCount > 0) {
+            if(collision != null) {
+                if(collision.Collider is EnergyShield shield) {
+                    MissileDamage = (int)(MissileDamage * Mathf.Pow(1.1f, emwCount));
+                }
+            }
+        }
+		int apwCount = tracker.CheckForEnhancement("AP Weapons");
+        if(apwCount > 0) {
+            if(collision != null) {
+                if(collision.Collider is EnergyShield shield) {
+                    // Need to do something in a different case
+                }
+                else {
+                    MissileDamage = (int)(MissileDamage * Mathf.Pow(1.1f, apwCount));
+                }
+            }
+        }
+    }
+
 	public override void HandleCollision(KinematicCollision collision) {
+		CheckEnhancements(collision);
 		if(collision != null) {
 			if(collision.Collider is Destructible destructible) {
 				destructible.TakeDamage(MissileDamage);

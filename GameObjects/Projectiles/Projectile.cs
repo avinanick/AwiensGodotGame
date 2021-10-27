@@ -30,7 +30,7 @@ public class Projectile : KinematicBody
 		QueueFree();
 	}
 
-	private void HandleImpact(KinematicCollision collision) {
+	protected virtual void HandleImpact(KinematicCollision collision) {
 		if(collision != null) {
 			if(collision.Collider is Destructible destructible) {
 				destructible.TakeDamage(Damage);
