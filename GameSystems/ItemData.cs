@@ -10,12 +10,10 @@ public class ItemData : Node
     {
         private string ItemScenePath;
         private string ItemIconPath;
-        private float ItemSpawnInterval;
 
-        public ItemSet(string scenePath, string itemPath, float spawnInterval) {
+        public ItemSet(string scenePath, string itemPath) {
             ItemScenePath = scenePath;
             ItemIconPath = itemPath;
-            ItemSpawnInterval = spawnInterval;
         }
 
         public string GetIconPath() {
@@ -25,10 +23,6 @@ public class ItemData : Node
         public string GetScenePath() {
             return ItemScenePath;
         }
-
-        public float GetSpawnInterval() {
-            return ItemSpawnInterval;
-        }
     }
 
     private System.Collections.Generic.Dictionary<string, ItemSet> DataSet;
@@ -37,6 +31,7 @@ public class ItemData : Node
     public override void _Ready()
     {
         base._Ready();
+        DataSet.Add("Bomb", new ItemSet("res://GameObjects/Units/Aliens/AlienMissile.tscn", "res://icon.png"));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,10 +46,6 @@ public class ItemData : Node
 
     public string GetItemIconPath(string itemName) {
         return DataSet[itemName].GetIconPath();
-    }
-
-    public float GetItemSpawnInterval(string itemName) {
-        return DataSet[itemName].GetSpawnInterval();
     }
 
     public bool IsAnItem(string potentialItemName) {
