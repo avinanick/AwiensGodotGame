@@ -10,6 +10,8 @@ public class Avatar : Spatial
 	
 	[Signal]
 	public delegate void TurretSelect(int selectionPosition);
+	[Signal]
+	public delegate void UsingItem(int itemSlot);
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -38,6 +40,12 @@ public class Avatar : Spatial
 		}
 		if(inputEvent.IsActionPressed("select_south")) {
 			EmitSignal(nameof(TurretSelect), DefenseGrid.SOUTH);
+		}
+		if(inputEvent.IsActionPressed("item_one")) {
+			EmitSignal(nameof(UsingItem), 0);
+		}
+		if(inputEvent.IsActionPressed("item_two")) {
+			EmitSignal(nameof(UsingItem), 1);
 		}
 
 		if(inputEvent is InputEventMouseMotion motionEvent) {
