@@ -6,8 +6,24 @@ public class UserInventory : Node
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
-    protected System.Collections.Generic.Dictionary<String, int> EquippedItems = new System.Collections.Generic.Dictionary<string, int>();
-    
+    private class ItemInfo {
+        public String ItemName;
+        public int ItemAmount;
+
+        public ItemInfo(String newName, int newAmount) {
+            ItemName = newName;
+            ItemAmount = newAmount;
+        }
+
+        public Tuple<String, int> ToTuple() {
+            return new Tuple<string, int>(ItemName, ItemAmount);
+        }
+    }
+    private ItemInfo[] EquippedItems = {
+        new ItemInfo("", -1),
+        new ItemInfo("", -1)
+    };
+        
     protected System.Collections.Generic.Dictionary<String, int> InventoryItems = new System.Collections.Generic.Dictionary<string, int>();
 
     // Called when the node enters the scene tree for the first time.
@@ -25,15 +41,18 @@ public class UserInventory : Node
     public void AddItem(String itemName, int amount) {
         // If the item is already in the inventory, just add to it, otherwise
         // we need to make the entry
-        if(InventoryItems.ContainsKey(itemName)) {
-            InventoryItems[itemName] += amount;
-        }
-        else {
-            InventoryItems.Add(itemName, amount);
+        ItemData itemAL = GetNode<ItemData>("/root/ItemDataAL");
+        if(itemAL.IsAnItem(itemName)) {
+            if(InventoryItems.ContainsKey(itemName)) {
+                InventoryItems[itemName] += amount;
+            }
+            else {
+                InventoryItems.Add(itemName, amount);
+            }
         }
     }
 
-    public void EquipItem(String itemName, int amount = -1) {
+    public void EquipItem(String itemName, int itemSlot, int amount = -1) {
         // Transfers the amount of the selected item from the inventory to the
         // equipped items, right now does not check to make sure there is room
         // as I don't have a set number of equippable items in mind
@@ -49,11 +68,13 @@ public class UserInventory : Node
                 transferAmount = InventoryItems[itemName];
             }
             InventoryItems[itemName] -= transferAmount;
-            if(EquippedItems.ContainsKey(itemName)) {
-                EquippedItems[itemName] += transferAmount;
+            if(EquippedItems[itemSlot].ItemName == itemName) {
+                EquippedItems[itemSlot].ItemAmount += transferAmount;
             }
             else {
-                EquippedItems.Add(itemName, transferAmount);
+                UnequipItem(itemSlot, transferAmount);
+                EquippedItems[itemSlot].ItemName = itemName;
+                EquippedItems[itemSlot].ItemAmount = transferAmount;
             }
         }
         else {
@@ -61,8 +82,12 @@ public class UserInventory : Node
         }
     }
 
-    public System.Collections.Generic.Dictionary<String, int> GetEquipped() {
-        return EquippedItems;
+    public Tuple<String, int>[] GetEquipped() {
+        Tuple<string, int>[] equipped = new Tuple<string, int>[EquippedItems.Length];
+        for(int i = 0; i < EquippedItems.Length; i++) {
+            equipped[i] = EquippedItems[i].ToTuple();
+        }
+        return equipped;
     }
 
     public System.Collections.Generic.Dictionary<String, int> GetInventory() {
@@ -75,28 +100,29 @@ public class UserInventory : Node
         };
     }
 
-    public void UnequipItem(String itemName, int amount = -1) {
+    public void UnequipItem(int itemSlot, int amount = -1) {
         // Transfers from equipped items to the inventory items.
-        if(EquippedItems.ContainsKey(itemName) & EquippedItems[itemName] > 0) {
+        ItemData itemAL = GetNode<ItemData>("/root/ItemDataAL");
+        if(itemAL.IsAnItem(EquippedItems[itemSlot].ItemName) & EquippedItems[itemSlot].ItemAmount > 0) {
             int transferAmount = 0;
             if(amount < 0) {
-                transferAmount = EquippedItems[itemName];
+                transferAmount = EquippedItems[itemSlot].ItemAmount;
             }
-            else if(EquippedItems[itemName] >= amount) {
+            else if(EquippedItems[itemSlot].ItemAmount >= amount) {
                 transferAmount = amount;
             }
             else {
-                transferAmount = EquippedItems[itemName];
+                transferAmount = EquippedItems[itemSlot].ItemAmount;
             }
-            EquippedItems[itemName] -= transferAmount;
-            if(EquippedItems[itemName] < 1) {
-                EquippedItems.Remove(itemName);
-            }
-            if(InventoryItems.ContainsKey(itemName)) {
-                InventoryItems[itemName] += transferAmount;
+            if(InventoryItems.ContainsKey(EquippedItems[itemSlot].ItemName)) {
+                InventoryItems[EquippedItems[itemSlot].ItemName] += transferAmount;
             }
             else {
-                InventoryItems.Add(itemName, transferAmount);
+                InventoryItems.Add(EquippedItems[itemSlot].ItemName, transferAmount);
+            }
+            EquippedItems[itemSlot].ItemAmount -= transferAmount;
+            if(EquippedItems[itemSlot].ItemAmount < 1) {
+                EquippedItems[itemSlot].ItemName = "";
             }
         }
         else {
@@ -104,13 +130,14 @@ public class UserInventory : Node
         }
     }
 
-    public int UseItem(String itemName) {
-        if(EquippedItems.ContainsKey(itemName) & EquippedItems[itemName] > 0) {
-            EquippedItems[itemName] -= 1;
-            if(EquippedItems[itemName] < 1) {
-                EquippedItems.Remove(itemName);
+    public int UseItem(int itemSlot) {
+        ItemData itemAL = GetNode<ItemData>("/root/ItemDataAL");
+        if(itemAL != null & itemAL.IsAnItem(EquippedItems[itemSlot].ItemName) & EquippedItems[itemSlot].ItemAmount > 0) {
+            EquippedItems[itemSlot].ItemAmount -= 1;
+            if(EquippedItems[itemSlot].ItemAmount < 1) {
+                EquippedItems[itemSlot].ItemName = "";
             }
-            return EquippedItems[itemName];
+            return EquippedItems[itemSlot].ItemAmount;
             // do I actually deploy the item here?
         }
         return -1;
