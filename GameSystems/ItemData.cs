@@ -25,7 +25,7 @@ public class ItemData : Node
         }
     }
 
-    private System.Collections.Generic.Dictionary<string, ItemSet> DataSet;
+    private System.Collections.Generic.Dictionary<string, ItemSet> DataSet = new System.Collections.Generic.Dictionary<string, ItemSet>();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
