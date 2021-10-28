@@ -76,12 +76,40 @@ public class UserInventory : Node
     }
 
     public void UnequipItem(String itemName, int amount = -1) {
-
+        // Transfers from equipped items to the inventory items.
+        if(EquippedItems.ContainsKey(itemName) & EquippedItems[itemName] > 0) {
+            int transferAmount = 0;
+            if(amount < 0) {
+                transferAmount = EquippedItems[itemName];
+            }
+            else if(EquippedItems[itemName] >= amount) {
+                transferAmount = amount;
+            }
+            else {
+                transferAmount = EquippedItems[itemName];
+            }
+            EquippedItems[itemName] -= transferAmount;
+            if(EquippedItems[itemName] < 1) {
+                EquippedItems.Remove(itemName);
+            }
+            if(InventoryItems.ContainsKey(itemName)) {
+                InventoryItems[itemName] += transferAmount;
+            }
+            else {
+                InventoryItems.Add(itemName, transferAmount);
+            }
+        }
+        else {
+            GD.Print("No items to remove");
+        }
     }
 
     public int UseItem(String itemName) {
         if(EquippedItems.ContainsKey(itemName) & EquippedItems[itemName] > 0) {
             EquippedItems[itemName] -= 1;
+            if(EquippedItems[itemName] < 1) {
+                EquippedItems.Remove(itemName);
+            }
             return EquippedItems[itemName];
             // do I actually deploy the item here?
         }
