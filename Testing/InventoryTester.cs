@@ -18,4 +18,8 @@ public class InventoryTester : Node
 //  {
 //      
 //  }
+
+    public void OnTesterTimeout() {
+        
+    }
 }
