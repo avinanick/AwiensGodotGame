@@ -43,9 +43,11 @@ public class Avatar : Spatial
 		}
 		if(inputEvent.IsActionPressed("item_one")) {
 			EmitSignal(nameof(UsingItem), 0);
+			GetNode<UserInventory>("/root/UserInventoryAL").UseItem(0);
 		}
 		if(inputEvent.IsActionPressed("item_two")) {
 			EmitSignal(nameof(UsingItem), 1);
+			GetNode<UserInventory>("/root/UserInventoryAL").UseItem(1);
 		}
 
 		if(inputEvent is InputEventMouseMotion motionEvent) {
