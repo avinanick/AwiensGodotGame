@@ -30,3 +30,4 @@ one_shot = true
 autostart = true
 
 [connection signal="timeout" from="ShipTester/Timer" to="ShipTester" method="OnShipTimerTimeout"]
+[connection signal="timeout" from="InventoryTester/Timer" to="InventoryTester" method="OnTesterTimeout"]
