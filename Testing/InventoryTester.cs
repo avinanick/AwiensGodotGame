@@ -20,6 +20,15 @@ public class InventoryTester : Node
 //  }
 
     public void OnTesterTimeout() {
-        
+        UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
+        inventory.AddItem("Bomb", 3);
+        GD.Print(inventory.GetInventory());
+        GD.Print(inventory.GetEquipped());
+        inventory.EquipItem("Bomb", 0);
+        GD.Print(inventory.GetInventory());
+        GD.Print(inventory.GetEquipped());
+        inventory.UnequipItem(0);
+        GD.Print(inventory.GetInventory());
+        GD.Print(inventory.GetEquipped());
     }
 }
