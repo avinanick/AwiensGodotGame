@@ -34,7 +34,31 @@ public class UserInventory : Node
     }
 
     public void EquipItem(String itemName, int amount = -1) {
-
+        // Transfers the amount of the selected item from the inventory to the
+        // equipped items, right now does not check to make sure there is room
+        // as I don't have a set number of equippable items in mind
+        if(InventoryItems.ContainsKey(itemName) & InventoryItems[itemName] > 0) {
+            int transferAmount = 0;
+            if(amount < 0) {
+                transferAmount = InventoryItems[itemName];
+            }
+            else if(InventoryItems[itemName] >= amount) {
+                transferAmount = amount;
+            }
+            else {
+                transferAmount = InventoryItems[itemName];
+            }
+            InventoryItems[itemName] -= transferAmount;
+            if(EquippedItems.ContainsKey(itemName)) {
+                EquippedItems[itemName] += transferAmount;
+            }
+            else {
+                EquippedItems.Add(itemName, transferAmount);
+            }
+        }
+        else {
+            GD.Print("No items to equip");
+        }
     }
 
     public System.Collections.Generic.Dictionary<String, int> GetEquipped() {
