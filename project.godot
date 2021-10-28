@@ -66,6 +66,7 @@ SaveGuardianAL="*res://GameSystems/SaveGuardian.tscn"
 CampaignTrackerAL="*res://GameSystems/CampaignTracker.tscn"
 UserInventoryAL="*res://GameSystems/UserInventory.tscn"
 AlienDataAL="*res://GameSystems/AlienData.tscn"
+ItemDataAL="*res://GameSystems/ItemData.tscn"
 
 [input]
 
