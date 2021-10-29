@@ -20,7 +20,7 @@ public class UserInventory : Node
         }
     }
     private ItemInfo[] EquippedItems = {
-        new ItemInfo("", -1),
+        new ItemInfo("Bomb", 2),
         new ItemInfo("", -1)
     };
         
@@ -98,6 +98,10 @@ public class UserInventory : Node
         return new Godot.Collections.Dictionary<string, object>() {
 
         };
+    }
+
+    private void SpawnItem(string itemName) {
+        
     }
 
     public void UnequipItem(int itemSlot, int amount = -1) {
