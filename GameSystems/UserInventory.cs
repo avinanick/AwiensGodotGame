@@ -143,6 +143,7 @@ public class UserInventory : Node
             if(EquippedItems[itemSlot].ItemAmount < 1) {
                 EquippedItems[itemSlot].ItemName = "";
             }
+            CallDeferred(nameof(SpawnItem), EquippedItems[itemSlot].ItemName);
             return EquippedItems[itemSlot].ItemAmount;
             // do I actually deploy the item here?
         }
