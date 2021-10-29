@@ -18,4 +18,13 @@ public class Item : Spatial
 //  {
 //      
 //  }
+
+    protected virtual void Activate() {
+
+    }
+
+    public virtual void Deploy() {
+        // Items should be spawned in the center of the city and launched straight up
+        // then activated
+    }
 }
