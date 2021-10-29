@@ -101,7 +101,9 @@ public class UserInventory : Node
     }
 
     private void SpawnItem(string itemName) {
-        
+        PackedScene itemScene = (PackedScene)GD.Load(GetNode<ItemData>("/root/ItemDataAL").GetItemFilePath(itemName));
+        Item newItem = itemScene.Instance<Item>();
+        newItem.Deploy();
     }
 
     public void UnequipItem(int itemSlot, int amount = -1) {
