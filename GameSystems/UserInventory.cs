@@ -20,7 +20,7 @@ public class UserInventory : Node
         }
     }
     private ItemInfo[] EquippedItems = {
-        new ItemInfo("", -1),
+        new ItemInfo("Bomb", 2),
         new ItemInfo("", -1)
     };
         
@@ -100,6 +100,14 @@ public class UserInventory : Node
         };
     }
 
+    private void SpawnItem(string itemName) {
+        PackedScene itemScene = (PackedScene)GD.Load(GetNode<ItemData>("/root/ItemDataAL").GetItemFilePath(itemName));
+        Item newItem = itemScene.Instance<Item>();
+        GetTree().CurrentScene.AddChild(newItem);
+        GD.Print("Item spawned");
+        newItem.Deploy();
+    }
+
     public void UnequipItem(int itemSlot, int amount = -1) {
         // Transfers from equipped items to the inventory items.
         ItemData itemAL = GetNode<ItemData>("/root/ItemDataAL");
@@ -134,12 +142,14 @@ public class UserInventory : Node
         ItemData itemAL = GetNode<ItemData>("/root/ItemDataAL");
         if(itemAL != null & itemAL.IsAnItem(EquippedItems[itemSlot].ItemName) & EquippedItems[itemSlot].ItemAmount > 0) {
             EquippedItems[itemSlot].ItemAmount -= 1;
+            CallDeferred(nameof(SpawnItem), EquippedItems[itemSlot].ItemName);
             if(EquippedItems[itemSlot].ItemAmount < 1) {
                 EquippedItems[itemSlot].ItemName = "";
             }
             return EquippedItems[itemSlot].ItemAmount;
             // do I actually deploy the item here?
         }
+        GD.Print("No items equipped in that slot");
         return -1;
     }
 }

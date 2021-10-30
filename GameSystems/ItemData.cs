@@ -31,7 +31,7 @@ public class ItemData : Node
     public override void _Ready()
     {
         base._Ready();
-        DataSet.Add("Bomb", new ItemSet("res://GameObjects/Units/Aliens/AlienMissile.tscn", "res://icon.png"));
+        DataSet.Add("Bomb", new ItemSet("res://GameObjects/Items/Bomb.tscn", "res://icon.png"));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
