@@ -29,5 +29,6 @@ public class Item : Spatial
         // Items should be spawned in the center of the city and launched straight up
         // then activated
         Translation = new Vector3(0,0,0);
+        GetNode<AnimationPlayer>("AnimationPlayer").Play("Launch");
     }
 }
