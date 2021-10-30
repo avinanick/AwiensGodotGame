@@ -140,13 +140,16 @@ public class UserInventory : Node
         ItemData itemAL = GetNode<ItemData>("/root/ItemDataAL");
         if(itemAL != null & itemAL.IsAnItem(EquippedItems[itemSlot].ItemName) & EquippedItems[itemSlot].ItemAmount > 0) {
             EquippedItems[itemSlot].ItemAmount -= 1;
+            CallDeferred(nameof(SpawnItem), EquippedItems[itemSlot].ItemName);
+            GD.Print("Item deploying");
             if(EquippedItems[itemSlot].ItemAmount < 1) {
+                GD.Print("Item slot now empty");
                 EquippedItems[itemSlot].ItemName = "";
             }
-            CallDeferred(nameof(SpawnItem), EquippedItems[itemSlot].ItemName);
             return EquippedItems[itemSlot].ItemAmount;
             // do I actually deploy the item here?
         }
+        GD.Print("No items equipped in that slot");
         return -1;
     }
 }
