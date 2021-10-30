@@ -103,6 +103,8 @@ public class UserInventory : Node
     private void SpawnItem(string itemName) {
         PackedScene itemScene = (PackedScene)GD.Load(GetNode<ItemData>("/root/ItemDataAL").GetItemFilePath(itemName));
         Item newItem = itemScene.Instance<Item>();
+        GetTree().CurrentScene.AddChild(newItem);
+        GD.Print("Item spawned");
         newItem.Deploy();
     }
 
@@ -141,9 +143,7 @@ public class UserInventory : Node
         if(itemAL != null & itemAL.IsAnItem(EquippedItems[itemSlot].ItemName) & EquippedItems[itemSlot].ItemAmount > 0) {
             EquippedItems[itemSlot].ItemAmount -= 1;
             CallDeferred(nameof(SpawnItem), EquippedItems[itemSlot].ItemName);
-            GD.Print("Item deploying");
             if(EquippedItems[itemSlot].ItemAmount < 1) {
-                GD.Print("Item slot now empty");
                 EquippedItems[itemSlot].ItemName = "";
             }
             return EquippedItems[itemSlot].ItemAmount;
