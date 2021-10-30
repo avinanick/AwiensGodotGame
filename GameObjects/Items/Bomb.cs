@@ -23,8 +23,9 @@ public class Bomb : Item
         // This should get all destructibles in the alien group and deal heavy damage
         // to them all
         // Should I deal heavy damage or just call destroy self on each?
+        GD.Print("Bomb detonating");
         base.Activate();
-        Godot.Collections.Array<Destructible> alienTargets = new Godot.Collections.Array<Destructible>(GetTree().GetNodesInGroup("Aliens"));
+        Godot.Collections.Array<Destructible> alienTargets = new Godot.Collections.Array<Destructible>(GetTree().GetNodesInGroup("Alien"));
         for(int i = 0; i < alienTargets.Count; i++) {
             // I may go with dealing damage instead, but for now lets go with instant kills.
             alienTargets[i].DestroySelf();
