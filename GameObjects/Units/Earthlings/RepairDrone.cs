@@ -22,7 +22,7 @@ public class RepairDrone : CombatShip
 //  }
 
     protected void EndRepairChannel() {
-
+        // End the animation and search for a new target
     }
 
     protected override void HoverDestinationReached()
@@ -58,6 +58,7 @@ public class RepairDrone : CombatShip
     }
 
     protected void StartRepairChannel() {
-
+        PulseHeal();
+        // Should also start some animation
     }
 }
