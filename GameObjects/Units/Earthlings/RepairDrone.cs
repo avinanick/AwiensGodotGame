@@ -19,11 +19,20 @@ public class RepairDrone : CombatShip
 //      
 //  }
 
+    protected void EndRepairChannel() {
+
+    }
+
     protected override void SetHoverLocation() {
         if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
             Vector3 location = CurrentTarget.GlobalTransform.origin;
             location.y += 10;
             HoverLocation = location;
+            EndRepairChannel();
         }
+    }
+
+    protected void StartRepairChannel() {
+
     }
 }
