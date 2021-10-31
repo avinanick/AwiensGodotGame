@@ -18,4 +18,8 @@ public class RepairDrone : CombatShip
 //  {
 //      
 //  }
+
+    protected override void SetHoverLocation() {
+        
+    }
 }
