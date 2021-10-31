@@ -6,6 +6,8 @@ public class RepairDrone : CombatShip
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
+    [Export]
+    protected int HealAmount = 1;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -21,6 +23,23 @@ public class RepairDrone : CombatShip
 
     protected void EndRepairChannel() {
 
+    }
+
+    protected void PulseHeal() {
+        if(HoverLocationReached) {
+            if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
+                if(CurrentTarget is Destructible destructible) {
+                    destructible.RepairDamage(HealAmount);
+                }
+                if(CurrentTarget.IsFullHealth()) {
+                    // Choose a new target
+                    EndRepairChannel();
+                }
+                else {
+                    GetNode<Timer>("Timer").Start();
+                }
+            }
+        }
     }
 
     protected override void SetHoverLocation() {
