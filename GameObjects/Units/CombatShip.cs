@@ -308,7 +308,7 @@ public class CombatShip : Ship
         }
     }
 
-    protected void UpdateTarget() {
+    protected virtual void UpdateTarget() {
         if(CurrentTarget == null || !Godot.Object.IsInstanceValid(CurrentTarget)) {
             HoverLocationReached = false;
             if(PotentialTargets.Count > 0) {
