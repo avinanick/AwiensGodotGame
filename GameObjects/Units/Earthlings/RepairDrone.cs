@@ -67,7 +67,7 @@ public class RepairDrone : CombatShip
         if(CurrentTarget == null || !Godot.Object.IsInstanceValid(CurrentTarget) || CurrentTarget.IsFullHealth()) {
             HoverLocationReached = false;
             if(PotentialTargets.Count > 0) {
-                CurrentTarget = PotentialTargets[PotentialTargets.Count - 1];
+                CurrentTarget = PickTarget(PotentialTargets);
                 if(AttackPattern == AttackPatternType.Hover) {
                     SetHoverLocation();
                 }
@@ -76,6 +76,12 @@ public class RepairDrone : CombatShip
     }
 
     protected Destructible PickTarget(Godot.Collections.Array<Destructible> potentialTargets) {
+        potentialTargets.Shuffle();
+        for(int i = 0; i < potentialTargets.Count; i++) {
+            if(potentialTargets[i] != null & Godot.Object.IsInstanceValid(potentialTargets[i]) &!potentialTargets[i].IsFullHealth()) {
+                return potentialTargets[i];
+            }
+        }
         return null; // STUB
     }
 }
