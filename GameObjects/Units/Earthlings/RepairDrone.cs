@@ -25,6 +25,12 @@ public class RepairDrone : CombatShip
 
     }
 
+    protected override void HoverDestinationReached()
+    {
+        base.HoverDestinationReached();
+        StartRepairChannel();
+    }
+
     protected void PulseHeal() {
         if(HoverLocationReached) {
             if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
