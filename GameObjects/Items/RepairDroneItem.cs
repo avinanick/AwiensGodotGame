@@ -6,7 +6,6 @@ public class RepairDroneItem : Item
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
-    PackedScene RepairDroneScene = GD.Load<PackedScene>("res://GameObjects/Units/Earthlings/RepairDrone.tscn");
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -22,5 +21,12 @@ public class RepairDroneItem : Item
 
     protected override void Activate() {
         base.Activate();
+        RepairDrone repairDrone = GetNode<RepairDrone>("RepairDrone");
+        Transform droneTransform = repairDrone.GlobalTransform;
+        RemoveChild(repairDrone);
+        GetTree().CurrentScene.AddChild(repairDrone);
+        repairDrone.GlobalTransform = droneTransform;
+        repairDrone.SpawnShip();
+        QueueFree();
     }
 }
