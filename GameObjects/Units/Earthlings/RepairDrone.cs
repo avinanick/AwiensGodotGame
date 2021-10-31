@@ -68,9 +68,15 @@ public class RepairDrone : CombatShip
             HoverLocationReached = false;
             if(PotentialTargets.Count > 0) {
                 CurrentTarget = PickTarget(PotentialTargets);
-                if(AttackPattern == AttackPatternType.Hover) {
-                    SetHoverLocation();
+                if(CurrentTarget != null) {
+                    if(AttackPattern == AttackPatternType.Hover) {
+                        SetHoverLocation();
+                    }
                 }
+                else {
+                    GetNode<Timer>("RetryUpdateTimer").Start();
+                }
+                
             }
         }
     }
