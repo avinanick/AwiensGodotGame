@@ -61,4 +61,21 @@ public class RepairDrone : CombatShip
         PulseHeal();
         // Should also start some animation
     }
+
+    protected override void UpdateTarget()
+    {
+        if(CurrentTarget == null || !Godot.Object.IsInstanceValid(CurrentTarget) || CurrentTarget.IsFullHealth()) {
+            HoverLocationReached = false;
+            if(PotentialTargets.Count > 0) {
+                CurrentTarget = PotentialTargets[PotentialTargets.Count - 1];
+                if(AttackPattern == AttackPatternType.Hover) {
+                    SetHoverLocation();
+                }
+            }
+        }
+    }
+
+    protected Destructible PickTarget(Godot.Collections.Array<Destructible> potentialTargets) {
+        return null; // STUB
+    }
 }
