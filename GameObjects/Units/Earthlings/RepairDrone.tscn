@@ -80,5 +80,10 @@ material/2 = null
 material/3 = null
 
 [node name="Timer" type="Timer" parent="." index="7"]
+one_shot = true
+
+[node name="RetryUpdateTimer" type="Timer" parent="." index="8"]
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="PulseHeal"]
+[connection signal="timeout" from="RetryUpdateTimer" to="." method="UpdateTarget"]
