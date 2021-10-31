@@ -80,3 +80,5 @@ material/2 = null
 material/3 = null
 
 [node name="Timer" type="Timer" parent="." index="7"]
+
+[connection signal="timeout" from="Timer" to="." method="PulseHeal"]
