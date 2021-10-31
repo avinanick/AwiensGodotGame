@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://GameObjects/Items/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/Items/RepairDroneItem.cs" type="Script" id=2]
+[ext_resource path="res://GameObjects/Units/Earthlings/RepairDrone.tscn" type="PackedScene" id=3]
 
 [node name="RepairDroneItem" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="RepairDrone" parent="." index="2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0 )
