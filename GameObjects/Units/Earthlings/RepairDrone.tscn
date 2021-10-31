@@ -65,8 +65,8 @@ surfaces/3 = {
 "Earthling",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+AttackPattern = 2
 TargetGroups = PoolStringArray( "Earthling" )
-LooksAtTarget = false
 
 [node name="CollisionShape" parent="." index="0"]
 shape = SubResource( 2 )
