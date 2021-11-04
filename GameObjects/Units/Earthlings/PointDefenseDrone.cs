@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class PointDefenseDroneItem : Item
+public class PointDefenseDrone : CombatShip
 {
     // Declare member variables here. Examples:
     // private int a = 2;
