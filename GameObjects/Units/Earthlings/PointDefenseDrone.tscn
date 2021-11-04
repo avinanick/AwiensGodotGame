@@ -17,3 +17,6 @@ one_shot = true
 
 [node name="CollisionShape" type="CollisionShape" parent="ProjectileKillArea" index="0"]
 shape = SubResource( 1 )
+
+[connection signal="timeout" from="CooldownTimer" to="." method="CooldownTimeout"]
+[connection signal="body_entered" from="ProjectileKillArea" to="." method="OnAreaEntered"]
