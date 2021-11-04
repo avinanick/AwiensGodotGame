@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/Units/Earthlings/PointDefenseDrone.cs" type="Script" id=2]
 
+[sub_resource type="SphereShape" id=1]
+radius = 8.0
+
 [node name="PointDefenseDrone" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+LooksAtTarget = false
+
+[node name="ProjectileKillArea" type="Area" parent="." index="7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ProjectileKillArea" index="0"]
+shape = SubResource( 1 )
