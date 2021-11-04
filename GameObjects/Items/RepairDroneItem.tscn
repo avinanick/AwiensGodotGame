@@ -7,5 +7,5 @@
 [node name="RepairDroneItem" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="RepairDrone" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Drone" parent="." index="2" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0 )
