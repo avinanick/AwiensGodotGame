@@ -32,6 +32,7 @@ public class ItemData : Node
     {
         base._Ready();
         DataSet.Add("Bomb", new ItemSet("res://GameObjects/Items/Bomb.tscn", "res://icon.png"));
+        DataSet.Add("Repair Drone", new ItemSet("res://GameObjects/Items/RepairDroneItem.tscn", "res://icon.png"));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
