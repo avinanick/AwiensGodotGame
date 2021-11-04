@@ -10,7 +10,10 @@ radius = 8.0
 script = ExtResource( 2 )
 LooksAtTarget = false
 
-[node name="ProjectileKillArea" type="Area" parent="." index="7"]
+[node name="CooldownTimer" type="Timer" parent="." index="0"]
+one_shot = true
+
+[node name="ProjectileKillArea" type="Area" parent="." index="8"]
 
 [node name="CollisionShape" type="CollisionShape" parent="ProjectileKillArea" index="0"]
 shape = SubResource( 1 )
