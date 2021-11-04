@@ -303,9 +303,12 @@ public class CombatShip : Ship
         if(LooksAtTarget) {
             LookAt(new Vector3(0,GlobalTransform.origin.y,0), new Vector3(0,1,0));
         }
+        else {
+            LookAt(GlobalTransform.origin + movementDirection, new Vector3(0,1,0));
+        }
     }
 
-    protected void UpdateTarget() {
+    protected virtual void UpdateTarget() {
         if(CurrentTarget == null || !Godot.Object.IsInstanceValid(CurrentTarget)) {
             HoverLocationReached = false;
             if(PotentialTargets.Count > 0) {

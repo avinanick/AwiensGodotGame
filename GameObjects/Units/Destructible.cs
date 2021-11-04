@@ -50,6 +50,10 @@ public class Destructible : KinematicBody
 		return MaxHealth;
 	}
 
+	public bool IsFullHealth() {
+		return Health >= MaxHealth;
+	}
+
 	
 	public void RepairDamage(int amount) {
 		Health += amount;
