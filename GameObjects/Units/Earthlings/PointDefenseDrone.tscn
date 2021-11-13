@@ -53,9 +53,7 @@ radius = 8.0
 
 [node name="PointDefenseDrone" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-Health = 10
-MaxHealth = 10
-ShipSpeed = 5.0
+OrbitRadius = 20.0
 LooksAtTarget = false
 
 [node name="CooldownTimer" type="Timer" parent="." index="0"]
