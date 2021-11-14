@@ -75,15 +75,17 @@ public class CombatShip : Ship
     }
 
     public void BodyEnteringRange(Node body) {
-        if(body is Destructible potentialTarget) {
-            if(potentialTarget == CurrentTarget) {
-                CurrentTarget = null;
-                return;
-            }
-            for(int i = 0; i < TargetGroups.Length; i++) {
-                if(potentialTarget.IsInGroup(TargetGroups[i])) {
-                    PotentialTargets.Add(potentialTarget);
+        if(TargetGroups != null) {
+            if(body is Destructible potentialTarget) {
+                if(potentialTarget == CurrentTarget) {
+                    CurrentTarget = null;
                     return;
+                }
+                for(int i = 0; i < TargetGroups.Length; i++) {
+                    if(potentialTarget.IsInGroup(TargetGroups[i])) {
+                        PotentialTargets.Add(potentialTarget);
+                        return;
+                    }
                 }
             }
         }
