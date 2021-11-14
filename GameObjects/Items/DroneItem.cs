@@ -21,12 +21,12 @@ public class DroneItem : Item
 
     protected override void Activate() {
         base.Activate();
-        RepairDrone repairDrone = GetNode<RepairDrone>("Drone");
-        Transform droneTransform = repairDrone.GlobalTransform;
-        RemoveChild(repairDrone);
-        GetTree().CurrentScene.AddChild(repairDrone);
-        repairDrone.GlobalTransform = droneTransform;
-        repairDrone.SpawnShip();
+        CombatShip drone = GetNode<CombatShip>("Drone");
+        Transform droneTransform = drone.GlobalTransform;
+        RemoveChild(drone);
+        GetTree().CurrentScene.AddChild(drone);
+        drone.GlobalTransform = droneTransform;
+        drone.SpawnShip();
         QueueFree();
     }
 }
