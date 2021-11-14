@@ -304,13 +304,13 @@ public class CombatShip : Ship
         // x coordinate
         // If the current orbit radius is larger or smaller than the set radius, try to fix that.
         Vector3 movementDirection = new Vector3(1,0,0);
-        if(directionToCity.Length() - OrbitRadius < 0.5) {
+        if(Mathf.Abs(directionToCity.Length() - OrbitRadius) < 0.5) {
             movementDirection = new Vector3((-1) * directionToCity.z, 0, directionToCity.x);
         }
         else if(directionToCity.Length() - OrbitRadius > 0){
             movementDirection = directionToCity;
         }
-        else if(directionToCity.Length() - OrbitRadius < 0){
+        else if(directionToCity.Length() > 0 & directionToCity.Length() - OrbitRadius < 0){
             movementDirection = (-1) * directionToCity;
         }
         DirectionVector = movementDirection.Normalized();
