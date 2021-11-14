@@ -13,6 +13,7 @@ height = 0.4
 
 [node name="AlienBullet" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+ProjectileSpeed = 10.0
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="2"]
 mesh = SubResource( 2 )

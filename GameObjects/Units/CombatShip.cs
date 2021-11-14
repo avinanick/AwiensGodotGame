@@ -20,6 +20,8 @@ public class CombatShip : Ship
     [Export]
     protected AttackPatternType AttackPattern = AttackPatternType.Orbit;
     [Export]
+    protected float OrbitRadius = 40f;
+    [Export]
     protected float TurnSpeed = 4f;
     [Export]
     protected string[] TargetGroups;
@@ -73,15 +75,17 @@ public class CombatShip : Ship
     }
 
     public void BodyEnteringRange(Node body) {
-        if(body is Destructible potentialTarget) {
-            if(potentialTarget == CurrentTarget) {
-                CurrentTarget = null;
-                return;
-            }
-            for(int i = 0; i < TargetGroups.Length; i++) {
-                if(potentialTarget.IsInGroup(TargetGroups[i])) {
-                    PotentialTargets.Add(potentialTarget);
+        if(TargetGroups != null) {
+            if(body is Destructible potentialTarget) {
+                if(potentialTarget == CurrentTarget) {
+                    CurrentTarget = null;
                     return;
+                }
+                for(int i = 0; i < TargetGroups.Length; i++) {
+                    if(potentialTarget.IsInGroup(TargetGroups[i])) {
+                        PotentialTargets.Add(potentialTarget);
+                        return;
+                    }
                 }
             }
         }
@@ -298,7 +302,17 @@ public class CombatShip : Ship
         Vector3 facingDirection = new Vector3((-1) * Mathf.Sin(Rotation.y), 0, Mathf.Cos(Rotation.y));
         // To get a clockwise perpendicular vector, we switch the x and z vector values and negate the new
         // x coordinate
-        Vector3 movementDirection = new Vector3((-1) * directionToCity.z, 0, directionToCity.x);
+        // If the current orbit radius is larger or smaller than the set radius, try to fix that.
+        Vector3 movementDirection = new Vector3(1,0,0);
+        if(Mathf.Abs(directionToCity.Length() - OrbitRadius) < 0.5) {
+            movementDirection = new Vector3((-1) * directionToCity.z, 0, directionToCity.x);
+        }
+        else if(directionToCity.Length() - OrbitRadius > 0){
+            movementDirection = directionToCity;
+        }
+        else if(directionToCity.Length() > 0 & directionToCity.Length() - OrbitRadius < 0){
+            movementDirection = (-1) * directionToCity;
+        }
         DirectionVector = movementDirection.Normalized();
         if(LooksAtTarget) {
             LookAt(new Vector3(0,GlobalTransform.origin.y,0), new Vector3(0,1,0));
