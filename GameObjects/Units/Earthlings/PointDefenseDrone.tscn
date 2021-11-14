@@ -49,7 +49,7 @@ surfaces/2 = {
 }
 
 [sub_resource type="SphereShape" id=2]
-radius = 8.0
+radius = 15.0
 
 [node name="PointDefenseDrone" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
