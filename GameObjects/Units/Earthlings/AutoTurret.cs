@@ -6,6 +6,7 @@ public class AutoTurret : Turret
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
+    private Ship CurrentTarget = null;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -18,4 +19,20 @@ public class AutoTurret : Turret
 //  {
 //      
 //  }
+
+    protected void AttemptAttack() {
+
+    }
+
+    protected void FindTarget() {
+        
+    }
+
+    public void OnTargetEnterRange(Node body) {
+
+    }
+
+    protected void TrackTarget() {
+
+    }
 }
