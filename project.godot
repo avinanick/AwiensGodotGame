@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Turret",
-"class": "AutoTurret",
-"language": "GDScript",
-"path": "res://Scripts/Units/AutoTurret.gd"
-}, {
 "base": "Projectile",
 "class": "Bullet",
 "language": "GDScript",
@@ -45,7 +40,6 @@ _global_script_classes=[ {
 "path": "res://Scripts/Interfaces/AlienAttackerIcon.gd"
 } ]
 _global_script_class_icons={
-"AutoTurret": "",
 "Bullet": "",
 "Projectile": "",
 "ThunderCannon": "",
