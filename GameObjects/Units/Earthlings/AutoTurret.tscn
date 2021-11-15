@@ -25,3 +25,5 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="AttackRange" index="0"]
 shape = SubResource( 2 )
+
+[connection signal="body_entered" from="AttackRange" to="." method="OnTargetEnterRange"]
