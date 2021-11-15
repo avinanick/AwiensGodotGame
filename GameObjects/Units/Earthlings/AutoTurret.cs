@@ -25,11 +25,13 @@ public class AutoTurret : Turret
     }
 
     protected void FindTarget() {
-        
+
     }
 
     public void OnTargetEnterRange(Node body) {
-
+        if(body.IsInGroup("Aliens")) {
+            CurrentTarget = (Ship)body;
+        }
     }
 
     protected void TrackTarget() {
