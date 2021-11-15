@@ -10,7 +10,7 @@ extents = Vector3( 0.3, 0.33, 0.4 )
 [sub_resource type="SphereShape" id=2]
 radius = 50.0
 
-[node name="AutoTurret" instance=ExtResource( 1 )]
+[node name="AutoTurret" groups=["Defender"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 Health = 10
 MaxHealth = 10
