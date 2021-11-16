@@ -6,6 +6,8 @@ public class AutoTurret : Turret
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
+    [Export]
+    private int AttackDamage = 1;
     private Ship CurrentTarget = null;
     private bool AttackReady = true;
 
@@ -32,7 +34,14 @@ public class AutoTurret : Turret
         // the way, if there is, either wait or try to find a new target. If there isn't,
         // deal damage, it will just be a laser.
         if(AttackReady & CurrentTarget != null) {
-
+            Destructible collision = GetNode<RayCast>("RayCast").GetCollider() as Destructible;
+            if(collision == CurrentTarget) {
+                AttackReady = false;
+                GetNode<Timer>("AttackCooldownTimer").Start();
+                // Play some sort of animation
+                CurrentTarget.TakeDamage(AttackDamage);
+                GD.Print("Autoturret attacking target");
+            }
         }
     }
 
@@ -54,6 +63,6 @@ public class AutoTurret : Turret
     }
 
     protected void TrackTarget() {
-        // Get rotation to the target and apply that to the gun model
+        // Get rotation to the target and apply that to the gun model and raycast
     }
 }
