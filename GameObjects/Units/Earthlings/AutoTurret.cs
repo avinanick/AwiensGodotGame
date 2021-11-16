@@ -64,5 +64,15 @@ public class AutoTurret : Turret
 
     protected void TrackTarget() {
         // Get rotation to the target and apply that to the gun model and raycast
+        if(CurrentTarget != null) {
+            Vector3 directionToTarget = CurrentTarget.GlobalTransform.origin - GlobalTransform.origin;
+            float yRotationRadians = Mathf.Atan(directionToTarget.x / directionToTarget.z);
+            float xRotationRadians = Mathf.Atan(directionToTarget.y / (new Vector2(directionToTarget.x, directionToTarget.z)).Length());
+            if(directionToTarget.z > 0) {
+                yRotationRadians += Mathf.Pi;
+            }
+            GetNode<RayCast>("RayCast").Rotation = new Vector3(xRotationRadians, yRotationRadians, 0);
+            //GetNode<TurretModel>("GunModel").Sight(xRotationRadians, yRotationRadians); // This is wrong, I may need a new method in the turret model.
+        }
     }
 }
