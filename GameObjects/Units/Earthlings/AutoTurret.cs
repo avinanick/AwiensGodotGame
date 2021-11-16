@@ -40,7 +40,7 @@ public class AutoTurret : Turret
     }
 
     public void OnTargetEnterRange(Node body) {
-        if(body.IsInGroup("Aliens")) {
+        if(body.IsInGroup("Aliens") & (!Godot.Object.IsInstanceValid(CurrentTarget) || CurrentTarget == null)) {
             CurrentTarget = (Ship)body;
         }
     }
