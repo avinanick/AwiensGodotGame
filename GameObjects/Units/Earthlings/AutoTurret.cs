@@ -14,9 +14,17 @@ public class AutoTurret : Turret
     {
         base._Ready();
     }
+
+    public override void _PhysicsProcess(float delta) {
+        base._PhysicsProcess(delta);
+    }
     
     public override void _Process(float delta) {
         base._Process(delta);
+    }
+
+    public void AttackCooldownComplete() {
+        AttackReady = true;
     }
 
     protected void AttemptAttack() {
@@ -46,6 +54,6 @@ public class AutoTurret : Turret
     }
 
     protected void TrackTarget() {
-
+        // Get rotation to the target and apply that to the gun model
     }
 }
