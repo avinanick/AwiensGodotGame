@@ -72,7 +72,7 @@ public class AutoTurret : Turret
                 yRotationRadians += Mathf.Pi;
             }
             GetNode<RayCast>("RayCast").Rotation = new Vector3(xRotationRadians, yRotationRadians, 0);
-            //GetNode<TurretModel>("GunModel").Sight(xRotationRadians, yRotationRadians); // This is wrong, I may need a new method in the turret model.
+            GetNode<TurretModel>("GunModel").Sight(Mathf.Rad2Deg(xRotationRadians), Mathf.Rad2Deg(yRotationRadians)); // This is wrong, I may need a new method in the turret model.
         }
     }
 }
