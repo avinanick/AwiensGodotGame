@@ -139,6 +139,7 @@ surfaces/1 = {
 }
 
 [node name="AutoTurretModelScene" type="Spatial"]
+script = ExtResource( 5 )
 
 [node name="Bone0" type="Spatial" parent="."]
 
@@ -150,7 +151,6 @@ material/2 = null
 
 [node name="Bone1" type="Spatial" parent="Bone0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, -0.011 )
-script = ExtResource( 5 )
 
 [node name="turret" type="MeshInstance" parent="Bone0/Bone1"]
 mesh = SubResource( 2 )
