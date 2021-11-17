@@ -16,13 +16,16 @@ public class AutoTurret : Turret
     {
         base._Ready();
     }
-
-    public override void _PhysicsProcess(float delta) {
-        base._PhysicsProcess(delta);
-    }
     
     public override void _Process(float delta) {
         base._Process(delta);
+        if(CurrentTarget != null & Godot.Object.IsInstanceValid(CurrentTarget)) {
+            TrackTarget();
+            AttemptAttack();
+        }
+        else {
+            FindTarget();
+        }
     }
 
     public void AttackCooldownComplete() {
