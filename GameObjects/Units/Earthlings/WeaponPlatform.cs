@@ -29,7 +29,13 @@ public class WeaponPlatform : Spatial
 	}
 
 	public void DeployAddon(Turret addon) {
-		
+		// If there is already an addon deployed, remove it before deploying this one
+		Spatial addonSlot = GetNode<Spatial>("AddonSlot");
+		if(addonSlot.GetChildCount() > 0) {
+			addonSlot.GetChild(0).QueueFree();
+		}
+		addonSlot.AddChild(addon);
+		addon.GlobalTransform = addonSlot.GlobalTransform;
 	}
 	
 	public void ResetSights() {
