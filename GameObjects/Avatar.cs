@@ -67,6 +67,10 @@ public class Avatar : Spatial
 			RotationDegrees = rotation;
 		}
 	}
+
+	public void DeployWeaponAddon(Turret addon) {
+		
+	}
 	
 	public void SetWeapon(WeaponPlatform newWeapon) {
 		SelectedWeapon = newWeapon;
