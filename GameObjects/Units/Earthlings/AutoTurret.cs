@@ -50,11 +50,14 @@ public class AutoTurret : Turret
 
     protected void FindTarget() {
         // Search for a new target in range.
-        Godot.Collections.Array<Ship> potentialTargets = new Godot.Collections.Array<Ship>(GetNode<Area>("AttackRange").GetOverlappingBodies());
+        Godot.Collections.Array potentialTargets = GetNode<Area>("AttackRange").GetOverlappingBodies();
         for(int i = 0; i < potentialTargets.Count; i++) {
-            if(Godot.Object.IsInstanceValid(potentialTargets[i]) & potentialTargets[i].IsInGroup("Aliens") & potentialTargets[i] != CurrentTarget) {
-                CurrentTarget = potentialTargets[i];
-                return;
+            if(potentialTargets[i] is Ship shipTarget)
+            {
+                if(Godot.Object.IsInstanceValid(shipTarget) & shipTarget.IsInGroup("Aliens") & shipTarget != CurrentTarget) {
+                    CurrentTarget = shipTarget;
+                    return;
+                }
             }
         }
     }
