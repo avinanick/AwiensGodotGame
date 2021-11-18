@@ -54,9 +54,13 @@ public class AutoTurret : Turret
         for(int i = 0; i < potentialTargets.Count; i++) {
             if(potentialTargets[i] is Ship shipTarget)
             {
-                if(Godot.Object.IsInstanceValid(shipTarget) & shipTarget.IsInGroup("Aliens") & shipTarget != CurrentTarget) {
+                if(Godot.Object.IsInstanceValid(shipTarget) & shipTarget.IsInGroup("Alien") & shipTarget != CurrentTarget) {
+                    GD.Print("Target acquired");
                     CurrentTarget = shipTarget;
                     return;
+                }
+                else {
+                    GD.Print("Target ship not valid");
                 }
             }
         }
