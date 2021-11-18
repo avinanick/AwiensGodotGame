@@ -69,7 +69,7 @@ public class Avatar : Spatial
 	}
 
 	public void DeployWeaponAddon(Turret addon) {
-		
+		SelectedWeapon.DeployAddon(addon);
 	}
 	
 	public void SetWeapon(WeaponPlatform newWeapon) {
