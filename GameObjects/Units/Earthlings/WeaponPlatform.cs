@@ -27,6 +27,10 @@ public class WeaponPlatform : Spatial
 	public void AttemptAttack(Vector3 attackSpawn, Vector3 attackRotation) {
 		CurrentWeapon.AttemptAttack(attackSpawn, attackRotation);
 	}
+
+	public void DeployAddon(Turret addon) {
+		
+	}
 	
 	public void ResetSights() {
 		CurrentWeapon.ResetSights();
