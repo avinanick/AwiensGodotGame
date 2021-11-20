@@ -38,12 +38,14 @@ public class AutoTurret : Turret
         // deal damage, it will just be a laser.
         if(AttackReady & CurrentTarget != null) {
             Destructible collision = GetNode<RayCast>("RayCast").GetCollider() as Destructible;
-            if(collision == CurrentTarget) {
-                AttackReady = false;
-                GetNode<Timer>("AttackCooldownTimer").Start();
-                // Play some sort of animation
-                CurrentTarget.TakeDamage(AttackDamage);
-                GD.Print("Autoturret attacking target");
+            // The if statement checks if it's hitting either the current target or it's shield
+            if(collision != null) {
+                if((collision == CurrentTarget) | (collision.GetParent() == CurrentTarget)) {
+                    AttackReady = false;
+                    GetNode<Timer>("AttackCooldownTimer").Start();
+                    // Play some sort of animation
+                    collision.TakeDamage(AttackDamage);                    
+                }
             }
         }
     }

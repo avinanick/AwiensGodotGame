@@ -12,8 +12,6 @@ radius = 50.0
 
 [node name="AutoTurret" groups=["Defender"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-Health = 10
-MaxHealth = 10
 
 [node name="CollisionShape" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0 )
