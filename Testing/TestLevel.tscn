@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GameObjects/Units/Earthlings/City.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/Units/Earthlings/DefenseGrid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameObjects/Units/Aliens/AlienPlanetDrill.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Testing/ShipTester.cs" type="Script" id=4]
 [ext_resource path="res://Testing/InventoryTester.cs" type="Script" id=5]
+[ext_resource path="res://GameObjects/Units/Earthlings/HologramGrid.tscn" type="PackedScene" id=6]
 
 [node name="TestLevel" type="Spatial"]
 
@@ -28,6 +29,8 @@ script = ExtResource( 5 )
 [node name="Timer" type="Timer" parent="InventoryTester"]
 one_shot = true
 autostart = true
+
+[node name="HologramGrid" parent="." instance=ExtResource( 6 )]
 
 [connection signal="timeout" from="ShipTester/Timer" to="ShipTester" method="OnShipTimerTimeout"]
 [connection signal="timeout" from="InventoryTester/Timer" to="InventoryTester" method="OnTesterTimeout"]
