@@ -81,8 +81,8 @@ public class AutoTurret : Turret
             if(directionToTarget.z > 0) {
                 yRotationRadians += Mathf.Pi;
             }
-            GetNode<RayCast>("RayCast").Rotation = new Vector3(xRotationRadians, yRotationRadians, 0);
-            GetNode<TurretModel>("GunModel").SetSight(Mathf.Rad2Deg(xRotationRadians), Mathf.Rad2Deg(yRotationRadians)); // This is wrong, I may need a new method in the turret model.
+            GetNode<RayCast>("RayCast").LookAt(CurrentTarget.GlobalTransform.origin, new Vector3(0,1,0));
+            GetNode<TurretModel>("GunModel").SetSight(CurrentTarget.GlobalTransform.origin); // This is wrong, I may need a new method in the turret model.
         }
     }
 }
