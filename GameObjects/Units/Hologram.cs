@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class HolographicDecoyItem : Item
+public class Hologram : Destructible
 {
     // Declare member variables here. Examples:
     // private int a = 2;
