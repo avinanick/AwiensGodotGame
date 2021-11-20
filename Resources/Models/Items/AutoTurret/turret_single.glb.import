@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/autoturret.glb-d6be81cfe9a7e14abdd1a13472f10dfc.scn"
+path="res://.import/turret_single.glb-e90153ef3c79ded1b00a4e91c7b3e3ff.scn"
 
 [deps]
 
-source_file="res://Resources/Models/AutoTurret/autoturret.glb"
-dest_files=[ "res://.import/autoturret.glb-d6be81cfe9a7e14abdd1a13472f10dfc.scn" ]
+source_file="res://Resources/Models/Items/AutoTurret/turret_single.glb"
+dest_files=[ "res://.import/turret_single.glb-e90153ef3c79ded1b00a4e91c7b3e3ff.scn" ]
 
 [params]
 
@@ -16,14 +16,17 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
+nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
-meshes/compress=true
+meshes/octahedral_compression=true
+meshes/compress=4286
 meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
+skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15

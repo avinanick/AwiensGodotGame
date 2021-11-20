@@ -1,26 +1,36 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/Units/AutoTurret.gd" type="Script" id=1]
-[ext_resource path="res://GameObjects/Units/Earthlings/AutoTurretModel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/Units/Earthlings/Turret.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameObjects/Units/Earthlings/AutoTurret.cs" type="Script" id=2]
+[ext_resource path="res://Resources/Models/Items/AutoTurret/AutoTurretModelScene.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.4, 0.4, 0.4 )
+extents = Vector3( 0.3, 0.33, 0.4 )
 
 [sub_resource type="SphereShape" id=2]
-radius = 30.0
+radius = 50.0
 
-[node name="AutoTurret" type="KinematicBody"]
-script = ExtResource( 1 )
-health = 5
-max_health = 5
+[node name="AutoTurret" groups=["Defender"] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
 
-[node name="TurretModel" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="CollisionShape" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0 )
 shape = SubResource( 1 )
 
-[node name="TargetingRange" type="Area" parent="."]
+[node name="GunModel" parent="." index="6" instance=ExtResource( 3 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="TargetingRange"]
+[node name="AttackRange" type="Area" parent="." index="7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="AttackRange" index="0"]
 shape = SubResource( 2 )
+
+[node name="AttackCooldownTimer" type="Timer" parent="." index="8"]
+one_shot = true
+
+[node name="RayCast" type="RayCast" parent="." index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.496468, 0.011 )
+enabled = true
+cast_to = Vector3( 0, 0, -50 )
+
+[connection signal="body_entered" from="AttackRange" to="." method="OnTargetEnterRange"]
+[connection signal="timeout" from="AttackCooldownTimer" to="." method="AttackCooldownComplete"]

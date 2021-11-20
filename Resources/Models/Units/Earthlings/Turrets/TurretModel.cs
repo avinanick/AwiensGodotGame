@@ -23,7 +23,14 @@ public class TurretModel : Spatial
 //      
 //  }
 
-public virtual void Sight(float XRotation, float YRotation) {
+	public virtual void SetSight(Vector3 globalPosition) {
+		//BaseBone.RotationDegrees = new Vector3(0, YRotation, 0);
+		BaseBone.LookAt(new Vector3(globalPosition.x, BaseBone.GlobalTransform.origin.y, globalPosition.z), new Vector3(0,1,0));
+		//GunBone.RotationDegrees = new Vector3(XRotation, 0, 0);
+		GunBone.LookAt(globalPosition, new Vector3(0,1,0));
+	}
+
+	public virtual void Sight(float XRotation, float YRotation) {
 		Vector3 horizontalRotation = BaseBone.RotationDegrees;
 		horizontalRotation.x -= XRotation;
 		Vector3 verticalRotation = GunBone.RotationDegrees;
