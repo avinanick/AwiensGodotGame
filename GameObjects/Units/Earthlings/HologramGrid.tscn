@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GameObjects/Units/Earthlings/HologramMount.tscn" type="PackedScene" id=1]
+
+[node name="HologramGrid" type="Spatial"]
+
+[node name="HologramMount" type="Spatial" parent="." groups=["HoloPoint"] instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15 )
+
+[node name="HologramMount2" type="Spatial" parent="." groups=["HoloPoint"] instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15 )
+
+[node name="HologramMount3" type="Spatial" parent="." groups=["HoloPoint"] instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 15 )
+
+[node name="HologramMount4" type="Spatial" parent="." groups=["HoloPoint"] instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15 )

@@ -20,7 +20,7 @@ public class UserInventory : Node
         }
     }
     private ItemInfo[] EquippedItems = {
-        new ItemInfo("Bomb", 2),
+        new ItemInfo("Holographic Decoy", 2),
         new ItemInfo("", -1)
     };
         
@@ -100,6 +100,18 @@ public class UserInventory : Node
         };
     }
 
+    public void ReturnItem(string itemName) {
+        // This should only be used when items that were used can't actually be deployed
+        // for whatever reason, and return themselves to the equipped list
+        for(int i = 0; i < EquippedItems.Length; i++) {
+            if(EquippedItems[i].ItemName == itemName) {
+                EquippedItems[i].ItemAmount += 1;
+                return;
+            }
+        }
+        GD.Print("Error: No item returned for item: " + itemName);
+    }
+
     private void SpawnItem(string itemName) {
         PackedScene itemScene = (PackedScene)GD.Load(GetNode<ItemData>("/root/ItemDataAL").GetItemFilePath(itemName));
         Item newItem = itemScene.Instance<Item>();
@@ -144,7 +156,7 @@ public class UserInventory : Node
             EquippedItems[itemSlot].ItemAmount -= 1;
             CallDeferred(nameof(SpawnItem), EquippedItems[itemSlot].ItemName);
             if(EquippedItems[itemSlot].ItemAmount < 1) {
-                EquippedItems[itemSlot].ItemName = "";
+                //EquippedItems[itemSlot].ItemName = "";
             }
             return EquippedItems[itemSlot].ItemAmount;
             // do I actually deploy the item here?
