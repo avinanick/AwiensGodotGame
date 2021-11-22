@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://GameObjects/Units/Destructible.tscn" type="PackedScene" id=1]
-[ext_resource path="res://GameObjects/Units/Hologram.cs" type="Script" id=2]
+[ext_resource path="res://GameObjects/Units/Earthlings/Hologram.cs" type="Script" id=2]
 [ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/SmallBuilding/border.material" type="Material" id=3]
 [ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/SmallBuilding/_defaultMat.material" type="Material" id=4]
 [ext_resource path="res://Resources/Models/Units/Earthlings/Buildings/SmallBuilding/window.material" type="Material" id=5]
