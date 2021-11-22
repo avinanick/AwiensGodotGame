@@ -109,6 +109,7 @@ public class UserInventory : Node
                 return;
             }
         }
+        GD.Print("Error: No item returned for item: " + itemName);
     }
 
     private void SpawnItem(string itemName) {

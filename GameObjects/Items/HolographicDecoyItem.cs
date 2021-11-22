@@ -36,5 +36,6 @@ public class HolographicDecoyItem : Item
         // If we get here, there are no remaining spawn points
         GD.Print("No spawn points available");
         // I should likely re-add the item that would have been spawned to the inventory here
+        GetNode<UserInventory>("/root/UserInventoryAL").ReturnItem("Holographic Decoy");
     }
 }
