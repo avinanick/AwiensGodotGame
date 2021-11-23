@@ -45,8 +45,16 @@ public class WeaponPlatform : Spatial
 		CurrentWeapon.ResetSights();
 	}
 
-	public void RespawnWeapon() {
-		// This should respawn whatever was equipped at the start of the level
+	public bool RespawnWeapon() {
+		// This should check if the current weapon is destroyed first
+		if(CurrentWeapon != null & Godot.Object.IsInstanceValid(CurrentWeapon)) {
+			Turret newWeapon = WeaponScene.Instance<Turret>();
+			AddChild(newWeapon);
+			newWeapon.GlobalTransform = GlobalTransform;
+			CurrentWeapon = newWeapon;
+			return true;
+		}
+		return false;
 	}
 	
 	public void Sight(float xRotation, float yRotation) {
