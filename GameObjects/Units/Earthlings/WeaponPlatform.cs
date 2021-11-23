@@ -47,7 +47,7 @@ public class WeaponPlatform : Spatial
 
 	public bool RespawnWeapon() {
 		// This should check if the current weapon is destroyed first
-		if(CurrentWeapon != null & Godot.Object.IsInstanceValid(CurrentWeapon)) {
+		if(CurrentWeapon == null | !Godot.Object.IsInstanceValid(CurrentWeapon)) {
 			Turret newWeapon = WeaponScene.Instance<Turret>();
 			AddChild(newWeapon);
 			newWeapon.GlobalTransform = GlobalTransform;
