@@ -18,4 +18,20 @@ public class DeploymentBeaconItem : Item
 //  {
 //      
 //  }
+
+    public override void Deploy() {
+        Godot.Collections.Array playerAvatar = GetTree().GetNodesInGroup("Player");
+        if(playerAvatar.Count > 0) {
+            if(playerAvatar[0] is Avatar currentPlayer) {
+                bool successfullyDeployed = currentPlayer.RespawnCurrentWeapon();
+                if(!successfullyDeployed) {
+                    GD.Print("Deployment failed");
+                    UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
+                    inventory.ReturnItem("Deployment Beacon");
+                }
+                return;
+            }
+        }
+        GD.Print("Error: no player avatar found");
+    }
 }
