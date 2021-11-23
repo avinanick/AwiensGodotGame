@@ -36,6 +36,7 @@ public class ItemData : Node
         DataSet.Add("Defense Drone", new ItemSet("res://GameObjects/Items/PointDefenseDroneItem.tscn", "res://icon.png"));
         DataSet.Add("AutoTurret", new ItemSet("res://GameObjects/Items/AutoturretItem.tscn", "res://icon.png"));
         DataSet.Add("Holographic Decoy", new ItemSet("res://GameObjects/Items/HolographicDecoyItem.tscn", "res://icon.png"));
+        DataSet.Add("Deployment Beacon", new ItemSet("res://GameObjects/Items/DeploymentBeaconItem.tscn", "res://icon.png"));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

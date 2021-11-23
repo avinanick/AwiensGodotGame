@@ -7,6 +7,9 @@ public class WeaponPlatform : Spatial
 	// private int a = 2;
 	// private string b = "text";
 	private Turret CurrentWeapon;
+	// May get rid of this weapon scene variable and do some other stuff with just moving
+	// current weapon in and out of visibility
+	private PackedScene WeaponScene = GD.Load<PackedScene>("res://GameObjects/Units/Earthlings/AntiAirTurret.tscn");
 	
 	[Signal]
 	public delegate void WeaponHealthChanged(int newValue);
@@ -40,6 +43,18 @@ public class WeaponPlatform : Spatial
 	
 	public void ResetSights() {
 		CurrentWeapon.ResetSights();
+	}
+
+	public bool RespawnWeapon() {
+		// This should check if the current weapon is destroyed first
+		if(CurrentWeapon == null | !Godot.Object.IsInstanceValid(CurrentWeapon)) {
+			Turret newWeapon = WeaponScene.Instance<Turret>();
+			AddChild(newWeapon);
+			newWeapon.GlobalTransform = GlobalTransform;
+			CurrentWeapon = newWeapon;
+			return true;
+		}
+		return false;
 	}
 	
 	public void Sight(float xRotation, float yRotation) {

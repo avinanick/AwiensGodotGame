@@ -71,6 +71,10 @@ public class Avatar : Spatial
 	public void DeployWeaponAddon(Turret addon) {
 		SelectedWeapon.DeployAddon(addon);
 	}
+
+	public bool RespawnCurrentWeapon() {
+		return SelectedWeapon.RespawnWeapon();
+	}
 	
 	public void SetWeapon(WeaponPlatform newWeapon) {
 		SelectedWeapon = newWeapon;
