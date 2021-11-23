@@ -25,13 +25,14 @@ public class DeploymentBeaconItem : Item
             if(playerAvatar[0] is Avatar currentPlayer) {
                 bool successfullyDeployed = currentPlayer.RespawnCurrentWeapon();
                 if(!successfullyDeployed) {
-                    GD.Print("Deployment failed");
                     UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
                     inventory.ReturnItem("Deployment Beacon");
                 }
+                QueueFree();
                 return;
             }
         }
         GD.Print("Error: no player avatar found");
+        QueueFree();
     }
 }
