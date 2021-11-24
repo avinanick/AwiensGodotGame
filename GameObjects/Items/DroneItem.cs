@@ -11,6 +11,7 @@ public class DroneItem : Item
     public override void _Ready()
     {
         base._Ready();
+        GetNode<CombatShip>("Drone").SetProcess(false);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +26,9 @@ public class DroneItem : Item
         Transform droneTransform = drone.GlobalTransform;
         RemoveChild(drone);
         GetTree().CurrentScene.AddChild(drone);
+        droneTransform.origin = new Vector3(0,25,0);
         drone.GlobalTransform = droneTransform;
+        drone.SetProcess(true);
         drone.SpawnShip();
         QueueFree();
     }
