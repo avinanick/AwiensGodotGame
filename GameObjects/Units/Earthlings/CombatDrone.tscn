@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://GameObjects/Units/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/Units/CombatShip.cs" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Resources/Models/Units/Earthlings/Drones/CombatDrone/metalRed.material" type="Material" id=4]
 [ext_resource path="res://Resources/Models/Units/Earthlings/Drones/CombatDrone/metal.material" type="Material" id=5]
 [ext_resource path="res://Resources/Models/Units/Earthlings/Drones/CombatDrone/dark.material" type="Material" id=6]
+[ext_resource path="res://Components/Basic/AttackerComponent.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameObjects/Projectiles/Bullet.tscn" type="PackedScene" id=8]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 1, 0.35, 1 )
@@ -76,3 +78,6 @@ material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
+
+[node name="AttackerComponent" parent="." index="7" instance=ExtResource( 7 )]
+AttackProjectile = ExtResource( 8 )
