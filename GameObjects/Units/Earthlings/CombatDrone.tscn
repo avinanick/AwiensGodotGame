@@ -63,6 +63,7 @@ surfaces/3 = {
 
 [node name="CombatDrone" groups=["Defender", "Earthling"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+OrbitRadius = 30.0
 TargetGroups = PoolStringArray( "Alien" )
 
 [node name="CollisionShape" parent="." index="0"]
