@@ -22,6 +22,9 @@ tracks/0/keys = {
 [node name="PointDefenseDroneItem" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="MeshInstance" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
 [node name="AnimationPlayer" parent="." index="1"]
 anims/RESET = SubResource( 1 )
 
