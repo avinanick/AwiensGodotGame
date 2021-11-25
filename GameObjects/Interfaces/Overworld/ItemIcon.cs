@@ -27,10 +27,17 @@ public class ItemIcon : MarginContainer
     public void AssignItem(String itemName) {
         ItemData data = GetNode<ItemData>("/root/ItemDataAL");
         UserInventory inventory = GetNode<UserInventory>("/root/UserInventroyAL");
-
+        if(data.IsAnItem(itemName)) {
+            ItemName = itemName;
+            ItemImage = GD.Load<Image>(data.GetItemIconPath(itemName));
+            // Need a way to get how many of the item is in the inventory here.
+        }
+        else {
+            GD.Print("Error: assigning nonexistant item");
+        }
     }
 
     public void SetAmount(int amount) {
-        
+
     }
 }
