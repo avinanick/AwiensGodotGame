@@ -29,6 +29,29 @@ public class ItemsInterface : MarginContainer
     }
 
     private void PopulateItems() {
-        
+        UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
+        System.Collections.Generic.Dictionary<string, int> unequippedItems = inventory.GetInventory();
+        Tuple<String, int>[] equippedItems = inventory.GetEquipped();
+        Node equippedInventoryContainer = GetNode<Node>("PanelContainer/VBoxContainer/InventoryPanelContainer/ScrollContainer/HBoxContainer");
+        Node slotOneContainer = GetNode<Node>("PanelContainer/VBoxContainer/Deployment/HBoxContainer/ItemsEquipped/VBoxContainer/SlotOneContainer/HBoxContainer/SlotOne");
+        Node slotTwoContainer = GetNode<Node>("PanelContainer/VBoxContainer/Deployment/HBoxContainer/ItemsEquipped/VBoxContainer/SlotTwoContainer/HBoxContainer/SlotTwo");
+        foreach(System.Collections.Generic.KeyValuePair<string, int> entry in unequippedItems) {
+            ItemIcon newIcon = IconScene.Instance<ItemIcon>();
+            equippedInventoryContainer.AddChild(newIcon);
+            newIcon.AssignItem(entry.Key);
+            newIcon.SetAmount(entry.Value);
+        }
+        if(equippedItems.Length > 0) {
+            ItemIcon newIcon = IconScene.Instance<ItemIcon>();
+            slotOneContainer.AddChild(newIcon);
+            newIcon.AssignItem(equippedItems[0].Item1);
+            newIcon.SetAmount(equippedItems[0].Item2);
+        }
+        if(equippedItems.Length > 1) {
+            ItemIcon newIcon = IconScene.Instance<ItemIcon>();
+            slotTwoContainer.AddChild(newIcon);
+            newIcon.AssignItem(equippedItems[1].Item1);
+            newIcon.SetAmount(equippedItems[1].Item2);
+        }
     }
 }
