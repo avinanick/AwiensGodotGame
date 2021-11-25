@@ -6,6 +6,7 @@ public class ItemsInterface : MarginContainer
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
+    PackedScene IconScene = GD.Load<PackedScene>("res://GameObjects/Interfaces/ItemIcon.tscn");
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -25,5 +26,9 @@ public class ItemsInterface : MarginContainer
 
     public void OpenInterface() {
         Visible = true;
+    }
+
+    private void PopulateItems() {
+        
     }
 }
