@@ -38,6 +38,6 @@ public class ItemIcon : MarginContainer
     }
 
     public void SetAmount(int amount) {
-
+        ItemAmount = amount;
     }
 }
