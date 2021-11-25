@@ -26,7 +26,7 @@ public class ItemIcon : MarginContainer
 
     public void AssignItem(String itemName) {
         ItemData data = GetNode<ItemData>("/root/ItemDataAL");
-        UserInventory inventory = GetNode<UserInventory>("/root/UserInventroyAL");
+        UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
         if(data.IsAnItem(itemName)) {
             ItemName = itemName;
             ItemImage = GD.Load<Texture>(data.GetItemIconPath(itemName));
