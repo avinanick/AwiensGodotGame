@@ -12,6 +12,7 @@ public class ItemsInterface : MarginContainer
     public override void _Ready()
     {
         Visible = false;
+        CallDeferred(nameof(PopulateItems));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
