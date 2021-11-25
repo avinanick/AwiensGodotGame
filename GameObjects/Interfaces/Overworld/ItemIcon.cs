@@ -10,7 +10,7 @@ public class ItemIcon : MarginContainer
     private String ItemName;
     private int ItemAmount;
     private String ItemDescription;
-    private Image ItemImage;
+    private Texture ItemImage;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -29,7 +29,8 @@ public class ItemIcon : MarginContainer
         UserInventory inventory = GetNode<UserInventory>("/root/UserInventroyAL");
         if(data.IsAnItem(itemName)) {
             ItemName = itemName;
-            ItemImage = GD.Load<Image>(data.GetItemIconPath(itemName));
+            ItemImage = GD.Load<Texture>(data.GetItemIconPath(itemName));
+            GetNode<TextureRect>("TextureRect").Texture = ItemImage;
             // Need a way to get how many of the item is in the inventory here.
         }
         else {
