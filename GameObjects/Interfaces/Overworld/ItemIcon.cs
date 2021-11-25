@@ -30,7 +30,7 @@ public class ItemIcon : MarginContainer
         if(data.IsAnItem(itemName)) {
             ItemName = itemName;
             ItemImage = GD.Load<Texture>(data.GetItemIconPath(itemName));
-            GetNode<TextureRect>("TextureRect").Texture = ItemImage;
+            GetNode<TextureButton>("TextureRect").TextureNormal = ItemImage;
             // Need a way to get how many of the item is in the inventory here.
         }
         else {

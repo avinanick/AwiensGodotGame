@@ -11,7 +11,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureButton" parent="."]
 margin_right = 64.0
 margin_bottom = 64.0
-texture = ExtResource( 1 )
+texture_normal = ExtResource( 1 )
