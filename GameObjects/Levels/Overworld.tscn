@@ -243,9 +243,7 @@ position = Vector2( 487, 69 )
 z_index = 1
 shape = SubResource( 1 )
 
-[node name="ThreatRandomizer" type="Node" parent="." groups=[
-"ThreatSource",
-]]
+[node name="ThreatRandomizer" type="Node" parent="." groups=["ThreatSource"]]
 script = ExtResource( 5 )
 
 [node name="ThreatsPreviewInterface" parent="." instance=ExtResource( 6 )]
