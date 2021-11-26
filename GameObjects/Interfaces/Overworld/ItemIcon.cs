@@ -54,8 +54,6 @@ public class ItemIcon : MarginContainer
         SetProcess(false);
         UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
         Control dropSlot = SwitchSlot;
-        GetParent().RemoveChild(this);
-        dropSlot.AddChild(this);
         // I need to figure out how to get the position reset so the parent will control
         // position now
         // Will need to let the user inventory know and figure out how to go with equip or
@@ -81,6 +79,11 @@ public class ItemIcon : MarginContainer
                 else {
                     inventory.EquipItem(ItemName, 1);
                 }
+            }
+            else {
+                Node currentParent = GetParent();
+                currentParent.RemoveChild(this);
+                currentParent.AddChild(this);
             }
         }
     }
