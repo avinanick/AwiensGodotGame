@@ -41,18 +41,27 @@ public class ItemsInterface : MarginContainer
             equippedInventoryContainer.AddChild(newIcon);
             newIcon.AssignItem(entry.Key);
             newIcon.SetAmount(entry.Value);
+            equippedInventoryContainer.Connect("mouse_entered", newIcon, "HoverSlot", new Godot.Collections.Array(0));
+            slotOneContainer.Connect("mouse_entered", newIcon, "HoverSlot", new Godot.Collections.Array(1));
+            slotTwoContainer.Connect("mouse_entered", newIcon, "HoverSlot", new Godot.Collections.Array(2));
         }
         if(equippedItems.Length > 0) {
             ItemIcon newIcon = IconScene.Instance<ItemIcon>();
             slotOneContainer.AddChild(newIcon);
             newIcon.AssignItem(equippedItems[0].Item1);
             newIcon.SetAmount(equippedItems[0].Item2);
+            equippedInventoryContainer.Connect("mouse_entered", newIcon, "HoverSlot", new Godot.Collections.Array(0));
+            slotOneContainer.Connect("mouse_entered", newIcon, "HoverSlot", new Godot.Collections.Array(1));
+            slotTwoContainer.Connect("mouse_entered", newIcon, "HoverSlot", new Godot.Collections.Array(2));
         }
         if(equippedItems.Length > 1) {
             ItemIcon newIcon = IconScene.Instance<ItemIcon>();
             slotTwoContainer.AddChild(newIcon);
             newIcon.AssignItem(equippedItems[1].Item1);
             newIcon.SetAmount(equippedItems[1].Item2);
+            equippedInventoryContainer.Connect("mouse_entered", newIcon, "HoverSlot", new Godot.Collections.Array(0));
+            slotOneContainer.Connect("mouse_entered", newIcon, "HoverSlot", new Godot.Collections.Array(1));
+            slotTwoContainer.Connect("mouse_entered", newIcon, "HoverSlot", new Godot.Collections.Array(2));
         }
     }
 }
