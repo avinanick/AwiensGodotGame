@@ -12,11 +12,6 @@ public class ItemIcon : MarginContainer
     private String ItemDescription;
     private Texture ItemImage;
     private Control SwitchSlot = null;
-    private string[] SlotPaths = {
-        "PanelContainer/VBoxContainer/InventoryPanelContainer/ScrollContainer/HBoxContainer",
-        "PanelContainer/VBoxContainer/Deployment/HBoxContainer/ItemsEquipped/VBoxContainer/SlotOneContainer/HBoxContainer/SlotOne",
-        "PanelContainer/VBoxContainer/Deployment/HBoxContainer/ItemsEquipped/VBoxContainer/SlotTwoContainer/HBoxContainer/SlotTwo"
-    };
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -57,11 +52,37 @@ public class ItemIcon : MarginContainer
         // Check if the button is hovering over a draggable area, if so we reparent to that
         // otherwise we go back to the previous place
         SetProcess(false);
+        UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
         Control dropSlot = SwitchSlot;
         GetParent().RemoveChild(this);
         dropSlot.AddChild(this);
         // I need to figure out how to get the position reset so the parent will control
         // position now
+        // Will need to let the user inventory know and figure out how to go with equip or
+        // unequip
+        if(dropSlot is HBoxContainer inventorySlot) {
+            if(GetParent().Name == "SlotOne") {
+                inventory.UnequipItem(0);
+            }
+            else {
+                inventory.UnequipItem(1);
+            }
+            GetParent().RemoveChild(this);
+            inventorySlot.AddChild(this);
+        }
+        else {
+            if(dropSlot.GetChildCount() < 1) {
+                GetParent().RemoveChild(this);
+                dropSlot.AddChild(this);
+                // Need to contact the user inventroy to equip this
+                if(dropSlot.Name == "SlotOne") {
+                    inventory.EquipItem(ItemName, 0);
+                }
+                else {
+                    inventory.EquipItem(ItemName, 1);
+                }
+            }
+        }
     }
 
     public void HoverSlot(Control potentialSlot) {
