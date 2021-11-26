@@ -16,12 +16,13 @@ public class ItemIcon : MarginContainer
     public override void _Ready()
     {
         base._Ready();
+        SetProcess(false);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
-
+        SetGlobalPosition(GetGlobalMousePosition());
     }
 
     public void AssignItem(String itemName) {
@@ -40,11 +41,13 @@ public class ItemIcon : MarginContainer
 
     public void ButtonClicked() {
         // Make the button follow the mouse, does this work for the margin container?
+        SetProcess(true);
     }
 
     public void ButtonReleased() {
         // Check if the button is hovering over a draggable area, if so we reparent to that
         // otherwise we go back to the previous place
+        SetProcess(false);
     }
 
     public void SetAmount(int amount) {
