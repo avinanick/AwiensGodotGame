@@ -58,33 +58,40 @@ public class ItemIcon : MarginContainer
         // position now
         // Will need to let the user inventory know and figure out how to go with equip or
         // unequip
-        if(dropSlot is HBoxContainer inventorySlot) {
-            if(GetParent().Name == "SlotOne") {
-                inventory.UnequipItem(0);
-            }
-            else {
-                inventory.UnequipItem(1);
-            }
-            GetParent().RemoveChild(this);
-            inventorySlot.AddChild(this);
-        }
-        else {
-            if(dropSlot.GetChildCount() < 1) {
-                GetParent().RemoveChild(this);
-                dropSlot.AddChild(this);
-                // Need to contact the user inventroy to equip this
-                if(dropSlot.Name == "SlotOne") {
-                    inventory.EquipItem(ItemName, 0);
+        if(dropSlot != GetParent()){
+            if(dropSlot is HBoxContainer inventorySlot) {
+                if(GetParent().Name == "SlotOne") {
+                    inventory.UnequipItem(0);
                 }
                 else {
-                    inventory.EquipItem(ItemName, 1);
+                    inventory.UnequipItem(1);
                 }
+                GetParent().RemoveChild(this);
+                inventorySlot.AddChild(this);
             }
             else {
-                Node currentParent = GetParent();
-                currentParent.RemoveChild(this);
-                currentParent.AddChild(this);
+                if(dropSlot.GetChildCount() < 1) {
+                    GetParent().RemoveChild(this);
+                    dropSlot.AddChild(this);
+                    // Need to contact the user inventroy to equip this
+                    if(dropSlot.Name == "SlotOne") {
+                        inventory.EquipItem(ItemName, 0);
+                    }
+                    else {
+                        inventory.EquipItem(ItemName, 1);
+                    }
+                }
+                else {
+                    Node currentParent = GetParent();
+                    currentParent.RemoveChild(this);
+                    currentParent.AddChild(this);
+                }
             }
+        }
+        else {
+            Node currentParent = GetParent();
+            currentParent.RemoveChild(this);
+            currentParent.AddChild(this);
         }
     }
 
