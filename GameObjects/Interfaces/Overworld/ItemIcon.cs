@@ -15,14 +15,14 @@ public class ItemIcon : MarginContainer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        base._Ready();
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(float delta)
+    {
+
+    }
 
     public void AssignItem(String itemName) {
         ItemData data = GetNode<ItemData>("/root/ItemDataAL");
@@ -36,6 +36,15 @@ public class ItemIcon : MarginContainer
         else {
             GD.Print("Error: assigning nonexistant item");
         }
+    }
+
+    public void ButtonClicked() {
+        // Make the button follow the mouse, does this work for the margin container?
+    }
+
+    public void ButtonReleased() {
+        // Check if the button is hovering over a draggable area, if so we reparent to that
+        // otherwise we go back to the previous place
     }
 
     public void SetAmount(int amount) {
