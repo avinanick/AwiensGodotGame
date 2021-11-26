@@ -15,3 +15,6 @@ __meta__ = {
 margin_right = 64.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 1 )
+
+[connection signal="button_down" from="TextureRect" to="." method="ButtonClicked"]
+[connection signal="button_up" from="TextureRect" to="." method="ButtonReleased"]
