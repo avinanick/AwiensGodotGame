@@ -65,7 +65,7 @@ public class ItemIcon : MarginContainer
     }
 
     public void HoverSlot(int potentialSlot) {
-
+        SwitchSlot = potentialSlot;
     }
 
     public void LeaveSlot(int leavingSlot) {
