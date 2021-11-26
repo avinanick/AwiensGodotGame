@@ -135,8 +135,9 @@ rect_min_size = Vector2( 64, 64 )
 
 [node name="ItemEquipped" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Deployment/HBoxContainer/ItemsEquipped/VBoxContainer/SlotOneContainer/HBoxContainer"]
 margin_left = 68.0
-margin_right = 68.0
+margin_right = 206.0
 margin_bottom = 64.0
+size_flags_horizontal = 3
 text = "Empty Slet"
 
 [node name="SlotTwoContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/Deployment/HBoxContainer/ItemsEquipped/VBoxContainer"]
@@ -157,8 +158,9 @@ rect_min_size = Vector2( 64, 64 )
 
 [node name="ItemEquipped" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Deployment/HBoxContainer/ItemsEquipped/VBoxContainer/SlotTwoContainer/HBoxContainer"]
 margin_left = 68.0
-margin_right = 68.0
+margin_right = 206.0
 margin_bottom = 64.0
+size_flags_horizontal = 3
 text = "Empty Slot"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
