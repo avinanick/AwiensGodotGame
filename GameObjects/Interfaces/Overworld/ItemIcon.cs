@@ -11,6 +11,7 @@ public class ItemIcon : MarginContainer
     private int ItemAmount;
     private String ItemDescription;
     private Texture ItemImage;
+    private Control SwitchSlot = null;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -22,7 +23,10 @@ public class ItemIcon : MarginContainer
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
-        SetGlobalPosition(GetGlobalMousePosition());
+        Vector2 floatPosition = GetGlobalMousePosition();
+        floatPosition.x -= RectSize.x / 2;
+        floatPosition.y -= RectSize.y / 2;
+        SetGlobalPosition(floatPosition);
     }
 
     public void AssignItem(String itemName) {
@@ -48,6 +52,14 @@ public class ItemIcon : MarginContainer
         // Check if the button is hovering over a draggable area, if so we reparent to that
         // otherwise we go back to the previous place
         SetProcess(false);
+    }
+
+    public void HoverSlot(Control potentialSlot) {
+
+    }
+
+    public void LeaveSlot(Control leavingSlot) {
+
     }
 
     public void SetAmount(int amount) {
