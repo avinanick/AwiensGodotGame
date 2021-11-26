@@ -11,7 +11,7 @@ public class ItemIcon : MarginContainer
     private int ItemAmount;
     private String ItemDescription;
     private Texture ItemImage;
-    private int SwitchSlot = 0;
+    private Control SwitchSlot = null;
     private string[] SlotPaths = {
         "PanelContainer/VBoxContainer/InventoryPanelContainer/ScrollContainer/HBoxContainer",
         "PanelContainer/VBoxContainer/Deployment/HBoxContainer/ItemsEquipped/VBoxContainer/SlotOneContainer/HBoxContainer/SlotOne",
@@ -57,18 +57,18 @@ public class ItemIcon : MarginContainer
         // Check if the button is hovering over a draggable area, if so we reparent to that
         // otherwise we go back to the previous place
         SetProcess(false);
-        Control dropSlot = GetNode<Control>(SlotPaths[SwitchSlot]);
+        Control dropSlot = SwitchSlot;
         GetParent().RemoveChild(this);
         dropSlot.AddChild(this);
         // I need to figure out how to get the position reset so the parent will control
         // position now
     }
 
-    public void HoverSlot(int potentialSlot) {
+    public void HoverSlot(Control potentialSlot) {
         SwitchSlot = potentialSlot;
     }
 
-    public void LeaveSlot(int leavingSlot) {
+    public void LeaveSlot(Control leavingSlot) {
 
     }
 
