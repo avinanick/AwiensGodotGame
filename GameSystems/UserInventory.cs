@@ -80,6 +80,7 @@ public class UserInventory : Node
         else {
             GD.Print("No items to equip");
         }
+        PrintInventoryData();
     }
 
     public Tuple<String, int>[] GetEquipped() {
@@ -98,6 +99,16 @@ public class UserInventory : Node
         return new Godot.Collections.Dictionary<string, object>() {
 
         };
+    }
+
+    private void PrintInventoryData() {
+        GD.Print("Unequipped items:");
+        foreach(System.Collections.Generic.KeyValuePair<string, int> pair in InventoryItems) {
+            GD.Print(pair.Key, ": ", pair.Value);
+        }
+        GD.Print("Equipped items:");
+        GD.Print(EquippedItems[0].ItemName, ": ", EquippedItems[0].ItemAmount);
+        GD.Print(EquippedItems[1].ItemName, ": ", EquippedItems[1].ItemAmount);
     }
 
     public void ReturnItem(string itemName) {
@@ -148,6 +159,7 @@ public class UserInventory : Node
         else {
             GD.Print("No items to remove");
         }
+        PrintInventoryData();
     }
 
     public int UseItem(int itemSlot) {
