@@ -41,6 +41,7 @@ public class ItemIcon : MarginContainer
         else {
             GD.Print("Error: assigning nonexistant item");
         }
+        UpdateSlot();
     }
 
     public void ButtonClicked() {
@@ -60,6 +61,7 @@ public class ItemIcon : MarginContainer
         // unequip
         if(dropSlot != GetParent()){
             if(dropSlot is HBoxContainer inventorySlot) {
+                EmptySlot();
                 if(GetParent().Name == "SlotOne") {
                     inventory.UnequipItem(0);
                 }
@@ -93,10 +95,19 @@ public class ItemIcon : MarginContainer
             currentParent.RemoveChild(this);
             currentParent.AddChild(this);
         }
+        UpdateSlot();
+    }
+
+    private void EmptySlot() {
+        RichTextLabel label = GetNode<RichTextLabel>("../../ItemEquipped");
+        if(label != null) {
+            label.Text = "Empty Slot";
+        }
     }
 
     public void HoverSlot(Control potentialSlot) {
         SwitchSlot = potentialSlot;
+        GD.Print(potentialSlot);
     }
 
     public void LeaveSlot(Control leavingSlot) {
@@ -105,5 +116,12 @@ public class ItemIcon : MarginContainer
 
     public void SetAmount(int amount) {
         ItemAmount = amount;
+    }
+
+    private void UpdateSlot() {
+        RichTextLabel label = GetNode<RichTextLabel>("../../ItemEquipped");
+        if(label != null) {
+            label.Text = ItemName;
+        }
     }
 }
