@@ -33,13 +33,13 @@ public class ItemData : Node
     public override void _Ready()
     {
         base._Ready();
-        DataSet.Add("Bomb", new ItemSet("res://GameObjects/Items/Bomb.tscn", "res://icon.png", 10));
-        DataSet.Add("Repair Drone", new ItemSet("res://GameObjects/Items/RepairDroneItem.tscn", "res://icon.png", 10));
-        DataSet.Add("Defense Drone", new ItemSet("res://GameObjects/Items/PointDefenseDroneItem.tscn", "res://icon.png", 10));
-        DataSet.Add("AutoTurret", new ItemSet("res://GameObjects/Items/AutoturretItem.tscn", "res://icon.png", 10));
-        DataSet.Add("Holographic Decoy", new ItemSet("res://GameObjects/Items/HolographicDecoyItem.tscn", "res://icon.png", 10));
-        DataSet.Add("Deployment Beacon", new ItemSet("res://GameObjects/Items/DeploymentBeaconItem.tscn", "res://icon.png", 10));
-        DataSet.Add("Combat Drone", new ItemSet("res://GameObjects/Items/CombatDroneItem.tscn", "res://icon.png", 10));
+        DataSet.Add("Bomb", new ItemSet("res://GameObjects/Items/Bomb.tscn", "res://icon.png", 30));
+        DataSet.Add("Repair Drone", new ItemSet("res://GameObjects/Items/RepairDroneItem.tscn", "res://icon.png", 70));
+        DataSet.Add("Defense Drone", new ItemSet("res://GameObjects/Items/PointDefenseDroneItem.tscn", "res://icon.png", 80));
+        DataSet.Add("AutoTurret", new ItemSet("res://GameObjects/Items/AutoturretItem.tscn", "res://icon.png", 50));
+        DataSet.Add("Holographic Decoy", new ItemSet("res://GameObjects/Items/HolographicDecoyItem.tscn", "res://icon.png", 40));
+        DataSet.Add("Deployment Beacon", new ItemSet("res://GameObjects/Items/DeploymentBeaconItem.tscn", "res://icon.png", 90));
+        DataSet.Add("Combat Drone", new ItemSet("res://GameObjects/Items/CombatDroneItem.tscn", "res://icon.png", 60));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
