@@ -16,6 +16,17 @@ __meta__ = {
 margin_right = 64.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0.392157 )
+z_index = 20
 
 [connection signal="button_down" from="TextureRect" to="." method="ButtonClicked"]
 [connection signal="button_up" from="TextureRect" to="." method="ButtonReleased"]

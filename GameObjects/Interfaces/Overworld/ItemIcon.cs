@@ -18,15 +18,16 @@ public class ItemIcon : MarginContainer
     {
         base._Ready();
         SetProcess(false);
+        GetNode<Sprite>("CanvasLayer/Sprite").Visible = false;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
         Vector2 floatPosition = GetGlobalMousePosition();
-        floatPosition.x -= RectSize.x / 2;
-        floatPosition.y -= RectSize.y / 2;
-        SetGlobalPosition(floatPosition);
+        //floatPosition.x -= RectSize.x / 2;
+        //floatPosition.y -= RectSize.y / 2;
+        GetNode<Sprite>("CanvasLayer/Sprite").GlobalPosition =floatPosition;
     }
 
     public void AssignItem(String itemName) {
@@ -36,6 +37,7 @@ public class ItemIcon : MarginContainer
             ItemName = itemName;
             ItemImage = GD.Load<Texture>(data.GetItemIconPath(itemName));
             GetNode<TextureButton>("TextureRect").TextureNormal = ItemImage;
+            GetNode<Sprite>("CanvasLayer/Sprite").Texture = ItemImage;
             // Need a way to get how many of the item is in the inventory here.
         }
         else {
@@ -47,12 +49,14 @@ public class ItemIcon : MarginContainer
     public void ButtonClicked() {
         // Make the button follow the mouse, does this work for the margin container?
         SetProcess(true);
+        GetNode<Sprite>("CanvasLayer/Sprite").Visible = true;
     }
 
     public void ButtonReleased() {
         // Check if the button is hovering over a draggable area, if so we reparent to that
         // otherwise we go back to the previous place
         SetProcess(false);
+        GetNode<Sprite>("CanvasLayer/Sprite").Visible = false;
         UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
         Control dropSlot = SwitchSlot;
         // I need to figure out how to get the position reset so the parent will control
