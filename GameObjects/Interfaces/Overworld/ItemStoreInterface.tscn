@@ -32,6 +32,8 @@ margin_bottom = 57.0
 margin_right = 151.0
 margin_bottom = 14.0
 text = "Item Store"
+align = 1
+valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 margin_top = 18.0
