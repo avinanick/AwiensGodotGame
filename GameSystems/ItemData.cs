@@ -22,6 +22,10 @@ public class ItemData : Node
             return ItemIconPath;
         }
 
+        public int GetItemCost() {
+            return ItemCost;
+        }
+
         public string GetScenePath() {
             return ItemScenePath;
         }
@@ -47,6 +51,10 @@ public class ItemData : Node
 //  {
 //      
 //  }
+
+    public int GetItemCost(string itemName) {
+        return DataSet[itemName].GetItemCost();
+    }
 
     public string GetItemFilePath(string itemName) {
         return DataSet[itemName].GetScenePath();
