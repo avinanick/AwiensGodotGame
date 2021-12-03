@@ -28,6 +28,7 @@ public class StoreIcon : MarginContainer
     }
 
     public void IconClicked() {
-        
+        EmitSignal(nameof(IconUsed), ItemName);
+        QueueFree();
     }
 }
