@@ -43,13 +43,13 @@ public class ItemStoreInterface : MarginContainer
         Container inventoryContainer = GetNode<Container>("PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer");
         foreach(System.Collections.Generic.KeyValuePair<string, int> entry in unequippedItems) {
             StoreIcon newIcon = IconScene.Instance<StoreIcon>();
-            newIcon.AssignItem(entry.Key, entry.Value);
+            newIcon.AssignItem(entry.Key, entry.Value, false);
             inventoryContainer.AddChild(newIcon);
             newIcon.Connect("IconUsed", this, nameof(MakeSale));
         }
         for(int i = 0; i < equippedItems.Length; i++) {
             StoreIcon newIcon = IconScene.Instance<StoreIcon>();
-            newIcon.AssignItem(equippedItems[i].Item1, equippedItems[i].Item2);
+            newIcon.AssignItem(equippedItems[i].Item1, equippedItems[i].Item2, false);
             inventoryContainer.AddChild(newIcon);
             newIcon.Connect("IconUsed", this, nameof(MakeSale));
         }
@@ -71,7 +71,7 @@ public class ItemStoreInterface : MarginContainer
         // Create the item icons
         for(int i = 0; i < NumSaleItems; i++) {
             StoreIcon icon = IconScene.Instance<StoreIcon>();
-            icon.AssignItem(itemTypes[i], rng.Next(MaxItemAmount) + 1);
+            icon.AssignItem(itemTypes[i], rng.Next(MaxItemAmount) + 1, true);
             storeContainer.AddChild(icon);
             icon.Connect("IconUsed", this, nameof(MakeSale));
         }
