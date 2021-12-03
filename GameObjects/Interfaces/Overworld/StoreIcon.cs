@@ -7,6 +7,7 @@ public class StoreIcon : MarginContainer
     // private int a = 2;
     // private string b = "text";
     private string ItemName;
+    private int Amount;
 
     [Signal]
     public delegate void IconUsed(string itemName);
@@ -23,13 +24,16 @@ public class StoreIcon : MarginContainer
 //      
 //  }
 
-    public void AssignItem(string itemName) {
+    public void AssignItem(string itemName, int amount) {
         ItemName = itemName;
         GetNode<TextureButton>("TextureButton").TextureNormal = GD.Load<Texture>(GetNode<ItemData>("/root/ItemDataAL").GetItemIconPath(itemName));
     }
 
     public void IconClicked() {
         EmitSignal(nameof(IconUsed), ItemName);
-        QueueFree();
+        Amount -= 1;
+        if(Amount <= 0) {
+            QueueFree();
+        }
     }
 }
