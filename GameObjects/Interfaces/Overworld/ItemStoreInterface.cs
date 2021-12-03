@@ -16,8 +16,8 @@ public class ItemStoreInterface : MarginContainer
     public override void _Ready()
     {
         base._Ready();
-        PopulateInventory();
-        RandomizeAvailable();
+        CallDeferred(nameof(PopulateInventory));
+        CallDeferred(nameof(RandomizeAvailable));
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
