@@ -27,11 +27,13 @@ public class ItemStoreInterface : MarginContainer
 //  }
 
     public void MakePurchase(string item) {
-
+        UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
+        inventory.AddItem(item, 1);
     }
 
     public void MakeSale(string item) {
-
+        UserInventory inventory = GetNode<UserInventory>("/root/UserInventoryAL");
+        inventory.RemoveItem(item, 1);
     }
 
     private void PopulateInventory() {
