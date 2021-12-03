@@ -14,5 +14,6 @@ __meta__ = {
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_right = 64.0
 margin_bottom = 64.0
+hint_tooltip = "Placeholder text"
 button_mask = 2
 texture_normal = ExtResource( 1 )
