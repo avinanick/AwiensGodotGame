@@ -111,6 +111,25 @@ public class UserInventory : Node
         GD.Print(EquippedItems[1].ItemName, ": ", EquippedItems[1].ItemAmount);
     }
 
+    public void RemoveItem(string itemName, int amount) {
+        // Check if the item is equipped, if so remove from it, otherwise remove from the inventory
+        for(int i = 0; i < EquippedItems.Length; i++) {
+            if(EquippedItems[i].ItemName == itemName) {
+                EquippedItems[i].ItemAmount -= amount;
+                if(EquippedItems[i].ItemAmount <= 0) {
+                    EquippedItems[i].ItemName = "";
+                }
+                return;
+            }
+        }
+        if(InventoryItems.ContainsKey(itemName)) {
+            InventoryItems[itemName] -= amount;
+            if(InventoryItems[itemName] <= 0) {
+                InventoryItems.Remove(itemName);
+            }
+        }
+    }
+
     public void ReturnItem(string itemName) {
         // This should only be used when items that were used can't actually be deployed
         // for whatever reason, and return themselves to the equipped list
