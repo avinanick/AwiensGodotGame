@@ -24,7 +24,8 @@ public class StoreIcon : MarginContainer
 //  }
 
     public void AssignItem(string itemName) {
-
+        ItemName = itemName;
+        GetNode<TextureButton>("TextureButton").TextureNormal = GD.Load<Texture>(GetNode<ItemData>("/root/ItemDataAL").GetItemIconPath(itemName));
     }
 
     public void IconClicked() {
