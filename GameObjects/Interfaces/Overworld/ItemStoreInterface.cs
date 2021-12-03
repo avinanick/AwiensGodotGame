@@ -8,6 +8,10 @@ public class ItemStoreInterface : MarginContainer
     // private string b = "text";
     PackedScene IconScene = GD.Load<PackedScene>("res://GameObjects/Interfaces/Overworld/StoreIcon.tscn");
 
+    [Export]
+    private int NumSaleItems = 3;
+    private int MaxItemAmount = 3;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -50,6 +54,24 @@ public class ItemStoreInterface : MarginContainer
     }
 
     private void RandomizeAvailable() {
-
+        ItemData data = GetNode<ItemData>("/root/ItemDataAL");
+        Container storeContainer = GetNode<Container>("PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer/ScrollContainer/VBoxContainer");
+        string[] itemTypes = data.GetItemList();
+        // Shuffle the array of item types
+        Random rng = new Random();
+        int numItems = itemTypes.Length;
+        while(numItems > 1) {
+            int switchPosition = rng.Next(numItems--);
+            string temp = itemTypes[numItems];
+            itemTypes[numItems] = itemTypes[switchPosition];
+            itemTypes[switchPosition] = temp;
+        }
+        // Create the item icons
+        for(int i = 0; i < NumSaleItems; i++) {
+            StoreIcon icon = IconScene.Instance<StoreIcon>();
+            icon.AssignItem(itemTypes[i], rng.Next(MaxItemAmount) + 1);
+            storeContainer.AddChild(icon);
+            icon.Connect("IconUsed", this, nameof(MakeSale));
+        }
     }
 }
