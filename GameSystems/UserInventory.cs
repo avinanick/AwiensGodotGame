@@ -43,6 +43,12 @@ public class UserInventory : Node
         // we need to make the entry
         ItemData itemAL = GetNode<ItemData>("/root/ItemDataAL");
         if(itemAL.IsAnItem(itemName)) {
+            for(int i = 0; i < EquippedItems.Length; i++) {
+                if(EquippedItems[i].ItemName == itemName) {
+                    EquippedItems[i].ItemAmount += amount;
+                    return;
+                }
+            }
             if(InventoryItems.ContainsKey(itemName)) {
                 InventoryItems[itemName] += amount;
             }
