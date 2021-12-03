@@ -64,6 +64,10 @@ public class CampaignTracker : Node
         CurrentCity = -1;
     }
 
+    public void EarnPoints(int amount) {
+        CurrentPoints += amount;
+    }
+
     public System.Collections.Generic.Stack<int> GetCitiesCompleted() {
         return CompletedCities;
     }
@@ -107,5 +111,9 @@ public class CampaignTracker : Node
 
     public void SetLevelPoints(int levelPoints) {
         LevelPointsEarned = levelPoints;
+    }
+
+    public void SpendPoints(int amount) {
+        CurrentPoints -= amount;
     }
 }
