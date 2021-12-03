@@ -56,6 +56,16 @@ public class ItemData : Node
         return DataSet[itemName].GetIconPath();
     }
 
+    public string[] GetItemList() {
+        string[] itemTypes = new string[DataSet.Count];
+        int i = 0;
+        foreach(System.Collections.Generic.KeyValuePair<string, ItemSet> entry in DataSet) {
+            itemTypes[i] = entry.Key;
+            i++;
+        }
+        return itemTypes;
+    }
+
     public bool IsAnItem(string potentialItemName) {
         return DataSet.ContainsKey(potentialItemName);
     }
